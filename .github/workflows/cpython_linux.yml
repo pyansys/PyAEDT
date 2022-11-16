@@ -26,13 +26,10 @@ jobs:
       matrix:
         python-version: [3.9]
     steps:
-      - uses: actions/checkout@v3
       - name: Set up Python3
         run: |
           sudo yum update -y
           sudo yum install epel-release
-          python3 --version
-          pip --version
 
           sudo yum groupinstall "Development Tools" -y
           sudo yum install gcc open-ssl-devel bzip2-devel libffi-devel -y
@@ -46,7 +43,9 @@ jobs:
           python3 --version
           pip --version
 
+          sudo rm -rf "/apps/actions-runner/_work/pyaedt/pyaedt/Python-3.10.2
 
+      - uses: actions/checkout@v3
       - name: 'Install pyaedt'
         run: |
           sudo pip3 install --upgrade pip
