@@ -26,24 +26,24 @@ jobs:
       matrix:
         python-version: [3.9]
     steps:
-      - name: Set up Python3
-        run: |
-          sudo yum update -y
-          sudo yum install epel-release
+      # - name: Set up Python3
+      #   run: |
+      #     sudo yum update -y
+      #     sudo yum install epel-release
 
-          sudo yum groupinstall "Development Tools" -y
-          sudo yum install gcc open-ssl-devel bzip2-devel libffi-devel -y
-          sudo wget https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz
-          sudo tar -xzf Python-3.10.2.tgz
-          ls -a
-          cd Python-3.10.2
-          ./configure --enable-optimizations
-          sudo make altinstall
-          python3.10 -V
-          python3 --version
-          pip --version
+      #     sudo yum groupinstall "Development Tools" -y
+      #     sudo yum install gcc open-ssl-devel bzip2-devel libffi-devel -y
+      #     sudo wget https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz
+      #     sudo tar -xzf Python-3.10.2.tgz
+      #     ls -a
+      #     cd Python-3.10.2
+      #     ./configure --enable-optimizations
+      #     sudo make altinstall
+      #     python3.10 -V
+      #     python3 --version
+      #     pip --version
 
-          sudo rm -rf "/apps/actions-runner/_work/pyaedt/pyaedt/Python-3.10.2
+      #     sudo rm -rf "/apps/actions-runner/_work/pyaedt/pyaedt/Python-3.10.2
 
       - uses: actions/checkout@v3
       - name: 'Install pyaedt'
