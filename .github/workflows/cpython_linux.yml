@@ -30,10 +30,7 @@ jobs:
       - name: Set up Python3
         run: |
           sudo yum update -y
-          sudo yum install -y python3
-          sudo yum install -y python-pip
           sudo yum install epel-release
-          sudo yum install python-pip
           python3 --version
           pip --version
 
@@ -46,6 +43,8 @@ jobs:
           ./configure --enable-optimizations
           sudo make altinstall
           python3.10 -V
+          python3 --version
+          pip --version
 
 
       - name: 'Install pyaedt'
