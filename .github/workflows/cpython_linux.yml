@@ -26,8 +26,9 @@ jobs:
       matrix:
         python-version: [3.9]
     steps:
-      # - name: Set up Python3
-      #   run: |
+      - name: Set up Python3
+        run: |
+          sudo rm -rf "/apps/actions-runner/_work/pyaedt/pyaedt
       #     sudo yum update -y
       #     sudo yum install epel-release
 
@@ -43,7 +44,7 @@ jobs:
       #     python3 --version
       #     pip --version
 
-      #     sudo rm -rf "/apps/actions-runner/_work/pyaedt/pyaedt/Python-3.10.2
+
 
       - uses: actions/checkout@v3
       - name: 'Install pyaedt'
