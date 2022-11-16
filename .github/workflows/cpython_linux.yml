@@ -44,7 +44,7 @@ jobs:
           ls -a
           cd Python-3.10.2
           ./configure --enable-optimizations
-          make altinstall
+          sudo make altinstall
           python3.10 -V
 
 
