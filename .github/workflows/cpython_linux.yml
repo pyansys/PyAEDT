@@ -43,8 +43,6 @@ jobs:
           python3 --version
           pip --version
 
-          sudo rm -rf "/apps/actions-runner/_work/pyaedt/pyaedt/Python-3.10.2
-
       - uses: actions/checkout@v3
       - name: 'Install pyaedt'
         run: |
