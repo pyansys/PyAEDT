@@ -42,7 +42,7 @@ jobs:
           sudo wget https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz
           sudo tar -xzf Python-3.10.2.tgz
           ls -a
-          cd Python 3.10.2
+          cd Python-3.10.2
           ./configure --enable-optimizations
           make altinstall
           python3.10 -V
