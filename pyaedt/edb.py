@@ -216,6 +216,7 @@ class Edb(object):
         self.simSetup = None
         self.simsetupdata = None
         self._setups = {}
+        self._layout_instance = None
         # time.sleep(2)
         # gc.collect()
 
@@ -708,6 +709,12 @@ class Edb(object):
         if self._active_cell:
             self._active_layout = self.active_cell.GetLayout()
         return self._active_layout
+
+    @property
+    def layout_instance(self):
+        if not self._layout_instance:
+            self._layout_instance = self.active_layout.GetLayoutInstance()
+        return self._layout_instance
 
     @property
     def pins(self):

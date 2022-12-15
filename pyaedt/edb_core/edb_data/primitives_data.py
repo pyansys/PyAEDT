@@ -32,6 +32,7 @@ class EDBPrimitives(object):
         self._core_stackup = core_app.stackup
         self._core_net = core_app.core_nets
         self.primitive_object = raw_primitive
+        self._object_instance = None
 
     @pyaedt_function_handler()
     def area(self, include_voids=True):
@@ -299,6 +300,17 @@ class EDBPrimitives(object):
         """
         return self.layer.GetName()
 
+    @property
+    def _layout_instance(self):
+        return self._app.layout_instance
+
+    @property
+    def object_instance(self):
+        """Edb Object Instance."""
+        if not self._object_instance:
+            self._object_instance = self._layout_instance.GetLayoutObjInstance(self.primitive_object, None)
+        return self._object_instance
+
     @layer_name.setter
     def layer_name(self, val):
         if val in self._core_stackup.stackup_layers.layers:
@@ -326,9 +338,10 @@ class EDBPrimitives(object):
         list
             Found connected objects IDs with Layout object.
         """
-        layoutInst = self.primitive_object.GetLayout().GetLayoutInstance()
-        layoutObjInst = layoutInst.GetLayoutObjInstance(self.primitive_object, None)  # 2nd arg was []
-        return [loi.GetLayoutObj().GetId() for loi in layoutInst.GetConnectedObjects(layoutObjInst).Items]
+        return [
+            loi.GetLayoutObj().GetId()
+            for loi in list(self._layout_instance.GetConnectedObjects(self.object_instance).Items)
+        ]
 
     @pyaedt_function_handler()
     def convert_to_polygon(self):

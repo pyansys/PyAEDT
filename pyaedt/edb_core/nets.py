@@ -975,8 +975,7 @@ class EdbNets(object):
                                 pass
                     elif len(disjoints) == 1 and (
                         isinstance(obj_dict[disjoints[0]], EDBPadstackInstance)
-                        or clean_disjoints_less_than
-                        and obj_dict[disjoints[0]].area() < clean_disjoints_less_than
+                        or (clean_disjoints_less_than and obj_dict[disjoints[0]].area() < clean_disjoints_less_than)
                     ):
                         try:
                             obj_dict[disjoints[0]].delete()
