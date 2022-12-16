@@ -307,8 +307,7 @@ class EDBPrimitives(object):
     @property
     def object_instance(self):
         """Edb Object Instance."""
-        if not self._object_instance:
-            self._object_instance = self._layout_instance.GetLayoutObjInstance(self.primitive_object, None)
+        self._object_instance = self._layout_instance.GetLayoutObjInstance(self.primitive_object, None)
         return self._object_instance
 
     @layer_name.setter
@@ -338,10 +337,10 @@ class EDBPrimitives(object):
         list
             Found connected objects IDs with Layout object.
         """
-        return [
-            loi.GetLayoutObj().GetId()
-            for loi in list(self._layout_instance.GetConnectedObjects(self.object_instance).Items)
-        ]
+        oinst = self.object_instance
+        if oinst:
+            return [loi.GetLayoutObj().GetId() for loi in list(self._layout_instance.GetConnectedObjects(oinst).Items)]
+        return []
 
     @pyaedt_function_handler()
     def convert_to_polygon(self):

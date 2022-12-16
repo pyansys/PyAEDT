@@ -919,8 +919,7 @@ class EDBPadstackInstance(object):
     @property
     def object_instance(self):
         """Edb Object Instance."""
-        if not self._object_instance:
-            self._object_instance = self._layout_instance.GetLayoutObjInstance(self._edb_padstackinstance, None)
+        self._object_instance = self._layout_instance.GetLayoutObjInstance(self._edb_padstackinstance, None)
         return self._object_instance
 
     @property
@@ -1593,7 +1592,8 @@ class EDBPadstackInstance(object):
         list
             Found connected objects IDs with Layout object.
         """
-        return [
-            loi.GetLayoutObj().GetId()
-            for loi in list(self._layout_instance.GetConnectedObjects(self.object_instance).Items)
-        ]
+        oinst = self.object_instance
+        if oinst:
+            return [loi.GetLayoutObj().GetId() for loi in list(self._layout_instance.GetConnectedObjects(oinst).Items)]
+        else:
+            return []
