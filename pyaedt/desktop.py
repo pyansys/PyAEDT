@@ -42,12 +42,14 @@ else:
 from pyaedt import __version__
 from pyaedt import pyaedt_function_handler
 from pyaedt import settings
+from pyaedt.generic.filesystem import create_toolkit_directory
 from pyaedt.generic.general_methods import _pythonver
 from pyaedt.generic.general_methods import com_active_sessions
 from pyaedt.generic.general_methods import grpc_active_sessions
 from pyaedt.generic.general_methods import inside_desktop
 from pyaedt.generic.general_methods import is_ironpython
 from pyaedt.misc import list_installed_ansysem
+from pyaedt.workbench.WBFlowAutomation import AutomateWB
 
 pathname = os.path.dirname(__file__)
 
@@ -437,6 +439,7 @@ class Desktop:
             sys.path.append(
                 os.path.join(self._main.sDesktopinstallDirectory, "common", "commonfiles", "IronPython", "DLLs")
             )
+        self._wb = None
 
     def __enter__(self):
         return self
@@ -1319,3 +1322,71 @@ class Desktop:
             return True
         except:
             return False
+
+    @pyaedt_function_handler()
+    def add_design_to_workbench(self, aedt_project_file, aedt_design_name=None, wb_project_name=None):
+        """Add the specified project in Workbench.
+        Same Workbench version as Electronics Desktop is used.
+
+        Parameters
+        ----------
+        aedt_project_file :
+            Electronics Desktop project file.
+            The AEDT project file, specified with full path, containing the design that will be
+            imported in Workbench.
+            The only supported design types are: HFSS, Maxwell 2D, Maxwell 3D, Q3D, Q3D 2D.
+
+        wb_project_name :
+            Workbench project name.
+            The Workbench project file is created in the same folder where the aedt project file is located.
+            If wb_project_name is ``None`` than the aedt project name is used.
+            The default is ``None``.
+
+        aedt_design_name :
+            HFSS design that will be imported in Workbench. If `None``, then the active design will be used.
+            The default is ``None``.
+
+
+
+        Returns
+        -------
+
+        """
+        self.logger.info("Adding project to Workbench")
+        self.logger.debug("Launch Workbench and Load WBMultiphysics.py and Mechanical Scripts")
+
+        # check the file
+        prjdir = os.path.dirname(aedt_project_file)
+        prjname = os.path.splitext(os.path.basename(aedt_project_file))[0]
+        if not os.path.isfile(aedt_project_file):
+            self.logger.error("The specified AEDT project file does not exist!")
+            return False
+        if os.path.exists(aedt_project_file + ".lock"):
+            self.logger.error("The specified AEDT project is locked! Please close the project.")
+            return False
+        # Set the wb project name
+        if wb_project_name:
+            wb_project_fullname = os.path.join(prjdir, wb_project_name + ".wbpj")
+        else:
+            wb_project_fullname = os.path.join(prjdir, prjname + ".wbpj")
+
+        # set the toolkit directory
+        toolkit_directory = create_toolkit_directory(aedt_project_file)
+
+        self._wb = AutomateWB(
+            project_fullname=wb_project_fullname,
+            results_path=toolkit_directory,
+            pictures_path=toolkit_directory,
+            WBGui=not settings.non_graphical,
+            MechGui=not settings.non_graphical,
+            hostname="localhost",
+            sWorkbenchVersion=settings.aedt_version,
+            useSC=True,
+            useDM=False,
+            materialHFSS=False,
+            AEDTproject_fullname=aedt_project_file,
+            GEOMproject_fullname=None,
+        )
+        self._wb.launch_workbench()
+        design_name = self.design_name if not aedt_design_name else aedt_design_name
+        self._wb.import_hfss(design_name)

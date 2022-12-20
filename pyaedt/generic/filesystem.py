@@ -5,6 +5,8 @@ import string
 from distutils.dir_util import copy_tree
 from glob import glob
 
+from pyaedt import settings
+
 
 def my_location():
     """ """
@@ -80,7 +82,8 @@ class Scratch:
         src_file : str
             Source File with fullpath
         dst_filename : str, optional
-            Optional destination filename with extensione
+            Destination filename with extension. If not provided attempt to copy the file
+            with the same name in the local scratch folder.
 
 
         Returns
@@ -134,10 +137,46 @@ def get_json_files(start_folder):
 
     Parameters
     ----------
-    start_folder, str
+    start_folder : str
         Path to the folder where the json files are located.
 
     Returns
     -------
     """
     return [y for x in os.walk(start_folder) for y in glob(os.path.join(x[0], "*.json"))]
+
+
+def create_toolkit_directory(project_fullname):
+    """Create the toolkit directory if not existent and return it.
+
+    Parameters
+    ----------
+    project_fullname : str
+        File name and path of the AEDT project file.
+
+    Returns
+    -------
+    str
+        Full absolute path for the ``pyaedt`` directory for this project.
+        If this directory does not exist, it is created.
+    """
+    project_path_and_name = os.path.normpath(os.path.splitext(project_fullname)[0])
+    project_name = os.path.splitext(os.path.basename(project_fullname))[0]
+    results_directory = project_path_and_name + ".aedtresults"
+
+    toolkit_directory = project_path_and_name + ".pyaedt"
+    if settings.remote_rpc_session:
+        toolkit_directory = toolkit_directory.replace("\\", "/")
+        try:
+            settings.remote_rpc_session.filemanager.makedirs(toolkit_directory)
+        except:
+            toolkit_directory = settings.remote_rpc_session.filemanager.temp_dir() + "/" + project_name + ".pyaedt"
+    elif settings.remote_api:
+        toolkit_directory = results_directory
+    elif not os.path.isdir(toolkit_directory):
+        try:
+            os.mkdir(toolkit_directory)
+        except FileNotFoundError:
+            toolkit_directory = results_directory
+
+    return toolkit_directory

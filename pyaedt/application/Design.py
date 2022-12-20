@@ -40,6 +40,7 @@ from pyaedt.desktop import release_desktop
 from pyaedt.generic.constants import AEDT_UNITS
 from pyaedt.generic.constants import unit_system
 from pyaedt.generic.DataHandlers import variation_string_to_dict
+from pyaedt.generic.filesystem import create_toolkit_directory
 from pyaedt.generic.general_methods import _retry_ntimes
 from pyaedt.generic.general_methods import generate_unique_name
 from pyaedt.generic.general_methods import is_ironpython
@@ -711,25 +712,7 @@ class Design(AedtObjects):
             Full absolute path for the ``pyaedt`` directory for this project.
             If this directory does not exist, it is created.
         """
-
-        toolkit_directory = os.path.join(self.project_path, self.project_name + ".pyaedt")
-        if settings.remote_rpc_session:
-            toolkit_directory = self.project_path + "/" + self.project_name + ".pyaedt"
-            try:
-                settings.remote_rpc_session.filemanager.makedirs(toolkit_directory)
-            except:
-                toolkit_directory = (
-                    settings.remote_rpc_session.filemanager.temp_dir() + "/" + self.project_name + ".pyaedt"
-                )
-        elif settings.remote_api:
-            toolkit_directory = self.results_directory
-        elif not os.path.isdir(toolkit_directory):
-            try:
-                os.mkdir(toolkit_directory)
-            except FileNotFoundError:
-                toolkit_directory = self.results_directory
-
-        return toolkit_directory
+        return create_toolkit_directory(self.project_file)
 
     @property
     def working_directory(self):
