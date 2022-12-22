@@ -3,6 +3,8 @@
 # Proprietary and confidential
 # flake8: noqa
 
+import sys
+
 
 class WBMultiphysics(object):
     """description of class"""
@@ -11,6 +13,7 @@ class WBMultiphysics(object):
         self,
         path,
         name,
+        pyaedt_path,
         AEDTproject_name=None,
         AEDTMatproject_name=None,
         GEOMproject_name=None,
@@ -26,6 +29,7 @@ class WBMultiphysics(object):
         self.PCB_name = PCB_name
         self.hfss_design_name = "HFSSDesign"
         self.hfssmaterial_design_name = "HFSSDesign 1"
+        sys.path.append(pyaedt_path.replace("\\", "/"))
 
     def import_hfss(self, design_name):
 

@@ -42,14 +42,14 @@ else:
 from pyaedt import __version__
 from pyaedt import pyaedt_function_handler
 from pyaedt import settings
-from pyaedt.generic.filesystem import create_toolkit_directory
+from pyaedt.generic.filesystem import pyaedt_dir
 from pyaedt.generic.general_methods import _pythonver
 from pyaedt.generic.general_methods import com_active_sessions
 from pyaedt.generic.general_methods import grpc_active_sessions
 from pyaedt.generic.general_methods import inside_desktop
 from pyaedt.generic.general_methods import is_ironpython
 from pyaedt.misc import list_installed_ansysem
-from pyaedt.workbench.WBFlowAutomation import AutomateWB
+from pyaedt.workbench.workbench import Workbench
 
 pathname = os.path.dirname(__file__)
 
@@ -439,7 +439,7 @@ class Desktop:
             sys.path.append(
                 os.path.join(self._main.sDesktopinstallDirectory, "common", "commonfiles", "IronPython", "DLLs")
             )
-        self._wb = None
+        self._workbench = None
 
     def __enter__(self):
         return self
@@ -1066,18 +1066,6 @@ class Desktop:
         return v
 
     @property
-    def src_dir(self):
-        """Python source directory.
-
-        Returns
-        -------
-        str
-            Full absolute path for the ``python`` directory.
-
-        """
-        return os.path.dirname(os.path.realpath(__file__))
-
-    @property
     def pyaedt_dir(self):
         """PyAEDT directory.
 
@@ -1087,7 +1075,7 @@ class Desktop:
            Full absolute path for the ``pyaedt`` directory.
 
         """
-        return os.path.realpath(os.path.join(self.src_dir, ".."))
+        return pyaedt_dir()
 
     def _exception(self, ex_value, tb_data):
         """Write the trace stack to AEDT when a Python error occurs.
@@ -1323,70 +1311,8 @@ class Desktop:
         except:
             return False
 
-    @pyaedt_function_handler()
-    def add_design_to_workbench(self, aedt_project_file, aedt_design_name=None, wb_project_name=None):
-        """Add the specified project in Workbench.
-        Same Workbench version as Electronics Desktop is used.
-
-        Parameters
-        ----------
-        aedt_project_file :
-            Electronics Desktop project file.
-            The AEDT project file, specified with full path, containing the design that will be
-            imported in Workbench.
-            The only supported design types are: HFSS, Maxwell 2D, Maxwell 3D, Q3D, Q3D 2D.
-
-        wb_project_name :
-            Workbench project name.
-            The Workbench project file is created in the same folder where the aedt project file is located.
-            If wb_project_name is ``None`` than the aedt project name is used.
-            The default is ``None``.
-
-        aedt_design_name :
-            HFSS design that will be imported in Workbench. If `None``, then the active design will be used.
-            The default is ``None``.
-
-
-
-        Returns
-        -------
-
-        """
-        self.logger.info("Adding project to Workbench")
-        self.logger.debug("Launch Workbench and Load WBMultiphysics.py and Mechanical Scripts")
-
-        # check the file
-        prjdir = os.path.dirname(aedt_project_file)
-        prjname = os.path.splitext(os.path.basename(aedt_project_file))[0]
-        if not os.path.isfile(aedt_project_file):
-            self.logger.error("The specified AEDT project file does not exist!")
-            return False
-        if os.path.exists(aedt_project_file + ".lock"):
-            self.logger.error("The specified AEDT project is locked! Please close the project.")
-            return False
-        # Set the wb project name
-        if wb_project_name:
-            wb_project_fullname = os.path.join(prjdir, wb_project_name + ".wbpj")
-        else:
-            wb_project_fullname = os.path.join(prjdir, prjname + ".wbpj")
-
-        # set the toolkit directory
-        toolkit_directory = create_toolkit_directory(aedt_project_file)
-
-        self._wb = AutomateWB(
-            project_fullname=wb_project_fullname,
-            results_path=toolkit_directory,
-            pictures_path=toolkit_directory,
-            WBGui=not settings.non_graphical,
-            MechGui=not settings.non_graphical,
-            hostname="localhost",
-            sWorkbenchVersion=settings.aedt_version,
-            useSC=True,
-            useDM=False,
-            materialHFSS=False,
-            AEDTproject_fullname=aedt_project_file,
-            GEOMproject_fullname=None,
-        )
-        self._wb.launch_workbench()
-        design_name = self.design_name if not aedt_design_name else aedt_design_name
-        self._wb.import_hfss(design_name)
+    @property
+    def workbench(self):
+        if self._workbench is None:
+            self._workbench = Workbench(self)
+        return self._workbench

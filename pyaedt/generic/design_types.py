@@ -545,7 +545,7 @@ app_map = {
 
 
 def get_pyaedt_app(project_name=None, design_name=None):
-    """Returns the Pyaedt Object of specific projec_name and design_name.
+    """Returns the Pyaedt Object of specific project_name and design_name.
 
     Parameters
     ----------

@@ -34,6 +34,7 @@ import time
 import traceback
 
 from pyaedt import pyaedt_logger
+from pyaedt.generic.filesystem import pyaedt_dir
 from pyaedt.workbench.WB2Client import WB2Client
 
 
@@ -1591,6 +1592,8 @@ oModule.ExportNetworkData(DesignVariations,
             + self.project_path
             + '","'
             + self.name
+            + '","'
+            + pyaedt_dir()
             + '","'
             + str(self.AEDTproject_name)
             + '","'

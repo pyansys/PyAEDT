@@ -180,28 +180,6 @@ class Siwave:
         return os.path.join(self.project_path, self.project_name + ".siwresults")
 
     @property
-    def src_dir(self):
-        """Source directory.
-
-        Returns
-        -------
-        str
-            Full absolute path to the ``python`` directory.
-        """
-        return os.path.dirname(os.path.realpath(__file__))
-
-    @property
-    def pyaedt_dir(self):
-        """PyAEDT directory.
-
-        Returns
-        -------
-        str
-            Full absolute path to the ``pyaedt`` directory.
-        """
-        return os.path.realpath(os.path.join(self.src_dir, ".."))
-
-    @property
     def oproject(self):
         """Project."""
         return self._oproject

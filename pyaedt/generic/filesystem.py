@@ -8,9 +8,15 @@ from glob import glob
 from pyaedt import settings
 
 
-def my_location():
-    """ """
-    return os.path.normpath(os.path.dirname(__file__))
+def pyaedt_dir():
+    """Return pyaedt package location
+
+    Returns
+    -------
+    str
+        Full absolute path for the ``pyaedt`` directory.
+    """
+    return os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
 
 
 def files_in_directory(path=".", ext=""):

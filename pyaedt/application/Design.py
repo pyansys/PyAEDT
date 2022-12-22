@@ -41,6 +41,7 @@ from pyaedt.generic.constants import AEDT_UNITS
 from pyaedt.generic.constants import unit_system
 from pyaedt.generic.DataHandlers import variation_string_to_dict
 from pyaedt.generic.filesystem import create_toolkit_directory
+from pyaedt.generic.filesystem import pyaedt_dir
 from pyaedt.generic.general_methods import _retry_ntimes
 from pyaedt.generic.general_methods import generate_unique_name
 from pyaedt.generic.general_methods import is_ironpython
@@ -187,19 +188,19 @@ class Design(AedtObjects):
         self._logger = pyaedt_logger
 
         if "pyaedt_initialized" not in dir(main_module):
-            desktop = Desktop(
-                specified_version,
-                non_graphical,
-                new_desktop_session,
-                close_on_exit,
-                student_version,
-                machine,
-                port,
-                aedt_process_id,
-            )
             self.release_on_exit = True
         else:
             self.release_on_exit = False
+        self.desktop = Desktop(
+            specified_version,
+            non_graphical,
+            new_desktop_session,
+            close_on_exit,
+            student_version,
+            machine,
+            port,
+            aedt_process_id,
+        )
 
         self.student_version = main_module.student_version
         if self.student_version:
@@ -654,18 +655,6 @@ class Design(AedtObjects):
         return self.odesktop.GetLibraryDirectory()
 
     @property
-    def src_dir(self):
-        """Source directory for Python.
-
-        Returns
-        -------
-        str
-            Full absolute path for the ``python`` directory.
-
-        """
-        return os.path.dirname(os.path.realpath(__file__))
-
-    @property
     def pyaedt_dir(self):
         """PyAEDT directory.
 
@@ -675,7 +664,7 @@ class Design(AedtObjects):
            Full absolute path for the ``pyaedt`` directory.
 
         """
-        return os.path.realpath(os.path.join(self.src_dir, ".."))
+        return pyaedt_dir()
 
     @property
     def library_list(self):
