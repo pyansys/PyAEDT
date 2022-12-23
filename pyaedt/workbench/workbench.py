@@ -28,11 +28,40 @@ class Workbench:
     def __init__(self, desktop):
         self._desktop = desktop
         self.logger = pyaedt_logger
+        self._wb = None
+
+    @pyaedt_function_handler()
+    def open_workbench(self, non_graphical=False):
+        """Open the Workbench application.
+        Same Workbench version as Electronics Desktop is used.
+
+        Parameters
+        ----------
+        non_graphical : bool, optional
+            Whether to launch Workbench in non-graphical mode.
+            The default is ``False``, in which case Workbench is launched in graphical mode.
+        """
+        msg = "non graphical" if non_graphical else "graphical"
+        self.logger.info("Opening Workbench in {} mode.".format(msg))
+
+        try:
+            self._wb = AutomateWB(
+                non_graphical=non_graphical,
+                hostname=None,
+                port_number=None,
+                workbench_version=settings.aedt_version,
+            )
+        except Exception as e:
+            # WB failed to initialize the class
+            raise e
+
+        return self._wb.launch_workbench()
 
     @pyaedt_function_handler()
     def add_design_to_workbench(self, aedt_project_file, aedt_design_name, wb_project_name=None):
         """Add the specified project in Workbench.
-        Same Workbench version as Electronics Desktop is used.
+
+        TO BE FINISHED!!!
 
         Parameters
         ----------
@@ -72,23 +101,7 @@ class Workbench:
             wb_project_fullname = os.path.join(prjdir, wb_project_name + ".wbpj")
         else:
             wb_project_fullname = os.path.join(prjdir, prjname + ".wbpj")
-
         # set the toolkit directory
         toolkit_directory = create_toolkit_directory(aedt_project_file)
 
-        self._wb = AutomateWB(
-            project_fullname=wb_project_fullname,
-            results_path=toolkit_directory,
-            pictures_path=toolkit_directory,
-            WBGui=not settings.non_graphical,
-            MechGui=not settings.non_graphical,
-            hostname="localhost",
-            sWorkbenchVersion=settings.aedt_version,
-            useSC=True,
-            useDM=False,
-            materialHFSS=False,
-            AEDTproject_fullname=aedt_project_file,
-            GEOMproject_fullname=None,
-        )
-        self._wb.launch_workbench()
         self._wb.import_hfss(aedt_design_name)

@@ -33,6 +33,7 @@ import time
 # import logging
 import traceback
 
+from pyaedt import pyaedt_function_handler
 from pyaedt import pyaedt_logger
 from pyaedt.generic.filesystem import pyaedt_dir
 from pyaedt.workbench.WB2Client import WB2Client
@@ -416,20 +417,7 @@ class ReportData(object):
         self._user_defined_deformation_report.append(DataAttr({"view": view, "position": position}))
 
 
-# def _find_free_port(port_start=50001, port_end=60000):
-#     list_ports = random.sample(range(port_start, port_end), port_end - port_start)
-#     s = socket.socket()
-#     for port in list_ports:
-#         try:
-#             s.connect((socket.getfqdn(), port))
-#         except socket.error:
-#             s.close()
-#             return port
-#         else:
-#             s.close()
-#     return 0
-
-
+@pyaedt_function_handler()
 def _port_is_free(port):
     """
     This method enables to check if a port is free before we serve on it
@@ -453,6 +441,7 @@ def _port_is_free(port):
     return port not in occupied_ports
 
 
+@pyaedt_function_handler()
 def _free_port_in_range(start, stop):
     if not isinstance(start, int) or not isinstance(stop, int):
         raise TypeError("start and stop must be integers.")
@@ -474,24 +463,26 @@ class AutomateWB:
 
     def __init__(
         self,
-        project_fullname,
-        results_path=None,
-        pictures_path=None,
-        WBGui=True,
-        MechGui=True,
-        hostname="localhost",
-        sWorkbenchVersion="2022.2",
+        non_graphical=False,
+        hostname=None,
+        port_number=None,
+        workbench_version="2022.2",
+        project_fullname="",
+        results_path="",
+        pictures_path="",
         useSC=True,
         useDM=False,
         materialHFSS=False,
-        AEDTproject_fullname=None,
-        GEOMproject_fullname=None,
-        TempMap_fullname=None,
-        PCB_fullname=None,
-        AEDTMatproject_fullname=None,
+        AEDTproject_fullname="",
+        GEOMproject_fullname="",
+        TempMap_fullname="",
+        PCB_fullname="",
+        AEDTMatproject_fullname="",
     ):
         self.logger = pyaedt_logger
-        values = sWorkbenchVersion.split(".")
+
+        # workbench_version is "2022.2", version_number is "222", self._env_version is "AWP_ROOT222"
+        values = workbench_version.split(".")
         version = int(values[0][2:])
         release = int(values[1])
         if version < 20:
@@ -500,17 +491,29 @@ class AutomateWB:
             else:
                 release += 2
         version_number = str(version) + str(release)
-        self.version = version_number
+        self._env_version = "AWP_ROOT" + version_number
+        if self._env_version not in os.environ:
+            self.logger.error("Workbench version {} is not installed on the system.".format(workbench_version))
+            raise Exception("Workbench version {} is not installed on the system.".format(workbench_version))
 
-        self.hostName = hostname
-        self.portNumber = _free_port_in_range(40001, 50000)
-        self.client = WB2Client(self.portNumber, self.hostName, WBGui, "AWP_ROOT" + self.version)
+        self.non_graphical = non_graphical
+        self.hostname = hostname if hostname is not None else "localhost"
+        self.port_number = port_number if port_number is not None else _free_port_in_range(40001, 50000)
+
+        self._client = WB2Client(self.hostname, self.port_number, self.non_graphical, self._env_version)
+        self.logger.debug(
+            "Workbench client initialized on {}:{}, graphical mode: {}, version: {}".format(
+                self.hostname, self.port_number, self.non_graphical, workbench_version
+            )
+        )
+
+        self.pid = None
+
         self._project_fullname = project_fullname
         self._results_path = results_path
         self._pictures_path = pictures_path
 
-        self.Gui = WBGui
-        self.MechGui = MechGui
+        self.MechGui = not non_graphical
         self.use_spaceclaim = useSC
         self.useDM = useDM
         self.materialHFSS = materialHFSS
@@ -529,6 +532,69 @@ class AutomateWB:
         self._GEOMproject_name = GEOMproject_fullname
         self._TempMap_name = TempMap_fullname
         self._PCB_name = PCB_fullname
+
+    @pyaedt_function_handler()
+    def launch_workbench(self):
+        self.logger.debug("Launching Workbench. This may take several seconds.")
+        client = self._client
+        pid = client.launch_workbench_in_server_mode()
+        if not isinstance(pid, int):
+            return False
+        self.load_wbcode()
+        return True
+
+    @pyaedt_function_handler()
+    def load_wbcode(self):
+        """
+        Most important function. It will load WBMultiphysics.py in WB, to use all its functions
+        If Mechanical will be used, it has to be called after the creation of the Mechanical script
+        """
+        self.logger.debug("Loading WB Code inside Workbench")
+        mypath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "WBMultiphysics.py")
+        res_ok = self._client.send_script_file(mypath)
+        if not res_ok:
+            return False
+        string = (
+            'WB=WBMultiphysics("'
+            + self.project_path
+            + '","'
+            + self.name
+            + '","'
+            + pyaedt_dir()
+            + '","'
+            + str(self.AEDTproject_name)
+            + '","'
+            + str(self.AEDTMatproject_name)
+            + '","'
+            + str(self.GEOMproject_name)
+            + '","'
+            + str(self.TempMap_name)
+            + '","'
+            + str(self.PCB_name)
+            + '") '
+        )
+        mssg = self.send_command(string, self._client)
+        parse_mssg = self.parse_string(mssg)
+        return parse_mssg
+
+    @pyaedt_function_handler()
+    def send_command(self, str, client):
+        """
+        Parse a Workbench Command. Updates the interface LOG UI
+        """
+        mssg = client.SendScriptStatement(str)
+        return mssg
+
+    @pyaedt_function_handler()
+    def parse_string(self, mssg):
+        """
+        Assert Workbench Command
+        """
+
+        if mssg == "<OK>":
+            return True
+        else:
+            return False
 
     @property
     def project_fullname(self):
@@ -644,7 +710,7 @@ class AutomateWB:
         Arguments:
         design_name (str) = design name of the HFSS module
         """
-        client = self.client
+        client = self._client
         self.logger.info("Simulating HFSS Project {}".format(design_name))
         string = "WB.analyze_hfss('" + str(design_name) + "')"
         mssg = self.send_command(string, client)
@@ -656,7 +722,7 @@ class AutomateWB:
         Get messages and clean message window
         :return:
         """
-        client = self.client
+        client = self._client
         string = "ClearMessagess()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -667,7 +733,7 @@ class AutomateWB:
         Close Workbench
         """
         self.logger.info("Closing Workbench")
-        client = self.client
+        client = self._client
         client.CloseWorkbench()
         time.sleep(3)
         return True
@@ -682,7 +748,7 @@ class AutomateWB:
         """
         self.logger.info("Creating Design Points for DX...")
 
-        client = self.client
+        client = self._client
         string = "inputVar=["
         for v in variables:
             string = string + chr(34) + str(v) + chr(34) + ","
@@ -746,7 +812,7 @@ class AutomateWB:
         parse_mssg5 = self.parse_string(mssg)
         mypath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "createDesignPoints.py")
         if os.path.exists(mypath):
-            self.client.SendScriptFile(mypath)
+            self._client.send_script_file(mypath)
 
         if parse_mssg1 and parse_mssg2 and parse_mssg3 and parse_mssg4 and parse_mssg5:
             parse_mssg = True
@@ -763,7 +829,7 @@ class AutomateWB:
         """
         self.logger.info("Creating Feedback Iterator")
 
-        client = self.client
+        client = self._client
         string = (
             "WB.setup_iterations("
             + str(numIterations)
@@ -789,7 +855,7 @@ class AutomateWB:
         """
         self.logger.info("Creating Structural Mechanical Design")
 
-        client = self.client
+        client = self._client
 
         string = "WB.create_structural_with_hfss()"
         mssg1 = self.send_command(string, client)
@@ -825,7 +891,7 @@ class AutomateWB:
         """
         self.logger.info("Creating Link Structural Setup to Temperature Map")
 
-        client = self.client
+        client = self._client
         string = "WB.link_setup_pcb2structural()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -837,7 +903,7 @@ class AutomateWB:
         """
         self.logger.info("Creating Link Structural Setup to Temperature Map")
 
-        client = self.client
+        client = self._client
         string = "WB.link_setup_temperaturemap2structural()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -849,7 +915,7 @@ class AutomateWB:
         """
         self.logger.info("Creating Structural Mechanical Design")
 
-        client = self.client
+        client = self._client
 
         string = "WB.create_structural_with_thermal()"
         mssg1 = self.send_command(string, client)
@@ -889,7 +955,7 @@ class AutomateWB:
         """
         self.logger.info("Creating Thermal Mechanical Design")
 
-        client = self.client
+        client = self._client
 
         string = "WB.create_thermal_with_hfss()"
         mssg1 = self.send_command(string, client)
@@ -1040,7 +1106,7 @@ class AutomateWB:
 
     def export_reports(self, dx, id, v, mat_name, outputdx, csvFileName):
         parse_mssg = []
-        client = self.client
+        client = self._client
         string = "pars=Parameters.GetAllParameters()"
         mssg = self.send_command(string, client)
         parse_mssg.append(self.parse_string(mssg))
@@ -1107,7 +1173,7 @@ class AutomateWB:
         YMarkerDB (number, optional) = dB of the Y marker
         """
 
-        client = self.client
+        client = self._client
 
         SavePath_Pictures = self.pictures_path
         SavePath_Results = self.results_path
@@ -1287,7 +1353,7 @@ oModule.ExportNetworkData(
         YMarkerDB (number, optional) = dB of the Y marker
         """
 
-        client = self.client
+        client = self._client
 
         SavePath_Pictures = jpgFileName
         SavePath_Results = self.results_path
@@ -1436,7 +1502,7 @@ oModule.ExportImageToFile(PlotName, jpgFileName, 0, 0)
         DesignVariations (str) = "ambient_temp=\'22cel\' powerin=\'100\'"
         """
 
-        client = self.client
+        client = self._client
 
         # set name for the python script
         ScriptFileName = self.results_path + "//" + "tmp-scriptHFSSWB.py"
@@ -1512,7 +1578,7 @@ oModule.ExportNetworkData(DesignVariations,
         Import an Step Project into Workbench without SCDM, using Design Modeler.
         Project name is predefined into the __init__
         """
-        client = self.client
+        client = self._client
         self.logger.info("Importing Step Project")
         string = "WB.import_dm()"
         mssg = self.send_command(string, client)
@@ -1523,7 +1589,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         Import External Data into Workbench. Project name is predefined into the __init__
         """
-        client = self.client
+        client = self._client
         self.logger.info("Importing External Data .fld")
         string = "WB.import_externaldata_fld()"
         mssg = self.send_command(string, client)
@@ -1534,7 +1600,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         Import External Data into Workbench. Project name is predefined into the __init__
         """
-        client = self.client
+        client = self._client
         self.logger.info("Importing External Data PCB")
         string = "WB.import_externaldata_pcb()"
         mssg = self.send_command(string, client)
@@ -1545,7 +1611,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         Import an HFSS (.aedt) Project into Workbench. Project name is predefined into the __init__
         """
-        client = self.client
+        client = self._client
         self.logger.info("Importing HFSS Project")
         string = "WB.import_hfss('" + str(design_name) + "')"
         mssg = self.send_command(string, client)
@@ -1557,7 +1623,7 @@ oModule.ExportNetworkData(DesignVariations,
         Import an second HFSS Project into Workbench to Update Engineering Data.
         Project name is predefined into the __init__, name of the project must be 'Material_*'
         """
-        client = self.client
+        client = self._client
         self.logger.info("Importing HFSS Project")
         string = "WB.import_material_hfss('" + str(design_name) + "')"
         mssg = self.send_command(string, client)
@@ -1568,60 +1634,18 @@ oModule.ExportNetworkData(DesignVariations,
         """
         Import an SCDM Project into Workbench. Project name is predefined into the __init__
         """
-        client = self.client
+        client = self._client
         self.logger.info("Importing SCDM Project")
         string = "WB.import_scdm()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
         return parse_mssg
 
-    def load_wbcode(self):
-        """
-        Most important function. It will load WBMultiphysics.py in WB, to use all its functions
-        If Mechanical will be used, it has to be called after the creation of the Mechanical script
-        """
-        self.logger.info("Loading WB Code")
-        client = self.client
-        mypath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "WBMultiphysics.py")
-        try:
-            client.SendScriptFile(mypath)
-        except Exception as e:
-            print(str(e))
-        string = (
-            'WB=WBMultiphysics("'
-            + self.project_path
-            + '","'
-            + self.name
-            + '","'
-            + pyaedt_dir()
-            + '","'
-            + str(self.AEDTproject_name)
-            + '","'
-            + str(self.AEDTMatproject_name)
-            + '","'
-            + str(self.GEOMproject_name)
-            + '","'
-            + str(self.TempMap_name)
-            + '","'
-            + str(self.PCB_name)
-            + '") '
-        )
-        mssg = self.send_command(string, client)
-        parse_mssg = self.parse_string(mssg)
-        return parse_mssg
-
-    def launch_workbench(self):
-        self.logger.info("Launching Workbench. This may take few minutes.")
-        client = self.client
-        pid = client.LaunchWorkbenchInServerMode()
-        self.load_wbcode()
-        return isinstance(pid, int)
-
     def open_project(self, filename):
         """
         Open an existing wbpj project
         """
-        client = self.client
+        client = self._client
 
         string = 'Open(FilePath="' + filename.replace("\\", "/") + '")'
         mssg1 = self.send_command(string, client)
@@ -1647,30 +1671,13 @@ oModule.ExportNetworkData(DesignVariations,
 
         return parse_mssg
 
-    def send_command(self, str, client):
-        """
-        Parse a Workbench Command. Updates the interface LOG UI
-        """
-        mssg = client.SendScriptStatement(str)
-        return mssg
-
-    def parse_string(self, mssg):
-        """
-        Assert Workbench Command
-        """
-
-        if mssg == "<OK>":
-            return True
-        else:
-            return False
-
     def remove_feedback_iterator(self):
         """
         Create Feedback iterator block and setup numIterations
         numIterations: integer with number of iterations
         design_name: HFSS Design name
         """
-        client = self.client
+        client = self._client
         self.logger.info("Remove Feedback Iterator")
         string = "WB.remove_iterations()"
         mssg = self.send_command(string, client)
@@ -1684,7 +1691,7 @@ oModule.ExportNetworkData(DesignVariations,
                         solution
         filenanme.js: is a javascript which setup the external load transfer from HFSS
         """
-        client = self.client
+        client = self._client
         string = "WB.run_report_script(" + str(True) + ")"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1697,7 +1704,7 @@ oModule.ExportNetworkData(DesignVariations,
                         solution
         filenanme.js: is a javascript which setup the external load transfer from HFSS
         """
-        client = self.client
+        client = self._client
         string = "WB.run_setup_script(" + str(self.MechGui) + ")"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1707,7 +1714,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         Save workbench project to filename
         """
-        client = self.client
+        client = self._client
         string = "Refresh()"
         mssg1 = self.send_command(string, client)
         parse_mssg1 = self.parse_string(mssg1)
@@ -1733,7 +1740,7 @@ oModule.ExportNetworkData(DesignVariations,
         self.logger.info("Closing Workbench")
 
         # Save
-        client = self.client
+        client = self._client
         string = "Save(Overwrite=True)"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1747,7 +1754,7 @@ oModule.ExportNetworkData(DesignVariations,
         save the project with the specific input name
         name: string
         """
-        client = self.client
+        client = self._client
         string = 'Save(FilePath="' + filename.replace("\\", "/") + '", Overwrite=True)'
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1763,7 +1770,7 @@ oModule.ExportNetworkData(DesignVariations,
         Save workbench project to filename
         """
 
-        client = self.client
+        client = self._client
         if not csv_fullname:
             Filename = os.path.join(self.results_path, "{0}.csv".format(self.name + "_out"))
         elif os.path.splitext(csv_fullname)[1] != ".csv":
@@ -1786,7 +1793,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         self.logger.info("Creating the Final Engineering Data")
 
-        client = self.client
+        client = self._client
         string = "WB.modify_structural_ed()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1798,7 +1805,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         self.logger.info("Updating the Mesh after Structural Setup")
 
-        client = self.client
+        client = self._client
         string = "WB.modify_structural_mesh()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1810,7 +1817,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         self.logger.info("Updating the Mesh after Structural Setup")
 
-        client = self.client
+        client = self._client
         string = "WB.modify_structural_setup()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1822,7 +1829,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         self.logger.info("Updating the Setup")
 
-        client = self.client
+        client = self._client
         string = "WB.modify_thermal_setup()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1834,7 +1841,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         self.logger.info("Updating the Setup")
 
-        client = self.client
+        client = self._client
         string = "WB.modify_thermal_solution()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1846,7 +1853,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         self.logger.info("Creating the Final Engineering Data")
 
-        client = self.client
+        client = self._client
         string = "WB.modify_thermal_ed()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1858,7 +1865,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         self.logger.info("Updating the Setup")
 
-        client = self.client
+        client = self._client
         string = "WB.modify_structuralthermal_setup()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1870,7 +1877,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         self.logger.info("Updating the Setup")
 
-        client = self.client
+        client = self._client
         string = "WB.modify_structuralthermal_solution()"
         mssg = self.send_command(string, client)
         parse_mssg = self.parse_string(mssg)
@@ -1880,7 +1887,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         Unarchive a project and Save as with wbpj extension
         """
-        client = self.client
+        client = self._client
         unzipped_name = os.path.splitext(path)[0] + ".wbpj"
         string = 'Unarchive(ArchivePath="' + path + '",' + 'ProjectPath="' + unzipped_name + '",' + "Overwrite=True)"
         mssg = self.send_command(string, client)
@@ -1891,7 +1898,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         Update WB project
         """
-        client = self.client
+        client = self._client
         self.logger.info("Launching Simulation...")
 
         string = "Refresh()"
@@ -1912,7 +1919,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         Update all design points in WB project
         """
-        client = self.client
+        client = self._client
         self.logger.info("Updating All Design Points")
         string = "backgroundSession1 = UpdateAllDesignPoints()"
         mssg = self.send_command(string, client)
@@ -1923,7 +1930,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         Update an HFSS Project into Workbench. Project name is predefined into the __init__
         """
-        client = self.client
+        client = self._client
         self.logger.info("Importing HFSS Project")
         string = "WB.update_hfss()"
         mssg = self.send_command(string, client)
@@ -1935,7 +1942,7 @@ oModule.ExportNetworkData(DesignVariations,
         Update Feedback iterator block and setup new numIterations
         numIterations: integer with number of iterations
         """
-        client = self.client
+        client = self._client
         self.logger.info("Updating Feedback Iterator")
         string = "WB.update_iterations(" + str(numIterations) + "," + str(deltaT) + "," + str(deltaD) + ")"
         mssg = self.send_command(string, client)
@@ -1983,7 +1990,7 @@ oModule.ExportNetworkData(DesignVariations,
         variables: list of variable names
         values: list of arrays of values
         """
-        client = self.client
+        client = self._client
         string = 'par = Parameters.CreateParameter(IsOutput=False,DisplayText="' + variable + '")'
         self.parse_string(string, client)
 
@@ -1996,7 +2003,7 @@ oModule.ExportNetworkData(DesignVariations,
         VariationsArray (list) = list of Parameter Variables defined in designXplorerInput
         YMarkerDB (number, optional) = dB of the Y marker
         """
-        client = self.client
+        client = self._client
 
         ProjectPath = self.project_path.replace("//", "/")
         psplit = ProjectPath.strip("/").split("/")
@@ -2031,7 +2038,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         self.logger.info("Creating Thermal and Structural Mechanical Design")
 
-        client = self.client
+        client = self._client
         string = "WB.createStruct()"
         self.parse_string(string, client)
         pass
@@ -2042,7 +2049,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
         self.logger.info("Cleaning intersections in SpaceClaim")
 
-        client = self.client
+        client = self._client
         string = "WB.cleanintersectionsinSpaceClaim()"
         self.parse_string(string, client)
         pass
@@ -2065,7 +2072,7 @@ oModule.ExportNetworkData(DesignVariations,
         """
 
         # from WB2Client import *
-        client = self.client
+        client = self._client
 
         # set name for the python script
         ScriptFileName = os.path.join(self.results_path, "tmp-scriptHFSSWB.py")
@@ -2162,7 +2169,7 @@ oModule.ExportNetworkData(DesignVariations,
         Create Feedback iterator block and setup numIterations
         numIterations: integer with number of iterations
         """
-        client = self.client
+        client = self._client
         string = "inppars=Parameters.GetAllConstantInputParameters()"
         self.parse_string(string, client)
         string = 'parameter1=""'
