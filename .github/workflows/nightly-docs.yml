@@ -36,6 +36,19 @@ jobs:
         run: |
           make -C doc phtml
 
+      - name: "Zip HTML documentation"
+        uses: vimtor/action-zip@v1.1
+        with:
+          files: doc/_build/html
+          dest: documentation-html.zip
+
+      - name: Upload documentation HTML artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Documentation
+          path: documentation-html.zip
+          retention-days: 7
+
       - name: Upload documentation HTML artifact
         uses: actions/upload-artifact@v3
         with:
