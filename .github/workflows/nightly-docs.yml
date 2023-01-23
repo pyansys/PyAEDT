@@ -56,7 +56,7 @@ jobs:
       #     retention-days: 7
 
       - name: Deploy development documentation
-        uses: pyansys/actions/doc-deploy-dev@v2
+        uses: pyansys/actions/doc-deploy-dev@v3
         with:
           doc-artifact-name: documentation
           decompress_artifact: true
