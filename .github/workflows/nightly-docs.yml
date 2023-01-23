@@ -39,31 +39,26 @@ jobs:
       - name: Zip HTML Documentation before upload
         run: |
           sudo apt install zip -y
-          zip -r documentation-html.zip doc/_build/html
+          zip -r documentation.zip doc/_build/html
 
       - name: Upload documentation HTML artifact
         uses: actions/upload-artifact@v3
         with:
-          name: Documentation
-          path: documentation-html.zip
+          name: documentation
+          path: documentation.zip
           retention-days: 7
 
-      - name: Upload documentation HTML artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: documentation-html
-          path: doc/_build/html
-          retention-days: 7
-
-  docs_upload:
-    needs: docs_build
-    runs-on: ubuntu-latest
-    steps:
+      # - name: Upload documentation HTML artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: documentation-html
+      #     path: doc/_build/html
+      #     retention-days: 7
 
       - name: Deploy development documentation
-        uses: pyansys/actions/doc-deploy-dev@v3
+        uses: pyansys/actions/doc-deploy-dev@v2
         with:
-          doc-artifact-name: Documentation
+          doc-artifact-name: documentation
           decompress_artifact: true
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
