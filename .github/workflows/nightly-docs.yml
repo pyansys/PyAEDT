@@ -41,6 +41,11 @@ jobs:
           sudo apt install zip -y
           zip -r doc.zip doc/_build/html
 
+  docs_upload:
+    needs: docs_build
+    runs-on: ubuntu-latest
+    steps:
+
       - name: Upload documentation HTML artifact
         uses: actions/upload-artifact@v3
         with:
