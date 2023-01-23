@@ -171,7 +171,7 @@ class EdbHfss(object):
         Returns
         -------
         str
-            Source Name
+            Source Name.
 
         Examples
         --------
@@ -282,7 +282,7 @@ class EdbHfss(object):
         Returns
         -------
         str
-            Port Name
+            The name of the port.
 
         Examples
         --------
@@ -333,7 +333,7 @@ class EdbHfss(object):
         Returns
         -------
         str
-            Source Name
+            Source Name.
 
         Examples
         --------
@@ -482,7 +482,7 @@ class EdbHfss(object):
             Coordinate of the point to define the edge terminal.
             The point must be close to the target edge but not on the two
             ends of the edge.
-        port_name :  str, optional
+        port_name : str, optional
             Name of the port. The default is ``None``.
         horizontal_extent_factor : int, float, optional
             Horizontal extent factor. The default value is ``5``.
@@ -494,7 +494,7 @@ class EdbHfss(object):
         Returns
         -------
         tuple
-            port_name, pyaedt.edb_core.edb_data.sources.ExcitationDifferential
+            The tuple contains: (port_name, pyaedt.edb_core.edb_data.sources.ExcitationDifferential).
 
         Examples
         --------
@@ -692,7 +692,7 @@ class EdbHfss(object):
         Returns
         -------
         tuple
-            Port name, pyaedt.edb_core.edb_data.sources.Excitation
+            The tuple contains: (Port name, pyaedt.edb_core.edb_data.sources.Excitation).
 
         Examples
         --------

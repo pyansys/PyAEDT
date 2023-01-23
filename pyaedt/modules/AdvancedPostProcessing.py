@@ -100,7 +100,7 @@ class PostProcessor(Post):
         Returns
         -------
         np.ndarray
-            numpy array containing ``[theta_range, phi_range, Etheta, Ephi]``.
+            Numpy array containing ``[theta_range, phi_range, Etheta, Ephi]``.
         """
         if not setup_sweep_name:
             setup_sweep_name = self._app.nominal_adaptive

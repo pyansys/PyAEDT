@@ -185,8 +185,8 @@ class EDBPrimitives(object):
 
         Returns
         -------
-        list, list
-            x and y list of points.
+        tuple
+            The tuple contains 2 lists made of X and Y points coordinates.
         """
         try:
             my_net_points = list(self.primitive_object.GetPolygonData().Points)
@@ -314,7 +314,7 @@ class EDBPrimitives(object):
 
     @pyaedt_function_handler()
     def delete(self):
-        """Delete this primtive."""
+        """Delete this primitive."""
         return self.primitive_object.Delete()
 
     @pyaedt_function_handler()
@@ -595,3 +595,320 @@ class EDBPrimitives(object):
                 except AttributeError:
                     continue
         return new_polys
+
+    @property
+    def polygon_data(self):
+        """Get the Primitive Polygon data object."""
+        return self.primitive_object.GetPolygonData()
+
+    @pyaedt_function_handler()
+    def intersection_type(self, primitive):
+        """Get intersection type between actual primitive and another primitive or polygon data.
+
+        Parameters
+        ----------
+        primitive : :class:`pyaeedt.edb_core.edb_data.primitives_data.EDBPrimitives` or `PolygonData`
+
+        Returns
+        -------
+        int
+            Intersection type:
+            0 - objects do not intersect,
+            1 - this object fully inside other (no common contour points),
+            2 - other object fully inside this,
+            3 - common contour points,
+            4 - undefined intersection.
+        """
+        poly = primitive
+        if isinstance(primitive, EDBPrimitives):
+            poly = primitive.polygon_data
+        return int(self.polygon_data.GetIntersectionType(poly))
+
+    @pyaedt_function_handler()
+    def is_intersecting(self, primitive):
+        """Check if actual primitive and another primitive or polygon data intesects.
+
+        Parameters
+        ----------
+        primitive : :class:`pyaeedt.edb_core.edb_data.primitives_data.EDBPrimitives` or `PolygonData`
+
+        Returns
+        -------
+        bool
+        """
+        return True if self.intersection_type(primitive) >= 1 else False
+
+    @pyaedt_function_handler()
+    def get_closest_point(self, point):
+        """Get the closest point of the primitive to the input data.
+
+        Parameters
+        ----------
+        point : list of float or PointData
+
+        Returns
+        -------
+        list of float
+        """
+        if isinstance(point, list):
+            point = self._app.edb.Geometry.PointData(self._app.edb_value(point[0]), self._app.edb_value(point[1]))
+
+        p0 = self.polygon_data.GetClosestPoint(point)
+        return [p0.X.ToDouble(), p0.Y.ToDouble()]
+
+    @pyaedt_function_handler()
+    def get_closest_arc_midpoint(self, point):
+        """Get the closest arc midpoint of the primitive to the input data.
+
+        Parameters
+        ----------
+        point : list of float or PointData
+
+        Returns
+        -------
+        list of float
+        """
+        if isinstance(point, self._app.edb.Geometry.PointData):
+            point = [point.X.ToDouble(), point.Y.ToDouble()]
+        dist = 1e12
+        out = None
+        for arc in self.arcs:
+            mid_point = arc.mid_point
+            mid_point = [mid_point.X.ToDouble(), mid_point.Y.ToDouble()]
+            if GeometryOperators.points_distance(mid_point, point) < dist:
+                out = arc.mid_point
+                dist = GeometryOperators.points_distance(mid_point, point)
+        return [out.X.ToDouble(), out.Y.ToDouble()]
+
+    @property
+    def arcs(self):
+        """Get the Primitive Arc Data."""
+        arcs = []
+        if self.polygon_data.IsClosed():
+            arcs = [EDBArcs(self, i) for i in list(self.polygon_data.GetArcData())]
+        return arcs
+
+    @property
+    def longest_arc(self):
+        """Get the longest arc."""
+        len = 0
+        arc = None
+        for i in self.arcs:
+            if i.is_segment and i.length > len:
+                arc = i
+                len = i.length
+        return arc
+
+    @property
+    def shortest_arc(self):
+        """Get the longest arc."""
+        len = 1e12
+        arc = None
+        for i in self.arcs:
+            if i.is_segment and i.length < len:
+                arc = i
+                len = i.length
+        return arc
+
+    @pyaedt_function_handler()
+    def in_polygon(
+        self,
+        point_data,
+        include_partial=True,
+    ):
+        """Check if padstack Instance is in given polygon data.
+
+        Parameters
+        ----------
+        point_data : PointData Object or list of float
+        include_partial : bool, optional
+            Whether to include partial intersecting instances. The default is ``True``.
+
+        Returns
+        -------
+        bool
+            ``True`` when successful, ``False`` when failed.
+        """
+        if isinstance(point_data, list):
+            point_data = self._app.edb.Geometry.PointData(
+                self._app.edb_value(point_data[0]), self._app.edb_value(point_data[1])
+            )
+        int_val = int(self.polygon_data.PointInPolygon(point_data))
+
+        # Intersection type:
+        # 0 = objects do not intersect
+        # 1 = this object fully inside other (no common contour points)
+        # 2 = other object fully inside this
+        # 3 = common contour points 4 = undefined intersection
+        if int_val == 0:
+            return False
+        elif include_partial:
+            return True
+        elif int_val < 3:
+            return True
+        else:
+            return False
+
+    @pyaedt_function_handler
+    def clone(self):
+        """Clone a primitive object with keeping same definition and location.
+
+        Returns
+        -------
+        bool
+            ``True`` when successful, ``False`` when failed.
+        """
+        if self.type == "Path":
+            center_line = self.primitive_object.GetCenterLine()
+            width = self.primitive_object.GetWidthValue()
+            corner_style = self.primitive_object.GetCornerStyle()
+            end_cap_style = self.primitive_object.GetEndCapStyle()
+            cloned_path = self._app.edb.Cell.Primitive.Path.Create(
+                self._app.active_layout,
+                self.layer_name,
+                self.net,
+                width,
+                end_cap_style[1],
+                end_cap_style[2],
+                corner_style,
+                center_line,
+            )
+            if cloned_path:
+                # forcing primitives dictionary update
+                self._app.core_primitives.primitives  # pragma no cover
+                return cloned_path
+        cloned_poly = self._app.edb.Cell.Primitive.Polygon.Create(
+            self._app.active_layout, self.layer_name, self.net, self.polygon_data
+        )
+        if cloned_poly:
+            # forcing primitives dictionary update
+            self._app.core_primitives.primitives  # pragma no cover
+            return cloned_poly
+        return False
+
+
+class EDBArcs(object):
+    """Manages EDB Arc Data functionalities.
+    It Inherits EDB primitives arcs properties.
+
+    Examples
+    --------
+    >>> from pyaedt import Edb
+    >>> edb = Edb(myedb, edbversion="2021.2")
+    >>> prim_arcs = edb.core_primitives.primitives[0].arcs
+    >>> prim_arcs.center # arc center
+    >>> prim_arcs.points # arc point list
+    >>> prim_arcs.mid_point # arc mid point
+    """
+
+    def __init__(self, app, arc):
+        self._app = app
+        self.arc_object = arc
+
+    @property
+    def center(self):
+        """Arc center.
+
+        Returns
+        -------
+        list
+        """
+        cent = self.arc_object.GetCenter()
+        return [cent.X.ToDouble(), cent.Y.ToDouble()]
+
+    @property
+    def length(self):
+        """Arc length.
+
+        Returns
+        -------
+        float
+        """
+        return self.arc_object.GetLength()
+
+    @property
+    def mid_point(self):
+        """Arc mid point.
+
+        Returns
+        -------
+        float
+        """
+        return self.arc_object.GetMidPoint()
+
+    @property
+    def radius(self):
+        """Arc radius.
+
+        Returns
+        -------
+        float
+        """
+        return self.arc_object.GetRadius()
+
+    @property
+    def is_segment(self):
+        """Either if it is a straight segment or not.
+
+        Returns
+        -------
+        bool
+        """
+        return self.arc_object.IsSegment()
+
+    @property
+    def is_point(self):
+        """Either if it is a point or not.
+
+        Returns
+        -------
+        bool
+        """
+        return self.arc_object.IsPoint()
+
+    @property
+    def is_ccw(self):
+        """Test whether arc is counter clockwise.
+
+        Returns
+        -------
+        bool
+        """
+        return self.arc_object.IsCCW()
+
+    @property
+    def points_raw(self):
+        """Return a list of Edb points.
+
+        Returns
+        -------
+        list
+            Edb Points.
+        """
+        return list(self.arc_object.GetPointData())
+
+    @property
+    def points(self, arc_segments=6):
+        """Return the list of points with arcs converted to segments.
+
+        Parameters
+        ----------
+        arc_segments : int
+            Number of facets to convert an arc. Default is `6`.
+
+        Returns
+        -------
+        list, list
+            x and y list of points.
+        """
+        try:
+            my_net_points = self.points_raw
+            xt, yt = self._app._get_points_for_plot(my_net_points, arc_segments)
+            if not xt:
+                return []
+            x, y = GeometryOperators.orient_polygon(xt, yt, clockwise=True)
+            return x, y
+        except:
+            x = []
+            y = []
+        return x, y

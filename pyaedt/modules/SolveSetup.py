@@ -213,7 +213,7 @@ class Setup(CommonSetup):
         Returns
         -------
         bool
-            `True` if setup is deleted. `False` if it failed.
+            ``True`` if setup is deleted. ``False`` if it failed.
         """
 
         self.omodule.DeleteSetups([self.name])
@@ -1403,7 +1403,7 @@ class SetupHFSS(Setup, object):
         Setup.__init__(self, app, solutiontype, setupname, isnewsetup)
 
     @pyaedt_function_handler()
-    def get_derivative_varibles(self):
+    def get_derivative_variables(self):
         """Return Derivative Enabled variables.
 
         Returns
@@ -1437,7 +1437,7 @@ class SetupHFSS(Setup, object):
         if not isinstance(derivative_list, list):
             derivative_list = [derivative_list]
         self.auto_update = False
-        self.props["VariablesForDerivatives"] = derivative_list + self.get_derivative_varibles()
+        self.props["VariablesForDerivatives"] = derivative_list + self.get_derivative_variables()
         self.auto_update = True
         return self.update()
 

@@ -1,14 +1,14 @@
 """
 General: configuration files
 ----------------------------
-This example shows how you can use PyAEDT to export configuration files and reuse
-them to import in a new project. A configuration file is supported by these apps:
+This example shows how you can use PyAEDT to export configuration files and re-use
+them to import in a new project. A configuration file is supported by these applications:
 
 * HFSS
 * 2D Extractor and Q3D Extractor
 * Maxwell
-* Icepak
-* Mechanical
+* Icepak (in AEDT)
+* Mechanical (in AEDT)
 
 The following sections are covered:
 
@@ -91,7 +91,7 @@ ipk.save_project(r"C:\temp\Graphic_card.aedt")
 
 filename = ipk.design_name
 file_path = os.path.join(ipk.working_directory, filename + ".step")
-ipk.export_3d_model(filename=filename, filePath=ipk.working_directory, fileFormat=".step", object_list=[],
+ipk.export_3d_model(file_name=filename, file_path=ipk.working_directory, file_format=".step", object_list=[],
                     removed_objects=[])
 
 ###############################################################################

@@ -1210,6 +1210,36 @@ class Stackup(object):
 
         return True
 
+    @pyaedt_function_handler
+    def residual_copper_area_per_layer(self):
+        """Report residual copper area per layer in percentage.
+
+        Returns
+        -------
+        dict
+            Copper area per layer.
+
+        Examples
+        --------
+        >>> edb = Edb(edbpath=targetfile1,  edbversion="2021.2")
+        >>> edb.stackup.residual_copper_area_per_layer()
+        """
+        temp_data = {name: 0 for name, _ in self.signal_layers.items()}
+        outline_area = 0
+        for i in self._pedb.core_primitives.primitives:
+            layer_name = i.GetLayer().GetName()
+            if layer_name.lower() == "outline":
+                if i.area() > outline_area:
+                    outline_area = i.area()
+            elif layer_name not in temp_data:
+                continue
+            elif not i.is_void:
+                temp_data[layer_name] = temp_data[layer_name] + i.area()
+            else:
+                pass
+        temp_data = {name: area / outline_area * 100 for name, area in temp_data.items()}
+        return temp_data
+
 
 class EdbStackup(object):
     """Manages EDB methods for stackup and material management accessible from the
@@ -1475,7 +1505,7 @@ class EdbStackup(object):
     @pyaedt_function_handler()
     def duplicate_material(self, material_name, new_material_name):
         """Duplicate a material from the database.
-        It duplicates these five properties: ``permittivity``, ``permeability``, ` conductivity,``
+        It duplicates these five properties: ``permittivity``, ``permeability``, ``conductivity``,
         ``dielectriclosstangent``, and ``magneticlosstangent``.
 
         .. deprecated:: 0.6.27
@@ -1548,7 +1578,7 @@ class EdbStackup(object):
         Returns
         -------
         float
-            the float value of the property.
+            The float value of the property.
 
 
         Examples

@@ -2085,7 +2085,7 @@ class Material(CommonMaterial, object):
         Returns
         -------
         tuple
-            Tuple of (Magnitude, x, y, z)
+            Tuple of (Magnitude, x, y, z).
         """
         if "magnetic_coercivity" in self._props:
             return (

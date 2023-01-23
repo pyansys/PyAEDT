@@ -323,7 +323,7 @@ class UserDefinedComponent(object):
         Returns
         -------
         dict
-            :class:`pyaedt.modeler.cad.components_3d.UserDefinedComponentParameters
+            :class:`pyaedt.modeler.cad.components_3d.UserDefinedComponentParameters`.
 
         References
         ----------

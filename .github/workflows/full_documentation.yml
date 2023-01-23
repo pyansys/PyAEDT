@@ -96,7 +96,7 @@ jobs:
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
     steps:
       - name: "Deploy the stable documentation"
-        uses: pyansys/actions/doc-deploy-stable@v2
+        uses: pyansys/actions/doc-deploy-stable@v3
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}

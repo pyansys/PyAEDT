@@ -58,6 +58,8 @@ class ConfigurationsOptions(object):
         # self._export_face_coordinate_systems = False
         self._export_materials = True
         self._export_object_properties = True
+        self._export_datasets = True
+        self._import_datasets = True
         self._import_variables = True
         self._import_setups = True
         self._import_optimizations = True
@@ -183,6 +185,36 @@ class ConfigurationsOptions(object):
     @export_boundaries.setter
     def export_boundaries(self, val):
         self._export_boundaries = val
+
+    @property
+    def import_datasets(self):
+        """Define if datasets have to be imported from json file. Default is `True`.
+
+        Returns
+        -------
+        bool
+
+        """
+        return self._import_datasets
+
+    @import_datasets.setter
+    def import_datasets(self, val):
+        self._import_datasets = val
+
+    @property
+    def export_datasets(self):
+        """Define if datasets have to be exported to json file. Default is `True`.
+
+        Returns
+        -------
+        bool
+
+        """
+        return self._export_datasets
+
+    @export_datasets.setter
+    def export_datasets(self, val):
+        self._export_datasets = val
 
     @property
     def export_mesh_operations(self):
@@ -586,9 +618,11 @@ class ImportResults(object):
         self.import_mesh_operations = None
         self.import_coordinate_systems = None
         self.import_face_coordinate_systems = None
-        self.import_datasets = None
+        self.import_material_datasets = None
         self.import_materials = None
         self.import_object_properties = None
+        self.import_monitor = None
+        self.import_datasets = None
 
     @pyaedt_function_handler()
     def _reset_results(self):
@@ -706,6 +740,7 @@ class Configurations(object):
             cs._modeler.oeditor.CreateRelativeCS(cs._orientation, cs._attributes)
             cs.ref_cs = props["Reference CS"]
             cs.update()
+            self._app.modeler.coordinate_systems.insert(0, cs)
             self._app.logger.info("Coordinate System {} added.".format(name))
             return True
         except Exception:
@@ -896,6 +931,25 @@ class Configurations(object):
             return False
 
     @pyaedt_function_handler()
+    def _update_datasets(self, name, data_dict):
+        is_project_dataset = False
+        if name.startswith("$"):
+            is_project_dataset = True
+        if name not in self._app.project_datasets.keys() or name not in self._app.design_datasets.keys():
+            self._app.create_dataset(
+                name,
+                data_dict["x"],
+                data_dict["y"],
+                data_dict["z"],
+                data_dict["v"],
+                is_project_dataset,
+                data_dict["xunit"],
+                data_dict["yunit"],
+                data_dict["zunit"],
+                data_dict["vunit"],
+            )
+
+    @pyaedt_function_handler()
     def import_config(self, config_file):
         """Import configuration settings from a json file and apply it to the current design.
         The sections to be applied are defined with ``configuration.options`` class.
@@ -939,9 +993,9 @@ class Configurations(object):
             else:
                 self.results.import_postprocessing_variables = True
 
-        if self.options.import_materials and dict_in.get("datasets", None):
+        if self.options.import_materials and dict_in.get("material datasets", None):
             self.results.import_datasets = True
-            for el, val in dict_in["datasets"].items():
+            for el, val in dict_in["material datasets"].items():
                 numcol = len(val["Coordinates"]["DimUnits"])
                 xunit = val["Coordinates"]["DimUnits"][0]
                 yunit = val["Coordinates"]["DimUnits"][1]
@@ -960,7 +1014,7 @@ class Configurations(object):
                 if not self._app.create_dataset(
                     el[1:], xunit=xunit, yunit=yunit, zunit=zunit, xlist=xval, ylist=yval, zlist=zval
                 ):
-                    self.results.import_datasets = False
+                    self.results.import_material_datasets = False
 
         if self.options.import_materials and dict_in.get("materials", None):
             self.results.import_materials = True
@@ -995,6 +1049,11 @@ class Configurations(object):
                 if not self._update_object_properties(obj, val):
                     self.results.import_object_properties = False
             self._app.logger.info("Object Properties updated.")
+
+        if self.options.import_datasets and dict_in.get("datasets", None):
+            self.results.import_datasets = True
+            for k, v in dict_in["datasets"].items():
+                self._update_datasets(k, v)
 
         if self.options.import_boundaries and dict_in.get("boundaries", None):
             self.results.import_boundaries = True
@@ -1133,6 +1192,37 @@ class Configurations(object):
                 self._map_object(mesh.props, dict_out)
 
     @pyaedt_function_handler()
+    def _export_datasets(self, dict_out):
+        if self._app.project_datasets or self._app.design_datasets:
+            if dict_out.get("datasets", None) is None:
+                dict_out["datasets"] = {}
+            for dataset_dict in [self._app.project_datasets, self._app.design_datasets]:
+                for k, obj in dataset_dict.items():
+                    if k not in dict_out.get("material datasets", []):
+                        dict_out["datasets"][k] = {
+                            "v": obj.v,
+                            "vunit": obj.vunit,
+                            "x": obj.x,
+                            "xunit": obj.xunit,
+                            "y": obj.y,
+                            "yunit": obj.yunit,
+                            "z": obj.z,
+                            "zunit": obj.zunit,
+                        }
+
+    @pyaedt_function_handler()
+    def _export_monitor(self, dict_out):
+        dict_monitor = {}
+        if self._app.monitor.all_monitors != {}:
+            for mon_name in self._app.monitor.all_monitors:
+                dict_monitor[mon_name] = {
+                    key: val
+                    for key, val in self._app.monitor.all_monitors[mon_name].properties.items()
+                    if key not in ["Name", "Object"]
+                }
+        dict_out["monitor"] = dict_monitor
+
+    @pyaedt_function_handler()
     def _export_materials(self, dict_out):
         output_dict = {}
         for el, val in self._app.materials.material_keys.items():
@@ -1162,7 +1252,7 @@ class Configurations(object):
 
         dict_out["materials"] = output_dict
         if datasets:
-            dict_out["datasets"] = datasets
+            dict_out["material datasets"] = datasets
 
     @pyaedt_function_handler()
     def export_config(self, config_file=None, overwrite=False):
@@ -1210,6 +1300,11 @@ class Configurations(object):
             self._export_mesh_operations(dict_out)
         if self.options.export_materials:
             self._export_materials(dict_out)
+        if self.options.export_datasets:
+            self._export_datasets(dict_out)
+        if hasattr(self.options, "export_monitor"):
+            if self.options.export_monitor:
+                self._export_monitor(dict_out)
         # update the json if it exists already
 
         if os.path.exists(config_file) and not overwrite:
@@ -1237,6 +1332,29 @@ class Configurations(object):
         return False
 
 
+class ConfigurationsOptionsIcepak(ConfigurationsOptions):
+    def __init__(self, app):
+        ConfigurationsOptions.__init__(self)
+        self._export_monitor = True
+        self._import_monitor = True
+
+    @property
+    def import_monitor(self):
+        return self._import_monitor
+
+    @import_monitor.setter
+    def import_monitor(self, val):
+        self._import_monitor = val
+
+    @property
+    def export_monitor(self):
+        return self._export_monitor
+
+    @export_monitor.setter
+    def export_monitor(self, val):
+        self._export_monitor = val
+
+
 class ConfigurationsIcepak(Configurations):
     """Configuration Class.
     It enables to export and import configuration options to be applied on a new/existing design.
@@ -1244,6 +1362,7 @@ class ConfigurationsIcepak(Configurations):
 
     def __init__(self, app):
         Configurations.__init__(self, app)
+        self.options = ConfigurationsOptionsIcepak(app)
 
     @pyaedt_function_handler()
     def _update_object_properties(self, name, val):
@@ -1295,7 +1414,7 @@ class ConfigurationsIcepak(Configurations):
                     return mesh_el.update()
 
         bound = self._app.mesh.MeshRegion(
-            self._app.mesh.omeshmodule, self._app.mesh.boundingdimension, self._app.mesh._model_units
+            self._app.mesh.omeshmodule, self._app.mesh.boundingdimension, self._app.mesh._model_units, self._app
         )
         bound.name = name
         for el in props:
@@ -1348,3 +1467,49 @@ class ConfigurationsIcepak(Configurations):
                 dict_out["mesh"][mesh.name] = mop[mesh.name]
                 self._map_object(mop, dict_out)
         pass
+
+    @pyaedt_function_handler()
+    def update_monitor(self, m_case, m_object, m_quantity, m_name):
+        """
+        Generic method for inserting monitor object
+
+        Parameters
+        ----------
+        m_case : str
+            Type of monitored geometry object. "Point", "Face", "Vertex", "Surface" or "Object".
+        m_object : lost or str or int
+            Name or id (or list of these) of the geometry object being monitored.
+        m_quantity : list or str
+            Name or list of names of the quantity being monitored.
+        m_name : str
+            Name of the monitor object.
+        Returns
+        -------
+        bool
+            ``True`` if successful.
+        """
+        if m_case == "Point":
+            self._app.monitor.assign_point_monitor(m_object, monitor_quantity=m_quantity, monitor_name=m_name)
+        elif m_case == "Face":
+            self._app.monitor.assign_face_monitor(m_object, monitor_quantity=m_quantity, monitor_name=m_name)
+        elif m_case == "Vertex":
+            self._app.monitor.assign_point_monitor_to_vertex(m_object, monitor_quantity=m_quantity, monitor_name=m_name)
+        elif m_case == "Surface":
+            self._app.monitor.assign_surface_monitor(m_object, monitor_quantity=m_quantity, monitor_name=m_name)
+        elif m_case == "Object":
+            self._app.monitor.assign_point_monitor_in_object(m_object, monitor_quantity=m_quantity, monitor_name=m_name)
+        return True
+
+    @pyaedt_function_handler()
+    def import_config(self, config_file):
+        dict_in = Configurations.import_config(self, config_file)
+        if self.options.import_monitor and dict_in.get("monitor", None):
+            self.results.import_monitor = True
+            for monitor_obj in dict_in["monitor"]:
+                m_type = dict_in["monitor"][monitor_obj]["Type"]
+                m_obj = dict_in["monitor"][monitor_obj]["ID"]
+                if m_type == "Point":
+                    m_obj = dict_in["monitor"][monitor_obj]["Location"]
+                if not self.update_monitor(m_type, m_obj, dict_in["monitor"][monitor_obj]["Quantity"], monitor_obj):
+                    self.results.import_monitor = False
+        return dict_in

@@ -2608,7 +2608,7 @@ class Maxwell2d(Maxwell, FieldAnalysis3D, object):
         Returns
         -------
         :class:`pyaedt.modules.Boundary.BoundaryObject`
-            Vector Potential Object
+            Vector Potential Object.
 
         References
         ----------

@@ -31,7 +31,7 @@ desktopVersion = "2022.2"
 ##########################################################
 # Set non-graphical mode
 # ~~~~~~~~~~~~~~~~~~~~~~
-# Set non-graphical mode. ``"PYAEDT_NON_GRAPHICAL"``` is needed to generate
+# Set non-graphical mode. ``"PYAEDT_NON_GRAPHICAL"`` is needed to generate
 # documentation only.
 # You can set ``non_graphical`` either to ``True`` or ``False``.
 # The Boolean parameter ``new_thread`` defines whether to create a new instance

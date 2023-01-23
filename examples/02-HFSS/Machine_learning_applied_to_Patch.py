@@ -46,7 +46,7 @@ non_graphical = os.getenv("PYAEDT_NON_GRAPHICAL", "False").lower() in ("true", "
 # Generate input
 # ~~~~~~~~~~~~~~
 # Generate input randomly by creating a function with four inputs: frequency,
-# substrate permittivity, substrate thickness, and patch width. Frequency is
+# substrate permittivity, substrate thickness, and patch width. Frequency ranges
 # from 0.1 GHz to 1 GHz. Permittivity is from 1 to 12.
 #
 # The following code generates a database of 1 frequency x 2 permittivity

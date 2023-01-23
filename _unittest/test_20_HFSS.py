@@ -84,11 +84,12 @@ class TestClass(BasisTest, object):
     )
     def test_04_assign_coating(self, object_name, kwargs):
         id = self.aedtapp.modeler.get_obj_id(object_name)
-        coat = self.aedtapp.assign_coating([id], **kwargs)
+        coat = self.aedtapp.assign_coating([id, "die", 41], **kwargs)
         coat.name = "Coating1" + object_name
         assert coat.update()
         material = coat.props.get("Material", "")
         assert material == kwargs.get("mat", "")
+        assert not self.aedtapp.assign_coating(["die2", 45], **kwargs)
 
     def test_05_create_wave_port_from_sheets(self):
         udp = self.aedtapp.modeler.Position(0, 0, 0)

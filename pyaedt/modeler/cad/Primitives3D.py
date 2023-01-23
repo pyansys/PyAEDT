@@ -10,6 +10,8 @@ from math import sin
 from math import sqrt
 from math import tan
 
+from pyaedt import Icepak
+from pyaedt.generic import LoadAEDTFile
 from pyaedt.generic.general_methods import _retry_ntimes
 from pyaedt.generic.general_methods import open_file
 from pyaedt.generic.general_methods import pyaedt_function_handler
@@ -20,6 +22,7 @@ from pyaedt.modeler.advanced_cad.multiparts import Environment
 from pyaedt.modeler.advanced_cad.multiparts import MultiPartComponent
 from pyaedt.modeler.cad.Primitives import Primitives
 from pyaedt.modeler.geometry_operators import GeometryOperators
+from pyaedt.modules.Boundary import NativeComponentObject
 
 
 class Primitives3D(Primitives, object):
@@ -54,9 +57,9 @@ class Primitives3D(Primitives, object):
         Parameters
         ----------
         position : list
-            Center point for the box in a list of ``[x, y, z]`` coordinates.
+            Anchor point for the box in Cartesian ``[x, y, z]`` coordinates.
         dimensions_list : list
-           Dimensions for the box in a list of ``[x, y, z]`` coordinates.
+           Length of the box edges in Cartesian ``[x, y, z]`` coordinates.
         name : str, optional
             Name of the box. The default is ``None``, in which case the
             default name is assigned.
@@ -508,7 +511,7 @@ class Primitives3D(Primitives, object):
         >>> origin = [0,0,0]
         >>> endpos = [10,5,20]
         >>> #Material and name are not mandatory fields
-        >>> object_id = hfss.modeler.primivites.create_bondwire(origin, endpos,h1=0.5, h2=0.1, alpha=75, beta=4,
+        >>> object_id = hfss.modeler.create_bondwire(origin, endpos,h1=0.5, h2=0.1, alpha=75, beta=4,
         ...                                                     bond_type=0, name="mybox", matname="copper")
         """
         x_position, y_position, z_position = self._pos_with_arg(start_position)
@@ -581,6 +584,15 @@ class Primitives3D(Primitives, object):
         ----------
 
         >>> oEditor.CreateRectangle
+
+        Examples
+        --------
+        >>> from pyaedt import Hfss
+        >>> hfss = Hfss()
+        >>> plane = 0
+        >>> position = [0,0,0]
+        >>> dimension = [10,5]
+        >>> rect_obj = hfss.modeler.create_rectangle(plane, position, dimension)
 
         """
         szAxis = GeometryOperators.cs_plane_to_axis_str(csPlane)
@@ -1098,6 +1110,7 @@ class Primitives3D(Primitives, object):
         targetCS="Global",
         name=None,
         password="",
+        auxiliary_dict=False,
     ):
         """Insert a new 3D component.
 
@@ -1117,6 +1130,9 @@ class Primitives3D(Primitives, object):
             3D component name. The default is ``None``.
         password : str, optional
             Password for encrypted components. The default is an empty string.
+        auxiliary_dict : bool or str, optional
+            Enable the advanced 3d component import. It is possible to set explicitly the json file.
+            The default is ``False``.
 
         Returns
         -------
@@ -1180,11 +1196,176 @@ class Primitives3D(Primitives, object):
                 for new_name in obj_list:
                     self._create_object(new_name)
                 udm_obj = self._create_user_defined_component(new_object_name)
-                if name:
+                if name and not auxiliary_dict:
                     udm_obj.name = name
-                return udm_obj
         except:
-            return False
+            udm_obj = False
+        if auxiliary_dict and udm_obj:
+            if isinstance(auxiliary_dict, bool):
+                auxiliary_dict = comp_file + ".json"
+            aux_dict = json.load(open(auxiliary_dict, "r"))
+            mapping_dict = {}
+            if aux_dict.get("monitor", None):
+                temp_proj_name = self._app._generate_unique_project_name()
+                ipkapp_temp = Icepak(projectname=os.path.join(self._app.toolkit_directory, temp_proj_name))
+                ipkapp_temp.delete_design(ipkapp_temp.design_name)
+                self._app.oproject.CopyDesign(self._app.design_name)
+                ipkapp_temp.oproject.Paste()
+                temp_proj = ipkapp_temp.project_file
+                ipkapp_temp.close_project()
+                read_dict = LoadAEDTFile.load_keyword_in_aedt_file(temp_proj, "ToplevelParts")
+                read_cs = False
+                parts_name = self._app.odesign.GetChildObject("3D Modeler").GetChildObject(udm_obj.name).GetChildNames()
+                mapping_dict = {
+                    "ReferenceCoordSystemID": 0,
+                    "FaceKeyIDMap": {},
+                    "EdgeKeyIDMap": {},
+                    "VertexKeyIDMap": {},
+                    "BodyKeyIDMap": {},
+                }
+                geometry_part_list = read_dict["ToplevelParts"]["GeometryPart"]
+                if isinstance(geometry_part_list, dict):
+                    geometry_part_list = [geometry_part_list]
+                for part in geometry_part_list:
+                    if part["Attributes"]["Name"] in parts_name:
+                        mapping_dict["ReferenceCoordSystemID"] = part["Operations"]["Operation"][
+                            "ReferenceCoordSystemID"
+                        ]
+                        for i in ["FaceKeyIDMap", "EdgeKeyIDMap", "VertexKeyIDMap", "BodyKeyIDMap"]:
+                            try:
+                                dict_str = (
+                                    "{"
+                                    + ",".join(part["Operations"]["Operation"]["OperationIdentity"][i])
+                                    .replace("'", '"')
+                                    .replace("=", ":")
+                                    + "}"
+                                )
+                            except KeyError:  # TODO: fix reading AEDT
+                                for key, val in part["Operations"]["Operation"]["OperationIdentity"].items():
+                                    if i in key:
+                                        keyarr = key.split("(")
+                                        dict_str = (
+                                            "{"
+                                            + "{}: {}".format(keyarr[1], val.replace(")", "")).replace("'", '"')
+                                            + "}"
+                                        )
+                                        break
+                            mapping_dict[i].update(json.loads(dict_str))
+                if mapping_dict["ReferenceCoordSystemID"] != 1:
+                    read_cs = True
+                if read_cs:
+                    read_dict = LoadAEDTFile.load_keyword_in_aedt_file(temp_proj, "CoordinateSystems")
+                    if isinstance(read_dict["CoordinateSystems"]["Operation"], list):
+                        cs_dict = {
+                            cs["ID"]: cs["Attributes"]["Name"] for cs in read_dict["CoordinateSystems"]["Operation"]
+                        }
+                    else:
+                        cs_dict = {
+                            read_dict["CoordinateSystems"]["Operation"]["ID"]: read_dict["CoordinateSystems"][
+                                "Operation"
+                            ]["Attributes"]["Name"]
+                        }
+                    mapping_dict["ReferenceCoordSystemName"] = cs_dict[mapping_dict["ReferenceCoordSystemID"]]
+                else:
+                    mapping_dict["ReferenceCoordSystemName"] = "Global"
+                for key, val in aux_dict["monitor"].items():
+                    key = udm_obj.name + "_" + key
+                    m_case = val["Type"]
+                    if m_case == "Point":
+                        cs_old = self._app.odesign.SetActiveEditor("3D Modeler").GetActiveCoordinateSystem()
+                        self._app.modeler.set_working_coordinate_system(targetCS)
+                        self._app.monitor.assign_point_monitor(
+                            val["Location"], monitor_quantity=val["Quantity"], monitor_name=key
+                        )
+                        self._app.modeler.set_working_coordinate_system(cs_old)
+                    elif m_case == "Face":
+                        self._app.monitor.assign_face_monitor(
+                            mapping_dict["FaceKeyIDMap"][str(val["ID"])],
+                            monitor_quantity=val["Quantity"],
+                            monitor_name=key,
+                        )
+                    elif m_case == "Vertex":
+                        self._app.monitor.assign_point_monitor_to_vertex(
+                            mapping_dict["VertexKeyIDMap"][str(val["ID"])],
+                            monitor_quantity=val["Quantity"],
+                            monitor_name=key,
+                        )
+                    elif m_case == "Surface":
+                        self._app.monitor.assign_surface_monitor(
+                            self._app.modeler.objects[mapping_dict["BodyKeyIDMap"][str(val["ID"])]].name,
+                            monitor_quantity=val["Quantity"],
+                            monitor_name=key,
+                        )
+                    elif m_case == "Object":
+                        self._app.monitor.assign_point_monitor_in_object(
+                            self._app.modeler.objects[mapping_dict["BodyKeyIDMap"][str(val["ID"])]].name,
+                            monitor_quantity=val["Quantity"],
+                            monitor_name=key,
+                        )
+            if aux_dict.get("datasets", None):
+                for key, val in aux_dict["datasets"].items():
+                    if key.startswith("$"):
+                        is_project_dataset = True
+                        dsname = key[1:]
+                    else:
+                        is_project_dataset = False
+                        dsname = key
+                    self._app.create_dataset(
+                        dsname,
+                        val["x"],
+                        val["y"],
+                        val["z"],
+                        val["v"],
+                        is_project_dataset,
+                        val["xunit"],
+                        val["yunit"],
+                        val["zunit"],
+                        val["vunit"],
+                    )
+            if name:
+                udm_obj.name = name
+            if aux_dict.get("native components", None):
+                if aux_dict.get("coordinatesystems", None):
+                    for cs in list(aux_dict["coordinatesystems"].keys()):
+                        aux_dict["coordinatesystems"][udm_obj.name + "_" + cs] = aux_dict["coordinatesystems"][cs]
+                        aux_dict["coordinatesystems"].pop(cs)
+                        if aux_dict["coordinatesystems"][udm_obj.name + "_" + cs]["Reference CS"] == "Global":
+                            aux_dict["coordinatesystems"][udm_obj.name + "_" + cs]["Reference CS"] = targetCS
+                        else:
+                            aux_dict["coordinatesystems"][udm_obj.name + "_" + cs]["Reference CS"] = (
+                                udm_obj.name
+                                + "_"
+                                + aux_dict["coordinatesystems"][udm_obj.name + "_" + cs]["Reference CS"]
+                            )
+                    add_cs = list(aux_dict["coordinatesystems"].keys())
+                    available_cs = ["Global"] + [cs.name for cs in self.modeler.coordinate_systems]
+                    i = 0
+                    while add_cs:
+                        if aux_dict["coordinatesystems"][add_cs[i]]["Reference CS"] in available_cs:
+                            self._app.configurations._update_coordinate_systems(
+                                add_cs[i], aux_dict["coordinatesystems"][add_cs[i]]
+                            )
+                            available_cs.append(add_cs[i])
+                            add_cs.pop(i)
+                            i = 0
+                        else:
+                            i += 1
+                for nc, ncdict in aux_dict["native components"].items():
+                    for nc_cs in ncdict["CS"]:
+                        if nc_cs == "Global":
+                            ncdict["Props"]["TargetCS"] = targetCS
+                        else:
+                            ncdict["Props"]["TargetCS"] = udm_obj.name + "_" + nc_cs
+                        native = NativeComponentObject(self, ncdict["Type"], nc, ncdict["Props"])
+                        try:
+                            native.create()
+                            self._app._native_components.append(native)
+                        except:
+                            self._app.logger.error("Native component {} creation failed.".format(nc))
+            os.remove(temp_proj)
+            return udm_obj, mapping_dict, aux_dict
+        else:
+            return udm_obj
 
     @pyaedt_function_handler()
     def get_3d_component_object_list(self, componentname):
@@ -1615,16 +1796,17 @@ class Primitives3D(Primitives, object):
 
     @pyaedt_function_handler()
     def create_choke(self, json_file):
-        """Create a chock from json setting file.
+        """Create an inductive choke using parameters defined in a json file.
 
         Parameters
         ----------
         json_file : str
-            Full path of the json file return for the function check_choke_values.
+            Full path of the json file. The file is returned by the function ``check_choke_values``.
 
         Returns
         -------
-        List of
+        List
+            Three parameters output
             bool
                 ``True`` when successful, ``False`` when failed.
             :class:`pyaedt.modeler.cad.object3d.Object3d`
@@ -1634,18 +1816,19 @@ class Primitives3D(Primitives, object):
                     3D object winding.
                 list
                     list of point coordinates of the winding.
-            for each winding.
-        [bool, core_obj, [first_winding_obj, first_winding_point_list],
-         [second_winding_obj, second_winding_point_list], etc...]
+                    for each winding.
+
+            [bool, core_obj, [first_winding_obj, first_winding_point_list],
+            [second_winding_obj, second_winding_point_list], etc...]
 
         Examples
         --------
-        Json file has to be like the following example.
+        Json file has to be like the following example.  #TODO Look into using a schema for the json file.
 
         >>> from pyaedt import Hfss
         >>> hfss = Hfss()
         >>> dictionary_values = hfss.modeler.check_choke_values("C:/Example/Of/Path/myJsonFile.json")
-        >>> mychoke = hfss.modeler.create_choke("C:/Example/Of/Path/myJsonFile_Corrected.json")
+        >>> my_choke = hfss.modeler.create_choke("C:/Example/Of/Path/myJsonFile_Corrected.json")
         """
 
         with open_file(json_file, "r") as read_file:

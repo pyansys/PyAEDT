@@ -22,6 +22,7 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
     Parameters
     ----------
     application : :class:`pyaedt.application.Analysis3D.FieldAnalysis3D`
+
     Examples
     --------
     >>> from pyaedt import Hfss
@@ -60,11 +61,11 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
         component_file,
         component_name=None,
         variables_to_include=[],
-        exclude_region=False,
         object_list=None,
         boundaries_list=None,
         excitation_list=None,
         included_cs=None,
+        reference_cs="Global",
         is_encrypted=False,
         allow_edit=False,
         security_message="",
@@ -74,6 +75,10 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
         hide_contents=False,
         replace_names=False,
         component_outline="BoundingBox",
+        auxiliary_dict_file=False,
+        monitor_objects=None,
+        datasets=None,
+        native_components=None,
     ):
         """Create a 3D component file.
 
@@ -84,17 +89,17 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
         component_name : str, optional
             Name of the component. The default is ``None``.
         variables_to_include : list, optional
-             List of variables to include. The default is ``[]``.
-        exclude_region : bool, optional
-             Whether to exclude the region. The default is ``False``.
+            List of variables to include. The default is ``[]``.
         object_list : list, optional
-            List of Objects names to export. The default is all objects
+            List of object names to export. The default is all object names.
         boundaries_list : list, optional
-            List of Boundaries names to export. The default is all boundaries
+            List of Boundaries names to export. The default is all boundaries.
         excitation_list : list, optional
-            List of Excitation names to export. The default is all excitations
+            List of Excitation names to export. The default is all excitations.
         included_cs : list, optional
-            List of Coordinate Systems to export. The default is all coordinate systems
+            List of Coordinate Systems to export. The default is all coordinate systems.
+        reference_cs : str, optional
+            The Coordinate System reference. The default is ``"Global"``.
         is_encrypted : bool, optional
             Whether the component has encrypted protection. The default is ``False``.
         allow_edit : bool, optional
@@ -110,17 +115,29 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
             Edit password.
             The default value is an empty string.
         password_type : str, optional
-            Password type. Value can either be ``UserSuppliedPassword`` or ``InternalPassword``.
-            The default value is ``UserSuppliedPassword``.
-        hide_contents : bool, optionale
-            Whether to hide contents.
-            The default is ``False``.
+            Password type. Options are ``UserSuppliedPassword`` and ``InternalPassword``.
+            The default is ``UserSuppliedPassword``.
+        hide_contents : bool, optional
+            Whether to hide contents. The default is ``False``.
         replace_names : bool, optional
-            Whether to replace objects and materials names.
+            Whether to replace objects and material names.
             The default is ``False``.
         component_outline : str, optional
             Component outline. Value can either be ``BoundingBox`` or ``None``.
             The default is ``BoundingBox``.
+        auxiliary_dict_file : bool or str, optional
+            Whether to export the auxiliary file containing information about defined datasets and Icepak monitor
+            objects. A destination file can be specified using a string.
+            The default is ``False``.
+        monitor_objects : list, optional
+            List of monitor objects' names to export. The default is the names of all monitor objects. This argument is
+            relevant only if ``auxiliary_dict_file`` is not set to ``False``.
+        datasets : list, optional
+            List of dataset names to export. The default is all datasets. This argument is relevant only if
+            ``auxiliary_dict_file`` is not set to ``False``.
+        native_components : list, optional
+            List of native_components names to export. The default is all native_components. This argument is relevant
+            only if ``auxiliary_dict_file`` is not set to ``False``.
 
         Returns
         -------
@@ -132,8 +149,6 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
 
         >>> oEditor.Create3DComponent
         """
-        if self._app.design_type == "Icepak":
-            exclude_region = True
         if not component_name:
             component_name = self._app.design_name
         dt_string = datetime.datetime.now().strftime("%H:%M:%S %p %b %d, %Y")
@@ -189,19 +204,26 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
         if object_list:
             objs = object_list
         else:
-            objs = self.object_names
+            native_objs = [
+                obj.name for _, v in self.modeler.user_defined_components.items() for _, obj in v.parts.items()
+            ]
+            objs = [obj for obj in self.object_names if obj not in native_objs]
+            if not native_components and native_objs:
+                self.logger.warning(
+                    "Native component objects cannot be exported. Use native_components argument to"
+                    " export an auxiliary dictionary file containing 3D components information"
+                )
         for el in objs:
-            if "Region" in el and exclude_region:
+            if "CreateRegion:1" in self.oeditor.GetChildObject(el).GetChildNames():
                 objs.remove(el)
         arg.append("IncludedParts:="), arg.append(objs)
         arg.append("HiddenParts:="), arg.append([])
-        activecs = self.oeditor.GetActiveCoordinateSystem()
         if included_cs:
             allcs = included_cs
         else:
             allcs = self.oeditor.GetCoordinateSystems()
         arg.append("IncludedCS:="), arg.append(allcs)
-        arg.append("ReferenceCS:="), arg.append(activecs)
+        arg.append("ReferenceCS:="), arg.append(reference_cs)
         par_description = []
         if variables_to_include:
             variables = variables_to_include
@@ -229,7 +251,7 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
         if boundaries:
             arg2.append("Boundaries:="), arg2.append(boundaries)
         if self._app.design_type == "Icepak":
-            meshregions = [name for name in self._app.mesh.meshregions.name]
+            meshregions = [mr.name for mr in self._app.mesh.meshregions]
             try:
                 meshregions.remove("Global")
             except:
@@ -251,7 +273,73 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
         meshops = [el.name for el in self._app.mesh.meshoperations]
         arg2.append("MeshOperations:="), arg2.append(meshops)
         arg3 = ["NAME:ImageFile", "ImageFile:=", ""]
-
+        if auxiliary_dict_file:
+            if isinstance(auxiliary_dict_file, bool):
+                auxiliary_dict_file = component_file + ".json"
+            cachesettings = {
+                prop: getattr(self._app.configurations.options, prop)
+                for prop in vars(self._app.configurations.options)
+                if prop.startswith("_export_")
+            }
+            self._app.configurations.options.unset_all_export()
+            self._app.configurations.options.export_monitor = True
+            self._app.configurations.options.export_datasets = True
+            self._app.configurations.options.export_coordinate_systems = True
+            configfile = self._app.configurations.export_config()
+            for prop in cachesettings:  # restore user settings
+                setattr(self._app.configurations.options, prop, cachesettings[prop])
+            if monitor_objects is None:
+                monitor_objects = self._app.odesign.GetChildObject("Monitor").GetChildNames()
+            if datasets is None:
+                datasets = {}
+                datasets.update(self._app.project_datasets)
+                datasets.update(self._app.design_datasets)
+            if native_components is None:
+                native_components = self._app.native_components
+            with open(configfile) as f:
+                config_dict = json.load(f)
+            out_dict = {}
+            if monitor_objects:
+                out_dict["monitor"] = config_dict["monitor"]
+                for i in list(out_dict["monitor"]):
+                    if i not in monitor_objects:
+                        del out_dict["monitor"][i]
+                    else:
+                        if out_dict["monitor"][i]["Type"] in ["Object", "Surface"]:
+                            out_dict["monitor"][i]["ID"] = self._app.modeler.get_obj_id(out_dict["monitor"][i]["ID"])
+            if datasets:
+                out_dict["datasets"] = config_dict["datasets"]
+                for i in list(out_dict["datasets"]):
+                    if i not in datasets:
+                        del out_dict["datasets"][i]
+                out_dict["datasets"] = config_dict["datasets"]
+            if native_components:
+                out_dict["native components"] = {}
+                coordinatesystems_set = set()
+                for _, nc in self._app.native_components.items():
+                    nc_name = nc.props["SubmodelDefinitionName"]
+                    nc_props = dict(nc.props).copy()
+                    nc_type = nc.props["NativeComponentDefinitionProvider"]["Type"]
+                    if (
+                        nc_type == "PCB"
+                        and nc_props["NativeComponentDefinitionProvider"]["DefnLink"]["Project"] == "This Project*"
+                    ):
+                        nc_props["NativeComponentDefinitionProvider"]["DefnLink"]["Project"] = self._app.project_file
+                    CSs = [
+                        v.target_coordinate_system
+                        for i, v in self._app.modeler.user_defined_components.items()
+                        if v.definition_name == nc_name
+                        and "Target Coordinate System" in self._app.oeditor.GetChildObject(i).GetPropNames()
+                    ]
+                    out_dict["native components"][nc_name] = {"Type": nc_type, "Props": nc_props, "CS": CSs}
+                    for cs in CSs:
+                        while cs != "Global":
+                            coordinatesystems_set.update(cs)
+                            cs = config_dict["coordinatesystems"][cs]["Reference CS"]
+                if config_dict.get("coordinatesystems", None):
+                    out_dict["coordinatesystems"] = config_dict["coordinatesystems"]
+            with open(auxiliary_dict_file, "w") as outfile:
+                json.dump(out_dict, outfile)
         return _retry_ntimes(3, self.oeditor.Create3DComponent, arg, arg2, component_file, arg3)
 
     @pyaedt_function_handler()

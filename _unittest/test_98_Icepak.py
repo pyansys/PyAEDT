@@ -7,6 +7,7 @@ from _unittest.conftest import desktop_version
 from _unittest.conftest import local_path
 from pyaedt import Hfss
 from pyaedt import Icepak
+from pyaedt.modules.Boundary import NativeComponentObject
 
 try:
     import pytest  # noqa: F401
@@ -162,10 +163,7 @@ class TestClass(BasisTest, object):
         assert my_setup.update()
         assert self.aedtapp.assign_2way_coupling(setup_name, 2, True, 20)
 
-    def test_09_point_monitor(self):
-        assert self.aedtapp.create_temp_point_monitor("P1", ["59mm", "40mm", "0mm"])
-
-    def test_08b_existing_sweeps(self):
+    def test_09_existing_sweeps(self):
         assert self.aedtapp.existing_analysis_sweeps
 
     def test_10_DesignSettings(self):
@@ -252,18 +250,6 @@ class TestClass(BasisTest, object):
 
     def test_16_check_priorities(self):
         self.aedtapp.assign_priority_on_intersections("box")
-
-    def test_16_surface_monitor(self):
-        self.aedtapp.modeler.create_rectangle(self.aedtapp.PLANE.XY, [0, 0, 0], [10, 20], name="surf1")
-        assert self.aedtapp.assign_surface_monitor("surf1", monitor_name="monitor_surf") == "monitor_surf"
-
-    def test_16_point_monitor(self):
-        assert self.aedtapp.assign_point_monitor([0, 0, 0], monitor_name="monitor_point") == "monitor_point"
-        assert self.aedtapp.assign_point_monitor_in_object("box", monitor_name="monitor_point1") == "monitor_point1"
-        assert self.aedtapp.assign_point_monitor_in_object("box", monitor_name="monitor_point")
-        assert self.aedtapp.assign_point_monitor_in_object("box2")
-        assert not self.aedtapp.assign_point_monitor_in_object("box1")
-        assert not self.aedtapp.assign_point_monitor_in_object(["box"])
 
     def test_17_post_processing(self):
         rep = self.aedtapp.post.reports_by_category.monitor(["monitor_surf.Temperature", "monitor_point.Temperature"])
@@ -510,7 +496,7 @@ class TestClass(BasisTest, object):
 
     def test_39_update_assignment(self):
         self.aedtapp.insert_design("updateass")
-        box1 = self.aedtapp.modeler.create_box([0, 0, 0], [10, 10, 10], "box", "copper")
+        self.aedtapp.modeler.create_box([0, 0, 0], [10, 10, 10], "box", "copper")
         box2 = self.aedtapp.modeler.create_box([9, 9, 9], [5, 5, 5], "box2", "copper")
         bound = self.aedtapp.create_source_block("box", "1W", False)
         bound.props["Objects"].append(box2)
@@ -555,8 +541,212 @@ class TestClass(BasisTest, object):
         assert result1.props["Nodes"]["Internal"][0] == "5W"
         assert result2.props["Nodes"]["Internal"][0] == "10W"
 
+        self.aedtapp.create_ipk_3dcomponent_pcb(
+            "RadioBoard1", link_data, solution_freq, resolution, custom_x_resolution=400, custom_y_resolution=500
+        )
+        self.aedtapp.modeler.create_box([42, 8, 2.03962], [10, 22, 3], "network_box3", "copper")
+        result3 = self.aedtapp.create_two_resistor_network_block("network_box3", "RadioBoard1_1", "15W", 2.5, 5)
+        assert result3.props["Nodes"]["Internal"][0] == "15W"
+
     def test_44_set_variable(self):
         self.aedtapp.variable_manager.set_variable("var_test", expression="123")
         self.aedtapp["var_test"] = "234"
         assert "var_test" in self.aedtapp.variable_manager.design_variable_names
         assert self.aedtapp.variable_manager.design_variables["var_test"].expression == "234"
+
+    def test_45_surface_monitor(self):
+        self.aedtapp.insert_design("MonitorTests")
+        self.aedtapp.modeler.create_rectangle(self.aedtapp.PLANE.XY, [0, 0, 0], [10, 20], name="surf1")
+        self.aedtapp.modeler.create_rectangle(self.aedtapp.PLANE.XY, [0, 0, 0], [20, 20], name="surf2")
+        assert self.aedtapp.monitor.assign_surface_monitor("surf1", monitor_name="monitor_surf") == "monitor_surf"
+        assert self.aedtapp.monitor.assign_surface_monitor(
+            ["surf1", "surf2"], monitor_quantity=["Temperature", "HeatFlowRate"], monitor_name="monitor_surfs"
+        ) == ["monitor_surfs", "monitor_surfs1"]
+        assert self.aedtapp.monitor.assign_surface_monitor("surf1")
+
+    def test_46_point_monitors(self):
+        self.aedtapp.modeler.create_box([0, 0, 0], [10, 10, 10], "box", "copper")
+        self.aedtapp.modeler.create_box([9, 9, 9], [5, 5, 5], "box2", "copper")
+        assert self.aedtapp.monitor.assign_point_monitor([0, 0, 0], monitor_name="monitor_point") == "monitor_point"
+        assert self.aedtapp.monitor.point_monitors["monitor_point"].location == [0, 0, 0]
+        assert self.aedtapp.monitor.assign_point_monitor(
+            [[0, 0, 0], [0.5, 0.5, 0.5]], monitor_quantity=["Temperature", "Speed"], monitor_name="monitor_points"
+        ) == ["monitor_points", "monitor_points1"]
+        assert (
+            self.aedtapp.monitor.assign_point_monitor_in_object("box", monitor_name="monitor_point1")
+            == "monitor_point1"
+        )
+        assert self.aedtapp.monitor.assign_point_monitor([0, 0, 0])
+        assert self.aedtapp.monitor._find_point(["0mm", "0mm", "0mm"])
+        assert self.aedtapp.monitor.assign_point_monitor_in_object("box", monitor_name="monitor_point")
+        assert self.aedtapp.monitor.assign_point_monitor_in_object("box2")
+        assert not self.aedtapp.monitor.assign_point_monitor_in_object("box1")
+        assert isinstance(self.aedtapp.monitor.assign_point_monitor_in_object(["box", "box2"]), list)
+        assert self.aedtapp.monitor.assign_point_monitor_in_object(
+            ["box", "box2"], monitor_quantity=["Temperature", "HeatFlowRate"], monitor_name="monitor_in_obj1"
+        ) == ["monitor_in_obj1", "monitor_in_obj2"]
+        vertex1 = self.aedtapp.modeler.get_object_from_name("box").vertices[0]
+        vertex2 = self.aedtapp.modeler.get_object_from_name("box").vertices[1]
+        assert (
+            self.aedtapp.monitor.assign_point_monitor_to_vertex(
+                vertex1.id, monitor_quantity="Temperature", monitor_name="monitor_vertex"
+            )
+            == "monitor_vertex"
+        )
+        assert self.aedtapp.monitor.assign_point_monitor_to_vertex(
+            [vertex1.id, vertex2.id], monitor_quantity=["Temperature", "Speed"], monitor_name="monitor_vertex_123"
+        ) == ["monitor_vertex_123", "monitor_vertex_124"]
+        assert self.aedtapp.monitor.get_monitor_object_assignment("monitor_vertex_123") == "box"
+        assert self.aedtapp.monitor.assign_point_monitor_to_vertex(vertex1.id)
+
+    def test_47_face_monitor(self):
+        self.aedtapp.modeler.create_box([0, 0, 0], [20, 20, 20], "box3", "copper")
+        face_1 = self.aedtapp.modeler.get_object_from_name("box3").faces[0]
+        face_2 = self.aedtapp.modeler.get_object_from_name("box3").faces[1]
+        assert self.aedtapp.monitor.assign_face_monitor(face_1.id, monitor_name="monitor_face") == "monitor_face"
+        assert self.aedtapp.monitor.face_monitors["monitor_face"].location == face_1.center
+        assert (
+            self.aedtapp.monitor.get_monitor_object_assignment(self.aedtapp.monitor.face_monitors["monitor_face"])
+            == "box3"
+        )
+        assert self.aedtapp.monitor.assign_face_monitor(face_1.id, monitor_name="monitor_faces1") == "monitor_faces1"
+        assert self.aedtapp.monitor.assign_face_monitor(face_1.id, monitor_name="monitor_faces2") == "monitor_faces2"
+        assert self.aedtapp.monitor.assign_face_monitor(
+            [face_1.id, face_2.id], monitor_quantity=["Temperature", "HeatFlowRate"], monitor_name="monitor_faces"
+        ) == ["monitor_faces", "monitor_faces3"]
+        assert isinstance(self.aedtapp.monitor.face_monitors["monitor_faces1"].properties, dict)
+
+    def test_49_delete_monitors(self):
+        for _, mon_obj in self.aedtapp.monitor.all_monitors.items():
+            mon_obj.delete()
+        assert self.aedtapp.monitor.all_monitors == {}
+        assert not self.aedtapp.monitor.delete_monitor("Test")
+
+    def test_50_advanced3dcomp_export(self):
+        self.aedtapp.insert_design("advanced3dcompTest")
+        surf1 = self.aedtapp.modeler.create_rectangle(self.aedtapp.PLANE.XY, [0, 0, 0], [10, 20], name="surf1")
+        box1 = self.aedtapp.modeler.create_box([20, 20, 2], [10, 10, 3], "box1", "copper")
+        fan = self.aedtapp.create_fan("Fan", cross_section="YZ", radius="15mm", hub_radius="5mm")
+        cs1 = self.aedtapp.modeler.create_coordinate_system(name="CS1")
+        cs1.props["OriginX"] = 10
+        cs1.props["OriginY"] = 10
+        cs1.props["OriginZ"] = 10
+        fan2_prop = dict(fan.props).copy()
+        fan2_prop["TargetCS"] = "CS1"
+        fan2 = NativeComponentObject(self.aedtapp, "Fan", "Fan2", fan2_prop)
+        fan2.create()
+        pcb = self.aedtapp.create_ipk_3dcomponent_pcb(
+            "Board", link_data, solution_freq, resolution, custom_x_resolution=400, custom_y_resolution=500
+        )
+        self.aedtapp.monitor.assign_face_monitor(box1.faces[0].id, "Temperature", "FaceMonitor")
+        self.aedtapp.monitor.assign_point_monitor_in_object(box1.name, "Temperature", "BoxMonitor")
+        self.aedtapp.monitor.assign_surface_monitor(surf1.name, "Temperature", "SurfaceMonitor")
+        self.aedtapp.create_dataset(
+            "test_dataset",
+            [1, 2, 3, 4],
+            [1, 2, 3, 4],
+            zlist=None,
+            vlist=None,
+            is_project_dataset=False,
+            xunit="cel",
+            yunit="W",
+            zunit="",
+            vunit="",
+        )
+        file_path = self.local_scratch.path
+        file_name = "Advanced3DComp.a3dcomp"
+        self.aedtapp.modeler.set_working_coordinate_system("Global")
+        assert self.aedtapp.modeler.create_3dcomponent(
+            os.path.join(file_path, file_name),
+            component_name="board_assembly",
+            included_cs=["Global"],
+            auxiliary_dict_file=True,
+            native_components=True,
+        )
+        fan.delete()
+        fan2.delete()
+        pcb.delete()
+        box1.delete()
+        surf1.delete()
+
+    def test_51_advanced3dcomp_import(self):
+        cs2 = self.aedtapp.modeler.create_coordinate_system(name="CS2")
+        cs2.props["OriginX"] = 20
+        cs2.props["OriginY"] = 20
+        cs2.props["OriginZ"] = 20
+        file_path = self.local_scratch.path
+        file_name = "Advanced3DComp.a3dcomp"
+        self.aedtapp.modeler.insert_3d_component(
+            comp_file=os.path.join(file_path, file_name), targetCS="CS2", auxiliary_dict=True
+        )
+        assert all(i in self.aedtapp.native_components.keys() for i in ["Fan", "Board"])
+        assert all(
+            i in self.aedtapp.monitor.all_monitors
+            for i in ["board_assembly1_FaceMonitor", "board_assembly1_BoxMonitor", "board_assembly1_SurfaceMonitor"]
+        )
+        assert "test_dataset" in self.aedtapp.design_datasets
+        assert "board_assembly1_CS1" in [i.name for i in self.aedtapp.modeler.coordinate_systems]
+
+    def test_52_flatten_3d_components(self):
+        assert self.aedtapp.flatten_3d_components()
+        assert all(
+            i in self.aedtapp.monitor.all_monitors
+            for i in ["board_assembly1_FaceMonitor", "board_assembly1_BoxMonitor", "board_assembly1_SurfaceMonitor"]
+        )
+        assert "test_dataset" in self.aedtapp.design_datasets
+
+    def test_53_create_conduting_plate(self):
+        assert self.aedtapp.create_conduting_plate(
+            self.aedtapp.modeler.get_object_from_name("box1").faces[0].id,
+            thermal_specification="Thickness",
+            input_power="1W",
+            thickness="1mm",
+        )
+
+    def test_54_assign_stationary_wall(self):
+        self.aedtapp.modeler.create_rectangle(self.aedtapp.PLANE.XY, [0, 0, 0], [10, 20], name="surf1")
+        box = self.aedtapp.modeler.create_box([0, 0, 0], [10, 20, 10], name="box1")
+
+        assert self.aedtapp.assign_stationary_wall_with_htc(
+            "surf1",
+            name=None,
+            thickness="0mm",
+            material="Al-Extruded",
+            htc=10,
+            htc_dataset=None,
+            ref_temperature="AmbientTemp",
+            ht_correlation=True,
+            ht_correlation_type="Forced Convection",
+            ht_correlation_fluid="air",
+            ht_correlation_flow_type="Turbulent",
+            ht_correlation_flow_direction="X",
+            ht_correlation_value_type="Average Values",
+            ht_correlation_free_stream_velocity=1,
+        )
+        assert self.aedtapp.assign_stationary_wall_with_temperature(
+            "surf1",
+            name=None,
+            temperature=30,
+            thickness="0mm",
+            material="Al-Extruded",
+            radiate=False,
+            radiate_surf_mat="Steel-oxidised-surface",
+            shell_conduction=False,
+        )
+        assert self.aedtapp.assign_stationary_wall_with_heat_flux(
+            geometry=box.faces[0].id,
+            name="bcTest",
+            heat_flux=10,
+            thickness=1,
+            material="Al-Extruded",
+            radiate=True,
+            radiate_surf_mat="Steel-oxidised-surface",
+            shell_conduction=True,
+        )
+        assert self.aedtapp.assign_stationary_wall_with_htc(
+            "surf1",
+            ext_surf_rad=True,
+            ext_surf_rad_material="Stainless-steel-cleaned",
+            ext_surf_rad_ref_temp=0,
+            ext_surf_rad_view_factor=0.5,
+        )

@@ -1443,7 +1443,7 @@ class Circuit(FieldAnalysisCircuit, object):
         Returns
         -------
         str
-            File Path
+            File Path.
         """
         if filepath and not os.path.exists(os.path.normpath(filepath)):
             self.logger.error("Path does not exist.")

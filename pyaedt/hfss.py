@@ -610,12 +610,12 @@ class Hfss(FieldAnalysis3D, object):
         radius="0.5um",
         ratio="2.9",
     ):
-        """Assign finite conductivity to one or more objects of a given material.
+        """Assign finite conductivity to one or more objects or faces of a given material.
 
         Parameters
         ----------
         obj : str or list
-            One or more objects to assign finite conductivity to.
+            One or more objects or faces to assign finite conductivity to.
         mat : str, optional
             Material to use. The default is ``None``.
         cond : float, optional
@@ -656,20 +656,42 @@ class Hfss(FieldAnalysis3D, object):
         Examples
         --------
 
-        Create a cylinder at the XY working plane and assign a copper coating of 0.2 mm to it.
-
+        Create two cylinders in the XY working plane and assign a copper coating of 0.2 mm to the inner cylinder and
+        outer face.
+        >>> from pyaedt import Hfss
+        >>> hfss = Hfss()
         >>> origin = hfss.modeler.Position(0, 0, 0)
         >>> inner = hfss.modeler.create_cylinder(
         ...     hfss.PLANE.XY, origin, 3, 200, 0, "inner"
         ... )
-        >>> inner_id = hfss.modeler.get_obj_id("inner")
-        >>> coat = hfss.assign_coating([inner_id], "copper", usethickness=True, thickness="0.2mm")
+        >>> outer = hfss.modeler.create_cylinder(
+        ...     hfss.PLANE.XY, origin, 4, 200, 0, "outer"
+        ... )
+        >>> coat = hfss.assign_coating(["inner", outer.faces[2].id], "copper", usethickness=True, thickness="0.2mm")
 
         """
 
-        listobj = self.modeler.convert_to_selections(obj, True)
-        listobjname = "_".join(listobj)
-        props = {"Objects": listobj}
+        userlst = self.modeler.convert_to_selections(obj, True)
+        lstobj = []
+        lstface = []
+        for selection in userlst:
+            if selection in self.modeler.model_objects:
+                lstobj.append(selection)
+            elif isinstance(selection, int) and self.modeler._find_object_from_face_id(selection):
+                lstface.append(selection)
+
+        if not lstface and not lstobj:
+            self.logger.warning("Objects or Faces selected do not exist in the design.")
+            return False
+        listobjname = ""
+        props = {}
+        if lstobj:
+            listobjname = listobjname + "_" + "_".join(lstobj)
+            props["Objects"] = lstobj
+        if lstface:
+            props["Faces"] = lstface
+            lstface = [str(i) for i in lstface]
+            listobjname = listobjname + "_" + "_".join(lstface)
         if mat:
             if self.materials[mat]:
                 props["UseMaterial"] = True
@@ -696,7 +718,7 @@ class Hfss(FieldAnalysis3D, object):
             props["IsShellElement"] = issheelElement
         else:
             props["IsInternal"] = isInternal
-        return self._create_boundary("Coating_" + listobjname[:32], props, "Finite Conductivity")
+        return self._create_boundary("Coating_" + listobjname[1:], props, "Finite Conductivity")
 
     @pyaedt_function_handler()
     def create_frequency_sweep(
@@ -1180,7 +1202,7 @@ class Hfss(FieldAnalysis3D, object):
                 self.modeler, native.name, native_props["NativeComponentDefinitionProvider"], antenna_type
             )
             self.modeler.user_defined_components[native.name] = user_defined_component
-            self.native_components.append(native)
+            self._native_components.append(native)
             self.logger.info("Native component %s %s has been correctly created.", antenna_type, antenna_name)
             return native
         self.logger.error("Error in native component creation for %s %s.", antenna_type, antenna_name)
@@ -3564,7 +3586,7 @@ class Hfss(FieldAnalysis3D, object):
         Returns
         -------
         :class:`pyaedt.modules.Boundary.BoundaryObject`
-            Boundary object if successful, ``False`` otherwise
+            Boundary object if successful, ``False`` otherwise.
 
         References
         ----------
@@ -4675,8 +4697,9 @@ class Hfss(FieldAnalysis3D, object):
 
         Returns
         -------
-        (:class:`pyaedt.modules.SolveSetup.Setup`,
-            :class:`pyaedt.modules.DesignXPloration.ParametericsSetups.Optimetrics`)
+        tuple
+            The tuple contains: (:class:`pyaedt.modules.SolveSetup.Setup`,
+            :class:`pyaedt.modules.DesignXPloration.ParametericsSetups.Optimetrics`).
 
         References
         ----------
@@ -4780,8 +4803,9 @@ class Hfss(FieldAnalysis3D, object):
 
         Returns
         -------
-        (:class:`pyaedt.modules.SolveSetup.Setup`,
-            :class:`pyaedt.modules.DesignXPloration.ParametericsSetups.Optimetrics`)
+        tuple
+            The tuple contains: (:class:`pyaedt.modules.SolveSetup.Setup`,
+            :class:`pyaedt.modules.DesignXPloration.ParametericsSetups.Optimetrics`).
 
         References
         ----------
@@ -4876,8 +4900,9 @@ class Hfss(FieldAnalysis3D, object):
 
         Returns
         -------
-        (:class:`pyaedt.modules.SolveSetup.Setup`,
-            :class:`pyaedt.modules.DesignXPloration.ParametericsSetups.Optimetrics`)
+        tuple
+            The tuple contains: (:class:`pyaedt.modules.SolveSetup.Setup`,
+            :class:`pyaedt.modules.DesignXPloration.ParametericsSetups.Optimetrics`).
 
         References
         ----------

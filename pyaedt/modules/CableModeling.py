@@ -1282,8 +1282,23 @@ class Cable:
 
                 if [x for x in json_dict["CableHarness_prop"]["CableTerminationsToInclude"]]:
                     cable_terminations_to_include = json_dict["CableHarness_prop"]["CableTerminationsToInclude"]
-                    # check if cable to include in harness exists in current project
                     self.args = []
+                    terminations = []
+                    input_terminations = ["NAME:InputTerminations"]
+                    output_terminations = ["NAME:OutputTerminations"]
+                    assignment_type = ["Imped:=", "50ohm"]
+                    # Default values for input and output terminations set to ["Imped:=", "50ohm"]
+                    for cable in [
+                        x.get(self.cable_harness_bundle)
+                        for x in self.cables_in_bundle_list_dict
+                        if self.cable_harness_bundle in x.keys()
+                    ][0]:
+                        input_terminations.append("{}:=".format(cable))
+                        input_terminations.append(assignment_type)
+                        output_terminations.append("{}:=".format(cable))
+                        output_terminations.append(assignment_type)
+                    terminations.append(input_terminations)
+                    terminations.append(output_terminations)
                     for cable_termination in cable_terminations_to_include:
                         if (
                             cable_termination["CableName"]
@@ -1307,13 +1322,19 @@ class Cable:
                                 cable_termination["Assignment"] == "Input Terminations"
                                 or cable_termination["Assignment"] == "Output Terminations"
                             ):
-                                terminations = []
-                                if cable_termination["Assignment"] == "Input Terminations":
-                                    terminations.append("NAME:InputTerminations")
-                                elif cable_termination["Assignment"] == "Output Terminations":
-                                    terminations.append("NAME:OutputTerminations")
-                                terminations.append("{}:=".format(cable_termination["CableName"]))
-                                assignment_type = []
+                                if cable_termination["Assignment"] == "Input Terminations" and terminations[0].index(
+                                    "{}:=".format(cable_termination["CableName"])
+                                ):
+                                    cable_index = terminations[0].index("{}:=".format(cable_termination["CableName"]))
+                                    input_output = 0
+                                elif cable_termination["Assignment"] == "Output Terminations" and terminations[1].index(
+                                    "{}:=".format(cable_termination["CableName"])
+                                ):
+                                    cable_index = terminations[0].index("{}:=".format(cable_termination["CableName"]))
+                                    input_output = 1
+                                else:
+                                    msg = "Invalid cable name."
+                                    raise ValueError(msg)
                                 if cable_termination["AssignmentType"] == "Impedance":
                                     if decompose_variable_value(cable_termination["Impedance"])[1] not in [
                                         "GOhm",
@@ -1326,10 +1347,17 @@ class Cable:
                                         msg = "Invalid impedance unit."
                                         raise ValueError(msg)
                                     else:
-                                        assignment_type.append("Imped:=")
-                                        assignment_type.append(cable_termination["Impedance"])
+                                        terminations[input_output][cable_index + 1] = [
+                                            "Imped:=",
+                                            cable_termination["Impedance"],
+                                        ]
                                 elif cable_termination["AssignmentType"] == "Source":
-                                    assignment_type.append("Source:=")
+                                    terminations[input_output][cable_index + 1] = [
+                                        "Source:=",
+                                        '"{}"'.format(cable_termination["Source"]["Signal"]),
+                                        "Imped:=",
+                                        cable_termination["Source"]["ImpedanceValue"],
+                                    ]
                                     if cable_termination["Source"]["Type"] not in ["Single Value", "Transient"]:
                                         msg = "Invalid source type value."
                                         raise ValueError(msg)
@@ -1337,10 +1365,6 @@ class Cable:
                                         if cable_termination["Source"]["Signal"] not in self.existing_sources_names:
                                             msg = "Source name doesn't exist in current project."
                                             raise ValueError(msg)
-                                        else:
-                                            assignment_type.append('"{}"'.format(cable_termination["Source"]["Signal"]))
-                                            assignment_type.append("Imped:=")
-                                            assignment_type.append(cable_termination["Source"]["ImpedanceValue"])
                                     elif cable_termination["Source"]["Type"] == "Single Value":
                                         if decompose_variable_value(cable_termination["Source"]["Signal"])[1] not in [
                                             "fV",
@@ -1366,20 +1390,14 @@ class Cable:
                                             msg = "Invalid source signal units."
                                             raise ValueError(msg)
                                         else:
-                                            assignment_type.append(cable_termination["Source"]["Signal"])
-                                            assignment_type.append("Imped:=")
-                                            assignment_type.append(cable_termination["Source"]["ImpedanceValue"])
-                                terminations.append(assignment_type)
-                                assignment_type = ["Imped:=", "50ohm"]
-                                for cable in [
-                                    x.get(self.cable_harness_bundle)
-                                    for x in self.cables_in_bundle_list_dict
-                                    if self.cable_harness_bundle in x.keys()
-                                ][0]:
-                                    if cable != cable_termination["CableName"]:
-                                        terminations.append("{}:=".format(cable))
-                                        terminations.append(assignment_type)
-                                self.args.append(terminations)
+                                            terminations[input_output][cable_index + 1] = [
+                                                "Source:=",
+                                                cable_termination["Source"]["Signal"],
+                                                "Imped:=",
+                                                cable_termination["Source"]["ImpedanceValue"],
+                                            ]
+                    self.args.append(terminations[0])
+                    self.args.append(terminations[1])
                 else:
                     msg = "Provide at least one cable to include when creating cable harness."
                     raise ValueError(msg)

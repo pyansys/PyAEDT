@@ -109,7 +109,7 @@ class AnalysisTwinBuilder(Analysis):
         Returns
         -------
         pyaedt.modules.SolveSetup.SetupCircuit
-            Setup object
+            Setup object.
         """
         if setuptype is None:
             setuptype = self.solution_type

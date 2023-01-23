@@ -752,7 +752,7 @@ class Materials(object):
         Returns
         -------
         float
-            the float value of the property.
+            The float value of the property.
 
 
         Examples

@@ -391,29 +391,38 @@ class Desktop(object):
                 settings.non_graphical = non_graphical
         else:
             settings.non_graphical = non_graphical
+
             if "oDesktop" in dir(self._main):
                 del self._main.oDesktop
             self._main.student_version, version_key, version = self._set_version(specified_version, student_version)
+            if version_key < "2022.2":
+                settings.use_grpc_api = False
+            elif (
+                version_key == "2022.2"
+                and not self.port
+                and not self.machine
+                and settings.use_grpc_api is None
+                and _com != "gprc_v3"
+            ):
+                settings.use_grpc_api = False
+            elif settings.use_grpc_api is None or _com == "gprc_v3":
+                settings.use_grpc_api = True
             if _com == "ironpython":  # pragma: no cover
                 self._logger.info("Launching PyAEDT outside AEDT with IronPython.")
                 self._init_ironpython(non_graphical, new_desktop_session, version)
-            elif _com == "grpc_v3" or settings.use_grpc_api or self.port or version_key > "2022.2":
+            elif settings.use_grpc_api:
                 settings.use_grpc_api = True
                 self._init_cpython_new(non_graphical, new_desktop_session, version, self._main.student_version)
             elif _com == "pythonnet_v3":
-                if version_key < "2022.2" or not (settings.use_grpc_api or os.name == "posix" or self.port):
-                    self._logger.info("Launching PyAEDT outside AEDT with CPython and PythonNET.")
-                    self._init_cpython(
-                        non_graphical,
-                        new_desktop_session,
-                        version,
-                        self._main.student_version,
-                        version_key,
-                        aedt_process_id,
-                    )
-                else:
-                    settings.use_grpc_api = True
-                    self._init_cpython_new(non_graphical, new_desktop_session, version, self._main.student_version)
+                self._logger.info("Launching PyAEDT outside AEDT with CPython and PythonNET.")
+                self._init_cpython(
+                    non_graphical,
+                    new_desktop_session,
+                    version,
+                    self._main.student_version,
+                    version_key,
+                    aedt_process_id,
+                )
             else:
                 from pyaedt.generic.clr_module import win32_client
 

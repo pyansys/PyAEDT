@@ -50,7 +50,7 @@ def Hfss(
     port=0,
     aedt_process_id=None,
 ):
-    """Return the Hfss Class."""
+    """Return an instance of the Hfss Class."""
     from pyaedt.hfss import Hfss as app
 
     return app(

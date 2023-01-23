@@ -523,3 +523,95 @@ class Mechanical(FieldAnalysis3D, object):
         for el in setup_list:
             sweep_list.append(el + " : Solution")
         return sweep_list
+
+    @pyaedt_function_handler()
+    def assign_heat_flux(self, objects_list, heat_flux_type, value, boundary_name=""):
+        """Assign heat flux boundary condition to an object or face list.
+
+        Parameters
+        ----------
+        objects_list : list
+            List of objects, faces, or both.
+        heat_flux_type : str
+            Type of the heat flux. Options are ``"Total Power"`` or ``"Surface Flux"``.
+        value : str
+            Value of heat flux with units.
+        boundary_name : str, optional
+            Name of the boundary. The default is ``""``, in which case the default
+            name is used.
+
+        Returns
+        -------
+        :class:`aedt.modules.Boundary.Boundary object`
+            Boundary object.
+
+        References
+        ----------
+
+        >>> oModule.AssignHeatFlux
+        """
+        assert "Thermal" in self.solution_type, "This method works only in a Mechanical Thermal analysis."
+
+        props = {}
+        objects_list = self.modeler.convert_to_selections(objects_list, True)
+        if type(objects_list) is list:
+            if type(objects_list[0]) is str:
+                props["Objects"] = objects_list
+            else:
+                props["Faces"] = objects_list
+
+        if heat_flux_type == "Total Power":
+            props["TotalPower"] = value
+        else:
+            props["SurfaceFlux"] = value
+
+        if not boundary_name:
+            boundary_name = generate_unique_name("HeatFlux")
+
+        bound = BoundaryObject(self, boundary_name, props, "HeatFlux")
+        if bound.create():
+            self.boundaries.append(bound)
+            return bound
+        return False
+
+    @pyaedt_function_handler()
+    def assign_heat_generation(self, objects_list, value, boundary_name=""):
+        """Assign a heat generation boundary condition to an object list.
+
+        Parameters
+        ----------
+        objects_list : list
+            List of objects.
+        value : str
+            Value of heat generation with units.
+        boundary_name : str, optional
+            Name of the boundary. The default is ``""``, in which case the default
+            name is used.
+
+        Returns
+        -------
+        :class:`aedt.modules.Boundary.Boundary object`
+            Boundary object.
+
+        References
+        ----------
+
+        >>> oModule.AssignHeatGeneration
+        """
+        assert "Thermal" in self.solution_type, "This method works only in a Mechanical Thermal analysis."
+
+        props = {}
+        objects_list = self.modeler.convert_to_selections(objects_list, True)
+        if type(objects_list) is list:
+            props["Objects"] = objects_list
+
+        props["TotalPower"] = value
+
+        if not boundary_name:
+            boundary_name = generate_unique_name("HeatGeneration")
+
+        bound = BoundaryObject(self, boundary_name, props, "HeatGeneration")
+        if bound.create():
+            self.boundaries.append(bound)
+            return bound
+        return False

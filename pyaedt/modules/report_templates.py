@@ -1244,7 +1244,7 @@ class CommonReport(object):
         Returns
         -------
         bool
-            ``True`` when successful, ``False`` when failed
+            ``True`` when successful, ``False`` when failed.
         """
         props = ["NAME:ChangedProps"]
         props.append(["NAME:Show minor X grid", "Value:=", minor_x])
@@ -1523,7 +1523,7 @@ class CommonReport(object):
         Returns
         -------
         bool
-            ``True`` when successful, ``False`` when failed
+            ``True`` when successful, ``False`` when failed.
         """
         if linear_scaling:
             props = ["NAME:ChangedProps", ["NAME:Axis Scaling", "Value:=", "Linear"]]

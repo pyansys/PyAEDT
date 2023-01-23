@@ -1312,3 +1312,71 @@ class Plane(object):
     @pyaedt_function_handler()
     def _change_property(self, vPropChange):
         return self._primitives._change_plane_property(vPropChange, self.name)
+
+
+class HistoryProps(OrderedDict):
+    """Manages an object's history properties."""
+
+    def __setitem__(self, key, value):
+        OrderedDict.__setitem__(self, key, value)
+        if self._pyaedt_child.auto_update:
+            self._pyaedt_child.update_property(key, value)
+
+    def __init__(self, child_object, props):
+        OrderedDict.__init__(self)
+        if props:
+            for key, value in props.items():
+                OrderedDict.__setitem__(self, key, value)
+        self._pyaedt_child = child_object
+
+    def _setitem_without_update(self, key, value):
+        OrderedDict.__setitem__(self, key, value)
+
+
+class BinaryTreeNode:
+    """Manages an object's history structure."""
+
+    def __init__(self, node, child_object, first_level=False):
+        self.node = node
+        self.child_object = child_object
+        self.children = {}
+        self.auto_update = True
+        name = None
+        for i in list(child_object.GetChildNames()):
+            if not name:
+                name = i
+            if not i.startswith("OperandPart_"):
+                self.children[i] = BinaryTreeNode(i, self.child_object.GetChildObject(i))
+            else:
+                names = self.child_object.GetChildObject(i).GetChildNames()
+                for name in names:
+                    self.children[name] = BinaryTreeNode(name, self.child_object.GetChildObject(i).GetChildObject(name))
+        self.props = {}
+        if first_level:
+            self.child_object = self.children[name].child_object
+            del self.children[name]
+        for i in self.child_object.GetPropNames():
+            self.props[i] = self.child_object.GetPropValue(i)
+        self.props = HistoryProps(self, self.props)
+        self.command = self.props.get("Command", "")
+
+    def update_property(self, prop_name, prop_value):
+        """Update the property of the binary tree node.
+
+        Parameters
+        ----------
+        prop_name : str
+             Name of the property.
+        prop_value : str
+             Value of the property.
+
+        Returns
+        -------
+        bool
+            ``True`` when successful, ``False`` when failed.
+        """
+        try:
+            self.child_object.SetPropValue(prop_name, prop_value)
+            return True
+        except:
+            return False

@@ -77,8 +77,7 @@ if os.path.exists(local_config_file):
     local_config = {}
     with open(local_config_file) as f:
         local_config = json.load(f)
-    for key, val in local_config.items():
-        config[key] = val
+    config.update(local_config)
 
 settings.use_grpc_api = config.get("use_grpc", True)
 settings.non_graphical = config["NonGraphical"]
@@ -104,23 +103,24 @@ class BasisTest(object):
         self._main = sys.modules["__main__"]
 
     def my_teardown(self):
-        try:
-            oDesktop = self._main.oDesktop
-            proj_list = oDesktop.GetProjectList()
-        except Exception as e:
-            oDesktop = None
-            proj_list = []
-        if oDesktop and not settings.non_graphical:
-            oDesktop.ClearMessages("", "", 3)
+        if self.aedtapps:
+            try:
+                oDesktop = self._main.oDesktop
+                proj_list = oDesktop.GetProjectList()
+            except Exception as e:
+                oDesktop = None
+                proj_list = []
+            if oDesktop and not settings.non_graphical:
+                oDesktop.ClearMessages("", "", 3)
+            for proj in proj_list:
+                oDesktop.CloseProject(proj)
+            del self.aedtapps
         for edbapp in self.edbapps[::-1]:
             try:
                 edbapp.close_edb()
             except:
                 pass
         del self.edbapps
-        for proj in proj_list:
-            oDesktop.CloseProject(proj)
-        del self.aedtapps
         logger.remove_all_project_file_logger()
         shutil.rmtree(self.local_scratch.path, ignore_errors=True)
 

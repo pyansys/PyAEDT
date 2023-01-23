@@ -375,7 +375,7 @@ class FieldAnalysisCircuit(Analysis):
         -------
         list of str
             List of strings representing the return losses of the excitations.
-            For example ``["S(1, 1)", S(2, 2)]``
+            For example ``["S(1, 1)", S(2, 2)]``.
 
         References
         ----------

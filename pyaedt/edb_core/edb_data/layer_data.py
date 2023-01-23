@@ -568,7 +568,7 @@ class EDBLayer(object):
         Returns
         -------
         type
-            Layer
+            The layer which was updated.
 
         """
 
@@ -1152,7 +1152,7 @@ class EDBLayers(object):
         Returns
         -------
         bool
-            "True" if succeeded
+            "True" if succeeded.
         """
         outlineLayer = self._edb.Cell.Layer.FindByName(self._active_layout.GetLayerCollection(), outline_name)
         if outlineLayer.IsNull():

@@ -833,7 +833,6 @@ class TestClass(BasisTest, object):
         exc = self.aedtapp.create_wave_port_from_sheet(obj1.faces[0])
         assert self.aedtapp.modeler.create_3dcomponent(
             self.component3d_file,
-            exclude_region=True,
             object_list=["Solid", new_obj[1][0]],
             boundaries_list=[rad.name],
             excitation_list=[exc.name],
@@ -844,14 +843,12 @@ class TestClass(BasisTest, object):
     def test_64_create_3d_component_encrypted(self):
         assert self.aedtapp.modeler.create_3dcomponent(
             self.component3d_file,
-            exclude_region=True,
             included_cs="Global",
             is_encrypted=True,
             password="password_test",
         )
         assert not self.aedtapp.modeler.create_3dcomponent(
             self.component3d_file,
-            exclude_region=True,
             included_cs="Global",
             is_encrypted=True,
             password="password_test",
@@ -859,7 +856,6 @@ class TestClass(BasisTest, object):
         )
         assert not self.aedtapp.modeler.create_3dcomponent(
             self.component3d_file,
-            exclude_region=True,
             included_cs="Global",
             is_encrypted=True,
             password="password_test",

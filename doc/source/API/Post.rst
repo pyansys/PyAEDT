@@ -95,3 +95,18 @@ and `pyvista <https://docs.pyvista.org/>`_.
    solutions.FieldPlot
    solutions.FfdSolutionData
    AdvancedPostProcessing.ModelPlotter
+
+
+Icepak monitors
+~~~~~~~~~~~~~~~
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. autosummary::
+   :toctree: _autosummary
+   :nosignatures:
+
+
+   FaceMonitor
+   PointMonitor
+   Monitor

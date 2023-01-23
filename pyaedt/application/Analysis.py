@@ -150,7 +150,7 @@ class Analysis(Design, object):
         """
         if not self._native_components:
             self._native_components = self._get_native_data()
-        return self._native_components
+        return {nc.props["SubmodelDefinitionName"]: nc for nc in self._native_components}
 
     @property
     def output_variables(self):
@@ -936,14 +936,7 @@ class Analysis(Design, object):
                 "SubModelDefinitions"
             ]["NativeComponentDefinition"]
             if not isinstance(data_vals, list) and isinstance(data_vals, (OrderedDict, dict)):
-                boundaries.append(
-                    NativeComponentObject(
-                        self,
-                        data_vals["NativeComponentDefinitionProvider"]["Type"],
-                        data_vals["BasicComponentInfo"]["ComponentName"],
-                        data_vals,
-                    )
-                )
+                data_vals = list(data_vals)
             for ds in data_vals:
                 try:
                     if isinstance(ds, (OrderedDict, dict)):

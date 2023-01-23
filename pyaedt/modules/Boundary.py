@@ -276,9 +276,9 @@ class NativeComponentObject(BoundaryCommon, object):
 
         """
         self._app.modeler.oeditor.Delete(["NAME:Selections", "Selections:=", self.name])
-        for el in self._app.native_components:
+        for el in self._app._native_components:
             if el.component_name == self.component_name:
-                self._app.native_components.remove(el)
+                self._app._native_components.remove(el)
                 del self._app.modeler.user_defined_components[self.name]
                 self._app.modeler.cleanup_objects()
         return True
@@ -438,6 +438,10 @@ class BoundaryObject(BoundaryCommon, object):
             self._app.oboundary.AssignThermalCondition(self._get_args())
         elif self.type == "Convection":
             self._app.oboundary.AssignConvection(self._get_args())
+        elif self.type == "HeatFlux":
+            self._app.oboundary.AssignHeatFlux(self._get_args())
+        elif self.type == "HeatGeneration":
+            self._app.oboundary.AssignHeatGeneration(self._get_args())
         elif self.type == "Temperature":
             self._app.oboundary.AssignTemperature(self._get_args())
         elif self.type == "RotatingFluid":
@@ -596,6 +600,10 @@ class BoundaryObject(BoundaryCommon, object):
             self._app.oboundary.EditBlockBoundary(self._boundary_name, self._get_args())
         elif self.type == "SourceIcepak":
             self._app.oboundary.EditSourceBoundary(self._get_args())
+        elif self.type == "HeatFlux":
+            self._app.oboundary.EditHeatFlux(self._boundary_name, self._get_args())
+        elif self.type == "HeatGeneration":
+            self._app.oboundary.EditHeatGeneration(self._boundary_name, self._get_args())
         elif self.type == "Voltage":
             self._app.oboundary.EditVoltage(self._boundary_name, self._get_args())
         elif self.type == "VoltageDrop":
@@ -1464,7 +1472,7 @@ class Matrix(object):
         Returns
         -------
         bool
-            `True` if succeeded.
+            ``True`` when successful, ``False`` when failed.
         """
         self.omatrix.DeleteRM(self.name)
         for el in self._app.matrices:

@@ -11,6 +11,13 @@ EDB class to get access to all modules and methods.
 All other classes and methods are inherited into the app class.
 If EDB is launched within the ``HfssdLayout`` class, EDB is accessible in read-only mode.
 
+
+.. image:: ../Resources/edb_intro.png
+  :width: 800
+  :alt: EDB Applications
+  :target: https://www.ansys.com/applications/pcbs-ics-ic-packages
+
+
 Example:
 
 .. code:: python

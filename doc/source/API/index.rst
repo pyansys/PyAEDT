@@ -6,7 +6,7 @@ This section describes PyAEDT core classes, methods, and functions
 for AEDT apps and modules. Use the search feature or click links
 to view API documentation.
 The Ansys Electronics Desktop (AEDT) is a platform that enables true electronics system design.
-`AEDT <https://www.ansys.com/it-it/products/electronics>`_ provides access to the Ansys gold-standard
+`AEDT <https://www.ansys.com/products/electronics>`_ provides access to the Ansys gold-standard
 electro-magnetics simulation solutions such as Ansys HFSS,
 Ansys Maxwell, Ansys Q3D Extractor, Ansys Siwave, and Ansys Icepak using electrical CAD (ECAD) and
 Mechanical CAD (MCAD) workflows.
@@ -15,27 +15,27 @@ and Mechanical solvers for comprehensive multiphysics analysis.
 Tight integration among these solutions provides unprecedented ease of use for setup and
 faster resolution of complex simulations for design and optimization.
 
-.. image:: ../Resources/aedt.png
+.. image:: ../Resources/aedt_2.png
   :width: 800
   :alt: AEDT Applications
-  :target: https://www.ansys.com/it-it/products/electronics
+  :target: https://www.ansys.com/products/electronics
 
 The PyAEDT API includes classes for apps and modules. You must initialize the
 PyAEDT app to get access to all modules and methods. Available apps are:
 
-- `HFSS <https://www.ansys.com/it-it/products/electronics/ansys-hfss>`_
-- `HFSS 3D Layout <https://www.ansys.com/it-it/products/electronics/ansys-hfss>`_
-- `Maxwell 3D <https://www.ansys.com/it-it/products/electronics/ansys-maxwell>`_
-- `Maxwell 2D <https://www.ansys.com/it-it/products/electronics/ansys-maxwell>`_
-- `Maxwell Circuit <https://www.ansys.com/it-it/products/electronics/ansys-maxwell>`_
-- `Q3D <https://www.ansys.com/it-it/products/electronics/ansys-q3d-extractor>`_
-- `Q2D Extractor <https://www.ansys.com/it-it/products/electronics/ansys-q3d-extractor>`_
-- `Icepak <https://www.ansys.com/it-it/products/electronics>`_
+- `HFSS <https://www.ansys.com/products/electronics/ansys-hfss>`_
+- `HFSS 3D Layout <https://www.ansys.com/products/electronics/ansys-hfss>`_
+- `Maxwell 3D <https://www.ansys.com/products/electronics/ansys-maxwell>`_
+- `Maxwell 2D <https://www.ansys.com/products/electronics/ansys-maxwell>`_
+- `Maxwell Circuit <https://www.ansys.com/products/electronics/ansys-maxwell>`_
+- `Q3D <https://www.ansys.com/products/electronics/ansys-q3d-extractor>`_
+- `Q2D Extractor <https://www.ansys.com/products/electronics/ansys-q3d-extractor>`_
+- `Icepak <https://www.ansys.com/products/electronics>`_
 - `Mechanical <https://www.ansys.com/products/structures/ansys-mechanical>`_
 - RMXprt
 - Emit
 - Circuit
-- `TwinBuilder <https://www.ansys.com/it-it/products/digital-twin/ansys-twin-builder>`_
+- `TwinBuilder <https://www.ansys.com/products/digital-twin/ansys-twin-builder>`_
 
 All other classes and methods are inherited into the app class.
 The desktop app is implicitly launched in any of the other applications.
@@ -81,6 +81,8 @@ Example with ``Desktop`` class implicit initialization:
    Application
    MaterialManagement
    Primitives3D
+   Primitives2D
+   Primitive_Objects
    Primitives3DLayout
    PrimitivesCircuit
    Boundaries

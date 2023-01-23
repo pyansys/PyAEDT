@@ -101,6 +101,8 @@ if not config["skip_edb"]:
             assert len(self.edbapp.core_primitives.polygons_by_layer["UNNAMED_000"]) == 0
             assert self.edbapp.core_primitives.polygons[0].is_void == self.edbapp.core_primitives.polygons[0].IsVoid()
             poly0 = self.edbapp.core_primitives.polygons[0]
+            assert self.edbapp.core_primitives.polygons[0].clone()
+            poly1 = self.edbapp.core_primitives.polygons[0]
             assert isinstance(poly0.voids, list)
             assert isinstance(poly0.points_raw(), list)
             assert isinstance(poly0.points(), tuple)
@@ -109,11 +111,27 @@ if not config["skip_edb"]:
             assert poly0.points_raw()[0].X.ToDouble() >= 0.0
             assert poly0.type == "Polygon"
             assert self.edbapp.core_primitives.paths[0].type == "Path"
+            assert self.edbapp.core_primitives.paths[0].clone()
             assert self.edbapp.core_primitives.rectangles[0].type == "Rectangle"
             assert self.edbapp.core_primitives.circles[0].type == "Circle"
             assert not poly0.is_arc(poly0.points_raw()[0])
             assert isinstance(poly0.voids, list)
             assert self.edbapp.core_primitives.primitives_by_layer["TOP"][0].layer_name == "TOP"
+            assert isinstance(poly0.intersection_type(poly1), int)
+            assert poly0.is_intersecting(poly1)
+            assert isinstance(poly0.get_closest_point([0, 0]), list)
+            assert isinstance(poly0.get_closest_arc_midpoint([0, 0]), list)
+            assert isinstance(poly0.arcs, list)
+            assert isinstance(poly0.longest_arc.length, float)
+            assert isinstance(poly0.shortest_arc.length, float)
+            assert not poly0.in_polygon([0, 0])
+            assert isinstance(poly0.arcs[0].center, list)
+            assert isinstance(poly0.arcs[0].radius, float)
+            assert poly0.arcs[0].is_segment
+            assert not poly0.arcs[0].is_point
+            assert not poly0.arcs[0].is_ccw
+            assert isinstance(poly0.arcs[0].points_raw, list)
+            assert isinstance(poly0.arcs[0].points, tuple)
 
         def test_006_get_stackup(self):
             stackup = self.edbapp.core_stackup.stackup_layers
@@ -128,6 +146,7 @@ if not config["skip_edb"]:
         def test_007_get_signal_layers(self):
             signal_layers = self.edbapp.core_stackup.signal_layers
             assert len(list(signal_layers.values()))
+            assert self.edbapp.stackup.residual_copper_area_per_layer()
 
         def test_008_component_lists(self):
             component_list = self.edbapp.core_components.components
@@ -2121,3 +2140,6 @@ if not config["skip_edb"]:
             assert setup1.snap_length_threshold == "3.5um"
             assert not setup1.use_si_settings
             assert setup1.xtalk_threshold == "-44"
+
+        def test_132_via_plating_ratio_check(self):
+            assert self.edbapp.core_padstack.check_and_fix_via_plating()

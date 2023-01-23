@@ -373,8 +373,8 @@ class EdbPadstacks(object):
 
         Returns
         -------
-        string
-            terminal name.
+        str
+            Terminal name.
 
         """
         if isinstance(padstackinstance, int):
@@ -464,7 +464,7 @@ class EdbPadstacks(object):
         Returns
         -------
         tuple
-            Tuple of (GeometryType, ParameterList, OffsetX, OffsetY, Rot)
+            Tuple of (GeometryType, ParameterList, OffsetX, OffsetY, Rot).
         """
 
         if "PadstackDef" in str(type(pin)):
@@ -529,9 +529,35 @@ class EdbPadstacks(object):
                 padstack.edb_padstack.SetData(cloned_padstack_data)
             return all_succeed
 
+    @pyaedt_function_handler
+    def check_and_fix_via_plating(self, minimum_value_to_replace=0.0, default_plating_ratio=0.2):
+        """Check for minimum via plating ration value, values found below the minimum one are replaced by default
+        plating ratio.
+
+        Parameters
+        ----------
+        minimum_value_to_replace : float
+            Plating ratio that is below or equal to this value is to be replaced
+            with the value specified for the next parameter. Default value ``0.0``.
+        default_plating_ratio : float
+            Default value to use for plating ratio. The default value is ``0.2``.
+
+        Returns
+        -------
+        bool
+            ``True`` when successful, ``False`` if an anti-pad value fails to be assigned.
+        """
+        for padstack_def in list(self.padstacks.values()):
+            if padstack_def.hole_plating_ratio <= minimum_value_to_replace:
+                padstack_def.hole_plating_ratio = default_plating_ratio
+                self._logger.info(
+                    "Padstack definition with zero plating ratio, defaulting to 20%".format(padstack_def.name)
+                )
+        return True
+
     @pyaedt_function_handler()
     def get_via_instance_from_net(self, net_list=None):
-        """Get the list for Edb vias from net name list.
+        """Get the list for EDB vias from a net name list.
 
         Parameters
         ----------
@@ -542,7 +568,7 @@ class EdbPadstacks(object):
         Returns
         -------
         list of Edb.Cell.Primitive.PadstackInstance
-            list of EDB vias.
+            List of EDB vias.
         """
         if net_list == None:
             net_list = []

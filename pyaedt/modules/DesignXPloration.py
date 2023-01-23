@@ -744,7 +744,7 @@ class SetupParam(CommonOptimetrics, object):
         Returns
         -------
         bool
-            `True` if setup is deleted. `False` if it failed.
+            ``True`` if setup is deleted. ``False`` if it failed.
         """
 
         self.omodule.DeleteSetups([self.name])
@@ -1052,7 +1052,7 @@ class ParametricSetups(object):
         Returns
         -------
         bool
-            `True` if setup is deleted. `False` if it failed.
+            ``True`` if setup is deleted. ``False`` if it failed.
         """
         for el in self.setups:
             if el.name == setup_name:
@@ -1193,7 +1193,7 @@ class OptimizationSetups(object):
         Returns
         -------
         bool
-            `True` if setup is deleted. `False` if it failed.
+            ``True`` if setup is deleted. ``False`` if it failed.
         """
         for el in self.setups:
             if el.name == setup_name:

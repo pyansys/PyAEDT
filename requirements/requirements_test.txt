@@ -1,13 +1,13 @@
 codecov==2.1.12
 ipython==8.8.0
 joblib==1.2.0
-matplotlib==3.6.2
+matplotlib==3.6.3
 numpy==1.21.6; python_version <= '3.7'
 numpy==1.24.1; python_version > '3.7'
 openpyxl==3.0.10
 osmnx
-pandas==1.5.2
-pytest==7.2.0
+pandas==1.5.3
+pytest==7.2.1
 pytest-cov==4.0.0
 pytest-xdist==3.1.0
 pyvista==0.37.0

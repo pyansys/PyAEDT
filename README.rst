@@ -44,7 +44,25 @@ effort to facilitate the use of Ansys technologies directly from Python.
 PyAEDT is intended to consolidate and extend all existing
 functionalities around scripting for Ansys Electronics Desktop (AEDT)
 to allow reuse of existing code, sharing of best practices, and increased
-collaboration. PyAEDT is licensed under the `MIT License
+collaboration.
+
+The Ansys Electronics Desktop (AEDT) is a platform that enables true electronics system design.
+`AEDT <https://www.ansys.com/products/electronics>`_ provides access to the Ansys gold-standard
+electro-magnetics simulation solutions such as Ansys HFSS,
+Ansys Maxwell, Ansys Q3D Extractor, Ansys Siwave, and Ansys Icepak using electrical CAD (ECAD) and
+Mechanical CAD (MCAD) workflows.
+In addition, it includes direct links to the complete Ansys portfolio of thermal, fluid,
+and Mechanical solvers for comprehensive multiphysics analysis.
+Tight integration among these solutions provides unprecedented ease of use for setup and
+faster resolution of complex simulations for design and optimization.
+
+.. image:: https://images.ansys.com/is/image/ansys/ansys-electronics-technology-collage?wid=941&op_usm=0.9,1.0,20,0&fit=constrain,0
+  :width: 800
+  :alt: AEDT Applications
+  :target: https://www.ansys.com/products/electronics
+
+
+PyAEDT is licensed under the `MIT License
 <https://github.com/pyansys/PyAEDT/blob/main/LICENSE>`_.
 
 PyAEDT includes functionality for interacting with the following AEDT tools and Ansys products:

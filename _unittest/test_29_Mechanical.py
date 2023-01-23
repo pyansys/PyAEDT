@@ -100,7 +100,22 @@ class TestClass(BasisTest, object):
         assert self.aedtapp.mesh.initial_mesh_settings
         assert self.aedtapp.mesh.initial_mesh_settings.props
 
-    def test_09_add_mesh_link(self):
+    def test_09_assign_heat_flux(self):
+        self.aedtapp.insert_design("Th1", "Thermal")
+        self.aedtapp.modeler.create_box([0, 0, 0], [10, 10, 3], "box1", "copper")
+        b2 = self.aedtapp.modeler.create_box([20, 20, 2], [10, 10, 3], "box2", "copper")
+        hf1 = self.aedtapp.assign_heat_flux(["box1"], heat_flux_type="Total Power", value="5W")
+        hf2 = self.aedtapp.assign_heat_flux([b2.top_face_x.id], heat_flux_type="Surface Flux", value="25mW_per_m2")
+        assert hf1.props["TotalPower"] == "5W"
+        assert hf2.props["SurfaceFlux"] == "25mW_per_m2"
+
+    def test_10_assign_heat_generation(self):
+        self.aedtapp.insert_design("Th2", "Thermal")
+        self.aedtapp.modeler.create_box([40, 40, 2], [10, 10, 3], "box3", "copper")
+        hg1 = self.aedtapp.assign_heat_generation(["box3"], value="1W", boundary_name="heatgenBC")
+        assert hg1.props["TotalPower"] == "1W"
+
+    def test_11_add_mesh_link(self):
         self.aedtapp.save_project(self.aedtapp.project_file)
         self.aedtapp.set_active_design("MechanicalDesign1")
         assert self.aedtapp.setups[0].add_mesh_link(design_name="MechanicalDesign2")

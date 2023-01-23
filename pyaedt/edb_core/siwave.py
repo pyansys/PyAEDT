@@ -266,7 +266,7 @@ class EdbSiwave(object):
         Returns
         -------
         str
-            Source Name
+            Source Name.
 
         Examples
         --------
@@ -1067,7 +1067,7 @@ class EdbSiwave(object):
 
         Returns
         -------
-        Component
+        class:`pyaedt.edb_core.components.Components`
             Created EDB component.
 
         """
@@ -1092,6 +1092,7 @@ class EdbSiwave(object):
             List of pin names.
         group_name : str, optional
             Name of the pin group.
+
         Returns
         -------
         PinGroup
@@ -1125,6 +1126,7 @@ class EdbSiwave(object):
             Name of the net.
         group_name : str, optional
             Name of the pin group. The default value is ``None``.
+
         Returns
         -------
         PinGroup
@@ -1149,8 +1151,10 @@ class EdbSiwave(object):
             Magnitude of the source.
         phase : int, float, optional
             Phase of the source
+
         Returns
         -------
+        bool
 
         """
         pos_pin_group = self.pin_groups[pos_pin_group_name]
@@ -1182,8 +1186,10 @@ class EdbSiwave(object):
             Magnitude of the source.
         phase : int, float, optional
             Phase of the source
+
         Returns
         -------
+        bool
 
         """
         pos_pin_group = self.pin_groups[pos_pin_group_name]
@@ -1211,8 +1217,10 @@ class EdbSiwave(object):
             Name of the negative pin group.
         impedance : int, float, optional
             Impedance of the source.
+
         Returns
         -------
+        bool
 
         """
         pos_pin_group = self.pin_groups[pos_pin_group_name]

@@ -1245,7 +1245,7 @@ class PostProcessorCommon(object):
         Returns
         -------
         str
-            path of exported file
+            Path of exported file.
 
         References
         ----------
@@ -1293,7 +1293,7 @@ class PostProcessorCommon(object):
         Returns
         -------
         str
-            path of exported file
+            Path of exported file.
 
         References
         ----------
@@ -2822,7 +2822,7 @@ class PostProcessor(PostProcessorCommon, object):
         Returns
         -------
         :class:``pyaedt.modules.solutions.FieldPlot``
-            Plot object
+            Plot object.
 
         References
         ----------

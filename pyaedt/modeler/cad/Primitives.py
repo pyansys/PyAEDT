@@ -537,7 +537,7 @@ class Primitives(object):
         Returns
         -------
         float or list of floats
-            Defined in object units :attr:`pyaedt.modeler.Primitives.Polyline.object_units`
+            Defined in object units :attr:`pyaedt.modeler.Primitives.Polyline.object_units`.
 
         """
         # Convert to a list if a scalar is presented
@@ -579,7 +579,7 @@ class Primitives(object):
         Returns
         -------
         bool
-            ``True`` when successful, ``False`` when failed
+            ``True`` when successful, ``False`` when failed.
 
         """
         if isinstance(object, int):
@@ -1201,7 +1201,7 @@ class Primitives(object):
         Returns
         -------
         bool
-            ``True`` when successful, ``False`` when failed
+            ``True`` when successful, ``False`` when failed.
 
         References
         ----------
@@ -1254,7 +1254,7 @@ class Primitives(object):
         Returns
         -------
         bool
-            ``True`` when successful, ``False`` when failed
+            ``True`` when successful, ``False`` when failed.
 
         References
         ----------

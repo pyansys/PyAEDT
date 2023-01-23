@@ -734,8 +734,8 @@ class Components(object):
         >>> port_type=SourceType.CoaxPort, do_pingroup=False, refnet="GND")
 
         """
-        if isinstance(component, self._edb.Cell.Hierarchy.Component):
-            cmp = component.GetName()
+        if isinstance(component, str):
+            component = self.components[component].edbcomponent
         if not isinstance(net_list, list):
             net_list = [net_list]
         for net in net_list:
@@ -748,11 +748,18 @@ class Components(object):
                     pass
         if reference_net in net_list:
             net_list.remove(reference_net)
-        cmp_pins = self.get_pin_from_component(component, net_list)
+        cmp_pins = [
+            p for p in list(component.LayoutObjs) if int(p.GetObjType()) == 1 and p.GetNet().GetName() in net_list
+        ]
+        for p in cmp_pins:  # pragma no cover
+            if not p.IsLayoutPin():
+                p.SetIsLayoutPin(True)
         if len(cmp_pins) == 0:
+            self._logger.info(
+                "No pins found on component {}, searching padstack instances instead".format(component.GetName())
+            )
             return False
         pin_layers = cmp_pins[0].GetPadstackDef().GetData().GetLayerNames()
-
         if port_type == SourceType.CoaxPort:
             pad_params = self._padstack.get_pad_parameters(pin=cmp_pins[0], layername=pin_layers[0], pad_type=0)
             sball_diam = min([self._pedb.edb_value(val).ToDouble() for val in pad_params[1]])
@@ -761,8 +768,17 @@ class Components(object):
             for pin in cmp_pins:
                 self._padstack.create_coax_port(pin)
 
-        elif port_type == SourceType.CircPort:
-            ref_pins = self.get_pin_from_component(component, reference_net)
+        elif port_type == SourceType.CircPort:  # pragma no cover
+            ref_pins = [
+                p
+                for p in list(component.LayoutObjs)
+                if int(p.GetObjType()) == 1 and p.GetNet().GetName() in reference_net
+            ]
+            for p in ref_pins:
+                if not p.IsLayoutPin():
+                    p.SetIsLayoutPin(True)
+            if len(ref_pins) == 0:
+                self._logger.info("No reference pin found on component {}.".format(component.GetName()))
             if do_pingroup:
                 if len(ref_pins) == 1:
                     self.create_terminal = self._create_terminal(ref_pins[0])
@@ -788,8 +804,12 @@ class Components(object):
                         self._logger.info("No pins found on component {} for the net {}".format(component, net))
 
             else:
+                ref_pin_group = self.create_pingroup_from_pins(ref_pins)
+                if not ref_pin_group:
+                    self._logger.warning("failed to create reference pin group")
+                    return False
                 for net in net_list:
-                    pins = [pin for pin in cmp_pins if pin.GetNet().GetName().lower() == net]
+                    pins = [pin for pin in cmp_pins if pin.GetNet().GetName() == net]
                     for pin in pins:
                         ref_pin = self._get_closest_pin_from(pin, ref_pins)
                         ref_pin_term = self._create_terminal(ref_pin)
@@ -1278,7 +1298,7 @@ class Components(object):
         Returns
         -------
         tuple
-            (bool, pingroup)
+            The tuple is structured as: (bool, pingroup).
 
         Examples
         --------

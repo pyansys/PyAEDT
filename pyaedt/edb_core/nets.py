@@ -825,7 +825,7 @@ class EdbNets(object):
         Returns
         -------
         object
-            Net Object
+            Net Object.
         """
         if not net_name and not start_with and not contain and not end_with:
             net_name = generate_unique_name("NET_")

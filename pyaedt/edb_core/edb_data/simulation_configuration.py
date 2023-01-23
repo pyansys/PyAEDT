@@ -26,7 +26,7 @@ class SimulationConfigurationBatch(object):
         self._power_nets = []
         self._components = []
         self._cutout_subdesign_type = CutoutSubdesignType.Conformal  # Conformal
-        self._cutout_subdesign_expansion = 0.1
+        self._cutout_subdesign_expansion = 0.001
         self._cutout_subdesign_round_corner = True
         self._use_default_cutout = True
         self._generate_solder_balls = True
@@ -46,6 +46,7 @@ class SimulationConfigurationBatch(object):
         self._truncate_airbox_at_ground = False
         self._use_radiation_boundary = True
         self._do_cutout_subdesign = True
+        self._do_pin_group = True
         self._sources = []
 
     @property
@@ -173,6 +174,21 @@ class SimulationConfigurationBatch(object):
     @use_default_cutout.setter
     def use_default_cutout(self, value):  # pragma: no cover
         self._use_default_cutout = value
+
+    @property
+    def do_pingroup(self):  # pragma: no cover
+        """Do pingroup on multi-pin component. ``True`` all pins from the same net are grouped, ``False`` one port
+        is created for each pin.
+
+        Returns
+        -------
+        bool
+        """
+        return self._do_pin_group
+
+    @do_pingroup.setter
+    def do_pingroup(self, value):  # pragma: no cover
+        self._do_pin_group = value
 
     @property
     def generate_solder_balls(self):  # pragma: no cover

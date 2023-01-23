@@ -675,7 +675,7 @@ class EdbLayout(object):
 
         Returns
         -------
-         :class:`pyaedt.edb_core.edb_data.primitives_data.EDBPrimitives`
+        :class:`pyaedt.edb_core.edb_data.primitives_data.EDBPrimitives`
             Objects of the circle created when successful.
         """
         edb_net = self._pedb.core_nets.find_or_create_net(net_name)

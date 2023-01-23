@@ -49,12 +49,12 @@ repos:
 
 # validate GitHub workflow files
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.19.2
+  rev: 0.20.0
   hooks:
     - id: check-github-workflows
 
 - repo: https://github.com/asottile/blacken-docs
-  rev: v1.12.1
+  rev: 1.13.0
   hooks:
   -   id: blacken-docs
       additional_dependencies: [black==22.12.0]
