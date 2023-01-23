@@ -36,11 +36,10 @@ jobs:
         run: |
           make -C doc phtml
 
-      - name: "Zip HTML documentation"
-        uses: vimtor/action-zip@v1.1
-        with:
-          files: doc/_build/html
-          dest: documentation-html.zip
+      - name: Zip HTML Documentation before upload
+        run: |
+          sudo apt install zip -y
+          zip -r documentation-html.zip doc/_build/html
 
       - name: Upload documentation HTML artifact
         uses: actions/upload-artifact@v3
@@ -64,6 +63,8 @@ jobs:
       - name: Deploy development documentation
         uses: pyansys/actions/doc-deploy-dev@v3
         with:
+          doc-artifact-name: Documentation
+          decompress_artifact: true
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
