@@ -39,13 +39,13 @@ jobs:
       - name: Zip HTML Documentation before upload
         run: |
           sudo apt install zip -y
-          zip -r documentation.zip doc/_build/html
+          zip -r doc.zip doc/_build/html
 
       - name: Upload documentation HTML artifact
         uses: actions/upload-artifact@v3
         with:
           name: documentation
-          path: documentation.zip
+          path: doc.zip
           retention-days: 7
 
       # - name: Upload documentation HTML artifact
