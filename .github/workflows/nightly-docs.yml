@@ -41,17 +41,17 @@ jobs:
           sudo apt install zip -y
           zip -r doc.zip doc/_build/html
 
+      - name: Upload documentation HTML artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: doc
+          path: doc.zip
+          retention-days: 7
+
   docs_upload:
     needs: docs_build
     runs-on: ubuntu-latest
     steps:
-
-      - name: Upload documentation HTML artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: documentation
-          path: doc.zip
-          retention-days: 7
 
       # - name: Upload documentation HTML artifact
       #   uses: actions/upload-artifact@v3
@@ -63,7 +63,7 @@ jobs:
       - name: Deploy development documentation
         uses: pyansys/actions/doc-deploy-dev@v3
         with:
-          doc-artifact-name: documentation
+          doc-artifact-name: doc
           decompress_artifact: true
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
