@@ -44,13 +44,13 @@ jobs:
       - name: Upload documentation HTML artifact
         uses: actions/upload-artifact@v3
         with:
-          name: doc
+          name: HTML-Documentation
           path: doc.zip
           retention-days: 7
 
   docs_upload:
     needs: docs_build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
 
       # - name: Upload documentation HTML artifact
@@ -63,7 +63,7 @@ jobs:
       - name: Deploy development documentation
         uses: pyansys/actions/doc-deploy-dev@v3
         with:
-          doc-artifact-name: doc
+          doc-artifact-name: HTML-Documentation
           decompress_artifact: true
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
