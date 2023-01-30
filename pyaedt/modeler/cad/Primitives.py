@@ -1369,12 +1369,22 @@ class Primitives(object):
         self._unclassified = []
         self._all_object_names = []
         self.objects = {}
-        self.user_defined_components = {}
+        self._user_defined_components = {}
         self.object_id_dict = {}
         self._currentId = 0
         self._refresh_object_types()
         self._refresh_all_ids_from_aedt_file()
         self.refresh_all_ids()
+
+    @property
+    def user_defined_components(self):
+        """User Defined Components.
+
+        Returns
+        -------
+        Dict[str, :class:`pyaedt.modeler.cad.components_3d.UserDefinedComponent`]
+        """
+        return self._user_defined_components
 
     @pyaedt_function_handler()
     def cleanup_objects(self):
