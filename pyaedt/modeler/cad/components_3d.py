@@ -56,6 +56,510 @@ class UserDefinedComponentProps(OrderedDict):
         OrderedDict.__setitem__(self, key, value)
 
 
+class MeshFusion(object):
+    def __init__(self, parent):
+        self._parent = parent
+        self._primitives = self._parent._primitives
+        self._m_Editor = self._parent._m_Editor
+        self.name = self._parent.name
+        self._use_slider = None
+        self._slider_value = None
+        self._surface_dev = None
+        self._normal_deviation = None
+        self._aspect_ratio = None
+        self._use_curvilinear = None
+        self._mesh_method = None
+        self._dynamic_surface_resolution = None
+        self._use_flex_mesh = None
+        self._use_fallback_mesh = None
+        self._allow_phi_mesh = None
+        self._model_resolution = None
+        self._use_auto_simplify = None
+        self._priority_mesh = False
+        self._volume = [0, 0, 0, 0, 0, 0]
+        self._override_mesh = False
+
+    @property
+    def override_mesh(self):
+        return self._override_mesh
+
+    @override_mesh.setter
+    def override_mesh(self, val):
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def do_mesh_assembly(self):
+        """Get/Set the Mesh fusion on the 3D Component.
+
+        Returns
+        -------
+        bool
+        """
+        return self._get_prop("Do Mesh Assembly")
+
+    @do_mesh_assembly.setter
+    def do_mesh_assembly(self, value):
+
+        c_obj = self._m_Editor.GetChildObject(self.name)
+        c_obj_props = c_obj.GetPropNames()
+        if "Do Mesh Assembly" in c_obj_props:
+            c_obj.SetPropValue("Do Mesh Assembly", value)
+
+    @property
+    def use_slider(self):
+        """Get the mesh settings on the 3D Component to use slider.
+
+        Returns
+        -------
+        bool
+        """
+        if self._use_slider is not None:
+            return self._use_slider
+        prop = self._get_prop("Surface Approximation")
+        self._use_slider = True if "Use Slider" in prop else False
+        return self._use_slider
+
+    @use_slider.setter
+    def use_slider(self, val):
+        self._use_slider = val
+        if val is True and not self._slider_value:
+            self._slider_value = 5
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def slider_value(self):
+        """Get the mesh settings on the 3D Component to use slider.
+
+        Returns
+        -------
+        int
+        """
+        if self._slider_value is not None:
+            return self._slider_value
+        self._slider_value = 5
+        prop = self._get_prop("Surface Approximation")
+        if "Use Slider" in prop:
+            self._slider_value = int(prop.split(" = ")[-1])
+        return self._slider_value
+
+    @slider_value.setter
+    def slider_value(self, val):
+        self._slider_value = val
+        self._use_slider = True
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def mesh_method(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._mesh_method is not None:
+            return self._mesh_method
+        self._mesh_method = self._get_prop("Initial Mesh Method")
+        return self._mesh_method
+
+    @mesh_method.setter
+    def mesh_method(self, val):
+        if val in ["auto", "classic", "tau"]:
+            self._mesh_method = val
+            self._override_mesh = True
+            self._set_mesh_fusion()
+
+    @property
+    def dynamic_surface_resolution(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._dynamic_surface_resolution is not None:
+            return self._dynamic_surface_resolution
+        self._dynamic_surface_resolution = self._get_prop("Dynamic Surface Resolution")
+        return self._dynamic_surface_resolution
+
+    @dynamic_surface_resolution.setter
+    def dynamic_surface_resolution(self, val):
+        self._dynamic_surface_resolution = val
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def use_flex_mesh(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._use_flex_mesh is not None:
+            return self._use_flex_mesh
+        self._use_flex_mesh = self._get_prop("Use Flex meshing for TAU volume mesh")
+        return self._use_flex_mesh
+
+    @use_flex_mesh.setter
+    def use_flex_mesh(self, val):
+        self._use_flex_mesh = val
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def use_fallback_mesh(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._use_fallback_mesh is not None:
+            return self._use_fallback_mesh
+        self._use_fallback_mesh = self._get_prop("Use alternative mesh methods as fall back")
+        return self._use_fallback_mesh
+
+    @use_fallback_mesh.setter
+    def use_fallback_mesh(self, val):
+        self._use_fallback_mesh = val
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def allow_phi_mesh(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._allow_phi_mesh is not None:
+            return self._allow_phi_mesh
+        self._allow_phi_mesh = self._get_prop("Allow Phi for layered geometry (Classic only)")
+        return self._allow_phi_mesh
+
+    @allow_phi_mesh.setter
+    def allow_phi_mesh(self, val):
+        self._allow_phi_mesh = val
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def use_curvilinear(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._use_curvilinear is not None:
+            return self._use_curvilinear
+        self._use_curvilinear = self._get_prop("Apply Curvilinear Elements")
+        return self._use_curvilinear
+
+    @use_curvilinear.setter
+    def use_curvilinear(self, val):
+        self._use_curvilinear = val
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def use_auto_simplify(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._use_auto_simplify is not None:
+            return self._use_auto_simplify
+        prop = self._get_prop("Model Resolution Length")
+        if prop:
+            self._use_auto_simplify = True if prop.split(" = ")[-1] == "true" else False
+        return self._use_auto_simplify
+
+    @use_auto_simplify.setter
+    def use_auto_simplify(self, val):
+        self._use_auto_simplify = val
+        if val is False and not self._model_resolution:
+            self._model_resolution = "0.001mm"
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def model_resolution(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._model_resolution is not None:
+            return self._model_resolution
+        prop = self._get_prop("Model Resolution Length")
+        if prop:
+            self._model_resolution = prop.split(",")[0].split(" = ")[1]
+        return self._model_resolution
+
+    @model_resolution.setter
+    def model_resolution(self, val):
+        self._model_resolution = val
+        self._use_auto_simplify = False
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def aspect_ratio(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._aspect_ratio is not None:
+            return self._aspect_ratio
+        prop = self._get_prop("Surface Approximation")
+        ps = [i for i in prop.split(", ")]
+        ps_with_values = {}
+        for i in ps:
+            i_splitted = i.split(" = ")
+            try:
+                ps_with_values[i_splitted[0]] = i_splitted[1]
+            except IndexError:
+                pass
+        if "Aspect Ratio" in ps_with_values:
+            self._aspect_ratio = ps_with_values["Aspect Ratio"]
+        return self._aspect_ratio
+
+    @aspect_ratio.setter
+    def aspect_ratio(self, val):
+        self._aspect_ratio = val
+        self._use_slider = False
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def surface_deviation(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._surface_dev is not None:
+            return self._surface_dev
+        prop = self._get_prop("Surface Approximation")
+        ps = [i for i in prop.split(", ")]
+        ps_with_values = {}
+        for i in ps:
+            i_splitted = i.split(" = ")
+            try:
+                ps_with_values[i_splitted[0]] = i_splitted[1]
+            except IndexError:
+                pass
+        if "Surface Deviation" in ps_with_values:
+            self._surface_dev = ps_with_values["Surface Deviation"]
+        return self._surface_dev
+
+    @surface_deviation.setter
+    def surface_deviation(self, val):
+        self._surface_deviation = val
+        self._use_slider = False
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @property
+    def normal_deviation(self):
+        """Get the mesh method on the 3D Component.
+
+        Returns
+        -------
+        str
+        """
+        if self._normal_deviation is not None:
+            return self._normal_deviation
+        prop = self._get_prop("Surface Approximation")
+        ps = [i for i in prop.split(", ")]
+        ps_with_values = {}
+        for i in ps:
+            i_splitted = i.split(" = ")
+            try:
+                ps_with_values[i_splitted[0]] = i_splitted[1]
+            except IndexError:
+                pass
+        if "Normal Deviation" in ps_with_values:
+            self._normal_deviation = ps_with_values["Normal Deviation"]
+        return self._normal_deviation
+
+    @normal_deviation.setter
+    def normal_deviation(self, val):
+        self._normal_deviation = val
+        self._use_slider = False
+        self._override_mesh = True
+        self._set_mesh_fusion()
+
+    @pyaedt_function_handler()
+    def _get_prop(self, propname):
+        c_obj = self._m_Editor.GetChildObject(self.name)
+        c_obj_props = c_obj.GetPropNames()
+        if propname in c_obj_props:
+            return c_obj.GetPropValue(propname)
+        return ""
+
+    @property
+    def priority_mesh(self):
+        return self._priority_mesh
+
+    @priority_mesh.setter
+    def priority_mesh(self, val):
+        self._priority_mesh = val
+        self._set_mesh_fusion()
+
+    @property
+    def volume(self):
+        return self._volume
+
+    @volume.setter
+    def volume(self, val):
+        self._volume = val
+        self._set_mesh_fusion()
+
+    @pyaedt_function_handler()
+    def _set_mesh_fusion(self):
+
+        arg = ["NAME:AllSettings"]
+        arg_ma = [
+            "NAME:MeshAssembly",
+        ]
+        priority_3d_component_list = []
+        for c3d, c3dobj in self._primitives.user_defined_components.items():
+            if self.name == c3d or c3dobj.mesh_fusion.do_mesh_assembly:
+                if c3dobj.mesh_fusion.priority_mesh:
+                    priority_3d_component_list.append(c3d)
+                arg_cmp = [
+                    "NAME:{}".format(c3d),
+                ]
+                arg_cmp_mesh_settings = [
+                    "NAME:MeshSetting",
+                ]
+                if self.name == c3d:
+                    _use_slider = self.use_slider
+                    _slider_value = self.slider_value
+                    _surface_dev = self.surface_deviation
+                    _normal_deviation = self.normal_deviation
+                    _aspect_ratio = self.aspect_ratio
+                    _use_curvilinear = self.use_curvilinear
+                    _mesh_method = self.mesh_method
+                    _dynamic_surface_resolution = self.dynamic_surface_resolution
+                    _use_flex_mesh = self.use_flex_mesh
+                    _use_fallback_mesh = self.use_fallback_mesh
+                    _allow_phi_mesh = self.allow_phi_mesh
+                    _model_resolution = self.model_resolution
+                    _auto_simplify = self.use_auto_simplify
+                else:
+                    _use_slider = c3dobj.mesh_fusion.use_slider
+                    _slider_value = c3dobj.mesh_fusion.slider_value
+                    _surface_dev = c3dobj.mesh_fusion.surface_deviation
+                    _normal_deviation = c3dobj.mesh_fusion.normal_deviation
+                    _aspect_ratio = c3dobj.mesh_fusion.aspect_ratio
+                    _use_curvilinear = c3dobj.mesh_fusion.use_curvilinear
+                    _mesh_method = c3dobj.mesh_fusion.mesh_method
+                    _dynamic_surface_resolution = c3dobj.mesh_fusion.dynamic_surface_resolution
+                    _use_flex_mesh = c3dobj.mesh_fusion.use_flex_mesh
+                    _use_fallback_mesh = c3dobj.mesh_fusion.se_fallback_mesh
+                    _allow_phi_mesh = c3dobj.mesh_fusion.allow_phi_mesh
+                    _model_resolution = c3dobj.mesh_fusion.model_resolution
+                    _auto_simplify = c3dobj.mesh_fusion.use_auto_simplify
+
+                if self.override_mesh:
+                    if _use_slider:
+                        arg_cmp_mesh_settings.append(
+                            [
+                                "NAME:GlobalSurfApproximation",
+                                "CurvedSurfaceApproxChoice:=",
+                                "UseSlider",
+                                "SliderMeshSettings:=",
+                                _slider_value,
+                            ]
+                        )
+                    else:
+                        arg_cmp_mesh_settings.append(
+                            [
+                                "NAME:GlobalSurfApproximation",
+                                "CurvedSurfaceApproxChoice:=",
+                                "ManualSettings",
+                                "SurfDevChoice:=",
+                                2 if _surface_dev else 0,
+                                "SurfDev:=",
+                                self._primitives._arg_with_dim(_surface_dev) if _surface_dev else "0.01mm",
+                                "NormalDevChoice:=",
+                                2 if _normal_deviation else 1,
+                                "NormalDev:=",
+                                self._primitives._arg_with_dim(_normal_deviation, "deg")
+                                if _normal_deviation
+                                else "22.5deg",
+                                "AspectRatioChoice:=",
+                                2 if _aspect_ratio else 1,
+                                "AspectRatio:=",
+                                str(_aspect_ratio),
+                            ]
+                        )
+                    arg_cmp_mesh_settings.append(["NAME:GlobalCurvilinear", "Apply:=", _use_curvilinear])
+                    if not _auto_simplify:
+                        mr = [
+                            "NAME:GlobalModelRes",
+                            "UseAutoLength:=",
+                            False,
+                            "DefeatureLength:=",
+                            self._primitives._arg_with_dim(_model_resolution),
+                        ]
+                    else:
+                        mr = ["NAME:GlobalModelRes", "UseAutoLength:=", True]
+                    arg_cmp_mesh_settings.append(mr)
+                    arg_cmp_mesh_settings.append("MeshMethod:=")
+                    if _mesh_method.lower() == "tau":
+                        arg_cmp_mesh_settings.append("AnsoftTAU")
+                    elif _mesh_method.lower() == "classic":
+                        arg_cmp_mesh_settings.append("AnsoftClassic")
+                    else:
+                        arg_cmp_mesh_settings.append("Auto")
+                    arg_cmp_mesh_settings.append("UseLegacyFaceterForTauVolumeMesh:=")
+                    arg_cmp_mesh_settings.append(False)
+
+                    arg_cmp_mesh_settings.append("DynamicSurfaceResolution:=")
+                    arg_cmp_mesh_settings.append(_dynamic_surface_resolution)
+
+                    arg_cmp_mesh_settings.append("UseFlexMeshingForTAUvolumeMesh:=")
+                    arg_cmp_mesh_settings.append(_use_flex_mesh)
+
+                    arg_cmp_mesh_settings.append("UseAlternativeMeshMethodsAsFallBack:=")
+                    arg_cmp_mesh_settings.append(_use_fallback_mesh)
+
+                    arg_cmp_mesh_settings.append("AllowPhiForLayeredGeometry:=")
+                    arg_cmp_mesh_settings.append(_allow_phi_mesh)
+                    arg_cmp.append(arg_cmp_mesh_settings)
+                    arg_cmp.append("MeshAssemblyBoundingVolumePadding:=")
+                    arg_cmp.append([str(i) for i in c3dobj.mesh_fusion.volume])
+
+                arg_ma.append(arg_cmp)
+        arg.append(arg_ma)
+        arg_prio = ["NAME:Priority Components"]
+        if priority_3d_component_list:
+            arg_prio.extend(priority_3d_component_list)
+        arg.append(arg_prio)
+        try:
+            self._primitives._app.odesign.SetDoMeshAssembly(arg)
+        except:
+            self._primitives.logger.error(
+                "Failed to Setup mesh fusion. Check if it can be used or settings are correct."
+            )
+            return False
+        return True
+
+
 class UserDefinedComponent(object):
     """Manages object attributes for 3DComponent and User Defined Model.
 
@@ -111,10 +615,12 @@ class UserDefinedComponent(object):
         self._target_coordinate_system = "Global"
         self._is_updated = False
         self._all_props = None
+        self._mesh_fusion = None
         defined_components = self._primitives.oeditor.Get3DComponentDefinitionNames()
         for component in defined_components:
             if self._m_name in self._primitives.oeditor.Get3DComponentInstanceNames(component):
                 self.definition_name = component
+                break
         if component_type:
             self.auto_update = False
             self._props = UserDefinedComponentProps(
@@ -122,7 +628,7 @@ class UserDefinedComponent(object):
                 OrderedDict(
                     {
                         "TargetCS": self._target_coordinate_system,
-                        "SubmodelDefinitionName": component,
+                        "SubmodelDefinitionName": self.definition_name,
                         "ComponentPriorityLists": OrderedDict({}),
                         "NextUniqueID": 0,
                         "MoveBackwards": False,
@@ -130,7 +636,7 @@ class UserDefinedComponent(object):
                         "DatasetDefinitions": OrderedDict({}),
                         "BasicComponentInfo": OrderedDict(
                             {
-                                "ComponentName": component,
+                                "ComponentName": self.definition_name,
                                 "Company": "",
                                 "Company URL": "",
                                 "Model Number": "",
@@ -276,7 +782,7 @@ class UserDefinedComponent(object):
     def mesh_assembly(self, ma):
         key = "Do Mesh Assembly"
         if (
-            self.is3dcomponent
+            self._parent.is3dcomponent
             and isinstance(ma, bool)
             and key in self._primitives.oeditor.GetChildObject(self.name).GetPropNames()
         ):
@@ -721,328 +1227,7 @@ class UserDefinedComponent(object):
         return get_pyaedt_app(project_name, design_name)
 
     @property
-    def do_mesh_assembly(self):
-        """Get/Set the Mesh fusion on the 3D Component.
-
-        Returns
-        -------
-        bool
-        """
-        return self._get_prop("Do Mesh Assembly")
-
-    @do_mesh_assembly.setter
-    def do_mesh_assembly(self, value):
-
-        c_obj = self._m_Editor.GetChildObject(self.name)
-        c_obj_props = c_obj.GetPropNames()
-        if "Do Mesh Assembly" in c_obj_props:
-            c_obj.SetPropValue("Do Mesh Assembly", value)
-
-    @property
-    def use_slider(self):
-        """Get the mesh settings on the 3D Component to use slider.
-
-        Returns
-        -------
-        bool
-        """
-        prop = self._get_prop("Surface Approximation")
-        return True if "Use Slider" in prop else False
-
-    @property
-    def slider_value(self):
-        """Get the mesh settings on the 3D Component to use slider.
-
-        Returns
-        -------
-        int
-        """
-        prop = self._get_prop("Surface Approximation")
-        if "Use Slider" in prop:
-            return int(prop.split(" = ")[-1])
-        return 5
-
-    @property
-    def mesh_method(self):
-        """Get the mesh method on the 3D Component.
-
-        Returns
-        -------
-        str
-        """
-        return self._get_prop("Surface Approximation")
-
-    @property
-    def dynamic_surface_resolution(self):
-        """Get the mesh method on the 3D Component.
-
-        Returns
-        -------
-        str
-        """
-        return self._get_prop("Dynamic Surface Resolution")
-
-    @property
-    def use_flex_mesh(self):
-        """Get the mesh method on the 3D Component.
-
-        Returns
-        -------
-        str
-        """
-        return self._get_prop("Use Flex meshing for TAU volume mesh")
-
-    @property
-    def use_fallback_mesh(self):
-        """Get the mesh method on the 3D Component.
-
-        Returns
-        -------
-        str
-        """
-        return self._get_prop("Use alternative mesh methods as fall back")
-
-    @property
-    def allow_phi_mesh(self):
-        """Get the mesh method on the 3D Component.
-
-        Returns
-        -------
-        str
-        """
-        return self._get_prop("Allow Phi for layered geometry (Classic only)")
-
-    @property
-    def use_auto_simplify(self):
-        """Get the mesh method on the 3D Component.
-
-        Returns
-        -------
-        str
-        """
-        prop = self._get_prop("Model Resolution Length")
-
-        if prop:
-            return True if prop.split(" = ")[-1] == "true" else False
-
-    @property
-    def model_resolution(self):
-        """Get the mesh method on the 3D Component.
-
-        Returns
-        -------
-        str
-        """
-
-        prop = self._get_prop("Model Resolution Length")
-        if prop:
-            return prop.split(",")[0].split(" = ")[1]
-        return
-
-    @property
-    def aspect_ratio(self):
-        """Get the mesh method on the 3D Component.
-
-        Returns
-        -------
-        str
-        """
-
-        prop = self._get_prop("Surface Approximation")
-        ps = [i for i in prop.split(", ")]
-        ps_with_values = {}
-        for i in ps:
-            i_splitted = i.split(" = ")
-            ps_with_values[i_splitted[0]] = i_splitted[1]
-        if "Aspect Ratio" in ps_with_values:
-            return ps_with_values["Aspect Ratio"]
-        return
-
-    @property
-    def surface_deviation(self):
-        """Get the mesh method on the 3D Component.
-
-        Returns
-        -------
-        str
-        """
-
-        prop = self._get_prop("Surface Approximation")
-        ps = [i for i in prop.split(", ")]
-        ps_with_values = {}
-        for i in ps:
-            i_splitted = i.split(" = ")
-            ps_with_values[i_splitted[0]] = i_splitted[1]
-        if "Surface Deviation" in ps_with_values:
-            return ps_with_values["Surface Deviation"]
-        return
-
-    @property
-    def normal_deviation(self):
-        """Get the mesh method on the 3D Component.
-
-        Returns
-        -------
-        str
-        """
-
-        prop = self._get_prop("Surface Approximation")
-        ps = [i for i in prop.split(", ")]
-        ps_with_values = {}
-        for i in ps:
-            i_splitted = i.split(" = ")
-            ps_with_values[i_splitted[0]] = i_splitted[1]
-        if "Normal Deviation" in ps_with_values:
-            return ps_with_values["Normal Deviation"]
-        return
-
-    @pyaedt_function_handler()
-    def _get_prop(self, propname):
-        c_obj = self._m_Editor.GetChildObject(self.name)
-        c_obj_props = c_obj.GetPropNames()
-        if propname in c_obj_props:
-            return c_obj.GetPropValue(propname)
-        return
-
-    @pyaedt_function_handler()
-    def _set_mesh_fusion(
-        self,
-        priority_3d_component_list=[],
-        volume_padding=[0, 0, 0, 0, 0, 0],
-        override_mesh_settings=False,
-        mesh_method="TAU",
-        use_curvilinear=False,
-        model_resolution=None,
-        dynamic_surface_resolution=False,
-        use_flex_mesh=False,
-        use_fallback_mesh=True,
-        allow_phi_mesh=True,
-        use_slider=True,
-        slider_value=5,
-        surface_dev="0.01mm",
-        normal_deviation="22.5deg",
-        aspect_ratio=None,
-    ):
-        arg = ["NAME:AllSettings"]
-        arg_ma = [
-            "NAME:MeshAssembly",
-        ]
-        for c3d in self._primitives.user_defined_components:
-            if self.do_mesh_assembly:
-                arg_cmp = [
-                    "NAME:".format(c3d.name),
-                ]
-                arg_cmp_mesh_settings = [
-                    "NAME:MeshSetting",
-                ]
-                if self.name == c3d.name:
-                    _use_slider = use_slider
-                    _slider_value = slider_value
-                    _surface_dev = surface_dev
-                    _normal_deviation = normal_deviation
-                    _aspect_ratio = aspect_ratio
-                    _use_curvilinear = use_curvilinear
-                    _mesh_method = mesh_method
-                    _dynamic_surface_resolution = dynamic_surface_resolution
-                    _use_flex_mesh = use_flex_mesh
-                    _use_fallback_mesh = use_fallback_mesh
-                    _allow_phi_mesh = allow_phi_mesh
-                    _model_resolution = model_resolution
-                else:
-                    _use_slider = c3d.use_slider
-                    _slider_value = c3d.slider_value
-                    _surface_dev = c3d.surface_deviation
-                    _normal_deviation = c3d.normal_deviation
-                    _aspect_ratio = c3d.aspect_ratio
-                    _use_curvilinear = c3d.use_curvilinear
-                    _mesh_method = c3d.mesh_method
-                    _dynamic_surface_resolution = c3d.dynamic_surface_resolution
-                    _use_flex_mesh = c3d.use_flex_mesh
-                    _use_fallback_mesh = c3d.se_fallback_mesh
-                    _allow_phi_mesh = c3d.allow_phi_mesh
-                    _model_resolution = c3d.model_resolution
-
-                    if override_mesh_settings:
-                        if use_slider:
-                            arg_cmp_mesh_settings.append(
-                                [
-                                    "NAME:GlobalSurfApproximation",
-                                    "CurvedSurfaceApproxChoice:=",
-                                    "UseSlider",
-                                    "SliderMeshSettings:=",
-                                    _slider_value,
-                                ]
-                            )
-                        else:
-                            arg_cmp_mesh_settings.append(
-                                [
-                                    "NAME:GlobalSurfApproximation",
-                                    "CurvedSurfaceApproxChoice:=",
-                                    "ManualSettings",
-                                    "SurfDevChoice:=",
-                                    2 if _surface_dev else 0,
-                                    "SurfDev:=",
-                                    self._primitives._arg_with_dim(_surface_dev) if _surface_dev else "0.01mm",
-                                    "NormalDevChoice:=",
-                                    2 if normal_deviation else 1,
-                                    "NormalDev:=",
-                                    self._primitives._arg_with_dim(_normal_deviation, "deg")
-                                    if _normal_deviation
-                                    else "22.5deg",
-                                    "AspectRatioChoice:=",
-                                    2 if _aspect_ratio else 1,
-                                    "AspectRatio:=",
-                                    str(_aspect_ratio),
-                                ]
-                            )
-                        arg_cmp_mesh_settings.append(["NAME:GlobalCurvilinear", "Apply:=", _use_curvilinear])
-                        if _model_resolution:
-                            mr = [
-                                "NAME:GlobalModelRes",
-                                "UseAutoLength:=",
-                                False,
-                                "DefeatureLength:=",
-                                self._primitives._arg_with_dim(_model_resolution),
-                            ]
-                        else:
-                            mr = ["NAME:GlobalModelRes", "UseAutoLength:=", True]
-                        arg_cmp_mesh_settings.append(mr)
-                        arg_cmp_mesh_settings.append("MeshMethod:=")
-                        if _mesh_method.lower() == "tau":
-                            arg_cmp_mesh_settings.append("AnsoftTAU")
-                        elif _mesh_method.lower() == "classic":
-                            arg_cmp_mesh_settings.append("AnsoftClassic")
-                        else:
-                            arg_cmp_mesh_settings.append("Auto")
-                        arg_cmp_mesh_settings.append("UseLegacyFaceterForTauVolumeMesh:=")
-                        arg_cmp_mesh_settings.append(False)
-
-                        arg_cmp_mesh_settings.append("DynamicSurfaceResolution:=")
-                        arg_cmp_mesh_settings.append(_dynamic_surface_resolution)
-
-                        arg_cmp_mesh_settings.append("UseFlexMeshingForTAUvolumeMesh:=")
-                        arg_cmp_mesh_settings.append(_use_flex_mesh)
-
-                        arg_cmp_mesh_settings.append("UseAlternativeMeshMethodsAsFallBack:=")
-                        arg_cmp_mesh_settings.append(_use_fallback_mesh)
-
-                        arg_cmp_mesh_settings.append("AllowPhiForLayeredGeometry:=")
-                        arg_cmp_mesh_settings.append(_allow_phi_mesh)
-                        arg_cmp.append(arg_cmp_mesh_settings)
-                    arg_cmp.append("MeshAssemblyBoundingVolumePadding:=")
-                    arg_cmp.append([str(i) for i in volume_padding])
-
-                arg_ma.append(arg_cmp)
-        arg.append(arg_ma)
-        arg_prio = ["NAME:Priority Components"]
-        if priority_3d_component_list:
-            arg_prio.extend(priority_3d_component_list)
-        arg.append(arg_prio)
-        try:
-            self._primitives._app.odesign.SetDoMeshAssembly(arg)
-        except:
-            self._primitives.logger.error(
-                "Failed to Setup mesh fusion. Check if it can be used or settings are correct."
-            )
-            return False
-        return True
+    def mesh_fusion(self):
+        if not self._mesh_fusion:
+            self._mesh_fusion = MeshFusion(self)
+        return self._mesh_fusion
