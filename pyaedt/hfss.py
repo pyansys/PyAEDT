@@ -5834,3 +5834,145 @@ class Hfss(FieldAnalysis3D, object):
             return self._create_boundary(symmetry_name, props, "Symmetry")
         except:
             return False
+
+    @pyaedt_function_handler()
+    def set_mesh_fusion(
+        self,
+        component_name,
+        enable=True,
+        priority=False,
+        volume_padding=[0, 0, 0, 0, 0, 0],
+        override_mesh_settings=False,
+        mesh_method="TAU",
+        use_curvilinear=False,
+        model_resolution=None,
+        use_legacy_faceter=False,
+        dynamic_surface_resolution=False,
+        use_flex_mesh=False,
+        use_fallback_mesh=True,
+        allow_phi_mesh=True,
+        use_slider=True,
+        slider_value=5,
+        surface_dev="0.01mm",
+        normal_deviation="22.5deg",
+        aspect_ratio=None,
+    ):
+        """Enable or disable Mesh fusion for
+
+        Parameters
+        ----------
+        component_name
+        enable
+        priority
+        volume_padding
+        override_mesh_settings
+        mesh_method
+        use_curvilinear
+        model_resolution
+        use_legacy_faceter
+        dynamic_surface_resolution
+        use_flex_mesh
+        use_fallback_mesh
+        allow_phi_mesh
+        use_slider
+        slider_value
+        surface_dev
+        normal_deviation
+        aspect_ratio
+
+        Returns
+        -------
+
+        """
+        if component_name not in self.modeler.user_defined_components:
+            self.logger.error("Component {} not found.".format(component_name))
+            return False
+        arg = ["NAME:AllSettings"]
+        arg_ma = [
+            "NAME:MeshAssembly",
+        ]
+        arg_cmp = [
+            "NAME:".format(component_name),
+        ]
+        arg_cmp_mesh_settings = [
+            "NAME:MeshSetting",
+        ]
+        if use_slider:
+            arg_cmp_mesh_settings.append(
+                [
+                    "NAME:GlobalSurfApproximation",
+                    "CurvedSurfaceApproxChoice:=",
+                    "UseSlider",
+                    "SliderMeshSettings:=",
+                    slider_value,
+                ]
+            )
+        else:
+            arg_cmp_mesh_settings.append(
+                [
+                    "NAME:GlobalSurfApproximation",
+                    "CurvedSurfaceApproxChoice:=",
+                    "ManualSettings",
+                    "SurfDevChoice:=",
+                    2 if surface_dev else 0,
+                    "SurfDev:=",
+                    self._modeler._arg_with_dim(surface_dev) if surface_dev else "0.01mm",
+                    "NormalDevChoice:=",
+                    2 if normal_deviation else 1,
+                    "NormalDev:=",
+                    self._modeler._arg_with_dim(normal_deviation, "deg") if normal_deviation else "22.5deg",
+                    "AspectRatioChoice:=",
+                    2 if aspect_ratio else 1,
+                    "AspectRatio:=",
+                    str(aspect_ratio),
+                ]
+            )
+        arg_cmp_mesh_settings.append(["NAME:GlobalCurvilinear", "Apply:=", use_curvilinear])
+        if model_resolution:
+            mr = [
+                "NAME:GlobalModelRes",
+                "UseAutoLength:=",
+                False,
+                "DefeatureLength:=",
+                self._modeler._arg_with_dim(model_resolution),
+            ]
+        else:
+            mr = ["NAME:GlobalModelRes", "UseAutoLength:=", True]
+        arg_cmp_mesh_settings.append(mr)
+        arg_cmp_mesh_settings.append("MeshMethod:=")
+        if mesh_method.lower() == "tau":
+            arg_cmp_mesh_settings.append("AnsoftTAU")
+        elif mesh_method.lower() == "classic":
+            arg_cmp_mesh_settings.append("AnsoftClassic")
+        else:
+            arg_cmp_mesh_settings.append("Auto")
+        arg_cmp_mesh_settings.append("UseLegacyFaceterForTauVolumeMesh:=")
+        arg_cmp_mesh_settings.append(use_legacy_faceter)
+
+        arg_cmp_mesh_settings.append("DynamicSurfaceResolution:=")
+        arg_cmp_mesh_settings.append(dynamic_surface_resolution)
+
+        arg_cmp_mesh_settings.append("UseFlexMeshingForTAUvolumeMesh:=")
+        arg_cmp_mesh_settings.append(use_flex_mesh)
+
+        arg_cmp_mesh_settings.append("UseAlternativeMeshMethodsAsFallBack:=")
+        arg_cmp_mesh_settings.append(use_fallback_mesh)
+
+        arg_cmp_mesh_settings.append("AllowPhiForLayeredGeometry:=")
+        arg_cmp_mesh_settings.append(allow_phi_mesh)
+        if override_mesh_settings:
+            arg_cmp.append(arg_cmp_mesh_settings)
+        arg_cmp.append("MeshAssemblyBoundingVolumePadding:=")
+        arg_cmp.append([str(i) for i in volume_padding])
+        arg_ma.append(arg_cmp)
+        arg.append(arg_ma)
+        arg_prio = ["NAME:Priority Components"]
+        if priority:
+            arg_prio.append(component_name)
+        arg.append(arg_prio)
+        try:
+            self.odesign.SetDoMeshAssembly(arg)
+        except:
+            self.logger.error("Failed to Setup mesh fusion. Check if it can be used or settings are correct.")
+            return False
+        return True
