@@ -652,6 +652,12 @@ class VariableManager(object):
 
     @pyaedt_function_handler()
     def __getitem__(self, variable_name):
+        """Get Variable.
+
+        Returns
+        -------
+        :class:`pyaedt.application.Variables.Variable`
+        """
         return self.variables[variable_name]
 
     @pyaedt_function_handler()

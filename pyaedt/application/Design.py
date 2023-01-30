@@ -1259,7 +1259,7 @@ class Design(AedtObjects):
 
         Returns
         -------
-        pyaedt.application.Variables.VariableManager
+        :class:`pyaedt.application.Variables.VariableManager`
 
         """
         return self._variable_manager
