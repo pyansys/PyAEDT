@@ -67,6 +67,7 @@ jobs:
       - name: 'Unit testing'
         run: |
           testenv\Scripts\Activate.ps1
+          Set-Item -Path env:PYTHONMALLOC -Value "malloc"
           pytest -n 6 --dist loadfile -v --cov=pyaedt  --cov-report=xml --junitxml=junit/test-results.xml --cov-report=html _unittest -o faulthandler_timeout=1800
 
       - uses: codecov/codecov-action@v3
