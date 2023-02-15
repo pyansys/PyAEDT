@@ -193,7 +193,7 @@ desktop_version = config["desktopVersion"]
 new_thread = config["NewThread"]
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session", autouse=False)
 def desktop_init():
     yield
     if not is_ironpython:
