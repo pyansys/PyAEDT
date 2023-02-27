@@ -7,44 +7,25 @@ on:
 
 env:
   DOCUMENTATION_CNAME: 'aedt.docs.pyansys.com'
+  MAIN_PYTHON_VERSION: '3.10'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  docs_build:
-    runs-on: ubuntu-20.04
-
+  doc-build:
+    name: "Build project documentation"
+    runs-on: ubuntu-latest
+    needs: doc-style
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: "Building project documentation"
+        uses: pyansys/actions/doc-build@v3
         with:
-          python-version: 3.8
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
-      - name: Install pyaedt
-        run: |
-          pip install .
-
-      - name: Install doc build requirements
-        run: |
-          pip install -r requirements/requirements_docs.txt
-
-      - name: Full Documentation Build
-        run: |
-          make -C doc phtml
-
-      - name: Upload documentation HTML artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: documentation-html
-          path: doc/_build/html
-          retention-days: 7
-
-  docs_upload:
-    needs: docs_build
+  doc_upload:
+    needs: doc_build
     runs-on: ubuntu-latest
     steps:
 
@@ -53,41 +34,4 @@ jobs:
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
-
-  # docstring_testing:
-  #   runs-on: Windows
-
-  #   steps:
-  #     - uses: actions/checkout@v3
-
-  #     - name: Setup Python
-  #       uses: actions/setup-python@v2
-  #       with:
-  #         python-version: 3.8
-
-  #     - name: 'Create virtual env'
-  #       run: |
-  #         python -m venv testenv
-  #         testenv\Scripts\Activate.ps1
-  #         python -m pip install pip -U
-  #         python -m pip install wheel setuptools -U
-  #         python -c "import sys; print(sys.executable)"
-
-  #     - name: 'Install pyaedt'
-  #       run: |
-  #         testenv\Scripts\Activate.ps1
-  #         pip install . --use-feature=in-tree-build
-  #         cd _unittest
-  #         python -c "import pyaedt; print('Imported pyaedt')"
-
-  #     - name: Install testing requirements
-  #       run: |
-  #         testenv\Scripts\Activate.ps1
-  #         pip install -r requirements/requirements_test.txt
-  #         pip install pytest-azurepipelines
-
-  #     - name: Docstring testing
-  #       run: |
-  #         testenv\Scripts\Activate.ps1
-  #         pytest -v pyaedt/desktop.py pyaedt/icepak.py
-  #         pytest -v pyaedt/desktop.py pyaedt/hfss.py
+          requires-xvfb: true
