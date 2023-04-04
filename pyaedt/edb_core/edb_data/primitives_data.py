@@ -190,6 +190,10 @@ class EDBPrimitives(object):
         return x, y
 
     @pyaedt_function_handler()
+    def __repr__(self):
+        return f"{self.id}: '{self.type}' on net: '{self.net_name}' and on layer '{self.layer_name}'."
+
+    @pyaedt_function_handler()
     def points(self, arc_segments=6):
         """Return the list of points with arcs converted to segments.
 

@@ -22,6 +22,7 @@ class EdbLayout(object):
 
     def __init__(self, p_edb):
         self._pedb = p_edb
+        self._prims = []
 
     @property
     def _edb(self):
@@ -76,11 +77,19 @@ class EdbLayout(object):
         list of :class:`pyaedt.edb_core.edb_data.primitives_data.EDBPrimitives`
             List of primitives.
         """
-        _prims = []
+        # TODO: See https://github.com/pyansys/pyaedt/issues/2768
+        self._update_primitives()
+        return self._prims
+
+    @pyaedt_function_handler()
+    def _update_primitives(self):
+        """Method to ensure that the list of primitives is correct."""
+
+        self._prims = []
         if self._active_layout:
             for lay_obj in list(self._active_layout.Primitives):
-                _prims.append(EDBPrimitives(lay_obj, self._pedb))
-        return _prims
+                self._prims.append(EDBPrimitives(lay_obj, self._pedb))
+        return True
 
     @property
     def polygons_by_layer(self):
@@ -500,8 +509,11 @@ class EdbLayout(object):
             end_cap_style=end_cap_style,
             corner_style=corner_style,
         )
-
-        return primitive
+        if primitive:
+            self._prims.append(primitive)
+            return primitive
+        else:
+            return False
 
     @pyaedt_function_handler()
     def create_polygon(self, main_shape, layer_name, voids=[], net_name=""):
@@ -551,7 +563,9 @@ class EdbLayout(object):
             self._logger.error("Null polygon created")
             return False
         else:
-            return EDBPrimitives(polygon, self._pedb)
+            p = EDBPrimitives(polygon, self._pedb)
+            self._prims.append(p)
+            return p
 
     @pyaedt_function_handler()
     def create_polygon_from_points(self, point_list, layer_name, net_name=""):
@@ -581,7 +595,9 @@ class EdbLayout(object):
             self._logger.error("Null polygon created")
             return False
         else:
-            return EDBPrimitives(polygon, self._pedb)
+            p = EDBPrimitives(polygon, self._pedb)
+            self._prims.append(p)
+            return p
 
     @pyaedt_function_handler()
     def create_rectangle(
@@ -658,7 +674,9 @@ class EdbLayout(object):
                 self._get_edb_value(rotation),
             )
         if rect:
-            return EDBPrimitives(rect, self._pedb)
+            p = EDBPrimitives(rect, self._pedb)
+            self._prims.append(p)
+            return p
         return False  # pragma: no cover
 
     @pyaedt_function_handler()
@@ -695,7 +713,9 @@ class EdbLayout(object):
             self._get_edb_value(radius),
         )
         if circle:
-            return EDBPrimitives(circle, self._pedb)
+            p = EDBPrimitives(circle, self._pedb)
+            self._prims.append(p)
+            return p
         return False  # pragma: no cover
 
     @pyaedt_function_handler
