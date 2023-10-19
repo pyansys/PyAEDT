@@ -15,7 +15,8 @@ from ansys_sphinx_theme import (ansys_favicon,
                                 get_version_match, pyansys_logo_black,
                                 watermark, 
                                 ansys_logo_white, 
-                                ansys_logo_white_cropped, latex)
+                                ansys_logo_white_cropped, latex, 
+                                get_autoapi_templates_dir_relative_path)
 from importlib import import_module
 from pprint import pformat
 from docutils.parsers.rst import Directive
@@ -126,11 +127,12 @@ extensions = [
     "sphinx.ext.inheritance_diagram",
     "numpydoc",
     "ansys_sphinx_theme.extension.linkcode",
+    "autoapi.extension",
 ]
 
 # Intersphinx mapping
 intersphinx_mapping = {
-    "python": ("https://docs.python.org/3", None),
+    "python": ("https://docs.python.org/3.10", None),
     "scipy": ("https://docs.scipy.org/doc/scipy/reference", None),
     "numpy": ("https://numpy.org/devdocs", None),
     "matplotlib": ("https://matplotlib.org/stable", None),
@@ -291,18 +293,6 @@ jinja_contexts = {
         "run_examples": config["run_examples"],
     },
 }
-# def prepare_jinja_env(jinja_env) -> None:
-#     """
-#     Customize the jinja env.
-#
-#     Notes
-#     -----
-#     See https://jinja.palletsprojects.com/en/3.0.x/api/#jinja2.Environment
-#     """
-#     jinja_env.globals["project_name"] = project
-#
-#
-# autoapi_prepare_jinja_env = prepare_jinja_env
 
 # -- Options for HTML output -------------------------------------------------
 html_short_title = html_title = "PyAEDT"
@@ -380,3 +370,37 @@ latex_documents = [
         "manual",
     ),
 ]
+
+def prepare_jinja_env(jinja_env) -> None:
+    """
+    Customize the jinja env.
+
+    Notes
+    -----
+    See https://jinja.palletsprojects.com/en/3.0.x/api/#jinja2.Environment
+    """
+    jinja_env.globals["project_name"] = project
+
+
+autoapi_prepare_jinja_env = prepare_jinja_env
+
+
+autoapi_type = "python"
+autoapi_dirs = ["../../pyaedt/"]
+autoapi_options = [
+    "members",
+    "undoc-members",
+    "show-inheritance",
+    "show-module-summary",
+    "special-members",
+]
+autoapi_template_dir = get_autoapi_templates_dir_relative_path(pathlib.Path(__file__))
+suppress_warnings = ["autoapi.python_import_resolution"]
+exclude_patterns = [
+    "autoapi",
+    "**/ExampleData*",
+    "**/LaunchWorkbench*",
+]
+autoapi_root = "API"
+autoapi_python_use_implicit_namespaces = True
+autoapi_render_in_single_page = ["class", "enum", "exception"]

@@ -43,45 +43,63 @@ Ansys Electronics Desktop (AEDT) to make scripting simpler.
 
                   User guide
 
-
-
-.. grid:: 2
-
    .. grid-item-card::
-            :img-top: _static/assets/index_api.png
+               :img-top: _static/assets/index_api.png
 
-            AEDT API reference
-            ^^^^^^^^^^^^^^^^^^
+               API reference
+               ^^^^^^^^^^^^^
 
-            Understand PyAEDT API endpoints, their capabilities,
-            and how to interact with them programmatically.
+               Understand PyAEDT EDB API endpoints, their capabilities,
+               and how to interact with them programmatically.
 
-            +++
-            .. button-link:: API/index.html
-               :color: secondary
-               :expand:
-               :outline:
-               :click-parent:
+               +++
+               .. button-link:: API/pyaedt/index.html
+                  :color: secondary
+                  :expand:
+                  :outline:
+                  :click-parent:
 
-                  AEDT API reference
+                     EDB API reference
 
-   .. grid-item-card::
-            :img-top: _static/assets/index_api.png
 
-            EDB API reference
-            ^^^^^^^^^^^^^^^^^
+..
+   .. grid:: 2
 
-            Understand PyAEDT EDB API endpoints, their capabilities,
-            and how to interact with them programmatically.
+      .. grid-item-card::
+               :img-top: _static/assets/index_api.png
 
-            +++
-            .. button-link:: EDBAPI/index.html
-               :color: secondary
-               :expand:
-               :outline:
-               :click-parent:
+               AEDT API reference
+               ^^^^^^^^^^^^^^^^^^
 
-                  EDB API reference
+               Understand PyAEDT API endpoints, their capabilities,
+               and how to interact with them programmatically.
+
+               +++
+               .. button-link:: API/index.html
+                  :color: secondary
+                  :expand:
+                  :outline:
+                  :click-parent:
+
+                     AEDT API reference
+
+      .. grid-item-card::
+               :img-top: _static/assets/index_api.png
+
+               EDB API reference
+               ^^^^^^^^^^^^^^^^^
+
+               Understand PyAEDT EDB API endpoints, their capabilities,
+               and how to interact with them programmatically.
+
+               +++
+               .. button-link:: EDBAPI/index.html
+                  :color: secondary
+                  :expand:
+                  :outline:
+                  :click-parent:
+
+                     EDB API reference
 
 .. jinja:: main_toctree
 
@@ -138,7 +156,7 @@ Indices and tables
 
        Getting_started/index
        User_guide/index
-       API/index
+       API/pyaedt/index.html
        EDBAPI/index
        {% if run_examples %}
        examples/index
