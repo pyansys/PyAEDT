@@ -22,15 +22,36 @@ function hdm = ld_sbrplushdm(fname,asStruct,showProg)
 % help on Python to learn more about the supported Python versions and how
 % to install them.
 %
+% DEPRECATED BEHAVIOR: the option asStruct == true is no longer supported.
+%
+% Invoking it will cause MATLAB to throw an error() exception. It is
+% nonetheless retained as the DEFAULT setting for asStruct to maintain function
+% interface backward compatibility and elevate the modified behavior as an
+% error. Existing toolchains using asStruct == true, whether explicitly or by
+% default, must be modified to work with a returned hdm struct whose top-level
+% message is now an HdmObject handle object effectively referencing struct
+% fields rather than the struct fields themselves. The legacy structure
+% representation made the returned hdm struct and subsets of its descendent
+% tree extremely inefficient to pass between MATLAB functions since MATLAB
+% function arguments are always passed by value and cause the entire argument
+% contents to be copied. It is more efficient to pass large objects between
+% MATLAB functions using MATLAB handles (i.e., using MATLAB classes like
+% HdmObject that inherit from the MATLAB 'handle' class). If your toolchain
+% relies on the legacy struct representation, you may consult the provided
+% filter_rays1.m, draw_rays1.m, and HdmObject.m script files for examples of
+% how to work with the HdmObject handle representation.
+%
 % Input Params:
 %   fname (str) full path name of .hdm file, DEFAULT = [] = select
 %               interactively from file dialog
 %
 %   asStruct (lgc) true  = return top level message as MATLAB struct fields,
 %                          sub-messages will still contain HdmObjects (DEFAULT)
+%                          DEPRECATED, this option no longer supported and will
+%                          trigger a MATLAB error()
 %                  false = return as HdmObject handle object placed within
 %                          return value struct, facilitates efficient passing
-%                          to other functions
+%                          to other functions, ALWAYS set asStruct to false
 %
 %   showProg (lgc) true   = show file load progress in progress bar for files
 %                           over 1 Mb in size (DEFAULT)
@@ -58,6 +79,11 @@ function hdm = ld_sbrplushdm(fname,asStruct,showProg)
   if isempty(asStruct) asStruct = true; end
 
   if ~exist('showProg','var') showProg = true; end
+
+  if asStruct
+    error('ld_sbrplushdm:deprecatedOption',...
+          'Setting asStruct to true is no longer supported.');
+  end
 
   if isempty(fname)
     % file name not provided, obtain interactively from file dialog
@@ -234,7 +260,7 @@ function content = parse(fid, grammar, typename, how_many)
 %   how_many (int) number of objects or basic types to parse, ignored when
 %                  type associated with typename is vector or list, set to
 %                  zero (0) instead of (1) when parsing a single object
-%                  to force is to come back as a struct rather than an
+%                  to force it to come back as a struct rather than an
 %                  HdmObject containing the struct
 %
 % Returns:
@@ -246,19 +272,23 @@ function content = parse(fid, grammar, typename, how_many)
 
   type_struct = grammar.header.types.(typename);
   type = type_struct.type;
-  how_many0 = max(how_many,1);
+  %how_many0 = max(how_many,1);
   if strcmp(type, 'object')
-    if (how_many == 1)
-      content = HdmObject(parse_object(fid, grammar, typename, 1));
-    else
-      content = parse_object(fid, grammar, typename, how_many0);
-    end
+    %if (how_many == 1)
+    %  content = HdmObject(parse_object(fid, grammar, typename, 1));
+    %else
+    %  content = parse_object(fid, grammar, typename, how_many0);
+    %end
+    content = parse_object(fid, grammar, typename, how_many);
+
   elseif any(strcmp(type, {'vector', 'list'}))
     basetype = type_struct.base;
     size = type_struct.size;
     content = parse_array(fid, grammar, type, basetype, size);
+
   else
-    content = parse_basic(fid, grammar, typename, how_many0);
+    %content = parse_basic(fid, grammar, typename, how_many0);
+    content = parse_basic(fid, grammar, typename, how_many);
   end
 end  % parse
 
@@ -279,64 +309,104 @@ function content = parse_object(fid, grammar, typename, how_many)
 % Returns:
 %   content  (struct) object content extracted from the binary file
 
+  if how_many == 0
+    content = [];
+    return;
+  end
+
   grammartypes = grammar.header.types;
   layout_description = grammartypes.(typename).layout;
-  content(how_many,1) = struct;
+  %content(how_many,1) = struct;
+  content(how_many,1) = HdmObject;  % vector of HdmObjects
   for ic = 1:how_many
+    hdm0 = content(ic);
+
     for il=1:numel(layout_description)
+      % looping items in the layout
       layout = layout_description{il};
       layout_type = layout.type;
-      is_optional = false;
+
+      skip_field = false;
       if ~isempty(layout.optional)
+        % Existence of this layout item depends on the state of a boolean flag
+        % or enum appearing earlier in the layout. If the flag is false or the
+        % enum value does not match, DO NOT read and parse the field(s) of this
+        % layout item, as no content has been recorded for it, and the next
+        % bytes in the binary stream are for the next layout item. 
         optional_cond = layout.optional;
-        cond1 = content(ic).(optional_cond{1});
+        %cond1 = content(ic).(optional_cond{1});
+        cond1 = hdm0.hdmObj.(optional_cond{1});
         if isstruct(cond1)
-          % flag
-          is_optional = ~content(ic).(optional_cond{1}).(optional_cond{2});
+          % optional field(s) depend(s) upon an earlier flag
+          %skip_field = ~content(ic).(optional_cond{1}).(optional_cond{2});
+          skip_field = ~hdm0.hdmObj.(optional_cond{1}).(optional_cond{2});
         else
-          % enum
-          is_optional = ~strcmp(cond1, optional_cond{2});
+          % optional field(s) depend(s) upon an earlier enum
+          skip_field = ~strcmp(cond1, optional_cond{2});
         end
       end
+
       fld_names = layout.field_names;
       if ~iscell(fld_names)
         fld_names = {fld_names};
       end
+
       for ifn = 1:numel(fld_names)
+        % looping through fields of this layout item
         fn = fld_names{ifn};
-        if is_optional
-          content(ic).(fn) = [];
+        if skip_field
+          % optional field not present - do not parse and set to empty
+          %content(ic).(fn) = [];
+          hdm0.hdmObj.(fn) = [];
+
         elseif any(strcmp(layout_type, {'vector', 'list'}))
           size = layout.size;
           if ischar(size)
-            size = content(ic).(size);
+            % size of vector or list specified by earlier field in object
+            % layout - evaluate it
+            %size = content(ic).(size);
+            size = hdm0.hdmObj.(size);
           end
-          content(ic).(fn) = parse_array(fid, grammar, layout_type, ...
+          %content(ic).(fn) = parse_array(fid, grammar, layout_type, ...
+          %                               layout.base, size);
+          hdm0.hdmObj.(fn) = parse_array(fid, grammar, layout_type, ...
                                          layout.base, size);
+        
         else
           % Check if the message refers to an array type
           msgtype = grammartypes.(layout_type);
           if strcmp(msgtype.type, 'vector') || strcmp(msgtype.type, 'list')
             size = msgtype.size;
             if ischar(size)
-              size = content(ic).(size);
+              %size = content(ic).(size);
+              size = hdm0.hdmObj.(size);
             end
-            content(ic).(fn) = parse_array(fid, grammar, msgtype.type, ...
+            %content(ic).(fn) = parse_array(fid, grammar, msgtype.type, ...
+            %                               msgtype.base, size);
+            hdm0.hdmObj.(fn) = parse_array(fid, grammar, msgtype.type, ...
                                            msgtype.base, size);
+          
           else
             if strcmp(msgtype.type, 'flag')
+              % layout item is a flag type, requires special handling to
+              % extract individual bits and assign each to different sub-field
+              % name
               flag_content = parse(fid, grammar, layout_type, 1);
               flagvals = grammar.flags_defs(layout_type);
               bits = logical(bitget(flag_content,1:numel(flagvals)));
-              content(ic).(fn) = cell2struct(num2cell(bits), flagvals, 2);
+              %content(ic).(fn) = cell2struct(num2cell(bits), flagvals, 2);
+              hdm0.hdmObj.(fn) = cell2struct(num2cell(bits), flagvals, 2);
+            
             else
-              content(ic).(fn) = parse(fid, grammar, layout.type, 1);
+              %content(ic).(fn) = parse(fid, grammar, layout.type, 1);
+              hdm0.hdmObj.(fn) = parse(fid, grammar, layout.type, 1);
             end
           end
         end
-      end
-    end
-  end
+      end  % fields loop
+
+    end  % layout loop
+  end  % object loop (how_many)
 end  % prase_object
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -358,6 +428,7 @@ function content = parse_array(fid, grammar, typename, base, size)
     % returns a row array and must have a basic type as its
     % underlying type
     content = transpose(parse_basic(fid, grammar, base, size));
+
   else % list
     % returns a matrix if the base type is a vector, a column vector
     % if the base type is a basic type or struct
@@ -369,15 +440,20 @@ function content = parse_array(fid, grammar, typename, base, size)
         total_size = size*nrows;
         content = parse_basic(fid, grammar, base_type, total_size);
         content = transpose(reshape(content, [nrows, size]));
+
     elseif any(strcmp(grammar.basic_types, grammar.header.types.(base).type))
         content = transpose(parse_basic(fid, grammar,  base, size));
+
     else
-        % reading an object
-        if (size > 1)
-          content = parse_object(fid,grammar,base,size);
-        else
-          content = HdmObject(parse_object(fid,grammar,base,size));
-        end
+        % reading a list of objects of same type
+        %if (size > 1)
+        %  content = parse_object(fid,grammar,base,size);
+        %elseif (size == 0)
+        %  content = [];
+        %else
+        %  content = HdmObject(parse_object(fid,grammar,base,size));
+        %end
+        content = parse_object(fid,grammar,base,size);
     end
   end
 end  % parse_array
@@ -412,6 +488,7 @@ function content = parse_basic(fid, grammar, typename, how_many)
       enum = grammar.enum_defs(typename);
       res = enum(res);
     end
+
   elseif strcmp(format.type, 'float')
     if format.size == 8
       readas = 'double';
@@ -419,6 +496,7 @@ function content = parse_basic(fid, grammar, typename, how_many)
       readas = '*float';
     end
     res = fread(fid, how_many, readas);
+
   elseif strcmp(format.type, 'complex')
     how_many = how_many*2;
     if format.size == 16

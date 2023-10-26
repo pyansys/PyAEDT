@@ -1000,7 +1000,7 @@ for itrack = idxTrack
   %
   % Init all depths to zero. They will be incremented and decremented
   % going up and down the track tree as applicable.
-  rb0 = bundle.hdmObj.ray_tracks(itrack).source_bounce;
+  rb0 = bundle.hdmObj.ray_tracks(itrack).hdmObj.source_bounce;
   depth = 0;  % composite bounce depth
   rDepth = 0; % reflection depth
   tDepth = 0; % transmission depth

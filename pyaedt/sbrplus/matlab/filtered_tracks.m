@@ -36,7 +36,8 @@ end
 Ntrack = length(bundle.hdmObj.ray_tracks);
 idx = [];
 for itrack = 1:Ntrack
-  drawBranch = bundle.hdmObj.ray_tracks(itrack).source_bounce.hdmObj.drawBranch;
+  rt0 = bundle.hdmObj.ray_tracks(itrack);
+  drawBranch = rt0.hdmObj.source_bounce.hdmObj.drawBranch;
   if ~xor(unfiltered,drawBranch)
     idx = [idx;itrack];
   end

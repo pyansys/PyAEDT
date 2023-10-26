@@ -164,7 +164,7 @@ if ~isfield(rayhdm,'hdm')
            'with asStruct input arg set to false.']);
 
   else
-    error('filter_rays1.badInput',...
+    error('filter_rays1:badInput',...
           ['Input struct rayhdm does not appear to be a return value ' ...
            'from ld_sbrplushdm.m']);
   end
@@ -598,7 +598,8 @@ end
 
 r2d = 180/pi;
 isPwSource = strcmp(bundle.hdmObj.source_type,'PLANE_WAVE');
-hasSweepAngIdx = isfield(bundle.hdmObj.ray_tracks(1),'sweep_angle_index');
+rt1 = bundle.hdmObj.ray_tracks(1);
+hasSweepAngIdx = isfield(rt1.hdmObj,'sweep_angle_index');
 filterSweepIdx = hasSweepAngIdx && ~isempty(fltrCfg.idxAng);
 sweepAngIdxMap = containers.Map('KeyType','int32','ValueType','any');
                  % sweep_angle_index -> [theta phi]
@@ -623,7 +624,8 @@ maxDistBundle = 0;
 for itrack = 1:Ntrack
   rbSrc = [];
   rbUtd = [];
-  first_bounce = bundle.hdmObj.ray_tracks(itrack).first_bounce;
+  rt0 = bundle.hdmObj.ray_tracks(itrack);
+  first_bounce = rt0.hdmObj.first_bounce;
   % The source bounce will be added if
   % - the ray bundle has not already been filtered by filter_rays1(),
   %   which will often be the case
@@ -631,26 +633,24 @@ for itrack = 1:Ntrack
   % - in spite of the ray bundle already having been filtered by filter_rays1()
   %   the ray track somehow does not have a .source_bounce field, which is
   %   not expected
-  addSrcBnc = ~alreadyFiltered || ...
-              ~isfield(bundle.hdmObj.ray_tracks(itrack),'source_bounce');
+  addSrcBnc = ~alreadyFiltered || ~isfield(rt0.hdmObj,'source_bounce');
 
   if addSrcBnc
     % Introduce source "bounce" HdmObject to top of ray track, and set its
     % refl_bounce to the first_bounce or, if applicable, the UTD edge
     % diffraction bounce.
     rbSrc = HdmObject(hdmStruct);
-    rbSrc.hdmObj.hit_pt = bundle.hdmObj.ray_tracks(itrack).source_point;
+    rbSrc.hdmObj.hit_pt = rt0.hdmObj.source_point;
     rbSrc.hdmObj.bounce_type = SbrBounceType.Source;  % enum
 
-    if isfield(bundle.hdmObj.ray_tracks(itrack),'launch_offset_dist')
+    if isfield(rt0.hdmObj,'launch_offset_dist')
       % Init cumulative dist at source bounce to launch_offset_dist of ray
       % track. Cumulative dist of any descendants will automatically update
       % during tree recursion.
-      rbSrc.hdmObj.cumulative_dist = ...
-        bundle.hdmObj.ray_tracks(itrack).launch_offset_dist;
+      rbSrc.hdmObj.cumulative_dist = rt0.hdmObj.launch_offset_dist;
     end
 
-    utd_point = bundle.hdmObj.ray_tracks(itrack).utd_point;
+    utd_point = rt0.hdmObj.utd_point;
     if ~isempty(utd_point)
       % There's a UTD diffraction. Represent this as a bounce whose parent
       % is the source bounce and whose reflection side bounce is the first
@@ -679,19 +679,19 @@ for itrack = 1:Ntrack
       vInc = rbSrc.hdmObj.hit_pt - rbSrc.hdmObj.refl_bounce.hdmObj.hit_pt;
       [theta phi] = rvec2thetaphi(vInc);
       theta_phi_deg = [theta phi]*r2d;
-      bundle.hdmObj.ray_tracks(itrack).pwinc_theta_phi_deg = theta_phi_deg;
+      rt0.hdmObj.pwinc_theta_phi_deg = theta_phi_deg;
 
       idxSweepAng = int32(0);
       if hasSweepAngIdx
-        idxSweepAng = bundle.hdmObj.ray_tracks(itrack).sweep_angle_index;
+        idxSweepAng = rt0.hdmObj.sweep_angle_index;
       end
       sweepAngIdxMap(idxSweepAng) = theta_phi_deg;
     end
-    bundle.hdmObj.ray_tracks(itrack).source_bounce = rbSrc;
+    rt0.hdmObj.source_bounce = rbSrc;
   
   else
     % Ray track already has source bounce. No need to create it.
-    rbSrc = bundle.hdmObj.ray_tracks(itrack).source_bounce;
+    rbSrc = rt0.hdmObj.source_bounce;
   end
 
   % First-pass tree recursion: init draw flags and, if first time to filter
@@ -705,8 +705,8 @@ for itrack = 1:Ntrack
     track_leaves = [];
     maxCumulativeDist = 0;
     recurse_track(rbSrc,0,@init_draw_flags,@update_branch_info);
-    bundle.hdmObj.ray_tracks(itrack).track_leaves = track_leaves;
-    bundle.hdmObj.ray_tracks(itrack).max_cumulative_dist = maxCumulativeDist;
+    rt0.hdmObj.track_leaves = track_leaves;
+    rt0.hdmObj.max_cumulative_dist = maxCumulativeDist;
     maxDistBundle = max(maxDistBundle,maxCumulativeDist);
     minFpDistBundle = ...
       min(minFpDistBundle,first_bounce.hdmObj.cumulative_dist);
@@ -716,7 +716,7 @@ for itrack = 1:Ntrack
   % set to false, and metrics like maxDepth have been added. Test if ray
   % track type matches those in fltrCfg.trackType, and continue to next ray
   % track if no match.
-  track_type = bundle.hdmObj.ray_tracks(itrack).track_type;
+  track_type = rt0.hdmObj.track_type;
   trackTypeMismatched = strcmp(track_type,'SBR_PO') && ~includeSbr;
   trackTypeMismatched = trackTypeMismatched || ...
                         (strcmp(track_type,'UTD') && ~includeUtd);
@@ -726,7 +726,7 @@ for itrack = 1:Ntrack
 
   if filterSweepIdx
     % check this track's sweep angle index matches one in the idxAng list
-    idx = find(fltrCfg.idxAng == bundle.hdmObj.ray_tracks(itrack).sweep_angle_index);
+    idx = find(fltrCfg.idxAng == rt0.hdmObj.sweep_angle_index);
     if isempty(idx)
       continue;  % no match, leave all draw flags as false for this ray track
     end

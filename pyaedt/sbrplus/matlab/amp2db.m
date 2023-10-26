@@ -10,6 +10,6 @@ function db = amp2db(amp)
 % db = AMP2DB(amp)
 %
 % COPYRIGHT ANSYS, Inc. ALL RIGHTS RESERVED.
-db = 20*log10(real(amp.*conj(amp)));
+db = 10*log10(real(amp.*conj(amp)));
 end  % amp2db
 
