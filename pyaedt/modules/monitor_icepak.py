@@ -1,10 +1,8 @@
 import re
 
+from pyaedt.generic.constants import SI_UNITS, unit_system
 from pyaedt.generic.DataHandlers import _dict2arg
-from pyaedt.generic.constants import SI_UNITS
-from pyaedt.generic.constants import unit_system
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import generate_unique_name, pyaedt_function_handler
 
 quantities_dict_1 = {  # pragma: no cover
     8: "Speed",
@@ -336,7 +334,6 @@ class Monitor:
 
         References
         ----------
-
         >>> oModule.AssignPointMonitor
 
         """
@@ -383,12 +380,10 @@ class Monitor:
 
         References
         ----------
-
         >>> oModule.AssignFaceMonitor
 
         Examples
         --------
-
         Create a rectangle named ``"Surface1"`` and assign a temperature monitor to that surface.
 
         >>> surface = icepak.modeler.create_rectangle(icepak.PLANE.XY,
@@ -440,7 +435,6 @@ class Monitor:
 
         References
         ----------
-
         >>> oModule.AssignFaceMonitor
         """
         if isinstance(face_id, int):
@@ -487,12 +481,10 @@ class Monitor:
 
         References
         ----------
-
         >>> oModule.AssignPointMonitor
 
         Examples
         --------
-
         Create a box named ``"BlockBox1"`` and assign a temperature monitor point to that object.
 
         >>> box = icepak.modeler.create_box([1, 1, 1], [3, 3, 3], "BlockBox1", "copper")
@@ -549,7 +541,6 @@ class Monitor:
 
         References
         ----------
-
         >>> oModule.DeleteMonitors
 
         """
@@ -565,8 +556,7 @@ class Monitor:
 
     @pyaedt_function_handler()
     def get_monitor_object_assignment(self, monitor):
-        """
-        Get the object that the monitor is applied to.
+        """Get the object that the monitor is applied to.
 
         Parameters
         ----------
@@ -662,8 +652,7 @@ class ObjectMonitor:
 
     @property
     def geometry_assignment(self):
-        """
-        Get the geometry assignment for the monitor object.
+        """Get the geometry assignment for the monitor object.
 
         Returns
         -------
@@ -673,8 +662,7 @@ class ObjectMonitor:
 
     @property
     def name(self):
-        """
-        Get the name of the monitor object.
+        """Get the name of the monitor object.
 
         Returns
         -------
@@ -684,8 +672,7 @@ class ObjectMonitor:
 
     @property
     def id(self):
-        """
-        Get the name, or id of geometry assignment.
+        """Get the name, or id of geometry assignment.
 
         Returns
         -------
@@ -695,8 +682,7 @@ class ObjectMonitor:
 
     @property
     def properties(self):
-        """
-        Get a dictionary of properties.
+        """Get a dictionary of properties.
 
         Returns
         -------
@@ -714,8 +700,7 @@ class ObjectMonitor:
 
     @pyaedt_function_handler
     def delete(self):
-        """
-        Delete a monitor object.
+        """Delete a monitor object.
 
         Returns
         -------
@@ -727,8 +712,7 @@ class ObjectMonitor:
 
     @property
     def quantities(self):
-        """
-        Get the quantities being monitored.
+        """Get the quantities being monitored.
 
         Returns
         -------
@@ -738,8 +722,7 @@ class ObjectMonitor:
 
     @property
     def type(self):
-        """
-        Get the monitor type.
+        """Get the monitor type.
 
         Returns
         -------
@@ -749,8 +732,7 @@ class ObjectMonitor:
 
     @pyaedt_function_handler
     def value(self, quantity=None, setup_name=None, design_variation_dict=None, si_out=True):
-        """
-        Get a list of values obtained from the monitor object. If the simulation is steady state,
+        """Get a list of values obtained from the monitor object. If the simulation is steady state,
         the list will contain just one element.
 
         Parameters
@@ -826,8 +808,7 @@ class PointMonitor(ObjectMonitor):
 
     @property
     def location(self):
-        """
-        Get the monitor point location.
+        """Get the monitor point location.
 
         Returns
         -------
@@ -851,8 +832,7 @@ class FaceMonitor(ObjectMonitor):
 
     @property
     def location(self):
-        """
-        Get the monitor location in terms of face or surface center.
+        """Get the monitor location in terms of face or surface center.
 
         Returns
         -------

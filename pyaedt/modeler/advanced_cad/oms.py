@@ -1,9 +1,7 @@
 import os
 import warnings
 
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.generic.general_methods import settings
+from pyaedt.generic.general_methods import is_ironpython, pyaedt_function_handler, settings
 
 logger = settings.logger
 if not is_ironpython:
@@ -359,7 +357,6 @@ class TerrainPrep(object):
         dict
             Info of generated stl file.
         """
-
         utm_center = utm.from_latlon(center_lat_lon[0], center_lat_lon[1])
         logger.info("Generating Terrain")
         max_radius = max_radius * (buffer_percent + 1)
@@ -420,7 +417,6 @@ class TerrainPrep(object):
         -------
         tuple
         """
-
         utm_center = utm.from_latlon(center_lat_lon[0], center_lat_lon[1])
         # assume never at boundary of zone number or letter
         zone_letter = utm.latitude_to_zone_letter(center_lat_lon[0])

@@ -8,13 +8,11 @@ import pyvista as pv
 
 from pyaedt import pyaedt_function_handler
 from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.plot import CommonPlotter
-from pyaedt.generic.plot import ObjClass
+from pyaedt.generic.plot import CommonPlotter, ObjClass
 
 
 class HDMPlotter(CommonPlotter):
-    """
-    Manages Hdm data to be plotted with ``pyvista``.
+    """Manages Hdm data to be plotted with ``pyvista``.
 
     Note: the methods in this class are just examples and subject
     to improvement and changes.

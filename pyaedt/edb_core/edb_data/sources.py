@@ -1,6 +1,5 @@
 from pyaedt import pyaedt_function_handler
-from pyaedt.generic.constants import NodeType
-from pyaedt.generic.constants import SourceType
+from pyaedt.generic.constants import NodeType, SourceType
 
 
 class Node(object):
@@ -135,7 +134,8 @@ class Source(object):
     @property
     def amplitude(self):  # pragma: no cover
         """Amplitude value of the source. Either amperes for current source or volts for
-        voltage source."""
+        voltage source.
+        """
         return self._amplitude
 
     @amplitude.setter

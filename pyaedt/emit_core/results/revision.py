@@ -1,15 +1,11 @@
 import warnings
 
-from pyaedt.emit_core.emit_constants import EmiCategoryFilter
-from pyaedt.emit_core.emit_constants import InterfererType
-from pyaedt.emit_core.emit_constants import ResultType
-from pyaedt.emit_core.emit_constants import TxRxMode
+from pyaedt.emit_core.emit_constants import EmiCategoryFilter, InterfererType, ResultType, TxRxMode
 from pyaedt.generic.general_methods import pyaedt_function_handler
 
 
 class Revision:
-    """
-    Provides the ``Revision`` object.
+    """Provides the ``Revision`` object.
 
     Parameters
     ----------
@@ -75,8 +71,7 @@ class Revision:
 
     @pyaedt_function_handler()
     def _load_revision(self):
-        """
-        Load this revision.
+        """Load this revision.
 
         Examples
         --------
@@ -90,8 +85,7 @@ class Revision:
 
     @staticmethod
     def result_mode_error():
-        """
-        Print the function mode error message.
+        """Print the function mode error message.
 
         Returns
         -------
@@ -104,8 +98,7 @@ class Revision:
 
     @pyaedt_function_handler()
     def get_interaction(self, domain):
-        """
-        Create a new interaction for a domain.
+        """Create a new interaction for a domain.
 
         Parameters
         ----------
@@ -132,8 +125,7 @@ class Revision:
 
     @pyaedt_function_handler()
     def run(self, domain):
-        """
-        Load the revision and then analyze along the given domain.
+        """Load the revision and then analyze along the given domain.
 
         Parameters
         ----------
@@ -171,8 +163,7 @@ class Revision:
 
     @pyaedt_function_handler()
     def is_domain_valid(self, domain):
-        """
-        Return ``True`` if the given domain is valid for the current revision.
+        """Return ``True`` if the given domain is valid for the current revision.
 
         Parameters
         ----------
@@ -191,8 +182,7 @@ class Revision:
 
     @pyaedt_function_handler()
     def get_instance_count(self, domain):
-        """
-        Return the number of instances in the domain for the current revision.
+        """Return the number of instances in the domain for the current revision.
 
         Parameters
         ----------
@@ -215,8 +205,7 @@ class Revision:
 
     @pyaedt_function_handler()
     def get_receiver_names(self):
-        """
-        Get a list of all receivers in the project.
+        """Get a list of all receivers in the project.
 
         Parameters
         ----------
@@ -244,8 +233,7 @@ class Revision:
 
     @pyaedt_function_handler()
     def get_interferer_names(self, interferer_type=None):
-        """
-        Get a list of all interfering transmitters/emitters in the project.
+        """Get a list of all interfering transmitters/emitters in the project.
 
         Parameters
         ----------
@@ -283,8 +271,7 @@ class Revision:
 
     @pyaedt_function_handler()
     def get_band_names(self, radio_name, tx_rx_mode=None):
-        """
-        Get a list of all ``tx`` or ``rx`` bands (or waveforms) in
+        """Get a list of all ``tx`` or ``rx`` bands (or waveforms) in
         a given radio/emitter.
 
         Parameters
@@ -319,8 +306,7 @@ class Revision:
 
     @pyaedt_function_handler()
     def get_active_frequencies(self, radio_name, band_name, tx_rx_mode, units=""):
-        """
-        Get a list of active frequencies for a ``tx`` or ``rx`` band in a radio/emitter.
+        """Get a list of active frequencies for a ``tx`` or ``rx`` band in a radio/emitter.
 
         Parameters
         ----------
@@ -357,8 +343,7 @@ class Revision:
 
     @property
     def notes(self):
-        """
-        Add notes to the revision.
+        """Add notes to the revision.
 
         Examples
         --------
@@ -376,8 +361,7 @@ class Revision:
 
     @property
     def n_to_1_limit(self):
-        """
-        Maximum number of interference combinations to run per receiver for N to 1.
+        """Maximum number of interference combinations to run per receiver for N to 1.
 
         - A value of ``0`` disables N to 1 entirely.
         - A value of  ``-1`` allows unlimited N to 1. (N is set to the maximum.)
@@ -407,8 +391,7 @@ class Revision:
 
     @pyaedt_function_handler()
     def interference_type_classification(self, domain, use_filter=False, filter_list=None):
-        """
-        Classify interference type as according to inband/inband,
+        """Classify interference type as according to inband/inband,
         out of band/in band, inband/out of band, and out of band/out of band.
 
         Parameters
@@ -554,8 +537,7 @@ class Revision:
         use_filter=False,
         filter_list=None,
     ):
-        """
-        Classify worst-case power at each Rx radio according to interference type.
+        """Classify worst-case power at each Rx radio according to interference type.
 
         Options for interference type are `inband/inband, out of band/in band,
         inband/out of band, and out of band/out of band.

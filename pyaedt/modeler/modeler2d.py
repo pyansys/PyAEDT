@@ -2,8 +2,7 @@ import math
 from warnings import warn
 
 from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modeler.cad.Modeler import GeometryModeler
-from pyaedt.modeler.cad.Modeler import Modeler
+from pyaedt.modeler.cad.Modeler import GeometryModeler, Modeler
 from pyaedt.modeler.cad.Primitives2D import Primitives2D
 
 
@@ -22,12 +21,12 @@ class ModelerRMxprt(Modeler):
 
     @property
     def oeditor(self):
-        """oEditor Module.
+        """OEditor Module.
 
         References
         ----------
-
-        >>> oEditor = oDesign.SetActiveEditor("Machine")"""
+        >>> oEditor = oDesign.SetActiveEditor("Machine")
+        """
         return self._app.oeditor
 
 
@@ -134,7 +133,6 @@ class Modeler2D(GeometryModeler, Primitives2D):
         bool
             ``True`` when successful, ``False`` when failed.
         """
-
         cir = self.modeler.create_circle([0, 0, 0], 3, name=name + "_split", matname="vacuum")
         self.oeditor.Copy(["NAME:Selections", "Selections:=", name])
         objects = [i for i in self.modeler.object_names]

@@ -13,11 +13,8 @@ if not is_ironpython:
     except ImportError:
         pass
 
-from pyaedt import constants
-from pyaedt import pyaedt_path
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt import constants, pyaedt_path
+from pyaedt.generic.general_methods import generate_unique_name, is_ironpython, pyaedt_function_handler
 from pyaedt.modules.MaterialLib import Material
 
 LAYERS = {"s": "signal", "g": "ground", "d": "dielectric"}
@@ -37,7 +34,6 @@ def _replace_by_underscore(character, string):
 
     Examples
     --------
-
     >>> from pyaedt.modeler.stackup_3d import _replace_by_underscore
     >>> name = "Duroid (tm)"
     >>> name = _replace_by_underscore(" ", name)
@@ -71,7 +67,6 @@ class NamedVariable(object):
 
     Examples
     --------
-
     >>> from pyaedt import Hfss
     >>> from pyaedt.modeler.stackup_3d import NamedVariable
     >>> hfss = Hfss()
@@ -110,7 +105,8 @@ class NamedVariable(object):
         Parameters
         ----------
         expression: str
-            Value expression of the variable."""
+        Value expression of the variable.
+        """
         if isinstance(expression, str):
             self._expression = expression
             self._application[self.name] = expression
@@ -194,7 +190,6 @@ class DuplicatedParametrizedMaterial(object):
 
     Examples
     --------
-
     >>> from pyaedt import Hfss
     >>> from pyaedt.modeler.stackup_3d import DuplicatedParametrizedMaterial
     >>> hfss = Hfss()
@@ -505,7 +500,6 @@ class Layer3D(object):
     def thickness_value(self):
         """Thickness value.
 
-
         Returns
         -------
         float, str
@@ -587,7 +581,6 @@ class Layer3D(object):
         :class:`pyaedt.modules.Material.Material`
             Material object.
         """
-
         if isinstance(material_name, Material):  # Make sure material_name is of type str.
             material_name = material_name.name
         if isinstance(cloned_material_name, Material):  # Make sure cloned_material_name is of type str.
@@ -642,7 +635,6 @@ class Layer3D(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -717,7 +709,6 @@ class Layer3D(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -804,7 +795,6 @@ class Layer3D(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss(new_desktop_session=True)
@@ -875,7 +865,6 @@ class Layer3D(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -1230,7 +1219,6 @@ class Stackup3D(object):
 
     Examples
     --------
-
     >>> from pyaedt import Hfss
     >>> from pyaedt.modeler.stackup_3d import Stackup3D
     >>> hfss = Hfss(new_desktop_session=True)
@@ -1548,7 +1536,6 @@ class Stackup3D(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -1626,7 +1613,6 @@ class Stackup3D(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -1666,7 +1652,6 @@ class Stackup3D(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -1709,7 +1694,6 @@ class Stackup3D(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -1728,9 +1712,7 @@ class Stackup3D(object):
 
     @pyaedt_function_handler()
     def _layer_position_manager(self, layer):
-        """
-
-        Parameters
+        """Parameters
         ----------
         layer
 
@@ -1814,7 +1796,6 @@ class Stackup3D(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -1955,7 +1936,6 @@ class Patch(CommonObject, object):
 
     Parameters
     ----------
-
     application : :class:`pyaedt.hfss.Hfss`
         HFSS design or project where the variable is to be created.
     frequency : float, None
@@ -1984,7 +1964,6 @@ class Patch(CommonObject, object):
 
     Examples
     --------
-
     >>> from pyaedt import Hfss
     >>> from pyaedt.modeler.advanced_cad.stackup_3d import Stackup3D
     >>> hfss = Hfss()
@@ -2395,7 +2374,6 @@ class Patch(CommonObject, object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -2479,7 +2457,6 @@ class Patch(CommonObject, object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -2534,7 +2511,6 @@ class Patch(CommonObject, object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -2575,7 +2551,6 @@ class Patch(CommonObject, object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> from pyaedt.modeler.stackup_3d import Stackup3D
         >>> hfss = Hfss()
@@ -2599,7 +2574,6 @@ class Trace(CommonObject, object):
 
     Parameters
     ----------
-
     application : :class:`pyaedt.hfss.Hfss`
         HFSS design or project where the variable is to be created.
     frequency : float, None
@@ -3287,7 +3261,6 @@ class Polygon(CommonObject, object):
 
     Examples
     --------
-
     >>> from pyaedt import Hfss
     >>> from pyaedt.modeler.stackup_3d import Stackup3D
     >>> hfss = Hfss(new_desktop_session=True)
@@ -3406,7 +3379,6 @@ class MachineLearningPatch(Patch, object):
 
     Examples
     --------
-
     >>> from pyaedt import Hfss
     >>> from pyaedt.modeler.stackup_3d import Stackup3D
     >>> hfss = Hfss()

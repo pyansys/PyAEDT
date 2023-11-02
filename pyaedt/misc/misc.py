@@ -22,8 +22,8 @@ def installed_versions():
     """Get the installed AEDT versions.
 
     This method returns a dictionary, with version as the key and installation path
-    as the value."""
-
+    as the value.
+    """
     return_dict = {}
     version_list = list_installed_ansysem()
     for version_env_var in version_list:

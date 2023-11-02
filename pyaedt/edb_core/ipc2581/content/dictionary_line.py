@@ -20,7 +20,7 @@ class DictionaryLine(object):
         if width:
             line = EntryLine()
             line._line_width = width
-            if not "ROUND_{}".format(width) in self._dict_lines:
+            if "ROUND_{}".format(width) not in self._dict_lines:
                 self._dict_lines["ROUND_{}".format(width)] = line
 
     def write_xml(self, content=None):  # pragma no cover

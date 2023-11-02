@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-This module contains these classes: `Components3DLayout`,`CircuitComponent',
+"""This module contains these classes: `Components3DLayout`,`CircuitComponent',
 `EdgePrimitive`, `EdgeTypePrimitive`, `FacePrimitive`, `Geometries3DLayout`,
 `Nets3DLayout`, `Objec3DLayout`, `Object3d`, `Padstack`, `PDSHole`, `PDSLayer`,
 `Pins3DLayout', and `VertexPrimitive`.
@@ -15,18 +14,17 @@ import os
 import re
 
 from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.general_methods import _to_boolean
-from pyaedt.generic.general_methods import _uname
-from pyaedt.generic.general_methods import clamp
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.generic.general_methods import rgb_color_codes
-from pyaedt.generic.general_methods import settings
-from pyaedt.modeler.cad.elements3d import BinaryTreeNode
-from pyaedt.modeler.cad.elements3d import EdgePrimitive
-from pyaedt.modeler.cad.elements3d import FacePrimitive
-from pyaedt.modeler.cad.elements3d import VertexPrimitive
+from pyaedt.generic.general_methods import (
+    _to_boolean,
+    _uname,
+    clamp,
+    is_ironpython,
+    open_file,
+    pyaedt_function_handler,
+    rgb_color_codes,
+    settings,
+)
+from pyaedt.modeler.cad.elements3d import BinaryTreeNode, EdgePrimitive, FacePrimitive, VertexPrimitive
 
 
 class Object3d(object):
@@ -53,8 +51,7 @@ class Object3d(object):
     """
 
     def __init__(self, primitives, name=None):
-        """
-        Parameters
+        """Parameters
         ----------
         primitives : :class:`pyaedt.modeler.Primitives3D.Primitives3D`
             Inherited parent object.
@@ -134,7 +131,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetModelBoundingBox
 
         """
@@ -186,7 +182,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetModelBoundingBox
 
         """
@@ -215,7 +210,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetModelBoundingBox
         """
         oBoundingBox = self.bounding_box
@@ -259,7 +253,6 @@ class Object3d(object):
     @pyaedt_function_handler()
     def export_image(self, file_path=None):
         """Export the current object to a specified file path.
-
 
         .. note::
            Works from AEDT 2021.2 in CPython only. PyVista has to be installed.
@@ -333,11 +326,12 @@ class Object3d(object):
         ----------
         object_name : str, :class:`Object3d`
             Object to check.
+
         Returns
         -------
         list
-            list of objects and faces touching."""
-
+        list of objects and faces touching.
+        """
         _names = []
         if isinstance(object_name, Object3d):
             object_name = object_name.name
@@ -357,7 +351,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetFaceIDs
 
         """
@@ -484,7 +477,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.FaceCenter
 
         """
@@ -505,7 +497,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.FaceCenter
 
         """
@@ -526,7 +517,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.FaceCenter
 
         """
@@ -547,7 +537,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.FaceCenter
 
         """
@@ -568,7 +557,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.FaceCenter
 
         """
@@ -589,7 +577,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.FaceCenter
 
         """
@@ -610,7 +597,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.FaceCenter
 
         """
@@ -711,7 +697,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetEdgeIDsFromObject
 
         """
@@ -733,7 +718,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetVertexIDsFromObject
 
         """
@@ -782,7 +766,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -806,7 +789,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -833,12 +815,10 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
         """
-
         if not list(self._oeditor.GetObjectsInGroup(name)):
             self._oeditor.CreateGroup(
                 [
@@ -888,7 +868,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -944,7 +923,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetObjectIDByName
 
         """
@@ -1009,7 +987,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetObjectVolume
 
         """
@@ -1037,7 +1014,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetObjectVolume
 
         """
@@ -1058,7 +1034,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1091,7 +1066,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetProperties
         """
         if not self._all_props:
@@ -1106,7 +1080,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1134,7 +1107,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
         """
@@ -1178,7 +1150,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1225,7 +1196,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1256,7 +1226,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1296,7 +1265,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1347,7 +1315,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1385,7 +1352,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.Unite
 
         """
@@ -1411,7 +1377,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.Intersect
         """
         theList = [self.name] + self._primitives.modeler.convert_to_selections(theList, return_list=True)
@@ -1439,7 +1404,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.Split
         """
         return self._primitives.modeler.split(self.name, plane, sides)
@@ -1465,7 +1429,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.Mirror
         """
         if self._primitives.modeler.mirror(self.id, position=position, vector=vector, duplicate=duplicate):
@@ -1494,7 +1457,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.Rotate
         """
         if self._primitives.modeler.rotate(self.id, cs_axis=cs_axis, angle=angle, unit=unit):
@@ -1548,7 +1510,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.DuplicateAroundAxis
 
         """
@@ -1577,7 +1538,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.DuplicateAlongLine
 
         """
@@ -1605,7 +1565,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.SweepAlongVector
 
         """
@@ -1639,7 +1598,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.SweepAlongPath
 
         """
@@ -1668,7 +1626,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.SweepAroundAxis
 
         """
@@ -1695,7 +1652,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.Section
 
         """
@@ -1713,7 +1669,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.Clone
 
         """
@@ -1742,7 +1697,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.Subtract
 
         """
@@ -1783,7 +1737,6 @@ class Object3d(object):
 
         References
         ----------
-
         >>> oEditor.Delete
         """
         arg = ["NAME:Selections", "Selections:=", self._m_name]
@@ -1810,7 +1763,6 @@ class Object3d(object):
         list of :class:`pyaedt.modeler.elements3d.FacePrimitive`
             List of face primitives.
         """
-
         filters = ["==", "<=", ">=", "<", ">"]
         if area_filter not in filters:
             raise ValueError('Symbol not valid, enter one of the following: "==", "<=", ">=", "<", ">"')

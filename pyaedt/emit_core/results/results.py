@@ -6,8 +6,7 @@ from pyaedt.generic.general_methods import pyaedt_function_handler
 
 
 class Results:
-    """
-    Provides the ``Results`` object.
+    """Provides the ``Results`` object.
 
     Parameters
     ----------
@@ -90,8 +89,7 @@ class Results:
 
     @staticmethod
     def interaction_domain():
-        """
-        Get an ``InteractionDomain`` object.
+        """Get an ``InteractionDomain`` object.
 
         Returns
         -------
@@ -127,8 +125,7 @@ class Results:
 
     @pyaedt_function_handler()
     def revision_names(self):
-        """
-        Return a list of all the revision names.
+        """Return a list of all the revision names.
 
         Parameters
         ----------
@@ -143,8 +140,7 @@ class Results:
 
     @pyaedt_function_handler
     def get_revision(self, revision_name=None):
-        """
-        Load the specified revision.
+        """Load the specified revision.
 
         Parameters
         ----------
@@ -193,8 +189,7 @@ class Results:
 
     @pyaedt_function_handler()
     def analyze(self):
-        """
-        Analyze the current revision or create a new revision if
+        """Analyze the current revision or create a new revision if
         the design has changed.
 
         Returns

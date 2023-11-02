@@ -3,20 +3,20 @@ import os
 # import sys
 import warnings
 
-from pyaedt.generic.general_methods import _uname
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import _uname, generate_unique_name, pyaedt_function_handler
 from pyaedt.modeler.cad.Primitives import default_materials
 from pyaedt.modeler.geometry_operators import GeometryOperators
-from pyaedt.modeler.pcb.object3dlayout import Circle3dLayout
-from pyaedt.modeler.pcb.object3dlayout import Components3DLayout
-from pyaedt.modeler.pcb.object3dlayout import ComponentsSubCircuit3DLayout
-from pyaedt.modeler.pcb.object3dlayout import Line3dLayout
-from pyaedt.modeler.pcb.object3dlayout import Nets3DLayout
-from pyaedt.modeler.pcb.object3dlayout import Padstack
-from pyaedt.modeler.pcb.object3dlayout import Pins3DLayout
-from pyaedt.modeler.pcb.object3dlayout import Polygons3DLayout
-from pyaedt.modeler.pcb.object3dlayout import Rect3dLayout
+from pyaedt.modeler.pcb.object3dlayout import (
+    Circle3dLayout,
+    Components3DLayout,
+    ComponentsSubCircuit3DLayout,
+    Line3dLayout,
+    Nets3DLayout,
+    Padstack,
+    Pins3DLayout,
+    Polygons3DLayout,
+    Rect3dLayout,
+)
 
 
 class Primitives3DLayout(object):
@@ -99,7 +99,6 @@ class Primitives3DLayout(object):
 
         References
         ----------
-
         >>> oPadstackManger = oDefinitionManager.GetManager("Padstack")
         """
         return self._app.opadstackmanager
@@ -184,7 +183,6 @@ class Primitives3DLayout(object):
         list
             Objects found.
         """
-
         objs = []
         if object_filter:
             if isinstance(object_filter, str):
@@ -222,7 +220,6 @@ class Primitives3DLayout(object):
         list
             Objects found.
         """
-
         objs = []
         if object_filter:
             if isinstance(object_filter, str):
@@ -415,7 +412,6 @@ class Primitives3DLayout(object):
         dict[str, :class:`pyaedt.modeler.cad.object3dlayout.Line3dLayout`]
             Pyaedt Objects.
         """
-
         if self._lines:
             return self._lines
 
@@ -477,7 +473,6 @@ class Primitives3DLayout(object):
         dict[str, :class:`pyaedt.modeler.cad.object3dlayout.Line3dLayout`]
             Pyaedt Objects.
         """
-
         if self._lines:
             return self._lines
         for obj in self.line_voids_names:
@@ -824,7 +819,6 @@ class Primitives3DLayout(object):
 
         References
         ----------
-
         >>> oEditor.SetNetVisible
         """
         nets_dictionary = {}
@@ -913,7 +907,6 @@ class Primitives3DLayout(object):
 
         References
         ----------
-
         >>> oEditor.CreateVia
         """
         layers = self.modeler.layers.all_signal_layers
@@ -992,7 +985,6 @@ class Primitives3DLayout(object):
 
         References
         ----------
-
         >>> oEditor.CreateCircle
         """
         if "netname" in kwargs:
@@ -1057,7 +1049,6 @@ class Primitives3DLayout(object):
 
         References
         ----------
-
         >>> oEditor.CreateRectangle
         """
         if "netname" in kwargs:
@@ -1125,7 +1116,6 @@ class Primitives3DLayout(object):
 
         References
         ----------
-
         >>> oEditor.CreatePolygon
         """
         if not name:
@@ -1180,7 +1170,6 @@ class Primitives3DLayout(object):
 
         References
         ----------
-
         >>> oEditor.CreatePolygon
         """
         if not name:
@@ -1250,7 +1239,6 @@ class Primitives3DLayout(object):
 
         References
         ----------
-
         >>> oEditor.CreateLine
         """
         if "netname" in kwargs:

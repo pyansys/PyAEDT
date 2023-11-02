@@ -9,10 +9,8 @@ import time
 import warnings
 
 from pyaedt import pyaedt_function_handler
-from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.constants import CSS4_COLORS
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import open_file
+from pyaedt.generic.constants import AEDT_UNITS, CSS4_COLORS
+from pyaedt.generic.general_methods import is_ironpython, open_file
 
 if not is_ironpython:
     try:
@@ -1035,7 +1033,8 @@ class CommonPlotter(object):
     @property
     def background_color(self):
         """Background color.
-        It can be a tuple of (r,g,b)  or color name."""
+        It can be a tuple of (r,g,b)  or color name.
+        """
         return self._background_color
 
     @background_color.setter
@@ -1233,6 +1232,7 @@ class ModelPlotter(CommonPlotter):
             Delauny tolerance value used for interpolating points.
         header_lines : int
             Number of lines to of the file containing header info that has to be removed.
+
         Returns
         -------
         bool
@@ -1512,7 +1512,6 @@ class ModelPlotter(CommonPlotter):
 
         Parameters
         ----------
-
         export_image_path : str
             Path to image to save.
 
@@ -1619,7 +1618,7 @@ class ModelPlotter(CommonPlotter):
             root_name = "Image"  # pragma: no cover
 
         def s_callback():  # pragma: no cover
-            """save screenshots"""
+            """Save screenshots"""
             exp = os.path.join(
                 path_image, "{}{}{}".format(root_name, datetime.now().strftime("%Y_%M_%d_%H-%M-%S"), format)
             )
@@ -1674,7 +1673,6 @@ class ModelPlotter(CommonPlotter):
         -------
         bool
         """
-
         assert len(self.frames) > 0, "Number of Fields have to be greater than 1 to do an animation."
         if self.is_notebook:
             self.pv = pv.Plotter(notebook=self.is_notebook, off_screen=True, window_size=self.windows_size)
@@ -1709,13 +1707,13 @@ class ModelPlotter(CommonPlotter):
             self.pv.open_gif(self.gif_file)
 
         def q_callback():
-            """exit when user wants to leave"""
+            """Exit when user wants to leave"""
             self._animating = False
 
         self._pause = False
 
         def p_callback():
-            """exit when user wants to leave"""
+            """Exit when user wants to leave"""
             self._pause = not self._pause
 
         self.pv.add_text(

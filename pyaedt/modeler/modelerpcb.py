@@ -5,14 +5,16 @@ from warnings import warn
 from pyaedt import settings
 from pyaedt.edb import Edb
 from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import get_filename_without_extension
-from pyaedt.generic.general_methods import inside_desktop
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import (
+    generate_unique_name,
+    get_filename_without_extension,
+    inside_desktop,
+    open_file,
+    pyaedt_function_handler,
+)
 from pyaedt.modeler.cad.Modeler import Modeler
-from pyaedt.modeler.pcb.Primitives3DLayout import Primitives3DLayout
 from pyaedt.modeler.pcb.object3dlayout import ComponentsSubCircuit3DLayout
+from pyaedt.modeler.pcb.Primitives3DLayout import Primitives3DLayout
 from pyaedt.modules.LayerStackup import Layers
 
 
@@ -68,8 +70,8 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
-        >>> oEditor = oDesign.SetActiveEditor("Layout")"""
+        >>> oEditor = oDesign.SetActiveEditor("Layout")
+        """
         return self._app.oeditor
 
     @property
@@ -138,7 +140,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.ZoomToFit()
         """
         try:
@@ -153,7 +154,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.GetActiveUnits
         >>> oEditor.SetActivelUnits
         """
@@ -194,7 +194,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.GetBBox
         """
         bb = self.oeditor.GetBBox(object_name)
@@ -254,7 +253,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         if isinstance(property_value, list) and len(property_value) == 3:
@@ -375,7 +373,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         return self.change_property(clip_name, "Location", position)
@@ -399,7 +396,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.Heal
 
 
@@ -454,7 +450,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.Expand
 
 
@@ -511,7 +506,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oImportExport.ImportExtracta
         """
         if not edb_path:
@@ -565,7 +559,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oImportExport.ImportIPC
         """
         if not edb_path:
@@ -598,7 +591,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.Subtract
         """
         blank = self.convert_to_selections(blank)
@@ -632,7 +624,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
            String or list of the selections.
 
         """
-
         if not isinstance(objects_to_split, list):
             objects_to_split = [objects_to_split]
         objnames = []
@@ -664,10 +655,8 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.Unite
         """
-
         vArg1 = ["NAME:primitives"]
         if len(objectlists) >= 2:
             objectlists = self.convert_to_selections(objectlists, True)
@@ -697,7 +686,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.Intersect
         """
         vArg1 = ["NAME:primitives"]
@@ -733,7 +721,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.Duplicate
         """
         objectlists = self.convert_to_selections(objectlists, True)
@@ -764,7 +751,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oEditor.DuplicateAcrossLyrs
         """
         objects = self.convert_to_selections(objects, True)
@@ -807,7 +793,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         References
         ----------
-
         >>> oDesign.SetTemperatureSettings
         """
         self.logger.info("Set the temperature dependence for the design.")
@@ -860,7 +845,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss3dLayout
         >>> h3d = Hfss3dLayout("myproject")
         >>> h3d.modeler.set_spice_model(component_name="A1",

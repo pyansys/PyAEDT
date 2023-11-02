@@ -4,18 +4,13 @@ import os
 import sys
 
 from pyaedt.aedt_logger import pyaedt_logger as logger
-from pyaedt.emit_core.emit_constants import EmiCategoryFilter
-from pyaedt.emit_core.emit_constants import InterfererType
-from pyaedt.emit_core.emit_constants import ResultType
-from pyaedt.emit_core.emit_constants import TxRxMode
-from pyaedt.emit_core.emit_constants import UnitType
+from pyaedt.emit_core.emit_constants import EmiCategoryFilter, InterfererType, ResultType, TxRxMode, UnitType
 
 EMIT_API_PYTHON = None
 
 
 def emit_api_python():
-    """
-    Get the EMIT backend API.
+    """Get the EMIT backend API.
 
     The backend API is available once a pyaedt.Emit() object has been created. An exception is raised if this method is called before a ``pyaedt.Emit()`` object has been created.
     """

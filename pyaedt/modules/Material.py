@@ -1,5 +1,4 @@
-"""
-This module contains these data classes for creating a material library:
+"""This module contains these data classes for creating a material library:
 
 * `BasicValue`
 * `ClosedFormTM`
@@ -16,8 +15,8 @@ from collections import OrderedDict
 import copy
 import warnings
 
-from pyaedt.generic.DataHandlers import _dict2arg
 from pyaedt.generic.constants import CSS4_COLORS
+from pyaedt.generic.DataHandlers import _dict2arg
 from pyaedt.generic.general_methods import pyaedt_function_handler
 
 
@@ -425,7 +424,6 @@ class MatProperty(object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         if isinstance(thermal_value, str):
@@ -588,12 +586,10 @@ class MatProperty(object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss(specified_version="2021.2")
         >>> mat1 = hfss.materials.add_material("new_copper2")
@@ -621,18 +617,15 @@ class MatProperty(object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss(specified_version="2021.2")
         >>> mat1 = hfss.materials.add_material("new_copper2")
         >>> mat1.add_thermal_modifier_dataset("$ds1")
         """
-
         formula = "pwl({}, Temp)".format(dataset_name)
         self._property_value[index].thermalmodifier = formula
         return self._add_thermal_modifier(formula, index)
@@ -678,18 +671,15 @@ class MatProperty(object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss(specified_version="2021.2")
         >>> mat1 = hfss.materials.add_material("new_copper2")
         >>> mat1.permittivity.add_thermal_modifier_closed_form(c1 = 1e-3)
         """
-
         if index > len(self._property_value):
             self.logger.error(
                 "Wrong index number. Index must be 0 for simple or nonlinear properties,"
@@ -887,7 +877,6 @@ class MatProperty(object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         if isinstance(spatial_value, str):
@@ -1023,12 +1012,10 @@ class MatProperty(object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss(specified_version="2021.2")
         >>> mat1 = hfss.materials.add_material("new_copper2")
@@ -1056,18 +1043,15 @@ class MatProperty(object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss(specified_version="2021.2")
         >>> mat1 = hfss.materials.add_material("new_copper2")
         >>> mat1.add_spatial_modifier_dataset("$ds1")
         """
-
         formula = "clp({}, X,Y,Z)".format(dataset_name)
         self._property_value[index].spatialmodifier = formula
         return self._add_spatial_modifier(formula, index)
@@ -1159,7 +1143,6 @@ class CommonMaterial(object):
             Whether to update the property in AEDT. The default is ``True``.
 
         """
-
         try:
             material_props = getattr(self, propname)
             material_props_type = material_props.type
@@ -1386,7 +1369,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._permittivity
@@ -1406,7 +1388,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._permeability
@@ -1426,7 +1407,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._conductivity
@@ -1461,7 +1441,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._magnetic_loss_tangent
@@ -1481,7 +1460,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._thermal_conductivity
@@ -1503,7 +1481,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._mass_density
@@ -1523,7 +1500,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._specific_heat
@@ -1543,7 +1519,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._thermal_expansion_coefficient
@@ -1563,7 +1538,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._youngs_modulus
@@ -1585,7 +1559,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._poissons_ratio
@@ -1607,7 +1580,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._diffusivity
@@ -1627,7 +1599,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._magnetic_coercivity
@@ -1649,7 +1620,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._molecular_mass
@@ -1669,7 +1639,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._viscosity
@@ -1689,14 +1658,13 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._stacking_type
 
     @stacking_type.setter
     def stacking_type(self, value):
-        if not value in ["Solid", "Lamination", "Litz Wire"]:
+        if value not in ["Solid", "Lamination", "Litz Wire"]:
             raise ValueError("Composition of the wire can either be 'Solid', 'Lamination' or 'Litz Wire'.")
 
         self._stacking_type = value
@@ -1722,14 +1690,13 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._wire_type
 
     @wire_type.setter
     def wire_type(self, value):
-        if not value in ["Round", "Square", "Rectangular"]:
+        if value not in ["Round", "Square", "Rectangular"]:
             raise ValueError("The type of the wire can either be 'Round', 'Square' or 'Rectangular'.")
 
         self._wire_type = value
@@ -1747,14 +1714,13 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._wire_thickness_direction
 
     @wire_thickness_direction.setter
     def wire_thickness_direction(self, value):
-        if not value in ["V(1)", "V(2)", "V(3)"]:
+        if value not in ["V(1)", "V(2)", "V(3)"]:
             raise ValueError("Thickness direction of the wire can either be 'V(1)', 'V(2)' or 'V(3)'.")
 
         self._wire_thickness_direction = value
@@ -1774,14 +1740,13 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._wire_width_direction
 
     @wire_width_direction.setter
     def wire_width_direction(self, value):
-        if not value in ["V(1)", "V(2)", "V(3)"]:
+        if value not in ["V(1)", "V(2)", "V(3)"]:
             raise ValueError("Width direction of the wire can either be 'V(1)', 'V(2)' or 'V(3)'.")
 
         self._wire_width_direction = value
@@ -1801,7 +1766,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._strand_number
@@ -1823,7 +1787,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._wire_thickness
@@ -1845,7 +1808,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._wire_diameter
@@ -1867,7 +1829,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._wire_width
@@ -1889,7 +1850,6 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._stacking_factor
@@ -1911,14 +1871,13 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditMaterial
         """
         return self._stacking_direction
 
     @stacking_direction.setter
     def stacking_direction(self, value):
-        if not value in ["V(1)", "V(2)", "V(3)"]:
+        if value not in ["V(1)", "V(2)", "V(3)"]:
             raise ValueError("Stacking direction for the lamination either be 'V(1)', 'V(2)' or 'V(3)'.")
 
         self._stacking_direction = value
@@ -2277,11 +2236,9 @@ class Material(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.AddMaterial
         >>> oDefinitionManager.EditMaterial
         """
-
         args = self._get_args()
         if not self._does_material_exists(self.name):
             self.odefinition_manager.AddMaterial(args)
@@ -2358,7 +2315,6 @@ class SurfaceMaterial(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditSurfaceMaterial
         """
         return self._surface_emissivity
@@ -2380,7 +2336,6 @@ class SurfaceMaterial(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditSurfaceMaterial
         """
         return self._surface_diffuse_absorptance
@@ -2402,7 +2357,6 @@ class SurfaceMaterial(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditSurfaceMaterial
         """
         return self._surface_incident_absorptance
@@ -2424,7 +2378,6 @@ class SurfaceMaterial(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.EditSurfaceMaterial
         """
         return self._surface_roughness
@@ -2446,7 +2399,6 @@ class SurfaceMaterial(CommonMaterial, object):
 
         References
         ----------
-
         >>> oDefinitionManager.DoesSurfaceMaterialExist
         >>> oDefinitionManager.AddSurfaceMaterial
         >>> oDefinitionManager.EditSurfaceMaterial

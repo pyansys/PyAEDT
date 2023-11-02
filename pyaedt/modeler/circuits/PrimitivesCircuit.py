@@ -4,15 +4,16 @@ import random
 import warnings
 
 from pyaedt.application.Variables import decompose_variable_value
-from pyaedt.generic.LoadAEDTFile import load_keyword_in_aedt_file
 from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.general_methods import filter_string
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.generic.general_methods import recursive_glob
-from pyaedt.modeler.circuits.object3dcircuit import CircuitComponent
-from pyaedt.modeler.circuits.object3dcircuit import Wire
+from pyaedt.generic.general_methods import (
+    filter_string,
+    generate_unique_name,
+    open_file,
+    pyaedt_function_handler,
+    recursive_glob,
+)
+from pyaedt.generic.LoadAEDTFile import load_keyword_in_aedt_file
+from pyaedt.modeler.circuits.object3dcircuit import CircuitComponent, Wire
 
 
 class CircuitComponents(object):
@@ -22,7 +23,6 @@ class CircuitComponents(object):
 
     Examples
     --------
-
     >>> from pyaedt import Circuit
     >>> aedtapp = Circuit()
     >>> prim = aedtapp.modeler.schematic
@@ -72,7 +72,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oDefinitionManager = oProject.GetDefinitionManager()
         """
         return self._app.oproject.GetDefinitionManager()
@@ -224,7 +223,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oeditor.AddPinIPorts
         """
         comp_id = "CompInst@" + name + ";" + str(id_num) + ";395"
@@ -253,7 +251,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oEditor.CreateIPort
         """
         if name in self._app.excitation_names:
@@ -294,7 +291,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oEditor.CreatePagePort
         """
         xpos, ypos = self._get_location(location)
@@ -364,7 +360,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oModelManager.Add
         >>> oComponentManager.Add
         """
@@ -657,14 +652,12 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oModelManager.Add
         >>> oComponentManager.Add
         >>> oEditor.CreateComponent
 
         Examples
         --------
-
         >>> from pyaedt import Circuit
         >>> cir = Circuit()
         >>> comps = cir.modeler.components
@@ -720,7 +713,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         id = self.create_unique_id()
@@ -760,7 +752,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oComponentManager.GetData
         >>> oComponentManager.Edit
         """
@@ -797,7 +788,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oComponentManager.GetData
         >>> oComponentManager.Edit
         """
@@ -838,7 +828,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oSymbolManager.Add
         """
         numpins = len(pin_lists)
@@ -918,7 +907,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oComponentManager.GetData
         >>> oComponentManager.Edit
         """
@@ -953,7 +941,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oEditor.GetAllElements()
         """
         obj = self.oeditor.GetAllElements()
@@ -1044,7 +1031,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oEditor.GetComponentPins
         """
         if isinstance(partid, CircuitComponent):
@@ -1075,7 +1061,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oEditor.GetComponentPinLocation
 
         """
@@ -1175,7 +1160,6 @@ class CircuitComponents(object):
 
         References
         ----------
-
         >>> oEditor.CreateWire
         """
         points = [str(tuple(self._convert_point_to_meter(i))) for i in points_array]
@@ -1244,7 +1228,6 @@ class ComponentInfo(object):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         return self._component_manager.create_component(

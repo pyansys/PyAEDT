@@ -123,7 +123,7 @@ class Part(object):
             if cs == "Global" or cs is None:
                 self._compdef[key] = ["0", "0", "0"]
             else:
-                self._compdef[key] = [str(i) if not i is str else i for i in cs]
+                self._compdef[key] = [str(i) if i is not str else i for i in cs]
         return self._compdef[key]
 
     @pyaedt_function_handler()
@@ -372,7 +372,6 @@ class Part(object):
         aedt_object : str
             Name of the HFSS design.
         """
-
         x_pointing = [1, 0, 0]
         y_pointing = [0, 1, 0]
         app.modeler.create_coordinate_system(

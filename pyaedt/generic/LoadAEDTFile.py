@@ -2,8 +2,7 @@
 import os.path
 import re
 
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import settings
+from pyaedt.generic.general_methods import open_file, settings
 
 # --------------------------------------------------------------------
 # public interface
@@ -80,9 +79,7 @@ _count = 0
 
 
 def _parse_value(v):
-    """
-
-    Parameters
+    """Parameters
     ----------
     v :
 
@@ -114,9 +111,7 @@ def _parse_value(v):
 
 
 def _separate_list_elements(v):
-    """
-
-    Parameters
+    """Parameters
     ----------
     v :
 
@@ -290,9 +285,7 @@ def _decode_recognized_key(keyword, line, d):
 
 
 def _decode_subkey(line, d):
-    """
-
-    Parameters
+    """Parameters
     ----------
     line : str
         Line.
@@ -369,9 +362,7 @@ def _decode_subkey(line, d):
 
 
 def _walk_through_structure(keyword, save_dict):
-    """
-
-    Parameters
+    """Parameters
     ----------
     keyword :
 

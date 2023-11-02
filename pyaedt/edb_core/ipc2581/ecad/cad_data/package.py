@@ -5,8 +5,7 @@ from pyaedt.edb_core.ipc2581.ecad.cad_data.assembly_drawing import AssemblyDrawi
 from pyaedt.edb_core.ipc2581.ecad.cad_data.outline import Outline
 from pyaedt.edb_core.ipc2581.ecad.cad_data.pin import Pin
 from pyaedt.edb_core.ipc2581.ecad.cad_data.polygon import PolyStep
-from pyaedt.generic.general_methods import ET
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import ET, pyaedt_function_handler
 
 
 class Package(object):
@@ -83,7 +82,7 @@ class Package(object):
             poly_step5.x = str(self._ipc.from_meter_to_units(bb1x_rot, self._ipc.units))
             poly_step5.y = str(self._ipc.from_meter_to_units(bb1y_rot, self._ipc.units))
             self.outline.polygon.poly_steps = [poly_step1, poly_step2, poly_step3, poly_step4, poly_step5]
-            if not "ROUND_0" in self._ipc.content.dict_line.dict_lines:
+            if "ROUND_0" not in self._ipc.content.dict_line.dict_lines:
                 entry_line = EntryLine()
                 entry_line.line_width = 0.0
                 self._ipc.content.dict_line.dict_lines["ROUND_0"] = entry_line

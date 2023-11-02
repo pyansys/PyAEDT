@@ -143,9 +143,7 @@ class Material(object):
 
     @property
     def dielectric_model_frequency(self):
-        """
-
-        Returns
+        """Returns
         -------
         Frequency in GHz
         """
@@ -447,7 +445,7 @@ class Materials(object):
         -------
         :class:`pyaedt.edb_core.materials.Material`
         """
-        if not name in self.materials:
+        if name not in self.materials:
             self._edb.definition.MaterialDef.Create(self._db, name)
             new_material = self.materials[name]
             new_material.permittivity = permittivity
@@ -476,7 +474,7 @@ class Materials(object):
         :class:`pyaedt.edb_core.materials.Material`
 
         """
-        if not name in self.materials:
+        if name not in self.materials:
             self._edb.definition.MaterialDef.Create(self._db, name)
             new_material = self.materials[name]
             new_material.conductivity = conductivity
@@ -506,7 +504,7 @@ class Materials(object):
         -------
         :class:`pyaedt.edb_core.materials.Material`
         """
-        if not name in self.materials:
+        if name not in self.materials:
             self._edb.definition.MaterialDef.Create(self._db, name)
             new_material = self.materials[name]
             new_material.permittivity = permittivity
@@ -677,7 +675,6 @@ class Materials(object):
     def duplicate(self, material_name, new_material_name):
         """Duplicate a material from the database.
 
-
         Parameters
         ----------
         material_name : str
@@ -692,7 +689,6 @@ class Materials(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edb_app = Edb()
         >>> my_material = edb_app.materials.duplicate("copper", "my_new_copper")
@@ -897,7 +893,7 @@ class Materials(object):
         """
         material_dict = self._read_materials(amat_file)
         for material_name, material in material_dict.items():
-            if not material_name in list(self.materials.keys()):
+            if material_name not in list(self.materials.keys()):
                 new_material = self.add_material(name=material_name)
                 try:
                     new_material.permittivity = float(material["permittivity"])

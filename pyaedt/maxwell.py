@@ -11,12 +11,9 @@ import re
 from pyaedt.application.Analysis3D import FieldAnalysis3D
 from pyaedt.application.Variables import decompose_variable_value
 from pyaedt.generic.constants import SOLUTIONS
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import generate_unique_name, open_file, pyaedt_function_handler
 from pyaedt.modeler.geometry_operators import GeometryOperators
-from pyaedt.modules.Boundary import BoundaryObject
-from pyaedt.modules.Boundary import MaxwellParameters
+from pyaedt.modules.Boundary import BoundaryObject, MaxwellParameters
 from pyaedt.modules.SetupTemplates import SetupKeys
 
 
@@ -33,7 +30,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.GetSymmetryMultiplier()
         """
         return int(self.omodelsetup.GetSymmetryMultiplier())
@@ -44,8 +40,8 @@ class Maxwell(object):
 
         References
         ----------
-
-        >>> oModule.GetExcitationsOfType("Winding Group")"""
+        >>> oModule.GetExcitationsOfType("Winding Group")
+        """
         windings = self.oboundary.GetExcitationsOfType("Winding Group")
         return list(windings)
 
@@ -72,7 +68,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oDesign.SetDesignSettings
         """
         return self.change_design_settings({"Multiplier": value})
@@ -97,7 +92,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oDesign.SetDesignSettings
         """
         return self.change_design_settings(
@@ -141,6 +135,7 @@ class Maxwell(object):
             Only available if skew_type is ``User Defined``.
             The length of this list must be equal to number_of_slices.
             The default value is ``None``.
+
         Returns
         -------
         bool
@@ -211,7 +206,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.SetCoreLoss
 
         Examples
@@ -272,7 +266,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignMatrix
 
         Examples
@@ -299,7 +292,6 @@ class Maxwell(object):
         >>> m2d.assign_matrix(sources=['1V'], group_sources=['0V'], matrix_name="Matrix1")
 
         """
-
         sources = self.modeler.convert_to_selections(sources, True)
         if self.solution_type in ["Electrostatic", "ACConduction", "DCConduction"]:
             turns = ["1"] * len(sources)
@@ -525,7 +517,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.SetEddyEffect
         """
         solid_objects_names = self.get_all_conductors_names()
@@ -623,7 +614,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.SetupYConnection
 
         Examples
@@ -636,7 +626,6 @@ class Maxwell(object):
         >>> aedtapp.set_active_design("Basis_Model_For_Test")
         >>> aedtapp.setup_y_connection(["PhaseA", "PhaseB", "PhaseC"])
         """
-
         if self.solution_type not in ["Transient"]:
             self.logger.error("Y connections only available for Transient solutions.")
             return False
@@ -680,18 +669,15 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignCurrent
 
         Examples
         --------
-
         >>> from pyaedt import Maxwell3d
         >>> app = pyaedt.Maxwell3d(solution_type="ElectroDCConduction")
         >>> cylinder= app.modeler.create_cylinder("X", [0,0,0],10, 100, 250)
         >>> current = app.assign_current(cylinder.top_face_x.id, amplitude= "2mA")
         """
-
         if isinstance(amplitude, (int, float)):
             amplitude = str(amplitude) + "A"
 
@@ -805,7 +791,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignBand
         """
         assert self.solution_type == SOLUTIONS.Maxwell3d.Transient, "Motion applies only to the Transient setup."
@@ -903,7 +888,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignBand
         """
         assert self.solution_type == SOLUTIONS.Maxwell3d.Transient, "Motion applies only to the Transient setup."
@@ -956,7 +940,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignVoltage
         """
         if isinstance(amplitude, (int, float)):
@@ -1001,7 +984,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignVoltageDrop
         """
         if isinstance(amplitude, (int, float)):
@@ -1068,10 +1050,8 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignWindingGroup
         """
-
         if not name:
             name = generate_unique_name("Winding")
 
@@ -1123,7 +1103,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AddWindingTerminals
         >>> oModule.AddWindingCoils
         """
@@ -1156,7 +1135,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignCoil
         """
         if polarity.lower() == "positive":
@@ -1228,12 +1206,10 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignForce
 
         Examples
         --------
-
         Assign virtual force to a magnetic object:
 
         >>> iron_object = m3d.modeler.create_box([0, 0, 0], [2, 10, 10], name="iron")
@@ -1315,7 +1291,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignTorque
         """
         if self.solution_type not in ["ACConduction", "DCConduction"]:
@@ -1374,7 +1349,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         self.modeler[name].solve_inside = activate
@@ -1393,7 +1367,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.ResetSetupToTimeZero
         """
         if self.solution_type != "Transient":
@@ -1421,7 +1394,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
         """
         self.odesign.ChangeProperty(
@@ -1462,7 +1434,6 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.AssignSymmetry
         """
         try:
@@ -1646,19 +1617,16 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.Radiation
 
         Examples
         --------
-
         Assign radiation boundary to one box and one face:
 
         >>> box1 = m3d.modeler.create_box([0, 0, 0], [2, 10, 10])
         >>> box2 = m3d.modeler.create_box([10, 0, 0], [2, 10, 10])
         >>> m3d.assign_radiation([box1, box2.faces[0]], force_name="radiation_boundary")
         """
-
         if self.solution_type in ["EddyCurrent"]:
             if not radiation_name:
                 radiation_name = generate_unique_name("Radiation")
@@ -1898,8 +1866,7 @@ class Maxwell(object):
 
     @pyaedt_function_handler
     def edit_external_circuit(self, netlist_file_path, schematic_design_name):
-        """
-        Edit the external circuit for the winding.
+        """Edit the external circuit for the winding.
 
         Parameters
         ----------
@@ -1974,12 +1941,10 @@ class Maxwell(object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
 
         Examples
         --------
-
         >>> from pyaedt import Maxwell3d
         >>> app = Maxwell3d()
         >>> app.create_setup(setupname="Setup1", setuptype="EddyCurrent", MaximumPasses=10,PercentError=2 )
@@ -2097,8 +2062,7 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
         port=0,
         aedt_process_id=None,
     ):
-        """
-        Initialize the ``Maxwell`` class.
+        """Initialize the ``Maxwell`` class.
         """
         self.is3d = True
         FieldAnalysis3D.__init__(
@@ -2143,19 +2107,16 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignInsulating
 
         Examples
         --------
-
         Create a box and assign insulating boundary to it.
 
         >>> insulated_box = maxwell3d_app.modeler.create_box([50, 0, 50], [294, 294, 19], name="InsulatedBox")
         >>> insulating_assignment = maxwell3d_app.assign_insulating(insulated_box, "InsulatingExample")
         >>> type(insulating_assignment)
         """
-
         if self.solution_type in [
             "EddyCurrent",
             "Transient",
@@ -2218,12 +2179,10 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignImpedance
 
         Examples
         --------
-
         Create a box and assign impedance boundary to it.
 
         >>> impedance_box = self.aedtapp.modeler.create_box([-50, -50, -50], [294, 294, 19], name="impedance_box")
@@ -2232,7 +2191,6 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
         <class 'pyaedt.modules.Boundary.BoundaryObject'>
 
         """
-
         if self.solution_type in [
             "EddyCurrent",
             "Transient",
@@ -2329,7 +2287,6 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
             Boundary object.
 
         """
-
         bound = BoundaryObject(self, name, props, boundary_type)
         result = bound.create()
         if result:
@@ -2407,7 +2364,6 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignIndependent
         >>> oModule.AssignDependent
         """
@@ -2503,12 +2459,10 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignFluxTangential
 
         Examples
         --------
-
         Create a box and assign a flux tangential boundary to one of its faces.
 
         >>> box = maxwell3d_app.modeler.create_box([50, 0, 50], [294, 294, 19], name="Box")
@@ -2562,12 +2516,10 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignLayoutForce
 
         Examples
         --------
-
         Create a dictionary to give as an input to assign_layout_force method.
         >>> nets_layers = {}
         >>> nets_layers["<no-net>"] = ["PWR","TOP","UNNAMED_000","UNNAMED_002"]
@@ -2577,7 +2529,6 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
         >>> m3d = Maxwell3d()
         >>> m3d.assign_layout_force(nets_layers_mapping=nets_layers, component_name="LC1_1")
         """
-
         for key in nets_layers_mapping.keys():
             if not isinstance(nets_layers_mapping[key], list):
                 nets_layers_mapping[key] = list(nets_layers_mapping[key])
@@ -2661,7 +2612,6 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignTangentialHField
         """
         if self.solution_type not in ["EddyCurrent", "Magnetostatic"]:
@@ -2720,7 +2670,6 @@ class Maxwell3d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignZeroTangentialHField
         """
         if self.solution_type not in ["EddyCurrent"]:
@@ -2830,8 +2779,8 @@ class Maxwell2d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
-        >>> oDesign.GetGeometryMode"""
+        >>> oDesign.GetGeometryMode
+        """
         return self.odesign.GetGeometryMode()
 
     def __init__(
@@ -2984,7 +2933,6 @@ class Maxwell2d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignBalloon
         """
         edge_list = self.modeler.convert_to_selections(edge_list, True)
@@ -3023,7 +2971,6 @@ class Maxwell2d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignVectorPotential
         """
         input_edge = self.modeler.convert_to_selections(input_edge, True)
@@ -3127,7 +3074,6 @@ class Maxwell2d(Maxwell, FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignEndConnection
         """
         if self.solution_type not in ["EddyCurrent", "Transient"]:

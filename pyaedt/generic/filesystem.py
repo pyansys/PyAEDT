@@ -72,8 +72,7 @@ class Scratch:
             pass
 
     def copyfile(self, src_file, dst_filename=None):
-        """
-        Copy a file to the scratch directory. The target filename is optional.
+        """Copy a file to the scratch directory. The target filename is optional.
         If omitted, the target file name is identical to the source file name.
 
         Parameters
@@ -109,9 +108,7 @@ class Scratch:
         return dst_file
 
     def copyfolder(self, src_folder, destfolder):
-        """
-
-        Parameters
+        """Parameters
         ----------
         src_folder :
 
@@ -136,8 +133,7 @@ class Scratch:
 
 
 def get_json_files(start_folder):
-    """
-    Get the absolute path to all *.json files in start_folder.
+    """Get the absolute path to all *.json files in start_folder.
 
     Parameters
     ----------

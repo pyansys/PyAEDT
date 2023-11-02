@@ -8,18 +8,13 @@ import re
 import warnings
 
 from pyaedt import _retry_ntimes
-from pyaedt.edb_core.edb_data.components_data import EDBComponent
-from pyaedt.edb_core.edb_data.components_data import EDBComponentDef
+from pyaedt.edb_core.edb_data.components_data import EDBComponent, EDBComponentDef
 from pyaedt.edb_core.edb_data.padstacks_data import EDBPadstackInstance
-from pyaedt.edb_core.edb_data.sources import Source
-from pyaedt.edb_core.edb_data.sources import SourceType
+from pyaedt.edb_core.edb_data.sources import Source, SourceType
 from pyaedt.edb_core.general import convert_py_list_to_net_list
 from pyaedt.edb_core.padstack import EdbPadstacks
-from pyaedt.generic.clr_module import String
-from pyaedt.generic.clr_module import _clr
-from pyaedt.generic.general_methods import get_filename_without_extension
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.clr_module import String, _clr
+from pyaedt.generic.general_methods import get_filename_without_extension, is_ironpython, pyaedt_function_handler
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
 
@@ -154,7 +149,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.components
@@ -174,7 +168,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.components
@@ -190,7 +183,8 @@ class Components(object):
 
         Returns
         -------
-        dict of :class:`pyaedt.edb_core.edb_data.components_data.EDBComponentDef`"""
+        dict of :class:`pyaedt.edb_core.edb_data.components_data.EDBComponentDef`
+        """
         return {l.GetName(): EDBComponentDef(self._pedb, l) for l in list(self._pedb.component_defs)}
 
     @property
@@ -242,6 +236,7 @@ class Components(object):
         ----------
         file_path : str
             File path of json file.
+
         Returns
         -------
 
@@ -269,12 +264,12 @@ class Components(object):
                         model = comp.s_param_model
                         data["Definitions"][part_name]["Model_name"] = model.name
                         data["Definitions"][part_name]["Reference_net"] = model.reference_net
-                        if not model.name in data["SParameterModel"]:
+                        if model.name not in data["SParameterModel"]:
                             data["SParameterModel"][model.name] = model.file_path
                     elif comp.model_type == "SPICEModel":
                         model = comp.spice_model
                         data["Definitions"][part_name]["Model_name"] = model.name
-                        if not model.name in data["SPICEModel"]:
+                        if model.name not in data["SPICEModel"]:
                             data["SPICEModel"][model.name] = model.file_path
                     else:
                         model = comp.netlist_model
@@ -306,7 +301,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.resistors
@@ -328,7 +322,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.capacitors
@@ -350,7 +343,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.inductors
@@ -373,7 +365,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.ICs
@@ -396,7 +387,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.IOs
@@ -419,7 +409,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.others
@@ -442,7 +431,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.components_by_partname
@@ -648,7 +636,6 @@ class Components(object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         if not sources:  # pragma: no cover
             return False
         if isinstance(sources, Source):  # pragma: no cover
@@ -748,7 +735,6 @@ class Components(object):
         >>> edb.save_edb()
         >>> edb.close_edb()
         """
-
         if isinstance(pins, str) or isinstance(pins, EDBPadstackInstance):
             pins = [pins]
         if isinstance(reference_pins, str):
@@ -834,7 +820,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> net_list = ["M_DQ<1>", "M_DQ<2>", "M_DQ<3>", "M_DQ<4>", "M_DQ<5>"]
@@ -944,7 +929,6 @@ class Components(object):
         -------
         Edb terminal.
         """
-
         pin_position = self.get_pin_position(pin)  # pragma no cover
         pin_pos = self._pedb.point_data(*pin_position)
         res, from_layer, _ = pin.GetLayerRange()
@@ -1366,7 +1350,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> pins = edbapp.components.get_pin_from_component("A1")
@@ -1464,7 +1447,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> pins = edbapp.components.get_pin_from_component("A1")
@@ -1503,7 +1485,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.set_component_model("A1", model_type="Spice",
@@ -1656,7 +1637,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> list_of_deleted_rlcs = edbapp.components.delete_single_pin_rlc()
@@ -1696,7 +1676,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.delete("A1")
@@ -1721,7 +1700,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.delete("A1")
@@ -1751,7 +1729,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.disable_rlc_component("A1")
@@ -1811,6 +1788,7 @@ class Components(object):
             Y size of the reference. Applicable when auto_reference_size is False.
         reference_height : int, str, float, optional
             Height of the reference. Applicable when auto_reference_size is False.
+
         Returns
         -------
         bool
@@ -1818,7 +1796,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.set_solder_ball("A1")
@@ -1908,7 +1885,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.set_component_rlc(
@@ -2082,7 +2058,7 @@ class Components(object):
                         pass
                     else:
                         pinlist = self.get_pin_from_component(refdes)
-                        if not part_name in self.definitions:
+                        if part_name not in self.definitions:
                             footprint_cell = self.definitions[comp.partname]._edb_comp_def.GetFootprintCell()
                             comp_def = self._edb.definition.ComponentDef.Create(self._db, part_name, footprint_cell)
                             for pin in pinlist:
@@ -2176,7 +2152,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edbapp.components.get_pin_from_component("R1", refdes)
@@ -2225,7 +2200,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edbapp.components.get_aedt_pin_name(pin)
@@ -2258,7 +2232,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edbapp.components.get_pin_position(pin)
@@ -2294,7 +2267,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edbapp.components.get_pins_name_from_net(pin_list, net_name)
@@ -2322,7 +2294,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edbapp.components.get_nets_from_pin_list(pinlist)
@@ -2349,7 +2320,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edbapp.components.get_component_net_connection_info(refdes)
@@ -2377,7 +2347,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edbapp.components.get_rats()
@@ -2404,7 +2373,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edbapp.components.get_through_resistor_list()
@@ -2443,7 +2411,6 @@ class Components(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder")
         >>> edbapp.components.short_component_pins("J4A2", ["G4", "9", "3"])

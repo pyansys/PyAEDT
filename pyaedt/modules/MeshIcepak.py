@@ -1,10 +1,8 @@
 from collections import OrderedDict
 
 from pyaedt import settings
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modules.Mesh import MeshOperation
-from pyaedt.modules.Mesh import meshers
+from pyaedt.generic.general_methods import generate_unique_name, pyaedt_function_handler
+from pyaedt.modules.Mesh import MeshOperation, meshers
 
 
 class IcepakMesh(object):
@@ -34,8 +32,7 @@ class IcepakMesh(object):
 
     @property
     def meshregions_dict(self):
-        """
-        Get mesh regions in the design.
+        """Get mesh regions in the design.
 
         Returns
         -------
@@ -47,7 +44,6 @@ class IcepakMesh(object):
     @pyaedt_function_handler()
     def _refresh_mesh_operations(self):
         """Refresh all mesh operations."""
-
         self._meshoperations = self._get_design_mesh_operations()
         return len(self.meshoperations)
 
@@ -57,16 +53,15 @@ class IcepakMesh(object):
 
         References
         ----------
-
         >>> oDesign.GetModule("MeshRegion")
         """
         return self._app.omeshmodule
 
     class MeshRegion(object):
-        """
-        Manages Icepak mesh region settings.
+        """Manages Icepak mesh region settings.
 
-        Attributes:
+        Attributes
+        ----------
             name : str
                 Name of the mesh region.
             UserSpecifiedSettings : bool
@@ -289,7 +284,6 @@ class IcepakMesh(object):
         @property
         def manualsettings(self):
             """Manual mesh settings."""
-
             arg = [
                 "MeshMethod:=",
                 "MesherHD",
@@ -357,7 +351,6 @@ class IcepakMesh(object):
 
             References
             ----------
-
             >>> oModule.EditGlobalMeshRegion
             >>> oModule.EditMeshRegion
             """
@@ -393,7 +386,6 @@ class IcepakMesh(object):
 
             References
             ----------
-
             >>> oModule.AssignMeshRegion
             >>> oModule.AssignVirtualMeshRegion
             """
@@ -422,7 +414,6 @@ class IcepakMesh(object):
 
             References
             ----------
-
             >>> oModule.DeleteMeshRegions()
             """
             self.meshmodule.DeleteMeshRegions([self.name])
@@ -496,7 +487,6 @@ class IcepakMesh(object):
 
         References
         ----------
-
         >>> oModule.AssignMeshOperation
         """
         level_order = {}
@@ -537,7 +527,6 @@ class IcepakMesh(object):
 
         References
         ----------
-
         >>> oModule.AssignMeshOperation
         """
         objs = self._app.modeler.convert_to_selections(objects, True)
@@ -578,7 +567,6 @@ class IcepakMesh(object):
 
         References
         ----------
-
         >>> oModule.EditMeshOperation
         """
         xsize = self.boundingdimension[0] / (15 * accuracy * accuracy)
@@ -618,7 +606,6 @@ class IcepakMesh(object):
 
         References
         ----------
-
         >>> oModule.EditMeshOperation
         """
         xsize = self.boundingdimension[0] / (10 * accuracy2 * accuracy2)
@@ -659,12 +646,10 @@ class IcepakMesh(object):
 
         References
         ----------
-
         >>> oEditor.UpdatePriorityList
 
         Examples
         --------
-
         >>> from pyaedt import Icepak
         >>> app = Icepak()
         >>> app.mesh.add_priority(entity_type=1, obj_list=app.modeler.object_names, priority=3)
@@ -739,7 +724,6 @@ class IcepakMesh(object):
 
         References
         ----------
-
         >>> oModule.AssignMeshRegion
         """
         if not name:
@@ -800,7 +784,6 @@ class IcepakMesh(object):
 
         References
         ----------
-
         >>> oDesign.GenerateMesh
         """
         if name is None:
@@ -837,7 +820,6 @@ class IcepakMesh(object):
 
         References
         ----------
-
         >>> oModule.AssignMeshOperation
         """
         if meshop_name:

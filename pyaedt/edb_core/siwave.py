@@ -1,25 +1,21 @@
-"""
-This module contains these classes: ``CircuitPort``, ``CurrentSource``, ``EdbSiwave``,
+"""This module contains these classes: ``CircuitPort``, ``CurrentSource``, ``EdbSiwave``,
 ``PinGroup``, ``ResistorSource``, ``Source``, ``SourceType``, and ``VoltageSource``.
 """
 import os
 import time
 
-from pyaedt.edb_core.edb_data.simulation_configuration import SimulationConfiguration
-from pyaedt.edb_core.edb_data.simulation_configuration import SourceType
-from pyaedt.edb_core.edb_data.sources import CircuitPort
-from pyaedt.edb_core.edb_data.sources import CurrentSource
-from pyaedt.edb_core.edb_data.sources import DCTerminal
-from pyaedt.edb_core.edb_data.sources import PinGroup
-from pyaedt.edb_core.edb_data.sources import ResistorSource
-from pyaedt.edb_core.edb_data.sources import VoltageSource
-from pyaedt.edb_core.general import BoundaryType
-from pyaedt.edb_core.general import convert_py_list_to_net_list
-from pyaedt.generic.constants import SolverType
-from pyaedt.generic.constants import SweepType
-from pyaedt.generic.general_methods import _retry_ntimes
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.edb_core.edb_data.simulation_configuration import SimulationConfiguration, SourceType
+from pyaedt.edb_core.edb_data.sources import (
+    CircuitPort,
+    CurrentSource,
+    DCTerminal,
+    PinGroup,
+    ResistorSource,
+    VoltageSource,
+)
+from pyaedt.edb_core.general import BoundaryType, convert_py_list_to_net_list
+from pyaedt.generic.constants import SolverType, SweepType
+from pyaedt.generic.general_methods import _retry_ntimes, generate_unique_name, pyaedt_function_handler
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
 
@@ -161,7 +157,7 @@ class EdbSiwave(object):
             pos_pingroup_terminal.SetReferenceTerminal(neg_pingroup_terminal)
             try:
                 pos_pingroup_terminal.SetName(source.name)
-            except Exception as e:
+            except Exception:
                 name = generate_unique_name(source.name)
                 pos_pingroup_terminal.SetName(name)
                 self._logger.warning("%s already exists. Renaming to %s", source.name, name)
@@ -222,7 +218,6 @@ class EdbSiwave(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> pins = edbapp.components.get_pin_from_component("U2A5")
@@ -347,13 +342,11 @@ class EdbSiwave(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> pins = edbapp.components.get_pin_from_component("U2A5")
         >>> edbapp.siwave.create_voltage_source_on_pin(pins[0], pins[1], 50, "source_name")
         """
-
         voltage_source = VoltageSource()
         voltage_source.positive_node.net = pos_pin.GetNet().GetName()
         voltage_source.negative_node.net = neg_pin.GetNet().GetName()
@@ -397,7 +390,6 @@ class EdbSiwave(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> pins = edbapp.components.get_pin_from_component("U2A5")
@@ -444,7 +436,6 @@ class EdbSiwave(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> pins =edbapp.components.get_pin_from_component("U2A5")
@@ -520,7 +511,6 @@ class EdbSiwave(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edbapp.siwave.create_circuit_port_on_net("U2A5", "V1P5_S3", "U2A5", "GND", 50, "port_name")
@@ -589,7 +579,6 @@ class EdbSiwave(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edb.siwave.create_voltage_source_on_net("U2A5","V1P5_S3","U2A5","GND",3.3,0,"source_name")
@@ -660,7 +649,6 @@ class EdbSiwave(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edb.siwave.create_current_source_on_net("U2A5", "V1P5_S3", "U2A5", "GND", 0.1, 0, "source_name")
@@ -719,12 +707,10 @@ class EdbSiwave(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edb.siwave.create_dc_terminal("U2A5", "V1P5_S3", "source_name")
         """
-
         dc_source = DCTerminal()
         dc_source.positive_node.net = net_name
         pos_node_cmp = self._pedb.components.get_component_by_name(component_name)
@@ -946,7 +932,7 @@ class EdbSiwave(object):
             pos_pingroup_terminal.SetReferenceTerminal(neg_pingroup_terminal)
             try:
                 pos_pingroup_terminal.SetName(source.name)
-            except Exception as e:
+            except Exception:
                 name = generate_unique_name(source.name)
                 pos_pingroup_terminal.SetName(name)
                 self._logger.warning("%s already exists. Renaming to %s", source.name, name)
@@ -995,7 +981,6 @@ class EdbSiwave(object):
         bool
             ``True`` when successful, ``False`` when failed.
         """
-
         if not isinstance(simulation_setup, SimulationConfiguration):  # pragma: no cover
             return False
         if simulation_setup.solver_type == SolverType.SiwaveSYZ:  # pragma: no cover

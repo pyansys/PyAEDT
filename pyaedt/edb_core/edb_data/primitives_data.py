@@ -1,12 +1,14 @@
 import math
 
-from pyaedt.edb_core.dotnet.primitive import BondwireDotNet
-from pyaedt.edb_core.dotnet.primitive import CircleDotNet
-from pyaedt.edb_core.dotnet.primitive import PathDotNet
-from pyaedt.edb_core.dotnet.primitive import PolygonDataDotNet
-from pyaedt.edb_core.dotnet.primitive import PolygonDotNet
-from pyaedt.edb_core.dotnet.primitive import RectangleDotNet
-from pyaedt.edb_core.dotnet.primitive import TextDotNet
+from pyaedt.edb_core.dotnet.primitive import (
+    BondwireDotNet,
+    CircleDotNet,
+    PathDotNet,
+    PolygonDataDotNet,
+    PolygonDotNet,
+    RectangleDotNet,
+    TextDotNet,
+)
 from pyaedt.edb_core.edb_data.connectable import Connectable
 from pyaedt.edb_core.general import convert_py_list_to_net_list
 from pyaedt.generic.general_methods import pyaedt_function_handler
@@ -181,6 +183,7 @@ class EDBPrimitives(EDBPrimitivesMain):
         include_voids : bool, optional
             Either if the voids have to be included in computation.
             The default value is ``True``.
+
         Returns
         -------
         float
@@ -281,8 +284,7 @@ class EDBPrimitives(EDBPrimitivesMain):
         return xr, yr
 
     def _get_points_for_plot(self, my_net_points, num):
-        """
-        Get the points to be plotted.
+        """Get the points to be plotted.
         """
         # fmt: off
         x = []
@@ -729,6 +731,7 @@ class EdbPath(EDBPrimitives, PathDotNet):
         incremental: bool
             Add point incrementally. If True, coordinates of the added point is incremental to the last point.
             The default value is ``False``.
+
         Returns
         -------
         bool
@@ -745,6 +748,7 @@ class EdbPath(EDBPrimitives, PathDotNet):
         ----------
         to_string : bool, optional
             Type of return. The default is ``"False"``.
+
         Returns
         -------
         list
@@ -793,9 +797,7 @@ class EdbPath(EDBPrimitives, PathDotNet):
         vertical_extent_factor=3,
         pec_launch_width="0.01mm",
     ):
-        """
-
-        Parameters
+        """Parameters
         ----------
         name : str
             Name of the port.

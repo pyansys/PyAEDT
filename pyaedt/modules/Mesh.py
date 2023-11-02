@@ -1,5 +1,4 @@
-"""
-This module contains the `Mesh` class.
+"""This module contains the `Mesh` class.
 """
 from __future__ import absolute_import  # noreorder
 
@@ -9,14 +8,14 @@ import shutil
 
 from pyaedt.application.design_solutions import model_names
 from pyaedt.generic.DataHandlers import _dict2arg
+from pyaedt.generic.general_methods import (
+    MethodNotSupportedError,
+    generate_unique_name,
+    pyaedt_function_handler,
+    settings,
+)
 from pyaedt.generic.LoadAEDTFile import load_keyword_in_aedt_file
-from pyaedt.generic.general_methods import MethodNotSupportedError
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.generic.general_methods import settings
-from pyaedt.modeler.cad.elements3d import EdgePrimitive
-from pyaedt.modeler.cad.elements3d import FacePrimitive
-from pyaedt.modeler.cad.elements3d import VertexPrimitive
+from pyaedt.modeler.cad.elements3d import EdgePrimitive, FacePrimitive, VertexPrimitive
 
 meshers = {
     "HFSS": "MeshSetup",
@@ -170,10 +169,12 @@ class MeshOperation(object):
     @pyaedt_function_handler()
     def update(self, key_name=None, value=None):
         """Update the mesh.
+
         Returns
         -------
         bool
             ``True`` when successful, ``False`` when failed.
+
         References
         ----------
         >>> oModule.EditTrueSurfOp
@@ -237,7 +238,6 @@ class MeshOperation(object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         out = []
 
         if "Faces" in self.props:
@@ -300,7 +300,6 @@ class MeshOperation(object):
 
         References
         ----------
-
         >>> oModule.DeleteOp
         """
         self._mesh.omeshmodule.DeleteOp([self.name])
@@ -362,7 +361,6 @@ class Mesh(object):
         >>> mr1 = aedtapp.mesh.assign_model_resolution(cylinder, 1e-4, "ModelRes1")
         >>> mr2 = aedtapp.mesh[mr1.name]
         """
-
         if part_id in self.meshoperation_names:
             mesh_op_selected = [mesh_op for mesh_op in self.meshoperations if mesh_op.name == part_id]
             return mesh_op_selected[0]
@@ -395,7 +393,6 @@ class Mesh(object):
     @pyaedt_function_handler()
     def _refresh_mesh_operations(self):
         """Refresh all mesh operations."""
-
         self._meshoperations = self._get_design_mesh_operations()
         return len(self.meshoperations)
 
@@ -434,7 +431,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.InitialMeshSettings
         """
         if not self._globalmesh:
@@ -447,7 +443,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oDesign.GetModule("MeshSetup")
         """
         return self._app.omeshmodule
@@ -555,7 +550,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignTrueSurfOp
 
         Examples
@@ -618,7 +612,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignTrueSurfOp
 
         Examples
@@ -696,7 +689,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignModelResolutionOp
 
         Examples
@@ -783,7 +775,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.InitialMeshSettings
         """
         if self._app.design_type == "2D Extractor" or self._app.design_type == "Maxwell 2D":
@@ -847,7 +838,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignSurfPriorityForTauOp
         """
         meshop_name = generate_unique_name("SurfaceRepPriority")
@@ -873,7 +863,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oDesign.GenerateMesh
         """
         return self._odesign.GenerateMesh(name) == 0
@@ -895,10 +884,8 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.DeleteOp
         """
-
         mesh_op_types = ["Length Based", "Surface Approximation Based"]
 
         if mesh_type:
@@ -941,7 +928,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignLengthOp
         """
         names = self.modeler.convert_to_selections(names, True)
@@ -1028,7 +1014,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignSkinDepthOp
         """
         names = self.modeler.convert_to_selections(names, True)
@@ -1097,7 +1082,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignApplyCurvlinearElementsOp
         """
         names = self.modeler.convert_to_selections(names, True)
@@ -1131,8 +1115,8 @@ class Mesh(object):
     def assign_curvature_extraction(self, names, disable_for_faceted_surf=True, meshop_name=None):
         """Assign curvature extraction.
 
-         Parameters
-         ----------
+        Parameters
+        ----------
          names : list
             List of objects or faces.
          disable_for_faceted_surf : bool, optional
@@ -1141,14 +1125,13 @@ class Mesh(object):
          meshop_name : str, optional
             Name of the mesh operation. The default is ``None``.
 
-         Returns
-         -------
+        Returns
+        -------
         :class:`pyaedt.modules.Mesh.MeshOperation`
             Mesh operation object.
 
         References
         ----------
-
         >>> oModule.AssignCurvatureExtractionOp
         """
         names = self.modeler.convert_to_selections(names, True)
@@ -1202,7 +1185,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignRotationalLayerOp
         """
         names = self.modeler.convert_to_selections(names, True)
@@ -1251,7 +1233,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignRotationalLayerOp
         """
         names = self.modeler.convert_to_selections(names, True)
@@ -1299,7 +1280,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignDensityControlOp
         """
         names = self.modeler.convert_to_selections(names, True)
@@ -1392,7 +1372,6 @@ class Mesh(object):
 
         References
         ----------
-
         >>> oModule.AssignCylindricalGapOp
         """
         try:

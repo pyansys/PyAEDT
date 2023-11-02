@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-This module contains the `Materials` class.
+"""This module contains the `Materials` class.
 """
 from __future__ import absolute_import  # noreorder
 
@@ -12,17 +11,10 @@ import os
 import re
 import sys
 
-from pyaedt import is_ironpython
-from pyaedt import settings
+from pyaedt import is_ironpython, settings
 from pyaedt.generic.DataHandlers import _arg2dict
-from pyaedt.generic.general_methods import _create_json_file
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modules.Material import MatProperties
-from pyaedt.modules.Material import Material
-from pyaedt.modules.Material import OrderedDict
-from pyaedt.modules.Material import SurfaceMaterial
+from pyaedt.generic.general_methods import _create_json_file, generate_unique_name, open_file, pyaedt_function_handler
+from pyaedt.modules.Material import Material, MatProperties, OrderedDict, SurfaceMaterial
 
 
 class Materials(object):
@@ -243,7 +235,6 @@ class Materials(object):
 
         References
         ----------
-
         >>> oDefinitionManager.GetProjectMaterialNames
         >>> oMaterialManager.GetData
         """
@@ -307,12 +298,10 @@ class Materials(object):
 
         References
         ----------
-
         >>> oDefinitionManager.AddMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss()
         >>> mat = hfss.materials.add_material("MyMaterial")
@@ -358,12 +347,10 @@ class Materials(object):
 
         References
         ----------
-
         >>> oDefinitionManager.AddSurfaceMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss()
         >>> mat = hfss.materials.add_surface_material("Steel", 0.85)
@@ -428,12 +415,10 @@ class Materials(object):
 
         References
         ----------
-
         >>> oDefinitionManager.AddMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss()
         >>> hfss.materials.add_material("MyMaterial")
@@ -490,12 +475,10 @@ class Materials(object):
 
         References
         ----------
-
         >>> oDefinitionManager.AddMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss()
         >>> hfss.materials.add_material("MyMaterial")
@@ -566,18 +549,16 @@ class Materials(object):
 
         References
         ----------
-
         >>> oDefinitionManager.AddSurfaceMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss()
         >>> hfss.materials.add_surface_material("MyMaterial")
         >>> hfss.materials.duplicate_surface_material("MyMaterial", "MyMaterial2")
         """
-        if not material.lower() in list(self.surface_material_keys.keys()):
+        if material.lower() not in list(self.surface_material_keys.keys()):
             self.logger.error("Material {} is not present".format(material))
             return False
         newmat = SurfaceMaterial(self, new_name.lower(), self.surface_material_keys[material.lower()]._props)
@@ -604,12 +585,10 @@ class Materials(object):
 
         References
         ----------
-
         >>> oDefinitionManager.RemoveMaterial
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss()
         >>> hfss.materials.add_material("MyMaterial")
@@ -665,7 +644,7 @@ class Materials(object):
                 if el not in list(self.material_keys.keys()):
                     try:
                         self._aedmattolibrary(el)
-                    except Exception as e:
+                    except Exception:
                         self.logger.info("aedmattolibrary failed for material %s", el)
 
     @pyaedt_function_handler()

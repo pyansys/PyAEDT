@@ -1,5 +1,4 @@
-"""
-This module contains these Primitives classes: `Polyline` and `Primitives`.
+"""This module contains these Primitives classes: `Polyline` and `Primitives`.
 """
 from __future__ import absolute_import  # noreorder
 
@@ -11,19 +10,12 @@ import random
 import string
 import time
 
-from pyaedt.application.Variables import Variable
-from pyaedt.application.Variables import decompose_variable_value
-from pyaedt.generic.general_methods import _dim_arg
-from pyaedt.generic.general_methods import _uname
-from pyaedt.generic.general_methods import is_number
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.application.Variables import Variable, decompose_variable_value
+from pyaedt.generic.general_methods import _dim_arg, _uname, is_number, pyaedt_function_handler
 from pyaedt.modeler.cad.components_3d import UserDefinedComponent
-from pyaedt.modeler.cad.elements3d import FacePrimitive
-from pyaedt.modeler.cad.elements3d import Plane
-from pyaedt.modeler.cad.elements3d import Point
+from pyaedt.modeler.cad.elements3d import FacePrimitive, Plane, Point
 from pyaedt.modeler.cad.object3d import Object3d
-from pyaedt.modeler.cad.polylines import Polyline
-from pyaedt.modeler.cad.polylines import PolylineSegment
+from pyaedt.modeler.cad.polylines import Polyline, PolylineSegment
 from pyaedt.modeler.geometry_operators import GeometryOperators
 from pyaedt.modules.MaterialLib import Material
 
@@ -210,7 +202,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.Get3DComponentDefinitionNames
         >>> oEditor.Get3DComponentInstanceNames
         """
@@ -234,7 +225,7 @@ class Primitives(object):
                     if value not in new_obs3d:
                         new_obs3d.append(value)
 
-        except Exception as e:
+        except Exception:
             new_obs3d = []
         return new_obs3d
 
@@ -336,12 +327,10 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.CreateBox
 
         Examples
         --------
-
         >>> from pyaedt import hfss
         >>> hfss = Hfss()
         >>> point_object = hfss.modeler.primivites.create_point([0,0,0], name="mypoint")
@@ -408,7 +397,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.CreateBox
 
         Examples
@@ -420,7 +408,6 @@ class Primitives(object):
         ...                name="myplane")
 
         """
-
         if not name:
             unique_name = "".join(random.sample(string.ascii_uppercase + string.digits, 6))
             name = "Plane_" + unique_name
@@ -607,7 +594,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.CreateRegion
         """
         if "Region" in self.object_names:
@@ -692,7 +678,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.CreateObjectFromFaces
         """
         edge_ids = self.convert_to_selections(edge, True)
@@ -742,7 +727,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.CreateObjectFromFaces
         """
         face_ids = self.convert_to_selections(face, True)
@@ -908,7 +892,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.CreatePolyline
 
         Examples
@@ -1090,7 +1073,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.CreateUserDefinedPart
 
         Examples
@@ -1150,7 +1132,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.CreateUserDefinedPart
 
         Examples
@@ -1161,7 +1142,6 @@ class Primitives(object):
         True
 
         """
-
         vArg1 = ["NAME:AllTabs"]
 
         prop_servers = ["NAME:PropServers"]
@@ -1200,7 +1180,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.Delete
 
         """
@@ -1253,7 +1232,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.Delete
 
         """
@@ -1283,7 +1261,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetModelBoundingBox
         """
         return self._app.modeler.get_model_bounding_box()
@@ -1486,7 +1463,6 @@ class Primitives(object):
     @pyaedt_function_handler()
     def refresh_all_ids(self):
         """Refresh all IDs."""
-
         self.add_new_objects()
         self.add_new_user_defined_component()
         self.cleanup_objects()
@@ -1514,7 +1490,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetObjectsByMaterial
 
         """
@@ -1807,7 +1782,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetFaceIDs
 
         """
@@ -1838,7 +1812,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetEdgeIDsFromObject
 
         """
@@ -1868,7 +1841,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetEdgeIDsFromFace
 
         """
@@ -1892,7 +1864,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetVertexIDsFromObject
 
         """
@@ -1924,7 +1895,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetVertexIDsFromFace
 
         """
@@ -1977,7 +1947,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetVertexIDsFromEdge
 
         """
@@ -2005,7 +1974,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetVertexPosition
 
         """
@@ -2033,11 +2001,9 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetFaceArea
 
         """
-
         area = self.oeditor.GetFaceArea(face_id)
         return area
 
@@ -2058,7 +2024,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetFaceCenter
 
         """
@@ -2118,7 +2083,6 @@ class Primitives(object):
             List of midpoint coordinates. If the edge is not a segment with
             two vertices, an empty list is returned.
         """
-
         if isinstance(partID, str) and partID in self._object_names_to_ids:
             partID = self._object_names_to_ids[partID]
 
@@ -2160,7 +2124,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetBodyNamesByPosition
 
         """
@@ -2234,7 +2197,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetEdgeIDsFromObject
         >>> oEditor.GetVertexIDsFromEdge
 
@@ -2270,7 +2232,6 @@ class Primitives(object):
 
         References
         ----------
-
         >>> oEditor.GetFaceByPosition
 
         """
@@ -2745,7 +2706,6 @@ class Primitives(object):
             Material name, Boolean True if the material is a dielectric, otherwise False.
 
         """
-
         # Note: Material.is_dielectric() does not work if the conductivity
         # value is an expression.
         if isinstance(matname, Material):

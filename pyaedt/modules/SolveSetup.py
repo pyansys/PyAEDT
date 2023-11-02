@@ -1,5 +1,4 @@
-"""
-This module contains these classes: `Setup`, `Setup3DLayout`, and `SetupCircuit`.
+"""This module contains these classes: `Setup`, `Setup3DLayout`, and `SetupCircuit`.
 
 This module provides all functionalities for creating and editing setups in AEDT.
 It is based on templates to allow for easy creation and modification of setup properties.
@@ -15,18 +14,11 @@ import re
 import time
 import warnings
 
-from pyaedt.generic.DataHandlers import _dict2arg
 from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.general_methods import PropsManager
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.DataHandlers import _dict2arg
+from pyaedt.generic.general_methods import PropsManager, generate_unique_name, is_ironpython, pyaedt_function_handler
 from pyaedt.modules.SetupTemplates import SetupKeys
-from pyaedt.modules.SolveSweeps import SetupProps
-from pyaedt.modules.SolveSweeps import SweepHFSS
-from pyaedt.modules.SolveSweeps import SweepHFSS3DLayout
-from pyaedt.modules.SolveSweeps import SweepMatrix
-from pyaedt.modules.SolveSweeps import identify_setup
+from pyaedt.modules.SolveSweeps import SetupProps, SweepHFSS, SweepHFSS3DLayout, SweepMatrix, identify_setup
 
 
 class CommonSetup(PropsManager, object):
@@ -55,7 +47,8 @@ class CommonSetup(PropsManager, object):
         Returns
         -------
         dict
-            Dictionary which keys are typically Freq, Phase or Time."""
+        Dictionary which keys are typically Freq, Phase or Time.
+        """
         intr = {}
         for i in self._app.design_solutions.intrinsics:
             if i == "Freq" and "Frequency" in self.props:
@@ -119,7 +112,6 @@ class CommonSetup(PropsManager, object):
 
         References
         ----------
-
         >>> oDesign.Analyze
         """
         self._app.analyze(
@@ -252,7 +244,6 @@ class Setup(CommonSetup):
 
         References
         ----------
-
         >>> oModule.InsertSetup
         """
         soltype = SetupKeys.SetupNames[self.setuptype]
@@ -277,7 +268,6 @@ class Setup(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         legacy_update = self.auto_update
@@ -301,7 +291,6 @@ class Setup(CommonSetup):
         bool
             ``True`` if setup is deleted. ``False`` if it failed.
         """
-
         self.omodule.DeleteSetups([self.name])
         self._app.setups.remove(self)
         return True
@@ -471,7 +460,6 @@ class Setup(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         arg = ["NAME:" + self.name]
@@ -504,7 +492,6 @@ class Setup(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         if not setup_name:
@@ -529,7 +516,6 @@ class Setup(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         if not setup_name:
@@ -583,7 +569,6 @@ class Setup(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         auto_update = self.auto_update
@@ -711,7 +696,6 @@ class SetupCircuit(CommonSetup):
 
         References
         ----------
-
         >>> oModule.AddLinearNetworkAnalysis
         >>> oModule.AddDCAnalysis
         >>> oModule.AddTransient
@@ -776,7 +760,6 @@ class SetupCircuit(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditLinearNetworkAnalysis
         >>> oModule.EditDCAnalysis
         >>> oModule.EditTransient
@@ -821,7 +804,6 @@ class SetupCircuit(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditLinearNetworkAnalysis
         >>> oModule.EditDCAnalysis
         >>> oModule.EditTransient
@@ -877,7 +859,6 @@ class SetupCircuit(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditLinearNetworkAnalysis
         >>> oModule.EditDCAnalysis
         >>> oModule.EditTransient
@@ -931,7 +912,6 @@ class SetupCircuit(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditLinearNetworkAnalysis
         >>> oModule.EditDCAnalysis
         >>> oModule.EditTransient
@@ -1003,7 +983,6 @@ class SetupCircuit(CommonSetup):
             List of the data.
 
         """
-
         if isrelativeconvergence:
             userelative = 1
         else:
@@ -1121,7 +1100,6 @@ class SetupCircuit(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         arg = ["Name:SimSetup"]
@@ -1149,7 +1127,6 @@ class SetupCircuit(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         if not setup_name:
@@ -1173,7 +1150,6 @@ class SetupCircuit(CommonSetup):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         if not setup_name:
@@ -1252,7 +1228,6 @@ class Setup3DLayout(CommonSetup):
         type
             Setup type.
         """
-
         if "SolveSetupType" in self.props:
             return self.props["SolveSetupType"]
         else:
@@ -1269,7 +1244,6 @@ class Setup3DLayout(CommonSetup):
 
         References
         ----------
-
         >>> oModule.Add
         """
         arg = ["NAME:" + self.name]
@@ -1293,7 +1267,6 @@ class Setup3DLayout(CommonSetup):
 
         References
         ----------
-
         >>> oModule.Edit
         """
         if update_dictionary:
@@ -1320,7 +1293,6 @@ class Setup3DLayout(CommonSetup):
 
         References
         ----------
-
         >>> oModule.Edit
         """
         self.props["Properties"]["Enable"] = "true"
@@ -1343,7 +1315,6 @@ class Setup3DLayout(CommonSetup):
 
         References
         ----------
-
         >>> oModule.Edit
         """
         self.props["Properties"]["Enable"] = "false"
@@ -1371,10 +1342,8 @@ class Setup3DLayout(CommonSetup):
 
         References
         ----------
-
         >>> oModule.ExportToHfss
         """
-
         file_fullname = file_fullname
         if not os.path.isdir(os.path.dirname(file_fullname)):
             return False
@@ -1409,7 +1378,7 @@ class Setup3DLayout(CommonSetup):
         metal_object = [
             obj.name
             for obj in aedtapp.modeler.solid_objects
-            if not obj.material_name in aedtapp.modeler.materials.dielectrics
+            if obj.material_name not in aedtapp.modeler.materials.dielectrics
         ]
         for net, primitives in primitives_3d_pts_per_nets.items():
             obj_dict = {}
@@ -1591,10 +1560,8 @@ class Setup3DLayout(CommonSetup):
 
         References
         ----------
-
         >>> oModule.ExportToQ3d
         """
-
         if not os.path.isdir(os.path.dirname(file_fullname)):
             return False
         file_fullname = os.path.splitext(file_fullname)[0] + ".aedt"
@@ -1632,7 +1599,6 @@ class Setup3DLayout(CommonSetup):
 
         References
         ----------
-
         >>> oModule.AddSweep
         """
         if not sweepname:
@@ -1759,7 +1725,6 @@ class SetupHFSS(Setup, object):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         if not isinstance(derivative_list, list):
@@ -1822,12 +1787,10 @@ class SetupHFSS(Setup, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
 
         Examples
         --------
-
         Create a setup named ``"LinearCountSetup"`` and use it in a linear count sweep
         named ``"LinearCountSweep"``.
 
@@ -1840,7 +1803,6 @@ class SetupHFSS(Setup, object):
         <class 'pyaedt.modules.SetupTemplates.SweepHFSS'>
 
         """
-
         # Set default values for num_of_freq_points if a value was not passed. Also,
         # check that sweep_type is valid.
         if num_of_freq_points is None and sweep_type in ["Interpolating", "Fast"]:
@@ -1918,12 +1880,10 @@ class SetupHFSS(Setup, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
 
         Examples
         --------
-
         Create a setup named ``"LinearStepSetup"`` and use it in a linear step sweep
         named ``"LinearStepSweep"``.
 
@@ -2001,12 +1961,10 @@ class SetupHFSS(Setup, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
 
         Examples
         --------
-
         Create a setup named ``"LinearStepSetup"`` and use it in a single point sweep
         named ``"SinglePointSweep"``.
 
@@ -2079,7 +2037,6 @@ class SetupHFSS(Setup, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
         """
         if not sweepname:
@@ -2294,7 +2251,6 @@ class SetupHFSSAuto(Setup, object):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         if not isinstance(derivative_list, list):
@@ -2610,7 +2566,6 @@ class SetupMaxwell(Setup, object):
         bool
             ``True`` if successful, ``False`` if it fails.
         """
-
         if self.setuptype != 7:
             self._app.logger.warning("This method only applies to Maxwell Eddy Current Solution.")
             return False
@@ -2771,12 +2726,10 @@ class SetupQ3D(Setup, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
 
         Examples
         --------
-
         Create a setup named ``"LinearCountSetup"`` and use it in a linear count sweep
         named ``"LinearCountSweep"``.
 
@@ -2789,7 +2742,6 @@ class SetupQ3D(Setup, object):
         <class 'pyaedt.modules.SetupTemplates.SweepHFSS'>
 
         """
-
         # Set default values for num_of_freq_points if a value was not passed. Also,
         # check that sweep_type is valid.
         if num_of_freq_points is None and sweep_type in ["Interpolating", "Fast"]:
@@ -2863,12 +2815,10 @@ class SetupQ3D(Setup, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
 
         Examples
         --------
-
         Create a setup named ``"LinearStepSetup"`` and use it in a linear step sweep
         named ``"LinearStepSweep"``.
 
@@ -2942,12 +2892,10 @@ class SetupQ3D(Setup, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
 
         Examples
         --------
-
         Create a setup named ``"LinearStepSetup"`` and use it in a single point sweep
         named ``"SinglePointSweep"``.
 
@@ -3020,7 +2968,6 @@ class SetupQ3D(Setup, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
         """
         if not sweepname:
@@ -3151,7 +3098,6 @@ class SetupQ3D(Setup, object):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         legacy_update = self.auto_update

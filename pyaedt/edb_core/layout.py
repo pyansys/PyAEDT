@@ -1,16 +1,10 @@
-"""
-This module contains these classes: `EdbLayout` and `Shape`.
+"""This module contains these classes: `EdbLayout` and `Shape`.
 """
 import math
 import warnings
 
-from pyaedt.edb_core.dotnet.primitive import BondwireDotNet
-from pyaedt.edb_core.dotnet.primitive import CircleDotNet
-from pyaedt.edb_core.dotnet.primitive import PathDotNet
-from pyaedt.edb_core.dotnet.primitive import PolygonDotNet
-from pyaedt.edb_core.dotnet.primitive import RectangleDotNet
-from pyaedt.edb_core.edb_data.primitives_data import EDBPrimitives
-from pyaedt.edb_core.edb_data.primitives_data import cast
+from pyaedt.edb_core.dotnet.primitive import BondwireDotNet, CircleDotNet, PathDotNet, PolygonDotNet, RectangleDotNet
+from pyaedt.edb_core.edb_data.primitives_data import EDBPrimitives, cast
 from pyaedt.edb_core.edb_data.utilities import EDBStatistics
 from pyaedt.edb_core.general import convert_py_list_to_net_list
 from pyaedt.generic.general_methods import pyaedt_function_handler
@@ -272,7 +266,6 @@ class EdbLayout(object):
 
         Examples
         --------
-
         >>> poly = edb_core.modeler.get_polygons_by_layer("GND")
         >>> points  = edb_core.modeler.get_polygon_points(poly[0])
 
@@ -391,8 +384,7 @@ class EdbLayout(object):
         end_cap_style="Round",
         corner_style="Round",
     ):
-        """
-        Create a path based on a list of points.
+        """Create a path based on a list of points.
 
         Parameters
         ----------
@@ -469,8 +461,7 @@ class EdbLayout(object):
         end_cap_style="Round",
         corner_style="Round",
     ):
-        """
-        Create a trace based on a list of points.
+        """Create a trace based on a list of points.
 
         Parameters
         ----------
@@ -739,7 +730,6 @@ class EdbLayout(object):
 
         References
         ----------
-
         >>> Edb.modeler.delete_primitives(net_names=["GND"])
         """
         if not isinstance(net_names, list):  # pragma: no cover
@@ -764,6 +754,7 @@ class EdbLayout(object):
             Set filter on primitive type. Default is `None`.
         is_void : bool
             Set filter on is_void. Default is 'False'
+
         Returns
         -------
         list
@@ -1128,7 +1119,7 @@ class EdbLayout(object):
             poly_by_nets = {}
             if lay in list(self.polygons_by_layer.keys()):
                 for poly in self.polygons_by_layer[lay]:
-                    if not poly.GetNet().GetName() in list(poly_by_nets.keys()):
+                    if poly.GetNet().GetName() not in list(poly_by_nets.keys()):
                         if poly.GetNet().GetName():
                             poly_by_nets[poly.GetNet().GetName()] = [poly]
                     else:
@@ -1199,14 +1190,12 @@ class EdbLayout(object):
 
         Parameters
         ----------
-
         evaluate_area : optional bool
             When True evaluates the layout metal surface, can take time-consuming,
             avoid using this option on large design.
 
         Returns
         -------
-
         EDBStatistics object.
 
         """

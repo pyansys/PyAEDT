@@ -7,8 +7,7 @@ from pyaedt.edb_core.ipc2581.ecad.cad_data.package import Package
 from pyaedt.edb_core.ipc2581.ecad.cad_data.padstack_def import PadstackDef
 from pyaedt.edb_core.ipc2581.ecad.cad_data.phy_net import PhyNet
 from pyaedt.edb_core.ipc2581.ecad.cad_data.profile import Profile
-from pyaedt.generic.general_methods import ET
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import ET, pyaedt_function_handler
 
 
 class Step(object):
@@ -117,7 +116,7 @@ class Step(object):
     def add_component(self, component=None):  # pragma no cover
         # adding component add package in Step
         if component:
-            if not component.part_name in self._packages:
+            if component.part_name not in self._packages:
                 package = Package(self._ipc)
                 package.add_component_outline(component)
                 package.name = component.part_name

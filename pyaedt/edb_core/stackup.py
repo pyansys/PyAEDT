@@ -1,5 +1,4 @@
-"""
-This module contains the `EdbStackup` class.
+"""This module contains the `EdbStackup` class.
 
 """
 
@@ -13,12 +12,9 @@ import re
 import warnings
 
 from pyaedt import generate_unique_name
-from pyaedt.edb_core.edb_data.layer_data import LayerEdbClass
-from pyaedt.edb_core.edb_data.layer_data import StackupLayerEdbClass
+from pyaedt.edb_core.edb_data.layer_data import LayerEdbClass, StackupLayerEdbClass
 from pyaedt.edb_core.general import convert_py_list_to_net_list
-from pyaedt.generic.general_methods import ET
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import ET, is_ironpython, pyaedt_function_handler
 from pyaedt.misc.aedtlib_personalib_install import write_pretty_xml
 
 pd = None
@@ -195,6 +191,7 @@ class Stackup(object):
             Whether to create soldermask layers. The default is``True``.
         soldermask_thickness : str, optional
             Thickness of soldermask layer.
+
         Returns
         -------
         bool
@@ -359,6 +356,7 @@ class Stackup(object):
 
         .. deprecated:: 0.6.52
            Use :func:`mode` method instead.
+
         Returns
         -------
         int, str
@@ -478,6 +476,7 @@ class Stackup(object):
              ``"insert_above"``, ``"add_on_top"``, ``"add_on_bottom"``, ``"non_stackup"``,  ``"add_at_elevation"``.
         base_layer : str, optional
             Name of the base layer. The default value is ``None``.
+
         Returns
         -------
 
@@ -786,7 +785,6 @@ class Stackup(object):
         >>> edb = Edb()
         >>> edb.stackup.export_stackup("stackup.xml")
         """
-
         self._logger.warning("Method export_stackup is deprecated. Use .export.")
         return self.export(fpath, file_format=file_format, include_material_with_layer=include_material_with_layer)
 
@@ -1735,7 +1733,7 @@ class Stackup(object):
         df = pd.read_csv(file_path, index_col=0)
 
         for name in self.stackup_layers.keys():  # pragma: no cover
-            if not name in df.index:
+            if name not in df.index:
                 logger.error("{} doesn't exist in csv".format(name))
                 return False
 
@@ -1775,6 +1773,7 @@ class Stackup(object):
             Dictionary containing material information.
         roughness: dict
             Dictionary containing roughness information.
+
         Returns
         -------
 
@@ -1895,7 +1894,8 @@ class Stackup(object):
     def _get(self):
         """Get stackup information from layout.
 
-        Returns:
+        Returns
+        -------
         tuple: (dict, dict, dict)
             layers, materials, roughness_models
         """
@@ -1968,7 +1968,7 @@ class Stackup(object):
         mat_keys = [i.lower() for i in self._pedb.materials.materials.keys()]
         mat_keys_case = [i for i in self._pedb.materials.materials.keys()]
         for name, attr in material_dict.items():
-            if not name.lower() in mat_keys:
+            if name.lower() not in mat_keys:
                 if "Conductivity" in attr:
                     self._pedb.materials.add_conductor_material(name, attr["Conductivity"])
                 else:
@@ -1997,6 +1997,7 @@ class Stackup(object):
         ----------
         file_path: str
             Path to external XML file.
+
         Returns
         -------
         bool
@@ -2030,7 +2031,7 @@ class Stackup(object):
             dumy_layers[i.GetName()] = i.Clone()
 
         for name in self.layers.keys():
-            if not name in dumy_layers:
+            if name not in dumy_layers:
                 logger.error("{} doesn't exist in xml".format(name))
                 return False
 
@@ -2065,6 +2066,7 @@ class Stackup(object):
         ----------
         file_path: str
             Path to external XML file.
+
         Returns
         -------
         bool
@@ -2111,11 +2113,11 @@ class Stackup(object):
     def load(self, file_path):
         """Import stackup from a file. The file format can be XML, CSV, or JSON.
 
-
         Parameters
         ----------
         file_path : str
             Path to stackup file.
+
         Returns
         -------
         bool
@@ -2127,7 +2129,6 @@ class Stackup(object):
         >>> edb = Edb()
         >>> edb.stackup.load("stackup.xml")
         """
-
         if isinstance(file_path, dict):
             return self._import_dict(file_path)
         elif file_path.endswith(".csv"):
@@ -2150,6 +2151,7 @@ class Stackup(object):
         ----------
         file_path : str
             Path to stackup file.
+
         Returns
         -------
         bool
@@ -2161,7 +2163,6 @@ class Stackup(object):
         >>> edb = Edb()
         >>> edb.stackup.import_stackup("stackup.xml")
         """
-
         self._logger.warning("Method export_stackup is deprecated. Use .export.")
         return self.load(file_path)
 

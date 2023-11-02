@@ -5,8 +5,7 @@ import warnings
 
 from pyaedt import pyaedt_function_handler
 from pyaedt.application.Variables import decompose_variable_value
-from pyaedt.generic.constants import PLANE
-from pyaedt.generic.constants import unit_converter
+from pyaedt.generic.constants import PLANE, unit_converter
 from pyaedt.generic.general_methods import _dim_arg
 from pyaedt.modeler.cad.object3d import Object3d
 from pyaedt.modeler.geometry_operators import GeometryOperators
@@ -354,7 +353,6 @@ class Polyline(Object3d):
 
         References
         ----------
-
         >>> oEditor.GetVertexIDsFromObject
         >>> oEditor.GetVertexPosition
 
@@ -469,7 +467,6 @@ class Polyline(Object3d):
 
         References
         ----------
-
         >>> oEditor.GetVertexIDsFromObject
         >>> oEditor.GetVertexPosition
 
@@ -533,7 +530,7 @@ class Polyline(Object3d):
                         break
                 else:
                     current_segment = segment_types[vertex_count]
-            except Exception as e:
+            except Exception:
                 raise IndexError("Number of segments inconsistent with the number of points!")
 
             if current_segment:
@@ -696,7 +693,6 @@ class Polyline(Object3d):
 
         References
         ----------
-
         >>> oEditor.Copy
         >>> oEditor.Paste
 
@@ -754,7 +750,6 @@ class Polyline(Object3d):
 
         References
         ----------
-
         >>> oEditor.DeletePolylinePoint
 
         Examples
@@ -845,7 +840,6 @@ class Polyline(Object3d):
 
         References
         ----------
-
         >>> oEditor.DeletePolylinePoint
 
         Examples
@@ -926,7 +920,6 @@ class Polyline(Object3d):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
 
         Examples
@@ -1076,7 +1069,6 @@ class Polyline(Object3d):
 
         References
         ----------
-
         >>> oEditor.InsertPolylineSegment
 
         """

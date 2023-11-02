@@ -1,7 +1,4 @@
-from pyaedt.edb_core.dotnet.database import DifferentialPairDotNet
-from pyaedt.edb_core.dotnet.database import ExtendedNetDotNet
-from pyaedt.edb_core.dotnet.database import NetClassDotNet
-from pyaedt.edb_core.dotnet.database import NetDotNet
+from pyaedt.edb_core.dotnet.database import DifferentialPairDotNet, ExtendedNetDotNet, NetClassDotNet, NetDotNet
 from pyaedt.edb_core.edb_data.padstacks_data import EDBPadstackInstance
 from pyaedt.edb_core.edb_data.primitives_data import cast
 from pyaedt.generic.general_methods import pyaedt_function_handler
@@ -52,7 +49,8 @@ class EDBNetsData(NetDotNet):
 
         Returns
         -------
-        list of :class:`pyaedt.edb_core.edb_data.padstacks_data.EDBPadstackInstance`"""
+        list of :class:`pyaedt.edb_core.edb_data.padstacks_data.EDBPadstackInstance`
+        """
         name = self.name
         return [
             EDBPadstackInstance(i, self._app) for i in self.net_object.PadstackInstances if i.GetNet().GetName() == name
@@ -70,7 +68,7 @@ class EDBNetsData(NetDotNet):
         for p in self.padstack_instances:
             comp = p.component
             if comp:
-                if not comp.refdes in comps:
+                if comp.refdes not in comps:
                     comps[comp.refdes] = comp
         return comps
 
@@ -83,6 +81,7 @@ class EDBNetsData(NetDotNet):
         fix : bool, optional
             If `True`, rename all the nets. (default)
             If `False`, only report dc shorts.
+
         Returns
         -------
         List[List[str, str]]
@@ -116,7 +115,6 @@ class EDBNetsData(NetDotNet):
         size : tuple, optional
             Image size in pixel (width, height).
         """
-
         self._app.nets.plot(
             self.name,
             layers=layers,

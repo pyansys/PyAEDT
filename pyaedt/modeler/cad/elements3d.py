@@ -2,19 +2,13 @@ from __future__ import absolute_import
 
 from collections import OrderedDict
 
-from pyaedt.generic.general_methods import _dim_arg
-from pyaedt.generic.general_methods import clamp
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.generic.general_methods import rgb_color_codes
-from pyaedt.generic.general_methods import settings
+from pyaedt.generic.general_methods import _dim_arg, clamp, pyaedt_function_handler, rgb_color_codes, settings
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
 
 @pyaedt_function_handler()
 def _dict2arg(d, arg_out):
-    """
-
-    Parameters
+    """Parameters
     ----------
     d :
 
@@ -85,7 +79,6 @@ class EdgeTypePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.Fillet
 
         """
@@ -142,7 +135,6 @@ class EdgeTypePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.Chamfer
 
         """
@@ -219,7 +211,6 @@ class VertexPrimitive(EdgeTypePrimitive, object):
 
         References
         ----------
-
         >>> oEditor.GetVertexPosition
 
         """
@@ -229,7 +220,7 @@ class VertexPrimitive(EdgeTypePrimitive, object):
             vertex_data = list(self.oeditor.GetVertexPosition(self.id))
             self._position = [float(i) for i in vertex_data]
             return self._position
-        except Exception as e:
+        except Exception:
             return None
 
     def __repr__(self):
@@ -266,7 +257,8 @@ class EdgePrimitive(EdgeTypePrimitive, object):
         Returns
         -------
             list
-                Segment info if available."""
+        Segment info if available.
+        """
         try:
             self.oeditor.GetChildNames()
         except:  # pragma: no cover
@@ -309,7 +301,6 @@ class EdgePrimitive(EdgeTypePrimitive, object):
 
         References
         ----------
-
         >>> oEditor.GetVertexIDsFromEdge
 
         """
@@ -337,7 +328,6 @@ class EdgePrimitive(EdgeTypePrimitive, object):
 
         References
         ----------
-
         >>> oEditor.GetVertexPosition
 
         """
@@ -361,7 +351,6 @@ class EdgePrimitive(EdgeTypePrimitive, object):
 
         References
         ----------
-
         >>> oEditor.GetEdgeLength
 
         """
@@ -389,7 +378,6 @@ class EdgePrimitive(EdgeTypePrimitive, object):
 
         References
         ----------
-
         >>> oEditor.CreateObjectFromEdges
         """
         return self._object3d._primitives.create_object_from_edge(self, non_model)
@@ -411,7 +399,6 @@ class EdgePrimitive(EdgeTypePrimitive, object):
 
         References
         ----------
-
         >>> oEditor.MoveEdges
 
         """
@@ -431,9 +418,7 @@ class FacePrimitive(object):
         return "FaceId " + str(self.id)
 
     def __init__(self, object3d, obj_id):
-        """
-
-        Parameters
+        """Parameters
         ----------
         object3d : :class:`pyaedt.modeler.cad.object3d.Object3d`
         obj_id : int
@@ -494,7 +479,6 @@ class FacePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.GetEdgeIDsFromFace
 
         """
@@ -514,7 +498,6 @@ class FacePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.GetVertexIDsFromFace
 
         """
@@ -547,7 +530,6 @@ class FacePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.GetFaceCenter
 
         """
@@ -567,7 +549,6 @@ class FacePrimitive(object):
         -------
         bool
         """
-
         try:
             self.oeditor.GetFaceCenter(self.id)
             return True
@@ -591,7 +572,6 @@ class FacePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.GetFaceCenter
 
         """
@@ -633,7 +613,6 @@ class FacePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.GetFaceArea
 
         """
@@ -650,7 +629,6 @@ class FacePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.FaceCenter
 
         """
@@ -784,7 +762,6 @@ class FacePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.MoveFaces
 
         """
@@ -827,7 +804,6 @@ class FacePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.MoveFaces
 
         """
@@ -873,7 +849,6 @@ class FacePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.GetVertexPosition
 
         """
@@ -929,7 +904,6 @@ class FacePrimitive(object):
 
         References
         ----------
-
         >>> oEditor.CreateObjectFromFaces
         """
         return self._object3d._primitives.create_object_from_face(self, non_model)
@@ -996,7 +970,6 @@ class Point(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1028,7 +1001,6 @@ class Point(object):
 
         References
         ----------
-
         >>> oEditor.GetProperties
         """
         if not self._all_props:
@@ -1048,7 +1020,6 @@ class Point(object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
 
         Examples
@@ -1096,7 +1067,6 @@ class Point(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1122,7 +1092,6 @@ class Point(object):
 
         References
         ----------
-
         >>> oEditor.Delete
         """
         arg = ["NAME:Selections", "Selections:=", self._name]
@@ -1197,7 +1166,6 @@ class Plane(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1232,7 +1200,6 @@ class Plane(object):
 
         References
         ----------
-
         >>> oEditor.GetProperties
         """
         if not self._all_props:
@@ -1253,7 +1220,6 @@ class Plane(object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
 
         Examples
@@ -1301,7 +1267,6 @@ class Plane(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -1327,7 +1292,6 @@ class Plane(object):
 
         References
         ----------
-
         >>> oEditor.Delete
         """
         arg = ["NAME:Selections", "Selections:=", self._name]

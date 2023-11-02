@@ -1,5 +1,4 @@
-"""
-This module contains the `PostProcessor` class.
+"""This module contains the `PostProcessor` class.
 
 It contains all advanced postprocessing functionalities that require Python 3.x packages like NumPy and Matplotlib.
 """
@@ -8,9 +7,7 @@ from __future__ import absolute_import  # noreorder
 import os
 import warnings
 
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import is_ironpython, open_file, pyaedt_function_handler
 from pyaedt.generic.plot import ModelPlotter
 from pyaedt.modules.PostProcessor import PostProcessor as Post
 
@@ -58,8 +55,8 @@ class PostProcessor(Post):
           .. note::
               .assign_curvature_extraction Jupyter Notebook is not supported by IronPython.
 
-         Parameters
-         ----------
+        Parameters
+        ----------
          show_axis : bool, optional
              Whether to show the axes. The default is ``True``.
          show_grid : bool, optional
@@ -195,7 +192,6 @@ class PostProcessor(Post):
         :class:`pyaedt.generic.plot.ModelPlotter`
             Model Object.
         """
-
         assert self._app._aedt_version >= "2021.2", self.logger.error("Object is supported from AEDT 2021 R2.")
 
         files = []
@@ -934,7 +930,6 @@ class PostProcessor(Post):
         log_multiplier=10.0,
     ):
         """Plot the current model 3D scene with overlapping animation coming from a file list and save the gif.
-
 
         Parameters
         ----------

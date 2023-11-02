@@ -1,5 +1,4 @@
-"""
-This module contains these classes: `Mesh` and `Mesh3DOperation`.
+"""This module contains these classes: `Mesh` and `Mesh3DOperation`.
 
 This module provides all functionalities for creating and editing the mesh in the 3D tools.
 
@@ -9,9 +8,7 @@ from __future__ import absolute_import  # noreorder
 from collections import OrderedDict
 
 from pyaedt.generic.DataHandlers import _dict2arg
-from pyaedt.generic.general_methods import PropsManager
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import PropsManager, generate_unique_name, pyaedt_function_handler
 from pyaedt.modules.Mesh import MeshProps
 
 
@@ -71,7 +68,6 @@ class Mesh3DOperation(PropsManager, object):
 
         References
         ----------
-
         >>> oModule.AddMeshOperation
         """
         self._mesh3dlayout.omeshmodule.AddMeshOperation(self.hfss_setup_name, self._get_args())
@@ -88,7 +84,6 @@ class Mesh3DOperation(PropsManager, object):
 
         References
         ----------
-
         >>> oModule.EditMeshOperation
         """
         self._mesh3dlayout.omeshmodule.EditMeshOperation(self.hfss_setup_name, self.name, self._get_args())
@@ -105,7 +100,6 @@ class Mesh3DOperation(PropsManager, object):
 
         References
         ----------
-
         >>> oModule.DeleteMeshOperation
         """
         self._mesh3dlayout.omeshmodule.DeleteMeshOperation(
@@ -157,7 +151,6 @@ class Mesh3d(object):
 
         References
         ----------
-
         >>> oDesign.GenerateMesh
         """
         self._app.oanalysis.GenerateMesh([name])
@@ -169,7 +162,6 @@ class Mesh3d(object):
 
         References
         ----------
-
         >>> oDesign.GetModule("SolveSetups")
         """
         return self._app.omeshmodule
@@ -192,7 +184,6 @@ class Mesh3d(object):
 
         References
         ----------
-
         >>> oModule.DeleteMeshOperation
         """
         for el in self.meshoperations:
@@ -255,7 +246,6 @@ class Mesh3d(object):
 
         References
         ----------
-
         >>> oModule.AddMeshOperation
         """
         if meshop_name:
@@ -355,7 +345,6 @@ class Mesh3d(object):
 
         References
         ----------
-
         >>> oModule.AddMeshOperation
         """
         if meshop_name:

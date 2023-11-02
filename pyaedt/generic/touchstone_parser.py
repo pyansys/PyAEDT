@@ -169,6 +169,7 @@ class TouchstoneData(rf.Network):
 
         Parameters
         ----------
+
         Returns
         -------
         bool
@@ -260,7 +261,6 @@ class TouchstoneData(rf.Network):
 
         Parameters
         ----------
-
         excitation_name_prefix :
              (Default value = '')
 
@@ -373,6 +373,7 @@ class TouchstoneData(rf.Network):
 
         Parameters
         ----------
+
         Returns
         -------
         bool
@@ -431,7 +432,6 @@ class TouchstoneData(rf.Network):
             worst element str, dictionary of ordered expression and their mean
 
         """
-
         return_loss_freq = [float(i.center) for i in list(self.frequency)]
         if not freq_min:
             lower_id = 0

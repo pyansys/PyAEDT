@@ -59,8 +59,7 @@ def add_pyaedt_to_aedt(
     aedt_version, is_student_version=False, use_sys_lib=False, new_desktop_session=False, sys_dir="", pers_dir=""
 ):
     if not (sys_dir or pers_dir):
-        from pyaedt import Desktop
-        from pyaedt import settings
+        from pyaedt import Desktop, settings
         from pyaedt.generic.general_methods import grpc_active_sessions
 
         sessions = grpc_active_sessions(aedt_version, is_student_version)

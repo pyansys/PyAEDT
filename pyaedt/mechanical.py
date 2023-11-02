@@ -4,8 +4,7 @@ from __future__ import absolute_import  # noreorder
 from collections import OrderedDict
 
 from pyaedt.application.Analysis3D import FieldAnalysis3D
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import generate_unique_name, pyaedt_function_handler
 from pyaedt.modules.Boundary import BoundaryObject
 from pyaedt.modules.SetupTemplates import SetupKeys
 
@@ -174,7 +173,6 @@ class Mechanical(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignEMLoss
         """
         if surface_objects is None:
@@ -276,7 +274,6 @@ class Mechanical(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignThermalCondition
         """
         if paramlist is None:
@@ -361,7 +358,6 @@ class Mechanical(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignConvection
         """
         assert "Thermal" in self.solution_type, "This method works only in a Mechanical Thermal analysis."
@@ -410,7 +406,6 @@ class Mechanical(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignTemperature
         """
         assert "Thermal" in self.solution_type, "This method works only in a Mechanical Thermal analysis."
@@ -456,10 +451,8 @@ class Mechanical(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignFrictionlessSupport
         """
-
         if not (self.solution_type == "Structural" or "Modal" in self.solution_type):
             self.logger.error("This method works only in Mechanical Structural analysis.")
             return False
@@ -502,7 +495,6 @@ class Mechanical(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignFixedSupport
         """
         if not (self.solution_type == "Structural" or "Modal" in self.solution_type):
@@ -533,7 +525,6 @@ class Mechanical(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.GetSetups
         """
         setup_list = self.existing_analysis_setups
@@ -565,7 +556,6 @@ class Mechanical(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignHeatFlux
         """
         assert "Thermal" in self.solution_type, "This method works only in a Mechanical Thermal analysis."
@@ -613,7 +603,6 @@ class Mechanical(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignHeatGeneration
         """
         assert "Thermal" in self.solution_type, "This method works only in a Mechanical Thermal analysis."
@@ -662,12 +651,10 @@ class Mechanical(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
 
         Examples
         --------
-
         >>> from pyaedt import Mechanical
         >>> app = Mechanical()
         >>> app.create_setup(setupname="Setup1", MaxModes=6))

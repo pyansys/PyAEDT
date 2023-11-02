@@ -1,6 +1,5 @@
 from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modeler.circuits.PrimitivesCircuit import CircuitComponents
-from pyaedt.modeler.circuits.PrimitivesCircuit import ComponentCatalog
+from pyaedt.modeler.circuits.PrimitivesCircuit import CircuitComponents, ComponentCatalog
 
 
 class TwinBuilderComponents(CircuitComponents):
@@ -103,7 +102,6 @@ class TwinBuilderComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location == None:
@@ -146,7 +144,6 @@ class TwinBuilderComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location == None:
@@ -188,7 +185,6 @@ class TwinBuilderComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location == None:
@@ -237,7 +233,6 @@ class TwinBuilderComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location == None:
@@ -286,7 +281,6 @@ class TwinBuilderComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location == None:
@@ -324,7 +318,6 @@ class TwinBuilderComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location == None:
@@ -362,7 +355,6 @@ class TwinBuilderComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location == None:
@@ -393,8 +385,7 @@ class TwinBuilderComponents(CircuitComponents):
         angle=0,
         use_instance_id_netlist=False,
     ):
-        """
-        Create a periodic waveform source (non conservative real output).
+        """Create a periodic waveform source (non conservative real output).
 
         Parameters
         ----------
@@ -426,7 +417,6 @@ class TwinBuilderComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location == None:

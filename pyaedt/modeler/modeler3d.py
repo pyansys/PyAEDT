@@ -7,16 +7,13 @@ import os.path
 import warnings
 
 from pyaedt.application.Variables import generate_validation_errors
-from pyaedt.generic.general_methods import GrpcApiError
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import GrpcApiError, generate_unique_name, pyaedt_function_handler
 from pyaedt.modeler.cad.Modeler import GeometryModeler
 from pyaedt.modeler.cad.Primitives3D import Primitives3D
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
 
 class Modeler3D(GeometryModeler, Primitives3D, object):
-
     """Provides the Modeler 3D application interface.
 
     This class is inherited in the caller application and is accessible through the modeler variable
@@ -403,7 +400,6 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
 
         References
         ----------
-
         >>> oEditor.ReplaceWith3DComponent
         """
         if not variables_to_include:
@@ -583,7 +579,6 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
 
         References
         ----------
-
         >>> oEditor.CreateCylinder
         >>> oEditor.AssignMaterial
 
@@ -666,7 +661,6 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
 
         References
         ----------
-
         >>> oEditor.CreateBox
         >>> oEditor.AssignMaterial
 
@@ -1183,9 +1177,7 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
             Dictionary of generated infos.
 
         """
-        from pyaedt.modeler.advanced_cad.oms import BuildingsPrep
-        from pyaedt.modeler.advanced_cad.oms import RoadPrep
-        from pyaedt.modeler.advanced_cad.oms import TerrainPrep
+        from pyaedt.modeler.advanced_cad.oms import BuildingsPrep, RoadPrep, TerrainPrep
 
         output_path = self._app.working_directory
 
@@ -1366,8 +1358,7 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
 
     @pyaedt_function_handler
     def change_region_padding(self, padding_data, padding_type, direction=None, region_name="Region"):
-        """
-        Change region padding settings.
+        """Change region padding settings.
 
         Parameters
         ----------
@@ -1458,8 +1449,7 @@ class Modeler3D(GeometryModeler, Primitives3D, object):
 
     @pyaedt_function_handler
     def change_region_coordinate_system(self, region_cs="Global", region_name="Region"):
-        """
-        Change region coordinate system.
+        """Change region coordinate system.
 
         Parameters
         ----------

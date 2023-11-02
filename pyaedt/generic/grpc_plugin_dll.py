@@ -1,9 +1,4 @@
-from ctypes import CFUNCTYPE
-from ctypes import PyDLL
-from ctypes import c_bool
-from ctypes import c_int
-from ctypes import c_wchar_p
-from ctypes import py_object
+from ctypes import CFUNCTYPE, PyDLL, c_bool, c_int, c_wchar_p, py_object
 import os
 
 pathDir = os.environ["DesktopPluginPyAEDT"]  # DesktopPlugin

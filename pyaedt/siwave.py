@@ -1,5 +1,4 @@
-"""
-This module contains the ``Siwave`` class.
+"""This module contains the ``Siwave`` class.
 
 The ``Siwave`` module can be initialized as standalone before launching an app or
 automatically initialized by an app to the latest installed AEDT version.
@@ -13,10 +12,7 @@ import sys
 import time
 
 from pyaedt.generic.clr_module import _clr
-from pyaedt.generic.general_methods import _pythonver
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import is_windows
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import _pythonver, is_ironpython, is_windows, pyaedt_function_handler
 from pyaedt.misc import list_installed_ansysem
 
 
@@ -34,7 +30,6 @@ class Siwave(object):
     @property
     def version_keys(self):
         """Version keys for AEDT."""
-
         self._version_keys = []
         self._version_ids = {}
 
@@ -222,7 +217,6 @@ class Siwave(object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         if os.path.exists(proj_path):
             open_result = self.oSiwave.OpenProject(proj_path)
             self._oproject = self.oSiwave.GetActiveProject()

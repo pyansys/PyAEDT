@@ -72,7 +72,6 @@ class RMXprtModule(object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         prop_server = self.get_prop_server(parameter_name)
@@ -279,12 +278,10 @@ class Rmxprt(FieldAnalysisRMxprt):
 
         References
         ----------
-
         >>> oModule.InsertSetup
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss()
         >>> hfss.create_setup(setupname="Setup1", setuptype="HFSSDriven", Frequency="10GHz")

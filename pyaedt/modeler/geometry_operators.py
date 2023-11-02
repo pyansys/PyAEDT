@@ -3,10 +3,7 @@ import math
 import re
 import sys
 
-from pyaedt.generic.constants import AXIS
-from pyaedt.generic.constants import PLANE
-from pyaedt.generic.constants import SWEEPDRAFT
-from pyaedt.generic.constants import scale_units
+from pyaedt.generic.constants import AXIS, PLANE, SWEEPDRAFT, scale_units
 from pyaedt.generic.general_methods import pyaedt_function_handler
 
 
@@ -1401,8 +1398,7 @@ class GeometryOperators(object):
     @staticmethod
     @pyaedt_function_handler()
     def orient_polygon(x, y, clockwise=True):
-        """
-        Orient a polygon clockwise or counterclockwise. The vertices should be already ordered either way.
+        """Orient a polygon clockwise or counterclockwise. The vertices should be already ordered either way.
         Use this function to change the orientation.
         The polygon is represented by its vertices coordinates.
 
@@ -1624,8 +1620,7 @@ class GeometryOperators(object):
     @staticmethod
     @pyaedt_function_handler()
     def are_segments_intersecting(a1, a2, b1, b2, include_collinear=True):
-        """
-        Determine if the two segments a and b are intersecting.
+        """Determine if the two segments a and b are intersecting.
 
         a1 : List
             First point of segment a. List of ``[x, y]`` coordinates.
@@ -1713,8 +1708,7 @@ class GeometryOperators(object):
     @staticmethod
     @pyaedt_function_handler()
     def is_segment_intersecting_polygon(a, b, polygon):
-        """
-        Determine if a segment defined by two points ``a`` and ``b`` intersects a polygon.
+        """Determine if a segment defined by two points ``a`` and ``b`` intersects a polygon.
         Points on the vertices and on the polygon boundaries are not considered intersecting.
 
         a : List

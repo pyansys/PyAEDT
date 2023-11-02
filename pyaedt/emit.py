@@ -2,12 +2,10 @@ from __future__ import absolute_import
 
 import warnings
 
-from pyaedt import emit_core
-from pyaedt import generate_unique_project_name
+from pyaedt import emit_core, generate_unique_project_name
 from pyaedt.application.Design import Design
 from pyaedt.emit_core.Couplings import CouplingsEmit
-from pyaedt.emit_core.emit_constants import EMIT_VALID_UNITS
-from pyaedt.emit_core.emit_constants import emit_unit_type_string_to_enum
+from pyaedt.emit_core.emit_constants import EMIT_VALID_UNITS, emit_unit_type_string_to_enum
 from pyaedt.emit_core.results.results import Results
 from pyaedt.generic.general_methods import pyaedt_function_handler
 from pyaedt.modeler.schematic import ModelerEmit
@@ -195,8 +193,7 @@ class Emit(Design, object):
 
     @pyaedt_function_handler()
     def version(self, detailed=False):
-        """
-        Get version information.
+        """Get version information.
 
         Parameters
         ----------
@@ -242,7 +239,6 @@ class Emit(Design, object):
             ``True`` if the units were successfully changed and ``False``
             if there was an error.
         """
-
         if isinstance(unit_type, list):
             for t, v in zip(unit_type, unit_value):
                 if t not in EMIT_VALID_UNITS:

@@ -7,18 +7,13 @@ import random
 import re
 import string
 
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.generic.general_methods import settings
-from pyaedt.modeler.cad.elements3d import EdgePrimitive
-from pyaedt.modeler.cad.elements3d import FacePrimitive
-from pyaedt.modeler.cad.elements3d import VertexPrimitive
+from pyaedt.generic.general_methods import pyaedt_function_handler, settings
+from pyaedt.modeler.cad.elements3d import EdgePrimitive, FacePrimitive, VertexPrimitive
 
 
 @pyaedt_function_handler()
 def _tuple2dict(t, d):
-    """
-
-    Parameters
+    """Parameters
     ----------
     t :
 
@@ -163,9 +158,7 @@ def _arg2dict(arg, dict_out):
 
 @pyaedt_function_handler()
 def create_list_for_csharp(input_list, return_strings=False):
-    """
-
-    Parameters
+    """Parameters
     ----------
     input_list :
 
@@ -176,8 +169,7 @@ def create_list_for_csharp(input_list, return_strings=False):
     -------
 
     """
-    from pyaedt.generic.clr_module import Double
-    from pyaedt.generic.clr_module import List
+    from pyaedt.generic.clr_module import Double, List
 
     if return_strings:
         col = List[str]()
@@ -194,9 +186,7 @@ def create_list_for_csharp(input_list, return_strings=False):
 
 @pyaedt_function_handler()
 def create_table_for_csharp(input_list_of_list, return_strings=True):
-    """
-
-    Parameters
+    """Parameters
     ----------
     input_list_of_list :
 
@@ -218,9 +208,7 @@ def create_table_for_csharp(input_list_of_list, return_strings=True):
 
 @pyaedt_function_handler()
 def format_decimals(el):
-    """
-
-    Parameters
+    """Parameters
     ----------
     el :
 
@@ -304,9 +292,7 @@ def unique_string_list(element_list, only_string=True):
 
 @pyaedt_function_handler()
 def string_list(element_list):
-    """
-
-    Parameters
+    """Parameters
     ----------
     element_list :
 
@@ -324,9 +310,7 @@ def string_list(element_list):
 
 @pyaedt_function_handler()
 def ensure_list(element_list):
-    """
-
-    Parameters
+    """Parameters
     ----------
     element_list :
 
@@ -443,7 +427,6 @@ def from_rkm(code):
     '4.7M'
 
     """
-
     # Matches RKM codes that start with a digit.
     # fd_pattern = r'([0-9]+)([LREkKMGTFmuµUnNpP]+)([0-9]*)'
     fd_pattern = r"([0-9]+)([{}]+)([0-9]*)".format(
@@ -472,9 +455,7 @@ def from_rkm(code):
 
 @pyaedt_function_handler()
 def to_aedt(code):
-    """
-
-    Parameters
+    """Parameters
     ----------
     code : str
 
@@ -524,9 +505,7 @@ def str_to_bool(s):
 
 @pyaedt_function_handler()
 def from_rkm_to_aedt(code):
-    """
-
-    Parameters
+    """Parameters
     ----------
     code : str
 
@@ -598,7 +577,7 @@ def float_units(val_str, units=""):
     -------
 
     """
-    if not units in unit_val:
+    if units not in unit_val:
         raise Exception("Specified unit string " + units + " not known!")
 
     loc = re.search("[a-zA-Z]", val_str)

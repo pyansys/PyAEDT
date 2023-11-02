@@ -6,12 +6,7 @@ import sys
 from pyaedt import __version__
 from pyaedt.aedt_logger import pyaedt_logger
 from pyaedt.edb_core.general import convert_py_list_to_net_list
-from pyaedt.generic.general_methods import env_path
-from pyaedt.generic.general_methods import env_path_student
-from pyaedt.generic.general_methods import env_value
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import is_linux
-from pyaedt.generic.general_methods import settings
+from pyaedt.generic.general_methods import env_path, env_path_student, env_value, is_ironpython, is_linux, settings
 from pyaedt.misc import list_installed_ansysem
 
 
@@ -87,7 +82,6 @@ class PolygonDataDotNet:  # pragma: no cover
         -------
         list[list[edb_value]]
         """
-
         return [[self._pedb.edb_value(i.X), self._pedb.edb_value(i.Y)] for i in list(self.edb_api.Points)]
 
     def add_point(self, x, y, incremental=False):
@@ -133,7 +127,8 @@ class PolygonDataDotNet:  # pragma: no cover
 
         Parameters
         ----------
-        polygons : list or `Edb.Geometry.PolygonData`"""
+        polygons : list or `Edb.Geometry.PolygonData`
+        """
         if isinstance(polygons, list):
             polygons = convert_py_list_to_net_list(polygons)
         return self.dotnetobj.GetBBoxOfPolygons(polygons)
@@ -231,7 +226,6 @@ class NetDotNet:
 
     def create(self, layout, name):
         """Edb Dotnet Api Database `Edb.Net.Create`."""
-
         return NetDotNet(self._app, self.net.Create(layout, name))
 
     def delete(self):
@@ -323,7 +317,6 @@ class NetClassDotNet:
 
     def delete(self):  # pragma: no cover
         """Edb Dotnet Api Database `Delete`."""
-
         if self.api_object:
             self.api_object.Delete()
             self.api_object = None
@@ -645,7 +638,6 @@ class CellDotNet:
     @property
     def definition(self):
         """Edb Dotnet Api Definition."""
-
         return self.edb_api.Definition
 
     @property
@@ -659,7 +651,8 @@ class CellDotNet:
 
         Returns
         -------
-        :class:`pyaedt.edb_core.dotnet.database.CellClassDotNet`"""
+        :class:`pyaedt.edb_core.dotnet.database.CellClassDotNet`
+        """
         return CellClassDotNet(self._app)
 
     @property
@@ -668,8 +661,8 @@ class CellDotNet:
 
         Returns
         -------
-        :class:`pyaedt.edb_core.dotnet.database.UtilityDotNet`"""
-
+        :class:`pyaedt.edb_core.dotnet.database.UtilityDotNet`
+        """
         return UtilityDotNet(self._app)
 
     @property
@@ -678,7 +671,8 @@ class CellDotNet:
 
         Returns
         -------
-        :class:`pyaedt.edb_core.dotnet.database.GeometryDotNet`"""
+        :class:`pyaedt.edb_core.dotnet.database.GeometryDotNet`
+        """
         return GeometryDotNet(self._app)
 
 
@@ -697,8 +691,7 @@ class EdbDotNet(object):
         self.edbversion = edbversion
         self.student_version = student_version
         """Initialize DLLs."""
-        from pyaedt.generic.clr_module import _clr
-        from pyaedt.generic.clr_module import edb_initialized
+        from pyaedt.generic.clr_module import _clr, edb_initialized
 
         if settings.enable_screen_logs:
             self.logger.enable_stdout_log()

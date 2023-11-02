@@ -6,11 +6,9 @@ import random
 import re
 import warnings
 
-from pyaedt import Edb
-from pyaedt import pyaedt_function_handler
+from pyaedt import Edb, pyaedt_function_handler
 from pyaedt.generic.general_methods import _uname
-from pyaedt.modeler.cad.elements3d import BinaryTreeNode
-from pyaedt.modeler.cad.elements3d import _dict2arg
+from pyaedt.modeler.cad.elements3d import BinaryTreeNode, _dict2arg
 
 
 class UserDefinedComponentParameters(dict):
@@ -181,7 +179,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -219,7 +216,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -246,7 +242,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -339,7 +334,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -372,7 +366,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -430,7 +423,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
 
@@ -462,12 +454,10 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.Delete
 
         Examples
         --------
-
         >>> from pyaedt import hfss
         >>> hfss = Hfss()
         >>> hfss.modeler["UDM"].delete()
@@ -502,7 +492,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.DuplicateMirror
         """
         return self._primitives.modeler.duplicate_and_mirror(
@@ -529,7 +518,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.Mirror
         """
         if self.is3dcomponent:
@@ -563,7 +551,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.Rotate
         """
         if self.is3dcomponent:
@@ -626,7 +613,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.DuplicateAroundAxis
 
         """
@@ -658,7 +644,6 @@ class UserDefinedComponent(object):
 
         References
         ----------
-
         >>> oEditor.DuplicateAlongLine
 
         """
@@ -688,7 +673,6 @@ class UserDefinedComponent(object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         self.update_props = OrderedDict({})
         self.update_props["DefinitionName"] = self._props["SubmodelDefinitionName"]
         self.update_props["GeometryDefinitionParameters"] = self._props["GeometryDefinitionParameters"]
@@ -813,7 +797,6 @@ class UserDefinedComponent(object):
         str
             Path of the 3d component file.
         """
-
         return self._primitives._app.get_oo_object(self._primitives._app.oeditor, self.definition_name).GetPropValue(
             "3D Component File Path"
         )
@@ -835,7 +818,6 @@ class UserDefinedComponent(object):
         bool
             True if successful.
         """
-
         self._primitives._app.oeditor.UpdateComponentDefinition(
             [
                 "NAME:UpdateDefinitionData",
@@ -1060,7 +1042,6 @@ class LayoutComponent(object):
     @pyaedt_function_handler()
     def _get_edb_info(self):
         """Get Edb information."""
-
         # Open Layout component and get information
         aedb_component_path = os.path.join(
             self._primitives._app.project_file[:-1] + "b",
@@ -1099,10 +1080,8 @@ class LayoutComponent(object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
-
         vPropChange = [
             "NAME:Object Attributes",
             "ShowDielectric:=",

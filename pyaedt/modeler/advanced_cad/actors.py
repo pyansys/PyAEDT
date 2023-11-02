@@ -1,7 +1,6 @@
 from pyaedt import pyaedt_function_handler
 from pyaedt.generic.DataHandlers import json_to_dict
-from pyaedt.modeler.advanced_cad.multiparts import Actor
-from pyaedt.modeler.advanced_cad.multiparts import MultiPartComponent
+from pyaedt.modeler.advanced_cad.multiparts import Actor, MultiPartComponent
 
 
 def read_actors(fn, actor_lib):
@@ -80,7 +79,6 @@ class Person(Actor, object):
 
     def __init__(self, actor_folder, speed="0", stride="0.8meters", relative_cs_name=None):
         """Initialize person actor."""
-
         super(Person, self).__init__(actor_folder, speed=speed, relative_cs_name=relative_cs_name)
 
         self._stride = stride
@@ -172,7 +170,6 @@ class Bird(Actor, object):
 
     def __init__(self, bird_folder, speed="2.0", flapping_rate="50Hz", relative_cs_name=None):
         """Bike class."""
-
         super(Bird, self).__init__(bird_folder, speed=speed, relative_cs_name=relative_cs_name)
         self._flapping_rate = flapping_rate
 
@@ -195,6 +192,7 @@ class Bird(Actor, object):
         app : pyaedt.Hfss
         motion : bool
             Whether the bird is in motion. The default is ``True``.
+
         Returns
         -------
         bool
@@ -232,7 +230,6 @@ class Vehicle(Actor, object):
 
     def __init__(self, car_folder, speed=10.0, relative_cs_name=None):
         """Vehicle class."""
-
         super(Vehicle, self).__init__(car_folder, speed=speed, relative_cs_name=relative_cs_name)
 
     @pyaedt_function_handler()

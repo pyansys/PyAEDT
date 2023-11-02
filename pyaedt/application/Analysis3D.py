@@ -6,10 +6,7 @@ import warnings
 from pyaedt import settings
 from pyaedt.application.Analysis import Analysis
 from pyaedt.generic.configurations import Configurations
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import generate_unique_name, is_ironpython, open_file, pyaedt_function_handler
 
 
 class FieldAnalysis3D(Analysis, object):
@@ -362,10 +359,8 @@ class FieldAnalysis3D(Analysis, object):
 
         References
         ----------
-
         >>> oDesign.GetPropertyValue
         """
-
         boundary = {"HFSS": "HfssTab", "Icepak": "Icepak", "Q3D": "Q3D", "Maxwell3D": "Maxwell3D"}
         excitation = {"HFSS": "HfssTab", "Icepak": "Icepak", "Q3D": "Q3D", "Maxwell3D": "Maxwell3D"}
         setup = {"HFSS": "HfssTab", "Icepak": "Icepak", "Q3D": "General", "Maxwell3D": "General"}
@@ -511,7 +506,6 @@ class FieldAnalysis3D(Analysis, object):
 
         References
         ----------
-
         >>> oEditor.Export
         """
         if "fileName" in kwargs:
@@ -593,7 +587,6 @@ class FieldAnalysis3D(Analysis, object):
 
         References
         ----------
-
         >>> oModule.GetAllSources
         """
         return list(self.osolution.GetAllSources())
@@ -616,10 +609,8 @@ class FieldAnalysis3D(Analysis, object):
 
         References
         ----------
-
         >>> oModule.SetSourceContexts
         """
-
         contexts = []
         for s in sources:
             value = s
@@ -649,7 +640,6 @@ class FieldAnalysis3D(Analysis, object):
 
         References
         ----------
-
         >>> oEditor.AssignMaterial
 
         Examples
@@ -744,7 +734,6 @@ class FieldAnalysis3D(Analysis, object):
 
         References
         ----------
-
         >>> oEditor.GetObjectsByMaterial
         """
         if len(self.modeler.objects) != len(self.modeler.object_names):
@@ -816,7 +805,6 @@ class FieldAnalysis3D(Analysis, object):
 
         References
         ----------
-
         >>> oEditor.AssignMaterial
         """
         with open_file(csv_material) as csvfile:
@@ -1218,7 +1206,6 @@ class FieldAnalysis3D(Analysis, object):
 
         References
         ----------
-
         >>> oEditor.ImportDXF
 
         """

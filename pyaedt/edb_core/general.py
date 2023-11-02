@@ -1,5 +1,4 @@
-"""
-This module contains EDB general methods and related methods.
+"""This module contains EDB general methods and related methods.
 
 """
 
@@ -8,9 +7,7 @@ from __future__ import absolute_import  # noreorder
 import logging
 
 from pyaedt import is_ironpython
-from pyaedt.generic.clr_module import Dictionary
-from pyaedt.generic.clr_module import List
-from pyaedt.generic.clr_module import Tuple
+from pyaedt.generic.clr_module import Dictionary, List, Tuple
 from pyaedt.generic.general_methods import pyaedt_function_handler
 
 if not is_ironpython:  # pragma: no cover
@@ -48,6 +45,7 @@ def convert_netdict_to_pydict(dict_in):
 @pyaedt_function_handler()
 def convert_pytuple_to_nettuple(_tuple):
     """Convert a Python tuple into a .NET tuple.
+
     Parameters
     ----------
     tuple : Python tuple

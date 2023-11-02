@@ -3,15 +3,16 @@ import json
 import os
 
 from pyaedt import generate_unique_name
-from pyaedt.edb_core.edb_data.sources import Source
-from pyaedt.edb_core.edb_data.sources import SourceType
+from pyaedt.edb_core.edb_data.sources import Source, SourceType
 from pyaedt.generic.clr_module import Dictionary
-from pyaedt.generic.constants import BasisOrder
-from pyaedt.generic.constants import CutoutSubdesignType
-from pyaedt.generic.constants import RadiationBoxType
-from pyaedt.generic.constants import SolverType
-from pyaedt.generic.constants import SweepType
-from pyaedt.generic.constants import validate_enum_class_value
+from pyaedt.generic.constants import (
+    BasisOrder,
+    CutoutSubdesignType,
+    RadiationBoxType,
+    SolverType,
+    SweepType,
+    validate_enum_class_value,
+)
 from pyaedt.generic.general_methods import pyaedt_function_handler
 
 
@@ -266,7 +267,6 @@ class SimulationConfigurationBatch(object):
         -------
         bool
         """
-
         return self._use_default_cutout
 
     @use_default_cutout.setter
@@ -313,7 +313,6 @@ class SimulationConfigurationBatch(object):
         List[str]
             List of signal net names.
         """
-
         return self._signal_nets
 
     @signal_nets.setter
@@ -441,7 +440,6 @@ class SimulationConfigurationBatch(object):
         float
             The value used as a ratio.
         """
-
         return self._cutout_subdesign_expansion
 
     @cutout_subdesign_expansion.setter
@@ -457,7 +455,6 @@ class SimulationConfigurationBatch(object):
         bool
             ``True`` when using round corner, ``False`` if not.
         """
-
         return self._cutout_subdesign_round_corner
 
     @cutout_subdesign_round_corner.setter
@@ -1238,7 +1235,6 @@ class SimulationConfigurationAc(object):
             bool
             ``True`` when a sweep interpolating is defined, ``False`` when a discrete one is defined instead.
         """
-
         return self._sweep_interpolating
 
     @sweep_interpolating.setter
@@ -1255,7 +1251,6 @@ class SimulationConfigurationAc(object):
             bool
             ``True`` when Q3D solver is used ``False`` when interpolating value is used instead.
         """
-
         return self._use_q3d_for_dc
 
     @use_q3d_for_dc.setter
@@ -1272,7 +1267,6 @@ class SimulationConfigurationAc(object):
             float
             The value of the error interpolating sweep to reach the convergence criteria.
         """
-
         return self._relative_error
 
     @relative_error.setter
@@ -1289,7 +1283,6 @@ class SimulationConfigurationAc(object):
             float
             The Z0 value.
         """
-
         return self._use_error_z0
 
     @use_error_z0.setter
@@ -1306,7 +1299,6 @@ class SimulationConfigurationAc(object):
             bool
             ``True`` when clipping the design is applied ``False`` if not.
         """
-
         return self._percentage_error_z0
 
     @percentage_error_z0.setter
@@ -1323,7 +1315,6 @@ class SimulationConfigurationAc(object):
             bool
             ``True`` when causality is enforced ``False`` if not.
         """
-
         return self._enforce_causality
 
     @enforce_causality.setter
@@ -1755,7 +1746,7 @@ class SimulationConfigurationAc(object):
         """Boolean to ignore nonfunctional pads with Siwave.
 
         Returns
-         -------
+        -------
             flot
             Value of the arc to chord error.
         """
@@ -2291,7 +2282,8 @@ class SimulationConfiguration(object):
 
         Returns
         -------
-        bool"""
+        bool
+        """
         return self._pedb.build_simulation_project(self)
 
     @property
@@ -2390,7 +2382,6 @@ class SimulationConfiguration(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> from pyaedt.edb_core.edb_data.simulation_configuration import SimulationConfiguration
         >>> config_file = path_configuration_file
@@ -2401,7 +2392,6 @@ class SimulationConfiguration(object):
         >>> edb.save_edb()
         >>> edb.close_edb()
         """
-
         if not self.filename or not os.path.exists(self.filename):
             # raise Exception("{} does not exist.".format(self.filename))
             return
@@ -2651,7 +2641,6 @@ class SimulationConfiguration(object):
 
         Examples
         --------
-
         >>> from pyaedt.edb_core.edb_data.simulation_configuration import SimulationConfiguration
         >>> config = SimulationConfiguration()
         >>> config.export_json(r"C:\Temp\test_json\test.json")
@@ -2819,7 +2808,6 @@ class SimulationConfiguration(object):
         >>> sim_setup.add_voltage_source(voltage_value=1.0, phase_value=0, positive_node_component="V1",
         >>> positive_node_net="HSG", negative_node_component="V1", negative_node_net="SW")
         """
-
         if name == "":  # pragma: no cover
             name = generate_unique_name("I_source")
         source = Source()
@@ -2894,7 +2882,6 @@ class SimulationConfiguration(object):
         >>> sim_setup.add_voltage_source(voltage_value=1.0, phase_value=0, positive_node_component="V1",
         >>> positive_node_net="HSG", negative_node_component="V1", negative_node_net="SW")
         """
-
         if name == "":  # pragma: no cover
             name = generate_unique_name("Rlc")
         source = Source()

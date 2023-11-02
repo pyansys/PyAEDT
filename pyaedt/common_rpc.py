@@ -5,22 +5,17 @@ import sys
 import tempfile
 import time
 
-from pyaedt import is_ironpython
-from pyaedt import settings
+from pyaedt import is_ironpython, settings
 from pyaedt.aedt_logger import pyaedt_logger as logger
 from pyaedt.misc import list_installed_ansysem
 
 # import sys
-from pyaedt.rpc.rpyc_services import FileManagement
-from pyaedt.rpc.rpyc_services import GlobalService
-from pyaedt.rpc.rpyc_services import ServiceManager
-from pyaedt.rpc.rpyc_services import check_port
+from pyaedt.rpc.rpyc_services import FileManagement, GlobalService, ServiceManager, check_port
 
 if not is_ironpython:
     import rpyc
     from rpyc.core import consts
-    from rpyc.utils.server import OneShotServer
-    from rpyc.utils.server import ThreadedServer
+    from rpyc.utils.server import OneShotServer, ThreadedServer
 
 
 # Maximum Stream message size. Set to 256MB
@@ -252,8 +247,7 @@ def launch_server(port=18000, ansysem_path=None, non_graphical=False, threaded=T
 
 
 def create_session(server_name, client_port=None, launch_aedt_on_server=False, aedt_port=None, non_graphical=True):
-    """
-    Connect to an existing AEDT server session.
+    """Connect to an existing AEDT server session.
 
     Parameters
     ----------
@@ -267,6 +261,7 @@ def create_session(server_name, client_port=None, launch_aedt_on_server=False, a
         Aedt Grpc port on server.
     non_graphical : bool, optional
         Aedt Non Graphical Flag.
+
     Returns
     -------
     RPyC object.
@@ -303,8 +298,7 @@ def create_session(server_name, client_port=None, launch_aedt_on_server=False, a
 
 
 def connect(server_name, aedt_client_port):
-    """
-    Connect to an existing AEDT server session.
+    """Connect to an existing AEDT server session.
 
     Parameters
     ----------

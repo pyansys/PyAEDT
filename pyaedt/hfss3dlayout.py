@@ -8,14 +8,15 @@ import io
 import os
 import re
 
-from pyaedt import is_ironpython
-from pyaedt import settings
+from pyaedt import is_ironpython, settings
 from pyaedt.application.Analysis3DLayout import FieldAnalysis3DLayout
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import parse_excitation_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.generic.general_methods import tech_to_control_file
+from pyaedt.generic.general_methods import (
+    generate_unique_name,
+    open_file,
+    parse_excitation_file,
+    pyaedt_function_handler,
+    tech_to_control_file,
+)
 from pyaedt.modeler.pcb.object3dlayout import Line3dLayout  # noqa: F401
 from pyaedt.modules.Boundary import BoundaryObject3dLayout
 
@@ -197,7 +198,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oEditor.CreateEdgePort
         """
         primivitivename = self.modeler.convert_to_selections(primivitivename, False)
@@ -334,7 +334,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oEditor.CreateEdgePort
         """
         if len(primivitivenames) == 2 and len(edgenumbers) == 2:
@@ -389,7 +388,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oEditor.CreateEdgePort
         """
         listp = self.port_list
@@ -432,7 +430,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oEditor.CreateEdgePort
         """
         listp = self.port_list
@@ -481,7 +478,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oEditor.CreateEdgePort
         """
         listp = self.port_list
@@ -541,7 +537,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oEditor.CreatePin
         """
         layers = self.modeler.layers.all_signal_layers
@@ -594,7 +589,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.Delete
         """
         self.oexcitation.Delete(portname)
@@ -619,7 +613,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.ImportEDB
         """
         if "edb.def" not in edb_full_path:
@@ -653,7 +646,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oDesign.ValidateDesign
         """
         if name is None:
@@ -758,7 +750,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.CreateReport
         """
         solution_data = "Standard"
@@ -805,7 +796,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oDesign.ExportNetworkData
         """
         return self._export_touchstone(
@@ -834,7 +824,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oDesign.DesignOptions
         """
         settings = []
@@ -865,6 +854,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
             ``True``.
         use_alternative_fallback : bool, optional
             Whether to enable the alternative fall back mesh method. The default is ``True``.
+
         Returns
         -------
         bool
@@ -872,7 +862,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oDesign.DesignOptions
         """
         settings = []
@@ -944,7 +933,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.AddSweep
         """
         if sweep_type not in ["Discrete", "Interpolating", "Fast"]:
@@ -1047,7 +1035,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.AddSweep
         """
         if sweep_type not in ["Discrete", "Interpolating", "Fast"]:
@@ -1126,7 +1113,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.AddSweep
         """
         if sweepname is None:
@@ -1233,6 +1219,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         close_active_project : bool, optional
             Whether to close the active project after loading the GDS file.
             The default is ''False``.
+
         Returns
         -------
         bool
@@ -1240,7 +1227,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.ImportGDSII
         """
         return self._import_cad(gds_path, "gds", aedb_path, control_file, set_as_active, close_active_project)
@@ -1265,6 +1251,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         close_active_project : bool, optional
             Whether to close the active project after loading the DXF file.
             The default is ''False``.
+
         Returns
         -------
         bool
@@ -1272,7 +1259,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.ImportDXF
         """
         return self._import_cad(dxf_path, "dxf", aedb_path, control_file, set_as_active, close_active_project)
@@ -1297,6 +1283,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         close_active_project : bool, optional
             Whether to close the active project after loading the Gerber zip file file.
             The default is ''False``.
+
         Returns
         -------
         bool
@@ -1304,7 +1291,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.ImportGerber
         """
         return self._import_cad(gerber_path, "gerber", aedb_path, control_file, set_as_active, close_active_project)
@@ -1337,7 +1323,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.ImportExtracta
         """
         return self._import_cad(input_file, "brd", aedb_path, control_file, set_as_active, close_active_project)
@@ -1362,6 +1347,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         close_active_project : bool, optional
             Whether to close the active project after loading the AWR Microwave Office file.
             The default is ''False``.
+
         Returns
         -------
         bool
@@ -1369,7 +1355,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.ImportAWRMicrowaveOffice
         """
         return self._import_cad(input_file, "awr", aedb_path, control_file, set_as_active, close_active_project)
@@ -1394,6 +1379,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         close_active_project : bool, optional
             Whether to close the active project after loading the IPC2581 file.
             The default is ''False``.
+
         Returns
         -------
         bool
@@ -1401,7 +1387,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.ImportAWRMicrowaveOffice
         """
         return self._import_cad(input_file, "ipc2581", aedb_path, control_file, set_as_active, close_active_project)
@@ -1424,6 +1409,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         close_active_project : bool, optional
             Whether to close the active project after loading the ODB++ file.
             The default is ''False``.
+
         Returns
         -------
         bool
@@ -1431,7 +1417,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.ImportAWRMicrowaveOffice
         """
         return self._import_cad(input_file, "odb++", aedb_path, control_file, set_as_active, close_active_project)
@@ -1483,7 +1468,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oDesign.EditCoSimulationOptions
 
         Examples
@@ -1678,7 +1662,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         >>> hfss = Hfss3dLayout()
         >>> hfss.get_defined_diff_pairs()
         """
-
         list_output = []
         if len(self.excitations) != 0:
             tmpfile1 = os.path.join(self.working_directory, generate_unique_name("tmp"))
@@ -1900,6 +1883,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         ----------
         binary : str, optional
             Either if retrieve binary format of parasoli or not.
+
         Returns
         -------
         str
@@ -2032,11 +2016,11 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         category : str, optional
             Name of the element. Options are ``"Voltage"`, ``"Current"`, ``"Power"``, ``"Loop_Resistance"``,
             ``"Path_Resistance"``, ``"Resistance"``, ``"Inductance"``, ``"X"``, ``"Y"``, ``"Limit"`` and ``"IR Drop"``.
+
         Returns
         -------
         pyaedt.modules.solutions.SolutionData
         """
-
         if is_ironpython:  # pragma: no cover
             self._logger.error("Function is only supported in CPython.")
             return False
@@ -2050,8 +2034,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         return self.post.get_solution_data(all_quantities, setup_sweep_name=setup_name, domain="DCIR", context=show)
 
     def get_touchstone_data(self, setup_name=None, sweep_name=None, variations=None):
-        """
-        Return a Touchstone data plot.
+        """Return a Touchstone data plot.
 
         Parameters
         ----------
@@ -2069,7 +2052,6 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
 
         References
         ----------
-
         >>> oModule.GetSolutionDataPerVariation
         """
         from pyaedt.generic.touchstone_parser import TouchstoneData
@@ -2097,6 +2079,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         ----------
         setup_name : str
             Name of the setup.
+
         Returns
         -------
         pandas.Dataframe
@@ -2138,6 +2121,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         ----------
         setup_name : str
             Name of the setup.
+
         Returns
         -------
         pandas.Dataframe
@@ -2173,6 +2157,7 @@ class Hfss3dLayout(FieldAnalysis3DLayout):
         ----------
         setup_name : str
             Name of the setup.
+
         Returns
         -------
         pandas.Dataframe

@@ -5,13 +5,11 @@ import re
 from pyaedt.generic.constants import AEDT_UNITS
 from pyaedt.generic.general_methods import pyaedt_function_handler
 from pyaedt.modeler.cad.Modeler import Modeler
-from pyaedt.modeler.circuits.PrimitivesEmit import EmitComponent
-from pyaedt.modeler.circuits.PrimitivesEmit import EmitComponents
+from pyaedt.modeler.circuits.object3dcircuit import CircuitComponent, Wire
+from pyaedt.modeler.circuits.PrimitivesEmit import EmitComponent, EmitComponents
 from pyaedt.modeler.circuits.PrimitivesMaxwellCircuit import MaxwellCircuitComponents
 from pyaedt.modeler.circuits.PrimitivesNexxim import NexximComponents
 from pyaedt.modeler.circuits.PrimitivesTwinBuilder import TwinBuilderComponents
-from pyaedt.modeler.circuits.object3dcircuit import CircuitComponent
-from pyaedt.modeler.circuits.object3dcircuit import Wire
 from pyaedt.modeler.pcb.Primitives3DLayout import Primitives3DLayout
 from pyaedt.modules.LayerStackup import Layers
 
@@ -75,8 +73,8 @@ class ModelerCircuit(Modeler):
 
         References
         ----------
-
-        >>> oEditor = oDesign.SetActiveEditor("SchematicEditor")"""
+        >>> oEditor = oDesign.SetActiveEditor("SchematicEditor")
+        """
         return self._app.oeditor
 
     @pyaedt_function_handler()
@@ -85,7 +83,6 @@ class ModelerCircuit(Modeler):
 
         References
         ----------
-
         >>> oEditor.ZoomToFit
         """
         self.oeditor.ZoomToFit()
@@ -114,7 +111,6 @@ class ModelerCircuit(Modeler):
 
         References
         ----------
-
         >>> oEditor.CreateWire
         """
         if self._app.design_type == "Maxwell Circuit":
@@ -231,7 +227,6 @@ class ModelerCircuit(Modeler):
 
         References
         ----------
-
         >>> oEditor.CreateText
 
         """
@@ -347,7 +342,6 @@ class ModelerCircuit(Modeler):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         graphics_id = [id.split("@")[1] for id in self.oeditor.GetAllGraphics()]
@@ -481,7 +475,6 @@ class ModelerNexxim(ModelerCircuit):
 
         References
         ----------
-
         >>> oDesign.SetActiveEditor("Layout")
         """
         return self._app.layouteditor
@@ -528,7 +521,6 @@ class ModelerNexxim(ModelerCircuit):
 
         References
         ----------
-
         >>> oEditor.GetActiveUnits
         >>> oEditor.SetActiveUnits
         """
@@ -587,7 +579,6 @@ class ModelerNexxim(ModelerCircuit):
 
         References
         ----------
-
         >>> oEditor.Move
         """
         sels = self._get_components_selections(selections)
@@ -634,7 +625,6 @@ class ModelerNexxim(ModelerCircuit):
 
         References
         ----------
-
         >>> oEditor.Rotate
         """
         sels = self._get_components_selections(selections)
@@ -674,9 +664,8 @@ class ModelerTwinBuilder(ModelerCircuit):
 
     @property
     def components(self):
-        """
-        .. deprecated:: 0.4.13
-           Use :func:`TwinBuilder.modeler.schematic` instead.
+        """.. deprecated:: 0.4.13
+        Use :func:`TwinBuilder.modeler.schematic` instead.
 
         """
         return self._components

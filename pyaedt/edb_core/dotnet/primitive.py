@@ -1,6 +1,5 @@
 """Primitive."""
-from pyaedt.edb_core.dotnet.database import NetDotNet
-from pyaedt.edb_core.dotnet.database import PolygonDataDotNet
+from pyaedt.edb_core.dotnet.database import NetDotNet, PolygonDataDotNet
 from pyaedt.edb_core.general import convert_py_list_to_net_list
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
@@ -216,8 +215,7 @@ class PrimitiveDotNet:
         return self.prim_obj.IsParameterized()
 
     def get_hfss_prop(self):
-        """
-        Get HFSS properties.
+        """Get HFSS properties.
 
         Returns
         -------
@@ -263,8 +261,7 @@ class PrimitiveDotNet:
         self.prim_obj.MakeZonePrimitive(zone_id)
 
     def _get_points_for_plot(self, my_net_points, num):
-        """
-        Get the points to be plot
+        """Get the points to be plot
         """
         # fmt: off
         x = []
@@ -533,8 +530,8 @@ class CircleDotNet(PrimitiveDotNet):
     def set_parameters(self, center_x, center_y, radius):
         """Set parameters of a circle.
 
-         Parameters
-         ----------
+        Parameters
+        ----------
         center_x: :class:`Value <ansys.edb.utility.Value>`
             X value of center point.
         center_y: :class:`Value <ansys.edb.utility.Value>`

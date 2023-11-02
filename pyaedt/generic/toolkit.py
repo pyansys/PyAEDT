@@ -9,7 +9,6 @@ applications. The primary classes are:
 
 Examples
 --------
-
 **Example 1**
 A toolkit is built by deriving a class called ApplicationWindow from WPFToolkit.
 Parallel to this file, an xaml file should be present in the same directory.
@@ -67,18 +66,16 @@ Parallel to this file, an xaml file should be present in the same directory.
 >>> # Launch the toolkit
 >>> if __name__ == '__main__':
 >>>     launch(__file__, specified_version="2021.2", new_desktop_session=False, autosave=False)
+
 """
 from datetime import datetime
 import json
 import os
 import shutil
 import sys
-from zipfile import ZIP_DEFLATED
-from zipfile import ZipFile
+from zipfile import ZIP_DEFLATED, ZipFile
 
-from pyaedt import is_ironpython
-from pyaedt import is_linux
-from pyaedt import is_windows
+from pyaedt import is_ironpython, is_linux, is_windows
 from pyaedt.desktop import Desktop
 import pyaedt.edb_core.edb_data.simulation_configuration
 from pyaedt.generic.clr_module import _clr
@@ -106,36 +103,26 @@ else:
 
     _clr.AddReference("System.Windows")
 
-from System import Environment
-from System import Uri
-from System import UriKind
-from System.Drawing import Point
-from System.Drawing import Size
-from System.Threading import ApartmentState
-from System.Threading import Thread
-from System.Threading import ThreadStart
-from System.Windows import Application
-from System.Windows import Input
-from System.Windows import LogicalTreeHelper
-from System.Windows import Thickness
-from System.Windows import Visibility
-from System.Windows import Window
-from System.Windows.Forms import Button
-from System.Windows.Forms import DialogResult
-from System.Windows.Forms import FolderBrowserDialog
-from System.Windows.Forms import Form
-from System.Windows.Forms import FormBorderStyle
-from System.Windows.Forms import ListBox
-from System.Windows.Forms import MessageBox
-from System.Windows.Forms import MessageBoxButtons
-from System.Windows.Forms import MessageBoxIcon
-from System.Windows.Forms import OpenFileDialog
-from System.Windows.Forms import SelectionMode
-from System.Windows.Forms import StatusBar
+from System import Environment, Uri, UriKind
+from System.Drawing import Point, Size
+from System.Threading import ApartmentState, Thread, ThreadStart
+from System.Windows import Application, Input, LogicalTreeHelper, Thickness, Visibility, Window
+from System.Windows.Forms import (
+    Button,
+    DialogResult,
+    FolderBrowserDialog,
+    Form,
+    FormBorderStyle,
+    ListBox,
+    MessageBox,
+    MessageBoxButtons,
+    MessageBoxIcon,
+    OpenFileDialog,
+    SelectionMode,
+    StatusBar,
+)
 from System.Windows.Media import Brushes
-from System.Windows.Media.Imaging import BitmapCacheOption
-from System.Windows.Media.Imaging import BitmapCreateOptions
-from System.Windows.Media.Imaging import BitmapImage
+from System.Windows.Media.Imaging import BitmapCacheOption, BitmapCreateOptions, BitmapImage
 
 
 @pyaedt_function_handler()
@@ -296,7 +283,6 @@ def message_box(text, caption=None, buttons=None, icon=None):
     icon : str
         Valid icon type string.  Asterisk, Error, Exclamation, Hand, Information, None, Question, Stop, Warning
     """
-
     if not icon:
         icon_object = getattr(MessageBoxIcon, "Information")
     else:
@@ -330,7 +316,6 @@ class ToolkitBuilder:
 
     Examples
     --------
-
     Build file placed in the Toolkit directory
 
     >>> from pyaedt.generic.toolkit import ToolkitBuilder
@@ -344,7 +329,6 @@ class ToolkitBuilder:
         """Instantiates a ToolkitBuilder object. This object manages the packaging of the WPF GUI to ensure
         that any dependencies not available via pip are stored with the toolkit deployable asset.
         """
-
         # if the local_path is defined as a file, take the path of that file
         if os.path.isfile(local_path):
             self.local_path = os.path.dirname(os.path.realpath(local_path))
@@ -458,7 +442,6 @@ class ToolkitBuilder:
 
     def zip_archive(self):
         """Zip the collected data in the build path"""
-
         zip_archive = os.path.join(self.build_path, self.build_name + ".zip")
         with ZipFile(zip_archive, "w", ZIP_DEFLATED) as myzip:
             for root, dirs, files in os.walk(self.commit_path):
@@ -517,7 +500,6 @@ class WPFToolkitSettings:
 
     Examples
     --------
-
     Typical usage looks like this
 
     >>> with Desktop(version="2021.2") as d:
@@ -770,7 +752,6 @@ class WPFToolkit(Window):
     @property
     def parent_design_name(self):
         """Aedt Design Name."""
-
         if self.aedtdesign:
             self._parent_design_name = self.aedtdesign.design_name
         else:
@@ -783,7 +764,7 @@ class WPFToolkit(Window):
             self._parent_design_name = None
         elif design_name:
             self._parent_design_name = design_name
-            if not design_name in self.aedtdesign.design_list:
+            if design_name not in self.aedtdesign.design_list:
                 orig_design_name = self.aedtdesign.design_name
                 if self._parent_design_name != orig_design_name:
                     self._write_parent_link()
@@ -968,6 +949,7 @@ class WPFToolkit(Window):
             Name of the method assigned to the call back action. `None` to disable it.
         callback_action : str, optional
             Call back action on which callback will be applied. Default is `"Click"`.
+
         Returns
         -------
         bool
@@ -997,6 +979,7 @@ class WPFToolkit(Window):
             Name of the method assigned to the call back action. `None` to disable it.
         callback_action : str, optional
             Call back action on which callback will be applied. Default is `"Click"`.
+
         Returns
         -------
         bool
@@ -1085,7 +1068,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_string_no_spaces(self, sender, e):
         """Validates the text box with no spaces."""
-
         valid = False
         if sender.Text.find(" ") < 0:
             valid = True
@@ -1094,7 +1076,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_integer(self, sender, e):
         """Validates the text box with to integer."""
-
         valid = False
         try:
             value = int(sender.Text)
@@ -1109,7 +1090,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_positive_odd_integer(self, sender, e):
         """Validates the text box with to positive odd integer."""
-
         valid = False
         try:
             value = int(sender.Text)
@@ -1126,7 +1106,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_positive_integer(self, sender, e):
         """Validates the text box with to strictly positive integer."""
-
         valid = False
         try:
             value = int(sender.Text)
@@ -1142,7 +1121,6 @@ class WPFToolkit(Window):
 
     def validate_non_negative_integer(self, sender, e):
         """Validates the text box with to non negative integer."""
-
         valid = False
         try:
             value = int(sender.Text)
@@ -1174,7 +1152,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_float(self, sender, e):
         """Validates the text box with to float."""
-
         valid = False
         try:
             value = float(sender.Text)
@@ -1197,7 +1174,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_positive_float_variable(self, sender, e):
         """Validates the text box with to positive float variable."""
-
         proj_and_des_variables = self.aedtdesign.variable_manager.variable_names
         if sender.Text in proj_and_des_variables:
             self.update_textbox_status(sender, True)
@@ -1207,7 +1183,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_positive_integer_variable(self, sender, e):
         """Validates the text box with to positive integer variable."""
-
         proj_and_des_variables = self.aedtdesign.variable_manager.variable_names
         if sender.Text in proj_and_des_variables:
             self.update_textbox_status(sender, True)
@@ -1217,7 +1192,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_positive_integer_global(self, sender, e):
         """Validates the text box with to positive integer global variable."""
-
         proj_variables = self.aedtdesign.variable_manager.project_variable_names
         if sender.Text in proj_variables:
             self.update_textbox_status(sender, True)
@@ -1227,7 +1201,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_positive_float_global(self, sender, e):
         """Validates the text box with to positive float global variable."""
-
         proj_variables = self.aedtdesign.variable_manager.project_variable_names
         if sender.Text in proj_variables:
             self.update_textbox_status(sender, True)
@@ -1237,7 +1210,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_positive_float(self, sender, e):
         """Validates the text box with to positive float."""
-
         valid = False
         try:
             value = float(sender.Text)
@@ -1253,7 +1225,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def validate_non_negative_float(self, sender, e):
         """Validates the text box with to non-negative float."""
-
         valid = False
         try:
             value = float(sender.Text)
@@ -1269,7 +1240,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def update_textbox_status_with_default_text(self, sender, valid, default_text):
         """Updates a text box with a default text value."""
-
         if not valid:
             sender.Text = default_text
             sender.BorderBrush = Brushes.Red
@@ -1279,7 +1249,6 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def update_textbox_status(self, sender, valid):
         """Updates a text box status."""
-
         if not valid:
             sender.Text = ""
             sender.BorderBrush = Brushes.Red
@@ -1306,7 +1275,8 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def _read_and_synch_settings_file(self):
         """Reads in existing settings data and updates the path of the library directory in case the project was
-        moved to a new location, file system or operating system."""
+        moved to a new location, file system or operating system.
+        """
         settings_file = self.settings_file
         if os.path.exists(settings_file):
             settings_data = self.settings_data
@@ -1372,7 +1342,6 @@ class WPFToolkit(Window):
         margin : list
             vector of floats [left, top, bottom, right].
         """
-
         myThickness = Thickness()
         myThickness.Bottom = margin[2]
         myThickness.Left = margin[0]
@@ -1507,6 +1476,7 @@ class WPFToolkit(Window):
     @pyaedt_function_handler()
     def get_combobox_selection(self, ui_object_name):
         """Returns the selected value from a combobox
+
         Parameters
         ----------
         ui_object_name : str

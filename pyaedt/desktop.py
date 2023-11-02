@@ -1,5 +1,4 @@
-"""
-This module contains the ``Desktop`` class.
+"""This module contains the ``Desktop`` class.
 This module is used to initialize AEDT and the message manager for managing AEDT.
 You can initialize this module before launching an app or
 have the app automatically initialize it to the latest installed AEDT version.
@@ -22,9 +21,7 @@ import time
 import traceback
 import warnings
 
-from pyaedt import is_ironpython
-from pyaedt import is_linux
-from pyaedt import is_windows
+from pyaedt import is_ironpython, is_linux, is_windows
 from pyaedt.aedt_logger import pyaedt_logger
 from pyaedt.generic.general_methods import generate_unique_name
 
@@ -36,20 +33,18 @@ if is_linux and is_ironpython:
 else:
     import subprocess
 
-from pyaedt import __version__
-from pyaedt import pyaedt_function_handler
-from pyaedt import settings
+from pyaedt import __version__, pyaedt_function_handler, settings
 from pyaedt.generic.desktop_sessions import _desktop_sessions
-from pyaedt.generic.general_methods import active_sessions
-from pyaedt.generic.general_methods import com_active_sessions
-from pyaedt.generic.general_methods import get_string_version
-from pyaedt.generic.general_methods import grpc_active_sessions
-from pyaedt.generic.general_methods import inside_desktop
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import open_file
-from pyaedt.misc import current_student_version
-from pyaedt.misc import current_version
-from pyaedt.misc import installed_versions
+from pyaedt.generic.general_methods import (
+    active_sessions,
+    com_active_sessions,
+    get_string_version,
+    grpc_active_sessions,
+    inside_desktop,
+    is_ironpython,
+    open_file,
+)
+from pyaedt.misc import current_student_version, current_version, installed_versions
 
 pathname = os.path.dirname(__file__)
 
@@ -378,7 +373,8 @@ def is_student_version(oDesktop):
 
 def _init_desktop_from_design(*args, **kwargs):
     """Distinguishes if the ``Desktop`` class is initialized internally from the ``Design``
-    class or directly from the user. For example, ``desktop=Desktop()``)."""
+    class or directly from the user. For example, ``desktop=Desktop()``).
+    """
     Desktop._invoked_from_design = True
     return Desktop(*args, **kwargs)
 
@@ -773,7 +769,7 @@ class Desktop(object):
                 """PyAEDT has limited capabilities when used with an AEDT version earlier than 2022 R2.
                 Update your AEDT installation to 2022 R2 or later."""
             )
-        if not (specified_version in self.installed_versions):
+        if specified_version not in self.installed_versions:
             raise ValueError(
                 "Specified version {}{} is not installed on your system".format(
                     specified_version[0:6], " Student Version" if student_version else ""
@@ -1247,7 +1243,6 @@ class Desktop(object):
         List
             List of the designs.
         """
-
         updateddeslist = []
         if not project:
             oproject = self.odesktop.GetActiveProject()
@@ -1843,10 +1838,8 @@ class Desktop(object):
 
         References
         ----------
-
         >>> oDesktop.SubmitJob
         """
-
         project_path = os.path.dirname(project_file)
         project_name = os.path.basename(project_file).split(".")[0]
         if not aedt_full_exe_path:
@@ -1946,7 +1939,6 @@ class Desktop(object):
 
         References
         ----------
-
         >>> oDesktop.SubmitJob
 
         Examples
@@ -2038,7 +2030,7 @@ class Desktop(object):
         -------
         dict
 
-                Examples
+        Examples
         --------
         >>> from pyaedt import Desktop
 
@@ -2105,7 +2097,7 @@ class Desktop(object):
             The selected scheduler (if selection was successful, this string should match the input option string,
             although it could differ in upper/lowercase).
 
-                Examples
+        Examples
         --------
         >>> from pyaedt import Desktop
 

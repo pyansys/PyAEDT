@@ -1,5 +1,4 @@
-"""
-Launches an interactive shell with an instance of HFSS
+"""Launches an interactive shell with an instance of HFSS
 
 omitting the .py in the name of this file hides it from the Electronics Desktop Toolkit menu.
 It should be hidden from this menu because the scripts in that menu are meant to be executed using IronPython
@@ -26,8 +25,7 @@ except ImportError:
 # pyaedt.settings.use_grpc_api = False
 settings = pyaedt.settings
 from pyaedt import Desktop
-from pyaedt.generic.general_methods import active_sessions
-from pyaedt.generic.general_methods import is_windows
+from pyaedt.generic.general_methods import active_sessions, is_windows
 
 aedt_process_id = int(sys.argv[1])
 version = sys.argv[2]

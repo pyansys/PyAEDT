@@ -5,14 +5,11 @@ import re
 import warnings
 
 from pyaedt.application.Variables import decompose_variable_value
-from pyaedt.generic.LoadAEDTFile import load_keyword_in_aedt_file
 from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modeler.circuits.PrimitivesCircuit import CircuitComponents
-from pyaedt.modeler.circuits.PrimitivesCircuit import ComponentCatalog
+from pyaedt.generic.general_methods import generate_unique_name, open_file, pyaedt_function_handler
+from pyaedt.generic.LoadAEDTFile import load_keyword_in_aedt_file
 from pyaedt.modeler.circuits.object3dcircuit import CircuitComponent
+from pyaedt.modeler.circuits.PrimitivesCircuit import CircuitComponents, ComponentCatalog
 from pyaedt.modules.Boundary import Excitations
 
 
@@ -23,9 +20,9 @@ class NexximComponents(CircuitComponents):
     ----------
     modeler : :class:`pyaedt.modeler.schematic.ModelerNexxim`
         Inherited parent object.
+
     Examples
     --------
-
     >>> from pyaedt import Circuit
     >>> aedtapp = Circuit()
     >>> prim = aedtapp.modeler.schematic
@@ -44,6 +41,7 @@ class NexximComponents(CircuitComponents):
     @pyaedt_function_handler()
     def __getitem__(self, partname):
         """Get the object ID if the part name is an integer or the object name if it is a string.
+
         Parameters
         ----------
         partname : int or str
@@ -284,7 +282,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oProject.CopyDesign
         >>> oEditor.PasteDesign
         """
@@ -321,7 +318,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oModelManager.Add
         >>> oComponentManager.Add
         """
@@ -576,7 +572,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         cmpid = self.create_component(
@@ -611,7 +606,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         cmpid = self.create_component(
@@ -652,10 +646,8 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
-
         if location == None:
             location = []
 
@@ -696,7 +688,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location == None:
@@ -737,7 +728,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location is None:
@@ -782,7 +772,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         cmpid = self.create_component(
@@ -836,7 +825,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         cmpid = self.create_component(
@@ -890,7 +878,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         cmpid = self.create_component(
@@ -935,7 +922,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         if location == None:
@@ -980,7 +966,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         cmpid = self.create_component(
@@ -1020,7 +1005,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         id = self.create_component(
@@ -1060,7 +1044,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oEditor.CreateComponent
         """
         id = self.create_component(
@@ -1116,7 +1099,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oModelManager.Add
         >>> oComponentManager.Add
         """
@@ -1336,7 +1318,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oModelManager.Add
         >>> oComponentManager.Add
         >>> oDesign.AddCompInstance
@@ -1422,7 +1403,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oModelManager.Add
         >>> oComponentManager.Add
         >>> oDesign.AddCompInstance
@@ -1690,7 +1670,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oProject.ChangeProperty
         """
         if option == "simulate":
@@ -1720,7 +1699,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oProject.ChangeProperty
         """
         arg = ["NAME:Solution", "Value:=", solution_name]
@@ -1766,7 +1744,6 @@ class NexximComponents(CircuitComponents):
 
         References
         ----------
-
         >>> oComponentManager.UpdateDynamicLink
         """
         if "@" in component_name:

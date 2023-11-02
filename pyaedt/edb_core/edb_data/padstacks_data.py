@@ -7,12 +7,9 @@ from pyaedt import is_ironpython
 from pyaedt.edb_core.dotnet.database import PolygonDataDotNet
 from pyaedt.edb_core.edb_data.edbvalue import EdbValue
 from pyaedt.edb_core.edb_data.primitives_data import EDBPrimitivesMain
-from pyaedt.edb_core.general import PadGeometryTpe
-from pyaedt.edb_core.general import convert_py_list_to_net_list
-from pyaedt.generic.clr_module import String
-from pyaedt.generic.clr_module import _clr
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.edb_core.general import PadGeometryTpe, convert_py_list_to_net_list
+from pyaedt.generic.clr_module import String, _clr
+from pyaedt.generic.general_methods import generate_unique_name, pyaedt_function_handler
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
 
@@ -74,7 +71,6 @@ class EDBPadProperties(object):
         int
             Type of the geometry.
         """
-
         padparams = self._edb_padstack.GetData().GetPadParametersValue(
             self.layer_name, self.int_to_pad_type(self.pad_type)
         )
@@ -185,7 +181,6 @@ class EDBPadProperties(object):
         >>> pad.shape = "Bullet"
         >>> pad.pad_parameters{"XSize": "0.5mm", "YSize": "0.5mm"}
         """
-
         if isinstance(value, dict):
             value = {k: v.tostring if isinstance(v, EdbValue) else v for k, v in value.items()}
             if self.shape == PadGeometryTpe.Circle.name:
@@ -223,7 +218,6 @@ class EDBPadProperties(object):
         str
             Offset for the X axis.
         """
-
         pad_values = self._edb_padstack.GetData().GetPadParametersValue(
             self.layer_name, self.int_to_pad_type(self.pad_type)
         )
@@ -242,7 +236,6 @@ class EDBPadProperties(object):
         str
             Offset for the Y axis.
         """
-
         pad_values = self._edb_padstack.GetData().GetPadParametersValue(
             self.layer_name, self.int_to_pad_type(self.pad_type)
         )
@@ -261,7 +254,6 @@ class EDBPadProperties(object):
         str
             Value for the rotation.
         """
-
         pad_values = self._edb_padstack.GetData().GetPadParametersValue(
             self.layer_name, self.int_to_pad_type(self.pad_type)
         )
@@ -454,7 +446,6 @@ class EDBPadstack(object):
     @property
     def hole_params(self):
         """Via Hole parameters values."""
-
         viaData = self.edb_padstack.GetData()
         self._hole_params = viaData.GetHoleParametersValue()
         return self._hole_params
@@ -1520,7 +1511,6 @@ class EDBPadstackInstance(EDBPrimitivesMain):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edbapp.padstacks.instances[111].get_aedt_pin_name()
@@ -1690,7 +1680,6 @@ class EDBPadstackInstance(EDBPrimitivesMain):
         >>> padstack_inst = list_of_padstack_instances[0]
         >>> padstack_inst.create_rectangle_in_pad("TOP")
         """
-
         padstack_center = self.position
         rotation = self.rotation  # in radians
         padstack_name = self.padstack_definition

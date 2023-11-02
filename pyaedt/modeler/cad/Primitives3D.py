@@ -1,28 +1,13 @@
 import copy
 import json
-from math import asin
-from math import ceil
-from math import cos
-from math import degrees
-from math import pi
-from math import radians
-from math import sin
-from math import sqrt
-from math import tan
+from math import asin, ceil, cos, degrees, pi, radians, sin, sqrt, tan
 import os
 
-from pyaedt import Edb
-from pyaedt import Icepak
+from pyaedt import Edb, Icepak
 from pyaedt.generic import LoadAEDTFile
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import normalize_path
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modeler.advanced_cad.actors import Bird
-from pyaedt.modeler.advanced_cad.actors import Person
-from pyaedt.modeler.advanced_cad.actors import Vehicle
-from pyaedt.modeler.advanced_cad.multiparts import Environment
-from pyaedt.modeler.advanced_cad.multiparts import MultiPartComponent
+from pyaedt.generic.general_methods import generate_unique_name, normalize_path, open_file, pyaedt_function_handler
+from pyaedt.modeler.advanced_cad.actors import Bird, Person, Vehicle
+from pyaedt.modeler.advanced_cad.multiparts import Environment, MultiPartComponent
 from pyaedt.modeler.cad.Primitives import Primitives
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
@@ -77,7 +62,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateBox
 
         Examples
@@ -153,7 +137,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateCylinder
 
         Examples
@@ -244,7 +227,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateRegularPolyhedron
 
         Examples
@@ -326,7 +308,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateCone
 
         Examples
@@ -410,7 +391,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateSphere
 
         Examples
@@ -479,7 +459,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateTorus
 
         Examples
@@ -594,7 +573,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateBondwire
 
         Examples
@@ -711,7 +689,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateRectangle
         """
         if len(dimension_list) != 2:
@@ -768,7 +745,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateCircle
 
         Examples
@@ -844,7 +820,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateEllipse
 
         Examples
@@ -961,7 +936,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateEquationCurve
 
         Examples
@@ -1068,7 +1042,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateHelix
 
         Examples
@@ -1157,12 +1130,10 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> aedtapp = Hfss()
         >>> edge_object = aedtapp.modeler.create_object_from_edge("my_edge")
@@ -1213,7 +1184,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateUserDefinedModel
 
         """
@@ -1439,7 +1409,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.Insert3DComponent
         """
         aedt_fh = open_file(comp_file, "rb")
@@ -1702,7 +1671,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.InsertNativeComponent
 
         Examples
@@ -1934,7 +1902,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oeditor.GetChildObject
         """
         if self._app._is_object_oriented_enabled():
@@ -2055,7 +2022,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.Insert3DComponent
         """
         self._initialize_multipart()
@@ -2144,7 +2110,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.Insert3DComponent
         """
         self._initialize_multipart()
@@ -2247,7 +2212,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.Insert3DComponent
 
         Examples
@@ -2327,7 +2291,6 @@ class Primitives3D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.Insert3DComponent
 
         """
@@ -2379,7 +2342,6 @@ class Primitives3D(Primitives, object):
         >>> dictionary_values = hfss.modeler.check_choke_values("C:/Example/Of/Path/myJsonFile.json")
         >>> mychoke = hfss.modeler.create_choke("C:/Example/Of/Path/myJsonFile_Corrected.json")
         """
-
         with open_file(json_file, "r") as read_file:
             values = json.load(read_file)
         self.logger.info("CHOKE INFO: " + str(values))
@@ -2914,7 +2876,6 @@ class Primitives3D(Primitives, object):
         >>> hfss = Hfss()
         >>> dictionary_values = hfss.modeler.check_choke_values("C:/Example/Of/Path/myJsonFile.json")
         """
-
         dictionary_model = {
             "Number of Windings": {"1": True, "2": False, "3": False, "4": False},
             "Layer": {"Simple": True, "Double": False, "Triple": False},

@@ -17,52 +17,43 @@ from pyaedt.application.Variables import decompose_variable_value
 from pyaedt.edb_core.components import Components
 from pyaedt.edb_core.dotnet.database import Database
 from pyaedt.edb_core.dotnet.layout import LayoutDotNet
-from pyaedt.edb_core.edb_data.control_file import ControlFile
-from pyaedt.edb_core.edb_data.control_file import convert_technology_file
+from pyaedt.edb_core.edb_data.control_file import ControlFile, convert_technology_file
 from pyaedt.edb_core.edb_data.design_options import EdbDesignOptions
 from pyaedt.edb_core.edb_data.edbvalue import EdbValue
 from pyaedt.edb_core.edb_data.hfss_simulation_setup_data import HfssSimulationSetup
-from pyaedt.edb_core.edb_data.ports import BundleWavePort
-from pyaedt.edb_core.edb_data.ports import CoaxPort
-from pyaedt.edb_core.edb_data.ports import ExcitationSources
-from pyaedt.edb_core.edb_data.ports import GapPort
-from pyaedt.edb_core.edb_data.ports import WavePort
+from pyaedt.edb_core.edb_data.ports import BundleWavePort, CoaxPort, ExcitationSources, GapPort, WavePort
 from pyaedt.edb_core.edb_data.simulation_configuration import SimulationConfiguration
-from pyaedt.edb_core.edb_data.siwave_simulation_setup_data import SiwaveDCSimulationSetup
-from pyaedt.edb_core.edb_data.siwave_simulation_setup_data import SiwaveSYZSimulationSetup
+from pyaedt.edb_core.edb_data.siwave_simulation_setup_data import SiwaveDCSimulationSetup, SiwaveSYZSimulationSetup
 from pyaedt.edb_core.edb_data.sources import SourceType
-from pyaedt.edb_core.edb_data.terminals import BundleTerminal
-from pyaedt.edb_core.edb_data.terminals import EdgeTerminal
-from pyaedt.edb_core.edb_data.terminals import PadstackInstanceTerminal
-from pyaedt.edb_core.edb_data.terminals import PinGroupTerminal
-from pyaedt.edb_core.edb_data.terminals import Terminal
+from pyaedt.edb_core.edb_data.terminals import (
+    BundleTerminal,
+    EdgeTerminal,
+    PadstackInstanceTerminal,
+    PinGroupTerminal,
+    Terminal,
+)
 from pyaedt.edb_core.edb_data.variables import Variable
-from pyaedt.edb_core.general import BoundaryType
-from pyaedt.edb_core.general import LayoutObjType
-from pyaedt.edb_core.general import Primitives
-from pyaedt.edb_core.general import TerminalType
-from pyaedt.edb_core.general import convert_py_list_to_net_list
+from pyaedt.edb_core.general import BoundaryType, LayoutObjType, Primitives, TerminalType, convert_py_list_to_net_list
 from pyaedt.edb_core.hfss import EdbHfss
 from pyaedt.edb_core.ipc2581.ipc2581 import Ipc2581
 from pyaedt.edb_core.layout import EdbLayout
 from pyaedt.edb_core.layout_validation import LayoutValidation
 from pyaedt.edb_core.materials import Materials
-from pyaedt.edb_core.net_class import EdbDifferentialPairs
-from pyaedt.edb_core.net_class import EdbExtendedNets
-from pyaedt.edb_core.net_class import EdbNetClasses
+from pyaedt.edb_core.net_class import EdbDifferentialPairs, EdbExtendedNets, EdbNetClasses
 from pyaedt.edb_core.nets import EdbNets
 from pyaedt.edb_core.padstack import EdbPadstacks
 from pyaedt.edb_core.siwave import EdbSiwave
 from pyaedt.edb_core.stackup import Stackup
-from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.constants import SolverType
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import get_string_version
-from pyaedt.generic.general_methods import inside_desktop
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import is_linux
-from pyaedt.generic.general_methods import is_windows
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.constants import AEDT_UNITS, SolverType
+from pyaedt.generic.general_methods import (
+    generate_unique_name,
+    get_string_version,
+    inside_desktop,
+    is_ironpython,
+    is_linux,
+    is_windows,
+    pyaedt_function_handler,
+)
 from pyaedt.generic.process import SiwaveSolve
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
@@ -296,6 +287,7 @@ class Edb(Database):
     @property
     def cell_names(self):
         """Cell name container.
+
         Returns
         -------
         list of str, cell names.
@@ -452,7 +444,7 @@ class Edb(Database):
         # self.logger.info("EDB Standalone %s", self.standalone)
         try:
             self.open(self.edbpath, self.isreadonly)
-        except Exception as e:
+        except Exception:
             self.logger.error("Builder is not Initialized.")
         if not self.active_db:
             self.logger.warning("Error Opening db")
@@ -772,7 +764,6 @@ class Edb(Database):
         >>> edbapp.materials.add_debye_material("My_Debye2", 5, 3, 0.02, 0.05, 1e5, 1e9)
         >>> edbapp.materials.add_djordjevicsarkar_material("MyDjord2", 3.3, 0.02, 3.3)
         """
-
         if not self._materials and self.active_db:
             self._materials = Materials(self)
         return self._materials
@@ -780,7 +771,6 @@ class Edb(Database):
     @property
     def core_padstack(self):  # pragma: no cover
         """Core padstack.
-
 
         .. deprecated:: 0.6.62
            Use new property :func:`padstacks` instead.
@@ -797,14 +787,12 @@ class Edb(Database):
         >>> ... p, "TOP", self.edbapp.padstacks.pad_type.RegularPad
         >>> ... )
         """
-
         warnings.warn("Use new property :func:`padstacks` instead.", DeprecationWarning)
         return self.padstacks
 
     @property
     def padstacks(self):
         """Core padstack.
-
 
         Returns
         -------
@@ -818,7 +806,6 @@ class Edb(Database):
         >>> ... p, "TOP", self.edbapp.padstacks.pad_type.RegularPad
         >>> ... )
         """
-
         if not self._padstack and self.active_db:
             self._padstack = EdbPadstacks(self)
         return self._padstack
@@ -929,7 +916,6 @@ class Edb(Database):
         >>> edbapp.nets.find_or_create_net("GND")
         >>> edbapp.nets.find_and_fix_disjoint_nets("GND", keep_only_main_net=True)
         """
-
         if not self._nets and self.active_db:
             self._nets = EdbNets(self)
         return self._nets
@@ -947,7 +933,6 @@ class Edb(Database):
         >>> edbapp = pyaedt.Edb("myproject.aedb")
         >>> edbapp.net_classes
         """
-
         if self.active_db:
             return EdbNetClasses(self)
 
@@ -964,7 +949,6 @@ class Edb(Database):
         >>> edbapp = pyaedt.Edb("myproject.aedb")
         >>> edbapp.extended_nets
         """
-
         if self.active_db:
             return EdbExtendedNets(self)
 
@@ -1185,7 +1169,7 @@ class Edb(Database):
                 os.rename(filename, filename + "_")
                 os.rename(filename + "_", filename)
                 return True
-            except OSError as e:
+            except OSError:
                 return False
         else:
             return False
@@ -1875,7 +1859,7 @@ class Edb(Database):
             db2.CopyCells(_dbCells)  # Copies cutout cell/design to db2 project
             if len(list(db2.CircuitCells)) > 0:
                 for net in list(list(db2.CircuitCells)[0].GetLayout().Nets):
-                    if not net.GetName() in included_nets_list:
+                    if net.GetName() not in included_nets_list:
                         net.Delete()
                 _success = db2.Save()
             for c in list(self.active_db.TopCircuitCells):
@@ -2306,7 +2290,6 @@ class Edb(Database):
 
         Parameters
         ----------
-
         netlist : List of net names.
             list[str]
 
@@ -2683,7 +2666,6 @@ class Edb(Database):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
 
         >>> edb = Edb(edbpath=r"C:\temp\myproject.aedb", edbversion="2021.2")
@@ -2723,7 +2705,6 @@ class Edb(Database):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
 
         >>> edb = Edb(edbpath=r"C:\temp\myproject.aedb", edbversion="2021.2")
@@ -2734,7 +2715,6 @@ class Edb(Database):
         "C:\\temp\\q3d_siwave.aedt"
 
         """
-
         siwave_s = SiwaveSolve(self.edbpath, aedt_installer_path=self.base_path)
         return siwave_s.export_3d_cad(
             "Q3D", path_to_output, net_list, num_cores=num_cores, aedt_file_name=aedt_file_name, hidden=hidden
@@ -2766,7 +2746,6 @@ class Edb(Database):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
 
         >>> edb = Edb(edbpath=r"C:\temp\myproject.aedb", edbversion="2021.2")
@@ -2932,7 +2911,6 @@ class Edb(Database):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edb_app = Edb()
         >>> boolean_1, ant_length = edb_app.add_project_variable("my_local_variable", "1cm")
@@ -2969,7 +2947,6 @@ class Edb(Database):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edb_app = Edb()
         >>> boolean_1, ant_length = edb_app.add_design_variable("my_local_variable", "1cm")
@@ -3008,7 +2985,6 @@ class Edb(Database):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edb_app = Edb()
         >>> boolean, ant_length = edb_app.add_design_variable("ant_length", "1cm")
@@ -3052,7 +3028,6 @@ class Edb(Database):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> from pyaedt.edb_core.edb_data.simulation_configuration import SimulationConfiguration
         >>> config_file = path_configuration_file
@@ -3127,7 +3102,7 @@ class Edb(Database):
                 if simulation_setup.include_only_selected_nets:
                     included_nets = simulation_setup.signal_nets + simulation_setup.power_nets
                     nets_to_remove = [
-                        net.name for net in list(self.nets.nets.values()) if not net.name in included_nets
+                        net.name for net in list(self.nets.nets.values()) if net.name not in included_nets
                     ]
                     self.nets.delete(nets_to_remove)
             self.logger.info("Deleting existing ports.")
@@ -3580,6 +3555,7 @@ class Edb(Database):
         """Return connected port list from clipped multizone layout.
 
         Parameters
+        ----------
             terminal_info_dict : dict[str][str]
                 dictionary terminals with edb name as key and created ports name on clipped signal nets.
                 Dictionary is generated by the command cutout_multizone_layout:

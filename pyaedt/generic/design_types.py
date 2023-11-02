@@ -341,7 +341,6 @@ def Icepak(
 
     Examples
     --------
-
     Create an instance of Icepak and connect to an existing Icepak
     design or create a new Icepak design if one does not exist.
 
@@ -714,7 +713,8 @@ def Maxwell2d(
 
     Returns
     -------
-    :class:`pyaedt.maxwell.Maxwell2d`"""
+    :class:`pyaedt.maxwell.Maxwell2d`
+    """
     from pyaedt.maxwell import Maxwell2d as app
 
     return app(
@@ -896,7 +896,8 @@ def MaxwellCircuit(
 
     Returns
     -------
-    :class:`pyaedt.maxwellcircuit.MaxwellCircuit`"""
+    :class:`pyaedt.maxwellcircuit.MaxwellCircuit`
+    """
     from pyaedt.maxwellcircuit import MaxwellCircuit as app
 
     return app(
@@ -1100,7 +1101,8 @@ def Q2d(
 
     Returns
     -------
-    :class:`pyaedt.q3d.Q2d`"""
+    :class:`pyaedt.q3d.Q2d`
+    """
     from pyaedt.q3d import Q2d as app
 
     return app(
@@ -1188,7 +1190,8 @@ def Q3d(
 
     Returns
     -------
-    :class:`pyaedt.q3d.Q3d`"""
+    :class:`pyaedt.q3d.Q3d`
+    """
     from pyaedt.q3d import Q3d as app
 
     return app(
@@ -1275,7 +1278,8 @@ def Rmxprt(
 
     Returns
     -------
-    :class:`pyaedt.rmxprt.Rmxprt`"""
+    :class:`pyaedt.rmxprt.Rmxprt`
+    """
     from pyaedt.rmxprt import Rmxprt as app
 
     return app(
@@ -1360,7 +1364,8 @@ def TwinBuilder(
 
     Returns
     -------
-    :class:`pyaedt.twinbuilder.TwinBuilder`"""
+    :class:`pyaedt.twinbuilder.TwinBuilder`
+    """
     from pyaedt.twinbuilder import TwinBuilder as app
 
     return app(
@@ -1445,7 +1450,8 @@ def Simplorer(
 
     Returns
     -------
-    :class:`pyaedt.twinbuilder.TwinBuilder`"""
+    :class:`pyaedt.twinbuilder.TwinBuilder`
+    """
     from pyaedt.twinbuilder import TwinBuilder as app
 
     return app(
@@ -1475,6 +1481,7 @@ def Desktop(
     aedt_process_id=None,
 ):
     """Desktop Class.
+
     Parameters
     ----------
     specified_version : str, int, float, optional

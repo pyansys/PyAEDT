@@ -8,9 +8,7 @@ import warnings
 from pyaedt.edb_core.edb_data.nets_data import EDBNetsData
 from pyaedt.edb_core.general import convert_py_list_to_net_list
 from pyaedt.generic.constants import CSS4_COLORS
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import generate_unique_name, is_ironpython, pyaedt_function_handler
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
 
@@ -247,6 +245,7 @@ class EdbNets(object):
             Whether to generate extended signal nets. The default is ``True``.
         include_power : str, optional
             Whether to generate extended power nets. The default is ``True``.
+
         Returns
         -------
         list
@@ -402,8 +401,7 @@ class EdbNets(object):
         return xr, yr
 
     def _get_points_for_plot(self, my_net_points):
-        """
-        Get the points to be plot
+        """Get the points to be plot
         """
         # fmt: off
         x = []
@@ -459,6 +457,7 @@ class EdbNets(object):
             If ``True``  the components placed on bottom layer are plotted.
             If ``False`` the components are not plotted. (default)
             If nets and/or layers is specified, only the components belonging to the specified nets/layers are plotted.
+
         Returns
         -------
         list, str
@@ -1002,7 +1001,6 @@ class EdbNets(object):
 
         Examples
         --------
-
         >>> deleted_nets = edb_core.nets.delete(["Net1","Net2"])
         """
         warnings.warn("Use :func:`delete` method instead.", DeprecationWarning)
@@ -1024,7 +1022,6 @@ class EdbNets(object):
 
         Examples
         --------
-
         >>> deleted_nets = edb_core.nets.delete(["Net1","Net2"])
         """
         if isinstance(netlist, str):
@@ -1160,6 +1157,7 @@ class EdbNets(object):
         order_by_area : bool, optional
             Whether if the naming order has to be by number of objects (fastest) or area (slowest but more accurate).
             Default is ``False``.
+
         Returns
         -------
         List
@@ -1167,7 +1165,6 @@ class EdbNets(object):
 
         Examples
         --------
-
         >>> renamed_nets = edb_core.nets.find_and_fix_disjoint_nets(["GND","Net2"])
         """
         warnings.warn("Use new function :func:`edb.layout_validation.disjoint_nets` instead.", DeprecationWarning)
@@ -1185,6 +1182,7 @@ class EdbNets(object):
             net name of list of net name.
 
         Returns
+        -------
             list of merged polygons.
 
         -------

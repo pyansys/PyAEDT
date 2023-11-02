@@ -23,8 +23,8 @@ class AnalysisTwinBuilder(Analysis):
 
         References
         ----------
-
-        >>> oModule.GetAllSolutionSetups"""
+        >>> oModule.GetAllSolutionSetups
+        """
         setups = list(self.oanalysis.GetAllSolutionSetups())
         return setups
 
@@ -34,8 +34,8 @@ class AnalysisTwinBuilder(Analysis):
 
         References
         ----------
-
-        >>> oModule.GetAllSolutionSetups"""
+        >>> oModule.GetAllSolutionSetups
+        """
         return list(self.oanalysis.GetAllSolutionSetups())
 
     def __init__(

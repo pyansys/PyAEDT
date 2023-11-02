@@ -4,8 +4,8 @@ import os
 
 from pyaedt.application.Variables import decompose_variable_value
 from pyaedt.generic.DataHandlers import json_to_dict
-from pyaedt.generic.LoadAEDTFile import load_entire_aedt_file
 from pyaedt.generic.general_methods import generate_unique_name
+from pyaedt.generic.LoadAEDTFile import load_entire_aedt_file
 
 
 class Cable:

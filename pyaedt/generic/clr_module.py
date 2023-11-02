@@ -58,13 +58,8 @@ try:  # work around a number formatting bug in the EDB API for non-English local
     from System.Globalization import CultureInfo as _CultureInfo
 
     _CultureInfo.DefaultThreadCurrentCulture = _CultureInfo.InvariantCulture
-    from System import Array
-    from System import Convert
-    from System import Double
-    from System import String
-    from System import Tuple
-    from System.Collections.Generic import Dictionary
-    from System.Collections.Generic import List
+    from System import Array, Convert, Double, String, Tuple
+    from System.Collections.Generic import Dictionary, List
 
     edb_initialized = True
 

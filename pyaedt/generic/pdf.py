@@ -1,17 +1,13 @@
 import os
 import warnings
 
-from pyaedt import __version__
-from pyaedt import pyaedt_path
+from pyaedt import __version__, pyaedt_path
 from pyaedt.edb_core.general import convert_py_list_to_net_list
-from pyaedt.generic.clr_module import List
-from pyaedt.generic.clr_module import _clr
-from pyaedt.generic.clr_module import is_clr
+from pyaedt.generic.clr_module import List, _clr, is_clr
 
 try:
     _clr.AddReference("AnsysReport")
-    from AnsysReport import CreatePdfReport
-    from AnsysReport import ReportSpec
+    from AnsysReport import CreatePdfReport, ReportSpec
 except ImportError:
     msg = "pythonnet or dotnetcore not installed. Pyaedt will work only in client mode."
     warnings.warn(msg)

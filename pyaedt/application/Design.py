@@ -1,5 +1,4 @@
-"""
-This module contains these classes: ``Design``.
+"""This module contains these classes: ``Design``.
 
 This module provides all functionalities for basic project information and objects.
 These classes are inherited in the main tool class.
@@ -22,39 +21,36 @@ import time
 import warnings
 
 from pyaedt.aedt_logger import pyaedt_logger
-from pyaedt.application.Variables import DataSet
-from pyaedt.application.Variables import VariableManager
-from pyaedt.application.Variables import decompose_variable_value
 from pyaedt.application.aedt_objects import AedtObjects
-from pyaedt.application.design_solutions import DesignSolution
-from pyaedt.application.design_solutions import HFSSDesignSolution
-from pyaedt.application.design_solutions import IcepakDesignSolution
-from pyaedt.application.design_solutions import Maxwell2DDesignSolution
-from pyaedt.application.design_solutions import RmXprtDesignSolution
-from pyaedt.application.design_solutions import model_names
-from pyaedt.application.design_solutions import solutions_defaults
-from pyaedt.desktop import _init_desktop_from_design
-from pyaedt.desktop import exception_to_desktop
-from pyaedt.desktop import get_version_env_variable
+from pyaedt.application.design_solutions import (
+    DesignSolution,
+    HFSSDesignSolution,
+    IcepakDesignSolution,
+    Maxwell2DDesignSolution,
+    RmXprtDesignSolution,
+    model_names,
+    solutions_defaults,
+)
+from pyaedt.application.Variables import DataSet, VariableManager, decompose_variable_value
+from pyaedt.desktop import _init_desktop_from_design, exception_to_desktop, get_version_env_variable
+from pyaedt.generic.constants import AEDT_UNITS, unit_system
 from pyaedt.generic.DataHandlers import variation_string_to_dict
+from pyaedt.generic.general_methods import (
+    check_and_download_file,
+    generate_unique_name,
+    is_ironpython,
+    is_project_locked,
+    is_windows,
+    open_file,
+    pyaedt_function_handler,
+    read_csv,
+    read_tab,
+    read_xlsx,
+    settings,
+    write_csv,
+)
 from pyaedt.generic.LoadAEDTFile import load_entire_aedt_file
-from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.constants import unit_system
-from pyaedt.generic.general_methods import check_and_download_file
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import is_project_locked
-from pyaedt.generic.general_methods import is_windows
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.generic.general_methods import read_csv
-from pyaedt.generic.general_methods import read_tab
-from pyaedt.generic.general_methods import read_xlsx
-from pyaedt.generic.general_methods import settings
-from pyaedt.generic.general_methods import write_csv
-from pyaedt.modules.Boundary import BoundaryObject
-from pyaedt.modules.Boundary import MaxwellParameters
-from pyaedt.modules.Boundary import NetworkObject
+from pyaedt.modules.Boundary import BoundaryObject, MaxwellParameters, NetworkObject
 
 if sys.version_info.major > 2:
     import base64
@@ -518,7 +514,6 @@ class Design(AedtObjects):
            Dictionary of the design properties.
 
         """
-
         try:
             if model_names[self._design_type] in self.project_properties["AnsoftProject"]:
                 designs = self.project_properties["AnsoftProject"][model_names[self._design_type]]
@@ -543,7 +538,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.GetVersion()
         """
         return get_version_env_variable(self.desktop_class.aedt_version_id)
@@ -563,7 +557,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.GetName
         >>> oDesign.RenameDesignInstance
 
@@ -610,7 +603,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.GetTopDesignList()
         """
         deslist = list(self.oproject.GetTopDesignList())
@@ -649,7 +641,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.GetName
         """
         if self.oproject:
@@ -671,7 +662,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.GetProjectList
         """
         return list(self.odesktop.GetProjectList())
@@ -687,7 +677,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.GetPath
         """
         if self.oproject:
@@ -759,7 +748,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.GetSolutionType
         >>> oDesign.SetSolutionType
         """
@@ -805,7 +793,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.GetPersonalLibDirectory
         """
         return self.desktop_class.personallib
@@ -821,7 +808,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.GetUserLibDirectory
         """
         return self.desktop_class.userlib
@@ -837,7 +823,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.GetLibraryDirectory
         """
         return self.desktop_class.syslib
@@ -893,7 +878,6 @@ class Design(AedtObjects):
     @property
     def toolkit_directory(self):
         """Path to the toolkit directory.
-
 
         Returns
         -------
@@ -1019,7 +1003,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.SetActiveDesign
         >>> oProject.InsertDesign
         """
@@ -1057,7 +1040,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.GetActiveProject
         >>> oDesktop.SetActiveProject
         >>> oDesktop.NewProject
@@ -1298,10 +1280,8 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ExportProfile
         """
-
         if not file_path:
             file_path = os.path.join(self.working_directory, generate_unique_name("Profile") + ".prof")
         if not variation_string:
@@ -1539,7 +1519,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.SetRegistryString
         """
         try:
@@ -1558,6 +1537,7 @@ class Design(AedtObjects):
             Full name of the AEDT registry key.
         key_value : str, int
             Value for the AEDT registry key.
+
         Returns
         -------
         bool
@@ -1565,7 +1545,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.SetRegistryString
         >>> oDesktop.SetRegistryInt
         """
@@ -1605,7 +1584,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.GetRegistryString
         """
         return self.odesktop.GetRegistryString(key_full_name)
@@ -1626,7 +1604,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.GetRegistryInt
         """
         return self.odesktop.GetRegistryInt(key_full_name)
@@ -1647,7 +1624,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.GetRegistryString
         """
         limit = 100
@@ -1694,7 +1670,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.SetRegistryString
         """
         try:
@@ -1725,7 +1700,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.SetRegistryFromFile
         """
         try:
@@ -1847,7 +1821,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
         """
         arg = ["NAME:AllTabs"]
@@ -1880,7 +1853,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
         """
         arg = ["NAME:AllTabs"]
@@ -1911,7 +1883,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
         """
         arg = ["NAME:AllTabs"]
@@ -1942,7 +1913,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
         """
         arg = ["NAME:AllTabs"]
@@ -1969,7 +1939,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
         """
         arg = ["NAME:AllTabs"]
@@ -1996,7 +1965,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
         """
         arg = ["NAME:AllTabs"]
@@ -2023,7 +1991,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
         """
         arg = ["NAME:AllTabs"]
@@ -2050,7 +2017,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
         """
         arg = ["NAME:AllTabs"]
@@ -2080,7 +2046,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
 
         Examples
@@ -2091,7 +2056,6 @@ class Design(AedtObjects):
         >>> hfss.hidden_variable("my_hidden_leaf", True)
 
         """
-
         if not isinstance(variable_name, list):
             self.variable_manager[variable_name].hidden = value
         else:
@@ -2136,7 +2100,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
 
         Examples
@@ -2242,9 +2205,7 @@ class Design(AedtObjects):
 
     @pyaedt_function_handler()
     def _get_ds_data(self, name, data):
-        """
-
-        Parameters
+        """Parameters
         ----------
         name :
 
@@ -2334,7 +2295,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.EnableAutoSave
         """
         self.odesktop.EnableAutoSave(False)
@@ -2351,7 +2311,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.EnableAutoSave
         """
         self.odesktop.EnableAutoSave(True)
@@ -2455,7 +2414,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.OpenProject
         """
         proj = self.odesktop.OpenProject(project_file)
@@ -2497,7 +2455,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.AddDataset
         >>> oDesign.AddDataset
         """
@@ -2527,7 +2484,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.AddDataset
         >>> oDesign.AddDataset
         """
@@ -2579,7 +2535,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.AddDataset
         """
         if dsname[0] == "$":
@@ -2620,7 +2575,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.AddDataset
         >>> oDesign.AddDataset
         """
@@ -2676,7 +2630,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.AddDataset
         """
         index_of_dot = filename.rfind(".")
@@ -2794,7 +2747,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.AddDataset
         >>> oDesign.AddDataset
         """
@@ -2885,7 +2837,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.SetDesignSettings
         """
         if lossy_dielectric:
@@ -2911,7 +2862,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.SetDesignSettings
         """
         if material_override:
@@ -2942,7 +2892,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.SetDesignSettings
         """
         self.logger.info("Changing the validation design settings")
@@ -3012,7 +2961,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.SaveAs
         """
         self.logger.info("Copy AEDT Project ")
@@ -3036,7 +2984,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.NewProject
         """
         self.logger.info("Creating new Project ")
@@ -3066,7 +3013,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.CloseProject
         """
         legacy_name = self.project_name
@@ -3133,7 +3079,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.DeleteDesign
         """
         if not name:
@@ -3173,7 +3118,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.ChangeProperty
         >>> oDesign.ChangeProperty
         """
@@ -3190,7 +3134,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.ChangeProperty
         >>> oDesign.ChangeProperty
         """
@@ -3232,7 +3175,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.InsertDesign
         """
         self._close_edb()
@@ -3306,7 +3248,7 @@ class Design(AedtObjects):
         """Generate an unique project name.
 
         Returns
-        --------
+        -------
         str
             Unique project name in the form ``"Project_<unique_name>.aedt".
 
@@ -3335,7 +3277,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.RenameDesignInstance
         """
         self._odesign.RenameDesignInstance(self.design_name, new_name)
@@ -3371,7 +3312,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.CopyDesign
         >>> oProject.Paste
         """
@@ -3427,11 +3367,9 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.CopyDesign
         >>> oProject.Paste
         """
-
         active_design = self.design_name
         design_list = self.design_list
         self._oproject.CopyDesign(active_design)
@@ -3500,7 +3438,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.GetProperties
         >>> oDesign.GetProperties
         >>> oProject.GetVariableValue
@@ -3559,7 +3496,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.Save
         >>> oProject.SaveAs
         """
@@ -3609,7 +3545,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.Save
         >>> oProject.SaveProjectArchive
         """
@@ -3640,7 +3575,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.DeleteProject
         """
         assert self.project_name != project_name, "You cannot delete the active project."
@@ -3658,7 +3592,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oProject.SetActiveDesign
         """
         self._close_edb()
@@ -3682,7 +3615,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.ValidateDesign
         """
         if logfile:
@@ -3709,13 +3641,11 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.GetNominalVariation
         >>> oDesign.GetVariationVariableValue
 
         Examples
         --------
-
         >>> M3D = Maxwell3d()
         >>> M3D["p1"] = "10mm"
         >>> M3D["p2"] = "20mm"
@@ -3840,7 +3770,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.GetNominalVariation
         """
         nominal = self._odesign.GetNominalVariation()
@@ -3919,8 +3848,8 @@ class Design(AedtObjects):
 
         Returns
         -------
-
-            Application-created object."""
+            Application-created object.
+        """
         app = toolkit_object(self, **kwargs)
         if draw:
             app.init_model()
@@ -3953,7 +3882,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesktop.SetTempDirectory()
         """
         self.odesktop.SetTempDirectory(temp_dir_path)
@@ -3970,7 +3898,6 @@ class Design(AedtObjects):
 
         References
         ----------
-
         >>> oDesign.GetChildObject("Design Settings")
         """
         try:

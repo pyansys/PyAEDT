@@ -1,14 +1,16 @@
 from pyaedt.application.Analysis import Analysis
 from pyaedt.generic.general_methods import pyaedt_function_handler
 from pyaedt.modeler.circuits.object3dcircuit import CircuitComponent
-from pyaedt.modules.Boundary import CurrentSinSource
-from pyaedt.modules.Boundary import Excitations
-from pyaedt.modules.Boundary import PowerIQSource
-from pyaedt.modules.Boundary import PowerSinSource
-from pyaedt.modules.Boundary import Sources
-from pyaedt.modules.Boundary import VoltageDCSource
-from pyaedt.modules.Boundary import VoltageFrequencyDependentSource
-from pyaedt.modules.Boundary import VoltageSinSource
+from pyaedt.modules.Boundary import (
+    CurrentSinSource,
+    Excitations,
+    PowerIQSource,
+    PowerSinSource,
+    Sources,
+    VoltageDCSource,
+    VoltageFrequencyDependentSource,
+    VoltageSinSource,
+)
 from pyaedt.modules.SetupTemplates import SetupKeys
 from pyaedt.modules.SolveSetup import SetupCircuit
 
@@ -135,8 +137,8 @@ class FieldAnalysisCircuit(Analysis):
 
         References
         ----------
-
-        >>> oModule.GetAllSolutionSetups"""
+        >>> oModule.GetAllSolutionSetups
+        """
         return self.existing_analysis_setups
 
     @property
@@ -145,8 +147,8 @@ class FieldAnalysisCircuit(Analysis):
 
         References
         ----------
-
-        >>> oModule.GetAllSolutionSetups"""
+        >>> oModule.GetAllSolutionSetups
+        """
         setups = self.oanalysis.GetAllSolutionSetups()
         return setups
 
@@ -173,8 +175,8 @@ class FieldAnalysisCircuit(Analysis):
 
         References
         ----------
-
-        >>> oModule.GetAllSolutionSetups"""
+        >>> oModule.GetAllSolutionSetups
+        """
         return self.oanalysis.GetAllSolutionSetups()
 
     @property
@@ -188,7 +190,6 @@ class FieldAnalysisCircuit(Analysis):
 
         References
         ----------
-
         >>> oDesign.GetChildObject("Excitations").GetChildNames()
         """
         return list(self.odesign.GetChildObject("Excitations").GetChildNames())
@@ -260,7 +261,6 @@ class FieldAnalysisCircuit(Analysis):
 
         References
         ----------
-
         >>> oModule.GetAllPorts
         """
         ports = [p.replace("IPort@", "").split(";")[0] for p in self.modeler.oeditor.GetAllPorts() if "IPort@" in p]
@@ -364,7 +364,6 @@ class FieldAnalysisCircuit(Analysis):
 
         References
         ----------
-
         >>> oEditor.GetAllPorts
         """
         if excitation_names == None:
@@ -403,7 +402,6 @@ class FieldAnalysisCircuit(Analysis):
 
         References
         ----------
-
         >>> oEditor.GetAllPorts
         """
         if trlist == None:
@@ -443,7 +441,6 @@ class FieldAnalysisCircuit(Analysis):
 
         References
         ----------
-
         >>> oEditor.GetAllPorts
         """
         next = []
@@ -486,7 +483,6 @@ class FieldAnalysisCircuit(Analysis):
 
         References
         ----------
-
         >>> oEditor.GetAllPorts
         """
         if trlist == None:
@@ -550,7 +546,6 @@ class FieldAnalysisCircuit(Analysis):
 
         References
         ----------
-
         >>> oModule.AddLinearNetworkAnalysis
         >>> oModule.AddDCAnalysis
         >>> oModule.AddTransient
@@ -561,7 +556,6 @@ class FieldAnalysisCircuit(Analysis):
 
         Examples
         --------
-
         >>> from pyaedt import Circuit
         >>> app = Circuit()
         >>> app.create_setup(setupname="Setup1", setuptype=app.SETUPS.NexximLNA, Data="LINC 0GHz 4GHz 501")

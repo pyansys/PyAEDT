@@ -16,8 +16,7 @@ except ImportError:
 
 
 class Parser:
-    """
-    Parser class that loads an HDM-format export file from HFSS SBR+, interprets
+    """Parser class that loads an HDM-format export file from HFSS SBR+, interprets
     its header and its binary content. Except for the header, the binary content is
     not parsed until an explicit call to parse_message.
     Usage:
@@ -26,7 +25,7 @@ class Parser:
     """
 
     def __init__(self, filename):
-        """Initializes parser object with the interpreted header and a pointer to the binary data"""
+        """Initializes parser object with the interpreted header and a pointer to the binary data."""
         self.parser_types = {}
         self.parser_flags = {}
         self.parser_enums = {}
@@ -42,11 +41,11 @@ class Parser:
         self.binarycontent = binarycontent
 
     def parse_message(self):
-        """Parses the binary content of the HDM file"""
+        """Parses the binary content of the HDM file."""
         return self._parse(self.message["type"])
 
     def _parse(self, type_name):
-        """Generic parser method, dispatches to specialized ones"""
+        """Generic parser method, dispatches to specialized ones."""
         if self.parser_types[type_name]["type"] == "object":
             return self._parse_object(type_name)
         elif self.parser_types[type_name]["type"] == "internal":
@@ -55,8 +54,7 @@ class Parser:
             return self._parse_list(**self.parser_types[type_name])
 
     def _parse_simple_base_type(self, format="i", size=4, how_many=1, final_type=None):
-        """
-        Parser for int, float, complex, enum or flag.
+        """Parser for int, float, complex, enum or flag.
         Can also parse a list of base types and convert them to another type if possible.
         """
         end = self.idx + how_many * size
@@ -85,8 +83,7 @@ class Parser:
         return res
 
     def _parse_list(self, type=None, base=None, size=1):
-        """
-        Parser for vector or list. 'vector's are to be interpreted in the linear algebra sense,
+        """Parser for vector or list. 'vector's are to be interpreted in the linear algebra sense,
         and converted to numpy.array. 'list's are Python lists. Only simple base types can be
         interpreted as a numpy array
         """
@@ -163,7 +160,7 @@ class Parser:
         return self.objects[name](namesdict)
 
     def _read_header(self):
-        """Parses the header and prepares all data structures to interpret the binary content"""
+        """Parses the header and prepares all data structures to interpret the binary content."""
 
         def build_type(self, key, val):
             type_i = val["type"]

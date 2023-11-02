@@ -1,8 +1,7 @@
 import os
 
 from pyaedt.application.Analysis import Analysis
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import is_ironpython, pyaedt_function_handler
 from pyaedt.modules.SetupTemplates import SetupKeys
 from pyaedt.modules.SolveSetup import Setup3DLayout
 
@@ -133,7 +132,6 @@ class FieldAnalysis3DLayout(Analysis):
 
         References
         ----------
-
         >>> oModule.GetExcitations
         """
         return list(self.oboundary.GetAllPortsList())
@@ -207,7 +205,6 @@ class FieldAnalysis3DLayout(Analysis):
 
         References
         ----------
-
         >>> oModule.ExportMeshStats
         """
         if not mesh_path:
@@ -236,7 +233,6 @@ class FieldAnalysis3DLayout(Analysis):
 
         References
         ----------
-
         >>> oModule.GetAllPorts
         """
         if not excitation_names:
@@ -272,7 +268,6 @@ class FieldAnalysis3DLayout(Analysis):
 
         References
         ----------
-
         >>> oModule.GetAllPorts
         """
         spar = []
@@ -306,7 +301,6 @@ class FieldAnalysis3DLayout(Analysis):
 
         References
         ----------
-
         >>> oModule.GetAllPorts
         """
         next = []
@@ -347,7 +341,6 @@ class FieldAnalysis3DLayout(Analysis):
 
         References
         ----------
-
         >>> oModule.GetAllPorts
         """
         fext = []
@@ -381,8 +374,8 @@ class FieldAnalysis3DLayout(Analysis):
 
         References
         ----------
-
-        >>> oModule.GetAllPorts"""
+        >>> oModule.GetAllPorts
+        """
         return self.oexcitation.GetAllPortsList()
 
     @property
@@ -396,7 +389,6 @@ class FieldAnalysis3DLayout(Analysis):
 
         References
         ----------
-
         >>> oModule.GetSetups
         """
         setups = self.oanalysis.GetSetups()
@@ -426,12 +418,10 @@ class FieldAnalysis3DLayout(Analysis):
 
         References
         ----------
-
         >>> oModule.Add
 
         Examples
         --------
-
         >>> from pyaedt import Hfss3dLayout
         >>> app = Hfss3dLayout()
         >>> app.create_setup(setupname="Setup1", MeshSizeFactor=2,SingleFrequencyDataList__AdaptiveFrequency="5GHZ")
@@ -501,7 +491,6 @@ class FieldAnalysis3DLayout(Analysis):
 
         References
         ----------
-
         >>> oModule.Delete
 
         Examples

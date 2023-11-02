@@ -92,7 +92,6 @@ def _exception(ex_info, func, args, kwargs, message="Type Error"):
     -------
 
     """
-
     tb_data = ex_info[2]
     tb_trace = traceback.format_tb(tb_data)
     _write_mes("{} on {}".format(message.upper(), func.__name__))
@@ -665,9 +664,7 @@ def generate_unique_project_name(rootname=None, folder_name=None, project_name=N
 
 
 def _retry_ntimes(n, function, *args, **kwargs):
-    """
-
-    Parameters
+    """Parameters
     ----------
     n :
 
@@ -807,7 +804,6 @@ def read_csv(filename, encoding="utf-8"):
     list
 
     """
-
     lines = []
     with codecs.open(filename, "rb", encoding) as csvfile:
         reader = csv.reader(csvfile, delimiter=",")
@@ -948,6 +944,7 @@ def recursive_glob(startpath, filepattern):
     """Get a list of files matching a pattern, searching recursively from a start path.
 
     Keyword Arguments:
+    -----------------
     startpath -- starting path (directory)
     filepattern -- fnmatch-style filename pattern
     """
@@ -1257,7 +1254,6 @@ def com_active_sessions(version=None, student_version=False, non_graphical=False
     List
         List of AEDT process IDs.
     """
-
     all_sessions = active_sessions(version, student_version, non_graphical)
 
     return_list = []
@@ -1694,13 +1690,12 @@ def _to_boolean(val):
     bool
 
     """
-
     if val is True or val is False:
         return val
 
     false_items = ["false", "f", "no", "n", "none", "0", "[]", "{}", ""]
 
-    return not str(val).strip().lower() in false_items
+    return str(val).strip().lower() not in false_items
 
 
 @pyaedt_function_handler()

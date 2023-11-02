@@ -5,23 +5,17 @@ import os
 import sys
 import time
 
-from pyaedt import get_pyaedt_app
-from pyaedt import is_ironpython
-from pyaedt import pyaedt_function_handler
-from pyaedt import settings
-from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.constants import db10
-from pyaedt.generic.constants import db20
-from pyaedt.generic.constants import unit_converter
-from pyaedt.generic.general_methods import check_and_download_folder
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import write_csv
-from pyaedt.generic.plot import get_structured_mesh
-from pyaedt.generic.plot import is_notebook
-from pyaedt.generic.plot import plot_2d_chart
-from pyaedt.generic.plot import plot_3d_chart
-from pyaedt.generic.plot import plot_contour
-from pyaedt.generic.plot import plot_polar_chart
+from pyaedt import get_pyaedt_app, is_ironpython, pyaedt_function_handler, settings
+from pyaedt.generic.constants import AEDT_UNITS, db10, db20, unit_converter
+from pyaedt.generic.general_methods import check_and_download_folder, open_file, write_csv
+from pyaedt.generic.plot import (
+    get_structured_mesh,
+    is_notebook,
+    plot_2d_chart,
+    plot_3d_chart,
+    plot_contour,
+    plot_polar_chart,
+)
 from pyaedt.modeler.cad.elements3d import FacePrimitive
 
 np = None
@@ -76,8 +70,7 @@ class SolutionData(object):
 
     @property
     def enable_pandas_output(self):
-        """
-        Set/Get a flag to use Pandas to export dict and lists. This applies to Solution data output.
+        """Set/Get a flag to use Pandas to export dict and lists. This applies to Solution data output.
         If ``True`` the property or method will return a pandas object in CPython environment.
         Default is ``False``.
 
@@ -203,7 +196,6 @@ class SolutionData(object):
         dict
             Updated sweeps.
         """
-
         names = list(self.nominal_variation.GetSweepNames())
         for data in self._original_data:
             for v in data.GetDesignVariableNames():
@@ -1271,8 +1263,7 @@ class FfdSolutionData(object):
 
     @pyaedt_function_handler()
     def array_center_and_edge(self):
-        """
-        Find the center and edge of our array, assuming all ports in far field
+        """Find the center and edge of our array, assuming all ports in far field
         mapping file are active ports.
 
         Returns
@@ -1380,7 +1371,6 @@ class FfdSolutionData(object):
         float
             Weight to applied to specific index of array.
         """
-
         a = int(a)
         b = int(b)
         if taper.lower() == "flat":  # Flat
@@ -3063,7 +3053,6 @@ class FieldPlot:
 
         References
         ----------
-
         >>> oModule.SetPlotFolderSettings
         """
         args = ["NAME:FieldsPlotSettings", "Real Time mode:=", True]
@@ -3126,7 +3115,6 @@ class FieldPlot:
 
         References
         ----------
-
         >>> oModule.ExportPlotImageToFile
         >>> oModule.ExportModelImageToFile
         >>> oModule.ExportPlotImageWithViewToFile
@@ -3178,7 +3166,6 @@ class FieldPlot:
 
         References
         ----------
-
         >>> oModule.UpdateAllFieldsPlots
         >>> oModule.UpdateQuantityFieldsPlots
         >>> oModule.ExportFieldPlot

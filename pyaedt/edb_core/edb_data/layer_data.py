@@ -460,6 +460,7 @@ class StackupLayerEdbClass(LayerEdbClass):
         apply_on_surface : str, optional.
             Where to assign roughness model. The default is ``"all"``. Options are ``"top"``, ``"bottom"``,
              ``"side"``.
+
         Returns
         -------
 

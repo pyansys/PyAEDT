@@ -1,20 +1,14 @@
-"""
-This module contains the ``EdbHfss`` class.
+"""This module contains the ``EdbHfss`` class.
 """
 import math
 
 from pyaedt.edb_core.edb_data.hfss_extent_info import HfssExtentInfo
-from pyaedt.edb_core.edb_data.ports import BundleWavePort
-from pyaedt.edb_core.edb_data.ports import WavePort
+from pyaedt.edb_core.edb_data.ports import BundleWavePort, WavePort
 from pyaedt.edb_core.edb_data.primitives_data import EDBPrimitives
 from pyaedt.edb_core.edb_data.simulation_configuration import SimulationConfiguration
-from pyaedt.edb_core.general import convert_py_list_to_net_list
-from pyaedt.edb_core.general import convert_pytuple_to_nettuple
-from pyaedt.generic.constants import RadiationBoxType
-from pyaedt.generic.constants import SweepType
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.edb_core.general import convert_py_list_to_net_list, convert_pytuple_to_nettuple
+from pyaedt.generic.constants import RadiationBoxType, SweepType
+from pyaedt.generic.general_methods import generate_unique_name, is_ironpython, pyaedt_function_handler
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
 
@@ -101,6 +95,7 @@ class EdbHfss(object):
             default name is assigned.
         is_ref : bool, optional
             Whether it is a reference terminal. The default is ``False``.
+
         Returns
         -------
         Edb.Cell.Terminal.EdgeTerminal
@@ -126,6 +121,7 @@ class EdbHfss(object):
         """Retrieve the trace width for traces with ports.
 
         Returns
+        -------
         -------<
         dict
             Dictionary of trace width data.
@@ -189,7 +185,6 @@ class EdbHfss(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> pins =edbapp.components.get_pin_from_component("U2A5")
@@ -221,13 +216,11 @@ class EdbHfss(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> pins =edbapp.components.get_pin_from_component("U2A5")
         >>> edbapp.hfss.create_current_source_on_pin(pins[0], pins[1],50,"source_name")
         """
-
         return self._pedb.siwave.create_current_source_on_pin(pos_pin, neg_pin, current_value, phase_value, source_name)
 
     @pyaedt_function_handler()
@@ -252,7 +245,6 @@ class EdbHfss(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> pins =edbapp.components.get_pin_from_component("U2A5")
@@ -347,7 +339,6 @@ class EdbHfss(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edb.hfss.create_voltage_source_on_net("U2A5", "V1P5_S3", "U2A5", "GND", 3.3, 0, "source_name")
@@ -400,7 +391,6 @@ class EdbHfss(object):
 
         Examples
         --------
-
         >>> from pyaedt import Edb
         >>> edbapp = Edb("myaedbfolder", "project name", "release version")
         >>> edb.hfss.create_current_source_on_net("U2A5", "V1P5_S3", "U2A5", "GND", 0.1, 0, "source_name")
@@ -678,7 +668,6 @@ class EdbHfss(object):
 
         Examples
         --------
-
         >>> edb_path = path_to_edb
         >>> edb = Edb(edb_path)
         >>> poly_list = [poly for poly in list(edb.layout.primitives) if poly.GetPrimitiveType() == 2]
@@ -840,6 +829,7 @@ class EdbHfss(object):
             Radial extent factor. The default value is ``0``.
         pec_launch_width : str, optional
             Launch Width of PEC. The default value is ``"0.01mm"``.
+
         Returns
         -------
         str
@@ -906,6 +896,7 @@ class EdbHfss(object):
             Impedance of the port. The default value is ``50``.
         layer_alignment : str, optional
             Layer alignment. The default value is ``Upper``. Options are ``"Upper"``, ``"Lower"``.
+
         Returns
         -------
         str
@@ -1153,6 +1144,7 @@ class EdbHfss(object):
 
         digit_resolution : int, optional
             Digit Resolution. The default value is ``6``.
+
         Returns
         -------
         list
@@ -1188,7 +1180,6 @@ class EdbHfss(object):
         bool
             True when succeeded, False when failed.
         """
-
         if not isinstance(simulation_setup, SimulationConfiguration):
             self._logger.error(
                 "Configure HFSS extent requires edb_data.simulation_configuration.SimulationConfiguration object"
@@ -1227,8 +1218,7 @@ class EdbHfss(object):
 
     @pyaedt_function_handler()
     def configure_hfss_analysis_setup(self, simulation_setup=None):
-        """
-        Configure HFSS analysis setup.
+        """Configure HFSS analysis setup.
 
         Parameters
         ----------
@@ -1355,7 +1345,6 @@ class EdbHfss(object):
         bool
             True when succeeded, False when failed.
         """
-
         if not isinstance(simulation_setup, SimulationConfiguration):
             self._logger.error(
                 "Trim component reference size requires an edb_data.simulation_configuration.SimulationConfiguration \
@@ -1419,7 +1408,6 @@ class EdbHfss(object):
         bool
             True when succeeded, False when failed.
         """
-
         if not isinstance(simulation_setup, SimulationConfiguration):
             self._logger.error(
                 "Set coax port attribute requires an edb_data.simulation_configuration.SimulationConfiguration object \
@@ -1602,7 +1590,6 @@ class EdbHfss(object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         if positive_pin and negative_pin:
             positive_pin_term = self._pedb.components._create_terminal(positive_pin)
             negative_pin_term = self._pedb.components._create_terminal(negative_pin)

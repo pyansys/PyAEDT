@@ -1,13 +1,12 @@
+from pyaedt.generic.constants import SI_UNITS, unit_system
 from pyaedt.generic.LoadAEDTFile import load_keyword_in_aedt_file
-from pyaedt.generic.constants import SI_UNITS
-from pyaedt.generic.constants import unit_system
 
 
 def parse_rdat_file(file_path):
-    """
-    Parse Ansys report .rdat file
+    """Parse Ansys report .rdat file
 
-    Returns:
+    Returns
+    -------
         (dict) report data
     """
     report_dict = {}

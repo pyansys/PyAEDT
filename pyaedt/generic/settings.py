@@ -112,7 +112,8 @@ class Settings(object):
     @property
     def aedt_environment_variables(self):
         """Environment variables that are set before launching a new AEDT session,
-        including those that enable the beta features."""
+        including those that enable the beta features.
+        """
         return self._aedt_environment_variables
 
     @aedt_environment_variables.setter
@@ -122,7 +123,8 @@ class Settings(object):
     @property
     def lsf_queue(self):
         """LSF queue name. This attribute is valid only on Linux
-        systems running LSF Scheduler."""
+        systems running LSF Scheduler.
+        """
         return self._lsf_queue
 
     @lsf_queue.setter
@@ -132,7 +134,8 @@ class Settings(object):
     @property
     def use_lsf_scheduler(self):
         """Whether to use LSF Scheduler. This attribute is valid only on Linux
-        systems running LSF Scheduler."""
+        systems running LSF Scheduler.
+        """
         return self._use_lsf_scheduler
 
     @use_lsf_scheduler.setter
@@ -142,7 +145,8 @@ class Settings(object):
     @property
     def lsf_aedt_command(self):
         """Command to launch the task in the LSF Scheduler. The default is ``"ansysedt"``.
-        This attribute is valid only on Linux systems running LSF Scheduler."""
+        This attribute is valid only on Linux systems running LSF Scheduler.
+        """
         return self._lsf_aedt_command
 
     @lsf_aedt_command.setter
@@ -152,7 +156,8 @@ class Settings(object):
     @property
     def lsf_num_cores(self):
         """Number of LSF cores. This attribute is valid only
-        on Linux systems running LSF Scheduler."""
+        on Linux systems running LSF Scheduler.
+        """
         return self._lsf_num_cores
 
     @lsf_num_cores.setter
@@ -162,7 +167,8 @@ class Settings(object):
     @property
     def lsf_ram(self):
         """RAM allocated for the LSF job. This attribute is valid
-        only on Linux systems running LSF Scheduler."""
+        only on Linux systems running LSF Scheduler.
+        """
         return self._lsf_ram
 
     @lsf_ram.setter
@@ -181,7 +187,8 @@ class Settings(object):
     @property
     def aedt_version(self):
         """AEDT version in the form ``"2023.x"``. In AEDT 2022 R2 and later,
-        evaluating a bounding box by exporting a SAT file is disabled."""
+        evaluating a bounding box by exporting a SAT file is disabled.
+        """
         return self._aedt_version
 
     @aedt_version.setter
@@ -212,7 +219,8 @@ class Settings(object):
     @property
     def enable_global_log_file(self):
         """Flag for enabling and disabling the global PyAEDT log file located in the global temp folder.
-        The default is ``True``."""
+        The default is ``True``.
+        """
         return self._enable_global_log_file
 
     @enable_global_log_file.setter
@@ -222,7 +230,8 @@ class Settings(object):
     @property
     def enable_local_log_file(self):
         """Flag for enabling and disabling the local PyAEDT log file located
-        in the ``projectname.pyaedt`` project folder. The default is ``True``."""
+        in the ``projectname.pyaedt`` project folder. The default is ``True``.
+        """
         return self._enable_local_log_file
 
     @enable_local_log_file.setter
@@ -242,7 +251,8 @@ class Settings(object):
     def enable_pandas_output(self):
         """Flag for whether Pandas is being used to export dictionaries and lists. This attribute
         applies to Solution data output.  The default is ``False``. If ``True``, the property or
-        method returns a Pandas object. This property is valid only in the CPython environment."""
+        method returns a Pandas object. This property is valid only in the CPython environment.
+        """
         return self._enable_pandas_output
 
     @enable_pandas_output.setter
@@ -252,7 +262,8 @@ class Settings(object):
     @property
     def enable_debug_methods_argument_logger(self):
         """Flag for whether to write out the method's arguments in the debug logger.
-        The default is ``False``."""
+        The default is ``False``.
+        """
         return self._enable_debug_methods_argument_logger
 
     @enable_debug_methods_argument_logger.setter
@@ -263,7 +274,8 @@ class Settings(object):
     def force_error_on_missing_project(self):
         """Flag for whether to check the project path. The default is ``False``. If
         ``True``, when passing a project path, the project has to exist. Otherwise, an
-        error is raised."""
+        error is raised.
+        """
         return self._force_error_on_missing_project
 
     @force_error_on_missing_project.setter
@@ -362,7 +374,8 @@ class Settings(object):
     @property
     def logger_formatter(self):
         """Message format of the log entries.
-        The default is ``'%(asctime)s:%(destination)s:%(extra)s%(levelname)-8s:%(message)s'``"""
+        The default is ``'%(asctime)s:%(destination)s:%(extra)s%(levelname)-8s:%(message)s'``
+        """
         return self._logger_formatter
 
     @logger_formatter.setter
@@ -372,7 +385,8 @@ class Settings(object):
     @property
     def logger_datefmt(self):
         """Date format of the log entries.
-        The default is ``'%Y/%m/%d %H.%M.%S'``"""
+        The default is ``'%Y/%m/%d %H.%M.%S'``
+        """
         return self._logger_datefmt
 
     @logger_datefmt.setter
@@ -400,7 +414,8 @@ class Settings(object):
     @property
     def enable_debug_geometry_operator_logger(self):
         """Flag for enabling and disabling the logging for the geometry operators.
-        This setting is useful for debug purposes."""
+        This setting is useful for debug purposes.
+        """
         return self._enable_debug_geometry_operator_logger
 
     @enable_debug_geometry_operator_logger.setter
@@ -410,7 +425,8 @@ class Settings(object):
     @property
     def enable_debug_internal_methods_logger(self):
         """Flag for enabling and disabling the logging for internal methods.
-        This setting is useful for debug purposes."""
+        This setting is useful for debug purposes.
+        """
         return self._enable_debug_internal_methods_logger
 
     @enable_debug_internal_methods_logger.setter

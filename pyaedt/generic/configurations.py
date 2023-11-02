@@ -5,24 +5,16 @@ import json
 import os
 import tempfile
 
-from pyaedt import Icepak
-from pyaedt import __version__
-from pyaedt import generate_unique_folder_name
-from pyaedt import get_pyaedt_app
+from pyaedt import Icepak, __version__, generate_unique_folder_name, get_pyaedt_app
 from pyaedt.application.Variables import decompose_variable_value
 from pyaedt.generic.DataHandlers import _arg2dict
+from pyaedt.generic.general_methods import _create_json_file, generate_unique_name, pyaedt_function_handler
 from pyaedt.generic.LoadAEDTFile import load_keyword_in_aedt_file
-from pyaedt.generic.general_methods import _create_json_file
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modeler.cad.Modeler import CoordinateSystem
 from pyaedt.modeler.cad.components_3d import UserDefinedComponent
+from pyaedt.modeler.cad.Modeler import CoordinateSystem
 from pyaedt.modeler.geometry_operators import GeometryOperators
-from pyaedt.modules.Boundary import BoundaryObject
-from pyaedt.modules.Boundary import BoundaryProps
-from pyaedt.modules.Boundary import NativeComponentObject
-from pyaedt.modules.DesignXPloration import SetupOpti
-from pyaedt.modules.DesignXPloration import SetupParam
+from pyaedt.modules.Boundary import BoundaryObject, BoundaryProps, NativeComponentObject
+from pyaedt.modules.DesignXPloration import SetupOpti, SetupParam
 from pyaedt.modules.MaterialLib import Material
 from pyaedt.modules.Mesh import MeshOperation
 
@@ -52,7 +44,8 @@ def _find_datasets(d, out_list):
 
 class ConfigurationsOptions(object):
     """Options class for the configurations.
-    User can enable or disable import export components."""
+    User can enable or disable import export components.
+    """
 
     def __init__(self):
         self._object_mapping_tolerance = 1e-9
@@ -1586,8 +1579,7 @@ class ConfigurationsIcepak(Configurations):
 
     @pyaedt_function_handler()
     def update_monitor(self, m_case, m_object, m_quantity, m_name):
-        """
-        Generic method for inserting monitor object
+        """Generic method for inserting monitor object
 
         Parameters
         ----------
@@ -1599,6 +1591,7 @@ class ConfigurationsIcepak(Configurations):
             Name or list of names of the quantity being monitored.
         m_name : str
             Name of the monitor object.
+
         Returns
         -------
         bool

@@ -1,7 +1,6 @@
 import os.path
 
-from pyaedt import is_ironpython
-from pyaedt import is_linux
+from pyaedt import is_ironpython, is_linux
 from pyaedt.generic.general_methods import env_path
 
 if is_linux and is_ironpython:
@@ -116,6 +115,7 @@ class SiwaveSolve(object):
             Define number of cores to use during export
         aedt_file_name : str, optional
             Output  aedt file name (without .aedt extension). If `` then default naming is used
+
         Returns
         -------
         str
@@ -200,6 +200,7 @@ class SiwaveSolve(object):
             Either if generate or not power tree image. Default is `True`.
         loop_res : bool, optional
             Either if generate or not loop resistance report. Default is `True`.
+
         Returns
         -------
         list

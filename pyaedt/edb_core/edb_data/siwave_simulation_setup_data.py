@@ -1,9 +1,6 @@
 from pyaedt.edb_core.edb_data.hfss_simulation_setup_data import EdbFrequencySweep
-from pyaedt.edb_core.general import convert_netdict_to_pydict
-from pyaedt.edb_core.general import convert_pydict_to_netdict
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import is_linux
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.edb_core.general import convert_netdict_to_pydict, convert_pydict_to_netdict
+from pyaedt.generic.general_methods import generate_unique_name, is_linux, pyaedt_function_handler
 
 
 class SiwaveAdvancedSettings(object):
@@ -126,7 +123,6 @@ class SiwaveAdvancedSettings(object):
     @property
     def include_fringe_coupling(self):
         """Whether to include the effect of fringe field coupling between stacked cavities.
-
 
         Returns
         -------
@@ -364,7 +360,6 @@ class SiwaveDCAdvancedSettings(object):
     @property
     def sim_setup_info(self):
         """EDB internal simulation setup object."""
-
         return self._parent._edb_sim_setup_info
 
     @property
@@ -893,9 +888,7 @@ class SiwaveSYZSimulationSetup(SiwaveAdvancedSettings, object):
 
 
 def _parse_value(v):
-    """
-
-    Parameters
+    """Parameters
     ----------
     v :
 

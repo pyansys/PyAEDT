@@ -1,9 +1,7 @@
 import re
 import types
 
-from pyaedt.generic.general_methods import GrpcApiError
-from pyaedt.generic.general_methods import _retry_ntimes
-from pyaedt.generic.general_methods import settings
+from pyaedt.generic.general_methods import GrpcApiError, _retry_ntimes, settings
 import pyaedt.generic.grpc_plugin_dll as AedtAPI
 
 logger = settings.logger

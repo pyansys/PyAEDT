@@ -4,8 +4,7 @@ import warnings
 import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ParseError
 
-from pyaedt.misc.aedtlib_personalib_install import current_dir
-from pyaedt.misc.aedtlib_personalib_install import write_pretty_xml
+from pyaedt.misc.aedtlib_personalib_install import current_dir, write_pretty_xml
 
 available_toolkits = {
     "AntennaWizard": {

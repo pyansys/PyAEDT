@@ -6,8 +6,7 @@ import traceback
 
 import pyaedt
 from pyaedt import settings
-from pyaedt.generic.general_methods import check_and_download_file
-from pyaedt.generic.general_methods import check_if_path_exists
+from pyaedt.generic.general_methods import check_and_download_file, check_if_path_exists
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +30,6 @@ class Component:
         'MT47H64M4BP-3_25'
 
         """
-
         return self._name
 
     @name.setter
@@ -49,7 +47,6 @@ class Component:
         'Micron Technology, Inc.'
 
         """
-
         return self._manufacturer
 
     @manufacturer.setter
@@ -66,7 +63,6 @@ class Component:
         >>> pins = ibis.components["MT47H64M4BP-3_25"].pins
 
         """
-
         return self._pins
 
     @pins.setter
@@ -176,7 +172,6 @@ class Pin:
         '44.3m'
 
         """
-
         return self._r_value
 
     @r_value.setter
@@ -260,7 +255,6 @@ class Pin:
             Circuit Component Object.
 
         """
-
         return self._circuit.modeler.schematic.create_component(
             component_library=None,
             component_name=self.buffer_name,
@@ -324,7 +318,6 @@ class Buffer:
             Circuit Component Object.
 
         """
-
         return self._circuit.modeler.schematic.create_component(
             component_library=None,
             component_name=self.name,
@@ -600,7 +593,7 @@ class IbisReader(object):
             Circuit in which the ibis components will be used.
 
         Returns
-        ----------
+        -------
         :class:`pyaedt.generic.ibis_reader.Ibis`
             Ibis object exposing all data from the ibis file.
 
@@ -616,7 +609,6 @@ class IbisReader(object):
         >>> ibis = ibis_reader.IbisReader(os.path.join(desktop.install_path, "buflib", "IBIS", "u26a_800.ibs"), circuit)
 
         """
-
         if not check_if_path_exists(self._filename):
             raise Exception("{} does not exist.".format(self._filename))
 
@@ -750,7 +742,6 @@ class IbisReader(object):
             File's stream.
 
         """
-
         for model_selector_info in model_selector_list:
             model_selector_info = model_selector_info["model selector"].strip().split("\n")
             for idx, model in enumerate(model_selector_info):
@@ -779,7 +770,6 @@ class IbisReader(object):
             Model selector item.
 
         """
-
         item = ModelSelectorItem()
         i_start = current_line.index(" ", 1)
 
@@ -872,7 +862,6 @@ class IbisReader(object):
             Pin object.
 
         """
-
         current_string = ""
 
         current_string = line.strip().replace("\t", " ")
@@ -923,7 +912,6 @@ class IbisReader(object):
             First info extracted from the current line.
 
         """
-
         if line == "":
             return ""
 
@@ -964,7 +952,7 @@ class AMIReader(IbisReader):
             Circuit in which the ibis components will be used.
 
         Returns
-        ----------
+        -------
         :class:`pyaedt.generic.ibis_reader.Ibis`
             Ibis object exposing all data from the ibis file.
 
@@ -979,7 +967,6 @@ class AMIReader(IbisReader):
         >>> circuit = Circuit()
         >>> ibis = ibis_reader.IbisReader(os.path.join(desktop.install_path, "buflib", "IBIS", "u26a_800.ibs"), circuit)
         """
-
         if not check_if_path_exists(self._filename):
             raise Exception("{} does not exist.".format(self._filename))
 
@@ -1074,7 +1061,6 @@ def is_started_with(src, find, ignore_case=True):
         ``True`` if the src string starts with the pattern.
 
     """
-
     if ignore_case:
         return src.lower().startswith(find.lower())
     return src.startswith(find)

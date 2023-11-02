@@ -4,9 +4,7 @@ import shutil
 import tempfile
 import zipfile
 
-from pyaedt.generic.general_methods import is_ironpython
-from pyaedt.generic.general_methods import is_linux
-from pyaedt.generic.general_methods import settings
+from pyaedt.generic.general_methods import is_ironpython, is_linux, settings
 from pyaedt.misc import list_installed_ansysem
 
 if is_ironpython:
@@ -268,7 +266,6 @@ def download_antenna_array(destination=None):
 
     Examples
     --------
-
     Download an example result file and return the path of the file.
 
     >>> import pyaedt
@@ -276,7 +273,6 @@ def download_antenna_array(destination=None):
     >>> path
     'C:/Users/user/AppData/local/temp/pyaedtexamples/FiniteArray_Radome_77GHz_3D_CADDM.aedt'
     """
-
     local_paths = []
     _download_file("pyaedt/array_antenna", "FiniteArray_Radome_77GHz_3D_CADDM.aedt", destination, local_paths)
     return local_paths[0]
@@ -307,7 +303,6 @@ def download_sbr(destination=None):
     >>> path
     'C:/Users/user/AppData/local/temp/pyaedtexamples/FiniteArray_Radome_77GHz_3D_CADDM.aedt'
     """
-
     local_paths = []
     _download_file("pyaedt/sbr", "Cassegrain.aedt", destination, local_paths)
     return local_paths[0]
@@ -338,7 +333,6 @@ def download_sbr_time(destination=None):
     >>> path
     'C:/Users/user/AppData/local/temp/pyaedtexamples/sbr/poc_scat_small.aedt'
     """
-
     return _download_file("pyaedt/sbr", "poc_scat_small.aedt", destination)
 
 
@@ -430,7 +424,6 @@ def download_via_wizard(destination=None):
     >>> path
     'C:/Users/user/AppData/local/temp/pyaedtexamples/Graphic_Card.aedt'
     """
-
     return _download_file("pyaedt/via_wizard", "viawizard_vacuum_FR4.aedt", destination)
 
 
@@ -718,8 +711,7 @@ def download_twin_builder_data(file_name, force_download=False, destination=None
 
 
 def download_file(directory, filename=None, destination=None):
-    """
-    Download file from directory.
+    """Download file from directory.
 
     Files are downloaded to a destination. If filename is not specified, the full directory will be downloaded.
 

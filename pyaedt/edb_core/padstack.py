@@ -1,15 +1,12 @@
-"""
-This module contains the `EdbPadstacks` class.
+"""This module contains the `EdbPadstacks` class.
 """
 import math
 import warnings
 
-from pyaedt.edb_core.edb_data.padstacks_data import EDBPadstack
-from pyaedt.edb_core.edb_data.padstacks_data import EDBPadstackInstance
+from pyaedt.edb_core.edb_data.padstacks_data import EDBPadstack, EDBPadstackInstance
 from pyaedt.edb_core.general import convert_py_list_to_net_list
 from pyaedt.generic.clr_module import Array
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import generate_unique_name, pyaedt_function_handler
 from pyaedt.modeler.geometry_operators import GeometryOperators
 
 
@@ -96,7 +93,6 @@ class EdbPadstacks(object):
         object
             EDB.PadType enumerator value.
         """
-
         if val == 0:
             return self._edb.definition.PadType.RegularPad
         elif val == 1:
@@ -195,7 +191,6 @@ class EdbPadstacks(object):
             List of padstack instances.
 
         """
-
         padstack_instances = {}
         edb_padstack_inst_list = self._pedb.layout.padstack_instances
         for edb_padstack_instance in edb_padstack_inst_list:
@@ -254,7 +249,6 @@ class EdbPadstacks(object):
         dict[str, :class:`pyaedt.edb_core.edb_data.padstacks_data.EDBPadstackInstance`]
             List of padstack instances.
         """
-
         warnings.warn("Use `instances` property instead.", DeprecationWarning)
         return self.instances
 
@@ -321,7 +315,6 @@ class EdbPadstacks(object):
         str
             Name of the padstack if the operation is successful.
         """
-
         PadStack = self._edb.definition.PadstackDef.Create(self._layout.cell.GetDatabase(), padstackname)
         new_PadStackData = self._edb.definition.PadstackDefData.Create()
         list_values = convert_py_list_to_net_list(
@@ -405,7 +398,6 @@ class EdbPadstacks(object):
 
         References
         ----------
-
         >>> Edb.padstacks.delete_padstack_instances(net_names=["GND"])
         """
         if not isinstance(net_names, list):  # pragma: no cover
@@ -581,7 +573,6 @@ class EdbPadstacks(object):
         tuple
             Tuple of (GeometryType, ParameterList, OffsetX, OffsetY, Rot).
         """
-
         if "PadstackDef" in str(type(pin)):
             padparams = pin.GetData().GetPadParametersValue(layername, self.int_to_pad_type(pad_type))
         else:
@@ -690,7 +681,7 @@ class EdbPadstacks(object):
             if padstack_def.hole_plating_ratio <= minimum_value_to_replace:
                 padstack_def.hole_plating_ratio = default_plating_ratio
                 self._logger.info(
-                    "Padstack definition with zero plating ratio, defaulting to 20%".format(padstack_def.name)
+                    "Padstack definition with zero plating ratio, defaulting to 20%".format()
                 )
         return True
 
@@ -783,6 +774,7 @@ class EdbPadstacks(object):
             rotation of antipad. The default is ``"0.0"``.
         has_hole : bool, optional
             Whether this padstack has a hole.
+
         Returns
         -------
         str
@@ -997,6 +989,7 @@ class EdbPadstacks(object):
             Name of the padstack to be duplicated.
         new_padstack_name : str, optional
             Name of the new padstack.
+
         Returns
         -------
         str
@@ -1015,6 +1008,7 @@ class EdbPadstacks(object):
             Name of the padstack to be duplicated.
         new_padstack_name : str, optional
             Name of the new padstack.
+
         Returns
         -------
         str
@@ -1316,6 +1310,7 @@ class EdbPadstacks(object):
         ----------
         net_name : str
             The net name to be used for filtering padstack instances.
+
         Returns
         -------
         list

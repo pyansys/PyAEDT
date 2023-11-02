@@ -1,6 +1,5 @@
 def sort_bundle(bundle, monoPW_attrib="sweep_angle_index"):
-    """
-    In-place sorting utility for hdm ray exports.
+    """In-place sorting utility for hdm ray exports.
 
     Ray exports are not guaranteed to always be in a predermined order,
     because of the non-deterministic multi-threaded SBR+ solver implementation.

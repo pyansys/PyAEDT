@@ -5,8 +5,7 @@ import math
 import os
 
 from pyaedt.application.AnalysisMaxwellCircuit import AnalysisMaxwellCircuit
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import open_file, pyaedt_function_handler
 
 
 class MaxwellCircuit(AnalysisMaxwellCircuit, object):

@@ -1,7 +1,4 @@
-from pyaedt.edb_core.edb_data.terminals import BundleTerminal
-from pyaedt.edb_core.edb_data.terminals import EdgeTerminal
-from pyaedt.edb_core.edb_data.terminals import PadstackInstanceTerminal
-from pyaedt.edb_core.edb_data.terminals import Terminal
+from pyaedt.edb_core.edb_data.terminals import BundleTerminal, EdgeTerminal, PadstackInstanceTerminal, Terminal
 
 
 class GapPort(EdgeTerminal):

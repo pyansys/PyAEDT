@@ -17,8 +17,7 @@ class Msg:
 
 
 class MessageList:
-    """
-    Collects and returns messages from the AEDT message manager for a specified project name and design name.
+    """Collects and returns messages from the AEDT message manager for a specified project name and design name.
 
     Parameters
     ----------
@@ -86,8 +85,7 @@ class AppFilter(logging.Filter):
         self._extra = extra
 
     def filter(self, record):
-        """
-        Modify the record sent to the logger.
+        """Modify the record sent to the logger.
 
         Parameters
         ----------
@@ -105,8 +103,7 @@ class AppFilter(logging.Filter):
 
 
 class AedtLogger(object):
-    """
-    Specifies the logger to use for each AEDT logger.
+    """Specifies the logger to use for each AEDT logger.
 
     This class allows you to add a handler to write messages to a file and to indicate
     whether to write mnessages to the standard output (stdout).
@@ -330,8 +327,7 @@ class AedtLogger(object):
         return MessageList([], project_name, design_name)
 
     def add_error_message(self, message_text, level=None):
-        """
-        Add a type 2 "Error" message to the message manager tree.
+        """Add a type 2 "Error" message to the message manager tree.
 
         Also add an error message to the logger if the handler is present.
 
@@ -355,8 +351,7 @@ class AedtLogger(object):
         self.add_message(2, message_text, level)
 
     def add_warning_message(self, message_text, level=None):
-        """
-        Add a type 1 "Warning" message to the message manager tree.
+        """Add a type 1 "Warning" message to the message manager tree.
 
         Also add a warning message to the logger if the handler is present.
 
@@ -404,8 +399,7 @@ class AedtLogger(object):
         self.add_message(0, message_text, level)
 
     def add_debug_message(self, message_text, level=None):
-        """
-        Parameterized message to the message manager to specify the type and project or design level.
+        """Parameterized message to the message manager to specify the type and project or design level.
 
         Parameters
         ----------
@@ -417,7 +411,6 @@ class AedtLogger(object):
             in which case the info message gets added to the ``"Design"``
             level.
         """
-
         return self.add_message(3, message_text, level=level)
 
     def add_message(self, message_type, message_text, level=None, proj_name=None, des_name=None):
@@ -553,8 +546,7 @@ class AedtLogger(object):
             return ""
 
     def add_logger(self, destination, level=logging.DEBUG):
-        """
-        Add a logger for either the active project or active design.
+        """Add a logger for either the active project or active design.
 
         Parameters
         ----------
@@ -563,7 +555,6 @@ class AedtLogger(object):
         level : int, optional
             Logging level enum. The default is ``logging.DEBUG``.
         """
-
         if destination == "Project":
             project_name = self._project_name
             self._project = logging.getLogger(project_name)
@@ -650,7 +641,8 @@ class AedtLogger(object):
 
     def info_timer(self, msg, start_time=None, *args, **kwargs):
         """Write an info message to the global logger with elapsed time.
-        Message will have an appendix of type Elapsed time: time."""
+        Message will have an appendix of type Elapsed time: time.
+        """
         if not settings.enable_logger:
             return
         if not start_time:

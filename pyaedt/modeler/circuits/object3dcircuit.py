@@ -7,8 +7,7 @@ import math
 from pyaedt import pyaedt_function_handler
 from pyaedt.application.Variables import decompose_variable_value
 from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.general_methods import _arg2dict
-from pyaedt.generic.general_methods import _dim_arg
+from pyaedt.generic.general_methods import _arg2dict, _dim_arg
 from pyaedt.modeler.cad.elements3d import _dict2arg
 from pyaedt.modeler.geometry_operators import GeometryOperators as go
 
@@ -32,7 +31,6 @@ class CircuitPins(object):
 
         References
         ----------
-
         >>> oPadstackManager.GetComponentPinLocation
         """
         if "Port" in self._circuit_comp.composed_name:
@@ -158,7 +156,6 @@ class CircuitPins(object):
 
         References
         ----------
-
         >>> oPadstackManager.CreatePagePort
         """
         tol = 1e-8
@@ -450,7 +447,6 @@ class CircuitComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetProperties
         >>> oEditor.GetPropertyValue
         """
@@ -480,7 +476,6 @@ class CircuitComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetProperties
         >>> oEditor.GetPropertyValue
         """
@@ -558,7 +553,6 @@ class CircuitComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
         """
@@ -599,7 +593,6 @@ class CircuitComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
         """
@@ -644,7 +637,6 @@ class CircuitComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
         """
@@ -690,7 +682,6 @@ class CircuitComponent(object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         if not symbol_color:
@@ -719,7 +710,6 @@ class CircuitComponent(object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         vMaterial = ["NAME:Component Color", "R:=", R, "G:=", G, "B:=", B]
@@ -744,7 +734,6 @@ class CircuitComponent(object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         if type(property_name) is list:
@@ -806,7 +795,6 @@ class CircuitComponent(object):
 
         References
         ----------
-
         >>> oEditor.GetPropertyValue
         >>> oEditor.ChangeProperty
         """
@@ -863,8 +851,7 @@ class Wire(object):
 
     @pyaedt_function_handler()
     def display_wire_properties(self, wire_name="", property_to_display="NetName", visibility="Name", location="Top"):
-        """
-        Display wire properties.
+        """Display wire properties.
 
         Parameters
         ----------

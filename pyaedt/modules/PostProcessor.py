@@ -1,5 +1,4 @@
-"""
-This module contains these classes: `FieldPlot`, `PostProcessor`, and `SolutionData`.
+"""This module contains these classes: `FieldPlot`, `PostProcessor`, and `SolutionData`.
 
 This module provides all functionalities for creating and editing plots in the 3D tools.
 
@@ -12,19 +11,18 @@ import os
 import random
 import string
 
-from pyaedt import is_ironpython
-from pyaedt import settings
+from pyaedt import is_ironpython, settings
 from pyaedt.application.Variables import decompose_variable_value
-from pyaedt.generic.DataHandlers import json_to_dict
 from pyaedt.generic.constants import unit_converter
-from pyaedt.generic.general_methods import check_and_download_file
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.DataHandlers import json_to_dict
+from pyaedt.generic.general_methods import (
+    check_and_download_file,
+    generate_unique_name,
+    open_file,
+    pyaedt_function_handler,
+)
 import pyaedt.modules.report_templates as rt
-from pyaedt.modules.solutions import FieldPlot
-from pyaedt.modules.solutions import SolutionData
-from pyaedt.modules.solutions import VRTFieldPlot
+from pyaedt.modules.solutions import FieldPlot, SolutionData, VRTFieldPlot
 
 if not is_ironpython:
     try:
@@ -124,7 +122,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Circuit
         >>> cir = Circuit(my_project)
         >>> report = cir.post.reports_by_category.standard("dB(S(1,1))", "LNA")
@@ -165,7 +162,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Icepak
         >>> ipk = Icepak(my_project)
         >>> report = ipk.post.reports_by_category.monitor(["monitor_surf.Temperature","monitor_point.Temperature"])
@@ -199,7 +195,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> app = Hfss(my_project)
         >>> report = app.post.reports_by_category.fields("Mag_E", "Setup : LastAdaptive", "Polyline1")
@@ -235,7 +230,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Q3d
         >>> app = Q3d(my_project)
         >>> report = app.post.reports_by_category.cg_fields("SmoothQ", "Setup : LastAdaptive", "Polyline1")
@@ -271,7 +265,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Q3d
         >>> app = Q3d(my_project)
         >>> report = app.post.reports_by_category.dc_fields("Mag_VolumeJdc", "Setup : LastAdaptive", "Polyline1")
@@ -307,7 +300,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Q3d
         >>> app = Q3d(my_project)
         >>> report = app.post.reports_by_category.rl_fields("Mag_SurfaceJac", "Setup : LastAdaptive", "Polyline1")
@@ -350,7 +342,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> app = Hfss(my_project)
         >>> report = app.post.reports_by_category.far_field("GainTotal", "Setup : LastAdaptive", "3D_Sphere")
@@ -390,7 +381,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> app = Hfss(my_project)
         >>> report = app.post.reports_by_category.antenna_parameters("GainTotal", "Setup : LastAdaptive", "3D_Sphere")
@@ -425,7 +415,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> app = Hfss(my_project)
         >>> report = app.post.reports_by_category.near_field("GainTotal", "Setup : LastAdaptive", "NF_1")
@@ -461,7 +450,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> app = Hfss(my_project)
         >>> report = app.post.reports_by_category.modal_solution("dB(S(1,1))")
@@ -496,7 +484,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> app = Hfss(my_project)
         >>> report = app.post.reports_by_category.terminal_solution("dB(S(1,1))")
@@ -531,7 +518,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> app = Hfss(my_project)
         >>> report = app.post.reports_by_category.eigenmode("dB(S(1,1))")
@@ -566,7 +552,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Circuit
         >>> cir= Circuit()
         >>> new_eye = cir.post.reports_by_category.eye_diagram("V(Vout)")
@@ -603,7 +588,6 @@ class Reports(object):
 
         Examples
         --------
-
         >>> from pyaedt import Circuit
         >>> cir= Circuit()
         >>> new_eye = cir.post.reports_by_category.spectral("V(Vout)")
@@ -680,7 +664,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.GetAvailableReportTypes
         """
         return list(self.oreportsetup.GetAvailableReportTypes())
@@ -926,7 +909,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oDesign.GetModule("ReportSetup")
         """
         return self._app.oreportsetup
@@ -977,7 +959,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.GetAllReportNames()
         """
         return list(self.oreportsetup.GetAllReportNames())
@@ -998,7 +979,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.CopyReportsData
         >>> oModule.PasteReports
         """
@@ -1022,7 +1002,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.DeleteReports
         """
         try:
@@ -1059,7 +1038,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.RenameReport
         """
         try:
@@ -1101,7 +1079,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.GetSolutionDataPerVariation
         """
         if sweeps is None:
@@ -1134,7 +1111,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oDesktop.RestoreWindow
         """
         self._desktop.RestoreWindow()
@@ -1200,7 +1176,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.ExportReportDataToFile
         >>> oModule.ExportUniformPointsToFile
         >>> oModule.ExportToFile
@@ -1275,7 +1250,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.ExportReportDataToFile
         >>> oModule.ExportToFile
         >>> oModule.ExportUniformPointsToFile
@@ -1313,7 +1287,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.ExportImageToFile
         """
         # path
@@ -1548,7 +1521,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.CreateReport
 
         Examples
@@ -1738,7 +1710,6 @@ class PostProcessorCommon(object):
 
         References
         ----------
-
         >>> oModule.GetSolutionDataPerVariation
 
         Examples
@@ -1879,7 +1850,6 @@ class PostProcessorCommon(object):
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> aedtapp = Hfss()
         >>> aedtapp.post.create_report_from_configuration(r'C:\temp\my_report.json',
@@ -1991,7 +1961,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oDesign.GetModule("FieldsReporter")
         """
         return self._app.ofieldsreporter
@@ -2162,7 +2131,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.EnterQty
         >>> oModule.EnterVol
         >>> oModule.CalcOp
@@ -2196,7 +2164,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oDesign.ChangeProperty
         """
         self._odesign.ChangeProperty(
@@ -2263,7 +2230,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.EnterQty
         >>> oModule.CopyNamedExprToStack
         >>> oModule.CalcOp
@@ -2383,7 +2349,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.EnterQty
         >>> oModule.CopyNamedExprToStack
         >>> oModule.CalcOp
@@ -2526,7 +2491,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.EnterQty
         >>> oModule.CopyNamedExprToStack
         >>> oModule.CalcOp
@@ -2630,7 +2594,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.ExportFieldPlot
         """
         if not filename:
@@ -2674,7 +2637,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.SetPlotFolderSettings
         """
         args = ["NAME:FieldsPlotSettings", "Real Time mode:=", True]
@@ -2870,7 +2832,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.CreateFieldPlot
         """
         if intrinsincDict is None:
@@ -2893,8 +2854,7 @@ class PostProcessor(PostProcessorCommon, object):
         plot_name=None,
         field_type="DC R/L Fields",
     ):
-        """
-        Create a field plot of the line.
+        """Create a field plot of the line.
 
         Parameters
         ----------
@@ -2922,7 +2882,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.CreateFieldPlot
         """
         if self._app.solution_type != "Electrostatic":
@@ -3026,12 +2985,11 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.CreateFieldPlot
         """
         if not (
             "APhi" in self.post_solution_type and settings.aedt_version >= "2023.2"
-        ) and not self._app.design_type in ["HFSS", "HFSS 3D Layout Design"]:
+        ) and self._app.design_type not in ["HFSS", "HFSS 3D Layout Design"]:
             self.logger.error("This method requires AEDT 2023 R2 and Maxwell 3D Transient APhi Formulation.")
             return False
         if intrinsics is None:
@@ -3086,7 +3044,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.CreateFieldPlot
         """
         if intrinsincDict is None:
@@ -3146,7 +3103,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.CreateFieldPlot
         """
         if intrinsincDict is None:
@@ -3202,7 +3158,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.CreateFieldPlot
         """
         if intrinsincDict is None:
@@ -3271,7 +3226,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.ExportPlotImageToFile
         >>> oModule.ExportModelImageToFile
         """
@@ -3332,7 +3286,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.DeleteFieldPlot
         """
         self.ofieldsreporter.DeleteFieldPlot([name])
@@ -3390,7 +3343,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oEditor.ExportModelImageToFile
 
         Examples
@@ -3487,7 +3439,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.GetSolutionDataPerVariation
         """
         if type(expression) is not list:
@@ -3647,7 +3598,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         available_bcs = self._app.boundaries
@@ -4180,7 +4130,6 @@ class PostProcessor(PostProcessorCommon, object):
 
         Parameters
         ----------
-
         max_frequency : str, optional
             Maximum Frequency. Default is ``1GHz``.
         ray_density : int, optional
@@ -4232,7 +4181,6 @@ class PostProcessor(PostProcessorCommon, object):
 
 class CircuitPostProcessor(PostProcessorCommon, object):
     """Manages the main AEDT Nexxim postprocessing functions.
-
 
     .. note::
        Some functionalities are available only when AEDT is running in the graphical mode.
@@ -4381,7 +4329,6 @@ class CircuitPostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.CreateReport
         """
         if not plotname:
@@ -4482,7 +4429,6 @@ class CircuitPostProcessor(PostProcessorCommon, object):
 
         References
         ----------
-
         >>> oModule.CreateReport
         """
         if not plotname:
@@ -4594,7 +4540,6 @@ class CircuitPostProcessor(PostProcessorCommon, object):
         >>> aedtapp.post.sample_ami_waveform(setup_name, probe_name, source_name, aedtapp.available_variations.nominal)
 
         """
-
         new_tic = []
         for tic in clock_tics:
             new_tic.append(unit_converter(tic, unit_system="Time", input_units="s", output_units=waveform_sweep_unit))

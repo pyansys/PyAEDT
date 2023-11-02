@@ -2,9 +2,7 @@ from __future__ import absolute_import  # noreorder
 
 import re
 
-from pyaedt.edb_core.edb_data.nets_data import EDBDifferentialPairData
-from pyaedt.edb_core.edb_data.nets_data import EDBExtendedNetData
-from pyaedt.edb_core.edb_data.nets_data import EDBNetClassData
+from pyaedt.edb_core.edb_data.nets_data import EDBDifferentialPairData, EDBExtendedNetData, EDBNetClassData
 from pyaedt.generic.general_methods import pyaedt_function_handler
 
 
@@ -261,9 +259,7 @@ class EdbDifferentialPairs(EdbCommon, object):
     @pyaedt_function_handler
     def create(self, name, net_p, net_n):
         # type: (str, str, str) -> EDBDifferentialPairData
-        """
-
-        Parameters
+        """Parameters
         ----------
         name : str
             Name of the differential pair.
@@ -300,6 +296,7 @@ class EdbDifferentialPairs(EdbCommon, object):
         -------
         list
             A list containing identified differential pair names.
+
         Examples
         --------
         >>> from pyaedt import Edb

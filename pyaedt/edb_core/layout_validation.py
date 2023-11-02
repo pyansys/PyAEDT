@@ -2,8 +2,7 @@ import re
 
 from pyaedt.edb_core.edb_data.padstacks_data import EDBPadstackInstance
 from pyaedt.edb_core.edb_data.primitives_data import EDBPrimitives
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import generate_unique_name, pyaedt_function_handler
 
 
 class LayoutValidation:
@@ -31,7 +30,6 @@ class LayoutValidation:
 
         Examples
         --------
-
         >>> edb = Edb("edb_file")
         >>> dc_shorts = edb.layout_validation.dc_shorts()
 
@@ -110,6 +108,7 @@ class LayoutValidation:
         order_by_area : bool, optional
             Whether if the naming order has to be by number of objects (fastest) or area (slowest but more accurate).
             Default is ``False``.
+
         Returns
         -------
         List
@@ -117,7 +116,6 @@ class LayoutValidation:
 
         Examples
         --------
-
         >>> renamed_nets = edb.layout_validation.disjoint_nets(["GND","Net2"])
         """
         timer_start = self._pedb._logger.reset_timer()

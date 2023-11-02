@@ -14,16 +14,16 @@ from pyaedt.application.AnalysisNexxim import FieldAnalysisCircuit
 from pyaedt.generic import ibis_reader
 from pyaedt.generic.DataHandlers import from_rkm_to_aedt
 from pyaedt.generic.filesystem import search_files
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modules.Boundary import CurrentSinSource
-from pyaedt.modules.Boundary import PowerIQSource
-from pyaedt.modules.Boundary import PowerSinSource
-from pyaedt.modules.Boundary import Sources
-from pyaedt.modules.Boundary import VoltageDCSource
-from pyaedt.modules.Boundary import VoltageFrequencyDependentSource
-from pyaedt.modules.Boundary import VoltageSinSource
+from pyaedt.generic.general_methods import generate_unique_name, open_file, pyaedt_function_handler
+from pyaedt.modules.Boundary import (
+    CurrentSinSource,
+    PowerIQSource,
+    PowerSinSource,
+    Sources,
+    VoltageDCSource,
+    VoltageFrequencyDependentSource,
+    VoltageSinSource,
+)
 from pyaedt.modules.CircuitTemplates import SourceKeys
 
 
@@ -629,7 +629,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oModule.GetExcitationsOfType
         """
         if source_project_name and self.project_name != source_project_name and not source_project_path:
@@ -678,7 +677,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oDesign.ImportData
         """
         if filename[-2:] == "ts":
@@ -825,7 +823,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oDesign.ExportNetworkData
         """
         return self._export_touchstone(
@@ -850,8 +847,7 @@ class Circuit(FieldAnalysisCircuit, object):
         error=0.5,
         poles=10000,
     ):
-        """
-        Export a full wave HSpice file using NDE.
+        """Export a full wave HSpice file using NDE.
 
         .. warning::
           This method doesn't work.
@@ -889,7 +885,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oDesign.ExportFullWaveSpice
         """
         if not designname:
@@ -974,8 +969,7 @@ class Circuit(FieldAnalysisCircuit, object):
         differential_pairs=False,
         subdesign_id=None,
     ):
-        """
-        Create a Touchstone plot.
+        """Create a Touchstone plot.
 
         Parameters
         ----------
@@ -991,6 +985,7 @@ class Circuit(FieldAnalysisCircuit, object):
             Specify if the plot is on differential pairs traces. The default value is ``False``.
         subdesign_id : int, optional
             Specify a subdesign ID to export a Touchstone file of this subdesign. The default value is ``None``.
+
         Returns
         -------
         bool
@@ -998,7 +993,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oModule.CreateReport
         """
         if not solution_name:
@@ -1016,8 +1010,7 @@ class Circuit(FieldAnalysisCircuit, object):
 
     @pyaedt_function_handler()
     def get_touchstone_data(self, setup_name=None, variation_dict=None):
-        """
-        Return a Touchstone data plot.
+        """Return a Touchstone data plot.
 
         Parameters
         ----------
@@ -1033,7 +1026,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oModule.GetSolutionDataPerVariation
         """
         from pyaedt.generic.touchstone_parser import TouchstoneData
@@ -1069,7 +1061,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oEditor.PushExcitations
         """
         arg = ["NAME:options", "CalcThevenin:=", thevenin_calculation, "Sol:=", setup_name]
@@ -1121,7 +1112,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oEditor.PushExcitations
         """
         arg = [
@@ -1175,7 +1165,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oDesign.UpdateSources
         """
         if not name:
@@ -1223,10 +1212,8 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oDesign.UpdateSources
         """
-
         source_v = self.create_source(source_type="VoltageSin")
         for port in ports:
             self.excitations[port].enabled_sources.append(source_v.name)
@@ -1249,7 +1236,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oDesign.UpdateSources
         """
         source_i = self.create_source(source_type="CurrentSin")
@@ -1274,7 +1260,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oDesign.UpdateSources
         """
         source_p = self.create_source(source_type="PowerSin")
@@ -1301,7 +1286,6 @@ class Circuit(FieldAnalysisCircuit, object):
 
         References
         ----------
-
         >>> oDesign.UpdateSources
         """
         if not os.path.exists(filepath) or os.path.splitext(filepath)[1] != ".fds":

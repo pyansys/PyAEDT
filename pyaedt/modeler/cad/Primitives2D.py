@@ -61,7 +61,6 @@ class Primitives2D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateCircle
 
         Examples
@@ -119,7 +118,6 @@ class Primitives2D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateEllipse
 
         Examples
@@ -171,12 +169,10 @@ class Primitives2D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateRectangle
 
         Examples
         --------
-
         >>> rect1 = aedtapp.modeler.create_rectangle([0, -2, -2], [3, 4])
         >>> rect2 = aedtapp.modeler.create_rectangle(position=[0, -2, -2], dimension_list=[3, 4],
         ...                                          name="MyCircle", matname="Copper")
@@ -228,12 +224,10 @@ class Primitives2D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateRegularPolygon
 
         Examples
         --------
-
         >>> pg1 = aedtapp.modeler.create_regular_polygon([0, 0, 0], [0, 2, 0])
         >>> pg2 = aedtapp.modeler.create_regular_polygon(position=[0, 0, 0], start_point=[0, 2, 0],
         ...                                              name="MyPolygon", matname="Copper")
@@ -279,7 +273,6 @@ class Primitives2D(Primitives, object):
 
         References
         ----------
-
         >>> oEditor.CreateRegion
         """
         if not isinstance(pad_percent, list):

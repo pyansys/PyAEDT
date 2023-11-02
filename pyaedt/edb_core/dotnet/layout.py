@@ -126,8 +126,7 @@ class LayoutDotNet:
 
     @property
     def extended_nets(self):
-        """
-        Get the list of extended nets in the layout. Read-Only.
+        """Get the list of extended nets in the layout. Read-Only.
 
         Returns
         -------

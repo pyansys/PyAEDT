@@ -2,17 +2,16 @@ from collections import OrderedDict
 import copy
 import csv
 
-from pyaedt.generic.DataHandlers import _arg2dict
-from pyaedt.generic.DataHandlers import _dict2arg
-from pyaedt.generic.general_methods import PropsManager
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modules.OptimetricsTemplates import defaultdoeSetup
-from pyaedt.modules.OptimetricsTemplates import defaultdxSetup
-from pyaedt.modules.OptimetricsTemplates import defaultoptiSetup
-from pyaedt.modules.OptimetricsTemplates import defaultparametricSetup
-from pyaedt.modules.OptimetricsTemplates import defaultsensitivitySetup
-from pyaedt.modules.OptimetricsTemplates import defaultstatisticalSetup
+from pyaedt.generic.DataHandlers import _arg2dict, _dict2arg
+from pyaedt.generic.general_methods import PropsManager, generate_unique_name, pyaedt_function_handler
+from pyaedt.modules.OptimetricsTemplates import (
+    defaultdoeSetup,
+    defaultdxSetup,
+    defaultoptiSetup,
+    defaultparametricSetup,
+    defaultsensitivitySetup,
+    defaultstatisticalSetup,
+)
 from pyaedt.modules.SolveSweeps import SetupProps
 
 
@@ -256,7 +255,6 @@ class CommonOptimetrics(PropsManager, object):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         if update_dictionary:
@@ -286,7 +284,6 @@ class CommonOptimetrics(PropsManager, object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
         """
         arg = ["NAME:" + self.name]
@@ -551,7 +548,6 @@ class CommonOptimetrics(PropsManager, object):
 
         References
         ----------
-
         >>> oDesign.Analyze
         """
         return self._app.analyze(
@@ -588,7 +584,6 @@ class SetupOpti(CommonOptimetrics, object):
         bool
             `True` if setup is deleted. `False` if it failed.
         """
-
         self.omodule.DeleteSetups([self.name])
         self._app.optimizations.setups.remove(self)
         return True
@@ -635,7 +630,6 @@ class SetupOpti(CommonOptimetrics, object):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         return self._add_calculation(
@@ -702,10 +696,8 @@ class SetupOpti(CommonOptimetrics, object):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
-
         return self._add_calculation(
             calculation,
             ranges,
@@ -872,7 +864,6 @@ class SetupParam(CommonOptimetrics, object):
         bool
             ``True`` if setup is deleted. ``False`` if it failed.
         """
-
         self.omodule.DeleteSetups([self.name])
         self._app.parametrics.setups.remove(self)
         return True
@@ -903,7 +894,6 @@ class SetupParam(CommonOptimetrics, object):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         if sweep_var not in self._app.variable_manager.variables:
@@ -969,7 +959,6 @@ class SetupParam(CommonOptimetrics, object):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         if type(self.props["Sweeps"]["SweepDefinition"]) is not list:
@@ -1042,7 +1031,6 @@ class SetupParam(CommonOptimetrics, object):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
         return self._add_calculation(
@@ -1148,7 +1136,6 @@ class ParametricSetups(object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
         """
         if sweep_var not in self._app.variable_manager.variables:
@@ -1398,7 +1385,6 @@ class OptimizationSetups(object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
         """
         if not solution and not self._app.nominal_sweep:

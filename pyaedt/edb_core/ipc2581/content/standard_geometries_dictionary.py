@@ -68,5 +68,5 @@ class StandardGeometriesDictionary(object):
         circle.diameter = diameter
         circle.fill_id = "SOLID_FILL"
         entry_key = "CIRCLE_{}".format(diameter[0])
-        if not entry_key in self.standard_circ_dict:
+        if entry_key not in self.standard_circ_dict:
             self.standard_circ_dict[entry_key] = str(diameter[0])

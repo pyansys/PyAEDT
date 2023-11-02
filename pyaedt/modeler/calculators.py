@@ -1,8 +1,7 @@
 import math
 
 from pyaedt import constants
-from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.constants import SpeedOfLight
+from pyaedt.generic.constants import AEDT_UNITS, SpeedOfLight
 from pyaedt.generic.general_methods import pyaedt_function_handler
 
 
@@ -163,7 +162,6 @@ class TransmissionLine(object):
         float
             Line width.
         """
-
         x = 30.0 * math.pi / (math.sqrt(permittivity) * impedance) - 0.441
 
         if math.sqrt(permittivity) * impedance <= 120:
@@ -300,7 +298,6 @@ class StandardWaveguide(object):
         list
             Waveguide dimensions.
         """
-
         if name in self.wg:
             wg_dim = []
             for dbl in self.wg[name]:
@@ -325,7 +322,6 @@ class StandardWaveguide(object):
         str
             Waveguide name.
         """
-
         freq = constants.unit_converter(freq, "Frequency", units, "GHz")
         op_freq = freq * 0.8
 

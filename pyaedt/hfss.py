@@ -11,21 +11,18 @@ import warnings
 
 from pyaedt import settings
 from pyaedt.application.Analysis3D import FieldAnalysis3D
-from pyaedt.generic.DataHandlers import _dict2arg
-from pyaedt.generic.DataHandlers import json_to_dict
-from pyaedt.generic.DataHandlers import str_to_bool
 from pyaedt.generic.constants import INFINITE_SPHERE_TYPE
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import parse_excitation_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.DataHandlers import _dict2arg, json_to_dict, str_to_bool
+from pyaedt.generic.general_methods import (
+    generate_unique_name,
+    open_file,
+    parse_excitation_file,
+    pyaedt_function_handler,
+)
 from pyaedt.modeler import cad
 from pyaedt.modeler.cad.components_3d import UserDefinedComponent
 from pyaedt.modeler.geometry_operators import GeometryOperators
-from pyaedt.modules.Boundary import BoundaryObject
-from pyaedt.modules.Boundary import FarFieldSetup
-from pyaedt.modules.Boundary import NativeComponentObject
-from pyaedt.modules.Boundary import NearFieldSetup
+from pyaedt.modules.Boundary import BoundaryObject, FarFieldSetup, NativeComponentObject, NearFieldSetup
 from pyaedt.modules.SetupTemplates import SetupKeys
 
 
@@ -335,7 +332,6 @@ class Hfss(FieldAnalysis3D, object):
             Boundary object.
 
         """
-
         bound = BoundaryObject(self, name, props, boundary_type)
         result = bound.create()
         if result:
@@ -652,12 +648,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignFiniteCond
 
         Examples
         --------
-
         Create two cylinders in the XY working plane and assign a copper coating of 0.2 mm to the inner cylinder and
         outer face.
         >>> from pyaedt import Hfss
@@ -672,7 +666,6 @@ class Hfss(FieldAnalysis3D, object):
         >>> coat = hfss.assign_coating(["inner", outer.faces[2].id], "copper", usethickness=True, thickness="0.2mm")
 
         """
-
         userlst = self.modeler.convert_to_selections(obj, True)
         lstobj = []
         lstface = []
@@ -757,12 +750,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
 
         Examples
         --------
-
         >>> from pyaedt import Hfss
         >>> hfss = Hfss()
         >>> hfss.create_setup(setupname="Setup1", setuptype="HFSSDriven", Frequency="10GHz")
@@ -846,12 +837,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
 
         Examples
         --------
-
         Create a setup named ``"LinearCountSetup"`` and use it in a linear count sweep
         named ``"LinearCountSweep"``.
 
@@ -953,12 +942,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
 
         Examples
         --------
-
         Create a setup named ``"LinearStepSetup"`` and use it in a linear step sweep
         named ``"LinearStepSweep"``.
 
@@ -1033,12 +1020,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.InsertFrequencySweep
 
         Examples
         --------
-
         Create a setup named ``"LinearStepSetup"`` and use it in a single point sweep
         named ``"SinglePointSweep"``.
 
@@ -1129,7 +1114,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oEditor.InsertNativeComponent
 
         Examples
@@ -1427,7 +1411,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oEditor.InsertNativeComponent
 
         Examples
@@ -1540,7 +1523,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oEditor.InsertNativeComponent
 
         Examples
@@ -1586,7 +1568,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.SetSBRTxRxSettings
         """
         if self.solution_type != "SBR+":
@@ -1636,12 +1617,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignCircuitPort
 
         Examples
         --------
-
         Create two boxes for creating a circuit port named ``'CircuitExample'``.
 
         >>> box1 = hfss.modeler.create_box([0, 0, 80], [10, 10, 5],
@@ -1704,12 +1683,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignLumpedPort
 
         Examples
         --------
-
         Create two boxes that will be used to create a lumped port
         named ``'LumpedPort'``.
 
@@ -1773,7 +1750,7 @@ class Hfss(FieldAnalysis3D, object):
         >>> aedtapp.modeler.fit_all()
         >>> portz = aedtapp.create_spiral_lumped_port(box1, box2)
         """
-        if not "Terminal" in self.solution_type:
+        if "Terminal" not in self.solution_type:
             raise Exception("This method can be used only in Terminal solutions.")
         start_object = self.modeler.convert_to_selections(start_object)
         end_object = self.modeler.convert_to_selections(end_object)
@@ -1947,12 +1924,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignVoltage
 
         Examples
         --------
-
         Create two boxes for creating a voltage source named ``'VoltageSource'``.
 
         >>> box1 = hfss.modeler.create_box([30, 0, 0], [40, 10, 5],
@@ -1965,7 +1940,6 @@ class Hfss(FieldAnalysis3D, object):
         PyAEDT INFO: Connection Correctly created
 
         """
-
         if not self.modeler.does_object_exists(startobj) or not self.modeler.does_object_exists(endobject):
             self.logger.error("One or both objects doesn't exists. Check and retry")
             return False
@@ -2003,12 +1977,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignCurrent
 
         Examples
         --------
-
         Create two boxes for creating a current source named ``'CurrentSource'``.
 
         >>> box1 = hfss.modeler.create_box([30, 0, 20], [40, 10, 5],
@@ -2021,7 +1993,6 @@ class Hfss(FieldAnalysis3D, object):
         PyAEDT INFO: Connection created 'CurrentSource' correctly.
 
         """
-
         if not self.modeler.does_object_exists(startobj) or not self.modeler.does_object_exists(endobject):
             self.logger.error("One or both objects do not exist. Check and retry.")
             return False
@@ -2058,11 +2029,9 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignVoltage
         >>> oModule.AssignCurrent
         """
-
         props = OrderedDict({"Objects": [sheet_name], "Direction": OrderedDict({"Start": point1, "End": point2})})
         return self._create_boundary(sourcename, props, sourcetype)
 
@@ -2118,12 +2087,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignWavePort
 
         Examples
         --------
-
         Create two boxes that will be used to create a wave port
         named ``'Wave Port'``.
 
@@ -2207,7 +2174,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignFloquetPort
         """
         face_id = self.modeler.convert_to_selections(face, True)
@@ -2301,7 +2267,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignLatticePair
         """
         props = OrderedDict({})
@@ -2343,7 +2308,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AutoIdentifyLatticePair
         """
         objectname = self.modeler.convert_to_selections(object_to_assign, True)
@@ -2412,7 +2376,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignSecondary
         """
         props = OrderedDict({})
@@ -2470,7 +2433,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignPrimary
         """
         props = OrderedDict({})
@@ -2491,7 +2453,6 @@ class Hfss(FieldAnalysis3D, object):
 
     def _create_pec_cap(self, sheet_name, obj_name, pecthick):
         """Create a PEC object to back a wave port.
-
 
         Parameters
         ----------
@@ -2590,12 +2551,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignWavePort
 
         Examples
         --------
-
         Create a wave port supported by a microstrip line.
 
         >>> ms = hfss.modeler.create_box([4, 5, 0], [1, 100, 0.2],
@@ -2661,12 +2620,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignPerfectE
 
         Examples
         --------
-
         Create two boxes for creating a Perfect E named ``'PerfectE'``.
 
         >>> box1 = hfss.modeler.create_box([0,0,0], [10,10,5],
@@ -2680,7 +2637,6 @@ class Hfss(FieldAnalysis3D, object):
         <class 'pyaedt.modules.Boundary.BoundaryObject'>
 
         """
-
         if not self.modeler.does_object_exists(startobj) or not self.modeler.does_object_exists(endobject):
             self.logger.error("One or both objects do not exist. Check and retry.")
             return False
@@ -2722,12 +2678,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignPerfectH
 
         Examples
         --------
-
         Create two boxes for creating a Perfect H named ``'PerfectH'``.
 
         >>> box1 = hfss.modeler.create_box([0,0,20], [10,10,5],
@@ -2741,7 +2695,6 @@ class Hfss(FieldAnalysis3D, object):
         <class 'pyaedt.modules.Boundary.BoundaryObject'>
 
         """
-
         if not self.modeler.does_object_exists(startobj) or not self.modeler.does_object_exists(endobject):
             self.logger.error("One or both objects do not exist. Check and retry.")
             return False
@@ -2781,7 +2734,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oDesign.SARSetup
         """
         self.odesign.SARSetup(TissueMass, MaterialDensity, Tissue_object_List_ID, voxel_size, Average_SAR_method)
@@ -2810,7 +2762,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.CreateOpenRegion
         """
         vars = ["NAME:Settings", "OpFreq:=", Frequency, "Boundary:=", Boundary, "ApplyInfiniteGP:=", ApplyInfiniteGP]
@@ -2872,12 +2823,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignLumpedRLC
 
         Examples
         --------
-
         Create two boxes for creating a lumped RLC named ``'LumpedRLC'``.
 
         >>> box1 = hfss.modeler.create_box([0, 0, 50], [10, 10, 5],
@@ -2890,7 +2839,6 @@ class Hfss(FieldAnalysis3D, object):
         PyAEDT INFO: Connection Correctly created
 
         """
-
         if not self.modeler.does_object_exists(startobj) or not self.modeler.does_object_exists(endobject):
             self.logger.error("One or both objects do not exist. Check and retry.")
             return False
@@ -2968,12 +2916,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignImpedance
 
         Examples
         --------
-
         Create two boxes for creating an impedance named ``'ImpedanceExample'``.
 
         >>> box1 = hfss.modeler.create_box([0, 0, 70], [10, 10, 5],
@@ -2985,7 +2931,6 @@ class Hfss(FieldAnalysis3D, object):
         PyAEDT INFO: Connection Correctly created
 
         """
-
         if not self.modeler.does_object_exists(startobj) or not self.modeler.does_object_exists(endobject):
             self.logger.error("One or both objects do not exist. Check and retry.")
             return False
@@ -3034,7 +2979,6 @@ class Hfss(FieldAnalysis3D, object):
             Boundary object.
 
         """
-
         props = {}
         sheet_name = self.modeler.convert_to_selections(sheet_name, True)
         if type(sheet_name) is list:
@@ -3149,12 +3093,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignWavePort
 
         Examples
         --------
-
         Create a circle sheet for creating a wave port named ``'WavePortFromSheet'``.
 
         >>> origin_position = hfss.modeler.Position(0, 0, 0)
@@ -3234,12 +3176,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignWavePort
 
         Examples
         --------
-
         Create a circle sheet for creating a wave port named ``'WavePortFromSheet'``.
 
         >>> hfss.modeler.model_units("in")
@@ -3300,12 +3240,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignLumpedPort
 
         Examples
         --------
-
         Create a rectangle sheet for creating a lumped port named ``'LumpedPortFromSheet'``.
 
         >>> rectangle = hfss.modeler.create_rectangle(hfss.PLANE.XY,
@@ -3355,12 +3293,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignVoltage
 
         Examples
         --------
-
         Create a sheet and assign to it some voltage.
 
         >>> sheet = hfss.modeler.create_rectangle(hfss.PLANE.XY,
@@ -3372,7 +3308,6 @@ class Hfss(FieldAnalysis3D, object):
         ...                                     False)
 
         """
-
         if self.solution_type in ["Modal", "Terminal", "Transient Network"]:
             if isinstance(axisdir, list):
                 if len(axisdir) != 2 or len(axisdir[0]) != len(axisdir[1]):
@@ -3409,12 +3344,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignCurrent
 
         Examples
         --------
-
         Create a sheet and assign some current to it.
 
         >>> sheet = hfss.modeler.create_rectangle(hfss.PLANE.XY, [0, 0, -50],
@@ -3425,7 +3358,6 @@ class Hfss(FieldAnalysis3D, object):
         ...                                     sheet.bottom_edge_y.midpoint])
 
         """
-
         if self.solution_type in ["Modal", "Terminal", "Transient Network"]:
             if isinstance(axisdir, list):
                 if len(axisdir) != 2 or len(axisdir[0]) != len(axisdir[1]):
@@ -3459,12 +3391,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignPerfectE
 
         Examples
         --------
-
         Create a sheet and use it to create a Perfect E.
 
         >>> sheet = hfss.modeler.create_rectangle(hfss.PLANE.XY, [0, 0, -90],
@@ -3501,12 +3431,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignPerfectH
 
         Examples
         --------
-
         Create a sheet and use it to create a Perfect H.
 
         >>> sheet = hfss.modeler.create_rectangle(hfss.PLANE.XY, [0, 0, -90],
@@ -3516,7 +3444,6 @@ class Hfss(FieldAnalysis3D, object):
         <class 'pyaedt.modules.Boundary.BoundaryObject'>
 
         """
-
         if self.solution_type in ["Modal", "Terminal", "Transient Network", "SBR+", "Eigenmode"]:
             if not sourcename:
                 sourcename = generate_unique_name("PerfH")
@@ -3561,12 +3488,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignLumpedRLC
 
         Examples
         --------
-
         Create a sheet and use it to create a lumped RLC.
 
         >>> sheet = hfss.modeler.create_rectangle(hfss.PLANE.XY,
@@ -3581,7 +3506,6 @@ class Hfss(FieldAnalysis3D, object):
         ...                                     sheet.bottom_edge_y.midpoint], Rvalue=50, Lvalue=1e-9, Cvalue=1e-6)
 
         """
-
         if self.solution_type in ["Eigenmode", "Modal", "Terminal", "Transient Network", "SBR+"] and (
             Rvalue or Lvalue or Cvalue
         ):
@@ -3642,12 +3566,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignImpedance
 
         Examples
         --------
-
         Create a sheet and use it to create an impedance.
 
         >>> sheet = hfss.modeler.create_rectangle(hfss.PLANE.XY,
@@ -3658,7 +3580,6 @@ class Hfss(FieldAnalysis3D, object):
         <class 'pyaedt.modules.Boundary.BoundaryObject'>
 
         """
-
         if self.solution_type in ["Modal", "Terminal", "Transient Network"]:
             if not sourcename:
                 sourcename = generate_unique_name("Imped")
@@ -3718,12 +3639,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignCircuitPort
 
         Examples
         --------
-
         Create two rectangles in the XY plane.
         Select the first edge of each rectangle created previously.
         Create a circuit port from the first edge of the first rectangle
@@ -3852,12 +3771,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.EditSources
 
         Examples
         --------
-
         Create a circle sheet and use it to create a wave port.
         Set up the thermal power for this wave port.
 
@@ -3872,7 +3789,6 @@ class Hfss(FieldAnalysis3D, object):
         True
 
         """
-
         if self.solution_type != "Eigenmode":
             if portandmode is None:
                 self.logger.error("Port and mode must be defined for solution type {}".format(self.solution_type))
@@ -4019,12 +3935,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oEditor.ThickenSheet
 
         Examples
         --------
-
         Create a circle sheet and use it to create a wave port.
         Set the thickness of this circle sheet to ``"2 mm"``.
 
@@ -4038,7 +3952,6 @@ class Hfss(FieldAnalysis3D, object):
         {}
 
         """
-
         tol = 1e-6
         ports_ID = {}
         aedt_bounding_box = self.modeler.get_model_bounding_box()
@@ -4153,7 +4066,6 @@ class Hfss(FieldAnalysis3D, object):
     def validate_full_design(self, dname=None, outputdir=None, ports=None):
         """Validate a design based on an expected value and save information to the log file.
 
-
         Parameters
         ----------
         dname : str,  optional
@@ -4174,12 +4086,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oDesign.ValidateDesign
 
         Examples
         --------
-
         Validate the current design and save the log file in the current project directory.
 
         >>> validation = hfss.validate_full_design()
@@ -4188,7 +4098,6 @@ class Hfss(FieldAnalysis3D, object):
         False
 
         """
-
         self.logger.info("Design validation checks.")
         validation_ok = True
         val_list = []
@@ -4310,12 +4219,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.CreateReport
 
         Examples
         --------
-
         Create ad S-parameter plot named ``"S Parameter Plot Nominal"`` for a 3-port network.
         plotting S11, S21, S31.  The port names are ``P1``, ``P2``, and ``P3``.
 
@@ -4323,7 +4230,6 @@ class Hfss(FieldAnalysis3D, object):
         True
 
         """
-
         solution_data = "Standard"
         if "Modal" in self.solution_type:
             solution_data = "Modal Solution Data"
@@ -4362,7 +4268,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.CreateReport
 
         """
@@ -4451,7 +4356,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oDesign.SetDesignSettings
         """
         settings = []
@@ -4486,12 +4390,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignRadiation
 
         Examples
         --------
-
         Create a box and assign a radiation boundary to it.
 
         >>> radiation_box = hfss.modeler.create_box([0, -200, -200], [200, 200, 200],
@@ -4501,7 +4403,6 @@ class Hfss(FieldAnalysis3D, object):
         <class 'pyaedt.modules.Boundary.BoundaryObject'>
 
         """
-
         object_list = self.modeler.convert_to_selections(obj_names, return_list=True)
         if boundary_name:
             rad_name = boundary_name
@@ -4529,12 +4430,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignHybridRegion
 
         Examples
         --------
-
         Create a box and assign a hybrid boundary to it.
 
         >>> box = hfss.modeler.create_box([0, -200, -200], [200, 200, 200],
@@ -4544,7 +4443,6 @@ class Hfss(FieldAnalysis3D, object):
         <class 'pyaedt.modules.Boundary.BoundaryObject'>
 
         """
-
         object_list = self.modeler.convert_to_selections(obj_names, return_list=True)
         if boundary_name:
             region_name = boundary_name
@@ -4573,12 +4471,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignRadiation
 
         Examples
         --------
-
         Create a box. Select the faces of this box and assign a radiation
         boundary to them.
 
@@ -4713,7 +4609,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
 
         """
@@ -4819,7 +4714,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
         """
         if self.solution_type != "SBR+":
@@ -4916,7 +4810,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
         """
         if self.solution_type != "SBR+":
@@ -5434,7 +5327,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.EditGlobalCurrentSourcesOption
         """
         if self.solution_type != "SBR+":
@@ -5503,7 +5395,6 @@ class Hfss(FieldAnalysis3D, object):
         ----------
         >>> oModule.EditDiffPairs
         """
-
         if self.solution_type not in ["Transient Network", "Terminal"]:  # pragma: no cover
             raise AttributeError("Differential pairs can be defined only in Terminal and Transient solution types.")
 
@@ -5596,7 +5487,6 @@ class Hfss(FieldAnalysis3D, object):
         >>> dict_in = json_to_dict(path\to\json_file)
         >>> hfss_app.add_3d_component_array_from_json(dict_in)
         """
-
         self.hybrid = True
         if isinstance(json_file, dict):
             json_dict = json_file
@@ -5828,12 +5718,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignSymmetry
 
         Examples
         --------
-
         Create a box. Select the faces of this box and assign a symmetry.
 
         >>> symmetry_box = hfss.modeler.create_box([0 , -100, 0], [200, 200, 200],
@@ -5880,12 +5768,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.ChangeImpedanceMult
 
         Examples
         --------
-
         Create a box. Select the faces of this box and assign a symmetry.
 
         >>> symmetry_box = hfss.modeler.create_box([0 , -100, 0], [200, 200, 200],
@@ -5922,18 +5808,15 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.SetPhaseCenterPerPort
 
         Examples
         --------
-
         Set phase center of an antenna with two ports.
 
         >>> hfss.set_phase_center_per_port(["Global", "Global"])
 
         """
-
         if not self.desktop_class.is_grpc_api:  # pragma: no cover
             self.hfss.logger.warning("Set phase center is not supported by AEDT COM API. Set phase center manually")
             return False
@@ -5966,8 +5849,7 @@ class Hfss(FieldAnalysis3D, object):
 
     @pyaedt_function_handler()
     def get_touchstone_data(self, setup_name, sweep_name=None, variation_dict=None):
-        """
-        Return a Touchstone data plot.
+        """Return a Touchstone data plot.
 
         Parameters
         ----------
@@ -5985,7 +5867,6 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.GetSolutionDataPerVariation
         """
         from pyaedt.generic.touchstone_parser import TouchstoneData
@@ -6019,7 +5900,6 @@ class Hfss(FieldAnalysis3D, object):
         -------
         :class:`pyaedt.modules.hdm_parser.Parser`
         """
-
         from pyaedt.sbrplus.hdm_parser import Parser
 
         if os.path.exists(filename):
@@ -6101,12 +5981,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignCircuitPort
 
         Examples
         --------
-
         Create two rectangles in the XY plane.
         Select the first edge of each rectangle created previously.
         Create a circuit port from the first edge of the first rectangle
@@ -6192,7 +6070,6 @@ class Hfss(FieldAnalysis3D, object):
 
         Examples
         --------
-
         Create two boxes that will be used to create a lumped port
         named ``'LumpedPort'``.
 
@@ -6327,12 +6204,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.AssignWavePort
 
         Examples
         --------
-
         Create a wave port supported by a microstrip line.
 
         >>> ms = hfss.modeler.create_box([4, 5, 0], [1, 100, 0.2],
@@ -6471,7 +6346,6 @@ class Hfss(FieldAnalysis3D, object):
     @pyaedt_function_handler()
     def set_mesh_fusion_settings(self, component=None, volume_padding=None, priority=None):
         # type: (list|str, list, list) -> bool
-
         """Set mesh fusion settings in Hfss.
 
         component : list, optional
@@ -6490,12 +6364,10 @@ class Hfss(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oDesign.SetDoMeshAssembly
 
         Examples
         --------
-
         >>> import pyaedt
         >>> app = pyaedt.Hfss()
         >>> app.set_mesh_fusion_settings(component=["Comp1", "Comp2"],

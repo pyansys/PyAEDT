@@ -1,8 +1,6 @@
 from pyaedt.edb_core.ipc2581.content.entry_line import EntryLine
-from pyaedt.edb_core.ipc2581.ecad.cad_data.polygon import PolyStep
-from pyaedt.edb_core.ipc2581.ecad.cad_data.polygon import PolyType
-from pyaedt.generic.general_methods import ET
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.edb_core.ipc2581.ecad.cad_data.polygon import PolyStep, PolyType
+from pyaedt.generic.general_methods import ET, pyaedt_function_handler
 
 
 class Path(object):
@@ -23,7 +21,7 @@ class Path(object):
             return
         self.line_width = self._ipc.from_meter_to_units(path_step.primitive_object.GetWidth(), self._ipc.units)
         self.width_ref_id = "ROUND_{}".format(self.line_width)
-        if not self.width_ref_id in self._ipc.content.dict_line.dict_lines:
+        if self.width_ref_id not in self._ipc.content.dict_line.dict_lines:
             entry_line = EntryLine()
             entry_line.line_width = self.line_width
             self._ipc.content.dict_line.dict_lines[self.width_ref_id] = entry_line

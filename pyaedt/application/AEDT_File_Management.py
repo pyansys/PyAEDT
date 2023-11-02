@@ -3,8 +3,7 @@ import os
 import re
 import shutil
 
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import open_file, pyaedt_function_handler
 
 
 @pyaedt_function_handler()
@@ -23,7 +22,6 @@ def read_info_fromcsv(projdir, name):
     list
 
     """
-
     filename = projdir + "//" + name
     listmcad = []
     with open_file(filename, "rb") as csvfile:

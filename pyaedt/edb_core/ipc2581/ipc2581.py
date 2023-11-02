@@ -7,8 +7,7 @@ from pyaedt.edb_core.ipc2581.ecad.cad_data.padstack_def import PadstackDef
 from pyaedt.edb_core.ipc2581.ecad.ecad import Ecad
 from pyaedt.edb_core.ipc2581.history_record import HistoryRecord
 from pyaedt.edb_core.ipc2581.logistic_header import LogisticHeader
-from pyaedt.generic.general_methods import ET
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import ET, pyaedt_function_handler
 
 
 class Ipc2581(object):
@@ -63,7 +62,7 @@ class Ipc2581(object):
                         primitive_ref = "CIRCLE_{}".format(
                             self.from_meter_to_units(pad.parameters_values[0], self.units)
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_circ_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_circ_dict:
                             self.content.standard_geometries_dict.standard_circ_dict[
                                 primitive_ref
                             ] = self.from_meter_to_units(pad.parameters_values[0], self.units)
@@ -72,7 +71,7 @@ class Ipc2581(object):
                             self.from_meter_to_units(pad.parameters_values[0], self.units),
                             self.from_meter_to_units(pad.parameters_values[0], self.units),
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_rect_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_rect_dict:
                             self.content.standard_geometries_dict.standard_rect_dict[primitive_ref] = [
                                 self.from_meter_to_units(pad.parameters_values[0], self.units),
                                 self.from_meter_to_units(pad.parameters_values[0], self.units),
@@ -82,7 +81,7 @@ class Ipc2581(object):
                             self.from_meter_to_units(pad.parameters_values[0], self.units),
                             self.from_meter_to_units(pad.parameters_values[1], self.units),
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_rect_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_rect_dict:
                             self.content.standard_geometries_dict.standard_rect_dict[primitive_ref] = [
                                 self.from_meter_to_units(pad.parameters_values[0], self.units),
                                 self.from_meter_to_units(pad.parameters_values[1], self.units),
@@ -94,7 +93,7 @@ class Ipc2581(object):
                             self.from_meter_to_units(pad.parameters_values[1], self.units),
                             self.from_meter_to_units(pad.parameters_values[2], self.units),
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_oval_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_oval_dict:
                             self.content.standard_geometries_dict.standard_oval_dict[primitive_ref] = [
                                 self.from_meter_to_units(pad.parameters_values[0], self.units),
                                 self.from_meter_to_units(pad.parameters_values[1], self.units),
@@ -109,7 +108,7 @@ class Ipc2581(object):
                         primitive_ref = "CIRCLE_{}".format(
                             self.from_meter_to_units(antipad.parameters_values[0], self.units)
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_circ_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_circ_dict:
                             self.content.standard_geometries_dict.standard_circ_dict[
                                 primitive_ref
                             ] = self.from_meter_to_units(antipad.parameters_values[0], self.units)
@@ -118,7 +117,7 @@ class Ipc2581(object):
                             self.from_meter_to_units(antipad.parameters_values[0], self.units),
                             self.from_meter_to_units(antipad.parameters_values[0], self.units),
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_rect_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_rect_dict:
                             self.content.standard_geometries_dict.standard_rect_dict[primitive_ref] = [
                                 self.from_meter_to_units(antipad.parameters_values[0], self.units),
                                 self.from_meter_to_units(antipad.parameters_values[0], self.units),
@@ -128,7 +127,7 @@ class Ipc2581(object):
                             self.from_meter_to_units(antipad.parameters_values[0], self.units),
                             self.from_meter_to_units(antipad.parameters_values[1], self.units),
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_rect_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_rect_dict:
                             self.content.standard_geometries_dict.standard_rect_dict[primitive_ref] = [
                                 self.from_meter_to_units(antipad.parameters_values[0], self.units),
                                 self.from_meter_to_units(antipad.parameters_values[1], self.units),
@@ -139,7 +138,7 @@ class Ipc2581(object):
                             self.from_meter_to_units(antipad.parameters_values[1], self.units),
                             self.from_meter_to_units(antipad.parameters_values[2], self.units),
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_oval_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_oval_dict:
                             self.content.standard_geometries_dict.standard_oval_dict[primitive_ref] = [
                                 self.from_meter_to_units(antipad.parameters_values[0], self.units),
                                 self.from_meter_to_units(antipad.parameters_values[1], self.units),
@@ -154,7 +153,7 @@ class Ipc2581(object):
                         primitive_ref = "CIRCLE_{}".format(
                             self.from_meter_to_units(thermalpad.parameters_values[0], self.units)
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_circ_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_circ_dict:
                             self.content.standard_geometries_dict[primitive_ref] = self.from_meter_to_units(
                                 thermalpad.parameters_values[0], self.units
                             )
@@ -163,7 +162,7 @@ class Ipc2581(object):
                             self.from_meter_to_units(thermalpad.parameters_values[0], self.units),
                             self.from_meter_to_units(thermalpad.parameters_values[0], self.units),
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_rect_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_rect_dict:
                             self.content.standard_geometries_dict.standard_rect_dict[primitive_ref] = [
                                 self.from_meter_to_units(thermalpad.parameters_values[0], self.units),
                                 self.from_meter_to_units(thermalpad.parameters_values[0], self.units),
@@ -173,7 +172,7 @@ class Ipc2581(object):
                             self.from_meter_to_units(thermalpad.parameters_values[0], self.units),
                             self.from_meter_to_units(thermalpad.parameters_values[1], self.units),
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_rect_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_rect_dict:
                             self.content.standard_geometries_dict.standard_rect_dict[primitive_ref] = [
                                 self.from_meter_to_units(thermalpad.parameters_values[0], self.units),
                                 self.from_meter_to_units(thermalpad.parameters_values[1], self.units),
@@ -184,7 +183,7 @@ class Ipc2581(object):
                             self.from_meter_to_units(thermalpad.parameters_values[1], self.units),
                             self.from_meter_to_units(thermalpad.parameters_values[2], self.units),
                         )
-                        if not primitive_ref in self.content.standard_geometries_dict.standard_oval_dict:
+                        if primitive_ref not in self.content.standard_geometries_dict.standard_oval_dict:
                             self.content.standard_geometries_dict.standard_oval_dict[primitive_ref] = [
                                 self.from_meter_to_units(thermalpad.parameters_values[0], self.units),
                                 self.from_meter_to_units(thermalpad.parameters_values[1], self.units),
@@ -193,7 +192,7 @@ class Ipc2581(object):
                     else:
                         primitive_ref = "Default"
                     padstack_def.add_padstack_pad_def(layer=layer, pad_use="THERMAL", primitive_ref=primitive_ref)
-            if not padstack_def.name in self.ecad.cad_data.cad_data_step.padstack_defs:
+            if padstack_def.name not in self.ecad.cad_data.cad_data_step.padstack_defs:
                 self.ecad.cad_data.cad_data_step.padstack_defs[padstack_def.name] = padstack_def
 
     @pyaedt_function_handler()

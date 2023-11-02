@@ -1,5 +1,4 @@
-"""
-This module contains these classes: `CSVDataset`, `DataSet`, `Expression`, `Variable`, and `VariableManager`.
+"""This module contains these classes: `CSVDataset`, `DataSet`, `Expression`, `Variable`, and `VariableManager`.
 
 This module is used to create and edit design and project variables in the 3D tools.
 
@@ -13,23 +12,18 @@ Examples
 
 """
 
-from __future__ import absolute_import  # noreorder
-from __future__ import division
+from __future__ import (
+    absolute_import,  # noreorder
+    division,
+)
 
 import os
 import re
 import types
 
 from pyaedt import pyaedt_function_handler
-from pyaedt.generic.constants import AEDT_UNITS
-from pyaedt.generic.constants import SI_UNITS
-from pyaedt.generic.constants import _resolve_unit_system
-from pyaedt.generic.constants import unit_system
-from pyaedt.generic.general_methods import GrpcApiError
-from pyaedt.generic.general_methods import check_numeric_equivalence
-from pyaedt.generic.general_methods import is_array
-from pyaedt.generic.general_methods import is_number
-from pyaedt.generic.general_methods import open_file
+from pyaedt.generic.constants import AEDT_UNITS, SI_UNITS, _resolve_unit_system, unit_system
+from pyaedt.generic.general_methods import GrpcApiError, check_numeric_equivalence, is_array, is_number, open_file
 
 
 class CSVDataset:
@@ -192,7 +186,6 @@ class CSVDataset:
            equivalency of units or variable names.
 
         """
-
         # Handle the case of an empty data set and create empty lists for the column data
         if self.number_of_columns == 0:
             self._header = other.header
@@ -394,7 +387,6 @@ class VariableManager(object):
 
     Examples
     --------
-
     >>> from pyaedt.maxwell import Maxwell3d
     >>> from pyaedt.desktop import Desktop
     >>> d = Desktop()
@@ -446,7 +438,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oDesign.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
@@ -498,7 +489,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oDesign.GetVariables
         >>> oDesign.GetChildObject("Variables").GetChildNames
         """
@@ -515,7 +505,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
         """
@@ -533,7 +522,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oDesign.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
@@ -562,7 +550,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oDesign.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
@@ -581,7 +568,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
         """
@@ -599,7 +585,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oDesign.GetVariables
         >>> oDesign.GetChildObject("Variables").GetChildNames
         """
@@ -617,7 +602,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oDesign.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
@@ -636,7 +620,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
         """
@@ -654,7 +637,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oDesign.GetVariables
         >>> oDesign.GetChildObject("Variables").GetChildNames
         """
@@ -671,7 +653,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
         """
@@ -683,9 +664,9 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oDesign.GetVariables
-        >>> oDesign.GetChildObject("Variables").GetChildNames"""
+        >>> oDesign.GetChildObject("Variables").GetChildNames
+        """
         return [var_name for var_name in self.design_variables]
 
     @property
@@ -694,7 +675,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
         """
@@ -706,9 +686,9 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oDesign.GetVariables
-        >>> oDesign.GetChildObject("Variables").GetChildNames"""
+        >>> oDesign.GetChildObject("Variables").GetChildNames
+        """
         return [var_name for var_name in self.independent_design_variables]
 
     @property
@@ -717,11 +697,11 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oDesign.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
-        >>> oDesign.GetChildObject("Variables").GetChildNames"""
+        >>> oDesign.GetChildObject("Variables").GetChildNames
+        """
         return [var_name for var_name in self.independent_variables]
 
     @property
@@ -730,7 +710,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
         """
@@ -742,9 +721,9 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oDesign.GetVariables
-        >>> oDesign.GetChildObject("Variables").GetChildNames"""
+        >>> oDesign.GetChildObject("Variables").GetChildNames
+        """
         return [var_name for var_name in self.dependent_design_variables]
 
     @property
@@ -753,11 +732,11 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariables
         >>> oDesign.GetVariables
         >>> oProject.GetChildObject("Variables").GetChildNames
-        >>> oDesign.GetChildObject("Variables").GetChildNames"""
+        >>> oDesign.GetChildObject("Variables").GetChildNames
+        """
         return [var_name for var_name in self.dependent_variables]
 
     @property
@@ -895,7 +874,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.GetVariableValue
         >>> oDesign.GetVariableValue
         """
@@ -965,6 +943,7 @@ class VariableManager(object):
         circuit_parameter : bool, optional
             Whether to define a parameter in a circuit design or a local parameter.
              The default is ``True``, in which case a circuit variable is created as a parameter default.
+
         Returns
         -------
         bool
@@ -972,7 +951,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.ChangeProperty
         >>> oDesign.ChangeProperty
 
@@ -1167,7 +1145,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.ChangeProperty
         >>> oDesign.ChangeProperty
         """
@@ -1209,7 +1186,6 @@ class VariableManager(object):
 
         References
         ----------
-
         >>> oProject.ChangeProperty
         >>> oDesign.ChangeProperty
         """
@@ -1349,7 +1325,6 @@ class Variable(object):
 
     Examples
     --------
-
     >>> from pyaedt.application.Variables import Variable
 
     Define a variable using a string value consistent with the AEDT properties.
@@ -1743,7 +1718,6 @@ class Variable(object):
     @property
     def value(self):
         """Value."""
-
         return self._value
 
     @property
@@ -1835,18 +1809,18 @@ class Variable(object):
     def __mul__(self, other):
         """Multiply the variable with a number or another variable and return a new object.
 
-                Parameters
-                ----------
+        Parameters
+        ----------
                 other : numbers.Number or variable
                     Object to be multiplied.
 
-                Returns
-                -------
+        Returns
+        -------
                 type
                     Variable.
 
-                Examples
-                --------
+        Examples
+        --------
                 >>> from pyaedt.application.Variables import Variable
 
                 Multiply ``'Length1'`` by unitless ``'None'``` to obtain ``'Length'``.
@@ -1947,7 +1921,6 @@ class Variable(object):
 
         Examples
         --------
-
         >>> import pyaedt.generic.constants
         >>> from pyaedt.application.Variables import Variable
         >>> v3 = Variable("3mA")
@@ -2152,7 +2125,6 @@ class DataSet(object):
 
         References
         ----------
-
         >>> oProject.AddDataset
         >>> oDesign.AddDataset
         """
@@ -2184,7 +2156,6 @@ class DataSet(object):
 
         References
         ----------
-
         >>> oProject.EditDataset
         >>> oDesign.EditDataset
         """
@@ -2211,7 +2182,6 @@ class DataSet(object):
 
         References
         ----------
-
         >>> oProject.EditDataset
         >>> oDesign.EditDataset
         """
@@ -2237,7 +2207,6 @@ class DataSet(object):
 
         References
         ----------
-
         >>> oProject.EditDataset
         >>> oDesign.EditDataset
         """
@@ -2262,7 +2231,6 @@ class DataSet(object):
 
         References
         ----------
-
         >>> oProject.EditDataset
         >>> oDesign.EditDataset
         """
@@ -2286,7 +2254,6 @@ class DataSet(object):
 
         References
         ----------
-
         >>> oProject.DeleteDataset
         >>> oDesign.DeleteDataset
         """
@@ -2315,7 +2282,6 @@ class DataSet(object):
 
         References
         ----------
-
         >>> oProject.ExportDataset
         >>> oDesign.ExportDataset
         """

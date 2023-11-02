@@ -4,9 +4,7 @@ from pyaedt import pyaedt_function_handler
 from pyaedt.edb_core.edb_data.connectable import Connectable
 from pyaedt.edb_core.edb_data.padstacks_data import EDBPadstackInstance
 from pyaedt.edb_core.edb_data.primitives_data import cast
-from pyaedt.edb_core.general import BoundaryType
-from pyaedt.edb_core.general import TerminalType
-from pyaedt.edb_core.general import convert_py_list_to_net_list
+from pyaedt.edb_core.general import BoundaryType, TerminalType, convert_py_list_to_net_list
 from pyaedt.generic.general_methods import generate_unique_name
 
 
@@ -140,7 +138,7 @@ class Terminal(Connectable):
 
     @boundary_type.setter
     def boundary_type(self, value):
-        if not value in [i.name for i in BoundaryType]:  # pragma : no cover
+        if value not in [i.name for i in BoundaryType]:  # pragma : no cover
             self._pedb.logger.warning("Invalid Boundary Type={}".format(value))
         if value == self._pedb.edb_api.cell.terminal.BoundaryType.kVoltageProbe.ToString():
             temp = self._pedb.edb_api.cell.terminal.BoundaryType.kVoltageProbe
@@ -165,7 +163,6 @@ class Terminal(Connectable):
     @property
     def ref_terminal(self):
         """Get reference terminal."""
-
         terminal = Terminal(self._pedb, self._edb_object.GetReferenceTerminal())
         if not terminal.is_null:
             if terminal.terminal_type == TerminalType.PointTerminal.name:
@@ -182,7 +179,6 @@ class Terminal(Connectable):
     @property
     def reference_object(self):  # pragma : no cover
         """This returns the object assigned as reference. It can be a primitive or a padstack instance.
-
 
         Returns
         -------
@@ -233,7 +229,6 @@ class Terminal(Connectable):
         -------
         :class:`pyaedt.edb_core.edb_data.padstack_data.EDBPadstackInstance`
         """
-
         if self._edb_object.GetIsCircuitPort():
             return self.get_pin_group_terminal_reference_pin()
         _, padStackInstance, _ = self._edb_object.GetParameters()
@@ -256,7 +251,6 @@ class Terminal(Connectable):
         -------
         :class:`pyaedt.edb_core.edb_data.padstack_data.EDBPadstackInstance`
         """
-
         refTerm = self._edb_object.GetReferenceTerminal()
         if self._edb_object.GetTerminalType() == self._pedb.edb_api.cell.terminal.TerminalType.PinGroupTerminal:
             padStackInstance = self._edb_object.GetPinGroup().GetPins()[0]
@@ -288,7 +282,6 @@ class Terminal(Connectable):
         -------
         :class:`pyaedt.edb_core.edb_data.primitives_data.EDBPrimitives`
         """
-
         ref_layer = self._edb_object.GetReferenceLayer()
         edges = self._edb_object.GetEdges()
         _, _, point_data = edges[0].GetParameters()
@@ -312,7 +305,6 @@ class Terminal(Connectable):
         :class:`pyaedt.edb_core.edb_data.padstacks_data.EDBPadstackInstance` or
         :class:`pyaedt.edb_core.edb_data.primitives_data.EDBPrimitives`
         """
-
         ref_term = self._edb_object.GetReferenceTerminal()  # return value is type terminal
         _, point_data, layer = ref_term.GetParameters()
         X = point_data.X
@@ -466,6 +458,7 @@ class PadstackInstanceTerminal(Terminal):
             default name is assigned.
         is_ref : bool, optional
             Whether it is a reference terminal. The default is ``False``.
+
         Returns
         -------
         Edb.Cell.Terminal.EdgeTerminal

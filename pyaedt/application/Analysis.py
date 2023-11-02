@@ -1,5 +1,4 @@
-"""
-This module contains the ``analysis`` class.
+"""This module contains the ``analysis`` class.
 
 It includes common classes for file management and messaging and all
 calls to AEDT modules like the modeler, mesh, postprocessing, and setup.
@@ -15,34 +14,15 @@ import tempfile
 import time
 import warnings
 
-from pyaedt import is_ironpython
-from pyaedt import is_linux
-from pyaedt import is_windows
-from pyaedt import settings
+from pyaedt import is_ironpython, is_linux, is_windows, settings
 from pyaedt.application.Design import Design
 from pyaedt.application.JobManager import update_hpc_option
-from pyaedt.application.Variables import Variable
-from pyaedt.application.Variables import decompose_variable_value
-from pyaedt.generic.constants import AXIS
-from pyaedt.generic.constants import GRAVITY
-from pyaedt.generic.constants import PLANE
-from pyaedt.generic.constants import SETUPS
-from pyaedt.generic.constants import SOLUTIONS
-from pyaedt.generic.constants import VIEW
-from pyaedt.generic.general_methods import filter_tuple
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modules.Boundary import MaxwellParameters
-from pyaedt.modules.Boundary import NativeComponentObject
-from pyaedt.modules.DesignXPloration import OptimizationSetups
-from pyaedt.modules.DesignXPloration import ParametricSetups
-from pyaedt.modules.SolveSetup import Setup
-from pyaedt.modules.SolveSetup import SetupHFSS
-from pyaedt.modules.SolveSetup import SetupHFSSAuto
-from pyaedt.modules.SolveSetup import SetupMaxwell
-from pyaedt.modules.SolveSetup import SetupQ3D
-from pyaedt.modules.SolveSetup import SetupSBR
+from pyaedt.application.Variables import Variable, decompose_variable_value
+from pyaedt.generic.constants import AXIS, GRAVITY, PLANE, SETUPS, SOLUTIONS, VIEW
+from pyaedt.generic.general_methods import filter_tuple, generate_unique_name, open_file, pyaedt_function_handler
+from pyaedt.modules.Boundary import MaxwellParameters, NativeComponentObject
+from pyaedt.modules.DesignXPloration import OptimizationSetups, ParametricSetups
+from pyaedt.modules.SolveSetup import Setup, SetupHFSS, SetupHFSSAuto, SetupMaxwell, SetupQ3D, SetupSBR
 from pyaedt.modules.SolveSweeps import SetupProps
 
 if is_linux and is_ironpython:
@@ -163,7 +143,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GetOutputVariables()
         """
         return self.ooutput_variable.GetOutputVariables()
@@ -221,7 +200,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GetAllSolutionSetups()
         """
         if self._setup:
@@ -255,7 +233,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GetAllSolutionSetups()
         """
         warnings.warn("`analysis_setup` is deprecated. Use `active_setup` property instead.", DeprecationWarning)
@@ -276,7 +253,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GelAllSolutionNames
         >>> oModule.GetSweeps
         """
@@ -317,7 +293,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GelAllSolutionNames
         >>> oModule.GetSweeps
         """
@@ -338,11 +313,9 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GelAllSolutionNames
         >>> oModule.GetSweeps
         """
-
         if len(self.existing_analysis_sweeps) > 1:
             return self.existing_analysis_sweeps[1]
         else:
@@ -359,7 +332,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GetSetups
         """
         setups = self.oanalysis.GetSetups()
@@ -378,7 +350,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GetSetups
         """
         return self.oanalysis.GetSetups()
@@ -417,7 +388,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GetExcitations
         """
         try:
@@ -518,10 +488,8 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.ListVariations
         """
-
         if not setup_name and ":" in self.nominal_sweep:
             setup_name = self.nominal_adaptive.split(":")[0].strip()
         elif not setup_name:
@@ -600,7 +568,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GetAllPortsList
         >>> oDesign.ExportProfile
         >>> oModule.ExportToFile
@@ -822,7 +789,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.ExportConvergence
         """
         if " : " in setup_name:
@@ -941,7 +907,6 @@ class Analysis(Design, object):
 
             References
             ----------
-
             >>> oModule.GetAvailableVariations
             """
             variations_string = self.get_variation_strings(setup_sweep)
@@ -992,7 +957,6 @@ class Analysis(Design, object):
 
             References
             ----------
-
             >>> oModule.GetAvailableVariations
             """
             if not setup_sweep:
@@ -1014,11 +978,11 @@ class Analysis(Design, object):
 
             References
             ----------
-
             >>> oDesign.GetChildObject('Variables').GetChildNames
             >>> oDesign.GetVariables
             >>> oDesign.GetVariableValue
-            >>> oDesign.GetNominalVariation"""
+            >>> oDesign.GetNominalVariation
+            """
             families = []
             for k, v in list(self._app.variable_manager.independent_variables.items()):
                 families.append(k + ":=")
@@ -1031,11 +995,11 @@ class Analysis(Design, object):
 
             References
             ----------
-
             >>> oDesign.GetChildObject('Variables').GetChildNames
             >>> oDesign.GetVariables
             >>> oDesign.GetVariableValue
-            >>> oDesign.GetNominalVariation"""
+            >>> oDesign.GetNominalVariation
+            """
             families = {}
             for k, v in list(self._app.variable_manager.independent_variables.items()):
                 families[k] = v.expression
@@ -1048,11 +1012,11 @@ class Analysis(Design, object):
 
             References
             ----------
-
             >>> oDesign.GetChildObject('Variables').GetChildNames
             >>> oDesign.GetVariables
             >>> oDesign.GetVariableValue
-            >>> oDesign.GetNominalVariation"""
+            >>> oDesign.GetNominalVariation
+            """
             families = {}
             for k, v in list(self._app.variable_manager.variables.items()):
                 families[k] = v.expression
@@ -1084,7 +1048,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GetSetups
         """
         setups = self.oanalysis.GetSetups()
@@ -1126,7 +1089,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.GetSweeps
         """
         sweeps = self.oanalysis.GetSweeps(name)
@@ -1153,10 +1115,8 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.ExportParametricResults
         """
-
         self.ooptimetrics.ExportParametricResults(sweepname, filename, exportunits)
         return True
 
@@ -1285,7 +1245,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.DeleteSetups
 
         Examples
@@ -1324,10 +1283,8 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.EditSetup
         """
-
         setuptype = self.design_solutions.default_setup
         setup = Setup(self, setuptype, setupname, isnewsetup=False)
         setup.update(properties_dict)
@@ -1369,7 +1326,6 @@ class Analysis(Design, object):
     def create_output_variable(self, variable, expression, solution=None, context=None):
         """Create or modify an output variable.
 
-
         Parameters
         ----------
         variable : str, optional
@@ -1389,7 +1345,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.CreateOutputVariable
         """
         if context is None:
@@ -1427,7 +1382,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oDesign.GetNominalVariation
         >>> oModule.GetOutputVariableValue
         """
@@ -1512,7 +1466,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oModule.RevertSetupToInitial
         >>> oDesign.Analyze
         """
@@ -1550,7 +1503,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oDesign.Analyze
         """
         warnings.warn("`analyze_nominal` is deprecated. Use `analyze` method instead.", DeprecationWarning)
@@ -1611,7 +1563,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oDesign.Analyze
         """
         if solve_in_batch:
@@ -1684,7 +1635,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oDesign.Analyze
         """
         start = time.time()
@@ -2039,7 +1989,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oDesktop.SubmitJob
         """
         return self.desktop_class.submit_job(
@@ -2366,7 +2315,6 @@ class Analysis(Design, object):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         if isinstance(property_value, list) and len(property_value) == 3:

@@ -6,17 +6,13 @@ import os
 import re
 import warnings
 
-from pyaedt import is_ironpython
-from pyaedt import settings
+from pyaedt import is_ironpython, settings
 from pyaedt.application.Analysis3D import FieldAnalysis3D
 from pyaedt.application.Variables import decompose_variable_value
-from pyaedt.generic.constants import MATRIXOPERATIONSQ2D
-from pyaedt.generic.constants import MATRIXOPERATIONSQ3D
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.constants import MATRIXOPERATIONSQ2D, MATRIXOPERATIONSQ3D
+from pyaedt.generic.general_methods import generate_unique_name, pyaedt_function_handler
 from pyaedt.modeler.geometry_operators import GeometryOperators as go
-from pyaedt.modules.Boundary import BoundaryObject
-from pyaedt.modules.Boundary import Matrix
+from pyaedt.modules.Boundary import BoundaryObject, Matrix
 from pyaedt.modules.SetupTemplates import SetupKeys
 
 if not is_ironpython:
@@ -159,7 +155,6 @@ class QExtractor(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.GetAllSources
         """
         return self.excitations
@@ -882,7 +877,6 @@ class QExtractor(FieldAnalysis3D, object):
 
         References
         ----------
-
         >>> oModule.ExportCircuit
 
         Examples
@@ -1308,7 +1302,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.ListNets
         """
         nets_data = list(self.oboundary.ListNets())
@@ -1438,7 +1431,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.AutoIdentifyNets
         """
         original_nets = [i for i in self.nets]
@@ -1479,7 +1471,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.AssignSignalNet
         >>> oModule.AssignGroundNet
         >>> oModule.AssignFloatingNet
@@ -1533,7 +1524,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.AssignSource
         """
         return self._assign_source_or_sink(objects, axisdir, name, net_name, terminal_type, "Source")
@@ -1565,7 +1555,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.AssignSource
         """
         return self._assign_source_or_sink(objects, axisdir, name, net_name, terminal_type, "Sink")
@@ -1637,7 +1626,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.AssignSource
         """
         warnings.warn("Use :func:`source` method instead.", DeprecationWarning)
@@ -1672,7 +1660,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.AssignSource
         """
         warnings.warn("Use :func:`source` method instead.", DeprecationWarning)
@@ -1703,7 +1690,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.AssignSink
         """
         object_name = self.modeler.convert_to_selections(object_name, True)[0]
@@ -1750,7 +1736,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.AssignSink
         """
         if not sinkname:
@@ -1809,7 +1794,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.InsertSweep
         """
         if sweepname is None:
@@ -1871,7 +1855,6 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.InsertSweep
         """
         if sweepname is None:
@@ -1959,7 +1942,6 @@ class Q3d(QExtractor, object):
 
         Parameters
         ----------
-
         setupname : str, optional
             Name of the setup. The default is "Setup1".
         **kwargs : dict, optional
@@ -1973,12 +1955,10 @@ class Q3d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
 
         Examples
         --------
-
         >>> from pyaedt import Q3d
         >>> app = Q3d()
         >>> app.create_setup(setupname="Setup1", DC__MinPass=2)
@@ -2141,7 +2121,6 @@ class Q2d(QExtractor, object):
 
         References
         ----------
-
         >>> oEditor.CreateRectangle
         """
         return self.modeler.create_rectangle(position, dimension_list=dimension_list, name=name, matname=matname)
@@ -2168,11 +2147,9 @@ class Q2d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.AssignSingleSignalLine
         >>> oModule.AssignSingleReferenceGround
         """
-
         warnings.warn(
             "`assign_single_signal_line` is deprecated. Use `assign_single_conductor` instead.", DeprecationWarning
         )
@@ -2188,8 +2165,7 @@ class Q2d(QExtractor, object):
         thickness=None,
         unit="um",
     ):
-        """
-        Assign the conductor type to sheets.
+        """Assign the conductor type to sheets.
 
         Parameters
         ----------
@@ -2217,7 +2193,6 @@ class Q2d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.AssignSingleSignalLine
         >>> oModule.AssignSingleReferenceGround
         """
@@ -2250,8 +2225,7 @@ class Q2d(QExtractor, object):
 
     @pyaedt_function_handler()
     def assign_huray_finitecond_to_edges(self, edges, radius, ratio, unit="um", name=""):
-        """
-        Assign the Huray surface roughness model to edges.
+        """Assign the Huray surface roughness model to edges.
 
         Parameters
         ----------
@@ -2270,7 +2244,6 @@ class Q2d(QExtractor, object):
 
         References
         ----------
-
         >>> oMdoule.AssignFiniteCond
         """
         if not name:
@@ -2495,12 +2468,10 @@ class Q2d(QExtractor, object):
 
         References
         ----------
-
         >>> oModule.InsertSetup
 
         Examples
         --------
-
         >>> from pyaedt import Q2d
         >>> app = Q2d()
         >>> app.create_setup(setupname="Setup1", RLDataBlock__MinPass=2))

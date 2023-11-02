@@ -8,8 +8,7 @@ import math
 import os
 import warnings
 
-from pyaedt import is_ironpython
-from pyaedt import is_linux
+from pyaedt import is_ironpython, is_linux
 from pyaedt.generic.general_methods import GrpcApiError
 from pyaedt.modules.SetupTemplates import SetupKeys
 
@@ -21,18 +20,13 @@ else:
 import re
 
 from pyaedt.application.Analysis3D import FieldAnalysis3D
-from pyaedt.generic.DataHandlers import _arg2dict
-from pyaedt.generic.DataHandlers import random_string
 from pyaedt.generic.configurations import ConfigurationsIcepak
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import open_file
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.DataHandlers import _arg2dict, random_string
+from pyaedt.generic.general_methods import generate_unique_name, open_file, pyaedt_function_handler
 from pyaedt.generic.settings import settings
 from pyaedt.modeler.cad.components_3d import UserDefinedComponent
 from pyaedt.modeler.geometry_operators import GeometryOperators
-from pyaedt.modules.Boundary import BoundaryObject
-from pyaedt.modules.Boundary import NativeComponentObject
-from pyaedt.modules.Boundary import NetworkObject
+from pyaedt.modules.Boundary import BoundaryObject, NativeComponentObject, NetworkObject
 from pyaedt.modules.monitor_icepak import Monitor
 
 
@@ -92,7 +86,6 @@ class Icepak(FieldAnalysis3D):
 
     Examples
     --------
-
     Create an instance of Icepak and connect to an existing Icepak
     design or create a new Icepak design if one does not exist.
 
@@ -262,7 +255,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignGrilleBoundary
         """
         if boundary_name is None:
@@ -309,12 +301,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignOpeningBoundary
 
         Examples
         --------
-
         Create an opening boundary for the faces of the ``"USB_GND"`` object.
 
         >>> faces = icepak.modeler["USB_GND"].faces
@@ -364,12 +354,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AddTwoWayCoupling
 
         Examples
         --------
-
         >>> icepak.assign_2way_coupling("Setup1", 1, True, 10)
         True
 
@@ -419,12 +407,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignBlockBoundary
 
         Examples
         --------
-
         Create block boundaries from each box in the list.
 
         >>> box1 = icepak.modeler.create_box([1, 1, 1], [3, 3, 3], "BlockBox1", "copper")
@@ -485,12 +471,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignBlockBoundary
 
         Examples
         --------
-
         >>> box = icepak.modeler.create_box([5, 5, 5], [1, 2, 3], "BlockBox3", "copper")
         >>> block = icepak.create_source_block("BlockBox3", "1W", False)
         PyAEDT INFO: Block on ...
@@ -681,12 +665,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignSourceBoundary
 
         Examples
         --------
-
         Create two source boundaries from one box, one on the top face and one on the bottom face.
 
         >>> box = icepak.modeler.create_box([0, 0, 0], [20, 20, 20], name="SourceBox")
@@ -783,12 +765,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignNetworkBoundary
 
         Examples
         --------
-
         >>> box = icepak.modeler.create_box([4, 5, 6], [5, 5, 5], "NetworkBox1", "copper")
         >>> block = icepak.create_network_block("NetworkBox1", "2W", 20, 10, 2 , 1.05918)
         >>> block.props["Nodes"]["Internal"][0]
@@ -881,12 +861,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignNetworkBoundary
 
         Examples
         --------
-
         Create network boundaries from each box in the list.
 
         >>> box1 = icepak.modeler.create_box([1, 2, 3], [10, 10, 10], "NetworkBox2", "copper")
@@ -947,12 +925,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignFaceMonitor
 
         Examples
         --------
-
         Create a rectangle named ``"Surface1"`` and assign a temperature monitor to that surface.
 
         >>> surface = icepak.modeler.create_rectangle(icepak.PLANE.XY,
@@ -1018,12 +994,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignPointMonitor
 
         Examples
         --------
-
         Create a box named ``"BlockBox1"`` and assign a temperature monitor point to that object.
 
         >>> box = icepak.modeler.create_box([1, 1, 1], [3, 3, 3], "BlockBox1", "copper")
@@ -1050,7 +1024,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignBlockBoundary
         """
         with open_file(csv_name) as csvfile:
@@ -1112,7 +1085,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oEditor.UpdatePriorityList
         """
         temp_log = os.path.join(self.working_directory, "validation.log")
@@ -1155,7 +1127,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oEditor.GetModelBoundingBox
         """
         dirs = ["-X", "+X", "-Y", "+Y", "-Z", "+Z"]
@@ -1442,6 +1413,7 @@ class Icepak(FieldAnalysis3D):
         skip_intersection_checks : bool, optional
             Whether to skip intersection checks during validation check.
             The default value is ``False``.
+
         Returns
         -------
         bool
@@ -1449,7 +1421,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oDesign.SetDesignSettings
         """
         #
@@ -1560,7 +1531,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignEMLoss
         """
         if surface_objects is None:
@@ -1664,7 +1634,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.ExportFieldsSummary
         """
         name = generate_unique_name(quantity_name)
@@ -1737,7 +1706,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.ExportFieldsSummary
         """
         if not savedir:
@@ -1813,7 +1781,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.EditFieldsSummarySetting
         >>> oModule.ExportFieldsSummary
         """
@@ -1850,7 +1817,7 @@ class Icepak(FieldAnalysis3D):
                 )
                 arg.append("Calculation:=")
                 arg.append([type, geometry_type, el, quantity, "", "Default"])
-            except Exception as e:
+            except Exception:
                 self.logger.warning("Object " + el + " not added.")
         if not output_dir:
             output_dir = self.working_directory
@@ -2015,7 +1982,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.InsertNativeComponent
         """
         if not name:
@@ -2163,7 +2129,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.InsertNativeComponent
         """
         if "extenttype" in kwargs:
@@ -2326,7 +2291,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.InsertNativeComponent
         """
         if "extenttype" in kwargs:
@@ -2386,7 +2350,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oEditor.Copy
         >>> oeditor.Paste
         """
@@ -2476,7 +2439,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.EditGlobalMeshRegion
         """
         bounding_box = self.modeler.oeditor.GetModelBoundingBox()
@@ -2554,7 +2516,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oeditor.ChangeProperty
         """
         self.modeler.edit_region_dimensions([0, 0, 0, 0, 0, 0])
@@ -2612,7 +2573,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.DeleteBoundaries
         """
         self.oboundary.DeleteBoundaries([bound_name])
@@ -2634,7 +2594,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oEditor.Delete
         """
         arg = ["NAME:Selections", "Selections:=", comp_name]
@@ -2872,7 +2831,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oDesign.SetDesignSettings
         """
         ambient_temperature = self.modeler._arg_with_dim(ambienttemp, "cel")
@@ -2928,7 +2886,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oEditor.ChangeProperty
         """
         objs = ["NAME:PropServers"]
@@ -3060,7 +3017,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oDesign.ImportIDF
         """
         active_design_name = self.oproject.GetActiveDesign().GetName()
@@ -3184,7 +3140,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignNetworkBoundary
 
         Examples
@@ -3406,7 +3361,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignStationaryWallBoundary
         """
         if not name:
@@ -3537,7 +3491,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignStationaryWallBoundary
         """
         return self.assign_stationary_wall(
@@ -3597,7 +3550,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignStationaryWallBoundary
         """
         return self.assign_stationary_wall(
@@ -3731,7 +3683,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignStationaryWallBoundary
         """
         return self.assign_stationary_wall(
@@ -3791,12 +3742,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.InsertSetup
 
         Examples
         --------
-
         >>> from pyaedt import Icepak
         >>> app = Icepak()
         >>> app.create_setup(setupname="Setup1", setuptype="TransientTemperatureOnly", MaxIterations=20)
@@ -3891,12 +3840,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignSourceBoundary
 
         Examples
         --------
-
         >>> from pyaedt import Icepak
         >>> app = Icepak()
         >>> box = app.modeler.create_box([0, 0, 0], [20, 20, 20], name="box")
@@ -3988,12 +3935,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignNetworkBoundary
 
         Examples
         --------
-
         >>> from pyaedt import Icepak
         >>> app = Icepak()
         >>> network = app.create_network_object()
@@ -4036,12 +3981,10 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignNetworkBoundary
 
         Examples
         --------
-
         >>> from pyaedt import Icepak
         >>> app = Icepak()
         >>> box = app.modeler.create_box([0, 0, 0], [20, 50, 80])
@@ -4053,7 +3996,6 @@ class Icepak(FieldAnalysis3D):
         >>>           [1, 2, 4, 0]]
         >>> boundary = app.assign_resistor_network_from_matrix(sources_power, faces_ids, matrix)
         """
-
         net = self.create_network_object(name=network_name)
         all_nodes = []
         for i, source in enumerate(sources_power):
@@ -4078,8 +4020,7 @@ class Icepak(FieldAnalysis3D):
     def assign_solid_block(
         self, object_name, power_assignment, boundary_name=None, htc=None, ext_temperature="AmbientTemp"
     ):
-        """
-        Assign block boundary for solid objects.
+        """Assign block boundary for solid objects.
 
         Parameters
         ----------
@@ -4127,7 +4068,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignBlockBoundary
 
         Examples
@@ -4252,7 +4192,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignBlockBoundary
 
         Examples
@@ -4343,8 +4282,7 @@ class Icepak(FieldAnalysis3D):
 
     @pyaedt_function_handler()
     def get_fans_operating_point(self, export_file=None, setup_name=None, timestep=None, design_variation=None):
-        """
-        Get operating point of the fans in the design.
+        """Get operating point of the fans in the design.
 
         Parameters
         ----------
@@ -4373,7 +4311,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.ExportFanOperatingPoint
 
         Examples
@@ -4383,7 +4320,6 @@ class Icepak(FieldAnalysis3D):
         >>> ipk.create_fan()
         >>> filename, vol_flow_name, p_rise_name, op_dict= ipk.get_fans_operating_point()
         """
-
         if export_file is None:
             path = self.temp_directory
             base_name = "{}_{}_FanOpPoint".format(self.project_name, self.design_name)
@@ -4442,8 +4378,7 @@ class Icepak(FieldAnalysis3D):
         inflow=True,
         direction_vector=None,
     ):
-        """
-        Assign free opening boundary condition.
+        """Assign free opening boundary condition.
 
         Parameters
         ----------
@@ -4508,7 +4443,7 @@ class Icepak(FieldAnalysis3D):
         oModule.AssignOpeningBoundary
 
         Examples
-        ----------
+        --------
         >>> import pyaedt
         >>> icepak = pyaedt.Icepak()
         >>> f_id = icepak.modeler["Region"].faces[0].id
@@ -4603,8 +4538,7 @@ class Icepak(FieldAnalysis3D):
         pressure="AmbientPressure",
         no_reverse_flow=False,
     ):
-        """
-        Assign free opening boundary condition.
+        """Assign free opening boundary condition.
 
         Parameters
         ----------
@@ -4647,7 +4581,7 @@ class Icepak(FieldAnalysis3D):
         oModule.AssignOpeningBoundary
 
         Examples
-        ----------
+        --------
         >>> import pyaedt
         >>> icepak = pyaedt.Icepak()
         >>> f_id = icepak.modeler["Region"].faces[0].id
@@ -4673,8 +4607,7 @@ class Icepak(FieldAnalysis3D):
         pressure="AmbientPressure",
         velocity=["0m_per_sec", "0m_per_sec", "0m_per_sec"],
     ):
-        """
-        Assign free opening boundary condition.
+        """Assign free opening boundary condition.
 
         Parameters
         ----------
@@ -4722,7 +4655,7 @@ class Icepak(FieldAnalysis3D):
         oModule.AssignOpeningBoundary
 
         Examples
-        ----------
+        --------
         >>> import pyaedt
         >>> icepak = pyaedt.Icepak()
         >>> f_id = icepak.modeler["Region"].faces[0].id
@@ -4750,8 +4683,7 @@ class Icepak(FieldAnalysis3D):
         inflow=True,
         direction_vector=None,
     ):
-        """
-        Assign free opening boundary condition.
+        """Assign free opening boundary condition.
 
         Parameters
         ----------
@@ -4805,7 +4737,7 @@ class Icepak(FieldAnalysis3D):
         oModule.AssignOpeningBoundary
 
         Examples
-        ----------
+        --------
         >>> import pyaedt
         >>> icepak = pyaedt.Icepak()
         >>> f_id = icepak.modeler["Region"].faces[0].id
@@ -4846,7 +4778,6 @@ class Icepak(FieldAnalysis3D):
 
         References
         ----------
-
         >>> oModule.AssignSymmetryWallBoundary
         """
         if not boundary_name:

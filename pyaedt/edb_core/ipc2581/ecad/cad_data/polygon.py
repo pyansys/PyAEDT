@@ -1,7 +1,6 @@
 import math
 
-from pyaedt.generic.general_methods import ET
-from pyaedt.generic.general_methods import pyaedt_function_handler
+from pyaedt.generic.general_methods import ET, pyaedt_function_handler
 
 
 class Polygon(object):

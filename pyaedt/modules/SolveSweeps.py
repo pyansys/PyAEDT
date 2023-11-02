@@ -9,9 +9,7 @@ import warnings
 from pyaedt import pyaedt_function_handler
 from pyaedt.generic.DataHandlers import _dict2arg
 from pyaedt.generic.LoadAEDTFile import load_entire_aedt_file
-from pyaedt.modules.SetupTemplates import Sweep3DLayout
-from pyaedt.modules.SetupTemplates import SweepHfss3D
-from pyaedt.modules.SetupTemplates import SweepSiwave
+from pyaedt.modules.SetupTemplates import Sweep3DLayout, SweepHfss3D, SweepSiwave
 
 open3 = open
 if sys.version_info < (3, 0):

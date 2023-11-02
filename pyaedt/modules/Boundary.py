@@ -1,22 +1,20 @@
-"""
-This module contains these classes: `BoundaryCommon` and `BoundaryObject`.
+"""This module contains these classes: `BoundaryCommon` and `BoundaryObject`.
 """
 from collections import OrderedDict
 import copy
 import re
 
 from pyaedt.application.Variables import decompose_variable_value
-from pyaedt.generic.DataHandlers import _dict2arg
-from pyaedt.generic.DataHandlers import random_string
 from pyaedt.generic.constants import CATEGORIESQ3D
-from pyaedt.generic.general_methods import PropsManager
-from pyaedt.generic.general_methods import _dim_arg
-from pyaedt.generic.general_methods import filter_tuple
-from pyaedt.generic.general_methods import generate_unique_name
-from pyaedt.generic.general_methods import pyaedt_function_handler
-from pyaedt.modeler.cad.elements3d import EdgePrimitive
-from pyaedt.modeler.cad.elements3d import FacePrimitive
-from pyaedt.modeler.cad.elements3d import VertexPrimitive
+from pyaedt.generic.DataHandlers import _dict2arg, random_string
+from pyaedt.generic.general_methods import (
+    PropsManager,
+    _dim_arg,
+    filter_tuple,
+    generate_unique_name,
+    pyaedt_function_handler,
+)
+from pyaedt.modeler.cad.elements3d import EdgePrimitive, FacePrimitive, VertexPrimitive
 from pyaedt.modules.CircuitTemplates import SourceKeys
 
 
@@ -272,7 +270,7 @@ class NativeComponentObject(BoundaryCommon, object):
         try:
             a = [i for i in self._app.excitations if i not in names]
             self.excitation_name = a[0].split(":")[0]
-        except Exception as e:
+        except Exception:
             self.excitation_name = self.name
         return True
 
@@ -286,7 +284,6 @@ class NativeComponentObject(BoundaryCommon, object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         self.update_props = OrderedDict({})
         self.update_props["DefinitionName"] = self.props["SubmodelDefinitionName"]
         self.update_props["GeometryDefinitionParameters"] = self.props["GeometryDefinitionParameters"]
@@ -343,7 +340,6 @@ class BoundaryObject(BoundaryCommon, object):
 
     Examples
     --------
-
     Create a cylinder at the XY working plane and assign a copper coating of 0.2 mm to it. The Coating is a boundary
     operation and coat will return a ``pyaedt.modules.Boundary.BoundaryObject``
 
@@ -812,7 +808,6 @@ class BoundaryObject(BoundaryCommon, object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         out = ["Name:" + self.name]
 
         if "Faces" in self.props:
@@ -860,7 +855,6 @@ class MaxwellParameters(BoundaryCommon, object):
 
     Examples
     --------
-
     Create a matrix in Maxwell3D return a ``pyaedt.modules.Boundary.BoundaryObject``
 
     >>> from pyaedt import Maxwell2d
@@ -890,7 +884,6 @@ class MaxwellParameters(BoundaryCommon, object):
         class:`pyaedt.modeler.cad.elements3d.BinaryTreeNode`
 
         """
-
         from pyaedt.modeler.cad.elements3d import BinaryTreeNode
 
         cc = self._app.odesign.GetChildObject("Parameters")
@@ -1013,9 +1006,7 @@ class MaxwellParameters(BoundaryCommon, object):
 
     @pyaedt_function_handler()
     def join_series(self, sources, matrix_name=None, join_name=None):
-        """
-
-        Parameters
+        """Parameters
         ----------
         sources : list
             Sources to be included in matrix reduction.
@@ -1036,9 +1027,7 @@ class MaxwellParameters(BoundaryCommon, object):
 
     @pyaedt_function_handler()
     def join_parallel(self, sources, matrix_name=None, join_name=None):
-        """
-
-        Parameters
+        """Parameters
         ----------
         sources : list
             Sources to be included in matrix reduction.
@@ -1109,7 +1098,6 @@ class FieldSetup(BoundaryCommon, object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         if self.type == "FarFieldSphere":
             self._app.oradfield.InsertInfiniteSphereSetup(self._get_args())
         elif self.type == "NearFieldBox":
@@ -1136,7 +1124,6 @@ class FieldSetup(BoundaryCommon, object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         if self.type == "FarFieldSphere":
             self._app.oradfield.EditInfiniteSphereSetup(self.name, self._get_args())
         elif self.type == "NearFieldBox":
@@ -1314,7 +1301,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def slant_angle(self):
         """Set/Get the Far Field Slant Angle if Polarization is Set to `Slant`."""
-
         if self.props["Polarization"] == "Slant":
             return self.props["SlantAngle"]
         else:
@@ -1329,7 +1315,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def theta_start(self):
         """Set/Get the Far Field Theta Start Angle if Definition is Set to `Theta-Phi`."""
-
         if "ThetaStart" in self.props:
             return self.props["ThetaStart"]
         else:
@@ -1338,7 +1323,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def theta_stop(self):
         """Set/Get the Far Field Theta Stop Angle if Definition is Set to `Theta-Phi`."""
-
         if "ThetaStop" in self.props:
             return self.props["ThetaStop"]
         else:
@@ -1347,7 +1331,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def theta_step(self):
         """Set/Get the Far Field Theta Step Angle if Definition is Set to `Theta-Phi`."""
-
         if "ThetaStep" in self.props:
             return self.props["ThetaStep"]
         else:
@@ -1356,7 +1339,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def phi_start(self):
         """Set/Get the Far Field Phi Start Angle if Definition is Set to `Theta-Phi`."""
-
         if "PhiStart" in self.props:
             return self.props["PhiStart"]
         else:
@@ -1365,7 +1347,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def phi_stop(self):
         """Set/Get the Far Field Phi Stop Angle if Definition is Set to `Theta-Phi`."""
-
         if "PhiStop" in self.props:
             return self.props["PhiStop"]
         else:
@@ -1374,7 +1355,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def phi_step(self):
         """Set/Get the Far Field Phi Step Angle if Definition is Set to `Theta-Phi`."""
-
         if "PhiStep" in self.props:
             return self.props["PhiStep"]
         else:
@@ -1383,7 +1363,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def azimuth_start(self):
         """Set/Get the Far Field Azimuth Start Angle if Definition is Set to `Az Over El` or `El Over Az`."""
-
         if "AzimuthStart" in self.props:
             return self.props["AzimuthStart"]
         else:
@@ -1392,7 +1371,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def azimuth_stop(self):
         """Set/Get the Far Field Azimuth Stop Angle if Definition is Set to `Az Over El` or `El Over Az`."""
-
         if "AzimuthStop" in self.props:
             return self.props["AzimuthStop"]
         else:
@@ -1401,7 +1379,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def azimuth_step(self):
         """Set/Get the Far Field Azimuth Step Angle if Definition is Set to `Az Over El` or `El Over Az`."""
-
         if "AzimuthStep" in self.props:
             return self.props["AzimuthStep"]
         else:
@@ -1410,7 +1387,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def elevation_start(self):
         """Set/Get the Far Field Elevation Start Angle if Definition is Set to `Az Over El` or `El Over Az`."""
-
         if "ElevationStart" in self.props:
             return self.props["ElevationStart"]
         else:
@@ -1419,7 +1395,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def elevation_stop(self):
         """Set/Get the Far Field Elevation Stop Angle if Definition is Set to `Az Over El` or `El Over Az`."""
-
         if "ElevationStop" in self.props:
             return self.props["ElevationStop"]
         else:
@@ -1428,7 +1403,6 @@ class FarFieldSetup(FieldSetup, object):
     @property
     def elevation_step(self):
         """Set/Get the Far Field Elevation Step Angle if Definition is Set to `Az Over El` or `El Over Az`."""
-
         if "ElevationStep" in self.props:
             return self.props["ElevationStep"]
         else:
@@ -2067,7 +2041,6 @@ class Sources(object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         arg0 = ["NAME:Data"]
         if self.source_type != "VoltageFrequencyDependent":
             fds_filename = None
@@ -3295,7 +3268,6 @@ class Excitations(object):
         -------
         bool
         """
-
         return self._props["EnableNoise"]
 
     @enable_noise.setter
@@ -3313,7 +3285,6 @@ class Excitations(object):
         -------
         str
         """
-
         return self._props["noisetemp"]
 
     @noise_temperature.setter
@@ -3495,7 +3466,6 @@ class Excitations(object):
             ``True`` when successful, ``False`` when failed.
 
         """
-
         # self._logger.warning("Property port update only working with GRPC")
 
         if self._props["RefNode"] == "Ground":
@@ -3607,8 +3577,7 @@ class NetworkObject(BoundaryObject):
 
     @pyaedt_function_handler
     def create(self):
-        """
-        Create network in AEDT.
+        """Create network in AEDT.
 
         Returns
         -------
@@ -3673,8 +3642,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def auto_update(self):
-        """
-        Get if auto-update is enabled.
+        """Get if auto-update is enabled.
 
         Returns
         -------
@@ -3685,8 +3653,7 @@ class NetworkObject(BoundaryObject):
 
     @auto_update.setter
     def auto_update(self, b):
-        """
-        Set auto-update on or off.
+        """Set auto-update on or off.
 
         Parameters
         ----------
@@ -3701,8 +3668,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def links(self):
-        """
-        Get links of the network.
+        """Get links of the network.
 
         Returns
         -------
@@ -3715,8 +3681,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def r_links(self):
-        """
-        Get r-links of the network.
+        """Get r-links of the network.
 
         Returns
         -------
@@ -3729,8 +3694,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def c_links(self):
-        """
-        Get c-links of the network.
+        """Get c-links of the network.
 
         Returns
         -------
@@ -3743,8 +3707,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def nodes(self):
-        """
-        Get nodes of the network.
+        """Get nodes of the network.
 
         Returns
         -------
@@ -3757,8 +3720,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def face_nodes(self):
-        """
-        Get face nodes of the network.
+        """Get face nodes of the network.
 
         Returns
         -------
@@ -3771,8 +3733,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def faces_ids_in_network(self):
-        """
-        Get ID of faces included in the network.
+        """Get ID of faces included in the network.
 
         Returns
         -------
@@ -3787,8 +3748,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def objects_in_network(self):
-        """
-        Get objects included in the network.
+        """Get objects included in the network.
 
         Returns
         -------
@@ -3803,8 +3763,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def internal_nodes(self):
-        """
-        Get internal nodes.
+        """Get internal nodes.
 
         Returns
         -------
@@ -3817,8 +3776,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def boundary_nodes(self):
-        """
-        Get boundary nodes.
+        """Get boundary nodes.
 
         Returns
         -------
@@ -3831,8 +3789,7 @@ class NetworkObject(BoundaryObject):
 
     @property
     def name(self):
-        """
-        Get network name.
+        """Get network name.
 
         Returns
         -------
@@ -3843,8 +3800,7 @@ class NetworkObject(BoundaryObject):
 
     @name.setter
     def name(self, new_network_name):
-        """
-        Set new name of the network.
+        """Set new name of the network.
 
         Parameters
         ----------
@@ -3864,9 +3820,7 @@ class NetworkObject(BoundaryObject):
 
     @pyaedt_function_handler()
     def add_internal_node(self, name, power, mass=None, specific_heat=None):
-        """
-
-        Parameters
+        """Parameters
         ----------
         name : str
             Name of the node.
@@ -3892,7 +3846,6 @@ class NetworkObject(BoundaryObject):
 
         Examples
         --------
-
         >>> import pyaedt
         >>> app = pyaedt.Icepak()
         >>> network = pyaedt.modules.Boundary.Network(app)
@@ -3925,9 +3878,7 @@ class NetworkObject(BoundaryObject):
 
     @pyaedt_function_handler()
     def add_boundary_node(self, name, assignment_type, value):
-        """
-
-        Parameters
+        """Parameters
         ----------
         name : str
             Name of the node.
@@ -3947,7 +3898,6 @@ class NetworkObject(BoundaryObject):
 
         Examples
         --------
-
         >>> import pyaedt
         >>> app = pyaedt.Icepak()
         >>> network = pyaedt.modules.Boundary.Network(app)
@@ -3994,8 +3944,7 @@ class NetworkObject(BoundaryObject):
     def add_face_node(
         self, face_id, name=None, thermal_resistance="NoResistance", material=None, thickness=None, resistance=None
     ):
-        """
-        Create a face node in the network.
+        """Create a face node in the network.
 
         Parameters
         ----------
@@ -4022,7 +3971,6 @@ class NetworkObject(BoundaryObject):
 
         Examples
         --------
-
         >>> import pyaedt
         >>> app = pyaedt.Icepak()
         >>> network = pyaedt.modules.Boundary.Network(app)
@@ -4078,8 +4026,7 @@ class NetworkObject(BoundaryObject):
 
     @pyaedt_function_handler()
     def add_nodes_from_dictionaries(self, nodes_dict):
-        """
-        Add nodes to the network from dictionary.
+        """Add nodes to the network from dictionary.
 
         Parameters
         ----------
@@ -4142,7 +4089,6 @@ class NetworkObject(BoundaryObject):
 
         Examples
         --------
-
         >>> import pyaedt
         >>> app = pyaedt.Icepak()
         >>> network = pyaedt.modules.Boundary.Network(app)
@@ -4212,7 +4158,6 @@ class NetworkObject(BoundaryObject):
 
         Examples
         --------
-
         >>> import pyaedt
         >>> app = pyaedt.Icepak()
         >>> network = pyaedt.modules.Boundary.Network(app)
@@ -4257,7 +4202,6 @@ class NetworkObject(BoundaryObject):
 
         Examples
         --------
-
         >>> import pyaedt
         >>> app = pyaedt.Icepak()
         >>> network = pyaedt.modules.Boundary.Network(app)
@@ -4309,8 +4253,7 @@ class NetworkObject(BoundaryObject):
 
     @pyaedt_function_handler()
     def update_assignment(self):
-        """
-        Update assignments of the network.
+        """Update assignments of the network.
         """
         return self.update()
 
@@ -4352,8 +4295,7 @@ class NetworkObject(BoundaryObject):
 
         @property
         def props(self):
-            """
-            Get link properties.
+            """Get link properties.
 
             Returns
             -------
@@ -4366,8 +4308,7 @@ class NetworkObject(BoundaryObject):
 
         @pyaedt_function_handler
         def delete_link(self):
-            """
-            Delete link from network.
+            """Delete link from network.
             """
             self._network.props["Links"].pop(self.name)
             self._network._links.remove(self)
@@ -4383,16 +4324,14 @@ class NetworkObject(BoundaryObject):
 
         @pyaedt_function_handler
         def delete_node(self):
-            """
-            Delete node from network.
+            """Delete node from network.
             """
             self._network.props["Nodes"].pop(self.name)
             self._network._nodes.remove(self)
 
         @property
         def node_type(self):
-            """
-            Get node type.
+            """Get node type.
 
             Returns
             -------
@@ -4415,8 +4354,7 @@ class NetworkObject(BoundaryObject):
 
         @property
         def props(self):
-            """
-            Get properties of the node.
+            """Get properties of the node.
 
             Returns
             -------
@@ -4427,8 +4365,7 @@ class NetworkObject(BoundaryObject):
 
         @props.setter
         def props(self, props):
-            """
-            Set properties of the node.
+            """Set properties of the node.
 
             Parameters
             ----------
