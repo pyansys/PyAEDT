@@ -27,6 +27,7 @@ class Settings(object):
         self._aedt_version = None
         self.remote_api = False
         self._use_grpc_api = None
+        self._use_grpc_edb_api = False
         self.formatter = None
         self.remote_rpc_session = None
         self.remote_rpc_session_temp_folder = ""
@@ -287,6 +288,15 @@ class Settings(object):
     @use_grpc_api.setter
     def use_grpc_api(self, val):
         self._use_grpc_api = val
+
+    @property
+    def use_grpc_edb_api(self):
+        """Flag for whether to use the gRPC EDB API or legacy .NET dll."""
+        return self._use_grpc_edb_api
+
+    @use_grpc_edb_api.setter
+    def use_grpc_edb_api(self, val):
+        self._use_grpc_edb_api = val
 
     @property
     def logger(self):
