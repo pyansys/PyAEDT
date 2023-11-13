@@ -6,7 +6,13 @@ import time
 import pytest
 
 from pyaedt import Edb
-from pyaedt.edb_core.edb_data.simulation_configuration import SimulationConfiguration
+from pyaedt import settings
+
+if not settings.use_grpc_edb_api:
+    from pyedb.legacy.edb_core.edb_data.simulation_configuration import SimulationConfiguration
+else:
+    raise Exception("gRPC Not yet available.")
+
 
 test_project_name = "ANSYS-HSD_V1"
 bom_example = "bom_example.csv"

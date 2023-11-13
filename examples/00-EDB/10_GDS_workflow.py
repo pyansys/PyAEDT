@@ -13,7 +13,11 @@ import os
 import tempfile
 import pyaedt
 import shutil
-from pyaedt.edb_core.edb_data.control_file import ControlFile
+from pyaedt import settings
+if not settings.use_grpc_edb_api:
+    from pyedb.legacy.edb_core.edb_data.control_file import ControlFile
+else:
+    raise Exception("gRPC Not yet available.")
 
 ###############################################################################
 # Download file

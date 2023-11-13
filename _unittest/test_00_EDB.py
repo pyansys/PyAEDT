@@ -1,23 +1,23 @@
-import builtins
 import json
 import os
 
 # Setup paths for module imports
 # Import required modules
 import sys
-from unittest.mock import mock_open
 
-from mock import MagicMock
-from mock import PropertyMock
-from mock import patch
 import pytest
 
 from pyaedt import Edb
-from pyaedt.edb_core.components import resistor_value_parser
-from pyaedt.edb_core.edb_data.edbvalue import EdbValue
-from pyaedt.edb_core.edb_data.simulation_configuration import SimulationConfiguration
-from pyaedt.edb_core.edb_data.sources import Source
-from pyaedt.edb_core.materials import Materials
+from pyaedt import settings
+
+if not settings.use_grpc_edb_api:
+    from pyedb.legacy.edb_core.components import resistor_value_parser
+    from pyedb.legacy.edb_core.edb_data.edbvalue import EdbValue
+    from pyedb.legacy.edb_core.edb_data.simulation_configuration import SimulationConfiguration
+    from pyedb.legacy.edb_core.edb_data.sources import Source
+else:
+    raise Exception("gRPC Not yet available.")
+
 from pyaedt.generic.constants import RadiationBoxType
 from pyaedt.generic.general_methods import check_numeric_equivalence
 
@@ -2594,7 +2594,12 @@ class TestClass:
         edb.close()
 
     def test_134_hfss_extent_info(self):
-        from pyaedt.edb_core.edb_data.primitives_data import EDBPrimitives as EDBPrimitives
+        from pyaedt import settings
+
+        if not settings.use_grpc_edb_api:
+            from pyedb.legacy.edb_core.edb_data.primitives_data import EDBPrimitives as EDBPrimitives
+        else:
+            raise Exception("gRPC Not yet available.")
 
         config = {
             "air_box_horizontal_extent_enabled": False,
@@ -2648,6 +2653,13 @@ class TestClass:
         edbapp.close()
 
     def test_138_import_gds_from_tech(self):
+        from pyaedt import settings
+
+        if not settings.use_grpc_edb_api:
+            from pyedb.legacy.edb_core.edb_data.control_file import ControlFile
+        else:
+            raise Exception("gRPC Not yet available.")
+
         c_file_in = os.path.join(
             local_path, "example_models", "cad", "GDS", "sky130_fictitious_dtc_example_control_no_map.xml"
         )
@@ -2655,7 +2667,6 @@ class TestClass:
         gds_in = os.path.join(local_path, "example_models", "cad", "GDS", "sky130_fictitious_dtc_example.gds")
         gds_out = os.path.join(self.local_scratch.path, "sky130_fictitious_dtc_example.gds")
         self.local_scratch.copyfile(gds_in, gds_out)
-        from pyaedt.edb_core.edb_data.control_file import ControlFile
 
         c = ControlFile(c_file_in, layer_map=c_map)
         setup = c.setups.add_setup("Setup1", "1GHz")
@@ -2790,7 +2801,12 @@ class TestClass:
         edb.close()
 
     def test_143_add_layer_api_with_control_file(self):
-        from pyaedt.edb_core.edb_data.control_file import ControlFile
+        from pyaedt import settings
+
+        if not settings.use_grpc_edb_api:
+            from pyedb.legacy.edb_core.edb_data.control_file import ControlFile
+        else:
+            raise Exception("gRPC Not yet available.")
 
         ctrl = ControlFile()
         # Material
@@ -2930,24 +2946,6 @@ class TestClass:
         edbapp.nets["DDR4_DM3"].find_dc_short(True)
         assert len(edbapp.nets["DDR4_DM3"].find_dc_short()) == 0
         edbapp.close()
-
-    @patch("pyaedt.edb_core.materials.Materials.materials", new_callable=PropertyMock)
-    @patch.object(builtins, "open", new_callable=mock_open, read_data=MATERIALS)
-    def test_149_materials_read_materials(self, mock_file_open, mock_materials_property):
-        """Read materials from an AMAT file."""
-        mock_materials_property.return_value = ["copper"]
-        materials = Materials(MagicMock())
-        expected_res = {
-            "Polyflon CuFlon (tm)": {"permittivity": 2.1, "tangent_delta": 0.00045},
-            "Water(@360K)": {
-                "thermal_conductivity": 0.6743,
-                "mass_density": 967.4,
-                "specific_heat": 4206,
-                "thermal_expansion_coeffcient": 0.0006979,
-            },
-        }
-        mats = materials.read_materials("some path")
-        assert mats == expected_res
 
     def test_150_material_load_amat(self):
         """Load material from an AMAT file."""

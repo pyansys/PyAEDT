@@ -79,8 +79,15 @@ from zipfile import ZipFile
 from pyaedt import is_ironpython
 from pyaedt import is_linux
 from pyaedt import is_windows
+from pyaedt import settings
 from pyaedt.desktop import Desktop
-import pyaedt.edb_core.edb_data.simulation_configuration
+
+if not settings.use_grpc_edb_api:
+    import pyedb.legacy.edb_core.edb_data.simulation_configuration
+else:
+    raise Exception("gRPC Not yet available.")
+
+
 from pyaedt.generic.clr_module import _clr
 from pyaedt.generic.general_methods import pyaedt_function_handler
 
@@ -1064,7 +1071,12 @@ class WPFToolkit(Window):
         self.read_settings()
         uri = Uri(os.path.join(self.image_path, "pyansys-logo-black-cropped.png"))
         logo = self.get_ui_object("logo")
-        pyaedt.edb_core.edb_data.simulation_configuration.Source = BitmapImage(uri)
+
+        if not settings.use_grpc_edb_api:
+            pyedb.legacy.edb_core.edb_data.simulation_configuration.Source = BitmapImage(uri)
+        else:
+            raise Exception("gRPC Not yet available.")
+
         if self._callbacks:
             for el in self._callbacks:
                 self.set_callback(el[0], el[1], el[2])
@@ -1401,7 +1413,10 @@ class WPFToolkit(Window):
         bi.CreateOptions = BitmapCreateOptions.IgnoreImageCache
         bi.UriSource = Uri(image_file, UriKind.RelativeOrAbsolute)
         bi.EndInit()
-        pyaedt.edb_core.edb_data.simulation_configuration.Source = bi
+        if not settings.use_grpc_edb_api:
+            pyedb.legacy.edb_core.edb_data.simulation_configuration.Source = bi
+        else:
+            raise Exception("gRPC Not yet available.")
 
     @pyaedt_function_handler()
     def set_visible(self, object_list):
