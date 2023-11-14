@@ -11,8 +11,7 @@ from pyaedt.generic.clr_module import is_clr
 if not settings.use_grpc_edb_api:
     from pyedb.legacy.edb_core.general import convert_py_list_to_net_list
 else:
-    print("gRPC Not yet available.")
-
+    raise Exception("gRPC Not yet available.")
 
 try:
     _clr.AddReference("AnsysReport")
