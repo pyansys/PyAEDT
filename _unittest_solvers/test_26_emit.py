@@ -1187,7 +1187,7 @@ class TestClass:
         def do_run():
             domain = results.interaction_domain()
             rev = results.current_revision
-            interaction = rev.run(domain)
+            _ = rev.run(domain)
 
         number_of_runs = 5
 
@@ -1200,15 +1200,15 @@ class TestClass:
         dot_ansys_directory = os.path.join(appdata_local_path, '.ansys')
         
         license_file_path = ''
-        with os.scandir(dot_ansys_directory) as dir:
-            for file in dir:
+        with os.scandir(dot_ansys_directory) as directory:
+            for file in directory:
                 filename_pieces = file.name.split('.')
                 # Since machine names can contain periods, there may be over five splits here
                 # We only care about the first split and last three splits
                 if len(filename_pieces) >= 5:
-                    if (filename_pieces[0] == 'ansyscl' and 
+                    if (filename_pieces[0] == 'ansyscl' and
                         filename_pieces[-3] == str(pid) and
-                        filename_pieces[-2].isnumeric() and 
+                        filename_pieces[-2].isnumeric() and
                         filename_pieces[-1] == 'log'):
                         license_file_path = os.path.join(dot_ansys_directory, file.name)
                         break
@@ -1243,12 +1243,12 @@ class TestClass:
         start_checkouts, start_checkins = count_license_actions(license_file_path)
 
         # Run without license session
-        for i in range(number_of_runs):
-            do_run()        
+        for _ in range(number_of_runs):
+            do_run()
         
         # Run with license session
         with revision.get_license_session():
-            for i in range(number_of_runs):
+            for _ in range(number_of_runs):
                 do_run()
         
         end_checkouts, end_checkins = count_license_actions(license_file_path)
