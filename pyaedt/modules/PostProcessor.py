@@ -5003,3 +5003,53 @@ class IcepakPostProcessor(PostProcessor, object):
             content["Unit"] = [None]
 
         return {i: content[i][0] for i in ["Min", "Max", "Mean", "Stdev", "Unit"]}
+    
+    @pyaedt_function_handler()
+    def get_heat_flow_rate_on_object(
+        self,
+        object_name,
+        sweep_name=None,
+        side="Combined",
+        parameter_dict_with_values={},
+    ):
+        """Export the field surface output.
+
+        This method exports one CSV file for the specified variation.
+
+        Parameters
+        ----------
+        object_name : str
+            Name of the object.
+        sweep_name : str, optional
+            Name of the setup and name of the sweep. For example, ``"IcepakSetup1 : SteatyState"``.
+            The default is ``None``, in which case the active setup and active sweep are used.
+        side : str, optional
+            Select which mesh faces side to use. Available options are ``"Default"``, ``"Adjacent"``,
+            and ``"Combined"``. Default is ``"Combined"``.
+        parameter_dict_with_values : dict, optional
+            Dictionary of parameters defined for the specific setup with values. The default is ``{}``.
+
+        Returns
+        -------
+        dict
+            Dictionary containing the following keys and relative values:
+            ``"Min"``, ``"Max"``, ``"Mean"``, ``"Stdev"``, and ``Unit``.
+
+        References
+        ----------
+
+        >>> oModule.ExportFieldsSummary
+        """
+        fs = self.create_field_summary()
+        fs.add_calculation("Object", "Surface", name, quantity_name, side=side, ref_temperature=ref_temperature)
+        with tempfile.NamedTemporaryFile(mode="w+", delete=False) as temp_file:
+            temp_file.close()
+            content = fs.get_field_summary_data(temp_file.name)
+        pattern = r"\[([^]]*)\]"
+        match = re.search(pattern, content["Quantity"][0])
+        if match:
+            content["Unit"] = [match.group(1)]
+        else:  # pragma : no cover
+            content["Unit"] = [None]
+
+        return {i: content[i][0] for i in ["Min", "Max", "Mean", "Stdev", "Unit"]}
