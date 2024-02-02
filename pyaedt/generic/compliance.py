@@ -282,10 +282,11 @@ class VirtualCompliance:
         pdf_report.add_table(f"Pass Fail Criteria on {image_name}", pass_fail_table, font_table)
 
     def _add_eye_diagram_violations(self, report, pdf_report, image_name):
+        # noinspection PyBroadException
         try:
             out_eye = os.path.join(self._output_folder, "violations.tab")
             viol = report.export_mask_violation(out_eye)
-        except:
+        except Exception:
             viol = None
         font_table = [["", None]]
         pass_fail_table = [["Pass Fail Criteria", "Result"]]
