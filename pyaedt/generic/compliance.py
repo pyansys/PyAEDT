@@ -286,7 +286,7 @@ class VirtualCompliance:
         try:
             out_eye = os.path.join(self._output_folder, "violations.tab")
             viol = report.export_mask_violation(out_eye)
-        except Exception:
+        except Exception:  # pragma: no cover
             viol = None
         font_table = [["", None]]
         pass_fail_table = [["Pass Fail Criteria", "Result"]]
@@ -297,7 +297,7 @@ class VirtualCompliance:
         if os.path.exists(viol):
             try:  # pragma: no cover
                 import pandas as pd
-            except ImportError:
+            except ImportError:  # pragma: no cover
                 return
             file_in = pd.read_table(viol, header=0)
 
