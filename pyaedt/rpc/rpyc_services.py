@@ -147,8 +147,8 @@ class FileManagement(object):
             i += 1
         logger.info("Directory %s downloaded. %s files copied", localpath, i)
 
-    def open_file(self, remote_file, open_options="r"):
-        return self.client.root.open(remote_file, open_options=open_options)
+    def open_file(self, remote_file, open_options="r", encoding=None):
+        return self.client.root.open(remote_file, open_options=open_options, encoding=None)
 
     def create_file(self, remote_file, create_options="w"):
         return self.client.root.open(remote_file, open_options=create_options)
@@ -1025,7 +1025,7 @@ class GlobalService(rpyc.Service):
                   use_ppe=use_ppe, )
 
     @staticmethod
-    def exposed_open(filename, open_options="rb"):
+    def exposed_open(filename, open_options="rb", encoding=None):
         f = open(filename, open_options)
         return rpyc.restricted(f, ["read", "readlines", "close"], [])
 
