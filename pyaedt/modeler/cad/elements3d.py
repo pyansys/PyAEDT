@@ -267,7 +267,10 @@ class EdgePrimitive(EdgeTypePrimitive, object):
         -------
             list
                 Segment info if available."""
-        autosave = self._object3d._primitives._app.odesktop.GetAutosaveEnabled()
+        if settings.aedt_version > "2024.1":
+            autosave = self._object3d._primitives._app.odesktop.GetAutoSaveEnabled()
+        else:
+            autosave = self._object3d._primitives._app.odesktop.GetAutosaveEnabled()
         try:
             self.oeditor.GetChildNames()
         except:  # pragma: no cover

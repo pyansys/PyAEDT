@@ -61,10 +61,9 @@ class TestClass:
     def init(self, aedtapp, local_scratch):
         self.aedtapp = aedtapp
         self.local_scratch = local_scratch
-
-    def test_01_create_primitive(self):
         self.aedtapp.modeler.model_units = "mm"
 
+    def test_01_create_primitive(self):
         plate_pos = self.aedtapp.modeler.Position(0, 0, 0)
         hole_pos = self.aedtapp.modeler.Position(18, 18, 0)
         # Create plate with hole

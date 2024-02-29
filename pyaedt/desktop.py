@@ -176,12 +176,14 @@ def _check_grpc_port(port, machine_name=""):
 
 
 def _find_free_port():
-    from contextlib import closing
 
-    with closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as s:
-        s.bind(("127.0.0.1", 0))
-        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        return s.getsockname()[1]
+    start_port = 50051
+    machine_name = "127.0.0.1"
+
+    while start_port < 51000:
+        if not _check_grpc_port(start_port, machine_name):
+            return start_port
+        start_port += 1
 
 
 def exception_to_desktop(ex_value, tb_data):  # pragma: no cover
@@ -944,7 +946,9 @@ class Desktop(object):
             )
             launch_msg = "AEDT installation Path {}".format(base_path)
             self.logger.info(launch_msg)
-            import pyaedt.generic.grpc_plugin as StandalonePyScriptWrapper
+            import PyDesktopPlugin as StandalonePyScriptWrapper
+
+            # import pyaedt.generic.grpc_plugin as StandalonePyScriptWrapper
 
             if new_session:
                 self.launched_by_pyaedt = new_session
