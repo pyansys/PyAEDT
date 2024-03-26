@@ -691,13 +691,16 @@ class Configurations(object):
         self._app = app
         self.options = ConfigurationsOptions()
         self.results = ImportResults()
-
-        # Read the default configuration schema from pyaedt
-        schema_bytes = pkgutil.get_data(
-            __name__, os.path.join(os.path.dirname(pyaedt.__file__), "misc", "config.schema.json")
-        )
-        schema_string = schema_bytes.decode("utf-8")
-        self._schema = json.loads(schema_string)
+        try:
+            # Read the default configuration schema from pyaedt
+            # Try is needed to generate exe
+            schema_bytes = pkgutil.get_data(
+                __name__, os.path.join(os.path.dirname(pyaedt.__file__), "misc", "config.schema.json")
+            )
+            schema_string = schema_bytes.decode("utf-8")
+            self._schema = json.loads(schema_string)
+        except FileNotFoundError:
+            self._schema = {}
 
     @staticmethod
     @pyaedt_function_handler()
