@@ -193,7 +193,7 @@ class VirtualCompliance:
         Full path to the project. If a path is provided, the project field inside the template is ignored.
     """
 
-    def __init__(self, desktop, template):
+    def __init__(self, desktop, template, pdf_template=None, report_logo=None):
         self._add_project_info = True
         self._add_specs_info = False
         self._specs_folder = None
@@ -206,6 +206,8 @@ class VirtualCompliance:
         self._parameters = {}
         self._project_name = None
         self._output_folder = None
+        self._pdf_template = pdf_template
+        self._report_logo = report_logo
         self._parse_template()
         self._desktop_class = desktop
 
@@ -228,6 +230,34 @@ class VirtualCompliance:
         )
         os.makedirs(self._output_folder, exist_ok=True)
         return True
+
+    @property
+    def pdf_template(self):
+        """Template file to use to generate pdf report.
+
+        Returns
+        -------
+        str
+        """
+        return self._pdf_template
+
+    @pdf_template.setter
+    def pdf_template(self, val):
+        self._pdf_template = val
+
+    @property
+    def report_logo(self):
+        """Report company logo.
+
+        Returns
+        -------
+        str
+        """
+        return self._report_logo
+
+    @report_logo.setter
+    def report_logo(self, val):
+        self._report_logo = val
 
     @property
     def reports(self):
@@ -876,7 +906,9 @@ class VirtualCompliance:
         if not self._project_name:
             self.load_project()
 
-        report = AnsysReport()
+        report = AnsysReport(tempplate_json_file=self.pdf_template)
+        if self.report_logo and os.path.exists(self.report_logo):
+            report.logo_name = self.report_logo
         report.aedt_version = self._desktop_class.aedt_version_id
         report.design_name = self._template_name
         report.report_specs.table_font_size = 7
