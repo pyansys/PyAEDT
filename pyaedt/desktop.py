@@ -58,8 +58,6 @@ pyaedtversion = __version__
 
 modules = [tup[1] for tup in pkgutil.iter_modules()]
 
-python_grpc_wrapper = None
-
 
 @pyaedt_function_handler()
 def launch_aedt(full_path, non_graphical, port, student_version, first_run=True):
@@ -239,7 +237,6 @@ def _close_aedt_application(desktop_class, close_desktop, pid, is_grpc_api):
         ``True`` when successful, ``False`` when failed.
 
     """
-    global python_grpc_wrapper
     if settings.remote_rpc_session or (settings.aedt_version >= "2022.2" and is_grpc_api and not is_ironpython):
         if close_desktop and desktop_class.parent_desktop_id:
             pyaedt_logger.error("A child desktop session is linked to this session.")
@@ -275,9 +272,8 @@ def _close_aedt_application(desktop_class, close_desktop, pid, is_grpc_api):
             return False
         else:
             try:
-                if not python_grpc_wrapper:
-                    python_grpc_wrapper = __import__("pyaedt.generic.grpc_plugin")
-                # import pyaedt.generic.grpc_plugin as StandalonePyScriptWrapper
+                import pyaedt.generic.grpc_plugin as python_grpc_wrapper
+
                 python_grpc_wrapper.AedtAPI.ReleaseAll()
                 return True
             except:  # pragma: no cover
@@ -915,7 +911,6 @@ class Desktop(object):
         version=None,
         is_grpc=True,
     ):
-        global python_grpc_wrapper
         if not is_grpc:
             from pyaedt.generic.clr_module import _clr
 
@@ -938,10 +933,8 @@ class Desktop(object):
             os.environ["DesktopPluginPyAEDT"] = os.path.join(settings.aedt_install_dir, "PythonFiles", "DesktopPlugin")
             launch_msg = "AEDT installation Path {}".format(base_path)
             self.logger.info(launch_msg)
-            if not python_grpc_wrapper:
-                python_grpc_wrapper = __import__("pyaedt.generic.grpc_plugin")
-                python_grpc_wrapper = python_grpc_wrapper.generic.grpc_plugin
-            # import pyaedt.generic.grpc_plugin as StandalonePyScriptWrapper
+            import pyaedt.generic.grpc_plugin as python_grpc_wrapper
+
             if _desktop_sessions:
                 last_session = list(_desktop_sessions.values())[-1]
                 all_desktop = [i for i in last_session.odesktop.GetRunningInstancesMgr().GetAllRunningInstances()]
