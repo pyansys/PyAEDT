@@ -253,9 +253,7 @@ def deprecate_kwargs(func_name, kwargs, aliases):
                 msg += "{} is deprecated, use {} instead.".format(alias, new)
                 raise TypeError(msg)
             pyaedt_logger.warning(
-                "Argument `{}` is deprecated as an argument for method `{}`; use `{}` instead.".format(
-                    alias, func_name, new
-                )
+                "Argument `{}` is deprecated for method `{}`; use `{}` instead.".format(alias, func_name, new)
             )
             kwargs[new] = kwargs.pop(alias)
 
