@@ -1327,7 +1327,21 @@ class ModelPlotter(CommonPlotter):
                 if ".case" in field.path:
                     reader = pv.get_reader(os.path.abspath(field.path)).read()
                     field._cached_polydata = reader[reader.keys()[0]].extract_surface()
-                    field.scalar_name = field._cached_polydata.point_data.active_scalars_name
+
+                    if "active_vectors" in dir(field._cached_polydata.point_data):
+                        field.scalar_name = field._cached_polydata.point_data.active_scalars_name
+                        vector_scale = (max(field._cached_polydata.bounds) - min(field._cached_polydata.bounds)) / (
+                            10
+                            * (
+                                np.vstack(field._cached_polydata.active_vectors).max()
+                                - np.vstack(field._cached_polydata.active_vectors).min()
+                            )
+                        )
+                        field._cached_polydata["vectors"] = field._cached_polydata.active_vectors * vector_scale
+
+                        field.is_vector = True
+                    else:
+                        field.scalar_name = field._cached_polydata.point_data.active_scalars_name
 
                 elif ".aedtplt" in field.path:
                     vertices, faces, scalars, log1 = _parse_aedtplt(field.path)
