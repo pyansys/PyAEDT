@@ -2310,7 +2310,7 @@ class GeometryModeler(Modeler):
                     face = f
                     center = c
             except Exception:
-                pass
+                self.logger.info("Cannot get faces for objects {}".format(objname))
         return face
 
     @pyaedt_function_handler()
@@ -7646,7 +7646,12 @@ class GeometryModeler(Modeler):
                 edgeID = int(self.oeditor.GetEdgeByPosition(vArg1))
                 return edgeID
             except Exception:
-                pass
+                # Not Found, keep looking
+                self.logger.warning(
+                    "Cannot find edge ID for the position {}. Keep looping though faces of object {}".format(
+                        position, assignment
+                    )
+                )
 
     @pyaedt_function_handler(vertexid="vertex", obj_name="assignment")
     def get_edgeids_from_vertexid(self, vertex, assignment):
@@ -7724,7 +7729,11 @@ class GeometryModeler(Modeler):
                 return face_id
             except Exception:
                 # Not Found, keep looking
-                pass
+                self.logger.info(
+                    "Could not find face ID for the position {}. Keep looping though faces of object {}".format(
+                        position, assignment
+                    )
+                )
 
     @pyaedt_function_handler(sheets="assignment", tol="tolerance")
     def get_edges_on_bounding_box(self, assignment, return_colinear=True, tolerance=1e-6):
