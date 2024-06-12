@@ -63,6 +63,8 @@ def simplify_stl(input_file, output_file=None, decimation=0.5, preview=False):
         Fraction of the original mesh to remove before creating the stl file.  If set to ``0.9``,
         this function will try to reduce the data set to 10% of its
         original size and will remove 90% of the input triangles.
+    preview : bool, optional
+        Whether to preview the model in pyvista or skip it.
 
     Returns
     -------
