@@ -36,9 +36,7 @@ dependencies = [
     "fpdf2",
     "jsonschema",
     "psutil",
-    "pyedb>=0.4.0; python_version == '3.7'",
-    "pyedb>=0.24.0; python_version > '3.7'",
-    "pyedb!=0.28.0; python_version > '3.7'",
+    "pyedb>=0.24.0",
     "pytomlpp; python_version < '3.12'",
     "rpyc>=6.0.0,<6.1",
     "pyyaml",
@@ -66,8 +64,7 @@ tests = [
 ]
 dotnet = [
     "ansys-pythonnet>=3.1.0rc3",
-    "cffi==1.17.1; platform_system=='Linux' and python_version == '3.7'",
-    "cffi>=1.16.0,<1.18; platform_system=='Linux' and python_version > '3.7'",
+    "cffi>=1.16.0,<1.18; platform_system=='Linux'",
     "dotnetcore2==3.1.23; platform_system=='Linux'",
     "pywin32>=303; platform_system=='Windows'",
 ]
