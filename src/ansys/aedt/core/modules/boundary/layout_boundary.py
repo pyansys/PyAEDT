@@ -22,6 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import warnings
+
 from ansys.aedt.core.generic.data_handlers import _dict2arg
 from ansys.aedt.core.generic.data_handlers import random_string
 from ansys.aedt.core.generic.general_methods import GrpcApiError
@@ -127,6 +129,17 @@ class NativeComponentObject(BoundaryCommon, BinaryTreeNode):
 
     @property
     def props(self):
+        """AEDT boundary component internal properties.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.modules.boundary.common.BoundaryProps`
+        """
+        warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+        return self.properties
+
+    @property
+    def properties(self):
         return self.__props
 
     @property
@@ -336,7 +349,18 @@ class BoundaryObject3dLayout(BoundaryCommon, BinaryTreeNode):
 
         Returns
         -------
-        :class:BoundaryProps
+        :class:`ansys.aedt.core.modules.boundary.common.BoundaryProps`
+        """
+        warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+        return self.properties
+
+    @property
+    def properties(self):
+        """Excitation data.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.modules.boundary.common.BoundaryProps`
         """
         if self.__props:
             return self.__props

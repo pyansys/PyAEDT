@@ -22,6 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import warnings
+
 from ansys.aedt.core.generic.data_handlers import _dict2arg
 from ansys.aedt.core.generic.general_methods import _dim_arg
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
@@ -75,6 +77,23 @@ class FieldSetup(BoundaryCommon, BinaryTreeNode):
 
     @property
     def props(self):
+        """AEDT boundary component internal properties.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.modules.boundary.common.BoundaryProps`
+        """
+        warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+        return self.properties
+
+    @property
+    def properties(self):
+        """AEDT boundary component internal properties.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.modules.boundary.common.BoundaryProps`
+        """
         if not self.__props and self._app.design_properties:
             if (
                 self.type == "FarFieldSphere"

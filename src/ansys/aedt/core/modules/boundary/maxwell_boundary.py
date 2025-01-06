@@ -22,6 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import warnings
+
 from ansys.aedt.core.generic.data_handlers import _dict2arg
 from ansys.aedt.core.generic.general_methods import generate_unique_name
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
@@ -106,6 +108,17 @@ class MaxwellParameters(BoundaryCommon, BinaryTreeNode):
 
     @property
     def props(self):
+        """Maxwell parameter data.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.modules.boundary.common.BoundaryProps`
+        """
+        warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+        return self.properties
+
+    @property
+    def properties(self):
         """Maxwell parameter data.
 
         Returns

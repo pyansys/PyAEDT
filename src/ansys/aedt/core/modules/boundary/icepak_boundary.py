@@ -23,6 +23,7 @@
 # SOFTWARE.
 from abc import abstractmethod
 import copy
+import warnings
 
 from ansys.aedt.core.application.variables import decompose_variable_value
 from ansys.aedt.core.generic.general_methods import generate_unique_name
@@ -58,7 +59,23 @@ class BoundaryDictionary:
 
     @property
     def props(self):
-        """Dictionary that defines all the boundary condition properties."""
+        """Dictionary that defines all the boundary condition properties.
+
+        Returns
+        -------
+        dict
+        """
+        warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+        return self.properties
+
+    @property
+    def properties(self):
+        """Dictionary that defines all the boundary condition properties.
+
+        Returns
+        -------
+        dict
+        """
         return {
             "Type": self.assignment_type,
             "Function": self.function_type,
@@ -1056,8 +1073,21 @@ class NetworkObject(BoundaryObject):
 
         @property
         def props(self):
+            """Link properties.
+
+            Returns
+            -------
+            list
+                First two elements of the list are the node names that the link connects,
+                the third element is the link type while the fourth contains the value
+                associated with the link.
             """
-            Get link properties.
+            warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+            return self.properties
+
+        @property
+        def properties(self):
+            """Link properties.
 
             Returns
             -------
@@ -1114,7 +1144,19 @@ class NetworkObject(BoundaryObject):
 
         @property
         def props(self):
-            """Get properties of the node.
+            """Node properties.
+
+            Returns
+            -------
+            dict
+                Node properties.
+            """
+            warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+            return self.properties
+
+        @property
+        def properties(self):
+            """Node properties.
 
             Returns
             -------
@@ -1125,7 +1167,19 @@ class NetworkObject(BoundaryObject):
 
         @props.setter
         def props(self, props):
-            """Set properties of the node.
+            """Node properties.
+
+            Parameters
+            ----------
+            props : dict
+                Node properties.
+            """
+            warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+            self.properties = props
+
+        @properties.setter
+        def properties(self, props):
+            """Node properties.
 
             Parameters
             ----------

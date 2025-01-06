@@ -30,7 +30,9 @@ This modules provides functionalities for the 3D Modeler, 2D Modeler,
 3D Layout Modeler, and Circuit Modeler.
 """
 
-from __future__ import absolute_import  # noreorder
+from __future__ import absolute_import
+
+import warnings  # noreorder
 
 from ansys.aedt.core.generic.data_handlers import _dict2arg
 from ansys.aedt.core.generic.general_methods import PropsManager
@@ -439,11 +441,22 @@ class FaceCoordinateSystem(BaseCoordinateSystem, object):
 
     @property
     def props(self):
-        """Properties of the coordinate system.
+        """Coordinate system properties.
 
         Returns
         -------
-        :class:`ansys.aedt.core.modeler.Modeler.CSProps`
+        :class:`ansys.aedt.core.modeler.cad.modeler.CsProps`
+        """
+        warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+        return self.properties
+
+    @property
+    def properties(self):
+        """Coordinate system properties.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.modeler.cad.modeler.CsProps`
         """
         if self._props or settings.aedt_version <= "2022.2" or self.name is None:
             return self._props
@@ -733,11 +746,22 @@ class CoordinateSystem(BaseCoordinateSystem, object):
 
     @property
     def props(self):
+        """Coordinate system properties.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.modeler.cad.modeler.CsProps`
+        """
+        warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+        return self.properties
+
+    @property
+    def properties(self):
         """Coordinate System Properties.
 
         Returns
         -------
-        :class:`ansys.aedt.core.modeler.Modeler.CSProps`
+        :class:`ansys.aedt.core.modeler.cad.modeler.CsProps`
         """
         if self._props or settings.aedt_version <= "2022.2" or self.name is None:
             return self._props
@@ -1269,11 +1293,22 @@ class ObjectCoordinateSystem(BaseCoordinateSystem, object):
 
     @property
     def props(self):
-        """Properties of the coordinate system.
+        """Coordinate system properties.
 
         Returns
         -------
-        :class:`ansys.aedt.core.modeler.Modeler.CSProps`
+        :class:`ansys.aedt.core.modeler.cad.modeler.CsProps`
+        """
+        warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+        return self.properties
+
+    @property
+    def properties(self):
+        """Coordinate system properties.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.modeler.cad.modeler.CsProps`
         """
         if self._props or settings.aedt_version <= "2022.2" or self.name is None:
             return self._props

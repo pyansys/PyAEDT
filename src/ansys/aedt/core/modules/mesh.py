@@ -28,6 +28,7 @@ from __future__ import absolute_import  # noreorder
 
 import os
 import shutil
+import warnings
 
 from ansys.aedt.core.application.design_solutions import model_names
 from ansys.aedt.core.generic.data_handlers import _dict2arg
@@ -154,9 +155,26 @@ class MeshOperation(BinaryTreeNode):
 
     @property
     def props(self):
+        """AEDT mesh component internal properties.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.modules.mesh.MeshProps`
+        """
+        warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+        return self.properties
+
+    @property
+    def properties(self):
+        """AEDT mesh component internal properties.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.modules.mesh.MeshProps`
+        """
         if not self._legacy_props:
             props = {}
-            for k, v in self.properties.items():
+            for k, v in super().properties.items():
                 props[k] = v
             if "Assignment" in props:
                 assignment = props["Assignment"]

@@ -23,6 +23,7 @@
 # SOFTWARE.
 
 from collections import defaultdict
+import warnings
 
 from ansys.aedt.core.emit_core import emit_constants as emit_consts
 import ansys.aedt.core.generic.constants as consts
@@ -1015,16 +1016,25 @@ class EmitComponentPropNode(object):
 
     @property
     def props(self):
-        """Returns a dictionary of all the properties for this node.
-
-        Parameters
-        ----------
-        None
+        """Node properties
 
         Returns
         -------
         Dict
-            Dictionary of all the properties for this node."""
+            Dictionary of all the properties for this node.
+        """
+        warnings.warn("This method is deprecated. Use properties instead.", DeprecationWarning)
+        return self.properties
+
+    @property
+    def properties(self):
+        """Node properties
+
+        Returns
+        -------
+        Dict
+            Dictionary of all the properties for this node.
+        """
         prop_list = self.odesign.GetComponentNodeProperties(self.parent_component.name, self.node_name)
         props = dict(p.split("=", 1) for p in prop_list)
         return props
