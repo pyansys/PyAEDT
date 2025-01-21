@@ -45,7 +45,7 @@ dependencies = [
     "pyyaml",
     "defusedxml>=0.7,<8.0",
     "attrs!=24.3.0",
-    "referencing<0.36.0",
+    "referencing<0.37.0",
 ]
 
 [project.optional-dependencies]
