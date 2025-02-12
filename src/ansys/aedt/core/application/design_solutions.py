@@ -109,6 +109,14 @@ solutions_types = {
             "default_adaptive": "LastAdaptive",
             "intrinsics": ["Freq", "Phase"],
         },
+        "AC Magnetic": {
+            "name": "AC Magnetic",
+            "options": None,
+            "report_type": "AC Magnetic",
+            "default_setup": 7,
+            "default_adaptive": "LastAdaptive",
+            "intrinsics": ["Freq", "Phase"],
+        },
         "DCBiasedEddyCurrent": {
             "name": "DCBiasedEddyCurrent",
             "options": None,
