@@ -33,7 +33,6 @@ from tests.system.solvers.conftest import config
 from tests.system.solvers.test_45_FilterSolutions.resources import read_resource_file
 
 
-@pytest.mark.skip(reason="Temporary deactivated due to a conflict between FilterSolutions dll and pytest")
 @pytest.mark.skipif(is_linux, reason="FilterSolutions API is not supported on Linux.")
 @pytest.mark.skipif(config["desktopVersion"] < "2025.1", reason="Skipped on versions earlier than 2025.1")
 class TestClass:

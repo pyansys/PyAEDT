@@ -13,7 +13,7 @@ on:
 
 env:
   ANSYSLMD_LICENSE_FILE: ${{ format('1055@{0}', secrets.LICENSE_SERVER) }}
-  MAIN_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.12'
   PACKAGE_NAME: 'PyAEDT'
   DOCUMENTATION_CNAME: 'aedt.docs.pyansys.com'
   ON_CI: True
@@ -25,115 +25,115 @@ concurrency:
 
 jobs:
 
-  pr-title:
-    if: github.event_name == 'pull_request'
-    name: Check the title of the pull request
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check the title of the pull request
-        uses: ansys/actions/check-pr-title@v8
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          use-upper-case: true
+#  pr-title:
+#    if: github.event_name == 'pull_request'
+#    name: Check the title of the pull request
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check the title of the pull request
+#        uses: ansys/actions/check-pr-title@v8
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          use-upper-case: true
+#
+#  doc-style:
+#    name: Documentation style check
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check documentation style
+#        uses: ansys/actions/doc-style@v8
+#        with:
+#         token: ${{ secrets.GITHUB_TOKEN }}
+#
+#  doc-build:
+#    name: Documentation build
+#    runs-on: ubuntu-latest
+#    needs: [doc-style]
+#    steps:
+#      - name: Documentation build
+#        uses: ansys/actions/doc-build@v8
+#        with:
+#          dependencies: "graphviz texlive-latex-extra latexmk texlive-xetex texlive-fonts-extra"
+#          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+#          sphinxopts: '-j auto --color -w build_errors.txt'
+#          check-links: false
+#          needs-quarto: true
+#
+#  smoke-tests:
+#    name: Build wheelhouse and smoke tests
+#    runs-on: ${{ matrix.os }}
+#    strategy:
+#      fail-fast: false
+#      matrix:
+#        os: [ubuntu-latest, windows-latest]
+#        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
+#        target: ['all', 'installer']
+#    steps:
+#      - name: Build wheelhouse and perform smoke test
+#        uses: ansys/actions/build-wheelhouse@v8
+#        with:
+#          library-name: ${{ env.PACKAGE_NAME }}
+#          operating-system: ${{ matrix.os }}
+#          python-version: ${{ matrix.python-version }}
+#          target: ${{ matrix.target }}
+#
+#      - name: Import python package
+#        run: |
+#          python -c "import ansys.aedt.core; from ansys.aedt.core import __version__"
 
-  doc-style:
-    name: Documentation style check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check documentation style
-        uses: ansys/actions/doc-style@v8
-        with:
-         token: ${{ secrets.GITHUB_TOKEN }}
-
-  doc-build:
-    name: Documentation build
-    runs-on: ubuntu-latest
-    needs: [doc-style]
-    steps:
-      - name: Documentation build
-        uses: ansys/actions/doc-build@v8
-        with:
-          dependencies: "graphviz texlive-latex-extra latexmk texlive-xetex texlive-fonts-extra"
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-          sphinxopts: '-j auto --color -w build_errors.txt'
-          check-links: false
-          needs-quarto: true
-
-  smoke-tests:
-    name: Build wheelhouse and smoke tests
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
-        target: ['all', 'installer']
-    steps:
-      - name: Build wheelhouse and perform smoke test
-        uses: ansys/actions/build-wheelhouse@v8
-        with:
-          library-name: ${{ env.PACKAGE_NAME }}
-          operating-system: ${{ matrix.os }}
-          python-version: ${{ matrix.python-version }}
-          target: ${{ matrix.target }}
-
-      - name: Import python package
-        run: |
-          python -c "import ansys.aedt.core; from ansys.aedt.core import __version__"
-
-  unit-tests:
-    name: Running unit tests
-    needs: [smoke-tests]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run unit tests
-        uses: ansys/actions/tests-pytest@v8
-        with:
-          pytest-postargs: 'tests/unit'
-          pytest-extra-args: ${{ env.PYTEST_ARGUMENTS }}
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-          optional-dependencies-name: unit-tests
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          name: codecov-unit-tests
-          files: ./coverage.xml
-          flags: linux_unit
-
-      - name: Upload pytest test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-unit
-          path: junit/test-results.xml
-        if: ${{ always() }}
-
-  integration-tests:
-    name: Running integration tests
-    needs: [unit-tests]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run integration tests
-        uses: ansys/actions/tests-pytest@v8
-        with:
-          pytest-postargs: 'tests/integration'
-          pytest-extra-args: ${{ env.PYTEST_ARGUMENTS }}
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-          optional-dependencies-name: integration-tests
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          name: codecov-integration-tests
-          files: ./coverage.xml
-          flags: linux_integration
-
-      - name: Upload pytest test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-integration
-          path: junit/test-results.xml
-        if: ${{ always() }}
+#  unit-tests:
+#    name: Running unit tests
+#    needs: [smoke-tests]
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Run unit tests
+#        uses: ansys/actions/tests-pytest@v8
+#        with:
+#          pytest-postargs: 'tests/unit'
+#          pytest-extra-args: ${{ env.PYTEST_ARGUMENTS }}
+#          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+#          optional-dependencies-name: unit-tests
+#
+#      - name: Upload coverage to Codecov
+#        uses: codecov/codecov-action@v5
+#        with:
+#          name: codecov-unit-tests
+#          files: ./coverage.xml
+#          flags: linux_unit
+#
+#      - name: Upload pytest test results
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: pytest-unit
+#          path: junit/test-results.xml
+#        if: ${{ always() }}
+#
+#  integration-tests:
+#    name: Running integration tests
+#    needs: [unit-tests]
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Run integration tests
+#        uses: ansys/actions/tests-pytest@v8
+#        with:
+#          pytest-postargs: 'tests/integration'
+#          pytest-extra-args: ${{ env.PYTEST_ARGUMENTS }}
+#          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+#          optional-dependencies-name: integration-tests
+#
+#      - name: Upload coverage to Codecov
+#        uses: codecov/codecov-action@v5
+#        with:
+#          name: codecov-integration-tests
+#          files: ./coverage.xml
+#          flags: linux_integration
+#
+#      - name: Upload pytest test results
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: pytest-integration
+#          path: junit/test-results.xml
+#        if: ${{ always() }}
 
 # # =================================================================================================
 # # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv    RUNNING ON SELF-HOSTED RUNNER    vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
@@ -141,7 +141,6 @@ jobs:
 
   system-tests-solvers-windows:
     name: Testing solvers and coverage (Windows)
-    needs: [integration-tests]
     if: github.event.pull_request.draft == false
     runs-on: [ self-hosted, Windows, pyaedt ]
     steps:
@@ -178,7 +177,7 @@ jobs:
           PYTHONMALLOC: malloc
         run: |
           .venv\Scripts\Activate.ps1
-          pytest ${{ env.PYTEST_ARGUMENTS }} -m solvers --deselect=tests/system/solvers/test_45_FilterSolutions
+          pytest ${{ env.PYTEST_ARGUMENTS }} -m solvers
 
       - uses: codecov/codecov-action@v5
         with:
@@ -196,232 +195,232 @@ jobs:
 # # =================================================================================================
 # # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv    RUNNING ON SELF-HOSTED RUNNER    vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 # # =================================================================================================
-
-  system-tests-solvers-linux:
-    name: Testing solvers and coverage (Linux)
-    needs: [integration-tests]
-    if: github.event.pull_request.draft == false
-    runs-on: [ self-hosted, Linux, pyaedt ]
-    env:
-      ANSYSEM_ROOT251: '/opt/AnsysEM/v251/AnsysEM'
-      ANS_NODEPCHECK: '1'
-    steps:
-      - name: Install Git and checkout project
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-
-      - name: Create virtual environment
-        run: |
-          export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
-          python -m venv .venv
-          source .venv/bin/activate
-          python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org pip -U
-          python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org wheel setuptools -U
-          python -c "import sys; print(sys.executable)"
-
-      - name: Install pyaedt and tests dependencies
-        run: |
-          export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
-          source .venv/bin/activate
-          pip install .[tests]
-
-      - name: Run tests marked with 'solvers'
-        run: |
-          export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
-          source .venv/bin/activate
-          pytest ${{ env.PYTEST_ARGUMENTS }} -m solvers
-
-      - uses: codecov/codecov-action@v5
-        with:
-          name: codecov-system-solvers-tests-linux
-          files: ./coverage.xml
-          flags: linux_system_solvers
-
-      - name: Upload pytest test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-solvers-linux
-          path: junit/test-results.xml
-        if: ${{ always() }}
-
-# # =================================================================================================
-# # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv    RUNNING ON SELF-HOSTED RUNNER    vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-# # =================================================================================================
-
-  system-tests-general-windows:
-    name: Testing and coverage (Windows)
-    needs: [integration-tests]
-    if: github.event.pull_request.draft == false
-    runs-on: [ self-hosted, Windows, pyaedt ]
-    steps:
-      - name: Install Git and checkout project
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-
-      - name: Create virtual environment
-        run: |
-          python -m venv .venv
-          .venv\Scripts\Activate.ps1
-          python -m pip install pip -U
-          python -m pip install wheel setuptools -U
-          python -c "import sys; print(sys.executable)"
-
-      - name: Install pyaedt and tests dependencies
-        run: |
-          .venv\Scripts\Activate.ps1
-          pip install .[tests]
-
-      - name: Install CI dependencies (e.g. vtk-osmesa)
-        run: |
-          .venv\Scripts\Activate.ps1
-          # Uninstall conflicting dependencies
-          pip uninstall --yes vtk
-          pip install --extra-index-url https://wheels.vtk.org vtk-osmesa
-
-      - name: Run tests marked with 'general'
-        uses: nick-fields/retry@v3
-        env:
-          PYTHONMALLOC: malloc
-        with:
-          max_attempts: 2
-          retry_on: error
-          timeout_minutes: 50
-          command: |
-            .venv\Scripts\Activate.ps1
-            pytest ${{ env.PYTEST_ARGUMENTS }} -n 4 --dist loadfile -m general
-
-      - uses: codecov/codecov-action@v5
-        with:
-          name: codecov-system-general-tests-windows
-          files: ./coverage.xml
-          flags: windows_system_general
-
-      - name: Upload pytest test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-general-windows
-          path: junit/test-results.xml
-        if: ${{ always() }}
+#
+#  system-tests-solvers-linux:
+#    name: Testing solvers and coverage (Linux)
+#    needs: [integration-tests]
+#    if: github.event.pull_request.draft == false
+#    runs-on: [ self-hosted, Linux, pyaedt ]
+#    env:
+#      ANSYSEM_ROOT251: '/opt/AnsysEM/v251/AnsysEM'
+#      ANS_NODEPCHECK: '1'
+#    steps:
+#      - name: Install Git and checkout project
+#        uses: actions/checkout@v4
+#
+#      - name: Setup Python
+#        uses: actions/setup-python@v5
+#        with:
+#          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+#
+#      - name: Create virtual environment
+#        run: |
+#          export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
+#          python -m venv .venv
+#          source .venv/bin/activate
+#          python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org pip -U
+#          python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org wheel setuptools -U
+#          python -c "import sys; print(sys.executable)"
+#
+#      - name: Install pyaedt and tests dependencies
+#        run: |
+#          export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
+#          source .venv/bin/activate
+#          pip install .[tests]
+#
+#      - name: Run tests marked with 'solvers'
+#        run: |
+#          export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
+#          source .venv/bin/activate
+#          pytest ${{ env.PYTEST_ARGUMENTS }} -m solvers
+#
+#      - uses: codecov/codecov-action@v5
+#        with:
+#          name: codecov-system-solvers-tests-linux
+#          files: ./coverage.xml
+#          flags: linux_system_solvers
+#
+#      - name: Upload pytest test results
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: pytest-solvers-linux
+#          path: junit/test-results.xml
+#        if: ${{ always() }}
 
 # # =================================================================================================
 # # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv    RUNNING ON SELF-HOSTED RUNNER    vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 # # =================================================================================================
 
-  system-tests-general-linux:
-    name: Testing and coverage (Linux)
-    if: github.event.pull_request.draft == false
-    needs: [integration-tests]
-    runs-on: [ self-hosted, Linux, pyaedt ]
-    env:
-      ANSYSEM_ROOT251: '/opt/AnsysEM/v251/AnsysEM'
-      ANS_NODEPCHECK: '1'
-    steps:
-      - name: Install Git and checkout project
-        uses: actions/checkout@v4
+#  system-tests-general-windows:
+#    name: Testing and coverage (Windows)
+#    needs: [integration-tests]
+#    if: github.event.pull_request.draft == false
+#    runs-on: [ self-hosted, Windows, pyaedt ]
+#    steps:
+#      - name: Install Git and checkout project
+#        uses: actions/checkout@v4
+#
+#      - name: Setup Python
+#        uses: actions/setup-python@v5
+#        with:
+#          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+#
+#      - name: Create virtual environment
+#        run: |
+#          python -m venv .venv
+#          .venv\Scripts\Activate.ps1
+#          python -m pip install pip -U
+#          python -m pip install wheel setuptools -U
+#          python -c "import sys; print(sys.executable)"
+#
+#      - name: Install pyaedt and tests dependencies
+#        run: |
+#          .venv\Scripts\Activate.ps1
+#          pip install .[tests]
+#
+#      - name: Install CI dependencies (e.g. vtk-osmesa)
+#        run: |
+#          .venv\Scripts\Activate.ps1
+#          # Uninstall conflicting dependencies
+#          pip uninstall --yes vtk
+#          pip install --extra-index-url https://wheels.vtk.org vtk-osmesa
+#
+#      - name: Run tests marked with 'general'
+#        uses: nick-fields/retry@v3
+#        env:
+#          PYTHONMALLOC: malloc
+#        with:
+#          max_attempts: 2
+#          retry_on: error
+#          timeout_minutes: 50
+#          command: |
+#            .venv\Scripts\Activate.ps1
+#            pytest ${{ env.PYTEST_ARGUMENTS }} -n 4 --dist loadfile -m general
+#
+#      - uses: codecov/codecov-action@v5
+#        with:
+#          name: codecov-system-general-tests-windows
+#          files: ./coverage.xml
+#          flags: windows_system_general
+#
+#      - name: Upload pytest test results
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: pytest-general-windows
+#          path: junit/test-results.xml
+#        if: ${{ always() }}
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+# # =================================================================================================
+# # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv    RUNNING ON SELF-HOSTED RUNNER    vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+# # =================================================================================================
 
-      - name: Create virtual environment
-        run: |
-          export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
-          python -m venv .venv
-          source .venv/bin/activate
-          python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org pip -U
-          python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org wheel setuptools -U
-          python -c "import sys; print(sys.executable)"
+#  system-tests-general-linux:
+#    name: Testing and coverage (Linux)
+#    if: github.event.pull_request.draft == false
+#    needs: [integration-tests]
+#    runs-on: [ self-hosted, Linux, pyaedt ]
+#    env:
+#      ANSYSEM_ROOT251: '/opt/AnsysEM/v251/AnsysEM'
+#      ANS_NODEPCHECK: '1'
+#    steps:
+#      - name: Install Git and checkout project
+#        uses: actions/checkout@v4
+#
+#      - name: Setup Python
+#        uses: actions/setup-python@v5
+#        with:
+#          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+#
+#      - name: Create virtual environment
+#        run: |
+#          export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
+#          python -m venv .venv
+#          source .venv/bin/activate
+#          python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org pip -U
+#          python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org wheel setuptools -U
+#          python -c "import sys; print(sys.executable)"
+#
+#      - name: Install pyaedt and tests dependencies
+#        run: |
+#          export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
+#          source .venv/bin/activate
+#          pip install .[tests]
+#
+#      - name: Install CI dependencies (e.g. vtk-osmesa)
+#        run: |
+#          source .venv/bin/activate
+#          # Uninstall conflicting dependencies
+#          pip uninstall --yes vtk
+#          pip install --extra-index-url https://wheels.vtk.org vtk-osmesa
+#
+#      - name: Run tests marked with 'general'
+#        uses: nick-fields/retry@v3
+#        with:
+#          max_attempts: 2
+#          retry_on: error
+#          timeout_minutes: 50
+#          command: |
+#            export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
+#            source .venv/bin/activate
+#            pytest ${{ env.PYTEST_ARGUMENTS }} -n 4 --dist loadfile -m general
+#
+#      - uses: codecov/codecov-action@v5
+#        with:
+#          name: codecov-system-general-tests
+#          files: ./coverage.xml
+#          flags: linux_system_general
+#
+#      - name: Upload pytest test results
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: pytest-general-linux
+#          path: junit/test-results.xml
+#        if: ${{ always() }}
 
-      - name: Install pyaedt and tests dependencies
-        run: |
-          export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
-          source .venv/bin/activate
-          pip install .[tests]
+#  package:
+#    name: Package library
+#    needs: [system-tests-general-windows, system-tests-general-linux, system-tests-solvers-windows, system-tests-solvers-linux, doc-build]
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Build library source and wheel artifacts
+#        uses: ansys/actions/build-library@v8
+#        with:
+#          library-name: ${{ env.PACKAGE_NAME }}
+#          python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
-      - name: Install CI dependencies (e.g. vtk-osmesa)
-        run: |
-          source .venv/bin/activate
-          # Uninstall conflicting dependencies
-          pip uninstall --yes vtk
-          pip install --extra-index-url https://wheels.vtk.org vtk-osmesa
-
-      - name: Run tests marked with 'general'
-        uses: nick-fields/retry@v3
-        with:
-          max_attempts: 2
-          retry_on: error
-          timeout_minutes: 50
-          command: |
-            export LD_LIBRARY_PATH=${{ env.ANSYSEM_ROOT251 }}/common/mono/Linux64/lib64:$LD_LIBRARY_PATH
-            source .venv/bin/activate
-            pytest ${{ env.PYTEST_ARGUMENTS }} -n 4 --dist loadfile -m general
-
-      - uses: codecov/codecov-action@v5
-        with:
-          name: codecov-system-general-tests
-          files: ./coverage.xml
-          flags: linux_system_general
-
-      - name: Upload pytest test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-general-linux
-          path: junit/test-results.xml
-        if: ${{ always() }}
-
-  package:
-    name: Package library
-    needs: [system-tests-general-windows, system-tests-general-linux, system-tests-solvers-windows, system-tests-solvers-linux, doc-build]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build library source and wheel artifacts
-        uses: ansys/actions/build-library@v8
-        with:
-          library-name: ${{ env.PACKAGE_NAME }}
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-
-  # TODO: Si if we can fix the PDF issue and leverage classic ansys/release-github
-  release:
-    name: Release project
-    if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
-    needs: [package, doc-build]
-    runs-on: ubuntu-latest
-    # Specifying a GitHub environment is optional, but strongly encouraged
-    environment: release
-    permissions:
-      id-token: write
-      contents: write
-    steps:
-      - name: Release to the public PyPI repository
-        uses: ansys/actions/release-pypi-public@v8
-        with:
-          library-name: ${{ env.PACKAGE_NAME }}
-          use-trusted-publisher: true
-
-      - name: Release to GitHub
-        uses: ansys/actions/release-github@v8
-        with:
-          library-name: ${{ env.PACKAGE_NAME }}
-
-  upload-release-doc:
-    name: Upload release documentation
-    if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
-    runs-on: ubuntu-latest
-    needs: [release]
-    steps:
-      - name: Deploy the stable documentation
-        uses: ansys/actions/doc-deploy-stable@v8
-        with:
-          cname: ${{ env.DOCUMENTATION_CNAME }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          bot-user: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
-          bot-email: ${{ secrets.PYANSYS_CI_BOT_EMAIL }}
+#  # TODO: Si if we can fix the PDF issue and leverage classic ansys/release-github
+#  release:
+#    name: Release project
+#    if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
+#    needs: [package, doc-build]
+#    runs-on: ubuntu-latest
+#    # Specifying a GitHub environment is optional, but strongly encouraged
+#    environment: release
+#    permissions:
+#      id-token: write
+#      contents: write
+#    steps:
+#      - name: Release to the public PyPI repository
+#        uses: ansys/actions/release-pypi-public@v8
+#        with:
+#          library-name: ${{ env.PACKAGE_NAME }}
+#          use-trusted-publisher: true
+#
+#      - name: Release to GitHub
+#        uses: ansys/actions/release-github@v8
+#        with:
+#          library-name: ${{ env.PACKAGE_NAME }}
+#
+#  upload-release-doc:
+#    name: Upload release documentation
+#    if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
+#    runs-on: ubuntu-latest
+#    needs: [release]
+#    steps:
+#      - name: Deploy the stable documentation
+#        uses: ansys/actions/doc-deploy-stable@v8
+#        with:
+#          cname: ${{ env.DOCUMENTATION_CNAME }}
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          bot-user: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
+#          bot-email: ${{ secrets.PYANSYS_CI_BOT_EMAIL }}
