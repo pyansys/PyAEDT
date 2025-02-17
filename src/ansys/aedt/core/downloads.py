@@ -35,7 +35,7 @@ from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.generic.general_methods import settings
 
 tmpfold = tempfile.gettempdir()
-EXAMPLE_REPO = "https://github.com/ansys/example-data/raw/master/"
+EXAMPLE_REPO = "https://github.com/ansys/example-data/raw/main/"
 EXAMPLES_PATH = os.path.join(tmpfold, "PyAEDTExamples")
 
 
@@ -725,7 +725,7 @@ def download_file(source, name=None, destination=None):
     Download a file or files from the online examples repository.
 
     Files are downloaded from the
-    :ref:`example-data<https://github.com/ansys/example-data/tree/master/pyaedt>`_ repository
+    :ref:`example-data<https://github.com/ansys/example-data/tree/main/pyaedt>`_ repository
     to a local destination. If ``name`` is not specified, the full directory path
     will be copied to the local drive.
 
