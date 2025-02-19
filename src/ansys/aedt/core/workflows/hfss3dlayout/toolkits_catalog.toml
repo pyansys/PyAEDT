@@ -46,3 +46,10 @@ script = "via_clustering_extension.py"
 icon = "images/large/via_merging.png"
 template = "run_pyaedt_toolkit_script"
 pip = ""
+
+[LayoutDesignToolkit]
+name = "Layout Design Toolkit"
+script = "layout_design_toolkit.py"
+icon = "images/large/layout_design_toolkit_via_parameterization.png"
+template = "run_pyaedt_toolkit_script"
+pip = ""

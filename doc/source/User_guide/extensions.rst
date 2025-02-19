@@ -114,6 +114,12 @@ They are small automated workflows with a simple GUI.
 
             Export layout to 3D.
 
+   .. grid-item-card:: Layout design toolkit
+            :link: pyaedt_extensions_doc/hfss3dlayout/layout_design_toolkit
+            :link-type: doc
+            :margin: 2 2 0 0
+
+            Layout design toolkit.
 
 HFSS extensions
 ~~~~~~~~~~~~~~~
