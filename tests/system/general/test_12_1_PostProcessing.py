@@ -188,8 +188,9 @@ class TestClass:
             for el2 in portnames:
                 trace_names.append("S(" + el + "," + el2 + ")")
         families = {"Freq": ["All"]}
-        for el in aedtapp.available_variations.nominal_w_values_dict:
-            families[el] = aedtapp.available_variations.nominal_w_values_dict[el]
+        nominal_values = aedtapp.available_variations.get_independent_nominal_values()
+        for key, value in nominal_values.items():
+            families[key] = value
 
         my_data = aedtapp.post.get_solution_data(expressions=trace_names, variations=families)
         assert my_data
@@ -242,7 +243,7 @@ class TestClass:
         file_path = aedtapp.post.export_field_file_on_grid(
             "E",
             "Setup1 : LastAdaptive",
-            aedtapp.available_variations.nominal_w_values_dict,
+            aedtapp.available_variations.nominal_values,
             local_scratch.path,
             grid_stop=[5, 5, 5],
             grid_step=[0.5, 0.5, 0.5],
@@ -254,7 +255,7 @@ class TestClass:
         file_path = aedtapp.post.export_field_file_on_grid(
             "E",
             "Setup1 : LastAdaptive",
-            aedtapp.available_variations.nominal_w_values_dict,
+            aedtapp.available_variations.nominal_values,
             grid_stop=[5, 5, 5],
             grid_step=[0.5, 0.5, 0.5],
             is_vector=True,
@@ -265,7 +266,7 @@ class TestClass:
         aedtapp.post.export_field_file_on_grid(
             "E",
             "Setup1 : LastAdaptive",
-            aedtapp.available_variations.nominal_w_values_dict,
+            aedtapp.available_variations.nominal_values,
             os.path.join(local_scratch.path, "Efield.fld"),
             grid_stop=[5, 5, 5],
             grid_step=[0.5, 0.5, 0.5],
@@ -277,7 +278,7 @@ class TestClass:
         aedtapp.post.export_field_file_on_grid(
             "Mag_E",
             "Setup1 : LastAdaptive",
-            aedtapp.available_variations.nominal_w_values_dict,
+            aedtapp.available_variations.nominal_values,
             os.path.join(local_scratch.path, "MagEfieldSph.fld"),
             grid_type="Spherical",
             grid_stop=[5, 300, 300],
@@ -290,7 +291,7 @@ class TestClass:
         aedtapp.post.export_field_file_on_grid(
             "Mag_E",
             "Setup1 : LastAdaptive",
-            aedtapp.available_variations.nominal_w_values_dict,
+            aedtapp.available_variations.nominal_values,
             os.path.join(local_scratch.path, "MagEfieldCyl.fld"),
             grid_type="Cylindrical",
             grid_stop=[5, 300, 5],
@@ -347,8 +348,9 @@ class TestClass:
         trace_names = []
         trace_names.append(new_report.expressions[0])
         families = {"Freq": ["All"]}
-        for el in aedtapp.available_variations.nominal_w_values_dict:
-            families[el] = aedtapp.available_variations.nominal_w_values_dict[el]
+
+        for key, value in aedtapp.available_variations.nominal_values.items():
+            families[key] = value
 
         # get solution data and save in .csv file
         my_data = aedtapp.post.get_solution_data(expressions=trace_names, variations=families)

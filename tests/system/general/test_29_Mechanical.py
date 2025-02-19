@@ -147,13 +147,14 @@ class TestClass:
         assert meshlink_props["PathRelativeTo"] == "TargetProject"
         assert meshlink_props["Design"] == "MechanicalDesign2"
         assert meshlink_props["Soln"] == self.aedtapp.nominal_adaptive
-        assert meshlink_props["Params"] == self.aedtapp.available_variations.nominal_w_values_dict
+        assert meshlink_props["Params"] == self.aedtapp.available_variations.nominal_values
         assert not self.aedtapp.setups[0].add_mesh_link(design="")
         assert not self.aedtapp.setups[0].add_mesh_link(
             design="MechanicalDesign2", solution="Setup_Test : LastAdaptive"
         )
+
         assert self.aedtapp.setups[0].add_mesh_link(
-            design="MechanicalDesign2", parameters=self.aedtapp.available_variations.nominal_w_values_dict
+            design="MechanicalDesign2", parameters=self.aedtapp.available_variations.nominal_values
         )
         assert self.aedtapp.setups[0].add_mesh_link(design="MechanicalDesign2", solution="MySetupAuto : LastAdaptive")
         example_project = os.path.join(self.local_scratch.path, test_project_name + ".aedt")

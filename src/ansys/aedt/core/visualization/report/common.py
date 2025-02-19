@@ -404,7 +404,8 @@ class CommonReport(BinaryTreeNode):
         self._legacy_props["context"]["secondary_sweep_range"] = ["All"]
         self._legacy_props["context"]["variations"] = {"Freq": ["All"]}
         if hasattr(self._post._app, "available_variations") and self._post._app.available_variations:
-            for el, k in self._post._app.available_variations.nominal_w_values_dict.items():
+            nominal_variation = self._post._app.available_variations.get_independent_nominal_values()
+            for el, k in nominal_variation.items():
                 self._legacy_props["context"]["variations"][el] = k
         self._legacy_props["expressions"] = None
         self._legacy_props["plot_name"] = None
@@ -1297,7 +1298,8 @@ class CommonReport(BinaryTreeNode):
                 sweep_list.append(sweeps[el])
             else:
                 sweep_list.append([sweeps[el]])
-        for el in list(self._post._app.available_variations.nominal_w_values_dict.keys()):
+        nominal_values = self._post._app.available_variations.get_independent_nominal_values()
+        for el in list(nominal_values.keys()):
             if el not in sweeps:
                 sweep_list.append(el + ":=")
                 sweep_list.append(["Nominal"])

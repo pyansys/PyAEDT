@@ -1720,7 +1720,8 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
         if not setup:
             setup = assignment.nominal_adaptive
         params = {}
-        pars = assignment.available_variations.nominal_w_values_dict
+        pars = assignment.available_variations.get_independent_nominal_values()
+
         for el in pars:
             params[el] = pars[el]
         native_props = dict(
@@ -5851,7 +5852,7 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
         from ansys.aedt.core.visualization.post.farfield_exporter import FfdSolutionDataExporter
 
         if not variations:
-            variations = self.available_variations.nominal_w_values_dict_w_dependent
+            variations = self.available_variations.get_independent_nominal_values()
         if not setup:
             setup = self.nominal_adaptive
 
@@ -5970,7 +5971,7 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
         from ansys.aedt.core.visualization.post.rcs_exporter import MonostaticRCSExporter
 
         if not variations:
-            variations = self.available_variations.nominal_w_values_dict_w_dependent
+            variations = self.available_variations.get_independent_nominal_values()
         if not setup:
             setup = self.nominal_adaptive
 
@@ -7031,12 +7032,8 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
         >>> oModule.ExportElementPatternToFile
         """
         self.logger.info("Exporting embedded element patterns...")
-        var = []
-        if variations:
-            for k, v in variations.items():
-                var.append(f"{k}='{v}'")
-        variation = " ".join(var)
 
+        variation = self.available_variations.variation_string(variations)
         command = [
             "ExportFileName:=",
             os.path.join(output_dir, element_name + ".ffd"),
@@ -7109,11 +7106,8 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
         >>> oModule.ExportMetadata
         """
         self.logger.info("Exporting antenna metadata...")
-        var = []
-        if variations:
-            for k, v in variations.items():
-                var.append(f"{k}='{v}'")
-        variation = " ".join(var)
+
+        variation = self.available_variations.variation_string(variations)
 
         command = [
             "SolutionName:=",

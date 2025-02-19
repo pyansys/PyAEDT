@@ -149,7 +149,7 @@ class TestClass:
         self.local_scratch = local_scratch
 
     def test_09_manipulate_report(self, field_test):
-        variations = field_test.available_variations.nominal_w_values_dict
+        variations = field_test.available_variations.get_independent_nominal_values()
         variations["Theta"] = ["All"]
         variations["Phi"] = ["All"]
         variations["Freq"] = ["30GHz"]
@@ -188,7 +188,7 @@ class TestClass:
         assert report.add_project_info(field_test)
 
     def test_09_manipulate_report_B(self, field_test):
-        variations = field_test.available_variations.nominal_w_values_dict
+        variations = field_test.available_variations.get_independent_nominal_values()
         variations["Theta"] = ["All"]
         variations["Phi"] = ["All"]
         variations["Freq"] = ["30GHz"]
@@ -229,7 +229,7 @@ class TestClass:
         assert field_test.post.create_report_from_configuration(template)
 
     def test_09_manipulate_report_C(self, field_test):
-        variations = field_test.available_variations.nominal_w_values_dict
+        variations = field_test.available_variations.get_independent_nominal_values()
         variations["Theta"] = ["All"]
         variations["Phi"] = ["All"]
         variations["Freq"] = ["30GHz"]
@@ -250,7 +250,7 @@ class TestClass:
         )
 
     def test_09_manipulate_report_D(self, field_test):
-        variations = field_test.available_variations.nominal_w_values_dict
+        variations = field_test.available_variations.get_independent_nominal_values()
         variations["Theta"] = ["All"]
         variations["Phi"] = ["All"]
         variations["Freq"] = ["30GHz"]
@@ -275,7 +275,7 @@ class TestClass:
 
     def test_09_manipulate_report_E(self, field_test):
         field_test.modeler.create_polyline([[0, 0, 0], [0, 5, 30]], name="Poly1", non_model=True)
-        variations2 = field_test.available_variations.nominal_w_values_dict
+        variations2 = field_test.available_variations.get_independent_nominal_values()
 
         assert field_test.setups[0].create_report(
             "Mag_E", primary_sweep_variable="Distance", report_category="Fields", context="Poly1"
@@ -401,7 +401,9 @@ class TestClass:
         assert len(diff_test.post.available_report_quantities()) > 0
         assert len(diff_test.post.available_report_solutions()) > 0
         assert diff_test.setups[0].is_solved
-        variations = diff_test.available_variations.nominal_w_values_dict
+
+        variations = diff_test.available_variations.get_independent_nominal_values()
+
         variations["Freq"] = ["All"]
         variations["l1"] = ["All"]
         assert diff_test.post.create_report(
@@ -772,12 +774,11 @@ class TestClass:
         assert new_report2.create()
 
     def test_98_get_variations(self, field_test):
-        vars = field_test.available_variations.get_variation_strings()
-        assert vars
-        variations = field_test.available_variations.variations()
+        setup = field_test.existing_analysis_sweeps[0]
+        variations = field_test.available_variations.variations(setup)
         assert isinstance(variations, list)
         assert isinstance(variations[0], list)
-        vars_dict = field_test.available_variations.variations(output_as_dict=True)
+        vars_dict = field_test.available_variations.variations(setup_sweep=setup, output_as_dict=True)
         assert isinstance(vars_dict, list)
         assert isinstance(vars_dict[0], dict)
 
@@ -785,9 +786,10 @@ class TestClass:
         assert q3dtest.cleanup_solution()
 
     def test_z99_delete_variations_B(self, field_test):
-        vars = field_test.available_variations.get_variation_strings()
-        assert field_test.cleanup_solution(vars, entire_solution=False)
-        assert field_test.cleanup_solution(vars, entire_solution=True)
+        setup = field_test.existing_analysis_sweeps
+        variations = field_test.available_variations._get_variation_strings(setup[0])
+        assert field_test.cleanup_solution(variations, entire_solution=False)
+        assert field_test.cleanup_solution(variations, entire_solution=True)
 
     def test_100_ipk_get_scalar_field_value(self, icepak_post):
         assert icepak_post.post.get_scalar_field_value(

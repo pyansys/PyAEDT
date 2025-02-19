@@ -391,10 +391,11 @@ class TestClass:
         assert os.path.exists(fld_file)
         fld_file_1 = os.path.join(self.local_scratch.path, "test_fld_1.fld")
         sample_points_file = os.path.join(local_path, "example_models", test_subfolder, "temp_points.pts")
+        icepak_solved.available_variations.independent = True
         icepak_solved.post.export_field_file(
             quantity="Temp",
             solution=icepak_solved.nominal_sweep,
-            variations=icepak_solved.available_variations.nominal_w_values_dict,
+            variations=icepak_solved.available_variations.nominal_values,
             output_file=fld_file_1,
             assignment="box",
             sample_points_file=sample_points_file,
@@ -404,7 +405,7 @@ class TestClass:
         icepak_solved.post.export_field_file(
             quantity="Temp",
             solution=icepak_solved.nominal_sweep,
-            variations=icepak_solved.available_variations.nominal_w_values_dict,
+            variations=icepak_solved.available_variations.nominal_values,
             output_file=fld_file_2,
             assignment="box",
             sample_points=[[0, 0, 0], [3, 6, 8], [4, 7, 9]],
@@ -415,7 +416,7 @@ class TestClass:
         icepak_solved.post.export_field_file(
             quantity="Temp",
             solution=icepak_solved.nominal_sweep,
-            variations=icepak_solved.available_variations.nominal_w_values_dict,
+            variations=icepak_solved.available_variations.nominal_values,
             output_file=fld_file_3,
             assignment="box",
             sample_points=[[0, 0, 0], [3, 6, 8], [4, 7, 9]],
@@ -524,10 +525,11 @@ class TestClass:
         )
         assert os.path.exists(fld_file_3)
         fld_file_4 = os.path.join(self.local_scratch.path, "test_fld_4.fld")
+        m3dtransient.available_variations.independent = True
         assert not m3dtransient.post.export_field_file(
             quantity="Mag_B",
             solution=m3dtransient.nominal_sweep,
-            variations=m3dtransient.available_variations.nominal_w_values_dict,
+            variations=m3dtransient.available_variations.nominal_values,
             output_file=fld_file_4,
             assignment="Coil_A2",
             objects_type="invalid",

@@ -406,7 +406,7 @@ class CommonSetup(PropsManager, BinaryTreeNode):
         >>> aedtapp = Hfss()
         >>> aedtapp.post.create_report("dB(S(1,1))")
 
-        >>> variations = aedtapp.available_variations.nominal_w_values_dict
+        >>> variations = aedtapp.available_variations.nominal_values
         >>> variations["Theta"] = ["All"]
         >>> variations["Phi"] = ["All"]
         >>> variations["Freq"] = ["30GHz"]
@@ -520,7 +520,7 @@ class CommonSetup(PropsManager, BinaryTreeNode):
         >>> aedtapp = Circuit()
         >>> aedtapp.post.create_report("dB(S(1,1))")
 
-        >>> variations = aedtapp.available_variations.nominal_w_values_dict
+        >>> variations = aedtapp.available_variations.nominal_values
         >>> aedtapp.post.setups[0].create_report("dB(S(1,1))",variations=variations,primary_sweep_variable="Freq")
 
         >>> aedtapp.post.create_report("S(1,1)",variations=variations,plot_type="Smith Chart")
@@ -876,7 +876,7 @@ class Setup(CommonSetup):
             If ``None``, the default value is taken from the nominal adaptive solution.
         parameters : dict, optional
             Dictionary of the "mapping" variables from the source design.
-            If ``None``, the default is `appname.available_variations.nominal_w_values_dict`.
+            If ``None``, the default is `appname.available_variations.nominal_values`.
         project : str, optional
             Name of the project with the design. The default is ``"This Project*"``.
             However, you can supply the full path and name to another project.
@@ -949,16 +949,20 @@ class Setup(CommonSetup):
                 raise ValueError("Setup does not exist in current design.")
             # parameters
             meshlinks["Params"] = {}
+
+            nominal_values = self.p_app.available_variations.get_independent_nominal_values()
+
             if parameters is None:
-                parameters = self.p_app.available_variations.nominal_w_values_dict
+                parameters = nominal_values
                 for el in parameters:
                     meshlinks["Params"][el] = el
             else:
                 for el in parameters:
-                    if el in list(self._app.available_variations.nominal_w_values_dict.keys()):
+                    if el in list(nominal_values.keys()):
                         meshlinks["Params"][el] = el
                     else:
                         meshlinks["Params"][el] = parameters[el]
+
             meshlinks["ForceSourceToSolve"] = force_source_to_solve
             meshlinks["PreservePartnerSoln"] = preserve_partner_solution
             meshlinks["ApplyMeshOp"] = apply_mesh_operations
@@ -974,17 +978,18 @@ class Setup(CommonSetup):
     def _parse_link_parameters(self, map_variables_by_name, parameters):
         # parameters
         params = {}
+        nominal_values = self.p_app.available_variations.get_independent_nominal_values()
         if map_variables_by_name:
-            parameters = self.p_app.available_variations.nominal_w_values_dict
+            parameters = nominal_values
             for k, v in parameters.items():
                 params[k] = k
         elif parameters is None:
-            parameters = self.p_app.available_variations.nominal_w_values_dict
+            parameters = nominal_values
             for k, v in parameters.items():
                 params[k] = v
         else:
             for k, v in parameters.items():
-                if k in list(self._app.available_variations.nominal_w_values_dict.keys()):
+                if k in list(nominal_values.keys()):
                     params[k] = v
                 else:
                     params[k] = parameters[v]
@@ -1047,7 +1052,7 @@ class Setup(CommonSetup):
         parameters : dict, optional
             Dictionary of the parameters. This parameter is not considered if
             ``map_variables_by_name=True``. If ``None``, the default is
-            ``appname.available_variations.nominal_w_values_dict``.
+            ``appname.available_variations.nominal_values``.
         project : str, optional
             Name of the project with the design. The default is ``"This Project*"``.
             However, you can supply the full path and name to another project.
@@ -2866,7 +2871,7 @@ class SetupHFSS(Setup, object):
         sweepdata.props["SMatrixOnlySolveMode"] = "Auto"
         if add_subranges:
             for f, s in zip(freq, save_single_field):
-                sweepdata.add_subrange(rangetype="SinglePoints", start=f, unit=unit, save_single_fields=s)
+                sweepdata.add_subrange(range_type="SinglePoints", start=f, unit=unit, save_single_fields=s)
         sweepdata.update()
         self._app.logger.info(f"Single point sweep {name} has been correctly created")
         return sweepdata
@@ -4228,7 +4233,7 @@ class SetupQ3D(Setup, object):
         sweepdata.props["SMatrixOnlySolveMode"] = "Auto"
         if add_subranges:
             for f, s in zip(freq, save_single_field):
-                sweepdata.add_subrange(rangetype="SinglePoints", start=f, unit=unit, save_single_fields=s)
+                sweepdata.add_subrange(range_type="SinglePoints", start=f, unit=unit, save_single_fields=s)
         sweepdata.update()
         self._app.logger.info(f"Single point sweep {name} has been correctly created")
         return sweepdata
@@ -4434,7 +4439,7 @@ class SetupIcepak(Setup, object):
         parameters : dict, optional
             Dictionary of the parameters. This argument is not considered if
             ``map_variables_by_name=True``. If ``None``, the default is
-            ``appname.available_variations.nominal_w_values_dict``.
+            ``appname.available_variations.nominal_values``.
         project : str, optional
             Name of the project with the design. The default is ``"This Project*"``.
             However, you can supply the full path and name to another project.

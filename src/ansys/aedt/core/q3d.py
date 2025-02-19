@@ -566,15 +566,13 @@ class QExtractor(FieldAnalysis3D, object):
                     return False
 
         if variations is None:
-            if not self.available_variations.nominal_w_values_dict:
+            nominal_values = self.available_variations.get_independent_nominal_values()
+            if not nominal_values:
                 variations = ""
             else:
                 variations_list = []
-                for x in range(0, len(self.available_variations.nominal_w_values_dict)):
-                    variation = (
-                        f"{list(self.available_variations.nominal_w_values_dict.keys())[x]}="
-                        f"'{list(self.available_variations.nominal_w_values_dict.values())[x]}'"
-                    )
+                for x in range(0, len(nominal_values)):
+                    variation = f"{list(nominal_values.keys())[x]}=" f"'{list(nominal_values.values())[x]}'"
                     variations_list.append(variation)
                 variations = ",".join(variations_list)
 
@@ -958,15 +956,14 @@ class QExtractor(FieldAnalysis3D, object):
         analysis_setup = setup + " : " + sweep.replace(" ", "")
 
         if variations is None:
-            if not self.available_variations.nominal_w_values_dict:
+            nominal_values = self.available_variations.get_independent_nominal_values()
+
+            if not nominal_values:
                 variations = ""
             else:
                 variations_list = []
-                for x in range(0, len(self.available_variations.nominal_w_values_dict)):
-                    variation = (
-                        f"{list(self.available_variations.nominal_w_values_dict.keys())[x]}="
-                        f"'{list(self.available_variations.nominal_w_values_dict.values())[x]}'"
-                    )
+                for x in range(0, len(nominal_values)):
+                    variation = f"{list(nominal_values.keys())[x]}=" f"'{list(nominal_values.values())[x]}'"
                     variations_list.append(variation)
                 variations = ",".join(variations_list)
         else:

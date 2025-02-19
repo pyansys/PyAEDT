@@ -599,6 +599,11 @@ class TestClass:
         assert setup.export_to_q3d(file_fullname, keep_net_name=True, unite=False)
 
     def test_21_variables(self):
+        assert isinstance(self.aedtapp.available_variations.nominal_values, dict)
+        assert isinstance(self.aedtapp.available_variations.nominal, dict)
+        assert isinstance(self.aedtapp.available_variations.all, dict)
+
+        # Deprecated
         assert isinstance(self.aedtapp.available_variations.nominal_w_values_dict, dict)
         assert isinstance(self.aedtapp.available_variations.nominal_w_values, list)
 

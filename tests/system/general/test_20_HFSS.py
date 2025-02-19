@@ -131,7 +131,7 @@ class TestClass:
             "inner_1",
         )
         args = {
-            "mat": "aluminum",
+            "material": "aluminum",
             "use_thickness": True,
             "thickness": "0.5mm",
             "is_two_side": True,
@@ -934,8 +934,11 @@ class TestClass:
         assert meshlink_props["PathRelativeTo"] == "TargetProject"
         assert meshlink_props["Design"] == design_name
         assert meshlink_props["Soln"] == nominal_adaptive
+
+        # Deprecated
         assert sorted(list(meshlink_props["Params"].keys())) == sorted(self.aedtapp.available_variations.variables)
         assert sorted(list(meshlink_props["Params"].values())) == sorted(self.aedtapp.available_variations.variables)
+
         assert not self.aedtapp.setups[0].add_mesh_link(design="")
         assert self.aedtapp.setups[0].add_mesh_link(design=design_name, solution="MySetup : LastAdaptive")
         assert not self.aedtapp.setups[0].add_mesh_link(design=design_name, solution="Setup_Test : LastAdaptive")
@@ -1499,7 +1502,7 @@ class TestClass:
         box2.material_name = "Copper"
 
         _ = self.aedtapp.lumped_port(
-            signal=box1.name,
+            assignment=box1.name,
             reference=box2.name,
             create_port_sheet=True,
             port_on_plane=True,

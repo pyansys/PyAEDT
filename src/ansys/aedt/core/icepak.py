@@ -1796,8 +1796,9 @@ class Icepak(FieldAnalysisIcepak, CreateBoundaryMixin):
             intr = []
 
         argparam = {}
-        for el in self.available_variations.nominal_w_values_dict:
-            argparam[el] = self.available_variations.nominal_w_values_dict[el]
+        nominal_variation = self.available_variations.get_independent_nominal_values()
+        for key, value in nominal_variation.items():
+            argparam[key] = value
 
         if parameters and isinstance(parameters, list):
             for el in parameters:
@@ -1816,10 +1817,9 @@ class Icepak(FieldAnalysisIcepak, CreateBoundaryMixin):
             "ForceSourceToSolve": True,
             "PreservePartnerSoln": True,
             "PathRelativeTo": "TargetProject",
+            "Intrinsics": intr,
+            "SurfaceOnly": surfaces,
         }
-
-        props["Intrinsics"] = intr
-        props["SurfaceOnly"] = surfaces
 
         name = generate_unique_name("EMLoss")
         bound = self._create_boundary(name, props, "EMLoss")

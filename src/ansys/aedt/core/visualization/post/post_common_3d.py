@@ -498,7 +498,7 @@ class PostProcessor3D(PostProcessorCommon):
             self.ofieldsreporter.CalcOp(scalar_function)
 
         if not variations:
-            variations = self._app.available_variations.nominal_w_values_dict
+            variations = self._app.available_variations.get_independent_nominal_values()
 
         variation = []
         for el, value in variations.items():
@@ -621,7 +621,7 @@ class PostProcessor3D(PostProcessorCommon):
         --------
         >>> from ansys.aedt.core import Hfss
         >>> hfss = Hfss()
-        >>> var = hfss.available_variations.nominal_w_values
+        >>> var = hfss.available_variations.nominal_values
         >>> setup = "Setup1 : LastAdaptive"
         >>> path = "Field.fld"
         >>> hfss.post.export_field_file_on_grid("E",setup,var,path,'Cartesian',[0, 0, 0],intrinsics="8GHz")
@@ -676,7 +676,7 @@ class PostProcessor3D(PostProcessorCommon):
             return False
 
         if not variations:
-            variations = self._app.available_variations.nominal_w_values_dict
+            variations = self._app.available_variations.get_independent_nominal_values()
 
         variation = []
         for el, value in variations.items():
@@ -844,7 +844,7 @@ class PostProcessor3D(PostProcessorCommon):
             self.ofieldsreporter.CopyNamedExprToStack(quantity)
 
         if not variations:
-            variations = self._app.available_variations.nominal_w_values_dict
+            variations = self._app.available_variations.get_independent_nominal_values()
 
         variation = []
         for el, value in variations.items():

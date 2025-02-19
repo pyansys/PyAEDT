@@ -496,7 +496,9 @@ class TwinBuilder(AnalysisTwinBuilder, object):
             raise ValueError("Invalid matrix name.")
         if not component_name:
             component_name = generate_unique_name("SimpQ3DData")
-        var = app.available_variations.nominal_w_values_dict
+
+        var = app.available_variations.get_independent_nominal_values()
+
         props = ["NAME:Properties"]
         for k, v in var.items():
             props.append("paramProp:=")
