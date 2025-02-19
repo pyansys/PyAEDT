@@ -330,3 +330,14 @@ latex_additional_files = [watermark, ansys_logo_white, ansys_logo_white_cropped]
 # Change the preamble of latex with customized title page
 # variables are the title of pdf, watermark
 latex_elements = {"preamble": latex.generate_preamble(html_title)}
+
+linkcheck_ignore = [
+    r"https://download.ansys.com/",
+]
+
+# If we are on a release, we have to ignore the "release" URLs, since it is not
+# available until the release is published.
+if switcher_version != "dev":
+    linkcheck_ignore.append(
+        f"https://github.com/ansys/pyaedt/releases/tag/v{__version__}"
+    )  # noqa: E501

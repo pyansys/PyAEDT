@@ -67,3 +67,4 @@ enabling straightforward and efficient automation in your workflow.
     User_guide/index
     API/index
     Examples <https://examples.aedt.docs.pyansys.com/>
+    changelog
