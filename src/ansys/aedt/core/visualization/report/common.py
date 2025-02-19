@@ -2629,6 +2629,70 @@ class CommonReport(BinaryTreeNode):
         self._post.oreportsetup.ApplyReportTemplate(self.plot_name, input_file, property_type)
         return True
 
+    @pyaedt_function_handler(trace_name="name")
+    def add_trace_characteristics(self, name, arguments=None, solution_range=None):
+        """Add a trace characteristic to the plot.
+
+        Parameters
+        ----------
+        name : str
+            Name of the trace characteristic.
+        arguments : list, optional
+            Arguments if any. The default is ``None``.
+        solution_range : list, optional
+            Output range. The default is ``None``, in which case
+            the full range is used.
+
+        Returns
+        -------
+        bool
+            ``True`` when successful, ``False`` when failed.
+        """
+        if not arguments:
+            arguments = []
+        if not solution_range:
+            solution_range = ["Full"]
+        self._post.oreportsetup.AddTraceCharacteristics(self.plot_name, name, arguments, solution_range)
+        return True
+
+    @pyaedt_function_handler()
+    def export_table_to_file(self, plot_name, output_file, table_type="Marker"):
+        """Export a marker table or a legend (with trace characteristics result) from a report to a file.
+
+        Parameters
+        ----------
+        plot_name : str
+            Plot name.
+        output_file : str
+            Full path of the outputted file.
+            Valid extensions for the output file are: ``.tab``, ``.csv``
+        table_type : str
+            Valid table types are: ``Marker``, ``DeltaMarker``, ``Legend``.
+            Default table_type is ``Marker``.
+
+        Returns
+        -------
+        bool
+            ``True`` when successful, ``False`` when failed.
+
+        References
+        ----------
+        >>> oModule.ExportTableToFile
+        """
+        plot_names = [plot.name for plot in self._post.plots]
+        if plot_name not in plot_names:
+            self._post.logger.error("Please enter a plot name")
+            return False
+        extension = os.path.splitext(output_file)[1]
+        if extension not in [".tab", ".csv"]:
+            self._post.logger.error("Please enter a valid file extension: ``.tab``, ``.csv`` ")
+            return False
+        if table_type not in ["Marker", "DeltaMarker", "Legend"]:
+            self._post.logger.error("Please enter a valid file extension: ``Marker``, ``DeltaMarker``, ``Legend`` ")
+            return False
+        self._post.oreportsetup.ExportTableToFile(plot_name, output_file, table_type)
+        return True
+
     @staticmethod
     @pyaedt_function_handler()
     def __props_with_default(dict_in, key, default_value=None):
