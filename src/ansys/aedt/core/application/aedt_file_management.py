@@ -49,12 +49,12 @@ def read_info_fromcsv(projdir, name):
     """
 
     filename = projdir + "//" + name
-    listmcad = []
-    with open_file(filename, "rb") as csvfile:
+    rows = []
+    with open_file(filename, "r", encoding="utf-8") as csvfile:
         reader = csv.reader(csvfile, delimiter=",")
         for row in reader:
-            listmcad.append(row)
-    return listmcad
+            rows.append(row)
+    return rows
 
 
 @pyaedt_function_handler()
@@ -95,22 +95,20 @@ def create_output_folder(ProjectDir):
 
     """
     npath = os.path.normpath(ProjectDir)
+    base = os.path.basename(npath)
 
     # set pathname for the Output
-    OutputPath = os.path.join(npath, os.path.basename(npath))
+    output_path = os.path.join(npath, base)
     # set pathname for the images
-    PicturePath = os.path.join(npath, os.path.basename(npath), "Pictures")
+    picture_path = os.path.join(output_path, "Pictures")
     # set pathname for the files
-    ResultsPath = os.path.join(npath, os.path.basename(npath), "Results")
+    results_path = os.path.join(output_path, "Results")
 
     # Add folders for outputs
-    if not os.path.exists(OutputPath):
-        os.mkdir(OutputPath)
-    if not os.path.exists(PicturePath):
-        os.mkdir(PicturePath)
-    if not os.path.exists(ResultsPath):
-        os.mkdir(ResultsPath)
-    return PicturePath, ResultsPath
+    os.makedirs(output_path, exist_ok=True)
+    os.makedirs(picture_path, exist_ok=True)
+    os.makedirs(results_path, exist_ok=True)
+    return picture_path, results_path
 
 
 @pyaedt_function_handler()
@@ -120,9 +118,9 @@ def change_objects_visibility(origfile, solid_list):
     Parameters
     ----------
     origfile : str
-        Full path to the project file, which has an ``.aedt``  extension.
+        Full path to the project file, which has an ``.aedt`` extension.
     solid_list : list
-        List of names for the solid to make visible. All other solides are hidden.
+        List of names for the solid to make visible. All other solids are hidden.
 
     Returns
     -------
@@ -133,29 +131,36 @@ def change_objects_visibility(origfile, solid_list):
     newfile = os.path.join(path, "aedttmp.tmp")
 
     if not os.path.isfile(origfile + ".lock"):  # check if the project is closed
-        with open(origfile, "rb") as f, open(newfile, "wb") as n:
-            # Reading file content
-            content = f.read()
+        try:
+            # Using text mode with explicit encoding instead of binary mode.
+            with open(origfile, "r", encoding="utf-8") as f, open(newfile, "w", encoding="utf-8") as n:
+                # Reading file content
+                content = f.read()
 
-            # Searching file content for pattern
-            pattern = re.compile(
-                r"(\$begin 'EditorWindow'\n.+)(Drawings\[.+\])(.+\n\s*\$end 'EditorWindow')", re.UNICODE
-            )
-            # Replacing string
-            # fmt: off
-            view_str = u"Drawings[" + str(len(solid_list)) + u": " + str(solid_list).strip("[")
-            s = pattern.sub(r"\1" + view_str + r"\3", content)
-            # fmt: on
-            # writing file content
-            n.write(str(s))
-
-        # renaming files and deleting temp
-
-        os.remove(origfile)
-        os.rename(newfile, origfile)
-
+                # Searching file content for pattern
+                pattern = re.compile(
+                    r"(\$begin 'EditorWindow'\n.+)(Drawings\[.+\])(.+\n\s*\$end 'EditorWindow')", re.UNICODE | re.DOTALL
+                )
+                # Replacing string
+                # fmt: off
+                view_str = u"Drawings[" + str(len(solid_list)) + u": " + str(solid_list).strip("[")
+                s = pattern.sub(r"\1" + view_str + r"\3", content)
+                # fmt: on
+                # Writing file content
+                n.write(s)
+            # Renaming files and deleting temporary file
+            os.remove(origfile)
+            os.rename(newfile, origfile)
+            return True
+        except Exception as e:
+            # Cleanup temporary file if exists.
+            if os.path.exists(newfile):
+                os.remove(newfile)
+            print("change_objects_visibility: Error encountered -", e)
+            return False
     else:  # project is locked
         print("change_objects_visibility: Project %s is still locked." % origfile)
+        return False
 
 
 @pyaedt_function_handler()
@@ -165,7 +170,7 @@ def change_model_orientation(origfile, bottom_dir):
     Parameters
     ----------
     origfile : str
-        Full path to the project file, which has an ``.aedt``  extension.
+        Full path to the project file, which has an ``.aedt`` extension.
     bottom_dir : str
         Bottom direction as specified in the properties file.
 
@@ -200,25 +205,32 @@ def change_model_orientation(origfile, bottom_dir):
     }
 
     if not os.path.isfile(origfile + ".lock"):  # check if the project is closed
-        # Opening files
-        with open(origfile, "rb") as f, open(newfile, "wb") as n:
-            # Reading file content
-            content = f.read()
+        try:
+            # Using text mode with explicit encoding.
+            with open(origfile, "r", encoding="utf-8") as f, open(newfile, "w", encoding="utf-8") as n:
+                # Reading file content
+                content = f.read()
 
-            # Searching file content for pattern
-            pattern = re.compile(
-                r"(\$begin 'EditorWindow'\n.+?)(OrientationMatrix\(.+?\))(.+\n\s*\$end 'EditorWindow')", re.UNICODE
-            )
-            # Replacing string
-            orientation_str = orientation[bottom_dir]
-            s = pattern.sub(r"\1" + orientation_str + r"\3", content)
+                # Searching file content for pattern
+                pattern = re.compile(
+                    r"(\$begin 'EditorWindow'\n.+?)(OrientationMatrix\(.+?\))(.+\n\s*\$end 'EditorWindow')",
+                    re.UNICODE | re.DOTALL,
+                )
+                # Replacing string
+                orientation_str = orientation.get(bottom_dir, "")
+                s = pattern.sub(r"\1" + orientation_str + r"\3", content)
 
-            # Writing file content
-            n.write(str(s))
-
-        # Renaming files and deleting temp
-        os.remove(origfile)
-        os.rename(newfile, origfile)
-
+                # Writing file content
+                n.write(s)
+            # Renaming files and deleting temporary file
+            os.remove(origfile)
+            os.rename(newfile, origfile)
+            return True
+        except Exception as e:
+            if os.path.exists(newfile):
+                os.remove(newfile)
+            print("change_model_orientation: Error encountered -", e)
+            return False
     else:  # Project is locked
         print("change_model_orientation: Project %s is still locked." % origfile)
+        return False
