@@ -66,7 +66,10 @@ class PostProcessor3DLayout(PostProcessor3D):
                 self._app.logger.error(f"Solution {solution} doesn't exist.")
                 return
 
-        solution_data_dir = Path(self._app.project_file).with_suffix(".aedtresults") / "main"
+        aedt_results = Path(self._app.project_file).with_suffix(".aedtresults")
+        solution_data_dir = aedt_results / "main"
+        if not solution_data_dir.exists():  # pragma: no cover
+            solution_data_dir = aedt_results / self._app.design_name
         subfolders = [f for f in solution_data_dir.iterdir() if f.is_dir()]
         dcir_solution_folder = None
         for folder in subfolders:
