@@ -26,6 +26,7 @@ import os
 import sys
 import uuid
 
+from ansys.aedt.core import Quantity
 from ansys.aedt.core.generic.general_methods import is_linux
 from ansys.aedt.core.generic.general_methods import read_json
 from ansys.aedt.core.generic.settings import settings
@@ -85,7 +86,9 @@ class TestClass:
         setup_name = aedtapp.existing_analysis_sweeps[0]
         assert aedtapp.setups[0].is_solved
         quantity_name = "ComplexMag_E"
-        intrinsic = {"Freq": "5GHz", "Phase": "180deg"}
+        frequency = Quantity("5GHz")
+        phase = Quantity("180deg")
+        intrinsic = {"Freq": frequency, "Phase": phase}
         min_value = aedtapp.post.get_scalar_field_value(quantity_name, "Minimum", setup_name, intrinsics="5GHz")
         plot1 = aedtapp.post.create_fieldplot_cutplane(cutlist, quantity_name, setup_name, intrinsic)
         plot1.IsoVal = "Tone"

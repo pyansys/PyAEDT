@@ -52,10 +52,12 @@ from ansys.aedt.core.generic.constants import _resolve_unit_system
 from ansys.aedt.core.generic.constants import unit_system
 from ansys.aedt.core.generic.errors import GrpcApiError
 from ansys.aedt.core.generic.general_methods import check_numeric_equivalence
-from ansys.aedt.core.generic.general_methods import is_array
-from ansys.aedt.core.generic.general_methods import is_number
 from ansys.aedt.core.generic.general_methods import open_file
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
+from ansys.aedt.core.generic.numbers import Quantity
+from ansys.aedt.core.generic.numbers import decompose_variable_value
+from ansys.aedt.core.generic.numbers import is_array
+from ansys.aedt.core.generic.numbers import is_number
 
 
 class CSVDataset:
@@ -258,68 +260,6 @@ class CSVDataset:
     def next(self):
         """Yield the next row."""
         return self.__next__()
-
-
-@pyaedt_function_handler()
-def _find_units_in_dependent_variables(variable_value, full_variables={}):
-    m2 = re.findall(r"[0-9.]+ *([a-z_A-Z]+)", variable_value)
-    if len(m2) > 0:
-        if len(set(m2)) <= 1:
-            return m2[0]
-        else:
-            if unit_system(m2[0]):
-                return SI_UNITS[unit_system(m2[0])]
-    else:
-        m1 = re.findall(r"(?<=[/+-/*//^/(/[])([a-z_A-Z/$]\w*)", variable_value.replace(" ", ""))
-        m2 = re.findall(r"^([a-z_A-Z/$]\w*)", variable_value.replace(" ", ""))
-        m = list(set(m1).union(m2))
-        for i, v in full_variables.items():
-            if i in m and _find_units_in_dependent_variables(v):
-                return _find_units_in_dependent_variables(v)
-    return ""
-
-
-@pyaedt_function_handler()
-def decompose_variable_value(variable_value, full_variables={}):
-    """Decompose a variable value.
-
-    Parameters
-    ----------
-    variable_value : str
-    full_variables : dict
-
-    Returns
-    -------
-    tuples
-        Tuples made of the float value of the variable and the units exposed as a string.
-    """
-    # set default return values - then check for valid units
-    float_value = variable_value
-    units = ""
-
-    if is_number(variable_value):
-        float_value = float(variable_value)
-    elif isinstance(variable_value, str) and variable_value != "nan":
-        try:
-            # Handle a numerical value in string form
-            float_value = float(variable_value)
-        except ValueError:
-            # search for a valid units string at the end of the variable_value
-            loc = re.search(r"[-+]?(\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?", variable_value)
-            units = _find_units_in_dependent_variables(variable_value, full_variables)
-            if loc:
-                loc_units = loc.span()[1]
-                extract_units = variable_value[loc_units:]
-                chars = set("+*/()[]")
-                if any((c in chars) for c in extract_units):
-                    return variable_value, units
-                try:
-                    float_value = float(variable_value[0:loc_units])
-                    units = extract_units
-                except ValueError:
-                    float_value = variable_value
-
-    return float_value, units
 
 
 @pyaedt_function_handler()
@@ -1070,6 +1010,8 @@ class VariableManager(object):
         elif isinstance(expression, Variable):
             # Handle input type variable
             variable = expression.evaluated_value
+        elif isinstance(expression, Quantity):
+            variable = str(expression)
         elif is_number(expression):
             # Handle input type int/float, etc (including numeric 0)
             variable = str(expression)

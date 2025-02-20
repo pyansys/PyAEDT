@@ -31,11 +31,11 @@ import re
 import warnings
 
 from ansys.aedt.core.application.analysis_3d import FieldAnalysis3D
-from ansys.aedt.core.application.variables import decompose_variable_value
 from ansys.aedt.core.generic.constants import MATRIXOPERATIONSQ2D
 from ansys.aedt.core.generic.constants import MATRIXOPERATIONSQ3D
 from ansys.aedt.core.generic.general_methods import generate_unique_name
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
+from ansys.aedt.core.generic.numbers import decompose_variable_value
 from ansys.aedt.core.generic.settings import settings
 from ansys.aedt.core.mixins import CreateBoundaryMixin
 from ansys.aedt.core.modeler.geometry_operators import GeometryOperators as go
@@ -646,8 +646,8 @@ class QExtractor(FieldAnalysis3D, object):
                 .groups()[0]
             )
         else:
-            if freq_unit != self.odesktop.GetDefaultUnit("Frequency") and freq_unit is not None:
-                freq = go.parse_dim_arg(f"{freq}{freq_unit}", self.odesktop.GetDefaultUnit("Frequency"))
+            if freq_unit != self.units.frequency and freq_unit is not None:
+                freq = go.parse_dim_arg(f"{freq}{freq_unit}", self.units.frequency)
 
         if export_ac_dc_res is None:
             export_ac_dc_res = False

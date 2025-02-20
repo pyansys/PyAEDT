@@ -38,6 +38,7 @@ from ansys.aedt.core.generic.data_handlers import _dict_items_to_list_items
 from ansys.aedt.core.generic.general_methods import generate_unique_name
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.generic.general_methods import read_configuration_file
+from ansys.aedt.core.generic.numbers import _units_assignment
 from ansys.aedt.core.visualization.plot.matplotlib import ReportPlotter
 from ansys.aedt.core.visualization.post.solution_data import SolutionData
 from ansys.aedt.core.visualization.report.constants import TEMPLATES_BY_DESIGN
@@ -739,6 +740,7 @@ class PostProcessorCommon(object):
         """
         if sweeps is None:
             sweeps = {"Theta": "All", "Phi": "All", "Freq": "All"}
+        sweeps = {i: _units_assignment(k) for i, k in sweeps.items()}
         if not context:
             context = []
         if not isinstance(expressions, list):

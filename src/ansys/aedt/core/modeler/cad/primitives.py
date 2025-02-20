@@ -36,17 +36,17 @@ import warnings
 
 import ansys.aedt.core
 from ansys.aedt.core.application.variables import Variable
-from ansys.aedt.core.application.variables import decompose_variable_value
-from ansys.aedt.core.generic.constants import AEDT_UNITS
 from ansys.aedt.core.generic.data_handlers import json_to_dict
 from ansys.aedt.core.generic.general_methods import _dim_arg
 from ansys.aedt.core.generic.general_methods import _uname
 from ansys.aedt.core.generic.general_methods import clamp
 from ansys.aedt.core.generic.general_methods import generate_unique_name
 from ansys.aedt.core.generic.general_methods import is_linux
-from ansys.aedt.core.generic.general_methods import is_number
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.generic.general_methods import settings
+from ansys.aedt.core.generic.numbers import _units_assignment
+from ansys.aedt.core.generic.numbers import decompose_variable_value
+from ansys.aedt.core.generic.numbers import is_number
 from ansys.aedt.core.modeler.cad.components_3d import UserDefinedComponent
 from ansys.aedt.core.modeler.cad.elements_3d import EdgePrimitive
 from ansys.aedt.core.modeler.cad.elements_3d import FacePrimitive
@@ -142,6 +142,7 @@ class Objects(dict):
         return dict.__iter__(self)
 
     def __setitem__(self, key, value):
+        value = _units_assignment(value)
         dict.__setitem__(self, key, value)
         self.__obj_names[value.name] = value
         if self.__obj_type == "o":
@@ -259,12 +260,19 @@ class GeometryModeler(Modeler):
         self._unclassified = []
         self._all_object_names = []
         self._model_units = None
-        self.rescale_model = False
         self._object_names_to_ids = {}
         self.objects = Objects(self, "o")
         self.user_defined_components = Objects(self, "u")
         self.points = Objects(self, "p")
         self.refresh()
+
+    @property
+    def rescale_model(self):
+        return self._app.units.rescale_model
+
+    @rescale_model.setter
+    def rescale_model(self, value):
+        self._app.units.rescale_model = value
 
     class Position:
         """Position.
@@ -437,16 +445,11 @@ class GeometryModeler(Modeler):
         >>> hfss.modeler.rescale_model = True
         >>> hfss.modeler.model_units = "mm"
         """
-        if not self._model_units:
-            self._model_units = self.oeditor.GetModelUnits()
-        return self._model_units
+        return self._app.units.length
 
     @model_units.setter
     def model_units(self, units):
-        if units not in AEDT_UNITS["Length"]:
-            raise RuntimeError(f"Invalid units string {units}.")
-        self.oeditor.SetModelUnits(["NAME:Units Parameter", "Units:=", units, "Rescale:=", self.rescale_model])
-        self._model_units = units
+        self._app.units.length = units
 
     @property
     def selections(self):

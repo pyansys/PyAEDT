@@ -29,6 +29,7 @@ from ansys.aedt.core.generic.general_methods import clamp
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.generic.general_methods import rgb_color_codes
 from ansys.aedt.core.generic.general_methods import settings
+from ansys.aedt.core.generic.numbers import _units_assignment
 from ansys.aedt.core.modeler.geometry_operators import GeometryOperators
 
 
@@ -1347,8 +1348,11 @@ class HistoryProps(dict):
     """Manages an object's history properties."""
 
     def __setitem__(self, key, value):
+        value = _units_assignment(value)
+        if self._pyaedt_child._app:
+            value = _units_assignment(value)
         dict.__setitem__(self, key, value)
-        if self._pyaedt_child.auto_update:
+        if "auto_update" in dir(self._pyaedt_child) and self._pyaedt_child.auto_update:
             self._pyaedt_child.update_property(key, value)
 
     def __init__(self, child_object, props):
@@ -1365,8 +1369,9 @@ class HistoryProps(dict):
 class BinaryTreeNode:
     """Manages an object's history structure."""
 
-    def __init__(self, node, child_object, first_level=False, get_child_obj_arg=None, root_name=None):
+    def __init__(self, node, child_object, first_level=False, get_child_obj_arg=None, root_name=None, app=None):
         self._props = None
+        self._app = app
         if not root_name:
             root_name = node
         self._saved_root_name = node if first_level else root_name
@@ -1401,7 +1406,7 @@ class BinaryTreeNode:
             elif not i.startswith("OperandPart_"):
                 try:
                     self._children[i] = BinaryTreeNode(
-                        i, self.child_object.GetChildObject(i), root_name=self._saved_root_name
+                        i, self.child_object.GetChildObject(i), root_name=self._saved_root_name, app=self._app
                     )
                 except Exception:  # nosec
                     pass
@@ -1409,7 +1414,10 @@ class BinaryTreeNode:
                 names = self.child_object.GetChildObject(i).GetChildNames()
                 for name in names:
                     self._children[name] = BinaryTreeNode(
-                        name, self.child_object.GetChildObject(i).GetChildObject(name), root_name=self._saved_root_name
+                        name,
+                        self.child_object.GetChildObject(i).GetChildObject(name),
+                        root_name=self._saved_root_name,
+                        app=self._app,
                     )
         if name and self.__first_level:
             self.child_object = self._children[name].child_object

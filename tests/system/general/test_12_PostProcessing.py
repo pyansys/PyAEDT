@@ -358,7 +358,7 @@ class TestClass:
         assert len(data2.data_magnitude()) > 0
         context = {"algorithm": "FFT", "max_frequency": "100MHz", "time_stop": "200ns", "test": ""}
         data3 = circuit_test.post.get_solution_data(["V(net_11)"], "Transient", "Spectral", context=context)
-        assert data3.units_sweeps["Spectrum"] == circuit_test.odesktop.GetDefaultUnit("Frequency")
+        assert data3.units_sweeps["Spectrum"] == circuit_test.units.frequency
         assert len(data3.data_real()) > 0
         new_report = circuit_test.post.reports_by_category.spectral(["dB(V(net_11))"], "Transient")
         new_report.window = "Hanning"

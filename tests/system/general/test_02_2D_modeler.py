@@ -29,7 +29,7 @@ import os
 import sys
 
 from ansys.aedt.core.generic.general_methods import is_linux
-from ansys.aedt.core.generic.general_methods import isclose
+from ansys.aedt.core.generic.numbers import isclose
 from ansys.aedt.core.maxwell import Maxwell2d
 import pytest
 

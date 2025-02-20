@@ -687,5 +687,5 @@ class Spectral(CommonReport):
         self._is_created = True
         oo = self._post.oreportsetup.GetChildObject(self._legacy_props["plot_name"])
         if oo:
-            BinaryTreeNode.__init__(self, self.plot_name, oo, False)
+            BinaryTreeNode.__init__(self, self.plot_name, oo, False, app=self._app)
         return True

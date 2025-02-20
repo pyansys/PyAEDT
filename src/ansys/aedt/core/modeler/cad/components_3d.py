@@ -33,6 +33,7 @@ from ansys.aedt.core.edb import Edb
 from ansys.aedt.core.generic.desktop_sessions import _edb_sessions
 from ansys.aedt.core.generic.general_methods import _uname
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
+from ansys.aedt.core.generic.numbers import _units_assignment
 from ansys.aedt.core.modeler.cad.elements_3d import BinaryTreeNode
 from ansys.aedt.core.modeler.cad.elements_3d import _dict2arg
 
@@ -63,6 +64,7 @@ class UserDefinedComponentProps(dict):
     """User Defined Component Internal Parameters."""
 
     def __setitem__(self, key, value):
+        value = _units_assignment(value)
         dict.__setitem__(self, key, value)
         if self._pyaedt_user_defined_component.auto_update:
             res = self._pyaedt_user_defined_component.update_native()
@@ -225,7 +227,13 @@ class UserDefinedComponent(object):
         """
         try:
             child_object = self._primitives.oeditor.GetChildObject(self.name)
-            return BinaryTreeNode(list(child_object.GetChildNames("Operations"))[0], child_object, True, "Operations")
+            return BinaryTreeNode(
+                list(child_object.GetChildNames("Operations"))[0],
+                child_object,
+                True,
+                "Operations",
+                app=self._primitives._app,
+            )
         except Exception:
             return False
 

@@ -25,6 +25,7 @@
 import sys
 import time
 
+from ansys.aedt.core.application.aedt_units import AedtUnits
 from ansys.aedt.core.generic.desktop_sessions import _desktop_sessions
 from ansys.aedt.core.generic.general_methods import is_linux
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
@@ -82,6 +83,18 @@ class AedtObjects(object):
         self._opadstackmanager = None
         self._oradfield = None
         self._onetwork_data_explorer = None
+        self.__aedtunits = AedtUnits(self)
+
+    @property
+    def units(self):
+        """PyAEDT default units.
+
+        Returns
+        -------
+        :class:`ansys.aedt.core.application.aedt_units.AedtUnits`
+
+        """
+        return self.__aedtunits
 
     @property
     def oradfield(self):

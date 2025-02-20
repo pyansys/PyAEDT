@@ -24,7 +24,6 @@
 
 from __future__ import absolute_import
 
-import ast
 import codecs
 import csv
 import datetime
@@ -49,6 +48,7 @@ from ansys.aedt.core.generic.aedt_versions import aedt_versions
 from ansys.aedt.core.generic.constants import CSS4_COLORS
 from ansys.aedt.core.generic.errors import GrpcApiError
 from ansys.aedt.core.generic.errors import MethodNotSupportedError
+from ansys.aedt.core.generic.numbers import _units_assignment
 from ansys.aedt.core.generic.settings import inner_project_settings  # noqa: F401
 from ansys.aedt.core.generic.settings import settings
 import psutil
@@ -844,80 +844,6 @@ def time_fn(fn, *args, **kwargs):
     delta = (end - start).microseconds * 1e-6
     print(fn_name + ": " + str(delta) + "s")
     return results
-
-
-@pyaedt_function_handler(rel_tol="relative_tolerance", abs_tol="absolute_tolerance")
-def isclose(a, b, relative_tolerance=1e-9, absolute_tolerance=0.0):
-    """Whether two numbers are close to each other given relative and absolute tolerances.
-
-    Parameters
-    ----------
-    a : float, int
-        First number to compare.
-    b : float, int
-        Second number to compare.
-    relative_tolerance : float
-        Relative tolerance. The default value is ``1e-9``.
-    absolute_tolerance : float
-        Absolute tolerance. The default value is ``0.0``.
-
-    Returns
-    -------
-    bool
-        ``True`` if the two numbers are closed, ``False`` otherwise.
-    """
-    return abs(a - b) <= max(relative_tolerance * max(abs(a), abs(b)), absolute_tolerance)
-
-
-@pyaedt_function_handler()
-def is_number(a):
-    """Whether the given input is a number.
-
-    Parameters
-    ----------
-    a : float, int, str
-        Number to check.
-
-    Returns
-    -------
-    bool
-        ``True`` if it is a number, ``False`` otherwise.
-    """
-    if isinstance(a, float) or isinstance(a, int):
-        return True
-    elif isinstance(a, str):
-        try:
-            float(a)
-            return True
-        except ValueError:
-            return False
-    else:
-        return False
-
-
-@pyaedt_function_handler()
-def is_array(a):
-    """Whether the given input is an array.
-
-    Parameters
-    ----------
-    a : list
-        List to check.
-
-    Returns
-    -------
-    bool
-        ``True`` if it is an array, ``False`` otherwise.
-    """
-    try:
-        v = list(ast.literal_eval(a))
-    except (ValueError, TypeError, NameError, SyntaxError):
-        return False
-    else:
-        if isinstance(v, list):
-            return True
-        else:
-            return False
 
 
 @pyaedt_function_handler()
@@ -1947,6 +1873,7 @@ class PropsManager(object):
 
             else:
                 matching_percentage -= 0.02
+        value = _units_assignment(value)
         if found_el:
             found_el[1][found_el[2]] = value
             self.update()

@@ -27,8 +27,8 @@ import math
 from ansys.aedt.core.generic.general_methods import _to_boolean
 from ansys.aedt.core.generic.general_methods import _uname
 from ansys.aedt.core.generic.general_methods import is_linux
-from ansys.aedt.core.generic.general_methods import isclose
 from ansys.aedt.core.generic.general_methods import time_fn
+from ansys.aedt.core.generic.numbers import isclose
 from ansys.aedt.core.modeler.cad.elements_3d import EdgePrimitive
 from ansys.aedt.core.modeler.cad.elements_3d import FacePrimitive
 import pytest

@@ -32,23 +32,26 @@ from ansys.aedt.core.generic.constants import TraceType
 from ansys.aedt.core.generic.general_methods import generate_unique_name
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.generic.general_methods import write_configuration_file
+from ansys.aedt.core.generic.numbers import _units_assignment
 from ansys.aedt.core.modeler.cad.elements_3d import BinaryTreeNode
+from ansys.aedt.core.modeler.cad.elements_3d import HistoryProps
 from ansys.aedt.core.modeler.geometry_operators import GeometryOperators
 
 
 class LimitLine(BinaryTreeNode):
     """Line Limit Management Class."""
 
-    def __init__(self, report_setup, trace_name, oo=None):
+    def __init__(self, post, trace_name, oo=None):
         self._oo = oo
-        self._oreport_setup = report_setup
+        self._app = post._app
+        self._oreport_setup = post.oreportsetup
         self.line_name = trace_name
         self.LINESTYLE = LineStyle()
         self._initialize_tree_node()
 
     @pyaedt_function_handler()
     def _initialize_tree_node(self):
-        BinaryTreeNode.__init__(self, self.line_name, self._oo, False)
+        BinaryTreeNode.__init__(self, self.line_name, self._oo, False, app=self._app)
         return True
 
     @pyaedt_function_handler()
@@ -105,11 +108,12 @@ class LimitLine(BinaryTreeNode):
 class Note(BinaryTreeNode):
     """Note Management Class."""
 
-    def __init__(self, report_setup, plot_note_name, oo=None):
+    def __init__(self, post, plot_note_name, oo=None):
         self._oo = oo
-        self._oreport_setup = report_setup
+        self._app = post._app
+        self._oreport_setup = post.oreportsetup
         self.plot_note_name = plot_note_name
-        BinaryTreeNode.__init__(self, self.plot_note_name, self._oo, False)
+        BinaryTreeNode.__init__(self, self.plot_note_name, self._oo, False, app=self._app)
 
     @pyaedt_function_handler()
     def _change_property(self, props_value):
@@ -234,13 +238,14 @@ class Trace(BinaryTreeNode):
 
     def __init__(
         self,
-        report_setup,
+        post,
         aedt_name,
         trace_name,
         oo=None,
     ):
         self._oo = oo
-        self._oreport_setup = report_setup
+        self._app = post._app
+        self._oreport_setup = post.oreportsetup
         self.aedt_name = aedt_name
         self._name = trace_name
         self.LINESTYLE = LineStyle()
@@ -259,7 +264,7 @@ class Trace(BinaryTreeNode):
 
     @pyaedt_function_handler()
     def _initialize_tree_node(self):
-        BinaryTreeNode.__init__(self, self.aedt_name, self._oo, False)
+        BinaryTreeNode.__init__(self, self.aedt_name, self._oo, False, app=self._app)
         return True
 
     @property
@@ -393,6 +398,7 @@ class CommonReport(BinaryTreeNode):
 
     def __init__(self, app, report_category, setup_name, expressions=None):
         self._post = app
+        self._app = self._post._app
         self._legacy_props = {}
         self._legacy_props["report_category"] = report_category
         self.setup = setup_name
@@ -403,8 +409,8 @@ class CommonReport(BinaryTreeNode):
         self._legacy_props["context"]["primary_sweep_range"] = ["All"]
         self._legacy_props["context"]["secondary_sweep_range"] = ["All"]
         self._legacy_props["context"]["variations"] = {"Freq": ["All"]}
-        if hasattr(self._post._app, "available_variations") and self._post._app.available_variations:
-            for el, k in self._post._app.available_variations.nominal_w_values_dict.items():
+        if hasattr(self._app, "available_variations") and self._app.available_variations:
+            for el, k in self._app.available_variations.nominal_w_values_dict.items():
                 self._legacy_props["context"]["variations"][el] = k
         self._legacy_props["expressions"] = None
         self._legacy_props["plot_name"] = None
@@ -420,7 +426,7 @@ class CommonReport(BinaryTreeNode):
         if self._is_created:
             oo = self._post.oreportsetup.GetChildObject(self._legacy_props["plot_name"])
             if oo:
-                BinaryTreeNode.__init__(self, self._legacy_props["plot_name"], oo, False)
+                BinaryTreeNode.__init__(self, self._legacy_props["plot_name"], oo, False, app=self._app)
                 return True
         return False
 
@@ -430,7 +436,7 @@ class CommonReport(BinaryTreeNode):
 
         try:
             oo = self._post.oreportsetup.GetChildObject(self._legacy_props["plot_name"])
-            _child_object = BinaryTreeNode(self.plot_name, oo, False)
+            _child_object = BinaryTreeNode(self.plot_name, oo, False, app=self._app)
             for var in [i.split(" ,")[-1] for i in list(_child_object.properties.values())[4:]]:
                 if var in _child_object.children:
                     del _child_object.children[var]
@@ -476,11 +482,8 @@ class CommonReport(BinaryTreeNode):
             Matrix name.
         """
         if self._is_created and (
-            self._post._app.design_type in ["Q3D Extractor", "2D Extractor"]
-            or (
-                self._post._app.design_type in ["Maxwell 2D", "Maxwell 3D"]
-                and self._post._app.solution_type == "EddyCurrent"
-            )
+            self._app.design_type in ["Q3D Extractor", "2D Extractor"]
+            or (self._app.design_type in ["Maxwell 2D", "Maxwell 3D"] and self._app.solution_type == "EddyCurrent")
         ):
             try:
                 if "Parameter" in self.traces[0].properties:
@@ -488,7 +491,7 @@ class CommonReport(BinaryTreeNode):
                 elif "Matrix" in self.traces[0].properties:
                     self._legacy_props["context"]["matrix"] = self.traces[0].properties["Matrix"]
             except Exception:
-                self._post._app.logger.warning("Property `matrix` not found.")
+                self._app.logger.warning("Property `matrix` not found.")
         return self._legacy_props["context"].get("matrix", None)
 
     @matrix.setter
@@ -523,7 +526,7 @@ class CommonReport(BinaryTreeNode):
             try:
                 self._legacy_props["context"]["polyline"] = self.traces[0].properties["Geometry"]
             except Exception:
-                self._post._app.logger.debug("Something went wrong while processing polyline.")
+                self._app.logger.debug("Something went wrong while processing polyline.")
         return self._legacy_props["context"].get("polyline", None)
 
     @polyline.setter
@@ -644,13 +647,13 @@ class CommonReport(BinaryTreeNode):
                 oo1_name = oo1.GetChildNames()
                 if not oo1_name:
                     aedt_name = f"{self.plot_name}:{el}"
-                    _traces.append(Trace(self._post.oreportsetup, aedt_name, el, oo1))
+                    _traces.append(Trace(self._post, aedt_name, el, oo1))
                 else:
                     for i in oo1_name:
                         aedt_name = f"{self.plot_name}:{el}:{i}"
-                        _traces.append(Trace(self._post.oreportsetup, aedt_name, el, oo1))
+                        _traces.append(Trace(self._post, aedt_name, el, oo1))
             except Exception:
-                self._post._app.logger.debug(f"Something went wrong while processing element {el}.")
+                self._app.logger.debug(f"Something went wrong while processing element {el}.")
         return _traces
 
     @pyaedt_function_handler()
@@ -785,9 +788,7 @@ class CommonReport(BinaryTreeNode):
                     line_equation = self.__props_with_default(line, "equation")
                     line_axis = self.__props_with_default(line, "y_axis", 1)
                     if not line_start or not line_step or not line_stop or not line_equation:
-                        self._post._app.logger.error(
-                            "Equation Limit Lines needs Start, Stop, Step and Equation fields."
-                        )
+                        self._app.logger.error("Equation Limit Lines needs Start, Stop, Step and Equation fields.")
                         continue
                     self.add_limit_line_from_equation(
                         start_x=line_start, stop_x=line_stop, step=line_step, equation=line_equation, y_axis=line_axis
@@ -992,12 +993,12 @@ class CommonReport(BinaryTreeNode):
         List of :class:`ansys.aedt.core.modules.report_templates.LimitLine`
         """
         _traces = []
-        oo_names = self._post._app.get_oo_name(self._post.oreportsetup, self.plot_name)
+        oo_names = self._app.get_oo_name(self._post.oreportsetup, self.plot_name)
         for el in oo_names:
             if "LimitLine" in el:
                 _traces.append(
                     LimitLine(
-                        self._post.oreportsetup,
+                        self._post,
                         f"{self.plot_name}:{el}",
                         self._post.oreportsetup.GetChildObject(self.plot_name).GetChildObject(el),
                     )
@@ -1026,7 +1027,7 @@ class CommonReport(BinaryTreeNode):
             if "Note" in el:
                 _notes.append(
                     Note(
-                        self._post.oreportsetup,
+                        self._post,
                         f"{self.plot_name}:{el}",
                         self._post.oreportsetup.GetChildObject(self.plot_name).GetChildObject(el),
                     )
@@ -1081,13 +1082,17 @@ class CommonReport(BinaryTreeNode):
                         variations[tr.properties["Secondary Sweep"]] = ["All"]
                 self._legacy_props["context"]["variations"] = variations
             except Exception:
-                self._post._app.logger.debug("Something went wrong while processing variations.")
-        return self._legacy_props["context"]["variations"]
+                self._app.logger.debug("Something went wrong while processing variations.")
+        return HistoryProps(self, self._legacy_props["context"]["variations"])
 
     @variations.setter
     def variations(self, value):
-
-        self._legacy_props["context"]["variations"] = value
+        if isinstance(value, list):
+            value_dict = {}
+            for i in range(0, len(value), 2):
+                value_dict[value[i][:-2]] = value[i + 1]
+            value = value_dict
+        self._legacy_props["context"]["variations"] = HistoryProps(self, value)
 
     @property
     def primary_sweep(self):
@@ -1240,13 +1245,13 @@ class CommonReport(BinaryTreeNode):
             try:
                 return self.traces[0].properties["Domain"]
             except Exception:
-                self._post._app.logger.debug("Something went wrong while accessing trace's Domain property.")
+                self._app.logger.debug("Something went wrong while accessing trace's Domain property.")
         return self._legacy_props["context"]["domain"]
 
     @domain.setter
     def domain(self, domain):
         self._legacy_props["context"]["domain"] = domain
-        if self._post._app.design_type in ["Maxwell 3D", "Maxwell 2D"]:
+        if self._app.design_type in ["Maxwell 3D", "Maxwell 2D"]:
             return
         if self.primary_sweep == "Freq" and domain == "Time":
             self.primary_sweep = "Time"
@@ -1280,26 +1285,23 @@ class CommonReport(BinaryTreeNode):
         if self.primary_sweep:
             sweep_list.append(self.primary_sweep + ":=")
             if self.primary_sweep_range == ["All"] and self.primary_sweep in self.variations:
-                sweep_list.append(self.variations[self.primary_sweep])
+                sweep_list.append(_units_assignment(self.variations[self.primary_sweep]))
             else:
                 sweep_list.append(self.primary_sweep_range)
         if self.secondary_sweep:
             sweep_list.append(self.secondary_sweep + ":=")
             if self.secondary_sweep_range == ["All"] and self.secondary_sweep in self.variations:
-                sweep_list.append(self.variations[self.secondary_sweep])
+                sweep_list.append(_units_assignment(self.variations[self.secondary_sweep]))
             else:
                 sweep_list.append(self.secondary_sweep_range)
-        for el in sweeps:
+        for el, k in sweeps.items():
             if el in [self.primary_sweep, self.secondary_sweep]:
                 continue
-            sweep_list.append(el + ":=")
-            if isinstance(sweeps[el], list):
-                sweep_list.append(sweeps[el])
-            else:
-                sweep_list.append([sweeps[el]])
-        for el in list(self._post._app.available_variations.nominal_w_values_dict.keys()):
+            sweep_list.append(f"{el}:=")
+            sweep_list.append(_units_assignment(k))
+        for el in list(self._app.available_variations.nominal_w_values_dict.keys()):
             if el not in sweeps:
-                sweep_list.append(el + ":=")
+                sweep_list.append(f"{el}:=")
                 sweep_list.append(["Nominal"])
         return sweep_list
 
@@ -1324,11 +1326,11 @@ class CommonReport(BinaryTreeNode):
         else:
             self.plot_name = name
         if (
-            self.setup not in self._post._app.existing_analysis_sweeps
+            self.setup not in self._app.existing_analysis_sweeps
             and "AdaptivePass" not in self.setup
             and " : Table" not in self.setup
         ):
-            self._post._app.logger.error("Setup doesn't exist in this design.")
+            self._app.logger.error("Setup doesn't exist in this design.")
             return False
         self._post.oreportsetup.CreateReport(
             self.plot_name,
@@ -1362,9 +1364,8 @@ class CommonReport(BinaryTreeNode):
         elif isinstance(self, Fields) and self.polyline:
             output_dict["context"]["polyline"] = self.polyline
             output_dict["context"]["point_number"] = self.point_number
-        elif self._post._app.design_type in ["Q3D Extractor", "2D Extractor"] or (
-            self._post._app.design_type in ["Maxwell 2D", "Maxwell 3D"]
-            and self._post._app.solution_type == "EddyCurrent"
+        elif self._app.design_type in ["Q3D Extractor", "2D Extractor"] or (
+            self._app.design_type in ["Maxwell 2D", "Maxwell 3D"] and self._app.solution_type == "EddyCurrent"
         ):
             output_dict["context"]["matrix"] = self.matrix
         elif self.traces and any(
@@ -1658,13 +1659,13 @@ class CommonReport(BinaryTreeNode):
         else:
             expr = [i for i in self.expressions]
         if not expr:
-            self._post._app.logger.warning("No Expressions Available. Check inputs")
+            self._app.logger.warning("No Expressions Available. Check inputs")
             return False
         solution_data = self._post.get_solution_data_per_variation(
             self.report_category, self.setup, self._context, self.variations, expr
         )
         if not solution_data:
-            self._post._app.logger.warning("No Data Available. Check inputs")
+            self._app.logger.warning("No Data Available. Check inputs")
             return False
         if self.primary_sweep:
             solution_data.primary_sweep = self.primary_sweep
@@ -1750,11 +1751,11 @@ class CommonReport(BinaryTreeNode):
                     "YAxis:=",
                     int(str(y_axis).replace("Y", "")),
                     "Start:=",
-                    self._post._app.value_with_units(start_x, units),
+                    self._app.value_with_units(start_x, units),
                     "Stop:=",
-                    self._post._app.value_with_units(stop_x, units),
+                    self._app.value_with_units(stop_x, units),
                     "Step:=",
-                    self._post._app.value_with_units(step, units),
+                    self._app.value_with_units(step, units),
                     "Equation:=",
                     equation,
                 ],
@@ -1861,7 +1862,7 @@ class CommonReport(BinaryTreeNode):
     @pyaedt_function_handler(tabname="tab_name")
     def _change_property(self, tab_name, property_name, property_val):
         if not self._is_created:
-            self._post._app.logger.error("Plot has not been created. Create it and then change the properties.")
+            self._app.logger.error("Plot has not been created. Create it and then change the properties.")
             return False
         arg = [
             "NAME:AllTabs",
@@ -2113,7 +2114,7 @@ class CommonReport(BinaryTreeNode):
             legend.SetPropValue("Header Row Font/Height", font_size)
             return True
         except Exception:
-            self._post._app.logger.error("Failed to hide legend.")
+            self._app.logger.error("Failed to hide legend.")
             return False
 
     @pyaedt_function_handler(axis_name="name")

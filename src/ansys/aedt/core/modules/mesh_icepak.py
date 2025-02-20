@@ -30,6 +30,7 @@ from ansys.aedt.core.generic.errors import GrpcApiError
 from ansys.aedt.core.generic.general_methods import _dim_arg
 from ansys.aedt.core.generic.general_methods import generate_unique_name
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
+from ansys.aedt.core.generic.numbers import _units_assignment
 from ansys.aedt.core.generic.settings import settings
 from ansys.aedt.core.modeler.cad.components_3d import UserDefinedComponent
 from ansys.aedt.core.modeler.cad.elements_3d import BinaryTreeNode
@@ -572,6 +573,7 @@ class MeshSettings(object):
             raise KeyError("Setting not available.")
 
     def __setitem__(self, key, value):
+        value = _units_assignment(value)
         if key == "Level":  # backward compatibility
             key = "MeshRegionResolution"
         if key in self.keys():
@@ -667,7 +669,7 @@ class MeshRegionCommon(BinaryTreeNode):
         if self._child_object:
             child_object = self._app.get_oo_object(self._app.odesign, f"Mesh/{self._name}")
             if child_object:
-                BinaryTreeNode.__init__(self, self._name, child_object, False)
+                BinaryTreeNode.__init__(self, self._name, child_object, False, app=self._app)
                 return True
         return False
 

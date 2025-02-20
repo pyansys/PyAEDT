@@ -27,6 +27,7 @@
 from ansys.aedt.core.generic.data_handlers import _dict2arg
 from ansys.aedt.core.generic.general_methods import PropsManager
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
+from ansys.aedt.core.generic.numbers import _units_assignment
 from ansys.aedt.core.modeler.cad.elements_3d import BinaryTreeNode
 from ansys.aedt.core.modeler.cad.elements_3d import EdgePrimitive
 from ansys.aedt.core.modeler.cad.elements_3d import FacePrimitive
@@ -37,6 +38,7 @@ class BoundaryProps(dict):
     """AEDT Boundary Component Internal Parameters."""
 
     def __setitem__(self, key, value):
+        value = _units_assignment(value)
         dict.__setitem__(self, key, value)
         if self._pyaedt_boundary.auto_update:
             if key in ["Edges", "Faces", "Objects"]:
@@ -95,7 +97,7 @@ class BoundaryCommon(PropsManager):
     @pyaedt_function_handler()
     def _initialize_tree_node(self):
         if self._child_object:
-            BinaryTreeNode.__init__(self, self._name, self._child_object, False)
+            BinaryTreeNode.__init__(self, self._name, self._child_object, False, app=self._app)
             return True
         return False
 

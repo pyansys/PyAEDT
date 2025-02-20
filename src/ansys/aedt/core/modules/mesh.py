@@ -36,6 +36,7 @@ from ansys.aedt.core.generic.general_methods import generate_unique_name
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.generic.general_methods import settings
 from ansys.aedt.core.generic.load_aedt_file import load_keyword_in_aedt_file
+from ansys.aedt.core.generic.numbers import _units_assignment
 from ansys.aedt.core.modeler.cad.elements_3d import BinaryTreeNode
 from ansys.aedt.core.modeler.cad.elements_3d import EdgePrimitive
 from ansys.aedt.core.modeler.cad.elements_3d import FacePrimitive
@@ -84,6 +85,7 @@ class MeshProps(dict):
     """AEDT Mesh Component Internal Parameters."""
 
     def __setitem__(self, key, value):
+        value = _units_assignment(value)
         dict.__setitem__(self, key, value)
         if self._pyaedt_mesh.auto_update:
             if key in ["Edges", "Faces", "Objects"]:
@@ -408,7 +410,7 @@ class MeshOperation(BinaryTreeNode):
     @pyaedt_function_handler()
     def _initialize_tree_node(self):
         if self._child_object:
-            BinaryTreeNode.__init__(self, self._name, self._child_object, False)
+            BinaryTreeNode.__init__(self, self._name, self._child_object, False, app=self._app)
             return True
         return False
 

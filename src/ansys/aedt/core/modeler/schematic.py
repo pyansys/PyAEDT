@@ -24,13 +24,10 @@
 
 import random
 import sys
-import time
 import warnings
 
 from ansys.aedt.core.generic.constants import AEDT_UNITS
-from ansys.aedt.core.generic.general_methods import is_linux
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
-from ansys.aedt.core.generic.settings import settings
 from ansys.aedt.core.modeler.cad.modeler import Modeler
 from ansys.aedt.core.modeler.circuits.object_3d_circuit import CircuitComponent
 from ansys.aedt.core.modeler.circuits.object_3d_circuit import Wire
@@ -556,11 +553,7 @@ class ModelerNexxim(ModelerCircuit):
         >>> oEditor.GetActiveUnits
         >>> oEditor.SetActiveUnits
         """
-        active_units = self.layouteditor.GetActiveUnits()
-        if is_linux and settings.aedt_version == "2024.1":  # pragma: no cover
-            time.sleep(1)
-            self._app.desktop_class.close_windows()
-        return active_units
+        return self._app.units.length
 
     @property
     def layout(self):
@@ -592,9 +585,7 @@ class ModelerNexxim(ModelerCircuit):
     @model_units.setter
     def model_units(self, units):
         """Set the model units as a string e.g. "mm"."""
-        if units not in AEDT_UNITS["Length"]:
-            raise RuntimeError(f"Invalid units string {units}.")
-        self.oeditor.SetActivelUnits(["NAME:Units Parameter", "Units:=", units, "Rescale:=", False])
+        self._app.units.length = units
 
     @pyaedt_function_handler(selections="assignment", pos="offset")
     def move(self, assignment, offset, units=None):

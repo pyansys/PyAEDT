@@ -55,7 +55,7 @@ class RMXprtModule(object):
             child_object = self._app.odesign.GetChildObject("Machine")
             if self.component:
                 child_object = child_object.GetChildObject(self.component)
-            parent = BinaryTreeNode(self.component if self.component else "Machine", child_object, False)
+            parent = BinaryTreeNode(self.component if self.component else "Machine", child_object, False, app=self._app)
             return parent
         except Exception:
             return False

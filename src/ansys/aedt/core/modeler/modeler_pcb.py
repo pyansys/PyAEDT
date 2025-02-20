@@ -26,7 +26,6 @@ import os
 import re
 from warnings import warn
 
-from ansys.aedt.core.generic.constants import AEDT_UNITS
 from ansys.aedt.core.generic.general_methods import generate_unique_name
 from ansys.aedt.core.generic.general_methods import get_filename_without_extension
 from ansys.aedt.core.generic.general_methods import inside_desktop
@@ -170,16 +169,11 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
         >>> oEditor.GetActiveUnits
         >>> oEditor.SetActiveUnits
         """
-        if not self._model_units:
-            self._model_units = self.oeditor.GetActiveUnits()
-        return self._model_units
+        return self._app.units.length
 
     @model_units.setter
     def model_units(self, units):
-        if not units in AEDT_UNITS["Length"]:
-            raise ValueError(f"Invalid units '{units}'")
-        self.oeditor.SetActiveUnits(units)
-        self._model_units = units
+        self._app.units.length = units
 
     @property
     def primitives(self):

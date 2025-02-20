@@ -33,6 +33,7 @@ from ansys.aedt.core.generic.constants import unit_converter
 from ansys.aedt.core.generic.data_handlers import _dict2arg
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.generic.load_aedt_file import load_entire_aedt_file
+from ansys.aedt.core.generic.numbers import _units_assignment
 from ansys.aedt.core.generic.settings import settings
 from ansys.aedt.core.modules.setup_templates import Sweep3DLayout
 from ansys.aedt.core.modules.setup_templates import SweepEddyCurrent
@@ -116,10 +117,10 @@ class SweepHFSS(object):
         if props:
             if "RangeStep" in props.keys():  # LinearCount is the default sweep type. Change it if RangeStep is passed.
                 if "RangeCount" in props.keys():
-                    self._app.p_app.logger.info(
+                    self._app._app.logger.info(
                         "Inconsistent arguments 'RangeCount' and 'RangeStep' passed to 'SweepHFSS',"
                     )
-                    self._app.p_app.logger.info("Default remains 'LinearCount' sweep type.")
+                    self._app._app.logger.info("Default remains 'LinearCount' sweep type.")
                 else:
                     self.props["RangeType"] = "LinearStep"
             for key, value in props.items():
@@ -127,7 +128,7 @@ class SweepHFSS(object):
                     self.props[key] = value
                 else:
                     error_message = f"Parameter '{key}' is invalid and will be ignored."
-                    self._app.p_app.logger.warning(error_message)
+                    self._app._app.logger.warning(error_message)
 
         if SequenceMatcher(None, sweep_type.lower(), "interpolating").ratio() > 0.8:
             sweep_type = "Interpolating"
@@ -149,7 +150,7 @@ class SweepHFSS(object):
         bool
             `True` if solutions are available.
         """
-        sol = self._app.p_app.post.reports_by_category.standard(setup=f"{self.setup_name} : {self.name}")
+        sol = self._app._app.post.reports_by_category.standard(setup=f"{self.setup_name} : {self.name}")
         if identify_setup(self.props):
             sol.domain = "Time"
         return True if sol.get_solution_data() else False
@@ -165,7 +166,7 @@ class SweepHFSS(object):
         list of float
             Frequency points.
         """
-        sol = self._app.p_app.post.reports_by_category.standard(setup=f"{self.setup_name} : {self.name}")
+        sol = self._app._app.post.reports_by_category.standard(setup=f"{self.setup_name} : {self.name}")
         soldata = sol.get_solution_data()
         if soldata and "Freq" in soldata.intrinsics:
             return soldata.intrinsics["Freq"]
@@ -182,7 +183,7 @@ class SweepHFSS(object):
         list of float
             Frequency points.
         """
-        solutions_file = os.path.join(self._app.p_app.results_directory, f"{self._app.p_app.design_name}.asol")
+        solutions_file = os.path.join(self._app._app.results_directory, f"{self._app._app.design_name}.asol")
         fr = []
         if os.path.exists(solutions_file):
             solutions = load_entire_aedt_file(solutions_file)
@@ -196,14 +197,14 @@ class SweepHFSS(object):
                             values=new_list,
                             unit_system="Freq",
                             input_units="Hz",
-                            output_units=self._app._app.odesktop.GetDefaultUnit("Frequency"),
+                            output_units=self._app._app.units.frequency,
                         )
                         fr.append(new_list)
                     except (KeyError, NameError, IndexError):
                         pass
 
         count = 0
-        for el in self._app.p_app.setups:
+        for el in self._app._app.setups:
             if el.name == self.setup_name:
                 for sweep in el.sweeps:
                     if sweep.name == self.name:
@@ -417,7 +418,7 @@ class SweepHFSS3DLayout(object):
         bool
             `True` if solutions are available.
         """
-        expressions = [i for i in self.p_app.post.available_report_quantities(solution=self.combined_name)]
+        expressions = [i for i in self._app.post.available_report_quantities(solution=self.combined_name)]
         sol = self._app._app.post.reports_by_category.standard(expressions=expressions[0], setup=self.combined_name)
         if identify_setup(self.props):
             sol.domain = "Time"
@@ -668,7 +669,7 @@ class SweepMatrix(object):
         bool
             `True` if solutions are available.
         """
-        sol = self._app.p_app.post.reports_by_category.standard(setup=f"{self.setup_name} : {self.name}")
+        sol = self._app._app.post.reports_by_category.standard(setup=f"{self.setup_name} : {self.name}")
         return True if sol.get_solution_data() else False
 
     @property
@@ -682,7 +683,7 @@ class SweepMatrix(object):
         list of float
             Frequency points.
         """
-        sol = self._app.p_app.post.reports_by_category.standard(setup=f"{self.setup_name} : {self.name}")
+        sol = self._app._app.post.reports_by_category.standard(setup=f"{self.setup_name} : {self.name}")
         soldata = sol.get_solution_data()
         if soldata and "Freq" in soldata.intrinsics:
             return soldata.intrinsics["Freq"]
@@ -699,7 +700,7 @@ class SweepMatrix(object):
         list of float
             Frequency points.
         """
-        solutions_file = os.path.join(self._app.p_app.results_directory, f"{self._app.p_app.design_name}.asol")
+        solutions_file = os.path.join(self._app._app.results_directory, f"{self._app._app.design_name}.asol")
         fr = []
         if os.path.exists(solutions_file):
             solutions = load_entire_aedt_file(solutions_file)
@@ -712,14 +713,14 @@ class SweepMatrix(object):
                             values=new_list,
                             unit_system="Freq",
                             input_units="Hz",
-                            output_units=self._app._app.odesktop.GetDefaultUnit("Frequency"),
+                            output_units=self._app._app.units.frequency,
                         )
                         fr.append(new_list)
                     except (KeyError, NameError, IndexError):
                         pass
 
         count = 0
-        for el in self._app.p_app.setups:
+        for el in self._app._app.setups:
             if el.name == self.setup_name:
                 for sweep in el.sweeps:
                     if sweep.name == self.name:
@@ -886,10 +887,10 @@ class SweepMaxwellEC(object):
             `True` if solutions are available.
         """
         expressions = [
-            i for i in self._setup.p_app.post.available_report_quantities(solution=self._setup.p_app.nominal_sweep)
+            i for i in self._setup._app.post.available_report_quantities(solution=self._setup._app.nominal_sweep)
         ]
-        sol = self._setup.p_app.post.reports_by_category.standard(
-            expressions=expressions[0], setup=self._setup.p_app.nominal_sweep
+        sol = self._setup._app.post.reports_by_category.standard(
+            expressions=expressions[0], setup=self._setup._app.nominal_sweep
         )
         if identify_setup(self.props):
             sol.domain = "Time"
@@ -907,10 +908,10 @@ class SweepMaxwellEC(object):
             Frequency points.
         """
         expressions = [
-            i for i in self._setup.p_app.post.available_report_quantities(solution=self._setup.p_app.nominal_sweep)
+            i for i in self._setup._app.post.available_report_quantities(solution=self._setup._app.nominal_sweep)
         ]
-        sol = self._setup.p_app.post.reports_by_category.standard(
-            expressions=expressions[0], setup=self._setup.p_app.nominal_sweep
+        sol = self._setup._app.post.reports_by_category.standard(
+            expressions=expressions[0], setup=self._setup._app.nominal_sweep
         )
         soldata = sol.get_solution_data()
         if soldata and "Freq" in soldata.intrinsics:
@@ -992,6 +993,7 @@ class SetupProps(dict):
         if isinstance(value, dict):
             dict.__setitem__(self, key, SetupProps(self._pyaedt_setup, value))
         else:
+            value = _units_assignment(value)
             dict.__setitem__(self, key, value)
         if self._pyaedt_setup.auto_update:
             res = self._pyaedt_setup.update()

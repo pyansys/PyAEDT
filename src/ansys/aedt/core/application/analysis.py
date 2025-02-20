@@ -41,7 +41,6 @@ import time
 from ansys.aedt.core.application.design import Design
 from ansys.aedt.core.application.job_manager import update_hpc_option
 from ansys.aedt.core.application.variables import Variable
-from ansys.aedt.core.application.variables import decompose_variable_value
 from ansys.aedt.core.generic.constants import AXIS
 from ansys.aedt.core.generic.constants import GRAVITY
 from ansys.aedt.core.generic.constants import PLANE
@@ -54,6 +53,8 @@ from ansys.aedt.core.generic.general_methods import is_linux
 from ansys.aedt.core.generic.general_methods import is_windows
 from ansys.aedt.core.generic.general_methods import open_file
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
+from ansys.aedt.core.generic.numbers import Quantity
+from ansys.aedt.core.generic.numbers import decompose_variable_value
 from ansys.aedt.core.generic.settings import settings
 from ansys.aedt.core.modules.boundary.layout_boundary import NativeComponentObject
 from ansys.aedt.core.modules.boundary.layout_boundary import NativeComponentPCB
@@ -557,23 +558,23 @@ class Analysis(Design, object):
                     intrinsics = set_obj.default_intrinsics
                     break
 
-        elif isinstance(input_data, str):
+        elif isinstance(input_data, (str, Quantity)):
             if "Freq" in self.design_solutions.intrinsics:
-                intrinsics["Freq"] = input_data
+                intrinsics["Freq"] = str(input_data)
                 if "Phase" in self.design_solutions.intrinsics:
-                    intrinsics["Phase"] = input_phase if input_phase else "0deg"
+                    intrinsics["Phase"] = str(input_phase) if input_phase else "0deg"
             elif "Time" in self.design_solutions.intrinsics:
-                intrinsics["Time"] = input_data
+                intrinsics["Time"] = str(input_data)
         elif isinstance(input_data, dict):
             for k, v in input_data.items():
                 if k in ["Freq", "freq", "frequency", "Frequency"]:
-                    intrinsics["Freq"] = v
+                    intrinsics["Freq"] = str(v)
                 elif k in ["Phase", "phase"]:
-                    intrinsics["Phase"] = v
+                    intrinsics["Phase"] = str(v)
                 elif k in ["Time", "time"]:
-                    intrinsics["Time"] = v
+                    intrinsics["Time"] = str(v)
                 if input_phase:
-                    intrinsics["Phase"] = input_phase
+                    intrinsics["Phase"] = str(input_phase)
                 if "Phase" in self.design_solutions.intrinsics and "Phase" not in intrinsics:
                     intrinsics["Phase"] = "0deg"
         else:

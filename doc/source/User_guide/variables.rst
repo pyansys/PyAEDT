@@ -58,3 +58,21 @@ optimetrics setups by allowing you to read existing configurations, make edits, 
   :width: 800
   :alt: Optimetrics creation
 
+
+Quantity and numbers
+====================
+
+Quantities with units can be managed using the class ``Quantity``.
+
+.. code:: python
+
+    from ansys.aedt.core.generic.numbers import Quantity
+    a = Quantity(1, "GHz")
+    b = a + 1
+    c = a + "1MHz"
+    d = a + b
+    a.unit = "Hz"
+    e = a.to("MHz")
+    str(a)
+    float(a)
+
