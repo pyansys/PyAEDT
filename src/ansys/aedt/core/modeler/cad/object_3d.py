@@ -32,7 +32,6 @@ This module provides methods and data structures for managing all properties of
 objects (points, lines, sheets, and solids) within the AEDT 3D Modeler.
 
 """
-from __future__ import absolute_import  # noreorder
 
 import math
 import os
@@ -44,7 +43,6 @@ from ansys.aedt.core.generic.constants import AEDT_UNITS
 from ansys.aedt.core.generic.constants import PLANE
 from ansys.aedt.core.generic.constants import unit_converter
 from ansys.aedt.core.generic.errors import AEDTRuntimeError
-from ansys.aedt.core.generic.general_methods import _dim_arg
 from ansys.aedt.core.generic.general_methods import _to_boolean
 from ansys.aedt.core.generic.general_methods import _uname
 from ansys.aedt.core.generic.general_methods import clamp
@@ -1992,8 +1990,8 @@ class Object3d(object):
         vArg2 = ["NAME:FilletParameters"]
         vArg2.append("Edges:="), vArg2.append(edge_id_list)
         vArg2.append("Vertices:="), vArg2.append(vertex_id_list)
-        vArg2.append("Radius:="), vArg2.append(self._primitives._arg_with_dim(radius))
-        vArg2.append("Setback:="), vArg2.append(self._primitives._arg_with_dim(setback))
+        vArg2.append("Radius:="), vArg2.append(self._primitives._app.value_with_units(radius))
+        vArg2.append("Setback:="), vArg2.append(self._primitives._app.value_with_units(setback))
         self._oeditor.Fillet(vArg1, ["NAME:Parameters", vArg2])
         if self.name in list(self._oeditor.GetObjectsInGroup("UnClassified")):
             self._primitives._odesign.Undo()
@@ -2054,22 +2052,22 @@ class Object3d(object):
         if chamfer_type == 0:
             if left_distance != right_distance:
                 self.logger.error("Do not set right distance or ensure that left distance equals right distance.")
-            vArg2.append("LeftDistance:="), vArg2.append(self._primitives._arg_with_dim(left_distance))
-            vArg2.append("RightDistance:="), vArg2.append(self._primitives._arg_with_dim(right_distance))
+            vArg2.append("LeftDistance:="), vArg2.append(self._primitives._app.value_with_units(left_distance))
+            vArg2.append("RightDistance:="), vArg2.append(self._primitives._app.value_with_units(right_distance))
             vArg2.append("ChamferType:="), vArg2.append("Symmetric")
         elif chamfer_type == 1:
-            vArg2.append("LeftDistance:="), vArg2.append(self._primitives._arg_with_dim(left_distance))
-            vArg2.append("RightDistance:="), vArg2.append(self._primitives._arg_with_dim(right_distance))
+            vArg2.append("LeftDistance:="), vArg2.append(self._primitives._app.value_with_units(left_distance))
+            vArg2.append("RightDistance:="), vArg2.append(self._primitives._app.value_with_units(right_distance))
             vArg2.append("ChamferType:="), vArg2.append("Left Distance-Right Distance")
         elif chamfer_type == 2:
-            vArg2.append("LeftDistance:="), vArg2.append(self._primitives._arg_with_dim(left_distance))
+            vArg2.append("LeftDistance:="), vArg2.append(self._primitives._app.value_with_units(left_distance))
             # NOTE: Seems like there is a bug in the API as Angle can't be used
             vArg2.append("RightDistance:="), vArg2.append(f"{angle}deg")
             vArg2.append("ChamferType:="), vArg2.append("Left Distance-Angle")
         elif chamfer_type == 3:
             # NOTE: Seems like there is a bug in the API as Angle can't be used
             vArg2.append("LeftDistance:="), vArg2.append(f"{angle}deg")
-            vArg2.append("RightDistance:="), vArg2.append(self._primitives._arg_with_dim(right_distance))
+            vArg2.append("RightDistance:="), vArg2.append(self._primitives._app.value_with_units(right_distance))
             vArg2.append("ChamferType:="), vArg2.append("Right Distance-Angle")
         else:
             self.logger.error("Wrong chamfer_type provided. Value must be an integer from 0 to 3.")
@@ -2292,11 +2290,11 @@ class Object3d(object):
     def _pl_point(self, pt):
         pt_data = ["NAME:PLPoint"]
         pt_data.append("X:=")
-        pt_data.append(_dim_arg(pt[0], self._primitives.model_units))
+        pt_data.append(self._primitives._app.value_with_units(pt[0], self._primitives.model_units))
         pt_data.append("Y:=")
-        pt_data.append(_dim_arg(pt[1], self._primitives.model_units))
+        pt_data.append(self._primitives._app.value_with_units(pt[1], self._primitives.model_units))
         pt_data.append("Z:=")
-        pt_data.append(_dim_arg(pt[2], self._primitives.model_units))
+        pt_data.append(self._primitives._app.value_with_units(pt[2], self._primitives.model_units))
         return pt_data
 
     @pyaedt_function_handler()
@@ -2488,11 +2486,11 @@ class Object3d(object):
                 "ArcAngle:=",
                 segment_data.arc_angle,
                 "ArcCenterX:=",
-                f"{_dim_arg(segment_data.arc_center[0], mod_units)}",
+                f"{self._primitives._app.value_with_units(segment_data.arc_center[0], mod_units)}",
                 "ArcCenterY:=",
-                f"{_dim_arg(segment_data.arc_center[1], mod_units)}",
+                f"{self._primitives._app.value_with_units(segment_data.arc_center[1], mod_units)}",
                 "ArcCenterZ:=",
-                f"{_dim_arg(segment_data.arc_center[2], mod_units)}",
+                f"{self._primitives._app.value_with_units(segment_data.arc_center[2], mod_units)}",
                 "ArcPlane:=",
                 segment_data.arc_plane,
             ]
@@ -2724,14 +2722,14 @@ class Object3d(object):
         arg3.append(["NAME:Type", "Value:=", section_type])
         arg3.append(["NAME:Orientation", "Value:=", section_orient])
         arg3.append(["NAME:Bend Type", "Value:=", section_bend])
-        arg3.append(["NAME:Width/Diameter", "Value:=", _dim_arg(width, model_units)])
+        arg3.append(["NAME:Width/Diameter", "Value:=", self._primitives._app.value_with_units(width, model_units)])
         if section_type == "Rectangle":
-            arg3.append(["NAME:Height", "Value:=", _dim_arg(height, model_units)])
+            arg3.append(["NAME:Height", "Value:=", self._primitives._app.value_with_units(height, model_units)])
         elif section_type == "Circle":
             arg3.append(["NAME:Number of Segments", "Value:=", num_seg])
         elif section_type == "Isosceles Trapezoid":
-            arg3.append(["NAME:Top Width", "Value:=", _dim_arg(topwidth, model_units)])
-            arg3.append(["NAME:Height", "Value:=", _dim_arg(height, model_units)])
+            arg3.append(["NAME:Top Width", "Value:=", self._primitives._app.value_with_units(topwidth, model_units)])
+            arg3.append(["NAME:Height", "Value:=", self._primitives._app.value_with_units(height, model_units)])
         arg2.append(arg3)
         arg1.append(arg2)
         self._primitives.oeditor.ChangeProperty(arg1)

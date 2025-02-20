@@ -1162,6 +1162,9 @@ class CircuitComponents(object):
     def number_with_units(self, value, units=None):
         """Convert a number to a string with units. If value is a string, it's returned as is.
 
+        .. deprecated:: 0.14.0
+           Use :func:`value_with_units` in Analysis class instead.
+
         Parameters
         ----------
         value : float, int, str
@@ -1175,7 +1178,7 @@ class CircuitComponents(object):
            String concatenating the value and unit.
 
         """
-        return self._app.number_with_units(value, units)
+        return self._app.value_with_units(value, units)
 
     @pyaedt_function_handler(points_array="points", line_width="width")
     def create_line(self, points, color=0, width=0):

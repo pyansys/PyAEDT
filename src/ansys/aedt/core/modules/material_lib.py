@@ -23,7 +23,6 @@
 # SOFTWARE.
 
 """Module containing the `Materials` class."""
-from __future__ import absolute_import  # noreorder
 
 import copy
 import fnmatch

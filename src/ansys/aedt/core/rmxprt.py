@@ -24,8 +24,6 @@
 
 """This module contains these classes: ``RMXprtModule`` and ``Rmxprt``."""
 
-from __future__ import absolute_import  # noreorder
-
 from ansys.aedt.core.application.analysis_r_m_xprt import FieldAnalysisRMxprt
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.modeler.cad.elements_3d import BinaryTreeNode

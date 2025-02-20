@@ -28,7 +28,7 @@ Module containing the class: `PostProcessor3D`.
 This module provides all functionalities for creating and editing plots in the 3D tools.
 
 """
-from __future__ import absolute_import
+
 
 import ast
 import os

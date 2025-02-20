@@ -24,8 +24,6 @@
 
 """This module contains these Primitives classes: `Polyline` and `Primitives`."""
 
-from __future__ import absolute_import  # noreorder
-
 import copy
 import math
 import os
@@ -39,7 +37,6 @@ from ansys.aedt.core.application.variables import Variable
 from ansys.aedt.core.application.variables import decompose_variable_value
 from ansys.aedt.core.generic.constants import AEDT_UNITS
 from ansys.aedt.core.generic.data_handlers import json_to_dict
-from ansys.aedt.core.generic.general_methods import _dim_arg
 from ansys.aedt.core.generic.general_methods import _uname
 from ansys.aedt.core.generic.general_methods import clamp
 from ansys.aedt.core.generic.general_methods import generate_unique_name
@@ -2979,7 +2976,7 @@ class GeometryModeler(Modeler):
             "WhichAxis:=",
             GeometryOperators.cs_axis_str(axis),
             "AngleStr:=",
-            self._arg_with_dim(angle, "deg"),
+            self._app.value_with_units(angle, "deg"),
             "Numclones:=",
             str(clones),
         ]
@@ -3092,7 +3089,7 @@ class GeometryModeler(Modeler):
 
         vArg1 = ["NAME:Selections", "Selections:=", selections, "NewPartsModelFlag:=", "Model"]
         vArg2 = ["NAME:SheetThickenParameters"]
-        vArg2.append("Thickness:="), vArg2.append(self._arg_with_dim(thickness))
+        vArg2.append("Thickness:="), vArg2.append(self._app.value_with_units(thickness))
         vArg2.append("BothSides:="), vArg2.append(both_sides)
 
         self.oeditor.ThickenSheet(vArg1, vArg2)
@@ -3136,7 +3133,7 @@ class GeometryModeler(Modeler):
                 "FacesToDetach:=",
                 faces,
                 "LengthOfSweep:=",
-                self._arg_with_dim(sweep_value),
+                self._app.value_with_units(sweep_value),
             ]
         )
 
@@ -3185,7 +3182,7 @@ class GeometryModeler(Modeler):
         vectorx, vectory, vectorz = self._pos_with_arg(sweep_vector)
         vArg1 = ["NAME:Selections", "Selections:=", selections, "NewPartsModelFlag:=", "Model"]
         vArg2 = ["NAME:VectorSweepParameters"]
-        vArg2.append("DraftAngle:="), vArg2.append(self._arg_with_dim(draft_angle, "deg"))
+        vArg2.append("DraftAngle:="), vArg2.append(self._app.value_with_units(draft_angle, "deg"))
         vArg2.append("DraftType:="), vArg2.append(GeometryOperators.draft_type_str(draft_type))
         vArg2.append("SweepVectorX:="), vArg2.append(vectorx)
         vArg2.append("SweepVectorY:="), vArg2.append(vectory)
@@ -3241,7 +3238,7 @@ class GeometryModeler(Modeler):
         selections = self.convert_to_selections(assignment) + "," + self.convert_to_selections(sweep_object)
         vArg1 = ["NAME:Selections", "Selections:=", selections, "NewPartsModelFlag:=", "Model"]
         vArg2 = ["NAME:PathSweepParameters"]
-        vArg2.append("DraftAngle:="), vArg2.append(self._arg_with_dim(draft_angle, "deg"))
+        vArg2.append("DraftAngle:="), vArg2.append(self._app.value_with_units(draft_angle, "deg"))
         vArg2.append("DraftType:="), vArg2.append(GeometryOperators.draft_type_str(draft_type))
         vArg2.append("CheckFaceFaceIntersection:="), vArg2.append(is_check_face_intersection)
         vArg2.append("TwistAngle:="), vArg2.append(str(twist_angle) + "deg")
@@ -3288,7 +3285,7 @@ class GeometryModeler(Modeler):
         vArg2 = [
             "NAME:AxisSweepParameters",
             "DraftAngle:=",
-            self._arg_with_dim(draft_angle, "deg"),
+            self._app.value_with_units(draft_angle, "deg"),
             "DraftType:=",
             "Round",
             "CheckFaceFaceIntersection:=",
@@ -3296,7 +3293,7 @@ class GeometryModeler(Modeler):
             "SweepAxis:=",
             GeometryOperators.cs_axis_str(axis),
             "SweepAngle:=",
-            self._arg_with_dim(sweep_angle, "deg"),
+            self._app.value_with_units(sweep_angle, "deg"),
             "NumOfSegments:=",
             str(number_of_segments),
         ]
@@ -3428,7 +3425,7 @@ class GeometryModeler(Modeler):
         vArg1 = ["NAME:Selections", "Selections:=", selections, "NewPartsModelFlag:=", "Model"]
         vArg2 = ["NAME:RotateParameters"]
         vArg2.append("RotateAxis:="), vArg2.append(GeometryOperators.cs_axis_str(axis))
-        vArg2.append("RotateAngle:="), vArg2.append(self._arg_with_dim(angle, units))
+        vArg2.append("RotateAngle:="), vArg2.append(self._app.value_with_units(angle, units))
 
         if self.oeditor is not None:
             self.oeditor.Rotate(vArg1, vArg2)
@@ -3986,11 +3983,11 @@ class GeometryModeler(Modeler):
                 "BodyName:=",
                 assignment,
                 "XPosition:=",
-                x_vec + "+" + self._arg_with_dim(off1),
+                x_vec + "+" + self._app.value_with_units(off1),
                 "YPosition:=",
-                y_vec + "+" + self._arg_with_dim(off2),
+                y_vec + "+" + self._app.value_with_units(off2),
                 "ZPosition:=",
-                z_vec + "+" + self._arg_with_dim(off3),
+                z_vec + "+" + self._app.value_with_units(off3),
             ]
             try:
                 _ = self.oeditor.GetFaceByPosition(arg_1)
@@ -8790,39 +8787,25 @@ class GeometryModeler(Modeler):
         model_units = self.model_units
         arg_str += ["XSectionType:=", section_type]
         arg_str += ["XSectionOrient:=", section_orient]
-        arg_str += ["XSectionWidth:=", _dim_arg(width, model_units)]
-        arg_str += ["XSectionTopWidth:=", _dim_arg(topwidth, model_units)]
-        arg_str += ["XSectionHeight:=", _dim_arg(height, model_units)]
+        arg_str += ["XSectionWidth:=", self._app.value_with_units(width, model_units)]
+        arg_str += ["XSectionTopWidth:=", self._app.value_with_units(topwidth, model_units)]
+        arg_str += ["XSectionHeight:=", self._app.value_with_units(height, model_units)]
         arg_str += ["XSectionNumSegments:=", f"{num_seg}"]
         arg_str += ["XSectionBendType:=", section_bend]
 
         return arg_str
 
     @pyaedt_function_handler()
-    def _arg_with_dim(self, value, units=None):
-        if units is None:
-            units = self.model_units
-        if isinstance(value, str):
-            try:
-                float(value)
-                val = f"{value}{units}"
-            except Exception:
-                val = value
-        else:
-            val = f"{value}{units}"
-        return val
-
-    @pyaedt_function_handler()
     def _pos_with_arg(self, pos, units=None):
-        x_pos = self._arg_with_dim(pos[0], units)
+        x_pos = self._app.value_with_units(pos[0], units)
         if len(pos) < 2:
-            y_pos = self._arg_with_dim(0, units)
+            y_pos = self._app.value_with_units(0, units)
         else:
-            y_pos = self._arg_with_dim(pos[1], units)
+            y_pos = self._app.value_with_units(pos[1], units)
         if len(pos) < 3:
-            z_pos = self._arg_with_dim(0, units)
+            z_pos = self._app.value_with_units(0, units)
         else:
-            z_pos = self._arg_with_dim(pos[2], units)
+            z_pos = self._app.value_with_units(pos[2], units)
 
         return x_pos, y_pos, z_pos
 

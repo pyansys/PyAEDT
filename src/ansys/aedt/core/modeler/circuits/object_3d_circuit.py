@@ -22,18 +22,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from __future__ import absolute_import
-
 import math
 import time
 
 from ansys.aedt.core.application.variables import decompose_variable_value
 from ansys.aedt.core.generic.constants import AEDT_UNITS
-from ansys.aedt.core.generic.general_methods import _arg2dict
-from ansys.aedt.core.generic.general_methods import _dim_arg
+from ansys.aedt.core.generic.data_handlers import _arg2dict
+from ansys.aedt.core.generic.data_handlers import _dict2arg
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.generic.settings import settings
-from ansys.aedt.core.modeler.cad.elements_3d import _dict2arg
 from ansys.aedt.core.modeler.geometry_operators import GeometryOperators as go
 
 
@@ -663,8 +660,8 @@ class CircuitComponent(object):
         x, y = [
             int(i / AEDT_UNITS["Length"]["mil"]) for i in self._circuit_components._convert_point_to_meter(location_xy)
         ]
-        x_location = _dim_arg(x, "mil")
-        y_location = _dim_arg(y, "mil")
+        x_location = self._circuit_components._app.value_with_units(x, "mil")
+        y_location = self._circuit_components._app.value_with_units(y, "mil")
 
         vMaterial = ["NAME:Component Location", "X:=", x_location, "Y:=", y_location]
         self.change_property(vMaterial)
@@ -709,14 +706,14 @@ class CircuitComponent(object):
                 self._circuit_components._app.logger.error("Supported angle values are 0,90,180,270.")
         self._angle = 0 if angle is None else angle
         if settings.aedt_version > "2023.2":  # pragma: no cover
-            angle = _dim_arg(self._angle, "deg")
+            angle = self._circuit_components._app.value_with_units(self._angle, "deg")
             vMaterial = ["NAME:Component Angle", "Value:=", angle]
             self.change_property(vMaterial)
         elif not self._circuit_components._app.desktop_class.is_grpc_api:
             if not angle:
                 angle = str(self._angle) + "°"
             else:
-                angle = _dim_arg(angle, "°")
+                angle = self._circuit_components._app.value_with_units(angle, "°")
             vMaterial = ["NAME:Component Angle", "Value:=", angle]
             self.change_property(vMaterial)
         else:

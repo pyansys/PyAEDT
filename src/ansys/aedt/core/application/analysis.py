@@ -29,8 +29,6 @@ It includes common classes for file management and messaging and all
 calls to AEDT modules like the modeler, mesh, postprocessing, and setup.
 """
 
-from __future__ import absolute_import  # noreorder
-
 import os
 import re
 import shutil
@@ -48,6 +46,7 @@ from ansys.aedt.core.generic.constants import PLANE
 from ansys.aedt.core.generic.constants import SETUPS
 from ansys.aedt.core.generic.constants import SOLUTIONS
 from ansys.aedt.core.generic.constants import VIEW
+from ansys.aedt.core.generic.general_methods import _arg_with_dim
 from ansys.aedt.core.generic.general_methods import filter_tuple
 from ansys.aedt.core.generic.general_methods import generate_unique_name
 from ansys.aedt.core.generic.general_methods import is_linux
@@ -2301,18 +2300,26 @@ class Analysis(Design, object):
         str
             String that combines the value and the units (e.g. "1.2mm").
         """
+        v, u = decompose_variable_value(value)
+        if u:
+            return value
+
         if units is None:
             if units_system == "Length":
-                units = self.modeler.model_units
+                if "GetModelUnits" in dir(self.oeditor):
+                    units = self.oeditor.GetModelUnits()
+                elif "GetActiveUnits" in dir(self.oeditor):
+                    units = self.oeditor.GetActiveUnits()
+                else:
+                    units = self.odesktop.GetDefaultUnit(units_system)
             else:
                 try:
                     units = self.odesktop.GetDefaultUnit(units_system)
                 except Exception:
                     self.logger.warning("Defined unit system is incorrect.")
                     units = ""
-        from ansys.aedt.core.generic.general_methods import _dim_arg
 
-        return _dim_arg(value, units)
+        return _arg_with_dim(value, units)
 
     @pyaedt_function_handler()
     def change_property(self, aedt_object, tab_name, property_object, property_name, property_value):
@@ -2367,7 +2374,7 @@ class Analysis(Design, object):
                 ]
             )
         elif isinstance(property_value, (str, float, int)):
-            xpos = self.modeler._arg_with_dim(property_value, self.modeler.model_units)
+            xpos = self.value_with_units(property_value, self.modeler.model_units)
             aedt_object.ChangeProperty(
                 [
                     "NAME:AllTabs",
@@ -2388,6 +2395,9 @@ class Analysis(Design, object):
     def number_with_units(self, value, units=None):
         """Convert a number to a string with units. If value is a string, it's returned as is.
 
+        .. deprecated:: 0.14.0
+            Use :func:`value_with_units` instead.
+
         Parameters
         ----------
         value : float, int, str
@@ -2401,4 +2411,4 @@ class Analysis(Design, object):
            String concatenating the value and unit.
 
         """
-        return self.modeler._arg_with_dim(value, units)
+        return self.value_with_units(value, units)

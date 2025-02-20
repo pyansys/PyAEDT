@@ -27,7 +27,6 @@ import warnings
 
 from ansys.aedt.core.generic.data_handlers import _dict2arg
 from ansys.aedt.core.generic.errors import GrpcApiError
-from ansys.aedt.core.generic.general_methods import _dim_arg
 from ansys.aedt.core.generic.general_methods import generate_unique_name
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.generic.settings import settings
@@ -505,7 +504,7 @@ class MeshSettings(object):
         for k, v in self._instance_settings.items():
             out.append(k + ":=")
             if k in ["MaxElementSizeX", "MaxElementSizeY", "MaxElementSizeZ", "MinGapX", "MinGapY", "MinGapZ"]:
-                v = _dim_arg(v, self._mesh_class._model_units)
+                v = self._app.value_with_units(v, self._mesh_class._model_units)
             out.append(v)
         out += ["UserSpecifiedSettings:=", self._mesh_class.manual_settings]
         return out
@@ -522,7 +521,7 @@ class MeshSettings(object):
         for k in self.keys():
             v = self._instance_settings[k]
             if k in ["MaxElementSizeX", "MaxElementSizeY", "MaxElementSizeZ", "MinGapX", "MinGapY", "MinGapZ"]:
-                v = _dim_arg(v, getattr(self._mesh_class, "_model_units"))
+                v = self._app.value_with_units(v, getattr(self._mesh_class, "_model_units"))
             out[k] = v
         return out
 

@@ -24,8 +24,6 @@
 
 """This module contains the ``Icepak`` class."""
 
-from __future__ import absolute_import  # noreorder
-
 import csv
 import os
 import re
@@ -1368,8 +1366,8 @@ class Icepak(FieldAnalysisIcepak, CreateBoundaryMixin):
             "_num": "_num_" + hs_code,
         }
 
-        self[name_map["HSHeight"]] = self.modeler._arg_with_dim(hs_height)
-        self[name_map["HSWidth"]] = self.modeler._arg_with_dim(hs_width)
+        self[name_map["HSHeight"]] = self.value_with_units(hs_height)
+        self[name_map["HSWidth"]] = self.value_with_units(hs_width)
         self[name_map["DraftAngle"]] = draft_angle
         self[name_map["PatternAngle"]] = pattern_angle
 
@@ -1385,7 +1383,7 @@ class Icepak(FieldAnalysisIcepak, CreateBoundaryMixin):
                     name_map[var_name + "_Factor"] + "*" + [name_map["HSHeight"], name_map["HSWidth"]][width_or_height]
                 )
             else:
-                self[name_map[var_name]] = self.modeler._arg_with_dim(var)
+                self[name_map[var_name]] = self.value_with_units(var)
 
         self[name_map["NumColumnsPerSide"]] = numcolumn_perside
         if symmetric:
@@ -1393,7 +1391,7 @@ class Icepak(FieldAnalysisIcepak, CreateBoundaryMixin):
                 self[name_map["SymSeparation_Factor"]] = symmetric_separation
                 self[name_map["SymSeparation"]] = name_map["SymSeparation_Factor"] + "*" + name_map["HSHeight"]
             else:
-                self[name_map["SymSeparation"]] = self.modeler._arg_with_dim(symmetric_separation)
+                self[name_map["SymSeparation"]] = self.value_with_units(symmetric_separation)
 
         hs_base = self.modeler.create_box(
             ["-" + name_map["HSWidth"] + "/2", "-" + name_map["HSHeight"] + "/2", "0"],
@@ -2531,7 +2529,7 @@ class Icepak(FieldAnalysisIcepak, CreateBoundaryMixin):
             outline_polygon=outline_polygon,
             custom_x_resolution=custom_x_resolution,
             custom_y_resolution=custom_y_resolution,
-            powerin=self.modeler._arg_with_dim(power_in, "W"),
+            powerin=self.value_with_units(power_in, "W"),
         )
 
         if close_linked_project_after_import and ".aedt" in project_name:

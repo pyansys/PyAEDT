@@ -950,15 +950,15 @@ class Primitives3DLayout(object):
             arg.append("name:="), arg.append(name)
             arg.append("ReferencedPadstack:="), arg.append(padstack),
             arg.append("vposition:="),
-            arg.append(["x:=", self.number_with_units(x), "y:=", self.number_with_units(y)])
+            arg.append(["x:=", self._app.value_with_units(x), "y:=", self._app.value_with_units(y)])
             arg.append("vrotation:="), arg.append([str(rotation) + "deg"])
             if hole_diam:
                 arg.append("overrides hole:="), arg.append(True)
-                arg.append("hole diameter:="), arg.append([self.number_with_units(hole_diam)])
+                arg.append("hole diameter:="), arg.append([self._app.value_with_units(hole_diam)])
 
             else:
                 arg.append("overrides hole:="), arg.append(False)
-                arg.append("hole diameter:="), arg.append([self.number_with_units(1)])
+                arg.append("hole diameter:="), arg.append([self._app.value_with_units(1)])
 
             arg.append("Pin:="), arg.append(False)
             arg.append("highest_layer:="), arg.append(top_layer)
@@ -1024,9 +1024,9 @@ class Primitives3DLayout(object):
         vArg2.append("Name:="), vArg2.append(name)
         vArg2.append("LayerName:="), vArg2.append(layer)
         vArg2.append("lw:="), vArg2.append("0")
-        vArg2.append("x:="), vArg2.append(self.number_with_units(x))
-        vArg2.append("y:="), vArg2.append(self.number_with_units(y))
-        vArg2.append("r:="), vArg2.append(self.number_with_units(radius))
+        vArg2.append("x:="), vArg2.append(self._app.value_with_units(x))
+        vArg2.append("y:="), vArg2.append(self._app.value_with_units(y))
+        vArg2.append("r:="), vArg2.append(self._app.value_with_units(radius))
         vArg1.append(vArg2)
         self.oeditor.CreateCircle(vArg1)
         primitive = Circle3dLayout(self, name, False)
@@ -1080,13 +1080,17 @@ class Primitives3DLayout(object):
         vArg2.append("Name:="), vArg2.append(name)
         vArg2.append("LayerName:="), vArg2.append(layer)
         vArg2.append("lw:="), vArg2.append("0")
-        vArg2.append("Ax:="), vArg2.append(self.number_with_units(origin[0]))
-        vArg2.append("Ay:="), vArg2.append(self.number_with_units(origin[1]))
-        vArg2.append("Bx:="), vArg2.append(self.number_with_units(origin[0]) + "+" + self.number_with_units(sizes[0]))
-        vArg2.append("By:="), vArg2.append(self.number_with_units(origin[1]) + "+" + self.number_with_units(sizes[1]))
-        vArg2.append("cr:="), vArg2.append(self.number_with_units(corner_radius))
+        vArg2.append("Ax:="), vArg2.append(self._app.value_with_units(origin[0]))
+        vArg2.append("Ay:="), vArg2.append(self._app.value_with_units(origin[1]))
+        vArg2.append("Bx:="), vArg2.append(
+            self._app.value_with_units(origin[0]) + "+" + self._app.value_with_units(sizes[0])
+        )
+        vArg2.append("By:="), vArg2.append(
+            self._app.value_with_units(origin[1]) + "+" + self._app.value_with_units(sizes[1])
+        )
+        vArg2.append("cr:="), vArg2.append(self._app.value_with_units(corner_radius))
         vArg2.append("ang:=")
-        vArg2.append(self.number_with_units(angle, "deg"))
+        vArg2.append(self._app.value_with_units(angle, "deg"))
         vArg1.append(vArg2)
         self.oeditor.CreateRectangle(vArg1)
         primitive = Rect3dLayout(self, name, False)
@@ -1269,7 +1273,7 @@ class Primitives3DLayout(object):
             "LayerName:=",
             layer,
             "lw:=",
-            self.number_with_units(lw),
+            self._app.value_with_units(lw),
             "endstyle:=",
             end_style,
             "StartCap:=",
@@ -1297,6 +1301,9 @@ class Primitives3DLayout(object):
     def number_with_units(self, value, units=None):
         """Convert a number to a string with units.
 
+        .. deprecated:: 0.14.0
+            Use :func:`value_with_units` in Analysis class instead.
+
         If value is a string, it's returned as is.
 
         Parameters
@@ -1312,7 +1319,7 @@ class Primitives3DLayout(object):
            String concatenating the value and unit.
 
         """
-        return self._app.number_with_units(value, units)
+        return self._app.value_with_units(value, units)
 
     @pyaedt_function_handler()
     def place_3d_component(
@@ -1424,8 +1431,8 @@ class Primitives3DLayout(object):
         self.modeler.o_component_manager.Add(args)
         stack_layers = [f"0:{i.name}" for i in self.modeler.layers.stackup_layers]
         drawing = [f"{i.name}:{i.name}" for i in self.modeler.layers.drawing_layers]
-        arg_x = self.modeler._arg_with_dim(pos_x)
-        arg_y = self.modeler._arg_with_dim(pos_y)
+        arg_x = self._app.value_with_units(pos_x)
+        arg_y = self._app.value_with_units(pos_y)
         args = [
             "NAME:Contents",
             "definition_name:=",
@@ -1450,7 +1457,7 @@ class Primitives3DLayout(object):
         if is_3d_placement or pos_z != 0:
             comp.is_3d_placement = True
             if pos_z:
-                comp.location = [arg_x, arg_y, self.modeler._arg_with_dim(pos_z)]
+                comp.location = [arg_x, arg_y, self._app.value_with_units(pos_z)]
         self.components_3d[comp_name.split(";")[-1]] = comp
         if create_ports:
             self.oeditor.CreatePortsOnComponentsByNet(["NAME:Components", comp.name], [], "Port", "0", "0", "0")

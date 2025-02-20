@@ -24,8 +24,6 @@
 
 """This module contains the ``CircuitNetlist`` class."""
 
-from __future__ import absolute_import  # noreorder
-
 import os
 import shutil
 

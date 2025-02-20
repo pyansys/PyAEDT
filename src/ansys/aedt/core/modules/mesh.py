@@ -24,8 +24,6 @@
 
 """This module contains the `Mesh` class."""
 
-from __future__ import absolute_import  # noreorder
-
 import os
 import shutil
 

@@ -24,8 +24,6 @@
 
 """This module contains the ``Hfss`` class."""
 
-from __future__ import absolute_import  # noreorder
-
 import ast
 import math
 import os
@@ -503,11 +501,11 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
             if deembed is None:
                 props["DoDeembed"] = False
                 if iswaveport:
-                    props["DeembedDist"] = self.modeler._arg_with_dim(0)
+                    props["DeembedDist"] = self.value_with_units(0)
             else:
                 props["DoDeembed"] = True
                 if iswaveport:
-                    props["DeembedDist"] = self.modeler._arg_with_dim(deembed)
+                    props["DeembedDist"] = self.value_with_units(deembed)
             props["RenormalizeAllTerminals"] = renorm
             props["ShowReporterFilter"] = False
             props["UseAnalyticAlignment"] = False
@@ -575,7 +573,7 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
 
         if deemb_distance != 0:
             props["DoDeembed"] = True
-            props["DeembedDist"] = self.modeler._arg_with_dim(deemb_distance)
+            props["DeembedDist"] = self.value_with_units(deemb_distance)
         else:
             props["DoDeembed"] = False
         props["RenormalizeAllTerminals"] = renorm
@@ -2347,7 +2345,7 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
         props["NumModes"] = modes
         if deembed_distance:
             props["DoDeembed"] = True
-            props["DeembedDist"] = self.modeler._arg_with_dim(deembed_distance)
+            props["DeembedDist"] = self.value_with_units(deembed_distance)
         else:
             props["DoDeembed"] = False
             props["DeembedDist"] = "0mm"
@@ -4638,24 +4636,24 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
         else:
             setup1.props["SbrRangeDopplerWaveformType"] = setup_type
         setup1.props["SbrRangeDopplerTimeVariable"] = time_var
-        setup1.props["SbrRangeDopplerCenterFreq"] = self.modeler._arg_with_dim(center_freq, "GHz")
-        setup1.props["SbrRangeDopplerRangeResolution"] = self.modeler._arg_with_dim(resolution, "meter")
-        setup1.props["SbrRangeDopplerRangePeriod"] = self.modeler._arg_with_dim(period, "meter")
-        setup1.props["SbrRangeDopplerVelocityResolution"] = self.modeler._arg_with_dim(velocity_resolution, "m_per_sec")
-        setup1.props["SbrRangeDopplerVelocityMin"] = self.modeler._arg_with_dim(min_velocity, "m_per_sec")
-        setup1.props["SbrRangeDopplerVelocityMax"] = self.modeler._arg_with_dim(max_velocity, "m_per_sec")
+        setup1.props["SbrRangeDopplerCenterFreq"] = self.value_with_units(center_freq, "GHz")
+        setup1.props["SbrRangeDopplerRangeResolution"] = self.value_with_units(resolution, "meter")
+        setup1.props["SbrRangeDopplerRangePeriod"] = self.value_with_units(period, "meter")
+        setup1.props["SbrRangeDopplerVelocityResolution"] = self.value_with_units(velocity_resolution, "m_per_sec")
+        setup1.props["SbrRangeDopplerVelocityMin"] = self.value_with_units(min_velocity, "m_per_sec")
+        setup1.props["SbrRangeDopplerVelocityMax"] = self.value_with_units(max_velocity, "m_per_sec")
         setup1.props["DopplerRayDensityPerWavelength"] = ray_density_per_wavelength
         setup1.props["MaxNumberOfBounces"] = max_bounces
         if setup_type != "PulseDoppler":
             setup1.props["IncludeRangeVelocityCouplingEffect"] = include_coupling_effects
-            setup1.props["SbrRangeDopplerA/DSamplingRate"] = self.modeler._arg_with_dim(doppler_ad_sampling_rate, "MHz")
+            setup1.props["SbrRangeDopplerA/DSamplingRate"] = self.value_with_units(doppler_ad_sampling_rate, "MHz")
         setup1.update()
         setup1.auto_update = True
         return setup1
 
     @pyaedt_function_handler(setupname="setup")
     def _create_sbr_doppler_sweep(self, setup, time_var, tstart, tstop, tsweep, parametric_name):
-        time_stop = self.modeler._arg_with_dim(tstop, "s")
+        time_stop = self.value_with_units(tstop, "s")
         return self.parametrics.add(time_var, tstart, time_stop, tsweep, "LinearStep", setup, name=parametric_name)
 
     @pyaedt_function_handler(time_var="time_variable", setup_name="setup")
@@ -5119,7 +5117,7 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
             props["Polarization"] = "Slant"
         else:
             props["Polarization"] = "Linear"
-        props["SlantAngle"] = self.modeler._arg_with_dim(polarization_angle, units)
+        props["SlantAngle"] = self.value_with_units(polarization_angle, units)
 
         if definition == "Theta-Phi":
             defs = ["ThetaStart", "ThetaStop", "ThetaStep", "PhiStart", "PhiStop", "PhiStep"]
@@ -5127,12 +5125,12 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
             defs = ["AzimuthStart", "AzimuthStop", "AzimuthStep", "ElevationStart", "ElevationStop", "ElevationStep"]
         else:
             defs = ["ElevationStart", "ElevationStop", "ElevationStep", "AzimuthStart", "AzimuthStop", "AzimuthStep"]
-        props[defs[0]] = self.modeler._arg_with_dim(x_start, units)
-        props[defs[1]] = self.modeler._arg_with_dim(x_stop, units)
-        props[defs[2]] = self.modeler._arg_with_dim(x_step, units)
-        props[defs[3]] = self.modeler._arg_with_dim(y_start, units)
-        props[defs[4]] = self.modeler._arg_with_dim(y_stop, units)
-        props[defs[5]] = self.modeler._arg_with_dim(y_step, units)
+        props[defs[0]] = self.value_with_units(x_start, units)
+        props[defs[1]] = self.value_with_units(x_stop, units)
+        props[defs[2]] = self.value_with_units(x_step, units)
+        props[defs[3]] = self.value_with_units(y_start, units)
+        props[defs[4]] = self.value_with_units(y_stop, units)
+        props[defs[5]] = self.value_with_units(y_step, units)
         props["UseLocalCS"] = custom_coordinate_system is not None
         if custom_coordinate_system:
             props["CoordSystem"] = custom_coordinate_system
@@ -5207,15 +5205,15 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
         else:
             props["CustomRadiationSurface"] = ""
 
-        props["Radius"] = self.modeler._arg_with_dim(radius, radius_units)
+        props["Radius"] = self.value_with_units(radius, radius_units)
 
         defs = ["ThetaStart", "ThetaStop", "ThetaStep", "PhiStart", "PhiStop", "PhiStep"]
-        props[defs[0]] = self.modeler._arg_with_dim(x_start, angle_units)
-        props[defs[1]] = self.modeler._arg_with_dim(x_stop, angle_units)
-        props[defs[2]] = self.modeler._arg_with_dim(x_step, angle_units)
-        props[defs[3]] = self.modeler._arg_with_dim(y_start, angle_units)
-        props[defs[4]] = self.modeler._arg_with_dim(y_stop, angle_units)
-        props[defs[5]] = self.modeler._arg_with_dim(y_step, angle_units)
+        props[defs[0]] = self.value_with_units(x_start, angle_units)
+        props[defs[1]] = self.value_with_units(x_stop, angle_units)
+        props[defs[2]] = self.value_with_units(x_step, angle_units)
+        props[defs[3]] = self.value_with_units(y_start, angle_units)
+        props[defs[4]] = self.value_with_units(y_stop, angle_units)
+        props[defs[5]] = self.value_with_units(y_step, angle_units)
         props["UseLocalCS"] = custom_coordinate_system is not None
         if custom_coordinate_system:
             props["CoordSystem"] = custom_coordinate_system
@@ -5285,12 +5283,12 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
             props["CustomRadiationSurface"] = ""
 
         defs = ["U Size", "V Size", "W Size", "U Samples", "V Samples", "W Samples"]
-        props[defs[0]] = self.modeler._arg_with_dim(u_length, units)
-        props[defs[1]] = self.modeler._arg_with_dim(v_length, units)
-        props[defs[2]] = self.modeler._arg_with_dim(w_length, units)
-        props[defs[3]] = self.modeler._arg_with_dim(u_samples, units)
-        props[defs[4]] = self.modeler._arg_with_dim(v_samples, units)
-        props[defs[5]] = self.modeler._arg_with_dim(w_samples, units)
+        props[defs[0]] = self.value_with_units(u_length, units)
+        props[defs[1]] = self.value_with_units(v_length, units)
+        props[defs[2]] = self.value_with_units(w_length, units)
+        props[defs[3]] = self.value_with_units(u_samples, units)
+        props[defs[4]] = self.value_with_units(v_samples, units)
+        props[defs[5]] = self.value_with_units(w_samples, units)
 
         if custom_coordinate_system:
             props["CoordSystem"] = custom_coordinate_system
@@ -5354,8 +5352,8 @@ class Hfss(FieldAnalysis3D, ScatteringMethods, CreateBoundaryMixin):
             props["CustomRadiationSurface"] = ""
 
         defs = ["Length", "Width", "LengthSamples", "WidthSamples"]
-        props[defs[0]] = self.modeler._arg_with_dim(u_length, units)
-        props[defs[1]] = self.modeler._arg_with_dim(v_length, units)
+        props[defs[0]] = self.value_with_units(u_length, units)
+        props[defs[1]] = self.value_with_units(v_length, units)
         props[defs[2]] = u_samples
         props[defs[3]] = v_samples
 

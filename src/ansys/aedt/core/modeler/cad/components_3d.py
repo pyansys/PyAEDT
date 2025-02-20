@@ -22,19 +22,17 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from __future__ import absolute_import
-
 import os
 import re
 import secrets
 import warnings
 
 from ansys.aedt.core.edb import Edb
+from ansys.aedt.core.generic.data_handlers import _dict2arg
 from ansys.aedt.core.generic.desktop_sessions import _edb_sessions
 from ansys.aedt.core.generic.general_methods import _uname
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.modeler.cad.elements_3d import BinaryTreeNode
-from ansys.aedt.core.modeler.cad.elements_3d import _dict2arg
 
 
 class UserDefinedComponentParameters(dict):

@@ -24,8 +24,6 @@
 
 """This module contains the ``Hfss3dLayout`` class."""
 
-from __future__ import absolute_import  # noreorder
-
 import fnmatch
 import io
 import os

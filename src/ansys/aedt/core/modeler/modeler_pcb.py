@@ -217,30 +217,16 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
         pur = bb.BBoxUR()
         return [pll.GetX(), pll.GetY(), pur.GetX(), pur.GetY()]
 
-    @pyaedt_function_handler()
-    def _arg_with_dim(self, value, units=None):
-        if units is None:
-            units = self.model_units
-        if isinstance(value, str):
-            try:
-                float(value)
-                val = f"{value}{units}"
-            except Exception:
-                val = value
-        else:
-            val = f"{value}{units}"
-        return val
-
     def _pos_with_arg(self, pos, units=None):
-        xpos = self._arg_with_dim(pos[0], units)
+        xpos = self._app.value_with_units(pos[0], units)
         if len(pos) < 2:
-            ypos = self._arg_with_dim(0, units)
+            ypos = self._app.value_with_units(0, units)
         else:
-            ypos = self._arg_with_dim(pos[1], units)
+            ypos = self._app.value_with_units(pos[1], units)
         if len(pos) < 3:
-            zpos = self._arg_with_dim(0, units)
+            zpos = self._app.value_with_units(0, units)
         else:
-            zpos = self._arg_with_dim(pos[2], units)
+            zpos = self._app.value_with_units(pos[2], units)
 
         return xpos, ypos, zpos
 
@@ -297,7 +283,7 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
                 ]
             )
         elif isinstance(value, (float, int)):
-            xpos = self._arg_with_dim(value, self.model_units)
+            xpos = self._app.value_with_units(value, self.model_units)
             self.oeditor.ChangeProperty(
                 [
                     "NAME:AllTabs",
@@ -365,10 +351,10 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
         self.components_3d[comp_name] = comp
         comp.is_3d_placement = True
         comp.local_origin = [0.0, 0.0, 0.0]
-        x = self._arg_with_dim(x)
-        y = self._arg_with_dim(y)
-        z = self._arg_with_dim(z)
-        rotation = self._arg_with_dim(rotation, "deg")
+        x = self._app.value_with_units(x)
+        y = self._app.value_with_units(y)
+        z = self._app.value_with_units(z)
+        rotation = self._app.value_with_units(rotation, "deg")
         comp.angle = rotation
         comp.location = [x, y, z]
         return comp
@@ -416,7 +402,6 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
         ----------
         >>> oEditor.Heal
 
-
         Examples
         --------
         >>> from ansys.aedt.core import Hfss3dLayout
@@ -438,7 +423,7 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
                 "Type:=",
                 "Colinear",
                 "Tol:=",
-                self.number_with_units(tolerance),
+                self._app.value_with_units(tolerance),
             ]
         )
 
@@ -489,7 +474,9 @@ class Modeler3DLayout(Modeler, Primitives3DLayout):
         poly = self.oeditor.GetPolygonDef(assignment).GetPoints()
         pos = [poly[0].GetX(), poly[0].GetY()]
         geom_names = self.oeditor.FindObjectsByPoint(self.oeditor.Point().Set(pos[0], pos[1]), layer)
-        self.oeditor.Expand(self.number_with_units(size), expand_type, replace_original, ["NAME:elements", assignment])
+        self.oeditor.Expand(
+            self._app.value_with_units(size), expand_type, replace_original, ["NAME:elements", assignment]
+        )
         self.cleanup_objects()
         if not replace_original:
             new_geom_names = [

@@ -23,7 +23,6 @@
 # SOFTWARE.
 
 from ansys.aedt.core.generic.data_handlers import _dict2arg
-from ansys.aedt.core.generic.general_methods import _dim_arg
 from ansys.aedt.core.generic.general_methods import pyaedt_function_handler
 from ansys.aedt.core.modeler.cad.elements_3d import BinaryTreeNode
 from ansys.aedt.core.modules.boundary.common import BoundaryCommon
@@ -453,73 +452,73 @@ class FarFieldSetup(FieldSetup, object):
     @theta_start.setter
     def theta_start(self, value):
         if "ThetaStart" in self.props:
-            self.props["ThetaStart"] = _dim_arg(value, self.units)
+            self.props["ThetaStart"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @theta_stop.setter
     def theta_stop(self, value):
         if "ThetaStop" in self.props:
-            self.props["ThetaStop"] = _dim_arg(value, self.units)
+            self.props["ThetaStop"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @theta_step.setter
     def theta_step(self, value):
         if "ThetaStep" in self.props:
-            self.props["ThetaStep"] = _dim_arg(value, self.units)
+            self.props["ThetaStep"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @phi_start.setter
     def phi_start(self, value):
         if "PhiStart" in self.props:
-            self.props["PhiStart"] = _dim_arg(value, self.units)
+            self.props["PhiStart"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @phi_stop.setter
     def phi_stop(self, value):
         if "PhiStop" in self.props:
-            self.props["PhiStop"] = _dim_arg(value, self.units)
+            self.props["PhiStop"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @phi_step.setter
     def phi_step(self, value):
         if "PhiStep" in self.props:
-            self.props["PhiStep"] = _dim_arg(value, self.units)
+            self.props["PhiStep"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @azimuth_start.setter
     def azimuth_start(self, value):
         if "AzimuthStart" in self.props:
-            self.props["AzimuthStart"] = _dim_arg(value, self.units)
+            self.props["AzimuthStart"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @azimuth_stop.setter
     def azimuth_stop(self, value):
         if "AzimuthStop" in self.props:
-            self.props["AzimuthStop"] = _dim_arg(value, self.units)
+            self.props["AzimuthStop"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @azimuth_step.setter
     def azimuth_step(self, value):
         if "AzimuthStep" in self.props:
-            self.props["AzimuthStep"] = _dim_arg(value, self.units)
+            self.props["AzimuthStep"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @elevation_start.setter
     def elevation_start(self, value):
         if "ElevationStart" in self.props:
-            self.props["ElevationStart"] = _dim_arg(value, self.units)
+            self.props["ElevationStart"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @elevation_stop.setter
     def elevation_stop(self, value):
         if "ElevationStop" in self.props:
-            self.props["ElevationStop"] = _dim_arg(value, self.units)
+            self.props["ElevationStop"] = self._app.value_with_units(value, self.units)
             self.update()
 
     @elevation_step.setter
     def elevation_step(self, value):
         if "ElevationStep" in self.props:
-            self.props["ElevationStep"] = _dim_arg(value, self.units)
+            self.props["ElevationStep"] = self._app.value_with_units(value, self.units)
             self.update()
 
 

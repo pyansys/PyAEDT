@@ -1586,10 +1586,10 @@ class NexximComponents(CircuitComponents):
             if name in self.components[el].composed_name:
                 if extrusion_length:
                     _, units = decompose_variable_value(self.components[el].parameters["Length"])
-                    self.components[el].set_property("Length", self.number_with_units(extrusion_length, units))
+                    self.components[el].set_property("Length", self._app.value_with_units(extrusion_length, units))
                 if tline_port and extrusion_length:
                     _, units = decompose_variable_value(self.components[el].parameters["TLineLength"])
-                    self.components[el].set_property("TLineLength", self.number_with_units(extrusion_length, units))
+                    self.components[el].set_property("TLineLength", self._app.value_with_units(extrusion_length, units))
                 return self.components[el]
         return False
 
@@ -1850,7 +1850,7 @@ class NexximComponents(CircuitComponents):
         ]
         if owner == "2DExtractor":
             variable_args.append("VariableProp:=")
-            variable_args.append(["Length", "D", "", self.number_with_units(extrusion_length_q2d)])
+            variable_args.append(["Length", "D", "", self._app.value_with_units(extrusion_length_q2d)])
         if variables:
             for k, v in variables.items():
                 variable_args.append("VariableProp:=")

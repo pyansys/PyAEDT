@@ -245,8 +245,8 @@ class Primitives3D(GeometryModeler):
         axis = GeometryOperators.cs_axis_str(orientation)
         x_center, y_center, z_center = self._pos_with_arg(origin)
 
-        radius = self._arg_with_dim(radius)
-        height = self._arg_with_dim(height)
+        radius = self._app.value_with_units(radius)
+        height = self._app.value_with_units(height)
 
         arg_1 = [
             "NAME:CylinderParameters",
@@ -337,7 +337,7 @@ class Primitives3D(GeometryModeler):
         x_center, y_center, z_center = self._pos_with_arg(center)
         x_start, y_start, z_start = self._pos_with_arg(origin)
 
-        height = self._arg_with_dim(height)
+        height = self._app.value_with_units(height)
 
         arg_1 = [
             "NAME:PolyhedronParameters",
@@ -426,9 +426,9 @@ class Primitives3D(GeometryModeler):
 
         x_center, y_center, z_center = self._pos_with_arg(origin)
         axis = GeometryOperators.cs_axis_str(orientation)
-        height = self._arg_with_dim(height)
-        bottom_radius = self._arg_with_dim(bottom_radius)
-        top_radius = self._arg_with_dim(top_radius)
+        height = self._app.value_with_units(height)
+        bottom_radius = self._app.value_with_units(bottom_radius)
+        top_radius = self._app.value_with_units(top_radius)
 
         arg_1 = ["NAME:ConeParameters",
                  "XCenter:=", x_center,
@@ -492,7 +492,7 @@ class Primitives3D(GeometryModeler):
             return False
 
         x_center, y_center, z_center = self._pos_with_arg(origin)
-        radius = self._arg_with_dim(radius)
+        radius = self._app.value_with_units(radius)
 
         arg_1 = [
             "NAME:SphereParameters",
@@ -567,8 +567,8 @@ class Primitives3D(GeometryModeler):
 
         x_center, y_center, z_center = self._pos_with_arg(origin)
         axis = GeometryOperators.cs_axis_str(axis)
-        major_radius = self._arg_with_dim(major_radius)
-        minor_radius = self._arg_with_dim(minor_radius)
+        major_radius = self._app.value_with_units(major_radius)
+        minor_radius = self._app.value_with_units(minor_radius)
 
         first_argument = ["NAME:TorusParameters"]
         first_argument.append("XCenter:="), first_argument.append(x_center)
@@ -671,9 +671,9 @@ class Primitives3D(GeometryModeler):
 
         for m, n in zip(start, end):
             if not isinstance(m, str):
-                m = self._arg_with_dim(m)
+                m = self._app.value_with_units(m)
             if not isinstance(n, str):
-                n = self._arg_with_dim(n)
+                n = self._app.value_with_units(n)
             if cont == 0:
                 x_length = "(" + str(n) + ") - (" + str(m) + ")"
             elif cont == 1:
@@ -693,7 +693,7 @@ class Primitives3D(GeometryModeler):
             return False
         first_argument = ["NAME:BondwireParameters"]
         first_argument.append("WireType:="), first_argument.append(bondwire)
-        first_argument.append("WireDiameter:="), first_argument.append(self._arg_with_dim(diameter))
+        first_argument.append("WireDiameter:="), first_argument.append(self._app.value_with_units(diameter))
         first_argument.append("NumSides:="), first_argument.append(str(facets))
         first_argument.append("XPadPos:="), first_argument.append(x_position)
         first_argument.append("YPadPos:="), first_argument.append(y_position)
@@ -719,10 +719,10 @@ class Primitives3D(GeometryModeler):
 
         first_argument.append("Distance:="), first_argument.append(distance)
 
-        first_argument.append("h1:="), first_argument.append(self._arg_with_dim(h1))
-        first_argument.append("h2:="), first_argument.append(self._arg_with_dim(h2))
-        first_argument.append("alpha:="), first_argument.append(self._arg_with_dim(alpha, "deg"))
-        first_argument.append("beta:="), first_argument.append(self._arg_with_dim(beta, "deg"))
+        first_argument.append("h1:="), first_argument.append(self._app.value_with_units(h1))
+        first_argument.append("h2:="), first_argument.append(self._app.value_with_units(h2))
+        first_argument.append("alpha:="), first_argument.append(self._app.value_with_units(alpha, "deg"))
+        first_argument.append("beta:="), first_argument.append(self._app.value_with_units(beta, "deg"))
         first_argument.append("WhichAxis:="), first_argument.append(GeometryOperators.cs_axis_str(orientation))
         first_argument.append("ReverseDirection:="), first_argument.append(False)
         second_argument = self._default_object_attributes(name=name, material=material)
@@ -770,8 +770,8 @@ class Primitives3D(GeometryModeler):
 
         axis = GeometryOperators.cs_plane_to_axis_str(orientation)
         x_start, y_start, z_start = self._pos_with_arg(origin)
-        width = self._arg_with_dim(sizes[0])
-        height = self._arg_with_dim(sizes[1])
+        width = self._app.value_with_units(sizes[0])
+        height = self._app.value_with_units(sizes[1])
 
         arg_1 = [
             "NAME:RectangleParameters",
@@ -852,7 +852,7 @@ class Primitives3D(GeometryModeler):
             non_model_flag = "NonModel#"
         axis = GeometryOperators.cs_plane_to_axis_str(orientation)
         x_center, y_center, z_center = self._pos_with_arg(origin)
-        radius = self._arg_with_dim(radius)
+        radius = self._app.value_with_units(radius)
         arg_1 = [
             "NAME:CircleParameters",
             "IsCovered:=", is_covered,
@@ -945,7 +945,7 @@ class Primitives3D(GeometryModeler):
         """
         axis = GeometryOperators.cs_plane_to_axis_str(orientation)
         x_start, y_start, z_start = self._pos_with_arg(origin)
-        major_radius = self._arg_with_dim(major_radius)
+        major_radius = self._app.value_with_units(major_radius)
 
         arg_1 = [
             "NAME:EllipseParameters",
@@ -1232,13 +1232,13 @@ class Primitives3D(GeometryModeler):
             "XCenter:=", x_center,
             "YCenter:=", y_center,
             "ZCenter:=", z_center,
-            "XStartDir:=", self._arg_with_dim(x_start_dir),
-            "YStartDir:=", self._arg_with_dim(y_start_dir),
-            "ZStartDir:=", self._arg_with_dim(z_start_dir),
+            "XStartDir:=", self._app.value_with_units(x_start_dir),
+            "YStartDir:=", self._app.value_with_units(y_start_dir),
+            "ZStartDir:=", self._app.value_with_units(z_start_dir),
             "NumThread:=", turns,
             "RightHand:=", right_hand,
-            "RadiusIncrement:=", self._arg_with_dim(radius_increment),
-            "Thread:=", self._arg_with_dim(thread)
+            "RadiusIncrement:=", self._app.value_with_units(radius_increment),
+            "Thread:=", self._app.value_with_units(thread)
         ]
         self.oeditor.CreateHelix(arg_1, arg_2)
         if assignment in self.objects_by_name:
@@ -2103,9 +2103,9 @@ class Primitives3D(GeometryModeler):
         if name:
             person1._name = name
         person1.offset = global_offset
-        person1.yaw = self._arg_with_dim(yaw, "deg")
-        person1.pitch = self._arg_with_dim(pitch, "deg")
-        person1.roll = self._arg_with_dim(roll, "deg")
+        person1.yaw = self._app.value_with_units(yaw, "deg")
+        person1.pitch = self._app.value_with_units(pitch, "deg")
+        person1.roll = self._app.value_with_units(roll, "deg")
         person1.insert(self._app)
         self.multiparts.append(person1)
         return person1
@@ -2192,9 +2192,9 @@ class Primitives3D(GeometryModeler):
         if name:
             vehicle._name = name
         vehicle.offset = global_offset
-        vehicle.yaw = self._arg_with_dim(yaw, "deg")
-        vehicle.pitch = self._arg_with_dim(pitch, "deg")
-        vehicle.roll = self._arg_with_dim(roll, "deg")
+        vehicle.yaw = self._app.value_with_units(yaw, "deg")
+        vehicle.pitch = self._app.value_with_units(pitch, "deg")
+        vehicle.roll = self._app.value_with_units(roll, "deg")
         vehicle.insert(self._app)
         self.multiparts.append(vehicle)
         return vehicle
@@ -2301,15 +2301,15 @@ class Primitives3D(GeometryModeler):
         bird = Bird(
             input_dir,
             speed=speed,
-            flapping_rate=self._arg_with_dim(flapping_rate, "Hz"),
+            flapping_rate=self._app.value_with_units(flapping_rate, "Hz"),
             relative_cs_name=coordinate_system,
         )
         if name:
             bird._name = name
         bird.offset = global_offset
-        bird.yaw = self._arg_with_dim(yaw, "deg")
-        bird.pitch = self._arg_with_dim(pitch, "deg")
-        bird.roll = self._arg_with_dim(roll, "deg")
+        bird.yaw = self._app.value_with_units(yaw, "deg")
+        bird.pitch = self._app.value_with_units(pitch, "deg")
+        bird.roll = self._app.value_with_units(roll, "deg")
         bird.insert(self._app)
         self.multiparts.append(bird)
         return bird
@@ -2374,9 +2374,9 @@ class Primitives3D(GeometryModeler):
         if name:
             environment._name = name
         environment.offset = global_offset
-        environment.yaw = self._arg_with_dim(yaw, "deg")
-        environment.pitch = self._arg_with_dim(pitch, "deg")
-        environment.roll = self._arg_with_dim(roll, "deg")
+        environment.yaw = self._app.value_with_units(yaw, "deg")
+        environment.pitch = self._app.value_with_units(pitch, "deg")
+        environment.roll = self._app.value_with_units(roll, "deg")
         environment.insert(self._app)
         self.multiparts.append(environment)
         return environment

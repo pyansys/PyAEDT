@@ -30,8 +30,6 @@ These classes are inherited in the main tool class.
 
 """
 
-from __future__ import absolute_import  # noreorder
-
 from abc import abstractmethod
 import gc
 import json

@@ -29,8 +29,6 @@ This module provides all functionalities for common AEDT post processing.
 
 """
 
-from __future__ import absolute_import  # noreorder
-
 import os
 import re
 

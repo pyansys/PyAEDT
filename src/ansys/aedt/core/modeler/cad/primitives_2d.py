@@ -103,7 +103,7 @@ class Primitives2D(GeometryModeler, object):
         # TODO: kwargs such as 'matname' and 'nonmodel' should be deprecated.
         axis = self.plane2d
         x_center, y_center, z_center = self._pos_with_arg(origin)
-        radius = self._arg_with_dim(radius)
+        radius = self._app.value_with_units(radius)
 
         arg_1 = [
             "NAME:CircleParameters",
@@ -192,7 +192,7 @@ class Primitives2D(GeometryModeler, object):
             "XCenter:=", x_center,
             "YCenter:=", y_center,
             "ZCenter:=", z_center,
-            "MajRadius:=", self._arg_with_dim(major_radius),
+            "MajRadius:=", self._app.value_with_units(major_radius),
             "Ratio:=", ratio,
             "WhichAxis:=", axis,
             "NumSegments:=", segments
@@ -241,8 +241,8 @@ class Primitives2D(GeometryModeler, object):
         # TODO: Primitives in Maxwell 2D must have Z=0, otherwise the transparency cannot be changed. (issue 4071)
         axis = self.plane2d
         x_start, y_start, z_start = self._pos_with_arg(origin)
-        width = self._arg_with_dim(sizes[0])
-        height = self._arg_with_dim(sizes[1])
+        width = self._app.value_with_units(sizes[0])
+        height = self._app.value_with_units(sizes[1])
 
         arg_1 = [
             "NAME:RectangleParameters",

@@ -334,12 +334,12 @@ class ModelerCircuit(Modeler):
                 g3 = (rect_border_color >> 8) & 0xFF
                 b3 = (rect_border_color >> 0) & 0xFF
             self.change_text_property(str(text_id), "Color", [r, g, b])
-            self.change_text_property(str(text_id), "Angle", self._arg_with_dim(text_angle, "deg"))
+            self.change_text_property(str(text_id), "Angle", self._app.value_with_units(text_angle, "deg"))
             self.change_text_property(str(text_id), "DisplayRectangle", show_rect)
             if show_rect:
                 self.change_text_property(str(text_id), "Rectangle Color", [r2, g2, b2])
                 self.change_text_property(
-                    str(text_id), "Rectangle BorderWidth", self._arg_with_dim(rect_line_width, "mil")
+                    str(text_id), "Rectangle BorderWidth", self._app.value_with_units(rect_line_width, "mil")
                 )
                 self.change_text_property(str(text_id), "Rectangle BorderColor", [r3, g3, b3])
                 self.change_text_property(str(text_id), "Rectangle FillStyle", fill[rect_fill])
@@ -400,8 +400,8 @@ class ModelerCircuit(Modeler):
                 ]
             )
         elif isinstance(value, list) and len(value) == 2:
-            xpos = self._arg_with_dim(value[0])
-            ypos = self._arg_with_dim(value[1])
+            xpos = self._app.value_with_units(value[0])
+            ypos = self._app.value_with_units(value[1])
             self.oeditor.ChangeProperty(
                 [
                     "NAME:AllTabs",
@@ -457,20 +457,6 @@ class ModelerCircuit(Modeler):
         if not return_as_list:
             return ", ".join(sels)
         return sels
-
-    @pyaedt_function_handler()
-    def _arg_with_dim(self, value, units=None):
-        if units is None:
-            units = self.schematic_units
-        if isinstance(value, str):
-            try:
-                float(value)
-                val = f"{value}{units}"
-            except Exception:
-                val = value
-        else:
-            val = f"{value}{units}"
-        return val
 
 
 class ModelerNexxim(ModelerCircuit):

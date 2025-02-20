@@ -22,7 +22,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from __future__ import absolute_import
 
 import ast
 import codecs
@@ -1358,163 +1357,6 @@ def write_configuration_file(input_data, output_file):
         return _create_toml_file(input_data, output_file)
 
 
-# @pyaedt_function_handler()
-# def com_active_sessions(version=None, student_version=False, non_graphical=False):
-#     """Get information for the active COM AEDT sessions.
-#
-#     Parameters
-#     ----------
-#     version : str, optional
-#         Version to check. The default is ``None``, in which case all versions are checked.
-#         When specifying a version, you can use a three-digit format like ``"222"`` or a
-#         five-digit format like ``"2022.2"``.
-#     student_version : bool, optional
-#         Whether to check for student version sessions. The default is ``False``.
-#     non_graphical : bool, optional
-#         Whether to check only for active non-graphical sessions. The default is ``False``.
-#
-#     Returns
-#     -------
-#     list
-#         List of AEDT PIDs.
-#     """
-#     if student_version:
-#         keys = ["ansysedtsv.exe"]
-#     else:
-#         keys = ["ansysedt.exe"]
-#     long_version = None
-#     if len(version) > 6:
-#         version = version[-6:]
-#     if version and "." in version:
-#         long_version = version
-#         version = version[-4:].replace(".", "")
-#     if version < "221":
-#         version = version[:2] + "." + version[2]
-#         long_version = "20{}".format(version)
-#     sessions = []
-#     for p in psutil.process_iter():
-#         try:
-#             if p.name() in keys:
-#                 if long_version and _check_installed_version(os.path.dirname(p.exe()), long_version):
-#                     sessions.append(p.pid)
-#                     continue
-#                 cmd = p.cmdline()
-#                 if non_graphical and "-ng" in cmd or not non_graphical:
-#                     if not version or (version and version in cmd[0]):
-#                         sessions.append(p.pid)
-#         except Exception:
-#             pass
-#     return sessions
-#
-#
-# @pyaedt_function_handler()
-# def grpc_active_sessions(version=None, student_version=False, non_graphical=False):
-#     """Get information for the active gRPC AEDT sessions.
-#
-#     Parameters
-#     ----------
-#     version : str, optional
-#         Version to check. The default is ``None``, in which case all versions are checked.
-#         When specifying a version, you can use a three-digit format like ``"222"`` or a
-#         five-digit format like ``"2022.2"``.
-#     student_version : bool, optional
-#         Whether to check for student version sessions. The default is ``False``.
-#     non_graphical : bool, optional
-#         Whether to check only for active non-graphical sessions. The default is ``False``.
-#
-#     Returns
-#     -------
-#     list
-#         List of gRPC ports.
-#     """
-#     if student_version:
-#         keys = ["ansysedtsv.exe", "ansysedtsv"]
-#     else:
-#         keys = ["ansysedt.exe", "ansysedt"]
-#     if version and "." in version:
-#         version = version[-4:].replace(".", "")
-#     sessions = []
-#     for p in psutil.process_iter():
-#         try:
-#             if p.name() in keys:
-#                 cmd = p.cmdline()
-#                 if "-grpcsrv" in cmd:
-#                     if non_graphical and "-ng" in cmd or not non_graphical:
-#                         if not version or (version and version in cmd[0]):
-#                             try:
-#                                 sessions.append(
-#                                     int(cmd[cmd.index("-grpcsrv") + 1]),
-#                                 )
-#                             except (IndexError, ValueError):
-#                                 # default desktop grpc port.
-#                                 sessions.append(50051)
-#         except Exception:
-#             pass
-#     return sessions
-#
-#
-# def active_sessions(version=None, student_version=False, non_graphical=False):
-#     """Get information for the active AEDT sessions.
-#
-#     Parameters
-#     ----------
-#     version : str, optional
-#         Version to check. The default is ``None``, in which case all versions are checked.
-#         When specifying a version, you can use a three-digit format like ``"222"`` or a
-#         five-digit format like ``"2022.2"``.
-#     student_version : bool, optional
-#     non_graphical : bool, optional
-#
-#
-#     Returns
-#     -------
-#     list
-#         List of tuple (AEDT PIDs, port).
-#     """
-#     if student_version:
-#         keys = ["ansysedtsv.exe", "ansysedtsv"]
-#     else:
-#         keys = ["ansysedt.exe", "ansysedt"]
-#     if version and "." in version:
-#         version = version[-4:].replace(".", "")
-#     if version and version < "222":
-#         version = version[:2] + "." + version[2]
-#     sessions = []
-#     for p in psutil.process_iter():
-#         try:
-#             if p.name() in keys:
-#                 cmd = p.cmdline()
-#                 if non_graphical and "-ng" in cmd or not non_graphical:
-#                     if not version or (version and version in cmd[0]):
-#                         if "-grpcsrv" in cmd:
-#                             if not version or (version and version in cmd[0]):
-#                                 try:
-#                                     sessions.append(
-#                                         [
-#                                             p.pid,
-#                                             int(cmd[cmd.index("-grpcsrv") + 1]),
-#                                         ]
-#                                     )
-#                                 except (IndexError, ValueError):
-#                                     # default desktop grpc port.
-#                                     sessions.append(
-#                                         [
-#                                             p.pid,
-#                                             50051,
-#                                         ]
-#                                     )
-#                         else:
-#                             sessions.append(
-#                                 [
-#                                     p.pid,
-#                                     -1,
-#                                 ]
-#                             )
-#         except Exception:
-#             pass
-#     return sessions
-
-
 @pyaedt_function_handler()
 def active_sessions(version=None, student_version=False, non_graphical=False):
     """Get information for the active AEDT sessions.
@@ -2027,57 +1869,6 @@ rgb_color_codes = {
 }
 
 
-@pyaedt_function_handler()
-def _arg2dict(arg, dict_out):
-    if arg[0] == "NAME:DimUnits" or "NAME:Point" in arg[0]:
-        if arg[0][5:] in dict_out:
-            if isinstance(dict_out[arg[0][5:]][0], (list, tuple)):
-                dict_out[arg[0][5:]].append(list(arg[1:]))
-            else:
-                dict_out[arg[0][5:]] = [dict_out[arg[0][5:]]]
-                dict_out[arg[0][5:]].append(list(arg[1:]))
-        else:
-            dict_out[arg[0][5:]] = list(arg[1:])
-    elif arg[0][:5] == "NAME:":
-        top_key = arg[0][5:]
-        dict_in = {}
-        i = 1
-        while i < len(arg):
-            if arg[i][0][:5] == "NAME:" and (
-                isinstance(arg[i], (list, tuple)) or str(type(arg[i])) == r"<type 'List'>"
-            ):
-                _arg2dict(list(arg[i]), dict_in)
-                i += 1
-            elif arg[i][-2:] == ":=":
-                if str(type(arg[i + 1])) == r"<type 'List'>":
-                    if arg[i][:-2] in dict_in:
-                        dict_in[arg[i][:-2]].append(list(arg[i + 1]))
-                    else:
-                        dict_in[arg[i][:-2]] = list(arg[i + 1])
-                else:
-                    if arg[i][:-2] in dict_in:
-                        if isinstance(dict_in[arg[i][:-2]], list):
-                            dict_in[arg[i][:-2]].append(arg[i + 1])
-                        else:
-                            dict_in[arg[i][:-2]] = [dict_in[arg[i][:-2]]]
-                            dict_in[arg[i][:-2]].append(arg[i + 1])
-                    else:
-                        dict_in[arg[i][:-2]] = arg[i + 1]
-
-                i += 2
-            else:
-                raise ValueError("Incorrect data argument format")
-        if top_key in dict_out:
-            if isinstance(dict_out[top_key], list):
-                dict_out[top_key].append(dict_in)
-            else:
-                dict_out[top_key] = [dict_out[top_key], dict_in]
-        else:
-            dict_out[top_key] = dict_in
-    else:
-        raise ValueError("Incorrect data argument format")
-
-
 # FIXME: Remove usage of random module once IronPython compatibility is removed
 def _uname(name=None):
     """Append a 6-digit hash code to a specified name.
@@ -2134,7 +1925,7 @@ def _to_boolean(val):
 
 
 @pyaedt_function_handler()
-def _dim_arg(value, units):
+def _arg_with_dim(value, units):
     """Concatenate a specified units string to a numerical input.
 
     Parameters
@@ -2147,15 +1938,17 @@ def _dim_arg(value, units):
     Returns
     -------
     str
-
+        Concatenated string with value and units.
     """
-    try:
-        val = float(value)
-        if isinstance(value, int):
+    if isinstance(value, str):
+        try:
+            float(value)
+            val = f"{value}{units}"
+        except Exception:
             val = value
-        return str(val) + units
-    except Exception:
-        return value
+    else:
+        val = f"{value}{units}"
+    return val
 
 
 @pyaedt_function_handler()

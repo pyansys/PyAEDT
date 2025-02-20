@@ -29,8 +29,6 @@ This module provides all functionalities for creating and editing the mesh in th
 
 """
 
-from __future__ import absolute_import  # noreorder
-
 from ansys.aedt.core.generic.data_handlers import _dict2arg
 from ansys.aedt.core.generic.general_methods import PropsManager
 from ansys.aedt.core.generic.general_methods import generate_unique_name

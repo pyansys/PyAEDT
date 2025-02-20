@@ -29,8 +29,6 @@ You can initialize this module before launching an app or
 have the app automatically initialize it to the latest installed AEDT version.
 """
 
-from __future__ import absolute_import  # noreorder
-
 import atexit
 import datetime
 import gc

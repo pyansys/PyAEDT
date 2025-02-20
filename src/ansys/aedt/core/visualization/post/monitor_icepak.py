@@ -322,11 +322,11 @@ class Monitor:
                     [
                         "NAME:PointParameters",
                         "PointX:=",
-                        self._app.modeler._arg_with_dim(p_p[0]),
+                        self._app.value_with_units(p_p[0]),
                         "PointY:=",
-                        self._app.modeler._arg_with_dim(p_p[1]),
+                        self._app.value_with_units(p_p[1]),
                         "PointZ:=",
-                        self._app.modeler._arg_with_dim(p_p[2]),
+                        self._app.value_with_units(p_p[2]),
                     ],
                     ["NAME:Attributes", "Name:=", point_name, "Color:=", "(143 175 143)"],
                 )

@@ -184,7 +184,7 @@ class TestClass:
         assert pins["L10-1"].object_units == "mm"
         assert pins["L10-1"].componentname == "L10"
         assert pins["L10-1"].is_pin
-        assert pins["L10-1"].angle == "90deg" or pins["L10-1"].angle == "-270deg"
+        assert pins["L10-1"].angle == "0deg"
         assert pins["L10-1"].location[0] != 0
         assert pins["L10-1"].start_layer == "1_Top"
         assert pins["L10-1"].stop_layer == "1_Top"
@@ -455,3 +455,7 @@ class TestClass:
 
         assert aedtapp.delete_imported_data(table)
         assert table not in aedtapp.existing_analysis_sweeps
+
+    def test_27_value_with_units(self, aedtapp):
+        assert aedtapp.value_with_units("10mm") == "10mm"
+        assert aedtapp.value_with_units("10") == "10mm"

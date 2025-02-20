@@ -24,8 +24,6 @@
 
 """This module contains these Maxwell classes: ``Maxwell``, ``Maxwell2d``, and ``Maxwell3d``."""
 
-from __future__ import absolute_import  # noreorder
-
 import io
 import os
 import re
@@ -1182,12 +1180,12 @@ class Maxwell(CreateBoundaryMixin):
             {
                 "Type": winding_type,
                 "IsSolid": is_solid,
-                "Current": self.modeler._arg_with_dim(current, "A"),
-                "Resistance": self.modeler._arg_with_dim(resistance, "ohm"),
-                "Inductance": self.modeler._arg_with_dim(inductance, "H"),
-                "Voltage": self.modeler._arg_with_dim(voltage, "V"),
+                "Current": self.value_with_units(current, "A"),
+                "Resistance": self.value_with_units(resistance, "ohm"),
+                "Inductance": self.value_with_units(inductance, "H"),
+                "Voltage": self.value_with_units(voltage, "V"),
                 "ParallelBranchesNum": str(parallel_branches),
-                "Phase": self.modeler._arg_with_dim(phase, "deg"),
+                "Phase": self.value_with_units(phase, "deg"),
             }
         )
         bound = self._create_boundary(name, props, "Winding")
@@ -3298,7 +3296,7 @@ class Maxwell2d(Maxwell, FieldAnalysis3D, object):
     def model_depth(self, value):
         """Set model depth."""
         if isinstance(value, float) or isinstance(value, int):
-            value = self.modeler._arg_with_dim(value, self.modeler.model_units)
+            value = self.value_with_units(value, self.modeler.model_units)
         self.change_design_settings({"ModelDepth": value})
 
     @pyaedt_function_handler(linefilter="line_filter", objectfilter="object_filter")
@@ -3551,8 +3549,8 @@ class Maxwell2d(Maxwell, FieldAnalysis3D, object):
         props = dict(
             {
                 "Objects": assignment,
-                "ResistanceValue": self.modeler._arg_with_dim(resistance, "ohm"),
-                "InductanceValue": self.modeler._arg_with_dim(inductance, "H"),
+                "ResistanceValue": self.value_with_units(resistance, "ohm"),
+                "InductanceValue": self.value_with_units(inductance, "H"),
             }
         )
         return self._create_boundary(boundary, props, "EndConnection")

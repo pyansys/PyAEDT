@@ -24,8 +24,6 @@
 
 """This module contains the ``Mechanical`` class."""
 
-from __future__ import absolute_import  # noreorder
-
 from ansys.aedt.core.application.analysis_3d import FieldAnalysis3D
 from ansys.aedt.core.generic.constants import SOLUTIONS
 from ansys.aedt.core.generic.errors import AEDTRuntimeError
