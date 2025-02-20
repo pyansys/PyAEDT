@@ -90,6 +90,7 @@ config = {
     "skip_circuits": False,
     "skip_edb": False,
     "skip_debug": False,
+    "skip_modelithics": True,
     "local": False,
     "use_grpc": True,
     "disable_sat_bounding_box": True,

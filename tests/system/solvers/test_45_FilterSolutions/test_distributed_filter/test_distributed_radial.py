@@ -22,10 +22,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from ansys.aedt.core.generic.general_methods import is_linux
+from ansys.aedt.core.generic.settings import is_linux
 import pytest
 
-from tests.system.general.conftest import config
+from tests.system.solvers.conftest import config
 
 
 @pytest.mark.skipif(is_linux, reason="FilterSolutions API is not applicable on Linux.")

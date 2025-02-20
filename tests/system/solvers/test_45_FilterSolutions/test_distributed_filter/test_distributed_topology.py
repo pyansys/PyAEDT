@@ -79,7 +79,7 @@ class TestClass:
             distributed_design.topology.first_shunt = False
         assert (
             info.value.args[0]
-            == "The First Element Shunt or Series property is not applicable for the "
+            == "The First Element Shunt or Series property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -98,7 +98,7 @@ class TestClass:
             distributed_design.topology.first_fat = True
         assert (
             info.value.args[0]
-            == "The First Element Fat or Thin property is not applicable for the "
+            == "The First Element Fat or Thin property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -114,7 +114,7 @@ class TestClass:
             distributed_design.topology.use_series_caps = True
         assert (
             info.value.args[0]
-            == "The Series Caps property is not applicable for the "
+            == "The Series Caps property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -134,7 +134,7 @@ class TestClass:
             distributed_design.topology.combine_stubs = True
         assert (
             info.value.args[0]
-            == "The Combine Stubs property is not applicable for the "
+            == "The Combine Stubs property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -154,7 +154,7 @@ class TestClass:
             distributed_design.topology.use_coupled_lines = True
         assert (
             info.value.args[0]
-            == "The Coupled Lines property is not applicable for the "
+            == "The Coupled Lines property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -175,7 +175,7 @@ class TestClass:
             distributed_design.topology.equal_width_approx = True
         assert (
             info.value.args[0]
-            == "The Equal Width property is not applicable for the "
+            == "The Equal Width property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -196,7 +196,7 @@ class TestClass:
             distributed_design.topology.open_stub_ground = True
         assert (
             info.value.args[0]
-            == "The Open Stub Ground property is not applicable for the "
+            == "The Open Stub Ground property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -217,7 +217,7 @@ class TestClass:
             distributed_design.topology.left_ground_side = True
         assert (
             info.value.args[0]
-            == "The Left Ground Side property is not applicable for the "
+            == "The Left Ground Side property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -238,7 +238,7 @@ class TestClass:
             distributed_design.topology.equal_stub_widths = True
         assert (
             info.value.args[0]
-            == "The Equal Stub Widths property is not applicable for the "
+            == "The Equal Stub Widths property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -259,7 +259,7 @@ class TestClass:
             distributed_design.topology.center_z0_impedance = "55"
         assert (
             info.value.args[0]
-            == "The Center Z0 property is not applicable for the "
+            == "The Center Z0 property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -278,7 +278,7 @@ class TestClass:
             distributed_design.topology.equal_width_conductors = True
         assert (
             info.value.args[0]
-            == "The Equal Width property is not applicable for the "
+            == "The Equal Width property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -299,7 +299,7 @@ class TestClass:
             distributed_design.topology.tapped = True
         assert (
             info.value.args[0]
-            == "The Tapped property is not applicable for the "
+            == "The Tapped property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -320,7 +320,7 @@ class TestClass:
             distributed_design.topology.pinned = True
         assert (
             info.value.args[0]
-            == "The Pinned property is not applicable for the "
+            == "The Pinned property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -347,7 +347,7 @@ class TestClass:
             distributed_design.topology.stub_taps = True
         assert (
             info.value.args[0]
-            == "The Stub Taps property is not applicable for the "
+            == "The Stub Taps property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -368,7 +368,7 @@ class TestClass:
             distributed_design.topology.via_ends = True
         assert (
             info.value.args[0]
-            == "The Via Ends property is not applicable for the "
+            == "The Via Ends property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -391,7 +391,7 @@ class TestClass:
             distributed_design.topology.resonator_line_width = "1.27 mm"
         assert (
             info.value.args[0]
-            == "The Line Width property is not applicable for the "
+            == "The Line Width property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -409,7 +409,7 @@ class TestClass:
             distributed_design.topology.resonator_rotation_angle = "0"
         assert (
             info.value.args[0]
-            == "The Rotation Angle property is not applicable for the "
+            == "The Rotation Angle property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -427,7 +427,7 @@ class TestClass:
             distributed_design.topology.mitered_corners = True
         assert (
             info.value.args[0]
-            == "The Mitered Corners property is not applicable for the "
+            == "The Mitered Corners property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -448,7 +448,7 @@ class TestClass:
             distributed_design.topology.hairpin_gap_width = "0.127 mm"
         assert (
             info.value.args[0]
-            == "The Gap Width property is not applicable for the "
+            == "The Gap Width property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -466,7 +466,7 @@ class TestClass:
             distributed_design.topology.miniature_hairpin_gap_width = "635 um"
         assert (
             info.value.args[0]
-            == "The Gap Width property is not applicable for the "
+            == "The Gap Width property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -484,7 +484,7 @@ class TestClass:
             distributed_design.topology.ring_resonator_gap_width = "635 um"
         assert (
             info.value.args[0]
-            == "The Gap Width property is not applicable for the "
+            == "The Gap Width property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -502,7 +502,7 @@ class TestClass:
             distributed_design.topology.hairpin_extension_length = "0 mm"
         assert (
             info.value.args[0]
-            == "The Tuning Extension property is not applicable for the "
+            == "The Tuning Extension property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -520,7 +520,7 @@ class TestClass:
             distributed_design.topology.miniature_hairpin_end_curl_extension = "0 mm"
         assert (
             info.value.args[0]
-            == "The Tuning Extension property is not applicable for the "
+            == "The Tuning Extension property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -538,7 +538,7 @@ class TestClass:
             distributed_design.topology.ring_resonator_end_gap_extension = "0 mm"
         assert (
             info.value.args[0]
-            == "The Tuning Extension property is not applicable for the "
+            == "The Tuning Extension property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -556,7 +556,7 @@ class TestClass:
             distributed_design.topology.tuning_type_1 = True
         assert (
             info.value.args[0]
-            == "The Tuning Type property is not applicable for the "
+            == "The Tuning Type property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -577,7 +577,7 @@ class TestClass:
             distributed_design.topology.tap_position = TapPosition.AUTO
         assert (
             info.value.args[0]
-            == "The Tap Position property is not applicable for the "
+            == "The Tap Position property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -598,7 +598,7 @@ class TestClass:
             distributed_design.topology.wide_band = True
         assert (
             info.value.args[0]
-            == "The Wide Band property is not applicable for the "
+            == "The Wide Band property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -621,7 +621,7 @@ class TestClass:
             distributed_design.topology.open_ends = True
         assert (
             info.value.args[0]
-            == "The Open Ends property is not applicable for the "
+            == "The Open Ends property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -642,7 +642,7 @@ class TestClass:
             distributed_design.topology.combline_half_length_frequency = "4G"
         assert (
             info.value.args[0]
-            == "The 1/2 Length Frequency property is not applicable for the "
+            == "The 1/2 Length Frequency property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -660,7 +660,7 @@ class TestClass:
             distributed_design.topology.coupled_segments_quarter_length_frequency = "4G"
         assert (
             info.value.args[0]
-            == "The 1/4 Length Frequency property is not applicable for the "
+            == "The 1/4 Length Frequency property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )
@@ -692,7 +692,7 @@ class TestClass:
             distributed_design.topology.resonator_length_extension = True
         assert (
             info.value.args[0]
-            == "The Enable Extension property is not applicable for the "
+            == "The Enable Extension property is not applicable to the "
             + convert_string(distributed_design.topology.topology_type.name)
             + " topology"
         )

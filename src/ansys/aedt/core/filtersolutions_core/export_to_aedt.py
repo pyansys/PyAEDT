@@ -492,6 +492,51 @@ class ExportToAedt:
         self._dll.removeModelithicsResistorsFamily.argtype = c_char_p
         self._dll.removeModelithicsResistorsFamily.restype = c_int
 
+        self._dll.setCircuitDesign.argtype = c_bool
+        self._dll.setCircuitDesign.restype = c_int
+        self._dll.getCircuitDesign.argtype = POINTER(c_bool)
+        self._dll.getCircuitDesign.restype = c_int
+
+        self._dll.setHFSSDesign.argtype = c_bool
+        self._dll.setHFSSDesign.restype = c_int
+        self._dll.getHFSSDesign.argtype = POINTER(c_bool)
+        self._dll.getHFSSDesign.restype = c_int
+
+        self._dll.setHFSS3DLDesign.argtype = c_bool
+        self._dll.setHFSS3DLDesign.restype = c_int
+        self._dll.getHFSS3DLDesign.argtype = POINTER(c_bool)
+        self._dll.getHFSS3DLDesign.restype = c_int
+
+        self._dll.setFullParametrization.argtype = c_bool
+        self._dll.setFullParametrization.restype = c_int
+        self._dll.getFullParametrization.argtype = POINTER(c_bool)
+        self._dll.getFullParametrization.restype = c_int
+
+        self._dll.setPortsOnSides.argtype = c_bool
+        self._dll.setPortsOnSides.restype = c_int
+        self._dll.getPortsOnSides.argtype = POINTER(c_bool)
+        self._dll.getPortsOnSides.restype = c_int
+
+        self._dll.setFlipXAxis.argtype = c_bool
+        self._dll.setFlipXAxis.restype = c_int
+        self._dll.getFlipXAxis.argtype = POINTER(c_bool)
+        self._dll.getFlipXAxis.restype = c_int
+
+        self._dll.setFlipYAxis.argtype = c_bool
+        self._dll.setFlipYAxis.restype = c_int
+        self._dll.getFlipYAxis.argtype = POINTER(c_bool)
+        self._dll.getFlipYAxis.restype = c_int
+
+        self._dll.setIncludeTuningPorts.argtype = c_bool
+        self._dll.setIncludeTuningPorts.restype = c_int
+        self._dll.getIncludeTuningPorts.argtype = POINTER(c_bool)
+        self._dll.getIncludeTuningPorts.restype = c_int
+
+        self._dll.setSeriesHorizontalPorts.argtype = c_bool
+        self._dll.setSeriesHorizontalPorts.restype = c_int
+        self._dll.getSeriesHorizontalPorts.argtype = POINTER(c_bool)
+        self._dll.getSeriesHorizontalPorts.restype = c_int
+
     @property
     def schematic_name(self) -> str:
         """Name of the exported schematic in ``AEDT``, displayed as the project and design names.
@@ -519,13 +564,13 @@ class ExportToAedt:
         """
         simulate_after_export_enabled = c_bool()
         status = self._dll.getSimulateAfterExport(byref(simulate_after_export_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(simulate_after_export_enabled.value)
 
     @simulate_after_export_enabled.setter
     def simulate_after_export_enabled(self, simulate_after_export_enabled: bool):
         status = self._dll.setSimulateAfterExport(simulate_after_export_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def include_group_delay_enabled(self) -> bool:
@@ -537,13 +582,13 @@ class ExportToAedt:
         """
         include_group_delay_enabled = c_bool()
         status = self._dll.getGroupDelay(byref(include_group_delay_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(include_group_delay_enabled.value)
 
     @include_group_delay_enabled.setter
     def include_group_delay_enabled(self, include_group_delay_enabled: bool):
         status = self._dll.setGroupDelay(include_group_delay_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def include_gt_gain_enabled(self) -> bool:
@@ -555,13 +600,13 @@ class ExportToAedt:
         """
         include_gt_gain_enabled = c_bool()
         status = self._dll.getGTGain(byref(include_gt_gain_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(include_gt_gain_enabled.value)
 
     @include_gt_gain_enabled.setter
     def include_gt_gain_enabled(self, include_gt_gain_enabled: bool):
         status = self._dll.setGTGain(include_gt_gain_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def include_vgsl_enabled(self) -> bool:
@@ -573,13 +618,13 @@ class ExportToAedt:
         """
         include_vgsl_enabled = c_bool()
         status = self._dll.getVGSL(byref(include_vgsl_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(include_vgsl_enabled.value)
 
     @include_vgsl_enabled.setter
     def include_vgsl_enabled(self, include_vgsl_enabled: bool):
         status = self._dll.setVGSL(include_vgsl_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def include_vgin_enabled(self) -> bool:
@@ -591,13 +636,13 @@ class ExportToAedt:
         """
         include_vgin_enabled = c_bool()
         status = self._dll.getVGIN(byref(include_vgin_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(include_vgin_enabled.value)
 
     @include_vgin_enabled.setter
     def include_vgin_enabled(self, include_vgin_enabled: bool):
         status = self._dll.setVGIN(include_vgin_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def include_input_return_loss_s11_enabled(self) -> bool:
@@ -610,13 +655,13 @@ class ExportToAedt:
         """
         include_input_return_loss_s11_enabled = c_bool()
         status = self._dll.getS11(byref(include_input_return_loss_s11_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(include_input_return_loss_s11_enabled.value)
 
     @include_input_return_loss_s11_enabled.setter
     def include_input_return_loss_s11_enabled(self, include_input_return_loss_s11_enabled: bool):
         status = self._dll.setS11(include_input_return_loss_s11_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def include_forward_transfer_s21_enabled(self) -> bool:
@@ -628,13 +673,13 @@ class ExportToAedt:
         """
         include_forward_transfer_s21_enabled = c_bool()
         status = self._dll.getS21(byref(include_forward_transfer_s21_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(include_forward_transfer_s21_enabled.value)
 
     @include_forward_transfer_s21_enabled.setter
     def include_forward_transfer_s21_enabled(self, include_forward_transfer_s21_enabled: bool):
         status = self._dll.setS21(include_forward_transfer_s21_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def include_reverse_transfer_s12_enabled(self) -> bool:
@@ -646,13 +691,13 @@ class ExportToAedt:
         """
         include_reverse_transfer_s12_enabled = c_bool()
         status = self._dll.getS12(byref(include_reverse_transfer_s12_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(include_reverse_transfer_s12_enabled.value)
 
     @include_reverse_transfer_s12_enabled.setter
     def include_reverse_transfer_s12_enabled(self, include_reverse_transfer_s12_enabled: bool):
         status = self._dll.setS12(include_reverse_transfer_s12_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def include_output_return_loss_s22_enabled(self) -> bool:
@@ -664,13 +709,13 @@ class ExportToAedt:
         """
         include_output_return_loss_s22_enabled = c_bool()
         status = self._dll.getS22(byref(include_output_return_loss_s22_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(include_output_return_loss_s22_enabled.value)
 
     @include_output_return_loss_s22_enabled.setter
     def include_output_return_loss_s22_enabled(self, include_output_return_loss_s22_enabled: bool):
         status = self._dll.setS22(include_output_return_loss_s22_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def db_format_enabled(self) -> bool:
@@ -682,13 +727,13 @@ class ExportToAedt:
         """
         db_format_enabled = c_bool()
         status = self._dll.getDbFormat(byref(db_format_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(db_format_enabled.value)
 
     @db_format_enabled.setter
     def db_format_enabled(self, db_format_enabled: bool):
         status = self._dll.setDbFormat(db_format_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def rectangular_plot_enabled(self) -> bool:
@@ -701,13 +746,13 @@ class ExportToAedt:
         """
         rectangular_plot_enabled = c_bool()
         status = self._dll.getRectPlot(byref(rectangular_plot_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(rectangular_plot_enabled.value)
 
     @rectangular_plot_enabled.setter
     def rectangular_plot_enabled(self, rectangular_plot_enabled: bool):
         status = self._dll.setRectPlot(rectangular_plot_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def smith_plot_enabled(self) -> bool:
@@ -720,13 +765,13 @@ class ExportToAedt:
         """
         smith_plot_enabled = c_bool()
         status = self._dll.getSmithPlot(byref(smith_plot_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(smith_plot_enabled.value)
 
     @smith_plot_enabled.setter
     def smith_plot_enabled(self, smith_plot_enabled: bool):
         status = self._dll.setSmithPlot(smith_plot_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def polar_plot_enabled(self) -> bool:
@@ -738,13 +783,13 @@ class ExportToAedt:
         """
         polar_plot_enabled = c_bool()
         status = self._dll.getPolarPlot(byref(polar_plot_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(polar_plot_enabled.value)
 
     @polar_plot_enabled.setter
     def polar_plot_enabled(self, polar_plot_enabled: bool):
         status = self._dll.setPolarPlot(polar_plot_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def table_data_enabled(self) -> bool:
@@ -756,13 +801,13 @@ class ExportToAedt:
         """
         table_data_enabled = c_bool()
         status = self._dll.getTableData(byref(table_data_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(table_data_enabled.value)
 
     @table_data_enabled.setter
     def table_data_enabled(self, table_data_enabled: bool):
         status = self._dll.setTableData(table_data_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def optimitrics_enabled(self) -> bool:
@@ -774,13 +819,13 @@ class ExportToAedt:
         """
         optimitrics_enabled = c_bool()
         status = self._dll.getOptimetrics(byref(optimitrics_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(optimitrics_enabled.value)
 
     @optimitrics_enabled.setter
     def optimitrics_enabled(self, optimitrics_enabled: bool):
         status = self._dll.setOptimetrics(optimitrics_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def optimize_after_export_enabled(self) -> bool:
@@ -792,13 +837,13 @@ class ExportToAedt:
         """
         optimize_after_export_enabled = c_bool()
         status = self._dll.getOptimizeAfterExport(byref(optimize_after_export_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(optimize_after_export_enabled.value)
 
     @optimize_after_export_enabled.setter
     def optimize_after_export_enabled(self, optimize_after_export_enabled: bool):
         status = self._dll.setOptimizeAfterExport(optimize_after_export_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     def export_design(self, export_format=None, export_creation_mode=None, export_path=None):
         """Export the design directly to ``AEDT` or generate a ``Python`` script for exporting.
@@ -831,7 +876,7 @@ class ExportToAedt:
                 os.makedirs(directory_path)
         export_path_bytes = bytes(export_path, "ascii")
         status = self._dll.exportDesign(export_format.value, export_creation_mode.value, export_path_bytes)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     def load_library_parts_config(self, load_library_parts_config_string):
         self._dll_interface.set_string(self._dll.loadLibraryPartsConf, load_library_parts_config_string)
@@ -843,7 +888,7 @@ class ExportToAedt:
         """Imported ``AEDT`` tuned parameter variables back into the ``FilterSolutions`` project."""
         size = c_int()
         status = self._dll.importTunedVariablesSize(byref(size))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         netlist_string = self._dll_interface.get_string(self._dll.importTunedVariables, max_size=size.value)
         return netlist_string
 
@@ -860,14 +905,14 @@ class ExportToAedt:
         index = c_int()
         part_libraries_list = list(PartLibraries)
         status = self._dll.getPartLibraries(byref(index))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         part_libraries = part_libraries_list[index.value]
         return part_libraries
 
     @part_libraries.setter
     def part_libraries(self, library_type: PartLibraries):
         status = self._dll.setPartLibraries(library_type.value)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def interconnect_length_to_width_ratio(self) -> str:
@@ -1207,23 +1252,23 @@ class ExportToAedt:
         """
         interconnect_geometry_optimization_enabled = c_bool()
         status = self._dll.getInterconnectGeometryOptimization(byref(interconnect_geometry_optimization_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(interconnect_geometry_optimization_enabled.value)
 
     @interconnect_geometry_optimization_enabled.setter
     def interconnect_geometry_optimization_enabled(self, interconnect_geometry_optimization_enabled: bool):
         status = self._dll.setInterconnectGeometryOptimization(interconnect_geometry_optimization_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     def update_interconncet_parameters(self):  # pragma: no cover
         """Update interconnect geometry equations with entered and selected parameters"""
         status = self._dll.updateInterConnectParmeters()
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     def update_inductor_capacitor_tolerances(self):  # pragma: no cover
         """Update interconnect inductor and capacitor tolerances with entered values"""
         status = self._dll.updatePartsTolerances()
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def substrate_type(self) -> SubstrateType:
@@ -1259,7 +1304,7 @@ class ExportToAedt:
         substrate_er_index = c_int()
         substrate_er_value_str = create_string_buffer(100)
         status = self._dll.getEr(substrate_er_value_str, byref(substrate_er_index), 100)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         if substrate_er_index.value in [e.value for e in SubstrateEr]:
             return SubstrateEr(substrate_er_index.value)
         else:
@@ -1277,7 +1322,7 @@ class ExportToAedt:
             raise ValueError("Invalid substrate input. Must be a SubstrateEr enum member or a string.")
         substrate_er_value_bytes = bytes(substrate_er_value, "ascii")
         status = self._dll.setEr(substrate_er_value_bytes, substrate_er_index)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def substrate_resistivity(self) -> Union[SubstrateResistivity, str]:
@@ -1293,7 +1338,7 @@ class ExportToAedt:
         substrate_resistivity_index = c_int()
         substrate_resistivity_value_str = create_string_buffer(100)
         status = self._dll.getResistivity(substrate_resistivity_value_str, byref(substrate_resistivity_index), 100)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         if substrate_resistivity_index.value in [e.value for e in SubstrateResistivity]:
             return SubstrateResistivity(substrate_resistivity_index.value)
         else:
@@ -1311,7 +1356,7 @@ class ExportToAedt:
             raise ValueError("Invalid substrate input. Must be a SubstrateResistivity enum member or a string.")
         substrate_resistivity_value_bytes = bytes(substrate_resistivity_value, "ascii")
         status = self._dll.setResistivity(substrate_resistivity_value_bytes, substrate_resistivity_index)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def substrate_loss_tangent(self) -> Union[SubstrateEr, str]:
@@ -1327,7 +1372,7 @@ class ExportToAedt:
         substrate_loss_tangent_index = c_int()
         substrate_loss_tangent_value_str = create_string_buffer(100)
         status = self._dll.getLossTangent(substrate_loss_tangent_value_str, byref(substrate_loss_tangent_index), 100)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         if substrate_loss_tangent_index.value in [e.value for e in SubstrateEr]:
             return SubstrateEr(substrate_loss_tangent_index.value)
         else:
@@ -1345,7 +1390,7 @@ class ExportToAedt:
             raise ValueError("Invalid substrate input. Must be a SubstrateEr enum member or a string.")
         substrate_loss_tangent_value_bytes = bytes(substrate_loss_tangent_value, "ascii")
         status = self._dll.setLossTangent(substrate_loss_tangent_value_bytes, substrate_loss_tangent_index)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def substrate_conductor_thickness(self) -> str:
@@ -1447,13 +1492,13 @@ class ExportToAedt:
         """
         substrate_unbalanced_stripline_enabled = c_bool()
         status = self._dll.getUnbalancedStripLine(byref(substrate_unbalanced_stripline_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(substrate_unbalanced_stripline_enabled.value)
 
     @substrate_unbalanced_stripline_enabled.setter
     def substrate_unbalanced_stripline_enabled(self, substrate_unbalanced_stripline_enabled: bool):
         status = self._dll.setUnbalancedStripLine(substrate_unbalanced_stripline_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def substrate_cover_height_enabled(self) -> bool:
@@ -1465,18 +1510,18 @@ class ExportToAedt:
         """
         substrate_cover_height_enabled = c_bool()
         status = self._dll.getGroundedCoverAboveLine(byref(substrate_cover_height_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(substrate_cover_height_enabled.value)
 
     @substrate_cover_height_enabled.setter
     def substrate_cover_height_enabled(self, substrate_cover_height_enabled: bool):
         status = self._dll.setGroundedCoverAboveLine(substrate_cover_height_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     def load_modelithics_models(self):
         """Load ``Modelithics`` models from ``AEDT``."""
         status = self._dll.loadModelithicsModels()
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def modelithics_include_interconnect_enabled(self) -> bool:
@@ -1488,13 +1533,13 @@ class ExportToAedt:
         """
         modelithics_include_interconnect_enabled = c_bool()
         status = self._dll.getModelithicsIncludeInterconnect(byref(modelithics_include_interconnect_enabled))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return bool(modelithics_include_interconnect_enabled.value)
 
     @modelithics_include_interconnect_enabled.setter
     def modelithics_include_interconnect_enabled(self, modelithics_include_interconnect_enabled: bool):
         status = self._dll.setModelithicsIncludeInterconnect(modelithics_include_interconnect_enabled)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
 
     @property
     def modelithics_inductor_list_count(self) -> int:
@@ -1506,7 +1551,7 @@ class ExportToAedt:
         """
         count = c_int()
         status = self._dll.getModelithicsInductorsListCount(byref(count))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return int(count.value)
 
     def modelithics_inductor_list(self, row_index) -> str:
@@ -1515,7 +1560,7 @@ class ExportToAedt:
 
         modelithics_inductor_buffer = create_string_buffer(100)
         status = self._dll.getModelithicsInductorsList(row_index, modelithics_inductor_buffer, 100)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         modelithics_inductor = modelithics_inductor_buffer.value.decode("utf-8")
         return modelithics_inductor
 
@@ -1547,7 +1592,7 @@ class ExportToAedt:
         """
         count = c_int()
         status = self._dll.getModelithicsInductorsFamilyListCount(byref(count))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return int(count.value)
 
     def modelithics_inductor_family_list(self, index) -> str:
@@ -1564,7 +1609,7 @@ class ExportToAedt:
         """
         modelithics_inductor_family_buffer = create_string_buffer(100)
         status = self._dll.getModelithicsInductorsFamilyList(index, modelithics_inductor_family_buffer, 100)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         modelithics_inductor_family = modelithics_inductor_family_buffer.value.decode("utf-8")
         return modelithics_inductor_family
 
@@ -1598,7 +1643,7 @@ class ExportToAedt:
         """
         count = c_int()
         status = self._dll.getModelithicsCapacitorsListCount(byref(count))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return int(count.value)
 
     def modelithics_capacitor_list(self, row_index) -> str:
@@ -1607,7 +1652,7 @@ class ExportToAedt:
 
         modelithics_capacitor_buffer = create_string_buffer(100)
         status = self._dll.getModelithicsCapacitorsList(row_index, modelithics_capacitor_buffer, 100)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         modelithics_capacitor = modelithics_capacitor_buffer.value.decode("utf-8")
         return modelithics_capacitor
 
@@ -1639,7 +1684,7 @@ class ExportToAedt:
         """
         count = c_int()
         status = self._dll.getModelithicsCapacitorsFamilyListCount(byref(count))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return int(count.value)
 
     def modelithics_capacitor_family_list(self, index) -> str:
@@ -1656,7 +1701,7 @@ class ExportToAedt:
         """
         modelithics_capacitor_family_buffer = create_string_buffer(100)
         status = self._dll.getModelithicsCapacitorsFamilyList(index, modelithics_capacitor_family_buffer, 100)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         modelithics_capacitor_family = modelithics_capacitor_family_buffer.value.decode("utf-8")
         return modelithics_capacitor_family
 
@@ -1690,7 +1735,7 @@ class ExportToAedt:
         """
         count = c_int()
         status = self._dll.getModelithicsResistorsListCount(byref(count))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return int(count.value)
 
     def modelithics_resistor_list(self, row_index) -> str:
@@ -1699,7 +1744,7 @@ class ExportToAedt:
 
         modelithics_resistor_buffer = create_string_buffer(100)
         status = self._dll.getModelithicsResistorsList(row_index, modelithics_resistor_buffer, 100)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         modelithics_resistor = modelithics_resistor_buffer.value.decode("utf-8")
         return modelithics_resistor
 
@@ -1731,7 +1776,7 @@ class ExportToAedt:
         """
         count = c_int()
         status = self._dll.getModelithicsResistorsFamilyListCount(byref(count))
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         return int(count.value)
 
     def modelithics_resistor_family_list(self, index) -> str:
@@ -1749,7 +1794,7 @@ class ExportToAedt:
         """
         modelithics_resistor_family_buffer = create_string_buffer(100)
         status = self._dll.getModelithicsResistorsFamilyList(index, modelithics_resistor_family_buffer, 100)
-        ansys.aedt.core.filtersolutions_core._dll_interface().raise_error(status)
+        self._dll_interface.raise_error(status)
         modelithics_resistor_family = modelithics_resistor_family_buffer.value.decode("utf-8")
         return modelithics_resistor_family
 
@@ -1772,3 +1817,191 @@ class ExportToAedt:
             Name of the resistor family.
         """
         self._dll_interface.set_string(self._dll.removeModelithicsResistorsFamily, modelithics_resistor)
+
+    @property
+    def insert_circuit_design(self) -> bool:
+        """Flag indicating if the filter is inserted as an ``AEDT Circuit Design``.
+
+        Returns
+        -------
+        bool
+        """
+        insert_circuit_design = c_bool()
+        status = self._dll.getCircuitDesign(byref(insert_circuit_design))
+        self._dll_interface.raise_error(status)
+        return bool(insert_circuit_design.value)
+
+    @insert_circuit_design.setter
+    def insert_circuit_design(self, insert_circuit_design: bool):
+        status = self._dll.setCircuitDesign(insert_circuit_design)
+        self._dll_interface.raise_error(status)
+
+    @property
+    def insert_hfss_design(self) -> bool:
+        """Flag indicating if the filter is inserted as an ``AEDT HFSS Design``.
+
+        Returns
+        -------
+        bool
+        """
+        insert_hfss_design = c_bool()
+        status = self._dll.getHFSSDesign(byref(insert_hfss_design))
+        self._dll_interface.raise_error(status)
+        return bool(insert_hfss_design.value)
+
+    @insert_hfss_design.setter
+    def insert_hfss_design(self, insert_hfss_design: bool):
+        status = self._dll.setHFSSDesign(insert_hfss_design)
+        self._dll_interface.raise_error(status)
+
+    @property
+    def insert_hfss_3dl_design(self) -> bool:
+        """Flag indicating if the filter is inserted as an ``AEDT HFSS 3D Layout Design``.
+
+        Returns
+        -------
+        bool
+        """
+        insert_hfss_3dl_design = c_bool()
+        status = self._dll.getHFSS3DLDesign(byref(insert_hfss_3dl_design))
+        self._dll_interface.raise_error(status)
+        return bool(insert_hfss_3dl_design.value)
+
+    @insert_hfss_3dl_design.setter
+    def insert_hfss_3dl_design(self, insert_hfss_3dl_design: bool):
+        status = self._dll.setHFSS3DLDesign(insert_hfss_3dl_design)
+        self._dll_interface.raise_error(status)
+
+    @property
+    def full_parametrization_enabled(self) -> bool:
+        """Flag indicating if the parameter equations are used to define layout geometries for
+        tuning and optimizating purpose in ``HFSS``.
+
+        Returns
+        -------
+        bool
+        """
+        full_parametrization_enabled = c_bool()
+        status = self._dll.getFullParametrization(byref(full_parametrization_enabled))
+        self._dll_interface.raise_error(status)
+        return bool(full_parametrization_enabled.value)
+
+    @full_parametrization_enabled.setter
+    def full_parametrization_enabled(self, full_parametrization_enabled: bool):
+        status = self._dll.setFullParametrization(full_parametrization_enabled)
+        self._dll_interface.raise_error(status)
+
+    @property
+    def ports_always_on_sides_enabled(self) -> bool:
+        """Flag indicating if the ports are always placed on the side walls.
+
+        Returns
+        -------
+        bool
+        """
+        ports_always_on_sides_enabled = c_bool()
+        status = self._dll.getPortsOnSides(byref(ports_always_on_sides_enabled))
+        self._dll_interface.raise_error(status)
+        return bool(ports_always_on_sides_enabled.value)
+
+    @ports_always_on_sides_enabled.setter
+    def ports_always_on_sides_enabled(self, ports_always_on_sides_enabled: bool):
+        status = self._dll.setPortsOnSides(ports_always_on_sides_enabled)
+        self._dll_interface.raise_error(status)
+
+    @property
+    def reverse_x_axis_enabled(self) -> bool:
+        """Flag indicating if the layout is mirrored along the x-axis.
+
+        Returns
+        -------
+        bool
+        """
+        reverse_x_axis_enabled = c_bool()
+        status = self._dll.getFlipXAxis(byref(reverse_x_axis_enabled))
+        self._dll_interface.raise_error(status)
+        return bool(reverse_x_axis_enabled.value)
+
+    @reverse_x_axis_enabled.setter
+    def reverse_x_axis_enabled(self, reverse_x_axis_enabled: bool):
+        status = self._dll.setFlipXAxis(reverse_x_axis_enabled)
+        self._dll_interface.raise_error(status)
+
+    @property
+    def reverse_y_axis_enabled(self) -> bool:
+        """Flag indicating if the layout is mirrored along the y-axis.
+
+        Returns
+        -------
+        bool
+        """
+        reverse_y_axis_enabled = c_bool()
+        status = self._dll.getFlipYAxis(byref(reverse_y_axis_enabled))
+        self._dll_interface.raise_error(status)
+        return bool(reverse_y_axis_enabled.value)
+
+    @reverse_y_axis_enabled.setter
+    def reverse_y_axis_enabled(self, reverse_y_axis_enabled: bool):
+        status = self._dll.setFlipYAxis(reverse_y_axis_enabled)
+        self._dll_interface.raise_error(status)
+
+    @property
+    def export_with_tuning_port_format_enabled(self) -> bool:
+        """Flag indicating if the export with tuning port format is enabled.
+
+        Returns
+        -------
+        bool
+        """
+        export_with_tuning_port_format_enabled = c_bool()
+        status = self._dll.getIncludeTuningPorts(byref(export_with_tuning_port_format_enabled))
+        self._dll_interface.raise_error(status)
+        return bool(export_with_tuning_port_format_enabled.value)
+
+    @export_with_tuning_port_format_enabled.setter
+    def export_with_tuning_port_format_enabled(self, export_with_tuning_port_format_enabled: bool):
+        status = self._dll.setIncludeTuningPorts(export_with_tuning_port_format_enabled)
+        self._dll_interface.raise_error(status)
+
+    @property
+    def use_series_horizontal_ports_enabled(self) -> bool:
+        """Flag indicating if  horizontal ports are used for series element only cases.
+
+        Returns
+        -------
+        bool
+        """
+        use_series_horizontal_ports_enabled = c_bool()
+        status = self._dll.getSeriesHorizontalPorts(byref(use_series_horizontal_ports_enabled))
+        self._dll_interface.raise_error(status)
+        return bool(use_series_horizontal_ports_enabled.value)
+
+    @use_series_horizontal_ports_enabled.setter
+    def use_series_horizontal_ports_enabled(self, use_series_horizontal_ports_enabled: bool):
+        status = self._dll.setSeriesHorizontalPorts(use_series_horizontal_ports_enabled)
+        self._dll_interface.raise_error(status)
+
+    def import_tuned_variables_port_tuning(self):
+        """Import tuned variables from the port tuning project."""
+        status = self._dll.importPortTunedVariables()
+        self._dll_interface.raise_error(status)
+
+    def import_and_reexport_over_port_tuning(self):
+        """Import tuned variables and export back over the port tuning project."""
+        status = self._dll.importReexportPortTunedVariables()
+        self._dll_interface.raise_error(status)
+
+    def simulate_full_port_tuning(self):
+        """Simulate the port tuning project and the linked circuits schematic."""
+        status = self._dll.simulateFull()
+        self._dll_interface.raise_error(status)
+
+    def simulate_tuning_circuit_port_tuning(self):
+        """Simulate only the linked circuits schematic of the port tuning project."""
+        status = self._dll.simulateTune()
+        self._dll_interface.raise_error(status)
+
+    def optimize_port_tuning(self):
+        """Simulate the ``HFSS Design`` or ``HFSS 3D Layout Design`` of the port tuning project."""
+        status = self._dll.optimizerPortTunedVariables()
+        self._dll_interface.raise_error(status)
