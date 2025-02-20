@@ -434,34 +434,6 @@ class CircuitComponents(object):
         >>> oComponentManager.Add
         """
 
-        def _parse_ports_name(file, num_terminal):
-            """Parse and interpret the option line in the touchstone file.
-
-            Parameters
-            ----------
-            file : str
-                Path of the Touchstone file.
-            num_terminal : int
-                Number of terminals.
-
-            Returns
-            -------
-            List of str
-                Names of the ports in the touchstone file.
-
-            """
-            portnames = []
-            line = file.readline()
-            while not line.startswith("! Port") and not line.startswith("! NPort") and line.find("S11") == -1:
-                line = file.readline()
-            if line.startswith("! Port"):
-                while line.startswith("! Port"):
-                    portnames.append(line.split(" = ")[1].strip())
-                    line = file.readline()
-            else:  # pragma: no cover
-                portnames = ["Port" + str(n) for n in range(1, num_terminal + 1)]
-            return portnames
-
         if not model_name:
             model_name = os.path.splitext(os.path.basename(input_file))[0]
             if "." in model_name:
@@ -469,8 +441,6 @@ class CircuitComponents(object):
         if model_name in list(self.o_model_manager.GetNames()):
             model_name = generate_unique_name(model_name, n=2)
         num_terminal = int(os.path.splitext(input_file)[1].lower().strip(".sp"))
-        # with open_file(touchstone_full_path, "r") as f:
-        # port_names = _parse_ports_name(f, num_terminal)
 
         port_names = []
         with open_file(input_file, "r") as f:
@@ -692,6 +662,244 @@ class CircuitComponents(object):
         self.o_component_manager.Add(arg)
         return model_name
 
+    @pyaedt_function_handler(touchstone_full_path="input_file")
+    def create_model_from_nexxim_state_space(self, input_file, num_terminal, model_name=None):
+        """Create a model from a Touchstone file.
+
+        Parameters
+        ----------
+        input_file : str
+            Full path to the Touchstone file.
+        num_terminal : int
+            Number of terminals in the .sss file.
+        model_name : str, optional
+            Name of the model. The default is ``None``.
+        show_bitmap : bool, optional
+            Show bitmap image of schematic component.
+            The default value is ``True``.
+
+        Returns
+        -------
+        str
+            Model name when successfully created. ``False`` if something went wrong.
+
+        References
+        ----------
+        >>> oModelManager.Add
+        >>> oComponentManager.Add
+        """
+
+        if not model_name:
+            model_name = os.path.splitext(os.path.basename(input_file))[0]
+            if "." in model_name:
+                model_name = model_name.replace(".", "_")
+        if model_name in list(self.o_model_manager.GetNames()):
+            model_name = generate_unique_name(model_name, n=2)
+
+        port_names = ["Port" + str(i + 1) for i in range(num_terminal)]
+        arg = [
+            "NAME:" + model_name,
+            "Name:=",
+            model_name,
+            "ModTime:=",
+            0,
+            "Library:=",
+            "",
+            "LibLocation:=",
+            "Project",
+            "ModelType:=",
+            "nport_sss",
+            "Description:=",
+            "",
+            "ImageFile:=",
+            "",
+            "SymbolPinConfiguration:=",
+            0,
+            ["NAME:PortInfoBlk"],
+            ["NAME:PortOrderBlk"],
+            "filename:=",
+            "",
+            "numberofports:=",
+            num_terminal,
+            "sssfilename:=",
+            input_file,
+            "sssmodel:=",
+            True,
+            "PortNames:=",
+            port_names,
+            "domain:=",
+            "frequency",
+            "datamode:=",
+            "Link",
+            "devicename:=",
+            "",
+            "SolutionName:=",
+            "",
+            "displayformat:=",
+            "MagnitudePhase",
+            "datatype:=",
+            "SMatrix",
+            [
+                "NAME:DesignerCustomization",
+                "DCOption:=",
+                0,
+                "InterpOption:=",
+                0,
+                "ExtrapOption:=",
+                1,
+                "Convolution:=",
+                0,
+                "Passivity:=",
+                0,
+                "Reciprocal:=",
+                False,
+                "ModelOption:=",
+                "",
+                "DataType:=",
+                1,
+            ],
+            [
+                "NAME:NexximCustomization",
+                "DCOption:=",
+                3,
+                "InterpOption:=",
+                1,
+                "ExtrapOption:=",
+                3,
+                "Convolution:=",
+                0,
+                "Passivity:=",
+                0,
+                "Reciprocal:=",
+                False,
+                "ModelOption:=",
+                "",
+                "DataType:=",
+                2,
+            ],
+            [
+                "NAME:HSpiceCustomization",
+                "DCOption:=",
+                1,
+                "InterpOption:=",
+                2,
+                "ExtrapOption:=",
+                3,
+                "Convolution:=",
+                0,
+                "Passivity:=",
+                0,
+                "Reciprocal:=",
+                False,
+                "ModelOption:=",
+                "",
+                "DataType:=",
+                3,
+            ],
+            "NoiseModelOption:=",
+            "External",
+        ]
+        self.o_model_manager.Add(arg)
+        arg = [
+            "NAME:" + model_name,
+            "Info:=",
+            [
+                "Type:=",
+                10,
+                "NumTerminals:=",
+                num_terminal,
+                "DataSource:=",
+                "",
+                "ModifiedOn:=",
+                1618569625,
+                "Manufacturer:=",
+                "",
+                "Symbol:=",
+                "",
+                "ModelNames:=",
+                "",
+                "Footprint:=",
+                "",
+                "Description:=",
+                "",
+                "InfoTopic:=",
+                "",
+                "InfoHelpFile:=",
+                "",
+                "IconFile:=",
+                "",
+                "Library:=",
+                "",
+                "OriginalLocation:=",
+                "Project",
+                "IEEE:=",
+                "",
+                "Author:=",
+                "",
+                "OriginalAuthor:=",
+                "",
+                "CreationDate:=",
+                1618569625,
+                "ExampleFile:=",
+                "",
+                "HiddenComponent:=",
+                0,
+                "CircuitEnv:=",
+                0,
+                "GroupID:=",
+                0,
+            ],
+            "CircuitEnv:=",
+            0,
+            "Refbase:=",
+            "S",
+            "NumParts:=",
+            1,
+            "ModSinceLib:=",
+            False,
+        ]
+        for i in range(num_terminal):
+            arg.append("Terminal:=")
+            arg.append([port_names[i], port_names[i], "A", False, i, 1, "", "Electrical", "0"])
+        arg.append("CompExtID:=")
+        arg.append(5)
+        arg.append(
+            [
+                "NAME:Parameters",
+                "MenuProp:=",
+                ["CoSimulator", "SD", "", "Default", 0],
+                "ButtonProp:=",
+                ["CosimDefinition", "SD", "", "Edit", "Edit", 40501, "ButtonPropClientData:=", []],
+            ]
+        )
+        arg.append(
+            [
+                "NAME:CosimDefinitions",
+                [
+                    "NAME:CosimDefinition",
+                    "CosimulatorType:=",
+                    110,
+                    "CosimDefName:=",
+                    "Default",
+                    "IsDefinition:=",
+                    True,
+                    "Connect:=",
+                    True,
+                    "ModelDefinitionName:=",
+                    model_name,
+                    "ShowRefPin2:=",
+                    2,
+                    "LenPropName:=",
+                    "",
+                ],
+                "DefaultCosim:=",
+                "Default",
+            ]
+        )
+
+        self.o_component_manager.Add(arg)
+        return model_name
+
     @pyaedt_function_handler()
     def create_touchstone_component(
         self,
@@ -735,16 +943,65 @@ class CircuitComponents(object):
         >>> s_parameter_path = os.path.join("your_path", "s_param_file_name.s4p")
         >>> circuit_comp = comps.create_touchstone_component(s_parameter_path, location=[0.0, 0.0], show_bitmap=False)
         """
+        if not os.path.exists(model_name):
+            raise FileNotFoundError("File not found.")
+        model_name = self.create_model_from_touchstone(model_name, show_bitmap=show_bitmap)
         if location is None:
             location = []
         xpos, ypos = self._get_location(location)
         id = self.create_unique_id()
-        if os.path.exists(model_name):
-            model_name = self.create_model_from_touchstone(model_name, show_bitmap=show_bitmap)
         arg1 = ["NAME:ComponentProps", "Name:=", model_name, "Id:=", str(id)]
         arg2 = ["NAME:Attributes", "Page:=", 1, "X:=", xpos, "Y:=", ypos, "Angle:=", angle, "Flip:=", False]
         id = self.oeditor.CreateComponent(arg1, arg2)
         id = int(id.split(";")[1])
+        self.add_id_to_component(id)
+        return self.components[id]
+
+    @pyaedt_function_handler()
+    def create_nexxim_state_space_component(
+        self,
+        model_name,
+        num_terminal,
+        location=None,
+        angle=0,
+    ):
+        """Create a component from a Touchstone model.
+
+                Parameters
+                ----------
+                model_name : str
+                    Name of the Touchstone model or full path to touchstone file.
+                    If full touchstone is provided then, new model will be created.
+                num_terminal : int
+                    Number of terminals in the .sss file.
+                location : list of float, optional
+                    Position on the X  and Y axis.
+                angle : float, optional
+                    Angle rotation in degrees. The default is ``0``.
+        .
+
+                Returns
+                -------
+                :class:`ansys.aedt.core.modeler.circuits.object_3d_circuit.CircuitComponent`
+                    Circuit Component Object.
+
+                References
+                ----------
+                >>> oModelManager.Add
+                >>> oComponentManager.Add
+                >>> oEditor.CreateComponent
+
+        """
+        if not os.path.exists(model_name):
+            raise FileNotFoundError("File not found.")
+        model_name = self.create_model_from_nexxim_state_space(model_name, num_terminal)
+        if location is None:
+            location = []
+        xpos, ypos = self._get_location(location)
+        id = self.create_unique_id()
+        arg1 = ["NAME:ComponentProps", "Name:=", model_name, "Id:=", str(id)]
+        arg2 = ["NAME:Attributes", "Page:=", 1, "X:=", xpos, "Y:=", ypos, "Angle:=", angle, "Flip:=", False]
+        self.oeditor.CreateComponent(arg1, arg2)
         self.add_id_to_component(id)
         return self.components[id]
 

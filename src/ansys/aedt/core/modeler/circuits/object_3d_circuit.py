@@ -1086,6 +1086,28 @@ class CircuitComponent(object):
         self._circuit_components.oeditor.MovePins(self.composed_name, -0, -0, 0, 0, ["NAME:PinMoveData"])
         return True
 
+    @property
+    def component_path(self):
+        """Component definition path."""
+        component_definition = self.component_info["Info"]
+        model_data = self._circuit_components.o_model_manager.GetData(component_definition)
+        if "sssfilename:=" in model_data and model_data[model_data.index("sssfilename:=") + 1]:
+            return model_data[model_data.index("sssfilename:=") + 1]
+        elif "filename:=" in model_data and model_data[model_data.index("filename:=") + 1]:
+            return model_data[model_data.index("filename:=") + 1]
+        component_data = self._circuit_components.o_component_manager.GetData(component_definition)
+        if not component_data:
+            self._circuit_components._app.logger.warning("Component " + self.refdes + " has no path")
+            return False
+        if len(component_data[2][5]) == 0:
+            for data in component_data:
+                if isinstance(data, list) and isinstance(data[0], str) and data[0] == "NAME:CosimDefinitions":
+                    if len(data[1][12]) == 0:
+                        return component_data[17][2][4]
+                    return (data[1][12][1].split(" ")[1])[1:-1]
+        else:
+            return component_data[2][5]
+
 
 class Wire(object):
     """Creates and manipulates a wire."""

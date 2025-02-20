@@ -1011,3 +1011,19 @@ class TestClass:
 
         assert self.aedtapp.delete_imported_data(table)
         assert table not in self.aedtapp.existing_analysis_sweeps
+
+    def test_54_get_component_path_and_import_sss_files(self):
+        model = os.path.join(TESTS_GENERAL_PATH, "example_models", test_subfolder, "test.lib")
+        assert self.aedtapp.modeler.schematic.create_component_from_spicemodel(model)
+        assert len(self.aedtapp.modeler.schematic.components) == 1
+        assert list(self.aedtapp.modeler.components.components.values())[0].component_path
+        assert self.aedtapp.modeler.components.create_component(component_library="", component_name="RES_")
+        assert len(self.aedtapp.modeler.schematic.components) == 2
+        assert not list(self.aedtapp.modeler.components.components.values())[1].component_path
+        t1 = self.aedtapp.modeler.schematic.create_touchstone_component(self.touchstone_file)
+        assert len(self.aedtapp.modeler.schematic.components) == 3
+        assert t1.component_path
+        nexxim_state_space = os.path.join(TESTS_GENERAL_PATH, "example_models", test_subfolder, "neximspacefile.sss")
+        sss = self.aedtapp.modeler.schematic.create_nexxim_state_space_component(nexxim_state_space, 16)
+        assert len(self.aedtapp.modeler.schematic.components) == 4
+        assert sss.component_path
