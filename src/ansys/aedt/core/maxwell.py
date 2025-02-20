@@ -27,7 +27,8 @@
 from __future__ import absolute_import  # noreorder
 
 import io
-import os
+from pathlib import Path
+from pathlib import PurePath
 import re
 import time
 
@@ -77,7 +78,7 @@ class Maxwell(CreateBoundaryMixin):
     @property
     def design_file(self):
         """Design file."""
-        design_file = os.path.join(self.working_directory, "design_data.json")
+        design_file = PurePath(self.working_directory) / "design_data.json"
         return design_file
 
     @pyaedt_function_handler()
@@ -469,14 +470,14 @@ class Maxwell(CreateBoundaryMixin):
             raise AEDTRuntimeError("Control Program is only available in Maxwell 2D and 3D Transient solutions.")
 
         self._py_file = setupname + ".py"
-        ctl_file_path = os.path.join(self.working_directory, self._py_file)
+        ctl_file_path = PurePath(self.working_directory) / self._py_file
 
         if aedt_lib_dir:
             source_dir = aedt_lib_dir
         else:
             source_dir = self.pyaedt_dir
 
-        if os.path.exists(ctl_file_path) and keep_modifications:
+        if Path(ctl_file_path).exists() and keep_modifications:
             with open_file(ctl_file_path, "r") as fi:
                 existing_data = fi.readlines()
             with open_file(ctl_file_path, "w") as fo:
@@ -496,7 +497,7 @@ class Maxwell(CreateBoundaryMixin):
             if file_str is not None:
                 with io.open(ctl_file_path, "w", newline="\n") as fo:
                     fo.write(file_str)
-                if not os.path.exists(ctl_file_path):
+                if not Path(ctl_file_path).exists():
                     raise FileNotFoundError("Control program file could not be created.")
 
         self.oanalysis.EditSetup(
@@ -2193,7 +2194,7 @@ class Maxwell(CreateBoundaryMixin):
         elif matrix_name not in matrix_names_list:
             raise AEDTRuntimeError("Matrix name doesn't exist, provide and existing matrix name.")
 
-        if os.path.splitext(output_file)[1] != ".txt":
+        if Path(output_file).suffix != ".txt":
             raise AEDTRuntimeError("File extension must be .txt")
 
         if setup is None:
@@ -2277,7 +2278,7 @@ class Maxwell(CreateBoundaryMixin):
         elif matrix_name not in matrix_names_list:
             raise AEDTRuntimeError("Matrix name doesn't exist, provide and existing matrix name.")
 
-        if os.path.splitext(output_file)[1] != ".txt":
+        if Path(output_file).suffix != ".txt":
             raise AEDTRuntimeError("File extension must be .txt")
 
         if setup is None:
@@ -3348,7 +3349,7 @@ class Maxwell2d(Maxwell, FieldAnalysis3D, object):
             "MaterialProperties": self.get_object_material_properties(solid_bodies),
         }
 
-        design_file = os.path.join(self.working_directory, "design_data.json")
+        design_file = PurePath(self.working_directory) / "design_data.json"
         write_configuration_file(self.design_data, design_file)
         return True
 
@@ -3362,7 +3363,7 @@ class Maxwell2d(Maxwell, FieldAnalysis3D, object):
             Dictionary of design data.
 
         """
-        design_file = os.path.join(self.working_directory, "design_data.json")
+        design_file = PurePath(self.working_directory) / "design_data.json"
         return read_configuration_file(design_file)
 
     @pyaedt_function_handler(edge_list="assignment", bound_name="boundary")
