@@ -1,0 +1,6 @@
+get\_component\_placement\_vector
+=================================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.get_component_placement_vector

@@ -1,0 +1,6 @@
+get\_model\_plotter\_geometries
+===============================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.get_model_plotter_geometries

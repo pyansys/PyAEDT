@@ -1,0 +1,6 @@
+add\_warning\_message
+=====================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.add_warning_message

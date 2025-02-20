@@ -1,0 +1,6 @@
+arc\_to\_chord\_error
+=====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.arc_to_chord_error

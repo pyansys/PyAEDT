@@ -1,0 +1,6 @@
+delete\_separator
+=================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.delete_separator

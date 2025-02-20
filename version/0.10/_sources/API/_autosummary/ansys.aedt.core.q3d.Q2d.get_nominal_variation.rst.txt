@@ -1,0 +1,6 @@
+get\_nominal\_variation
+=======================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.get_nominal_variation

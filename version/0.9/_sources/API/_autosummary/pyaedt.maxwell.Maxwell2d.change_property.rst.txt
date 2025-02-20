@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.change_property

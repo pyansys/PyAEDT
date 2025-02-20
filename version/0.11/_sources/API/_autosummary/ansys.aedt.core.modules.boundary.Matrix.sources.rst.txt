@@ -1,0 +1,6 @@
+sources
+=======
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. automethod:: Matrix.sources

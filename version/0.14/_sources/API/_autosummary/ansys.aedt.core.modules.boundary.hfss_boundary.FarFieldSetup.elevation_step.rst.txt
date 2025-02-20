@@ -1,0 +1,6 @@
+elevation\_step
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.hfss_boundary
+
+.. autoproperty:: FarFieldSetup.elevation_step

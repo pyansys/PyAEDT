@@ -1,0 +1,6 @@
+project\_file
+=============
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.project_file

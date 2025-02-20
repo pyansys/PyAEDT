@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.insert_design

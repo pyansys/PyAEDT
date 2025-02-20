@@ -1,0 +1,6 @@
+export\_rl\_matrix
+==================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.export_rl_matrix

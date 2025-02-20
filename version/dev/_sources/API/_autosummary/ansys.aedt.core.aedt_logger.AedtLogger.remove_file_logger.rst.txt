@@ -1,0 +1,6 @@
+remove\_file\_logger
+====================
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. automethod:: AedtLogger.remove_file_logger

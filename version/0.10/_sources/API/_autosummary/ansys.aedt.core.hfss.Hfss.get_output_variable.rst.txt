@@ -1,0 +1,6 @@
+get\_output\_variable
+=====================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.get_output_variable

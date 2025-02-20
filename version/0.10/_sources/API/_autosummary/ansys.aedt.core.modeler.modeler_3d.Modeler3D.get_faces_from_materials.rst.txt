@@ -1,0 +1,6 @@
+get\_faces\_from\_materials
+===========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.get_faces_from_materials

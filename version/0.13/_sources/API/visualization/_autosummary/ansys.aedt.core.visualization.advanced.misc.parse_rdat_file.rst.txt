@@ -1,0 +1,6 @@
+﻿parse\_rdat\_file
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.misc
+
+.. autofunction:: parse_rdat_file

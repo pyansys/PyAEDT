@@ -1,0 +1,47 @@
+﻿SweepHFSS3DLayout
+=================
+
+.. currentmodule:: pyaedt.modules.SolveSweeps
+
+.. autoclass:: SweepHFSS3DLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SweepHFSS3DLayout.add_subrange
+      
+      
+      SweepHFSS3DLayout.change_range
+      
+      
+      SweepHFSS3DLayout.change_type
+      
+      
+      SweepHFSS3DLayout.create
+      
+      
+      SweepHFSS3DLayout.set_save_fields
+      
+      
+      SweepHFSS3DLayout.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SweepHFSS3DLayout.combined_name
+      SweepHFSS3DLayout.is_solved
+   
+   

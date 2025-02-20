@@ -1,0 +1,6 @@
+pass\_band\_center\_frequency
+=============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.pass_band_center_frequency

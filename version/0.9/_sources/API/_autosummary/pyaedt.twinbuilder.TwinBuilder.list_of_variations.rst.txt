@@ -1,0 +1,6 @@
+list\_of\_variations
+====================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.list_of_variations

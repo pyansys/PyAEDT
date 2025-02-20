@@ -1,0 +1,6 @@
+personallib
+===========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.personallib

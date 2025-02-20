@@ -1,0 +1,6 @@
+get\_closest\_point
+===================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.primitives_data
+
+.. automethod:: EDBPrimitives.get_closest_point

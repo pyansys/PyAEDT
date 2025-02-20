@@ -1,0 +1,6 @@
+import\_materials
+=================
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_materials

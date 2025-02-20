@@ -1,0 +1,6 @@
+mesh
+====
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.mesh

@@ -1,0 +1,6 @@
+autosave\_enable
+================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.autosave_enable

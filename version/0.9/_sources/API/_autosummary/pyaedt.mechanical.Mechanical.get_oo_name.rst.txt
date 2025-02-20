@@ -1,0 +1,6 @@
+get\_oo\_name
+=============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.get_oo_name

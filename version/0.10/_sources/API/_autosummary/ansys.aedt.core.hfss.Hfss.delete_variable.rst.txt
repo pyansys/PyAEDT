@@ -1,0 +1,6 @@
+delete\_variable
+================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.delete_variable

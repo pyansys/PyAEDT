@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q2d.valid_design

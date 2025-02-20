@@ -1,0 +1,6 @@
+evaluated\_value
+================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: MatProperty.evaluated_value

@@ -1,0 +1,197 @@
+﻿PostProcessor3D
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_common_3d
+
+.. autoclass:: PostProcessor3D
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      PostProcessor3D.animate_fields_from_aedtplt
+      
+      
+      PostProcessor3D.available_display_types
+      
+      
+      PostProcessor3D.available_quantities_categories
+      
+      
+      PostProcessor3D.available_report_quantities
+      
+      
+      PostProcessor3D.available_report_solutions
+      
+      
+      PostProcessor3D.change_field_property
+      
+      
+      PostProcessor3D.copy_report_data
+      
+      
+      PostProcessor3D.create_3d_plot
+      
+      
+      PostProcessor3D.create_creeping_plane_visual_ray_tracing
+      
+      
+      PostProcessor3D.create_creeping_point_visual_ray_tracing
+      
+      
+      PostProcessor3D.create_fieldplot_cutplane
+      
+      
+      PostProcessor3D.create_fieldplot_layers
+      
+      
+      PostProcessor3D.create_fieldplot_layers_nets
+      
+      
+      PostProcessor3D.create_fieldplot_line
+      
+      
+      PostProcessor3D.create_fieldplot_line_traces
+      
+      
+      PostProcessor3D.create_fieldplot_nets
+      
+      
+      PostProcessor3D.create_fieldplot_surface
+      
+      
+      PostProcessor3D.create_fieldplot_volume
+      
+      
+      PostProcessor3D.create_report
+      
+      
+      PostProcessor3D.create_report_from_configuration
+      
+      
+      PostProcessor3D.create_sbr_plane_visual_ray_tracing
+      
+      
+      PostProcessor3D.create_sbr_point_visual_ray_tracing
+      
+      
+      PostProcessor3D.delete_field_plot
+      
+      
+      PostProcessor3D.delete_report
+      
+      
+      PostProcessor3D.export_field_file
+      
+      
+      PostProcessor3D.export_field_file_on_grid
+      
+      
+      PostProcessor3D.export_field_jpg
+      
+      
+      PostProcessor3D.export_field_plot
+      
+      
+      PostProcessor3D.export_mesh_obj
+      
+      
+      PostProcessor3D.export_model_obj
+      
+      
+      PostProcessor3D.export_model_picture
+      
+      
+      PostProcessor3D.export_report_to_csv
+      
+      
+      PostProcessor3D.export_report_to_file
+      
+      
+      PostProcessor3D.export_report_to_jpg
+      
+      
+      PostProcessor3D.get_all_report_quantities
+      
+      
+      PostProcessor3D.get_efields_data
+      
+      
+      PostProcessor3D.get_far_field_data
+      
+      
+      PostProcessor3D.get_model_plotter_geometries
+      
+      
+      PostProcessor3D.get_scalar_field_value
+      
+      
+      PostProcessor3D.get_solution_data
+      
+      
+      PostProcessor3D.get_solution_data_per_variation
+      
+      
+      PostProcessor3D.nb_display
+      
+      
+      PostProcessor3D.paste_report_data
+      
+      
+      PostProcessor3D.plot_animated_field
+      
+      
+      PostProcessor3D.plot_field
+      
+      
+      PostProcessor3D.plot_field_from_fieldplot
+      
+      
+      PostProcessor3D.plot_model_obj
+      
+      
+      PostProcessor3D.plot_scene
+      
+      
+      PostProcessor3D.power_budget
+      
+      
+      PostProcessor3D.rename_report
+      
+      
+      PostProcessor3D.set_tuning_offset
+      
+      
+      PostProcessor3D.steal_focus_oneditor
+      
+      
+      PostProcessor3D.volumetric_loss
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      PostProcessor3D.all_report_names
+      PostProcessor3D.available_report_types
+      PostProcessor3D.field_plot_names
+      PostProcessor3D.logger
+      PostProcessor3D.model_units
+      PostProcessor3D.modeler
+      PostProcessor3D.ofieldsreporter
+      PostProcessor3D.oreportsetup
+      PostProcessor3D.post_osolution
+      PostProcessor3D.post_solution_type
+      PostProcessor3D.update_report_dynamically
+   
+   

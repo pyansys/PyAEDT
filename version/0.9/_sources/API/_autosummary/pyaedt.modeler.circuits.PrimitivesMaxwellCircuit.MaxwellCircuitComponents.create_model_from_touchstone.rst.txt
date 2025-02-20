@@ -1,0 +1,6 @@
+create\_model\_from\_touchstone
+===============================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.create_model_from_touchstone

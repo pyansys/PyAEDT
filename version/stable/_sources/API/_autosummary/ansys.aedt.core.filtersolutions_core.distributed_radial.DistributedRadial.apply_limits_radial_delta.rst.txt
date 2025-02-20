@@ -1,0 +1,6 @@
+apply\_limits\_radial\_delta
+============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_radial
+
+.. autoproperty:: DistributedRadial.apply_limits_radial_delta

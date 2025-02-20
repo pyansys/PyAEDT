@@ -1,0 +1,6 @@
+even\_order
+===========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.even_order

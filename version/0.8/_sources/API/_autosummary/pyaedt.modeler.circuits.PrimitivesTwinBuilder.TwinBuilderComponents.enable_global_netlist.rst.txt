@@ -1,0 +1,6 @@
+enable\_global\_netlist
+=======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.enable_global_netlist

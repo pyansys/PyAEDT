@@ -1,0 +1,6 @@
+suppress\_all
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. automethod:: NativeComponentObject.suppress_all

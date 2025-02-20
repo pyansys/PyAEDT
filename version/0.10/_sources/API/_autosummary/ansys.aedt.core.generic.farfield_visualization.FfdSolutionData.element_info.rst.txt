@@ -1,0 +1,6 @@
+element\_info
+=============
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.element_info

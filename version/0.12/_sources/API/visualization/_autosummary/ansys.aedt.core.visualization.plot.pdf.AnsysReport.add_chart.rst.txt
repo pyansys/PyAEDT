@@ -1,0 +1,6 @@
+﻿add\_chart
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pdf
+
+.. automethod:: AnsysReport.add_chart

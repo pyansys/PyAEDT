@@ -1,0 +1,6 @@
+nominal\_sweep
+==============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.nominal_sweep

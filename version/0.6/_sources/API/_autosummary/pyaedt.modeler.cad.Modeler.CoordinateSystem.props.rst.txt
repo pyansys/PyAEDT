@@ -1,0 +1,6 @@
+props
+=====
+
+.. currentmodule:: pyaedt.modeler.cad.Modeler
+
+.. autoproperty:: CoordinateSystem.props

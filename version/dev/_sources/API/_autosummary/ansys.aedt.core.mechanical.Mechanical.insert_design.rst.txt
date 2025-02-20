@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.insert_design

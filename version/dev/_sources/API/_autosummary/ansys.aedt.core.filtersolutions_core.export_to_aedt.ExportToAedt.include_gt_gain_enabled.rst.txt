@@ -1,0 +1,6 @@
+include\_gt\_gain\_enabled
+==========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.include_gt_gain_enabled

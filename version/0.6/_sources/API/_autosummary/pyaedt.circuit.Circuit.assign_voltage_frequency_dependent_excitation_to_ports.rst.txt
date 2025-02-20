@@ -1,0 +1,6 @@
+assign\_voltage\_frequency\_dependent\_excitation\_to\_ports
+============================================================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.assign_voltage_frequency_dependent_excitation_to_ports

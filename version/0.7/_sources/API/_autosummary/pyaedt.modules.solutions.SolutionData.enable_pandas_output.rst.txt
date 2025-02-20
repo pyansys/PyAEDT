@@ -1,0 +1,6 @@
+enable\_pandas\_output
+======================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: SolutionData.enable_pandas_output

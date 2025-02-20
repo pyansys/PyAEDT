@@ -1,0 +1,6 @@
+design\_variation
+=================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.design_variation

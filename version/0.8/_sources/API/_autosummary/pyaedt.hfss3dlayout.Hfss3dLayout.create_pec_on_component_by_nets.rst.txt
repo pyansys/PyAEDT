@@ -1,0 +1,6 @@
+create\_pec\_on\_component\_by\_nets
+====================================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.create_pec_on_component_by_nets

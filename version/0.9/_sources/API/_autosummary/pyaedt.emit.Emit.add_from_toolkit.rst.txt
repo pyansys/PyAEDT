@@ -1,0 +1,6 @@
+add\_from\_toolkit
+==================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.add_from_toolkit

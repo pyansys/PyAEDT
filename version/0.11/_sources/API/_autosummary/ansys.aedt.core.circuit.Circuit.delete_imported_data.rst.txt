@@ -1,0 +1,6 @@
+delete\_imported\_data
+======================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.delete_imported_data

@@ -1,0 +1,6 @@
+hidden\_variable
+================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.hidden_variable

@@ -1,0 +1,6 @@
+save\_project
+=============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.save_project

@@ -1,0 +1,6 @@
+oeditor
+=======
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.oeditor

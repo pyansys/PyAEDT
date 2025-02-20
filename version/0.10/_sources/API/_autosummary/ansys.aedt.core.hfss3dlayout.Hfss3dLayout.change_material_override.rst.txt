@@ -1,0 +1,6 @@
+change\_material\_override
+==========================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.change_material_override

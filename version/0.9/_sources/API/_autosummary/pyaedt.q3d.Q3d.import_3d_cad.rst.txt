@@ -1,0 +1,6 @@
+import\_3d\_cad
+===============
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.import_3d_cad

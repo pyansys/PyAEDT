@@ -1,0 +1,6 @@
+variations
+==========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: FarField.variations

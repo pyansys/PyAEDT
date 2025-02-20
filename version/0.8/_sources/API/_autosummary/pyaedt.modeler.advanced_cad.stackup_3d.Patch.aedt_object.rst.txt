@@ -1,0 +1,6 @@
+aedt\_object
+============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Patch.aedt_object

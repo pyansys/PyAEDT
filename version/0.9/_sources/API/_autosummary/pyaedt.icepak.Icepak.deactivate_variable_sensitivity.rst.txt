@@ -1,0 +1,6 @@
+deactivate\_variable\_sensitivity
+=================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.deactivate_variable_sensitivity

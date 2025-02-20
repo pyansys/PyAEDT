@@ -1,0 +1,38 @@
+﻿NativeComponentObject
+=====================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoclass:: NativeComponentObject
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      NativeComponentObject.create
+      
+      
+      NativeComponentObject.delete
+      
+      
+      NativeComponentObject.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      NativeComponentObject.available_properties
+      NativeComponentObject.targetcs
+   
+   

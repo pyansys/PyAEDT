@@ -1,0 +1,6 @@
+oboundary
+=========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.oboundary

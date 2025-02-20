@@ -1,0 +1,69 @@
+Application and solvers
+=======================
+The PyAEDT API includes classes for different applications available in Ansys Electronics Desktop (AEDT).
+You must initialize AEDT to get access to all PyAEDT modules and methods.
+
+.. image:: ../Resources/aedt_2.png
+  :width: 800
+  :alt: Ansys Electronics Desktop (AEDT) is a platform that enables true electronics system design.
+
+
+Available PyAEDT apps are:
+
+.. autosummary::
+   :toctree: _autosummary
+
+   pyaedt.desktop.Desktop
+   pyaedt.hfss.Hfss
+   pyaedt.q3d.Q3d
+   pyaedt.q3d.Q2d
+   pyaedt.maxwell.Maxwell2d
+   pyaedt.maxwell.Maxwell3d
+   pyaedt.icepak.Icepak
+   pyaedt.hfss3dlayout.Hfss3dLayout
+   pyaedt.mechanical.Mechanical
+   pyaedt.rmxprt.Rmxprt
+   pyaedt.circuit.Circuit
+   pyaedt.maxwellcircuit.MaxwellCircuit
+   pyaedt.emit.Emit
+   pyaedt.twinbuilder.TwinBuilder
+
+
+All other classes and methods are inherited into the app class.
+AEDT, which is also referred to as the desktop app, is implicitly launched in any PyAEDT app.
+Before accessing a PyAEDT app, the desktop app must be launched and initialized.
+The desktop app can be explicitly or implicitly initialized as in the following examples.
+
+Example with ``Desktop`` class explicit initialization:
+
+.. code:: python
+
+    from pyaedt import launch_desktop, Circuit
+    d = launch_desktop(specified_version="2023.1",
+                       non_graphical=False,
+                       new_desktop_session=True,
+                       close_on_exit=True,
+                       student_version=False):
+     circuit = Circuit()
+     ...
+     # Any error here will be caught by Desktop.
+     ...
+     d.release_desktop()
+
+Example with ``Desktop`` class implicit initialization:
+
+.. code:: python
+
+    from pyaedt import Circuit
+    circuit = Circuit(specified_version="2023.1",
+                      non_graphical=False,
+                      new_desktop_session=True,
+                      close_on_exit=True,
+                      student_version=False):
+     circuit = Circuit()
+     ...
+     # Any error here will be caught by Desktop.
+     ...
+     circuit.release_desktop()
+
+

@@ -1,0 +1,6 @@
+get\_obj\_id
+============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.get_obj_id

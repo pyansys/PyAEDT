@@ -1,0 +1,6 @@
+coordinate\_system
+==================
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoproperty:: Plane.coordinate_system

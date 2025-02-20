@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.change_property

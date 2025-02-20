@@ -1,0 +1,6 @@
+background\_image
+=================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.background_image

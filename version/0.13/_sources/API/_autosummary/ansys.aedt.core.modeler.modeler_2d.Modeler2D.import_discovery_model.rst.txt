@@ -1,0 +1,6 @@
+import\_discovery\_model
+========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.import_discovery_model

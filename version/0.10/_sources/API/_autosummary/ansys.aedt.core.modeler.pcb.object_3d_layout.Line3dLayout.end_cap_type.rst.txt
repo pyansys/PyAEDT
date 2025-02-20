@@ -1,0 +1,6 @@
+end\_cap\_type
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. autoproperty:: Line3dLayout.end_cap_type

@@ -1,0 +1,169 @@
+
+
+.. _sphx_glr_examples_02-HFSS:
+
+HFSS examples
+~~~~~~~~~~~~~
+These examples use PyAEDT to show some end-to-end workflows for HFSS 3D.
+This includes model generation, setup, meshing, and postprocessing.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="HFSS: component antenna array">
+
+.. only:: html
+
+  .. image:: /examples/02-HFSS/images/thumb/sphx_glr_Array_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_02-HFSS_Array.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS: component antenna array</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="HFSS: flex cable CPWG">
+
+.. only:: html
+
+  .. image:: /examples/02-HFSS/images/thumb/sphx_glr_Flex_CPWG_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_02-HFSS_Flex_CPWG.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS: flex cable CPWG</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="HFSS: choke">
+
+.. only:: html
+
+  .. image:: /examples/02-HFSS/images/thumb/sphx_glr_HFSS_Choke_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_02-HFSS_HFSS_Choke.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS: choke</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="HFSS: dipole antenna">
+
+.. only:: html
+
+  .. image:: /examples/02-HFSS/images/thumb/sphx_glr_HFSS_Dipole_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_02-HFSS_HFSS_Dipole.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS: dipole antenna</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="HFSS: spiral inductor">
+
+.. only:: html
+
+  .. image:: /examples/02-HFSS/images/thumb/sphx_glr_HFSS_Spiral_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_02-HFSS_HFSS_Spiral.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS: spiral inductor</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The challenge posed by this method is to identify and filter the non-physical modes resulting f...">
+
+.. only:: html
+
+  .. image:: /examples/02-HFSS/images/thumb/sphx_glr_HFSS_eigenmode_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_02-HFSS_HFSS_eigenmode.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS: Eigenmode filter</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Note that the HFSS 3D Layout interface may offer advantages for laminate structures such as the...">
+
+.. only:: html
+
+  .. image:: /examples/02-HFSS/images/thumb/sphx_glr_Probe_Fed_Patch_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_02-HFSS_Probe_Fed_Patch.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS: Probe-fed patch antenna</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="HFSS: Inductive Iris waveguide filter">
+
+.. only:: html
+
+  .. image:: /examples/02-HFSS/images/thumb/sphx_glr_Waveguide_Filter_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_02-HFSS_Waveguide_Filter.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS: Inductive Iris waveguide filter</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/02-HFSS/Array
+   /examples/02-HFSS/Flex_CPWG
+   /examples/02-HFSS/HFSS_Choke
+   /examples/02-HFSS/HFSS_Dipole
+   /examples/02-HFSS/HFSS_Spiral
+   /examples/02-HFSS/HFSS_eigenmode
+   /examples/02-HFSS/Probe_Fed_Patch
+   /examples/02-HFSS/Waveguide_Filter
+

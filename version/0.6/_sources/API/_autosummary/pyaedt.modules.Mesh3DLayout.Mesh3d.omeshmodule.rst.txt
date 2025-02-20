@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: pyaedt.modules.Mesh3DLayout
+
+.. autoproperty:: Mesh3d.omeshmodule

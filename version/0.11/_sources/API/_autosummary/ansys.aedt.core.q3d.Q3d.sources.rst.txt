@@ -1,0 +1,6 @@
+sources
+=======
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.sources

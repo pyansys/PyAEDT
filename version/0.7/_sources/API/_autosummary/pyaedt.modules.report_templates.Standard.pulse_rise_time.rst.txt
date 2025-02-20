@@ -1,0 +1,6 @@
+pulse\_rise\_time
+=================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Standard.pulse_rise_time

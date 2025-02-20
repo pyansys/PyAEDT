@@ -1,0 +1,32 @@
+﻿Wire
+====
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. autoclass:: Wire
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Wire.display_wire_properties
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Wire.logger
+      Wire.wires
+   
+   

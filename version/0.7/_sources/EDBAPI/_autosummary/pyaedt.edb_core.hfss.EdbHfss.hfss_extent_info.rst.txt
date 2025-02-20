@@ -1,0 +1,6 @@
+hfss\_extent\_info
+==================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. autoproperty:: EdbHfss.hfss_extent_info

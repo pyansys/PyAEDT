@@ -1,0 +1,6 @@
+edb
+===
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoproperty:: ModelerNexxim.edb

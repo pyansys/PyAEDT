@@ -1,0 +1,533 @@
+﻿Hfss3dLayout
+============
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoclass:: Hfss3dLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Hfss3dLayout.activate_variable_optimization
+      
+      
+      Hfss3dLayout.activate_variable_sensitivity
+      
+      
+      Hfss3dLayout.activate_variable_statistical
+      
+      
+      Hfss3dLayout.activate_variable_tuning
+      
+      
+      Hfss3dLayout.add_error_message
+      
+      
+      Hfss3dLayout.add_from_toolkit
+      
+      
+      Hfss3dLayout.add_info_message
+      
+      
+      Hfss3dLayout.add_warning_message
+      
+      
+      Hfss3dLayout.analyze
+      
+      
+      Hfss3dLayout.analyze_setup
+      
+      
+      Hfss3dLayout.archive_project
+      
+      
+      Hfss3dLayout.autosave_disable
+      
+      
+      Hfss3dLayout.autosave_enable
+      
+      
+      Hfss3dLayout.change_automatically_use_causal_materials
+      
+      
+      Hfss3dLayout.change_design_settings
+      
+      
+      Hfss3dLayout.change_material_override
+      
+      
+      Hfss3dLayout.change_options
+      
+      
+      Hfss3dLayout.change_property
+      
+      
+      Hfss3dLayout.change_validation_settings
+      
+      
+      Hfss3dLayout.check_beta_option_enabled
+      
+      
+      Hfss3dLayout.check_if_project_is_loaded
+      
+      
+      Hfss3dLayout.clean_proj_folder
+      
+      
+      Hfss3dLayout.close_desktop
+      
+      
+      Hfss3dLayout.close_project
+      
+      
+      Hfss3dLayout.copy_design_from
+      
+      
+      Hfss3dLayout.copy_project
+      
+      
+      Hfss3dLayout.create_coax_port
+      
+      
+      Hfss3dLayout.create_dataset
+      
+      
+      Hfss3dLayout.create_dataset1d_design
+      
+      
+      Hfss3dLayout.create_dataset1d_project
+      
+      
+      Hfss3dLayout.create_dataset3d
+      
+      
+      Hfss3dLayout.create_differential_port
+      
+      
+      Hfss3dLayout.create_edge_port
+      
+      
+      Hfss3dLayout.create_linear_count_sweep
+      
+      
+      Hfss3dLayout.create_linear_step_sweep
+      
+      
+      Hfss3dLayout.create_new_project
+      
+      
+      Hfss3dLayout.create_output_variable
+      
+      
+      Hfss3dLayout.create_pin_port
+      
+      
+      Hfss3dLayout.create_ports_on_component_by_nets
+      
+      
+      Hfss3dLayout.create_scattering
+      
+      
+      Hfss3dLayout.create_setup
+      
+      
+      Hfss3dLayout.create_single_point_sweep
+      
+      
+      Hfss3dLayout.create_wave_port
+      
+      
+      Hfss3dLayout.create_wave_port_from_two_conductors
+      
+      
+      Hfss3dLayout.dataset_exists
+      
+      
+      Hfss3dLayout.deactivate_variable_optimization
+      
+      
+      Hfss3dLayout.deactivate_variable_sensitivity
+      
+      
+      Hfss3dLayout.deactivate_variable_statistical
+      
+      
+      Hfss3dLayout.deactivate_variable_tuning
+      
+      
+      Hfss3dLayout.delete_design
+      
+      
+      Hfss3dLayout.delete_port
+      
+      
+      Hfss3dLayout.delete_project
+      
+      
+      Hfss3dLayout.delete_separator
+      
+      
+      Hfss3dLayout.delete_setup
+      
+      
+      Hfss3dLayout.delete_variable
+      
+      
+      Hfss3dLayout.design_settings
+      
+      
+      Hfss3dLayout.design_variation
+      
+      
+      Hfss3dLayout.duplicate_design
+      
+      
+      Hfss3dLayout.edit_cosim_options
+      
+      
+      Hfss3dLayout.edit_hfss_extents
+      
+      
+      Hfss3dLayout.edit_setup
+      
+      
+      Hfss3dLayout.edit_source_from_file
+      
+      
+      Hfss3dLayout.enable_rigid_flex
+      
+      
+      Hfss3dLayout.evaluate_expression
+      
+      
+      Hfss3dLayout.export_3d_model
+      
+      
+      Hfss3dLayout.export_convergence
+      
+      
+      Hfss3dLayout.export_design_preview_to_jpg
+      
+      
+      Hfss3dLayout.export_mesh_stats
+      
+      
+      Hfss3dLayout.export_parametric_results
+      
+      
+      Hfss3dLayout.export_profile
+      
+      
+      Hfss3dLayout.export_results
+      
+      
+      Hfss3dLayout.export_rl_matrix
+      
+      
+      Hfss3dLayout.export_touchstone
+      
+      
+      Hfss3dLayout.export_variables_to_csv
+      
+      
+      Hfss3dLayout.generate_temp_project_directory
+      
+      
+      Hfss3dLayout.generate_unique_setup_name
+      
+      
+      Hfss3dLayout.get_all_insertion_loss_list
+      
+      
+      Hfss3dLayout.get_all_return_loss_list
+      
+      
+      Hfss3dLayout.get_dcir_element_data_current_source
+      
+      
+      Hfss3dLayout.get_dcir_element_data_loop_resistance
+      
+      
+      Hfss3dLayout.get_dcir_element_data_via
+      
+      
+      Hfss3dLayout.get_dcir_solution_data
+      
+      
+      Hfss3dLayout.get_differential_pairs
+      
+      
+      Hfss3dLayout.get_evaluated_value
+      
+      
+      Hfss3dLayout.get_fext_xtalk_list
+      
+      
+      Hfss3dLayout.get_model_from_mesh_results
+      
+      
+      Hfss3dLayout.get_module
+      
+      
+      Hfss3dLayout.get_monitor_data
+      
+      
+      Hfss3dLayout.get_next_xtalk_list
+      
+      
+      Hfss3dLayout.get_nominal_variation
+      
+      
+      Hfss3dLayout.get_object_material_properties
+      
+      
+      Hfss3dLayout.get_oo_name
+      
+      
+      Hfss3dLayout.get_oo_object
+      
+      
+      Hfss3dLayout.get_oo_properties
+      
+      
+      Hfss3dLayout.get_oo_property_value
+      
+      
+      Hfss3dLayout.get_output_variable
+      
+      
+      Hfss3dLayout.get_registry_key_int
+      
+      
+      Hfss3dLayout.get_registry_key_string
+      
+      
+      Hfss3dLayout.get_setup
+      
+      
+      Hfss3dLayout.get_setups
+      
+      
+      Hfss3dLayout.get_sweeps
+      
+      
+      Hfss3dLayout.get_touchstone_data
+      
+      
+      Hfss3dLayout.get_traces_for_plot
+      
+      
+      Hfss3dLayout.hidden_variable
+      
+      
+      Hfss3dLayout.import_awr
+      
+      
+      Hfss3dLayout.import_brd
+      
+      
+      Hfss3dLayout.import_dataset1d
+      
+      
+      Hfss3dLayout.import_dataset3d
+      
+      
+      Hfss3dLayout.import_dxf
+      
+      
+      Hfss3dLayout.import_edb
+      
+      
+      Hfss3dLayout.import_gds
+      
+      
+      Hfss3dLayout.import_gerber
+      
+      
+      Hfss3dLayout.import_ipc2581
+      
+      
+      Hfss3dLayout.import_odb
+      
+      
+      Hfss3dLayout.insert_design
+      
+      
+      Hfss3dLayout.list_of_variations
+      
+      
+      Hfss3dLayout.load_diff_pairs_from_file
+      
+      
+      Hfss3dLayout.load_project
+      
+      
+      Hfss3dLayout.number_with_units
+      
+      
+      Hfss3dLayout.read_design_data
+      
+      
+      Hfss3dLayout.read_only_variable
+      
+      
+      Hfss3dLayout.release_desktop
+      
+      
+      Hfss3dLayout.rename_design
+      
+      
+      Hfss3dLayout.save_diff_pairs_to_file
+      
+      
+      Hfss3dLayout.save_project
+      
+      
+      Hfss3dLayout.set_active_design
+      
+      
+      Hfss3dLayout.set_active_dso_config_name
+      
+      
+      Hfss3dLayout.set_differential_pair
+      
+      
+      Hfss3dLayout.set_export_touchstone
+      
+      
+      Hfss3dLayout.set_license_type
+      
+      
+      Hfss3dLayout.set_meshing_settings
+      
+      
+      Hfss3dLayout.set_registry_from_file
+      
+      
+      Hfss3dLayout.set_registry_key
+      
+      
+      Hfss3dLayout.set_temporary_directory
+      
+      
+      Hfss3dLayout.show_extent
+      
+      
+      Hfss3dLayout.solve_in_batch
+      
+      
+      Hfss3dLayout.stop_simulations
+      
+      
+      Hfss3dLayout.submit_job
+      
+      
+      Hfss3dLayout.validate_full_design
+      
+      
+      Hfss3dLayout.validate_simple
+      
+      
+      Hfss3dLayout.value_with_units
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Hfss3dLayout.Position
+      Hfss3dLayout.SimulationSetupTypes
+      Hfss3dLayout.SolutionTypes
+      Hfss3dLayout.active_setup
+      Hfss3dLayout.aedt_version_id
+      Hfss3dLayout.are_there_simulations_running
+      Hfss3dLayout.available_variations
+      Hfss3dLayout.boundaries
+      Hfss3dLayout.boundaries_by_type
+      Hfss3dLayout.default_solution_type
+      Hfss3dLayout.design_datasets
+      Hfss3dLayout.design_excitations
+      Hfss3dLayout.design_list
+      Hfss3dLayout.design_name
+      Hfss3dLayout.design_properties
+      Hfss3dLayout.design_type
+      Hfss3dLayout.desktop_class
+      Hfss3dLayout.desktop_install_dir
+      Hfss3dLayout.excitations
+      Hfss3dLayout.excitations_by_type
+      Hfss3dLayout.existing_analysis_setups
+      Hfss3dLayout.existing_analysis_sweeps
+      Hfss3dLayout.get_all_sparameter_list
+      Hfss3dLayout.layouteditor
+      Hfss3dLayout.library_list
+      Hfss3dLayout.lock_file
+      Hfss3dLayout.logger
+      Hfss3dLayout.materials
+      Hfss3dLayout.mesh
+      Hfss3dLayout.modeler
+      Hfss3dLayout.native_components
+      Hfss3dLayout.nominal_adaptive
+      Hfss3dLayout.nominal_sweep
+      Hfss3dLayout.o_component_manager
+      Hfss3dLayout.o_maxwell_parameters
+      Hfss3dLayout.o_model_manager
+      Hfss3dLayout.o_symbol_manager
+      Hfss3dLayout.oanalysis
+      Hfss3dLayout.oboundary
+      Hfss3dLayout.odefinition_manager
+      Hfss3dLayout.odesign
+      Hfss3dLayout.odesktop
+      Hfss3dLayout.oeditor
+      Hfss3dLayout.oexcitation
+      Hfss3dLayout.ofieldsreporter
+      Hfss3dLayout.oimport_export
+      Hfss3dLayout.omaterial_manager
+      Hfss3dLayout.omatrix
+      Hfss3dLayout.omeshmodule
+      Hfss3dLayout.omodelsetup
+      Hfss3dLayout.omonitor
+      Hfss3dLayout.ooptimetrics
+      Hfss3dLayout.ooutput_variable
+      Hfss3dLayout.opadstackmanager
+      Hfss3dLayout.oproject
+      Hfss3dLayout.oradfield
+      Hfss3dLayout.oreportsetup
+      Hfss3dLayout.osolution
+      Hfss3dLayout.output_variables
+      Hfss3dLayout.personallib
+      Hfss3dLayout.port_list
+      Hfss3dLayout.post
+      Hfss3dLayout.project_datasets
+      Hfss3dLayout.project_file
+      Hfss3dLayout.project_list
+      Hfss3dLayout.project_name
+      Hfss3dLayout.project_path
+      Hfss3dLayout.project_properties
+      Hfss3dLayout.project_time_stamp
+      Hfss3dLayout.project_timestamp_changed
+      Hfss3dLayout.pyaedt_dir
+      Hfss3dLayout.results_directory
+      Hfss3dLayout.settings
+      Hfss3dLayout.setup_names
+      Hfss3dLayout.solution_type
+      Hfss3dLayout.src_dir
+      Hfss3dLayout.syslib
+      Hfss3dLayout.temp_directory
+      Hfss3dLayout.toolkit_directory
+      Hfss3dLayout.userlib
+      Hfss3dLayout.valid_design
+      Hfss3dLayout.variable_manager
+      Hfss3dLayout.working_directory
+   
+   

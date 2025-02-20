@@ -1,0 +1,6 @@
+all\_monitors
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.monitor_icepak
+
+.. autoproperty:: Monitor.all_monitors

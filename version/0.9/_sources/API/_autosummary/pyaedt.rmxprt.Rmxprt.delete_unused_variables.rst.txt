@@ -1,0 +1,6 @@
+delete\_unused\_variables
+=========================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.delete_unused_variables

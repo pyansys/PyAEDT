@@ -1,0 +1,6 @@
+clean\_proj\_folder
+===================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.clean_proj_folder

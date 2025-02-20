@@ -1,0 +1,6 @@
+update\_property
+================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. automethod:: BinaryTreeNode.update_property

@@ -1,0 +1,6 @@
+get\_field\_summary\_data
+=========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_summary
+
+.. automethod:: FieldSummary.get_field_summary_data

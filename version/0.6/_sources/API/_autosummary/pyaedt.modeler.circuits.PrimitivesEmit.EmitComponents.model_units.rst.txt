@@ -1,0 +1,6 @@
+model\_units
+============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesEmit
+
+.. autoproperty:: EmitComponents.model_units

@@ -1,0 +1,36 @@
+﻿SurfaceMaterial
+===============
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoclass:: SurfaceMaterial
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SurfaceMaterial.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SurfaceMaterial.coordinate_system
+      SurfaceMaterial.emissivity
+      SurfaceMaterial.is_used
+      SurfaceMaterial.surface_diffuse_absorptance
+      SurfaceMaterial.surface_incident_absorptance
+      SurfaceMaterial.surface_roughness
+   
+   

@@ -1,0 +1,6 @@
+auto\_update
+============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: NetworkObject.auto_update

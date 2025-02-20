@@ -1,0 +1,6 @@
+pads\_args
+==========
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Padstack.pads_args

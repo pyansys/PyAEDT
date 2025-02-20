@@ -1,0 +1,6 @@
+create\_ports\_on\_component\_by\_nets
+======================================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.create_ports_on_component_by_nets

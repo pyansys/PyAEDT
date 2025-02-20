@@ -1,0 +1,6 @@
+set\_hmin
+=========
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.set_hmin

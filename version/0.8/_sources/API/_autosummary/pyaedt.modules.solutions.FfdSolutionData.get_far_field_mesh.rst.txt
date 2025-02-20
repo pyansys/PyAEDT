@@ -1,0 +1,6 @@
+get\_far\_field\_mesh
+=====================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FfdSolutionData.get_far_field_mesh

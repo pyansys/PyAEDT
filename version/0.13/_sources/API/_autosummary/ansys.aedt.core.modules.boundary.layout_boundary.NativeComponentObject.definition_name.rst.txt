@@ -1,0 +1,6 @@
+definition\_name
+================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoproperty:: NativeComponentObject.definition_name

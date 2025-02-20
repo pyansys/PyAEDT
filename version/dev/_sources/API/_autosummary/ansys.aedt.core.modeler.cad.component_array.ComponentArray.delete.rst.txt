@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.component_array
+
+.. automethod:: ComponentArray.delete

@@ -1,0 +1,6 @@
+odefinition\_manager
+====================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.odefinition_manager

@@ -1,0 +1,6 @@
+clear\_linked\_data
+===================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.clear_linked_data

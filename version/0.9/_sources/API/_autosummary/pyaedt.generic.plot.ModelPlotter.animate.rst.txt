@@ -1,0 +1,6 @@
+animate
+=======
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. automethod:: ModelPlotter.animate

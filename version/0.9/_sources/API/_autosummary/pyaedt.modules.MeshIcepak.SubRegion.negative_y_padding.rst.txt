@@ -1,0 +1,6 @@
+negative\_y\_padding
+====================
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. autoproperty:: SubRegion.negative_y_padding

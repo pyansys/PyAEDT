@@ -1,0 +1,6 @@
+check\_if\_project\_is\_loaded
+==============================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.check_if_project_is_loaded

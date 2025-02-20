@@ -1,0 +1,6 @@
+oanalysis
+=========
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.oanalysis

@@ -1,0 +1,6 @@
+name
+====
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.icepak_boundary
+
+.. autoproperty:: NetworkObject.name

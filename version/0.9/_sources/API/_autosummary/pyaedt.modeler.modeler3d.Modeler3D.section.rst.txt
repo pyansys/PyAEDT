@@ -1,0 +1,6 @@
+section
+=======
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.section

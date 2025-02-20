@@ -1,0 +1,6 @@
+string\_to\_enum
+================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.dll_interface
+
+.. automethod:: DllInterface.string_to_enum

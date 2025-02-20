@@ -1,0 +1,6 @@
+vang
+====
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoproperty:: VoltageFrequencyDependentSource.vang

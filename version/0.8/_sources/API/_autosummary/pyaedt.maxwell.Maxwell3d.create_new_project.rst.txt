@@ -1,0 +1,6 @@
+create\_new\_project
+====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.create_new_project

@@ -1,0 +1,47 @@
+﻿Pins3DLayout
+============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoclass:: Pins3DLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Pins3DLayout.change_property
+      
+      
+      Pins3DLayout.create_clearance_on_component
+      
+      
+      Pins3DLayout.set_property_value
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Pins3DLayout.absolute_angle
+      Pins3DLayout.angle
+      Pins3DLayout.bounding_box
+      Pins3DLayout.holediam
+      Pins3DLayout.location
+      Pins3DLayout.lock_position
+      Pins3DLayout.net_name
+      Pins3DLayout.object_units
+      Pins3DLayout.placement_layer
+      Pins3DLayout.start_layer
+      Pins3DLayout.stop_layer
+   
+   

@@ -1,0 +1,6 @@
+stop\_band\_ratio
+=================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.stop_band_ratio

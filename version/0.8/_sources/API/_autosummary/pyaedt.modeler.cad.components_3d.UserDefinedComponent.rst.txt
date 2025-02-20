@@ -1,0 +1,73 @@
+﻿UserDefinedComponent
+====================
+
+.. currentmodule:: pyaedt.modeler.cad.components_3d
+
+.. autoclass:: UserDefinedComponent
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      UserDefinedComponent.delete
+      
+      
+      UserDefinedComponent.duplicate_along_line
+      
+      
+      UserDefinedComponent.duplicate_and_mirror
+      
+      
+      UserDefinedComponent.duplicate_around_axis
+      
+      
+      UserDefinedComponent.edit_definition
+      
+      
+      UserDefinedComponent.get_component_filepath
+      
+      
+      UserDefinedComponent.history
+      
+      
+      UserDefinedComponent.mirror
+      
+      
+      UserDefinedComponent.move
+      
+      
+      UserDefinedComponent.rotate
+      
+      
+      UserDefinedComponent.update_definition
+      
+      
+      UserDefinedComponent.update_native
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      UserDefinedComponent.bounding_box
+      UserDefinedComponent.center
+      UserDefinedComponent.group_name
+      UserDefinedComponent.is3dcomponent
+      UserDefinedComponent.layout_component
+      UserDefinedComponent.mesh_assembly
+      UserDefinedComponent.name
+      UserDefinedComponent.parameters
+      UserDefinedComponent.parts
+      UserDefinedComponent.target_coordinate_system
+   
+   

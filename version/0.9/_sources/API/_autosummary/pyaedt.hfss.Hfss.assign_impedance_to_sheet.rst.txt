@@ -1,0 +1,6 @@
+assign\_impedance\_to\_sheet
+============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.assign_impedance_to_sheet

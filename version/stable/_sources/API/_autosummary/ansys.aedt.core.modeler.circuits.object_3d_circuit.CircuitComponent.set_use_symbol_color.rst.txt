@@ -1,0 +1,6 @@
+set\_use\_symbol\_color
+=======================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.object_3d_circuit
+
+.. automethod:: CircuitComponent.set_use_symbol_color

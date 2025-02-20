@@ -1,0 +1,6 @@
+Enable
+======
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. autoproperty:: MeshRegion.Enable

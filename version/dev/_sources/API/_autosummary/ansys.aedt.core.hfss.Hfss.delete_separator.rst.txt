@@ -1,0 +1,6 @@
+delete\_separator
+=================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.delete_separator

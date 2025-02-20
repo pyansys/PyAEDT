@@ -1,0 +1,6 @@
+antipad\_radius
+===============
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: PadstackLayer.antipad_radius

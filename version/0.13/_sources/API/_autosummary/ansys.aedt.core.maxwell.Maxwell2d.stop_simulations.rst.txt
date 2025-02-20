@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.stop_simulations

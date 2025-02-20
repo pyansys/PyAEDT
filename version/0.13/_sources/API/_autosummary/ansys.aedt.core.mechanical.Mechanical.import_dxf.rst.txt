@@ -1,0 +1,6 @@
+import\_dxf
+===========
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.import_dxf

@@ -1,0 +1,6 @@
+fillet
+======
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.fillet

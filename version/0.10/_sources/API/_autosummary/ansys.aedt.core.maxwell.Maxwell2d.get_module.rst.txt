@@ -1,0 +1,6 @@
+get\_module
+===========
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.get_module

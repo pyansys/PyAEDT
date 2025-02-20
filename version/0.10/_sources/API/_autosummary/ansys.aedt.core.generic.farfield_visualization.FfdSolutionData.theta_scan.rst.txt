@@ -1,0 +1,6 @@
+theta\_scan
+===========
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.theta_scan

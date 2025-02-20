@@ -1,0 +1,6 @@
+group\_name
+===========
+
+.. currentmodule:: pyaedt.modeler.cad.components_3d
+
+.. autoproperty:: UserDefinedComponent.group_name

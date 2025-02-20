@@ -1,0 +1,6 @@
+set\_coax\_port\_attributes
+===========================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.set_coax_port_attributes

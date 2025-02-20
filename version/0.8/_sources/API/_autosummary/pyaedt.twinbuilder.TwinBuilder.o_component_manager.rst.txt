@@ -1,0 +1,6 @@
+o\_component\_manager
+=====================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.o_component_manager

@@ -1,0 +1,6 @@
+close\_project
+==============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.close_project

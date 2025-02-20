@@ -1,0 +1,6 @@
+rectangles
+==========
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. autoproperty:: EdbLayout.rectangles

@@ -1,0 +1,47 @@
+﻿ModelerMaxwellCircuit
+=====================
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoclass:: ModelerMaxwellCircuit
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ModelerMaxwellCircuit.change_text_property
+      
+      
+      ModelerMaxwellCircuit.connect_schematic_components
+      
+      
+      ModelerMaxwellCircuit.create_text
+      
+      
+      ModelerMaxwellCircuit.zoom_to_fit
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ModelerMaxwellCircuit.logger
+      ModelerMaxwellCircuit.o_component_manager
+      ModelerMaxwellCircuit.o_def_manager
+      ModelerMaxwellCircuit.o_model_manager
+      ModelerMaxwellCircuit.oeditor
+      ModelerMaxwellCircuit.projdir
+      ModelerMaxwellCircuit.schematic
+      ModelerMaxwellCircuit.schematic_units
+   
+   

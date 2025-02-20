@@ -1,0 +1,41 @@
+﻿EDBPadProperties
+================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoclass:: EDBPadProperties
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EDBPadProperties.int_to_geometry_type
+      
+      
+      EDBPadProperties.int_to_pad_type
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EDBPadProperties.geometry_type
+      EDBPadProperties.offset_x
+      EDBPadProperties.offset_y
+      EDBPadProperties.parameters
+      EDBPadProperties.parameters_values
+      EDBPadProperties.polygon_data
+      EDBPadProperties.rotation
+      EDBPadProperties.shape
+   
+   

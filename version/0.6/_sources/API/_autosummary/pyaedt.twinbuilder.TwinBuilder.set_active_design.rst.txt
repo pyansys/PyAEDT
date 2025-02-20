@@ -1,0 +1,6 @@
+set\_active\_design
+===================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.set_active_design

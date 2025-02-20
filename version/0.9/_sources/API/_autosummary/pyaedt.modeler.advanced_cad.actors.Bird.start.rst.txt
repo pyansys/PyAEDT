@@ -1,0 +1,6 @@
+start
+=====
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. automethod:: Bird.start

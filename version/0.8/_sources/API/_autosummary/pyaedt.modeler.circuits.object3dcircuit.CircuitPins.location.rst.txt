@@ -1,0 +1,6 @@
+location
+========
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. autoproperty:: CircuitPins.location

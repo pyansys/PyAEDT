@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.stop_simulations

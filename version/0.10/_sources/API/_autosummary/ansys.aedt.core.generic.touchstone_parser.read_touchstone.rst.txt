@@ -1,0 +1,6 @@
+﻿read\_touchstone
+================
+
+.. currentmodule:: ansys.aedt.core.generic.touchstone_parser
+
+.. autofunction:: read_touchstone

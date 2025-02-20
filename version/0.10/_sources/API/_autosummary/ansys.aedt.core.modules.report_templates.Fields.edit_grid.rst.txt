@@ -1,0 +1,6 @@
+edit\_grid
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: Fields.edit_grid

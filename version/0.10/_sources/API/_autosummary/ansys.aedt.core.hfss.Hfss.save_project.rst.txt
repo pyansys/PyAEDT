@@ -1,0 +1,6 @@
+save\_project
+=============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.save_project

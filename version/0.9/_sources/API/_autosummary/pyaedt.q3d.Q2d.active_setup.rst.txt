@@ -1,0 +1,6 @@
+active\_setup
+=============
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.active_setup

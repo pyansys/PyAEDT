@@ -1,0 +1,6 @@
+set\_orientation
+================
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. automethod:: HDMPlotter.set_orientation

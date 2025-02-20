@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.load_project

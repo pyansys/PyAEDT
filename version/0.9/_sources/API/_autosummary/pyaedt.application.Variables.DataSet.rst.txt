@@ -1,0 +1,42 @@
+﻿DataSet
+=======
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoclass:: DataSet
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      DataSet.add_point
+      
+      
+      DataSet.create
+      
+      
+      DataSet.delete
+      
+      
+      DataSet.export
+      
+      
+      DataSet.remove_point_from_index
+      
+      
+      DataSet.remove_point_from_x
+      
+      
+      DataSet.update
+      
+   
+   
+
+   
+   
+   

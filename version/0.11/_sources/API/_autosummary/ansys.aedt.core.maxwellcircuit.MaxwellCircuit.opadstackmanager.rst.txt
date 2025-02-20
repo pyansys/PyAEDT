@@ -1,0 +1,6 @@
+opadstackmanager
+================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.opadstackmanager

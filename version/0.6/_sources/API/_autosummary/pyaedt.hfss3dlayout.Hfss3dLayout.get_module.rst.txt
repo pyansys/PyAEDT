@@ -1,0 +1,6 @@
+get\_module
+===========
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_module

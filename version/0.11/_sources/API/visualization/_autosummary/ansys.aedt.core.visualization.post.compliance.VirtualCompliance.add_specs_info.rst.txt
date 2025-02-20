@@ -1,0 +1,6 @@
+add\_specs\_info
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. autoproperty:: VirtualCompliance.add_specs_info

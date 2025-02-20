@@ -1,0 +1,6 @@
+imprint\_normal\_projection
+===========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.imprint_normal_projection

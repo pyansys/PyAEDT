@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.release_desktop

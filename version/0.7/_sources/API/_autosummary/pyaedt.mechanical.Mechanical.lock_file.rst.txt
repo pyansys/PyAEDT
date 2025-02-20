@@ -1,0 +1,6 @@
+lock\_file
+==========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.lock_file

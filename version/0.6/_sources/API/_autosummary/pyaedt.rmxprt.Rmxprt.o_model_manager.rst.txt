@@ -1,0 +1,6 @@
+o\_model\_manager
+=================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.o_model_manager

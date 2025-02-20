@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.change_property

@@ -1,0 +1,6 @@
+delete\_component
+=================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.delete_component

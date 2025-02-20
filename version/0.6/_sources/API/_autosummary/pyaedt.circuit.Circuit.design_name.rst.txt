@@ -1,0 +1,6 @@
+design\_name
+============
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.design_name

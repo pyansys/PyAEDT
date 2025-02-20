@@ -1,0 +1,1443 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modeler2D &#8212; PyAEDT</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys_sphinx_theme.css?v=77703c5e" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+  
+    <link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../_static/documentation_options.js?v=f2b85f9b"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js/table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'API/_autosummary/ansys.aedt.core.modeler.modeler_2d.Modeler2D';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.11';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="add_new_objects" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_objects.html" />
+    <link rel="prev" title="2D modeler" href="../Primitives2D.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.11.7" />
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/API/_autosummary/ansys.aedt.core.modeler.modeler_2d.Modeler2D.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyAEDT - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Application.html">Application and solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MaterialManagement.html">Material and stackup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3D.html">3D modeler</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Primitives2D.html">2D modeler</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Modeler2D</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_objects.html">add_new_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_points.html">add_new_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_solids.html">add_new_solids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_user_defined_component.html">add_new_user_defined_component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.automatic_thicken_sheets.html">automatic_thicken_sheets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.break_spaceclaim_connection.html">break_spaceclaim_connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.calculate_radius_2D.html">calculate_radius_2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.chassis_subtraction.html">chassis_subtraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.check_plane.html">check_plane</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.clean_objects_name.html">clean_objects_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_objects.html">cleanup_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_points.html">cleanup_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_solids.html">cleanup_solids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.clone.html">clone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.connect.html">connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.convert_segments_to_line.html">convert_segments_to_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.convert_to_selections.html">convert_to_selections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.copy.html">copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cover_faces.html">cover_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cover_lines.html">cover_lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_air_region.html">create_air_region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_airbox.html">create_airbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_circle.html">create_circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_coordinate_system.html">create_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_ellipse.html">create_ellipse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_face_coordinate_system.html">create_face_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_face_list.html">create_face_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_faceted_bondwire_from_true_surface.html">create_faceted_bondwire_from_true_surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_group.html">create_group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_coordinate_system.html">create_object_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_from_edge.html">create_object_from_edge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_from_face.html">create_object_from_face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_list.html">create_object_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_outer_facelist.html">create_outer_facelist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_plane.html">create_plane</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_point.html">create_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_polyline.html">create_polyline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_rectangle.html">create_rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_region.html">create_region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_regular_polygon.html">create_regular_polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_sheet_to_ground.html">create_sheet_to_ground</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_spiral_on_face.html">create_spiral_on_face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_subregion.html">create_subregion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_udp.html">create_udp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.delete.html">delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.delete_objects_containing.html">delete_objects_containing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.detach_faces.html">detach_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.does_object_exists.html">does_object_exists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_along_line.html">duplicate_along_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_and_mirror.html">duplicate_and_mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_around_axis.html">duplicate_around_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_coordinate_system_to_global.html">duplicate_coordinate_system_to_global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.edit_region_dimensions.html">edit_region_dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.explicitly_subtract.html">explicitly_subtract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.export_3d_model.html">export_3d_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_closest_edges.html">find_closest_edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_new_objects.html">find_new_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_point_around.html">find_point_around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_port_faces.html">find_port_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.fit_all.html">fit_all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.flatten_assembly.html">flatten_assembly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.generate_object_history.html">generate_object_history</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position.html">get_bodynames_from_position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_boundaries_name.html">get_boundaries_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bounding_dimension.html">get_bounding_dimension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_closest_edgeid_to_position.html">get_closest_edgeid_to_position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_length.html">get_edge_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_midpoint.html">get_edge_midpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_vertices.html">get_edge_vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edgeid_from_position.html">get_edgeid_from_position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edgeids_from_vertexid.html">get_edgeids_from_vertexid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_for_circuit_port.html">get_edges_for_circuit_port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_for_circuit_port_from_sheet.html">get_edges_for_circuit_port_from_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_on_bounding_box.html">get_edges_on_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_entitylist_id.html">get_entitylist_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_equivalent_parallel_edges.html">get_equivalent_parallel_edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_existing_polyline.html">get_existing_polyline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_area.html">get_face_area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_by_id.html">get_face_by_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_center.html">get_face_center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_edges.html">get_face_edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_vertices.html">get_face_vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_faceid_from_position.html">get_faceid_from_position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_faces_from_materials.html">get_faces_from_materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_group_bounding_box.html">get_group_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_line_ids.html">get_line_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_matched_object_name.html">get_matched_object_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_mid_points_on_dir.html">get_mid_points_on_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_model_bounding_box.html">get_model_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_obj_id.html">get_obj_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_edges.html">get_object_edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_faces.html">get_object_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_from_name.html">get_object_from_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_name_from_edge_id.html">get_object_name_from_edge_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_vertices.html">get_object_vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_by_material.html">get_objects_by_material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_in_group.html">get_objects_in_group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_w_string.html">get_objects_w_string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_solving_volume.html">get_solving_volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_vertex_position.html">get_vertex_position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_vertices_of_line.html">get_vertices_of_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_working_coordinate_system.html">get_working_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.global_to_cs.html">global_to_cs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.heal_objects.html">heal_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_3d_cad.html">import_3d_cad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_discovery_model.html">import_discovery_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_primitives_from_file.html">import_primitives_from_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_spaceclaim_document.html">import_spaceclaim_document</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint.html">imprint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint_normal_projection.html">imprint_normal_projection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint_vector_projection.html">imprint_vector_projection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.intersect.html">intersect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.invert_cs.html">invert_cs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.load_scdm_in_hfss.html">load_scdm_in_hfss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.mirror.html">mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.modeler_variable.html">modeler_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move.html">move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move_edge.html">move_edge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move_face.html">move_face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.objects_in_bounding_box.html">objects_in_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.paste.html">paste</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.polyline_segment.html">polyline_segment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.purge_history.html">purge_history</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.radial_split_2D.html">radial_split_2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.reassign_subregion.html">reassign_subregion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.reference_cs_to_global.html">reference_cs_to_global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.refresh.html">refresh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.refresh_all_ids.html">refresh_all_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.rotate.html">rotate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.scale.html">scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.section.html">section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.select_allfaces_fromobjects.html">select_allfaces_fromobjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.separate_bodies.html">separate_bodies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_object_model_state.html">set_object_model_state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_objects_deformation.html">set_objects_deformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_objects_temperature.html">set_objects_temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_working_coordinate_system.html">set_working_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.setunassigned_mats.html">setunassigned_mats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.simplify_objects.html">simplify_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.split.html">split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.subtract.html">subtract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_normal.html">sweep_along_normal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_path.html">sweep_along_path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_vector.html">sweep_along_vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_around_axis.html">sweep_around_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.thicken_sheet.html">thicken_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.ungroup.html">ungroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unite.html">unite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_geometry_property.html">update_geometry_property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_object.html">update_object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_udp.html">update_udp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.value_in_object_units.html">value_in_object_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.vertex_data_of_lines.html">vertex_data_of_lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.wrap_sheet.html">wrap_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.coordinate_systems.html">coordinate_systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.defaultmaterial.html">defaultmaterial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.design_type.html">design_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.dimension.html">dimension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.geometry_mode.html">geometry_mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.layout_component_names.html">layout_component_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.line_names.html">line_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.line_objects.html">line_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.logger.html">logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.materials.html">materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_consistency_report.html">model_consistency_report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_objects.html">model_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_units.html">model_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.non_model_objects.html">non_model_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.object_list.html">object_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.object_names.html">object_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.objects_by_name.html">objects_by_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.obounding_box.html">obounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.oeditor.html">oeditor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.plane2d.html">plane2d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.planes.html">planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.point_names.html">point_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.point_objects.html">point_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.projdir.html">projdir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.selections.html">selections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sheet_names.html">sheet_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sheet_objects.html">sheet_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_bodies.html">solid_bodies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_names.html">solid_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_objects.html">solid_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unclassified_names.html">unclassified_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unclassified_objects.html">unclassified_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.user_defined_component_names.html">user_defined_component_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.user_lists.html">user_lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.version.html">version</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitive_Objects.html">Primitives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3DLayout.html">Modeler in  HFSS 3D Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesCircuit.html">Modeler and components Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boundaries.html">Boundary objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mesh.html">Mesh operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup.html">Setup</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DesktopMessenger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optimetrics.html">Optimetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Configuration.html">Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SetupTemplates.html">Setup templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CableModeling.html">Cable modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FilterSolutions.html">Filter design</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../Primitives2D.html" class="nav-link">2D modeler</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Modeler2D</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="modeler2d">
+<h1>Modeler2D<a class="headerlink" href="#modeler2d" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.aedt.core.modeler.modeler_2d.Modeler2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.aedt.core.modeler.modeler_2d.</span></span><span class="sig-name descname"><span class="pre">Modeler2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.aedt.core.modeler.modeler_2d.Modeler2D" title="Link to this definition">#</a></dt>
+<dd><p>Provides the Modeler 2D application interface.</p>
+<p>This class is inherited in the caller application and is accessible through the modeler variable
+object( eg. <code class="docutils literal notranslate"><span class="pre">maxwell2d.modeler</span></code>).</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Maxwell2d</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">app</span> <span class="o">=</span> <span class="n">Maxwell2d</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_modeler</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">modeler</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.add_new_objects</span></code></a>()</p></td>
+<td><p>Add objects that have been created in the modeler by previous operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_points.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_points" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.add_new_points</span></code></a>()</p></td>
+<td><p>Add objects that have been created in the modeler by previous operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_solids.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_solids" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_solids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.add_new_solids</span></code></a>()</p></td>
+<td><p>Add objects that have been created in the modeler by previous operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_user_defined_component.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_user_defined_component" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_user_defined_component"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.add_new_user_defined_component</span></code></a>()</p></td>
+<td><p>Add 3D components and user-defined models that have been created in the modeler by previous operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.automatic_thicken_sheets.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.automatic_thicken_sheets" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.automatic_thicken_sheets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.automatic_thicken_sheets</span></code></a>(...[, ...])</p></td>
+<td><p>Create thickened sheets for a list of input faces.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.break_spaceclaim_connection.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.break_spaceclaim_connection" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.break_spaceclaim_connection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.break_spaceclaim_connection</span></code></a>()</p></td>
+<td><p>Disconnect from the running SpaceClaim instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.calculate_radius_2D.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.calculate_radius_2D" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.calculate_radius_2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.calculate_radius_2D</span></code></a>(assignment[, ...])</p></td>
+<td><p>Calculate the extremity of an object in the radial direction.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.chassis_subtraction.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.chassis_subtraction" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.chassis_subtraction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.chassis_subtraction</span></code></a>(chassis_part)</p></td>
+<td><p>Subtract all non-vacuum objects from the main chassis object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.check_plane.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.check_plane" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.check_plane"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.check_plane</span></code></a>(assignment, face_location)</p></td>
+<td><p>Check for the plane that is defined as the face for an object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.clean_objects_name.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.clean_objects_name" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.clean_objects_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.clean_objects_name</span></code></a>(main_part_name)</p></td>
+<td><p>Clean the names of the objects for a main part.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.cleanup_objects</span></code></a>()</p></td>
+<td><p>Clean up objects that no longer exist in the modeler because they were removed by previous operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_points.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_points" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.cleanup_points</span></code></a>()</p></td>
+<td><p>Clean up points that no longer exist in the modeler because they were removed by previous operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_solids.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_solids" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_solids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.cleanup_solids</span></code></a>()</p></td>
+<td><p>Clean up solids that no longer exist in the modeler because they were removed by previous operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.clone.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.clone" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.clone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.clone</span></code></a>(assignment)</p></td>
+<td><p>Clone objects from a list of object IDs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.connect.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.connect" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.connect</span></code></a>(assignment)</p></td>
+<td><p>Connect objects from a list.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.convert_segments_to_line.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.convert_segments_to_line" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.convert_segments_to_line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.convert_segments_to_line</span></code></a>(assignment)</p></td>
+<td><p>Convert a CreatePolyline list of segments to lines.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.convert_to_selections.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.convert_to_selections" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.convert_to_selections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.convert_to_selections</span></code></a>(assignment)</p></td>
+<td><p>Convert modeler objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.copy.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.copy" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.copy</span></code></a>(assignment)</p></td>
+<td><p>Copy objects to the clipboard.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cover_faces.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.cover_faces" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cover_faces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.cover_faces</span></code></a>(assignment)</p></td>
+<td><p>Cover a face.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cover_lines.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.cover_lines" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cover_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.cover_lines</span></code></a>(assignment)</p></td>
+<td><p>Cover closed lines and transform them to a sheet.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_air_region.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_air_region" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_air_region"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_air_region</span></code></a>([x_pos, y_pos, ...])</p></td>
+<td><p>Create an air region.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_airbox.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_airbox" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_airbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_airbox</span></code></a>([offset, ...])</p></td>
+<td><p>Create an airbox that is as big as the bounding extension of the project.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_circle.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_circle" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_circle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_circle</span></code></a>(origin, radius[, ...])</p></td>
+<td><p>Create a circle.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_coordinate_system.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_coordinate_system" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_coordinate_system</span></code></a>([origin, ...])</p></td>
+<td><p>Create a coordinate system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_ellipse.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_ellipse" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_ellipse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_ellipse</span></code></a>(origin, ...[, ...])</p></td>
+<td><p>Create an ellipse.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_face_coordinate_system.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_face_coordinate_system" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_face_coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_face_coordinate_system</span></code></a>(...)</p></td>
+<td><p>Create a face coordinate system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_face_list.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_face_list" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_face_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_face_list</span></code></a>(assignment[, name])</p></td>
+<td><p>Create a list of faces given a list of face ID or a list of objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_faceted_bondwire_from_true_surface.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_faceted_bondwire_from_true_surface" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_faceted_bondwire_from_true_surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_faceted_bondwire_from_true_surface</span></code></a>(...)</p></td>
+<td><p>Create a faceted bondwire from an existing true surface bondwire.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_group.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_group" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_group</span></code></a>([objects, ...])</p></td>
+<td><p>Group objects or groups into one group.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_coordinate_system.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_coordinate_system" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_object_coordinate_system</span></code></a>(...)</p></td>
+<td><p>Create an object coordinate system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_from_edge.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_from_edge" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_from_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_object_from_edge</span></code></a>(assignment)</p></td>
+<td><p>Create an object from one or multiple edges.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_from_face.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_from_face" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_from_face"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_object_from_face</span></code></a>(assignment)</p></td>
+<td><p>Create an object from one or multiple face.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_list.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_list" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_object_list</span></code></a>(assignment[, name])</p></td>
+<td><p>Create an object list given a list of object names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_outer_facelist.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_outer_facelist" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_outer_facelist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_outer_facelist</span></code></a>(assignment)</p></td>
+<td><p>Create a face list from a list of outer objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_plane.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_plane" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_plane"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_plane</span></code></a>([name, plane_base_x, ...])</p></td>
+<td><p>Create a plane.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_point.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_point" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_point</span></code></a>(position[, name, color])</p></td>
+<td><p>Create a point.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_polyline.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_polyline" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_polyline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_polyline</span></code></a>(points[, ...])</p></td>
+<td><p>Draw a polyline object in the 3D modeler.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_rectangle.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_rectangle" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_rectangle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_rectangle</span></code></a>(origin, sizes[, ...])</p></td>
+<td><p>Create a rectangle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_region.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_region" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_region"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_region</span></code></a>([pad_value, ...])</p></td>
+<td><p>Create an air region.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_regular_polygon.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_regular_polygon" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_regular_polygon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_regular_polygon</span></code></a>(origin, ...)</p></td>
+<td><p>Create a rectangle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_sheet_to_ground.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_sheet_to_ground" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_sheet_to_ground"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_sheet_to_ground</span></code></a>(assignment)</p></td>
+<td><p>Create a sheet between an object and a ground plane.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_spiral_on_face.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_spiral_on_face" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_spiral_on_face"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_spiral_on_face</span></code></a>(assignment, ...)</p></td>
+<td><p>Create a Spiral Polyline inside a face.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_subregion.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_subregion" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_subregion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_subregion</span></code></a>(padding_values, ...)</p></td>
+<td><p>Create a subregion.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_udp.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_udp" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_udp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.create_udp</span></code></a>(dll, parameters[, ...])</p></td>
+<td><p>Create a user-defined primitive (UDP).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.delete.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.delete" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.delete</span></code></a>([assignment])</p></td>
+<td><p>Delete objects or groups.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.delete_objects_containing.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.delete_objects_containing" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.delete_objects_containing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.delete_objects_containing</span></code></a>(...[, ...])</p></td>
+<td><p>Delete all objects with a given prefix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.detach_faces.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.detach_faces" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.detach_faces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.detach_faces</span></code></a>(assignment, faces)</p></td>
+<td><p>Section the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.does_object_exists.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.does_object_exists" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.does_object_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.does_object_exists</span></code></a>(assignment)</p></td>
+<td><p>Check to see if an object exists.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_along_line.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_along_line" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_along_line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.duplicate_along_line</span></code></a>(assignment, ...)</p></td>
+<td><p>Duplicate a selection along a line.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_and_mirror.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_and_mirror" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_and_mirror"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.duplicate_and_mirror</span></code></a>(assignment, ...)</p></td>
+<td><p>Duplicate and mirror a selection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_around_axis.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_around_axis" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_around_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.duplicate_around_axis</span></code></a>(assignment, axis)</p></td>
+<td><p>Duplicate a selection around an axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_coordinate_system_to_global.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_coordinate_system_to_global" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_coordinate_system_to_global"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.duplicate_coordinate_system_to_global</span></code></a>(...)</p></td>
+<td><p>Create a duplicate coordinate system referenced to the global coordinate system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.edit_region_dimensions.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.edit_region_dimensions" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.edit_region_dimensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.edit_region_dimensions</span></code></a>(values)</p></td>
+<td><p>Modify the dimensions of the region.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.explicitly_subtract.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.explicitly_subtract" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.explicitly_subtract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.explicitly_subtract</span></code></a>(tool_parts, ...)</p></td>
+<td><p>Explicitly subtract all elements in a SolveInside list and a SolveSurface list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.export_3d_model.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.export_3d_model" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.export_3d_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.export_3d_model</span></code></a>([file_name, ...])</p></td>
+<td><p>Export the 3D model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_closest_edges.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_closest_edges" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_closest_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.find_closest_edges</span></code></a>(start_object, ...)</p></td>
+<td><p>Retrieve the two closest edges that are not perpendicular for two objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_new_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_new_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_new_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.find_new_objects</span></code></a>()</p></td>
+<td><p>Find any new objects in the modeler that were created by previous operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_point_around.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_point_around" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_point_around"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.find_point_around</span></code></a>(assignment, ...)</p></td>
+<td><p>Find the point around an object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_port_faces.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_port_faces" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_port_faces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.find_port_faces</span></code></a>(assignment)</p></td>
+<td><p>Find the vacuums given a list of input sheets.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.fit_all.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.fit_all" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.fit_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.fit_all</span></code></a>()</p></td>
+<td><p>Fit all.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.flatten_assembly.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.flatten_assembly" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.flatten_assembly"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.flatten_assembly</span></code></a>()</p></td>
+<td><p>Flatten the assembly, removing all group trees.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.generate_object_history.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.generate_object_history" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.generate_object_history"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.generate_object_history</span></code></a>(assignment)</p></td>
+<td><p>Generate history for the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_bodynames_from_position</span></code></a>(position)</p></td>
+<td><p>Retrieve the names of the objects that are in contact with a given point.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_boundaries_name.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_boundaries_name" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_boundaries_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_boundaries_name</span></code></a>()</p></td>
+<td><p>Retrieve all boundary names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bounding_dimension.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bounding_dimension" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bounding_dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_bounding_dimension</span></code></a>()</p></td>
+<td><p>Retrieve the x, y and z size of the bounding box for the model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_closest_edgeid_to_position.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_closest_edgeid_to_position" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_closest_edgeid_to_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_closest_edgeid_to_position</span></code></a>(...)</p></td>
+<td><p>Get the edge ID closest to a given position.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_length.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_length" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_edge_length</span></code></a>(assignment)</p></td>
+<td><p>Get the length of an edge.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_midpoint.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_midpoint" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_midpoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_edge_midpoint</span></code></a>(assignment)</p></td>
+<td><p>Retrieve the midpoint coordinates of a given edge ID or edge name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_vertices.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_vertices" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_vertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_edge_vertices</span></code></a>(assignment)</p></td>
+<td><p>Retrieve the vertex IDs of a given edge ID or edge name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edgeid_from_position.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edgeid_from_position" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edgeid_from_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_edgeid_from_position</span></code></a>(position)</p></td>
+<td><p>Get an edge ID from a position.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edgeids_from_vertexid.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edgeids_from_vertexid" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edgeids_from_vertexid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_edgeids_from_vertexid</span></code></a>(vertex, ...)</p></td>
+<td><p>Retrieve edge IDs for a vertex ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_for_circuit_port.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_for_circuit_port" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_for_circuit_port"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_edges_for_circuit_port</span></code></a>(assignment)</p></td>
+<td><p>Retrieve two edge IDs suitable for the circuit port.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_for_circuit_port_from_sheet.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_for_circuit_port_from_sheet" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_for_circuit_port_from_sheet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_edges_for_circuit_port_from_sheet</span></code></a>(...)</p></td>
+<td><p>Retrieve two edge IDs that are suitable for a circuit port from a sheet.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_on_bounding_box.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_on_bounding_box" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_on_bounding_box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_edges_on_bounding_box</span></code></a>(assignment)</p></td>
+<td><p>Retrieve the edges of the sheets passed in the input that are lying on the bounding box.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_entitylist_id.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_entitylist_id" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_entitylist_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_entitylist_id</span></code></a>(name)</p></td>
+<td><p>Retrieve the ID of an entity list.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_equivalent_parallel_edges.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_equivalent_parallel_edges" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_equivalent_parallel_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_equivalent_parallel_edges</span></code></a>(...)</p></td>
+<td><p>Create two new edges that are parallel and equal to the smallest edge given a parallel couple of edges.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_existing_polyline.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_existing_polyline" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_existing_polyline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_existing_polyline</span></code></a>(assignment)</p></td>
+<td><p>Retrieve a polyline object to manipulate it.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_area.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_area" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_face_area</span></code></a>(assignment)</p></td>
+<td><p>Retrieve the area of a given face ID.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_by_id.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_by_id" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_by_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_face_by_id</span></code></a>(assignment)</p></td>
+<td><p>Get the face object given its ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_center.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_center" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_face_center</span></code></a>(assignment)</p></td>
+<td><p>Retrieve the center position for a given planar face ID.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_edges.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_edges" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_face_edges</span></code></a>(assignment)</p></td>
+<td><p>Retrieve the edge IDs of a given face name or face ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_vertices.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_vertices" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_vertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_face_vertices</span></code></a>(assignment)</p></td>
+<td><p>Retrieve the vertex IDs of a given face ID or face name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_faceid_from_position.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_faceid_from_position" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_faceid_from_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_faceid_from_position</span></code></a>(position)</p></td>
+<td><p>Retrieve a face ID from a position.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_faces_from_materials.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_faces_from_materials" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_faces_from_materials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_faces_from_materials</span></code></a>(...)</p></td>
+<td><p>Select all outer faces given a list of materials.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_group_bounding_box.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_group_bounding_box" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_group_bounding_box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_group_bounding_box</span></code></a>(group)</p></td>
+<td><p>Retrieve the bounding box of a group.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_line_ids.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_line_ids" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_line_ids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_line_ids</span></code></a>()</p></td>
+<td><p>Create a dictionary of object IDs for the lines in the design with the line name as the key.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_matched_object_name.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_matched_object_name" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_matched_object_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_matched_object_name</span></code></a>(search_string)</p></td>
+<td><p>Retrieve the name of the matched object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_mid_points_on_dir.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_mid_points_on_dir" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_mid_points_on_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_mid_points_on_dir</span></code></a>(assignment, axis)</p></td>
+<td><p>Retrieve midpoints on a given axis direction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_model_bounding_box.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_model_bounding_box" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_model_bounding_box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_model_bounding_box</span></code></a>()</p></td>
+<td><p>Retrieve the model bounding box.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_obj_id.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_obj_id" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_obj_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_obj_id</span></code></a>(assignment)</p></td>
+<td><p>Return the object ID from an object name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_edges.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_edges" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_object_edges</span></code></a>(assignment)</p></td>
+<td><p>Retrieve the edge IDs of a given object ID or object name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_faces.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_faces" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_faces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_object_faces</span></code></a>(assignment)</p></td>
+<td><p>Retrieve the face IDs of a given object ID or object name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_from_name.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_from_name" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_from_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_object_from_name</span></code></a>(assignment)</p></td>
+<td><p>Return the object from an object name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_name_from_edge_id.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_name_from_edge_id" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_name_from_edge_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_object_name_from_edge_id</span></code></a>(...)</p></td>
+<td><p>Retrieve the object name for a predefined edge ID.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_vertices.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_vertices" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_vertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_object_vertices</span></code></a>(assignment)</p></td>
+<td><p>Retrieve the vertex IDs of a given object name or object ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_by_material.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_by_material" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_by_material"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_objects_by_material</span></code></a>([material])</p></td>
+<td><p>Get a list of objects either of a specified material or classified by material.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_in_group.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_in_group" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_in_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_objects_in_group</span></code></a>(group)</p></td>
+<td><p>Retrieve a list of objects belonging to a group.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_w_string.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_w_string" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_w_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_objects_w_string</span></code></a>(string_name)</p></td>
+<td><p>Retrieve all objects with a given string in their names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_solving_volume.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_solving_volume" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_solving_volume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_solving_volume</span></code></a>()</p></td>
+<td><p>Generate a mesh for a setup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_vertex_position.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_vertex_position" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_vertex_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_vertex_position</span></code></a>(assignment)</p></td>
+<td><p>Retrieve a vector of vertex coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_vertices_of_line.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_vertices_of_line" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_vertices_of_line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_vertices_of_line</span></code></a>(assignment)</p></td>
+<td><p>Generate a list of vertex positions for a line object from AEDT in model units.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_working_coordinate_system.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_working_coordinate_system" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_working_coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.get_working_coordinate_system</span></code></a>()</p></td>
+<td><p>Get the active coordinate system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.global_to_cs.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.global_to_cs" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.global_to_cs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.global_to_cs</span></code></a>(point, coordinate_system)</p></td>
+<td><p>Transform a point from the global coordinate system to another coordinate system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.heal_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.heal_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.heal_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.heal_objects</span></code></a>(assignment[, ...])</p></td>
+<td><p>Repair invalid geometry entities for the selected objects within the specified tolerance settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_3d_cad.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_3d_cad" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_3d_cad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.import_3d_cad</span></code></a>(input_file[, ...])</p></td>
+<td><p>Import a CAD model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_discovery_model.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_discovery_model" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_discovery_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.import_discovery_model</span></code></a>(input_file)</p></td>
+<td><p>Import a Discovery file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_primitives_from_file.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_primitives_from_file" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_primitives_from_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.import_primitives_from_file</span></code></a>([...])</p></td>
+<td><p>Import and create primitives from a JSON file or dictionary of properties.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_spaceclaim_document.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_spaceclaim_document" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_spaceclaim_document"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.import_spaceclaim_document</span></code></a>(input_file)</p></td>
+<td><p>Import a SpaceClaim document.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.imprint</span></code></a>(blank_list, tool_list[, ...])</p></td>
+<td><p>Imprin an object list on another object list.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint_normal_projection.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint_normal_projection" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint_normal_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.imprint_normal_projection</span></code></a>(assignment)</p></td>
+<td><p>Imprint the normal projection of objects over a sheet.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint_vector_projection.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint_vector_projection" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint_vector_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.imprint_vector_projection</span></code></a>(...[, ...])</p></td>
+<td><p>Imprint the projection of objects over a sheet with a specified vector and distance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.intersect.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.intersect" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.intersect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.intersect</span></code></a>(assignment[, keep_originals])</p></td>
+<td><p>Intersect objects from a list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.invert_cs.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.invert_cs" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.invert_cs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.invert_cs</span></code></a>(coordinate_system[, ...])</p></td>
+<td><p>Get the inverse translation and the conjugate quaternion of the input coordinate system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.load_scdm_in_hfss.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.load_scdm_in_hfss" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.load_scdm_in_hfss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.load_scdm_in_hfss</span></code></a>(input_file)</p></td>
+<td><p>Load a SpaceClaim file in HFSS.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.mirror.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.mirror" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.mirror"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.mirror</span></code></a>(assignment, origin, vector)</p></td>
+<td><p>Mirror a selection.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.modeler_variable.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.modeler_variable" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.modeler_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.modeler_variable</span></code></a>(value)</p></td>
+<td><p>Modeler variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.move" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.move</span></code></a>(assignment, vector)</p></td>
+<td><p>Move objects from a list.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move_edge.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.move_edge" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.move_edge</span></code></a>(assignment[, offset])</p></td>
+<td><p>Move an input edge or a list of input edges of a specific object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move_face.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.move_face" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move_face"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.move_face</span></code></a>(assignment[, offset])</p></td>
+<td><p>Move an input face or a list of input faces of a specific object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.objects_in_bounding_box.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.objects_in_bounding_box" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.objects_in_bounding_box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.objects_in_bounding_box</span></code></a>(bounding_box)</p></td>
+<td><p>Given a 2D bounding box, check if sheets and lines are inside it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.paste.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.paste" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.paste"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.paste</span></code></a>()</p></td>
+<td><p>Paste objects from the clipboard.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.polyline_segment.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.polyline_segment" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.polyline_segment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.polyline_segment</span></code></a>(type[, num_seg, ...])</p></td>
+<td><p>New segment of a polyline.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.purge_history.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.purge_history" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.purge_history"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.purge_history</span></code></a>(assignment)</p></td>
+<td><p>Purge history objects from object names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.radial_split_2D.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.radial_split_2D" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.radial_split_2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.radial_split_2D</span></code></a>(radius, name)</p></td>
+<td><p>Split the stator and rotor for mesh refinement.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.reassign_subregion.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.reassign_subregion" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.reassign_subregion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.reassign_subregion</span></code></a>(region, parts)</p></td>
+<td><p>Modify parts in the subregion.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.reference_cs_to_global.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.reference_cs_to_global" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.reference_cs_to_global"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.reference_cs_to_global</span></code></a>(...)</p></td>
+<td><p>Get the origin and quaternion defining the coordinate system in the global coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.refresh.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.refresh" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.refresh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.refresh</span></code></a>()</p></td>
+<td><p>Refresh this object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.refresh_all_ids.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.refresh_all_ids" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.refresh_all_ids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.refresh_all_ids</span></code></a>()</p></td>
+<td><p>Refresh all IDs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.rotate.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.rotate" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.rotate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.rotate</span></code></a>(assignment, axis[, angle, ...])</p></td>
+<td><p>Rotate the selection.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.scale.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.scale" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.scale</span></code></a>(assignment[, x, y, z])</p></td>
+<td><p>Scale a list of objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.section.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.section" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.section"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.section</span></code></a>(assignment, plane[, ...])</p></td>
+<td><p>Section the selection.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.select_allfaces_fromobjects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.select_allfaces_fromobjects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.select_allfaces_fromobjects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.select_allfaces_fromobjects</span></code></a>(assignment)</p></td>
+<td><p>Select all outer faces given a list of objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.separate_bodies.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.separate_bodies" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.separate_bodies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.separate_bodies</span></code></a>(assignment[, ...])</p></td>
+<td><p>Separate bodies of the selection.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_object_model_state.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_object_model_state" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_object_model_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.set_object_model_state</span></code></a>(assignment)</p></td>
+<td><p>Set a list of objects to either models or non-models.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_objects_deformation.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_objects_deformation" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_objects_deformation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.set_objects_deformation</span></code></a>(assignment)</p></td>
+<td><p>Assign deformation objects to a Workbench link.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_objects_temperature.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_objects_temperature" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_objects_temperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.set_objects_temperature</span></code></a>(assignment)</p></td>
+<td><p>Assign temperatures to objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_working_coordinate_system.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_working_coordinate_system" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_working_coordinate_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.set_working_coordinate_system</span></code></a>(name)</p></td>
+<td><p>Set the working coordinate system to another coordinate system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.setunassigned_mats.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.setunassigned_mats" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.setunassigned_mats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.setunassigned_mats</span></code></a>()</p></td>
+<td><p>Find unassagned objects and set them to non-model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.simplify_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.simplify_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.simplify_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.simplify_objects</span></code></a>(assignment[, ...])</p></td>
+<td><p>Simplify command to converts complex objects into simpler primitives which are easy to mesh and solve.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.split.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.split" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.split</span></code></a>(assignment[, plane, sides, ...])</p></td>
+<td><p>Split a list of objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.subtract.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.subtract" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.subtract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.subtract</span></code></a>(blank_list, tool_list[, ...])</p></td>
+<td><p>Subtract objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_normal.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_normal" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_normal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.sweep_along_normal</span></code></a>(assignment, faces)</p></td>
+<td><p>Sweep the selection along the vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_path.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_path" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.sweep_along_path</span></code></a>(assignment, ...)</p></td>
+<td><p>Sweep the selection along a path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_vector.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_vector" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.sweep_along_vector</span></code></a>(assignment, ...)</p></td>
+<td><p>Sweep the selection along a vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_around_axis.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_around_axis" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_around_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.sweep_around_axis</span></code></a>(assignment, axis)</p></td>
+<td><p>Sweep the selection around the axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.thicken_sheet.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.thicken_sheet" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.thicken_sheet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.thicken_sheet</span></code></a>(assignment, thickness)</p></td>
+<td><p>Thicken the sheet of the selection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.ungroup.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.ungroup" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.ungroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.ungroup</span></code></a>(groups)</p></td>
+<td><p>Ungroup one or more groups.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unite.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.unite" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.unite</span></code></a>(assignment[, purge, ...])</p></td>
+<td><p>Unite objects from a list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_geometry_property.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_geometry_property" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_geometry_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.update_geometry_property</span></code></a>(assignment)</p></td>
+<td><p>Update property of assigned geometry objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_object.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_object" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.update_object</span></code></a>(assignment)</p></td>
+<td><p>Update any <code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.aedt.core.modeler.Object3d.Object3d</span></code> derivatives that have potentially been modified by a modeler operation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_udp.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_udp" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_udp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.update_udp</span></code></a>(assignment, operation, ...)</p></td>
+<td><p>Update an existing geometrical object that was originally created using a user-defined primitive (UDP).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.value_in_object_units.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.value_in_object_units" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.value_in_object_units"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.value_in_object_units</span></code></a>(value)</p></td>
+<td><p>Convert one or more strings for numerical lengths to floating point values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.vertex_data_of_lines.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.vertex_data_of_lines" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.vertex_data_of_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.vertex_data_of_lines</span></code></a>([text_filter])</p></td>
+<td><p>Generate a dictionary of line vertex data for all lines contained within the design.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.wrap_sheet.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.wrap_sheet" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.wrap_sheet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.wrap_sheet</span></code></a>(sheet, object[, imprinted])</p></td>
+<td><p>Execute the sheet wrapping around an object.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.coordinate_systems.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.coordinate_systems" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.coordinate_systems"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.coordinate_systems</span></code></a></p></td>
+<td><p>Coordinate systems.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.defaultmaterial.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.defaultmaterial" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.defaultmaterial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.defaultmaterial</span></code></a></p></td>
+<td><p>Default material.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.design_type.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.design_type" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.design_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.design_type</span></code></a></p></td>
+<td><p>Design type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.dimension.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.dimension" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.dimension</span></code></a></p></td>
+<td><p>Dimensions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.geometry_mode.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.geometry_mode" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.geometry_mode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.geometry_mode</span></code></a></p></td>
+<td><p>Geometry mode.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.layout_component_names.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.layout_component_names" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.layout_component_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.layout_component_names</span></code></a></p></td>
+<td><p>List of the names of all Layout component objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.line_names.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.line_names" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.line_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.line_names</span></code></a></p></td>
+<td><p>List of the names of all line objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.line_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.line_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.line_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.line_objects</span></code></a></p></td>
+<td><p>List of all line objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.logger.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.logger" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.logger</span></code></a></p></td>
+<td><p>Logger.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.materials.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.materials" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.materials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.materials</span></code></a></p></td>
+<td><p>Material library used in the project.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_consistency_report.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_consistency_report" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_consistency_report"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.model_consistency_report</span></code></a></p></td>
+<td><p>Summary of detected inconsistencies between the AEDT modeler and PyAEDT structures.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.model_objects</span></code></a></p></td>
+<td><p>List of the names of all model objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_units.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_units" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_units"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.model_units</span></code></a></p></td>
+<td><p>Model units as a string.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.non_model_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.non_model_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.non_model_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.non_model_objects</span></code></a></p></td>
+<td><p>List of objects of all non-model objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.object_list.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.object_list" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.object_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.object_list</span></code></a></p></td>
+<td><p>List of all objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.object_names.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.object_names" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.object_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.object_names</span></code></a></p></td>
+<td><p>List of the names of all objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.objects_by_name.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.objects_by_name" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.objects_by_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.objects_by_name</span></code></a></p></td>
+<td><p>Object dictionary organized by name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.obounding_box.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.obounding_box" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.obounding_box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.obounding_box</span></code></a></p></td>
+<td><p>Bounding box.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.oeditor.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.oeditor" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.oeditor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.oeditor</span></code></a></p></td>
+<td><p>AEDT <code class="docutils literal notranslate"><span class="pre">oEditor</span></code> module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.plane2d.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.plane2d" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.plane2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.plane2d</span></code></a></p></td>
+<td><p>Create a 2D plane.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.planes.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.planes" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.planes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.planes</span></code></a></p></td>
+<td><p>Planes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.point_names.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.point_names" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.point_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.point_names</span></code></a></p></td>
+<td><p>List of the names of all points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.point_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.point_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.point_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.point_objects</span></code></a></p></td>
+<td><p>List of points objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.projdir.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.projdir" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.projdir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.projdir</span></code></a></p></td>
+<td><p>Project directory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.selections.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.selections" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.selections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.selections</span></code></a></p></td>
+<td><p>Selections.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sheet_names.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.sheet_names" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sheet_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.sheet_names</span></code></a></p></td>
+<td><p>List of the names of all sheet objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sheet_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.sheet_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sheet_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.sheet_objects</span></code></a></p></td>
+<td><p>List of all sheet objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_bodies.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_bodies" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_bodies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.solid_bodies</span></code></a></p></td>
+<td><p>List of object names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_names.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_names" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.solid_names</span></code></a></p></td>
+<td><p>List of the names of all solid objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.solid_objects</span></code></a></p></td>
+<td><p>List of all solid objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unclassified_names.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.unclassified_names" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unclassified_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.unclassified_names</span></code></a></p></td>
+<td><p>List of the names of all unclassified objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unclassified_objects.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.unclassified_objects" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unclassified_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.unclassified_objects</span></code></a></p></td>
+<td><p>List of all unclassified objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.user_defined_component_names.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.user_defined_component_names" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.user_defined_component_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.user_defined_component_names</span></code></a></p></td>
+<td><p>List of the names of all 3D component objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.user_lists.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.user_lists" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.user_lists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.user_lists</span></code></a></p></td>
+<td><p>User lists.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.version.html#ansys.aedt.core.modeler.modeler_2d.Modeler2D.version" title="ansys.aedt.core.modeler.modeler_2d.Modeler2D.version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modeler2D.version</span></code></a></p></td>
+<td><p>Version.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.aedt.core.modeler.modeler_2d.Modeler2D"><code class="docutils literal notranslate"><span class="pre">Modeler2D</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/API/_autosummary/ansys.aedt.core.modeler.modeler_2d.Modeler2D.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/API/_autosummary/ansys.aedt.core.modeler.modeler_2d.Modeler2D.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+<link rel="stylesheet" href="../../_static/css/fuse-search.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"ignoreLocation": true, "keys": ["title", "text"], "limit": 10, "limite": 10, "minMatchCharLength": 2, "threshold": 0.5}');
+const SEARCH_FILE = "../../_static/search.json";
+</script>
+
+
+<script src="../../_static/js/search.js"></script>
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.2.2. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

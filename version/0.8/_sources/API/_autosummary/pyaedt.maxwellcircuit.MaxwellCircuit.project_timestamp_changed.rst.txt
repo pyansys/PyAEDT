@@ -1,0 +1,6 @@
+project\_timestamp\_changed
+===========================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.project_timestamp_changed

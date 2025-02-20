@@ -1,0 +1,6 @@
+create\_creeping\_point\_visual\_ray\_tracing
+=============================================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.create_creeping_point_visual_ray_tracing

@@ -1,0 +1,6 @@
+existing\_analysis\_setups
+==========================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.existing_analysis_setups

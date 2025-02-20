@@ -1,0 +1,6 @@
+available\_quantities\_categories
+=================================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.available_quantities_categories

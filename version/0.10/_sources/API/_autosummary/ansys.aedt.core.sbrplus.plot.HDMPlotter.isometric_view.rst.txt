@@ -1,0 +1,6 @@
+isometric\_view
+===============
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.isometric_view

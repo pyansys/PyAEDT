@@ -1,0 +1,6 @@
+Position
+========
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.Position

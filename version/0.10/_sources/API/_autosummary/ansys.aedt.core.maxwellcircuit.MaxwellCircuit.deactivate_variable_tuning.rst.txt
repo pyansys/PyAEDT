@@ -1,0 +1,6 @@
+deactivate\_variable\_tuning
+============================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.deactivate_variable_tuning

@@ -1,0 +1,6 @@
+z\_scale
+========
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.z_scale

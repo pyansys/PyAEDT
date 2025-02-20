@@ -1,0 +1,51 @@
+﻿SimulationConfigurationDc
+=========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoclass:: SimulationConfigurationDc
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SimulationConfigurationDc.dc_compute_inductance
+      SimulationConfigurationDc.dc_contact_radius
+      SimulationConfigurationDc.dc_error_energy
+      SimulationConfigurationDc.dc_export_thermal_data
+      SimulationConfigurationDc.dc_full_report_path
+      SimulationConfigurationDc.dc_icepak_temp_file
+      SimulationConfigurationDc.dc_import_thermal_data
+      SimulationConfigurationDc.dc_max_init_mesh_edge_length
+      SimulationConfigurationDc.dc_max_num_pass
+      SimulationConfigurationDc.dc_mesh_bondwires
+      SimulationConfigurationDc.dc_mesh_vias
+      SimulationConfigurationDc.dc_min_num_pass
+      SimulationConfigurationDc.dc_min_plane_area_to_mesh
+      SimulationConfigurationDc.dc_min_void_area_to_mesh
+      SimulationConfigurationDc.dc_num_bondwire_sides
+      SimulationConfigurationDc.dc_num_via_sides
+      SimulationConfigurationDc.dc_per_pin_res_path
+      SimulationConfigurationDc.dc_per_pin_use_pin_format
+      SimulationConfigurationDc.dc_percent_local_refinement
+      SimulationConfigurationDc.dc_perform_adaptive_refinement
+      SimulationConfigurationDc.dc_plot_jv
+      SimulationConfigurationDc.dc_refine_bondwires
+      SimulationConfigurationDc.dc_refine_vias
+      SimulationConfigurationDc.dc_report_config_file
+      SimulationConfigurationDc.dc_report_show_Active_devices
+      SimulationConfigurationDc.dc_slide_position
+      SimulationConfigurationDc.dc_source_terms_to_ground
+      SimulationConfigurationDc.dc_use_dc_custom_settings
+      SimulationConfigurationDc.dc_use_loop_res_for_per_pin
+      SimulationConfigurationDc.dc_via_report_path
+   
+   

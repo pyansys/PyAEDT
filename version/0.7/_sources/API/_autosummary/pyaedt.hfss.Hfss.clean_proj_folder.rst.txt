@@ -1,0 +1,6 @@
+clean\_proj\_folder
+===================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.clean_proj_folder

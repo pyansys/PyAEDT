@@ -1,0 +1,6 @@
+get\_monitor\_data
+==================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.get_monitor_data

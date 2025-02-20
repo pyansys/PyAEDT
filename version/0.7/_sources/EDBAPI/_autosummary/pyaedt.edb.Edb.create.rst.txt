@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.create

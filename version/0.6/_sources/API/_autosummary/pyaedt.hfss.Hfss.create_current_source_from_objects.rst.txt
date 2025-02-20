@@ -1,0 +1,6 @@
+create\_current\_source\_from\_objects
+======================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_current_source_from_objects

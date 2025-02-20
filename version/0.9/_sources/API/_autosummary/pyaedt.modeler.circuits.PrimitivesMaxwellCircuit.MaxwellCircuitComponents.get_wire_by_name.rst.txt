@@ -1,0 +1,6 @@
+get\_wire\_by\_name
+===================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.get_wire_by_name

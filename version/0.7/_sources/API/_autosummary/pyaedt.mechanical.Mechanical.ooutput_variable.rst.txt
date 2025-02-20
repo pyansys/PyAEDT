@@ -1,0 +1,6 @@
+ooutput\_variable
+=================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.ooutput_variable

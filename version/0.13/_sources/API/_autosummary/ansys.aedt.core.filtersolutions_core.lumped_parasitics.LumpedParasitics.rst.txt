@@ -1,0 +1,29 @@
+﻿LumpedParasitics
+================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_parasitics
+
+.. autoclass:: LumpedParasitics
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      LumpedParasitics.capacitor_ls
+      LumpedParasitics.capacitor_q
+      LumpedParasitics.capacitor_rp
+      LumpedParasitics.capacitor_rs
+      LumpedParasitics.inductor_cp
+      LumpedParasitics.inductor_q
+      LumpedParasitics.inductor_rp
+      LumpedParasitics.inductor_rs
+   
+   

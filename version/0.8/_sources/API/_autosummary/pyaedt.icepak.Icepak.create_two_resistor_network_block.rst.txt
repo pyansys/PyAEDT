@@ -1,0 +1,6 @@
+create\_two\_resistor\_network\_block
+=====================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_two_resistor_network_block

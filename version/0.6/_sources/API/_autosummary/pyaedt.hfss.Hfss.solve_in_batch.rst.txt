@@ -1,0 +1,6 @@
+solve\_in\_batch
+================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.solve_in_batch

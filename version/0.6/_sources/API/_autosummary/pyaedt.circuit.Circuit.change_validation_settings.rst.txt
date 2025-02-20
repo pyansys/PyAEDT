@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.change_validation_settings

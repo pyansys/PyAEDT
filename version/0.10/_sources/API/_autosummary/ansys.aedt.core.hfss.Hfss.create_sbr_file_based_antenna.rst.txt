@@ -1,0 +1,6 @@
+create\_sbr\_file\_based\_antenna
+=================================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.create_sbr_file_based_antenna

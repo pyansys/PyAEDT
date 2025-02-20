@@ -1,0 +1,6 @@
+create\_clock\_source
+=====================
+
+.. currentmodule:: ansys.aedt.core.modules.cable_modeling
+
+.. automethod:: Cable.create_clock_source

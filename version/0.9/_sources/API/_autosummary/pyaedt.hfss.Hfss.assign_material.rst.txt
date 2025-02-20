@@ -1,0 +1,6 @@
+assign\_material
+================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.assign_material

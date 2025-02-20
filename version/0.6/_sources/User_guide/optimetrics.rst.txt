@@ -1,0 +1,18 @@
+Optimetrics
+===========
+Optimetrics allow you to set up parametric analysis, sensitivity analysis, optimization,
+and Design of Experiments (DOE). PyAEDT can read all optimetrics setups already
+present in a design, edit them, and create them:
+
+.. code:: python
+
+
+    from pyaedt import Maxwell3d
+    m3d = Maxwell3d()
+    m3d.parametrics.add("Rload", 0.1, 1, 0.1)
+
+
+.. image:: ../Resources/Optimetrics_Parametric.png
+  :width: 800
+  :alt: Optimetrics creation
+

@@ -1,0 +1,6 @@
+segment\_info
+=============
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoproperty:: EdgePrimitive.segment_info

@@ -1,0 +1,6 @@
+cleanup\_solution
+=================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.cleanup_solution

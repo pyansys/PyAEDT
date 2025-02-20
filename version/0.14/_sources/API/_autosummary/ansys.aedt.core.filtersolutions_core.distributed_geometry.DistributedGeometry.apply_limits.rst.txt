@@ -1,0 +1,6 @@
+apply\_limits
+=============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_geometry
+
+.. autoproperty:: DistributedGeometry.apply_limits

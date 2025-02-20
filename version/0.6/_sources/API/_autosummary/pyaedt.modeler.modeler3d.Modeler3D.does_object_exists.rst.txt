@@ -1,0 +1,6 @@
+does\_object\_exists
+====================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.does_object_exists

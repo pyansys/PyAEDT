@@ -1,0 +1,6 @@
+export\_netlist\_from\_schematic
+================================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.export_netlist_from_schematic

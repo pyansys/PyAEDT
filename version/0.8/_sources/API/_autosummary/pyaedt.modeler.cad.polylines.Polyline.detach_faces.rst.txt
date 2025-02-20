@@ -1,0 +1,6 @@
+detach\_faces
+=============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.detach_faces

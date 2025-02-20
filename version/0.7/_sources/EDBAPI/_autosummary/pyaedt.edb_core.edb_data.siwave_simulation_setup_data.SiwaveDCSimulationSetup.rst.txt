@@ -1,0 +1,59 @@
+﻿SiwaveDCSimulationSetup
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoclass:: SiwaveDCSimulationSetup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SiwaveDCSimulationSetup.add_frequency_sweep
+      
+      
+      SiwaveDCSimulationSetup.add_source_terminal_to_ground
+      
+      
+      SiwaveDCSimulationSetup.create
+      
+      
+      SiwaveDCSimulationSetup.delete_frequency_sweep
+      
+      
+      SiwaveDCSimulationSetup.get_configurations
+      
+      
+      SiwaveDCSimulationSetup.set_dc_slider
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SiwaveDCSimulationSetup.advanced_settings
+      SiwaveDCSimulationSetup.dc_advanced_settings
+      SiwaveDCSimulationSetup.dc_settings
+      SiwaveDCSimulationSetup.enabled
+      SiwaveDCSimulationSetup.frequency_sweeps
+      SiwaveDCSimulationSetup.get_sim_setup_info
+      SiwaveDCSimulationSetup.name
+      SiwaveDCSimulationSetup.pi_slider_position
+      SiwaveDCSimulationSetup.position
+      SiwaveDCSimulationSetup.setup_type
+      SiwaveDCSimulationSetup.si_slider_position
+      SiwaveDCSimulationSetup.source_terms_to_ground
+      SiwaveDCSimulationSetup.use_custom_settings
+      SiwaveDCSimulationSetup.use_si_settings
+   
+   

@@ -1,0 +1,6 @@
+get\_component\_net\_connection\_info
+=====================================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.get_component_net_connection_info

@@ -1,0 +1,6 @@
+num\_bondwire\_sides
+====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveDCSimulationSetup.num_bondwire_sides

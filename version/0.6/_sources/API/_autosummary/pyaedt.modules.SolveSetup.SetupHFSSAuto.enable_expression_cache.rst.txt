@@ -1,0 +1,6 @@
+enable\_expression\_cache
+=========================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSSAuto.enable_expression_cache

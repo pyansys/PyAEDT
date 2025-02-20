@@ -1,0 +1,76 @@
+﻿EdbNets
+=======
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. autoclass:: EdbNets
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EdbNets.classify_nets
+      
+      
+      EdbNets.delete
+      
+      
+      EdbNets.eligible_power_nets
+      
+      
+      EdbNets.find_and_fix_disjoint_nets
+      
+      
+      EdbNets.find_or_create_net
+      
+      
+      EdbNets.generate_extended_nets
+      
+      
+      EdbNets.get_dcconnected_net_list
+      
+      
+      EdbNets.get_net_by_name
+      
+      
+      EdbNets.get_plot_data
+      
+      
+      EdbNets.get_powertree
+      
+      
+      EdbNets.is_net_in_component
+      
+      
+      EdbNets.is_power_gound_net
+      
+      
+      EdbNets.merge_nets_polygons
+      
+      
+      EdbNets.plot
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EdbNets.components_by_nets
+      EdbNets.db
+      EdbNets.netlist
+      EdbNets.nets
+      EdbNets.nets_by_components
+      EdbNets.power
+      EdbNets.signal
+   
+   

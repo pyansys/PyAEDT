@@ -1,0 +1,6 @@
+modeler
+=======
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.modeler

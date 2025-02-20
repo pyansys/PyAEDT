@@ -1,0 +1,6 @@
+export\_farfield
+================
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. automethod:: FfdSolutionDataExporter.export_farfield

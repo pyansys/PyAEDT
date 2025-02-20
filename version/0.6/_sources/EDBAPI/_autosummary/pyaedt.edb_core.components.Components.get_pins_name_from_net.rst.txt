@@ -1,0 +1,6 @@
+get\_pins\_name\_from\_net
+==========================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.get_pins_name_from_net

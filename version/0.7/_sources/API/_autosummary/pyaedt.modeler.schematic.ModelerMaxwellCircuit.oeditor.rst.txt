@@ -1,0 +1,6 @@
+oeditor
+=======
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoproperty:: ModelerMaxwellCircuit.oeditor

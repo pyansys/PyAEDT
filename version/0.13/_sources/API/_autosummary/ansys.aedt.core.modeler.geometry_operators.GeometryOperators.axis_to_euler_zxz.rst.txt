@@ -1,0 +1,6 @@
+axis\_to\_euler\_zxz
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.axis_to_euler_zxz

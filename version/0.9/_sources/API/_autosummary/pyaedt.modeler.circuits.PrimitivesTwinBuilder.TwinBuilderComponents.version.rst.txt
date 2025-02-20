@@ -1,0 +1,6 @@
+version
+=======
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. autoproperty:: TwinBuilderComponents.version

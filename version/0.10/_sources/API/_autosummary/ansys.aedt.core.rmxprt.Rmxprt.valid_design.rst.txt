@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.valid_design

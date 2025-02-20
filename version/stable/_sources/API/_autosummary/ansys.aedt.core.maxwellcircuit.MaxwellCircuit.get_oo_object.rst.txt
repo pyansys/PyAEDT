@@ -1,0 +1,6 @@
+get\_oo\_object
+===============
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.get_oo_object

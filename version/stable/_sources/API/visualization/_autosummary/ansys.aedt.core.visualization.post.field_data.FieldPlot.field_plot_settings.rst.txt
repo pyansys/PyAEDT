@@ -1,0 +1,6 @@
+field\_plot\_settings
+=====================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. autoproperty:: FieldPlot.field_plot_settings

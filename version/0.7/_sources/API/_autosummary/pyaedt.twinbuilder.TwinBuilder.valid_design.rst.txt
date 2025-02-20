@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.valid_design

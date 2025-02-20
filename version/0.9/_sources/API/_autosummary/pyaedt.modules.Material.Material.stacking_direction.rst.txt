@@ -1,0 +1,6 @@
+stacking\_direction
+===================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.stacking_direction

@@ -1,0 +1,6 @@
+is\_solved
+==========
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoproperty:: SetupHFSSAuto.is_solved

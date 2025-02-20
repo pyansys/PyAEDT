@@ -1,0 +1,6 @@
+available\_variations
+=====================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell3d.available_variations

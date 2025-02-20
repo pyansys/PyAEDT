@@ -1,0 +1,6 @@
+oimport\_export
+===============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.oimport_export

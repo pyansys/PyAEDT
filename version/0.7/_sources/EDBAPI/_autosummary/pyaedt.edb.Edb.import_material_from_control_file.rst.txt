@@ -1,0 +1,6 @@
+import\_material\_from\_control\_file
+=====================================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.import_material_from_control_file

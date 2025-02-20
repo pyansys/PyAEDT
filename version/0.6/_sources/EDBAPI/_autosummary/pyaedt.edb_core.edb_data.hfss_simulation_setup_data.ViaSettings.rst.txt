@@ -1,0 +1,25 @@
+﻿ViaSettings
+===========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: ViaSettings
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ViaSettings.via_density
+      ViaSettings.via_material
+      ViaSettings.via_num_sides
+      ViaSettings.via_style
+   
+   

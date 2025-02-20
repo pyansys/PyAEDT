@@ -1,0 +1,6 @@
+fillet
+======
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. automethod:: Object3d.fillet

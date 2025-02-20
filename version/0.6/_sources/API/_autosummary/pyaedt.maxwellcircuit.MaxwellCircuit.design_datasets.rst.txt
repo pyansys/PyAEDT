@@ -1,0 +1,6 @@
+design\_datasets
+================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.design_datasets

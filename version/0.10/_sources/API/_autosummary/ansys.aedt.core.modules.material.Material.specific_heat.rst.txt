@@ -1,0 +1,6 @@
+specific\_heat
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.specific_heat

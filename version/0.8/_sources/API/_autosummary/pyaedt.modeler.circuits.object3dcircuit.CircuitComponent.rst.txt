@@ -1,0 +1,54 @@
+﻿CircuitComponent
+================
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. autoclass:: CircuitComponent
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      CircuitComponent.change_property
+      
+      
+      CircuitComponent.delete
+      
+      
+      CircuitComponent.set_color
+      
+      
+      CircuitComponent.set_property
+      
+      
+      CircuitComponent.set_use_symbol_color
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      CircuitComponent.angle
+      CircuitComponent.bounding_box
+      CircuitComponent.component_info
+      CircuitComponent.composed_name
+      CircuitComponent.location
+      CircuitComponent.mirror
+      CircuitComponent.model_data
+      CircuitComponent.model_name
+      CircuitComponent.parameters
+      CircuitComponent.pins
+      CircuitComponent.refdes
+      CircuitComponent.units
+   
+   

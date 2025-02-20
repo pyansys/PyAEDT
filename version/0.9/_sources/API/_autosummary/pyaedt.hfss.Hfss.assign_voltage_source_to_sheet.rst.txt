@@ -1,0 +1,6 @@
+assign\_voltage\_source\_to\_sheet
+==================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.assign_voltage_source_to_sheet

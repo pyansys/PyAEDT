@@ -1,0 +1,6 @@
+o\_definition\_manager
+======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesEmit
+
+.. autoproperty:: EmitComponents.o_definition_manager

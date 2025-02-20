@@ -1,0 +1,6 @@
+nb\_display
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.nb_display

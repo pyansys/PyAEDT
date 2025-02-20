@@ -1,0 +1,6 @@
+adjust\_goal\_frequency
+=======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.optimization_goals_table
+
+.. automethod:: OptimizationGoalsTable.adjust_goal_frequency

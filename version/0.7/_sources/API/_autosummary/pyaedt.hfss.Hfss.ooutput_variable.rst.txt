@@ -1,0 +1,6 @@
+ooutput\_variable
+=================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.ooutput_variable

@@ -1,0 +1,6 @@
+import\_traces
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: EyeDiagram.import_traces

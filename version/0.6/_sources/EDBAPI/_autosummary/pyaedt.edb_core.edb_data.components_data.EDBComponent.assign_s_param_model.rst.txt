@@ -1,0 +1,6 @@
+assign\_s\_param\_model
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.components_data
+
+.. automethod:: EDBComponent.assign_s_param_model

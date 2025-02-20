@@ -1,0 +1,6 @@
+is\_visible\_pad
+================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layer.is_visible_pad

@@ -1,0 +1,6 @@
+assign\_cylindrical\_gap
+========================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.assign_cylindrical_gap

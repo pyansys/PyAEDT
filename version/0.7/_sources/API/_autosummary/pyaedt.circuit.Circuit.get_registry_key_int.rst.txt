@@ -1,0 +1,6 @@
+get\_registry\_key\_int
+=======================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_registry_key_int

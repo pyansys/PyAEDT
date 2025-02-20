@@ -1,0 +1,6 @@
+set\_temporary\_directory
+=========================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.set_temporary_directory

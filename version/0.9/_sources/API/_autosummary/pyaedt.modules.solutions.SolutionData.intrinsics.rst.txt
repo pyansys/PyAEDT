@@ -1,0 +1,6 @@
+intrinsics
+==========
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: SolutionData.intrinsics

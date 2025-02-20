@@ -1,0 +1,6 @@
+dc\_min\_void\_area\_to\_mesh
+=============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_min_void_area_to_mesh

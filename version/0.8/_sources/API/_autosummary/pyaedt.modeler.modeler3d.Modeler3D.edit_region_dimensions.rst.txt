@@ -1,0 +1,6 @@
+edit\_region\_dimensions
+========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.edit_region_dimensions

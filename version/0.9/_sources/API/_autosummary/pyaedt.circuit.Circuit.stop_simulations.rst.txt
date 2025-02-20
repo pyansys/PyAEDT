@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.stop_simulations

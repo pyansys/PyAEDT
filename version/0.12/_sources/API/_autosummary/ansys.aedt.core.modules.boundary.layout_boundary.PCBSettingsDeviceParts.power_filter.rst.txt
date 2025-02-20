@@ -1,0 +1,6 @@
+power\_filter
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoproperty:: PCBSettingsDeviceParts.power_filter

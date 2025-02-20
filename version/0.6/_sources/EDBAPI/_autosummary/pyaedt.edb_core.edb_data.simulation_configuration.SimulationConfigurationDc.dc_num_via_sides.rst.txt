@@ -1,0 +1,6 @@
+dc\_num\_via\_sides
+===================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_num_via_sides

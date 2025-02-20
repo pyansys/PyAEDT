@@ -1,0 +1,6 @@
+create\_model\_from\_touchstone
+===============================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_model_from_touchstone

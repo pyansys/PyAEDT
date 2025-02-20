@@ -1,0 +1,6 @@
+skin\_depth
+===========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: MeshOperationSkinDepth.skin_depth

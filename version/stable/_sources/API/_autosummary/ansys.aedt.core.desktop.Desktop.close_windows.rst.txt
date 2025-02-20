@@ -1,0 +1,6 @@
+close\_windows
+==============
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.close_windows

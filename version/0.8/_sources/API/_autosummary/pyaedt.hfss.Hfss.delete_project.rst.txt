@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.delete_project

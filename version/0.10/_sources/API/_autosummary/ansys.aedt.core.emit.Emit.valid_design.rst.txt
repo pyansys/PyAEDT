@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.valid_design

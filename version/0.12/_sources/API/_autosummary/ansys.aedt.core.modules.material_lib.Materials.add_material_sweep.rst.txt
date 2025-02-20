@@ -1,0 +1,6 @@
+add\_material\_sweep
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.material_lib
+
+.. automethod:: Materials.add_material_sweep

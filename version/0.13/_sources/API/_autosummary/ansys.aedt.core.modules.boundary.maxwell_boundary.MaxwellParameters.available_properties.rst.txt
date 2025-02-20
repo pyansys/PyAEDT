@@ -1,0 +1,6 @@
+available\_properties
+=====================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.maxwell_boundary
+
+.. autoproperty:: MaxwellParameters.available_properties

@@ -1,0 +1,6 @@
+max\_arc\_points
+================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: CurveApproxSettings.max_arc_points

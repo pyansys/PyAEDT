@@ -1,0 +1,6 @@
+get\_report\_plotter
+====================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. automethod:: SolutionData.get_report_plotter

@@ -1,0 +1,6 @@
+zoom\_to\_fit
+=============
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. automethod:: ModelerEmit.zoom_to_fit

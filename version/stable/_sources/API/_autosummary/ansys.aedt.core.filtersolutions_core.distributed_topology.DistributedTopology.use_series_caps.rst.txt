@@ -1,0 +1,6 @@
+use\_series\_caps
+=================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.use_series_caps

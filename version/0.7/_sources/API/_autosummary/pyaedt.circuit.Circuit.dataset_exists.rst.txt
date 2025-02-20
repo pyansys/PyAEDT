@@ -1,0 +1,6 @@
+dataset\_exists
+===============
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.dataset_exists

@@ -1,0 +1,6 @@
+omodelsetup
+===========
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.omodelsetup

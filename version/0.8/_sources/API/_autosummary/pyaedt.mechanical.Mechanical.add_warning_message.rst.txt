@@ -1,0 +1,6 @@
+add\_warning\_message
+=====================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.add_warning_message

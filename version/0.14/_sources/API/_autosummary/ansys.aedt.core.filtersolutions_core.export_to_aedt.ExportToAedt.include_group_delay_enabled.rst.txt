@@ -1,0 +1,6 @@
+include\_group\_delay\_enabled
+==============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.include_group_delay_enabled

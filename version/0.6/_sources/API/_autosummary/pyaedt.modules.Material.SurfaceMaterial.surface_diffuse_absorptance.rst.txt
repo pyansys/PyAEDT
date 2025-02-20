@@ -1,0 +1,6 @@
+surface\_diffuse\_absorptance
+=============================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: SurfaceMaterial.surface_diffuse_absorptance

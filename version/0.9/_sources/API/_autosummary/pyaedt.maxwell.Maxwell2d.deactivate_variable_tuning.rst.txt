@@ -1,0 +1,6 @@
+deactivate\_variable\_tuning
+============================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.deactivate_variable_tuning

@@ -1,0 +1,6 @@
+non\_graphical
+==============
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. autoproperty:: AedtLogger.non_graphical

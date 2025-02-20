@@ -1,0 +1,6 @@
+fillet
+======
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.fillet

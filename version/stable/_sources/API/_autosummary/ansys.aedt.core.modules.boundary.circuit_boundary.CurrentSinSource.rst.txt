@@ -1,0 +1,48 @@
+﻿CurrentSinSource
+================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoclass:: CurrentSinSource
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      CurrentSinSource.create
+      
+      
+      CurrentSinSource.delete
+      
+      
+      CurrentSinSource.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      CurrentSinSource.ac_magnitude
+      CurrentSinSource.ac_phase
+      CurrentSinSource.current_amplitude
+      CurrentSinSource.current_offset
+      CurrentSinSource.damping_factor
+      CurrentSinSource.dc_magnitude
+      CurrentSinSource.delay
+      CurrentSinSource.frequency
+      CurrentSinSource.multiplier
+      CurrentSinSource.name
+      CurrentSinSource.phase_delay
+      CurrentSinSource.tone
+   
+   

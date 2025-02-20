@@ -1,0 +1,6 @@
+copy\_design\_from
+==================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.copy_design_from

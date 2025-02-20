@@ -1,0 +1,6 @@
+skip\_import\_if\_exists
+========================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.skip_import_if_exists

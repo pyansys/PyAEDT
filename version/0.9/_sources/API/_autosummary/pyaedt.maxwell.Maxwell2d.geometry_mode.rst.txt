@@ -1,0 +1,6 @@
+geometry\_mode
+==============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.geometry_mode

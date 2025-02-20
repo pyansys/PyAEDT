@@ -1,0 +1,6 @@
+add\_voltage\_source
+====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. automethod:: SimulationConfiguration.add_voltage_source

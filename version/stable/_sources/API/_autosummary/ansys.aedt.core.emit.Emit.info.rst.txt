@@ -1,0 +1,6 @@
+info
+====
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.info

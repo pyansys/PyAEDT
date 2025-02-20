@@ -1,0 +1,6 @@
+get\_dcir\_solution\_data
+=========================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_dcir_solution_data

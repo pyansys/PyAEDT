@@ -1,0 +1,6 @@
+evaluate\_object\_quantity
+==========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.evaluate_object_quantity

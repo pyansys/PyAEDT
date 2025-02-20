@@ -1,0 +1,6 @@
+duplicate\_surface\_material
+============================
+
+.. currentmodule:: pyaedt.modules.MaterialLib
+
+.. automethod:: Materials.duplicate_surface_material

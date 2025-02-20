@@ -1,0 +1,1008 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EMIT: Compute receiver protection levels &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/07-EMIT/ComputeProtectionLevels';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EMIT: antenna" href="EMIT_Example.html" />
+    <link rel="prev" title="EMIT: Classify interference type" href="ComputeInterferenceType.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/07-EMIT/ComputeProtectionLevels.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Modeling-Setup/index.html">General model and setup examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-HFSS/index.html">HFSS examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-Maxwell/index.html">Maxwell examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-Multiphysics/index.html">Multiphysics examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-Circuit/index.html">Circuit examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">EMIT examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ComputeInterferenceType.html">EMIT: Classify interference type</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">EMIT: Compute receiver protection levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EMIT_Example.html">EMIT: antenna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EMIT_HFSS_Example.html">EMIT: HFSS to EMIT coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interference_gui.html">EMIT: Classify interference type GUI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">EMIT examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">EMIT: Compute receiver protection levels</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-07-emit-computeprotectionlevels-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="emit-compute-receiver-protection-levels">
+<span id="sphx-glr-examples-07-emit-computeprotectionlevels-py"></span><h1>EMIT: Compute receiver protection levels<a class="headerlink" href="#emit-compute-receiver-protection-levels" title="Link to this heading">#</a></h1>
+<p>This example shows how you can use PyAEDT to open an AEDT project with
+an EMIT design and analyze the results to determine if the received
+power at the input to each receiver exceeds the specified protection
+levels.</p>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports.</p>
+<p>sphinx_gallery_thumbnail_path = “Resources/emit_protection_levels.png”</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">ansys.aedt.core</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Emit</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core.emit_core.emit_constants</span> <span class="kn">import</span> <span class="n">TxRxMode</span><span class="p">,</span> <span class="n">ResultType</span><span class="p">,</span> <span class="n">InterfererType</span>
+
+<span class="c1"># Check to see which Python libraries have been installed</span>
+<span class="n">reqs</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;pip&#39;</span><span class="p">,</span> <span class="s1">&#39;freeze&#39;</span><span class="p">])</span>
+<span class="n">installed_packages</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;==&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">reqs</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+
+<span class="c1"># Install required packages if they are not installed</span>
+<span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="n">package</span><span class="p">):</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;pip&#39;</span><span class="p">,</span> <span class="s1">&#39;install&#39;</span><span class="p">,</span> <span class="n">package</span><span class="p">])</span>
+
+<span class="c1"># Install any missing libraries</span>
+<span class="n">required_packages</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;plotly&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">package</span> <span class="ow">in</span> <span class="n">required_packages</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">package</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">installed_packages</span><span class="p">:</span>
+        <span class="n">install</span><span class="p">(</span><span class="n">package</span><span class="p">)</span>
+
+<span class="c1"># Import required modules</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+</pre></div>
+</div>
+</section>
+<section id="set-aedt-version">
+<h2>Set AEDT version<a class="headerlink" href="#set-aedt-version" title="Link to this heading">#</a></h2>
+<p>Set AEDT version.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedt_version</span> <span class="o">=</span> <span class="s2">&quot;2024.2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="set-non-graphical-mode">
+<h2>Set non-graphical mode<a class="headerlink" href="#set-non-graphical-mode" title="Link to this heading">#</a></h2>
+<p>Set non-graphical mode. <code class="docutils literal notranslate"><span class="pre">&quot;PYAEDT_NON_GRAPHICAL&quot;`</span></code> is needed to generate
+documentation only.
+You can set <code class="docutils literal notranslate"><span class="pre">non_graphical</span></code> either to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">new_thread</span></code> Boolean variable defines whether to create a new instance
+of AEDT or try to connect to existing instance of it if one is available.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">non_graphical</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">new_thread</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="launch-aedt-with-emit">
+<h2>Launch AEDT with EMIT<a class="headerlink" href="#launch-aedt-with-emit" title="Link to this heading">#</a></h2>
+<p>Launch AEDT with EMIT. The <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> class initializes AEDT and starts it
+on the specified version and in the specified graphical mode.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">aedt_version</span> <span class="o">&lt;=</span> <span class="s2">&quot;2023.1&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: this example requires AEDT 2023.2 or later.&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">launch_desktop</span><span class="p">(</span><span class="n">aedt_version</span><span class="p">,</span> <span class="n">non_graphical</span><span class="p">,</span> <span class="n">new_thread</span><span class="p">)</span>
+<span class="n">emitapp</span> <span class="o">=</span> <span class="n">Emit</span><span class="p">(</span><span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">generate_unique_project_name</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\_tool\Python\3.10.9\x64\lib\subprocess.py:1072: ResourceWarning: subprocess 8092 is still running
+  _warn(&quot;subprocess %s is still running&quot; % self.pid,
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\ansys\aedt\core\generic\settings.py:231: ResourceWarning: unclosed file &lt;_io.TextIOWrapper name=&#39;D:\\Temp\\pyaedt_ansys_260622a4-692f-48cc-bef3-b1a76554a3cc.log&#39; mode=&#39;a&#39; encoding=&#39;cp1252&#39;&gt;
+  self.__logger = val
+</pre></div>
+</div>
+</section>
+<section id="specify-the-protection-levels">
+<h2>Specify the protection levels<a class="headerlink" href="#specify-the-protection-levels" title="Link to this heading">#</a></h2>
+<p>The protection levels are specified in dBm.
+If the damage threshold is exceeded, permanent damage to the receiver front
+end may occur.
+Exceeding the overload threshold severely densensitizes the receiver.
+Exceeding the intermod threshold can drive the victim receiver into non-
+linear operation, where it operates as a mixer.
+Exceeding the desense threshold reduces the signal-to-noise ratio and can
+reduce the maximum range, maximum bandwidth, and/or the overall link quality.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">header_color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span>
+<span class="n">damage_threshold</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">overload_threshold</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
+<span class="n">intermod_threshold</span> <span class="o">=</span> <span class="o">-</span><span class="mi">30</span>
+<span class="n">desense_threshold</span> <span class="o">=</span> <span class="o">-</span><span class="mi">104</span>
+
+<span class="n">protection_levels</span> <span class="o">=</span> <span class="p">[</span><span class="n">damage_threshold</span><span class="p">,</span> <span class="n">overload_threshold</span><span class="p">,</span> <span class="n">intermod_threshold</span><span class="p">,</span> <span class="n">desense_threshold</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="create-and-connect-emit-components">
+<h2>Create and connect EMIT components<a class="headerlink" href="#create-and-connect-emit-components" title="Link to this heading">#</a></h2>
+<p>Set up the scenario with radios connected to antennas.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">bluetooth</span><span class="p">,</span> <span class="n">blue_ant</span> <span class="o">=</span> <span class="n">emitapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">create_radio_antenna</span><span class="p">(</span><span class="s2">&quot;Bluetooth Low Energy (LE)&quot;</span><span class="p">,</span> <span class="s2">&quot;Bluetooth&quot;</span><span class="p">)</span>
+<span class="n">gps</span><span class="p">,</span> <span class="n">gps_ant</span> <span class="o">=</span> <span class="n">emitapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">create_radio_antenna</span><span class="p">(</span><span class="s2">&quot;GPS Receiver&quot;</span><span class="p">,</span> <span class="s2">&quot;GPS&quot;</span><span class="p">)</span>
+<span class="n">wifi</span><span class="p">,</span> <span class="n">wifi_ant</span> <span class="o">=</span> <span class="n">emitapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">create_radio_antenna</span><span class="p">(</span><span class="s2">&quot;WiFi - 802.11-2012&quot;</span><span class="p">,</span> <span class="s2">&quot;WiFi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="configure-the-radios">
+<h2>Configure the radios<a class="headerlink" href="#configure-the-radios" title="Link to this heading">#</a></h2>
+<p>Enable the HR-DSSS bands for the Wi-Fi radio and set the power level
+for all transmit bands to -20 dBm.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">bands</span> <span class="o">=</span> <span class="n">wifi</span><span class="o">.</span><span class="n">bands</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">band</span> <span class="ow">in</span> <span class="n">bands</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s2">&quot;HR-DSSS&quot;</span> <span class="ow">in</span> <span class="n">band</span><span class="o">.</span><span class="n">node_name</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;Ch 1-13&quot;</span> <span class="ow">in</span> <span class="n">band</span><span class="o">.</span><span class="n">node_name</span><span class="p">:</span>
+            <span class="n">band</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span>
+            <span class="n">band</span><span class="o">.</span><span class="n">set_band_power_level</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># Reduce the bluetooth transmit power</span>
+<span class="n">bands</span> <span class="o">=</span> <span class="n">bluetooth</span><span class="o">.</span><span class="n">bands</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">band</span> <span class="ow">in</span> <span class="n">bands</span><span class="p">:</span>
+    <span class="n">band</span><span class="o">.</span><span class="n">set_band_power_level</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_radio_node</span><span class="p">(</span><span class="n">radio_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the radio node that matches the</span>
+<span class="sd">    given radio name.</span>
+<span class="sd">    Arguments:</span>
+<span class="sd">        radio_name: String name of the radio.</span>
+<span class="sd">    Returns: Instance of the radio.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">gps</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">radio_name</span><span class="p">:</span>
+        <span class="n">radio</span> <span class="o">=</span> <span class="n">gps</span>
+    <span class="k">elif</span> <span class="n">bluetooth</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">radio_name</span><span class="p">:</span>
+        <span class="n">radio</span> <span class="o">=</span> <span class="n">bluetooth</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">radio</span> <span class="o">=</span> <span class="n">wifi</span>
+    <span class="k">return</span> <span class="n">radio</span>
+
+<span class="n">bands</span> <span class="o">=</span> <span class="n">gps</span><span class="o">.</span><span class="n">bands</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">band</span> <span class="ow">in</span> <span class="n">bands</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">band</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;L2 P(Y)&quot;</span> <span class="ow">in</span> <span class="n">band</span><span class="o">.</span><span class="n">node_name</span><span class="p">:</span>
+            <span class="n">band</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">band</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="load-the-results-set">
+<h2>Load the results set<a class="headerlink" href="#load-the-results-set" title="Link to this heading">#</a></h2>
+<p>Create a results revision and load it for analysis.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rev</span> <span class="o">=</span> <span class="n">emitapp</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="generate-a-legend">
+<h2>Generate a legend<a class="headerlink" href="#generate-a-legend" title="Link to this heading">#</a></h2>
+<p>Define the thresholds and colors used to display the results of
+the protection level analysis.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_legend_table</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a table showing the defined protection levels.&quot;&quot;&quot;</span>
+    <span class="n">protectionLevels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&gt;</span><span class="si">{}</span><span class="s1"> dBm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">damage_threshold</span><span class="p">),</span> <span class="s1">&#39;&gt;</span><span class="si">{}</span><span class="s1"> dBm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">overload_threshold</span><span class="p">),</span>
+        <span class="s1">&#39;&gt;</span><span class="si">{}</span><span class="s1"> dBm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">intermod_threshold</span><span class="p">),</span> <span class="s1">&#39;&gt;</span><span class="si">{}</span><span class="s1"> dBm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">desense_threshold</span><span class="p">)]</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span>
+        <span class="n">header</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&lt;b&gt;Interference&lt;/b&gt;&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;b&gt;Power Level Threshold&lt;/b&gt;&#39;</span><span class="p">],</span>
+            <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;darkslategray&#39;</span><span class="p">,</span>
+            <span class="n">fill_color</span><span class="o">=</span><span class="n">header_color</span><span class="p">,</span>
+            <span class="n">align</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="s1">&#39;center&#39;</span><span class="p">],</span>
+            <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">cells</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">values</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;Damage&#39;</span><span class="p">,</span><span class="s1">&#39;Overload&#39;</span><span class="p">,</span><span class="s1">&#39;Intermodulation&#39;</span><span class="p">,</span><span class="s1">&#39;Clear&#39;</span><span class="p">],</span> <span class="n">protectionLevels</span><span class="p">],</span>
+            <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;darkslategray&#39;</span><span class="p">,</span>
+            <span class="n">fill_color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;white&#39;</span><span class="p">,[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">]],</span>
+            <span class="n">align</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">],</span>
+            <span class="n">font</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;darkslategray&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">],</span>
+                <span class="n">size</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)])</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Protection Levels (dBm)&#39;</span><span class="p">,</span>
+            <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkslategray&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="p">),</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="mi">600</span>
+        <span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="create-a-scenario-matrix-view">
+<h2>Create a scenario matrix view<a class="headerlink" href="#create-a-scenario-matrix-view" title="Link to this heading">#</a></h2>
+<p>Create a scenario matrix view with the transmitters defined across the top
+and receivers down the left-most column. The power at the input to each
+receiver is shown in each cell of the matrix and color-coded based on the
+protection level thresholds defined.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_scenario_view</span><span class="p">(</span><span class="n">emis</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">tx_radios</span><span class="p">,</span> <span class="n">rx_radios</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a scenario matrix-like table with the higher received</span>
+<span class="sd">    power for each Tx-Rx radio combination. The colors</span>
+<span class="sd">    used for the scenario matrix view are based on the highest</span>
+<span class="sd">    protection level that the received power exceeds.&quot;&quot;&quot;</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span>
+        <span class="n">header</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&lt;b&gt;Tx/Rx&lt;/b&gt;&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;b&gt;</span><span class="si">{}</span><span class="s1">&lt;/b&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tx_radios</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="s1">&#39;&lt;b&gt;</span><span class="si">{}</span><span class="s1">&lt;/b&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tx_radios</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span>
+            <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;darkslategray&#39;</span><span class="p">,</span>
+            <span class="n">fill_color</span><span class="o">=</span><span class="n">header_color</span><span class="p">,</span>
+            <span class="n">align</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="s1">&#39;center&#39;</span><span class="p">],</span>
+            <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">cells</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">values</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">rx_radios</span><span class="p">,</span>
+                <span class="n">emis</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">emis</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+            <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;darkslategray&#39;</span><span class="p">,</span>
+            <span class="n">fill_color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+            <span class="n">align</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">],</span>
+            <span class="n">font</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;darkslategray&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">],</span>
+                <span class="n">size</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)])</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Protection Levels (dBm)&#39;</span><span class="p">,</span>
+            <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkslategray&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="p">),</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="mi">600</span>
+        <span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="get-all-the-radios-in-the-project">
+<h2>Get all the radios in the project<a class="headerlink" href="#get-all-the-radios-in-the-project" title="Link to this heading">#</a></h2>
+<p>Get lists of all transmitters and receivers in the project.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PYAEDT_DOC_GENERATION&quot;</span><span class="p">,</span> <span class="s2">&quot;False&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+    <span class="n">rev</span> <span class="o">=</span> <span class="n">emitapp</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">current_revision</span>
+    <span class="n">rx_radios</span> <span class="o">=</span> <span class="n">rev</span><span class="o">.</span><span class="n">get_receiver_names</span><span class="p">()</span>
+    <span class="n">tx_radios</span> <span class="o">=</span> <span class="n">rev</span><span class="o">.</span><span class="n">get_interferer_names</span><span class="p">(</span><span class="n">InterfererType</span><span class="o">.</span><span class="n">TRANSMITTERS</span><span class="p">)</span>
+    <span class="n">domain</span> <span class="o">=</span> <span class="n">emitapp</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">interaction_domain</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="classify-the-results">
+<h2>Classify the results<a class="headerlink" href="#classify-the-results" title="Link to this heading">#</a></h2>
+<p>Iterate over all the transmitters and receivers and compute the power
+at the input to each receiver due to each of the transmitters. Computes
+which, if any, protection levels are exceeded by these power levels.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PYAEDT_DOC_GENERATION&quot;</span><span class="p">,</span> <span class="s2">&quot;False&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+    <span class="n">power_matrix</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">all_colors</span><span class="o">=</span><span class="p">[]</span>
+
+    <span class="n">all_colors</span><span class="p">,</span> <span class="n">power_matrix</span> <span class="o">=</span> <span class="n">rev</span><span class="o">.</span><span class="n">protection_level_classification</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">global_levels</span> <span class="o">=</span> <span class="n">protection_levels</span><span class="p">)</span>
+
+    <span class="c1"># Create a scenario matrix-like view for the protection levels</span>
+    <span class="n">create_scenario_view</span><span class="p">(</span><span class="n">power_matrix</span><span class="p">,</span> <span class="n">all_colors</span><span class="p">,</span> <span class="n">tx_radios</span><span class="p">,</span> <span class="n">rx_radios</span><span class="p">)</span>
+
+    <span class="c1"># Create a legend for the protection levels</span>
+    <span class="n">create_legend_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="save-project-and-close-aedt">
+<h2>Save project and close AEDT<a class="headerlink" href="#save-project-and-close-aedt" title="Link to this heading">#</a></h2>
+<p>After the simulation completes, you can close AEDT or release it using the
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.aedt.core.Desktop.force_close_desktop()</span></code> method.
+All methods provide for saving the project before closing.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">emitapp</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span>
+<span class="n">emitapp</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">(</span><span class="n">close_projects</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">close_desktop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 37.524 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-07-emit-computeprotectionlevels-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/67cd42600c445eb962213b557a1e879c/ComputeProtectionLevels.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">ComputeProtectionLevels.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8812f0dbdf79d7d59366316f02f624e7/ComputeProtectionLevels.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">ComputeProtectionLevels.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/101ec643debff55a7bc723abdc26290e/ComputeProtectionLevels.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">ComputeProtectionLevels.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-aedt-version">Set AEDT version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-non-graphical-mode">Set non-graphical mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-aedt-with-emit">Launch AEDT with EMIT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-the-protection-levels">Specify the protection levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-connect-emit-components">Create and connect EMIT components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-radios">Configure the radios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-results-set">Load the results set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-a-legend">Generate a legend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-scenario-matrix-view">Create a scenario matrix view</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-all-the-radios-in-the-project">Get all the radios in the project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-the-results">Classify the results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-project-and-close-aedt">Save project and close AEDT</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/07-EMIT/ComputeProtectionLevels.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/07-EMIT/ComputeProtectionLevels.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+pi\_slider\_position
+====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveDCSimulationSetup.pi_slider_position

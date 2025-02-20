@@ -1,0 +1,6 @@
+trace\_names
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. autoproperty:: ReportPlotter.trace_names

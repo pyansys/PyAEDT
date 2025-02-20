@@ -1,0 +1,6 @@
+coordinate\_system
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.coordinate_system

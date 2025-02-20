@@ -1,0 +1,6 @@
+defaultvalue
+============
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoattribute:: MatProperties.defaultvalue

@@ -1,0 +1,6 @@
+assign\_em\_losses
+==================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.assign_em_losses

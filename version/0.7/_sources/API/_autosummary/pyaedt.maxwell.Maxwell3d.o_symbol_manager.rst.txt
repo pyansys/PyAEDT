@@ -1,0 +1,6 @@
+o\_symbol\_manager
+==================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.o_symbol_manager

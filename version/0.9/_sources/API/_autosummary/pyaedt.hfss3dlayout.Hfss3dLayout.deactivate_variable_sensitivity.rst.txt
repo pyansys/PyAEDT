@@ -1,0 +1,6 @@
+deactivate\_variable\_sensitivity
+=================================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.deactivate_variable_sensitivity

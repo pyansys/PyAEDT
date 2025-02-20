@@ -1,0 +1,6 @@
+push\_down
+==========
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.push_down

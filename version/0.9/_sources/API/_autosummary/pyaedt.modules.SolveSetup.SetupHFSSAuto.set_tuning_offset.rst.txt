@@ -1,0 +1,6 @@
+set\_tuning\_offset
+===================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSSAuto.set_tuning_offset

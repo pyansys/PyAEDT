@@ -1,0 +1,6 @@
+s\_parameters
+=============
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.s_parameters

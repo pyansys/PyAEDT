@@ -1,0 +1,6 @@
+info
+====
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.info

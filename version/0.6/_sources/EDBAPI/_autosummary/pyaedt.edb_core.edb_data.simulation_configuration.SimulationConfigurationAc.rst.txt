@@ -1,0 +1,61 @@
+﻿SimulationConfigurationAc
+=========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoclass:: SimulationConfigurationAc
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SimulationConfigurationAc.arc_angle
+      SimulationConfigurationAc.arc_to_chord_error
+      SimulationConfigurationAc.basis_order
+      SimulationConfigurationAc.decade_count
+      SimulationConfigurationAc.defeature_abs_length
+      SimulationConfigurationAc.defeature_layout
+      SimulationConfigurationAc.do_lambda_refinement
+      SimulationConfigurationAc.enforce_causality
+      SimulationConfigurationAc.enforce_passivity
+      SimulationConfigurationAc.ignore_non_functional_pads
+      SimulationConfigurationAc.include_inter_plane_coupling
+      SimulationConfigurationAc.max_arc_points
+      SimulationConfigurationAc.max_mag_delta_s
+      SimulationConfigurationAc.max_num_passes
+      SimulationConfigurationAc.max_suf_dev
+      SimulationConfigurationAc.mesh_freq
+      SimulationConfigurationAc.mesh_sizefactor
+      SimulationConfigurationAc.min_num_passes
+      SimulationConfigurationAc.min_pad_area_to_mesh
+      SimulationConfigurationAc.min_plane_area_to_mesh
+      SimulationConfigurationAc.min_void_area
+      SimulationConfigurationAc.minimum_void_surface
+      SimulationConfigurationAc.passivity_tolerance
+      SimulationConfigurationAc.percentage_error_z0
+      SimulationConfigurationAc.process_padstack_definitions
+      SimulationConfigurationAc.radiation_box
+      SimulationConfigurationAc.relative_error
+      SimulationConfigurationAc.return_current_distribution
+      SimulationConfigurationAc.snap_length_threshold
+      SimulationConfigurationAc.start_azimuth
+      SimulationConfigurationAc.start_freq
+      SimulationConfigurationAc.step_freq
+      SimulationConfigurationAc.stop_freq
+      SimulationConfigurationAc.sweep_interpolating
+      SimulationConfigurationAc.sweep_name
+      SimulationConfigurationAc.sweep_type
+      SimulationConfigurationAc.use_arc_to_chord_error
+      SimulationConfigurationAc.use_error_z0
+      SimulationConfigurationAc.use_q3d_for_dc
+      SimulationConfigurationAc.xtalk_threshold
+   
+   

@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.insert_design

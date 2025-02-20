@@ -1,0 +1,6 @@
+assign\_device\_resistance
+==========================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.assign_device_resistance

@@ -1,0 +1,6 @@
+excitations
+===========
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. autoproperty:: EdbHfss.excitations

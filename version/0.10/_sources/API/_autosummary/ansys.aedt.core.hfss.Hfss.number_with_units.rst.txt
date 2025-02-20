@@ -1,0 +1,6 @@
+number\_with\_units
+===================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.number_with_units

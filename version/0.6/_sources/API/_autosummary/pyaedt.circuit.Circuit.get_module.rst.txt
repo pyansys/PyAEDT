@@ -1,0 +1,6 @@
+get\_module
+===========
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_module

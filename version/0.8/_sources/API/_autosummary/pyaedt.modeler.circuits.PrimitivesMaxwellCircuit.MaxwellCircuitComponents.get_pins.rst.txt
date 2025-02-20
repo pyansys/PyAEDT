@@ -1,0 +1,6 @@
+get\_pins
+=========
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.get_pins

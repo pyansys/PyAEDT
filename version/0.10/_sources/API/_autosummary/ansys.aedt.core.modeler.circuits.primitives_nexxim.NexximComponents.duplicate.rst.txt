@@ -1,0 +1,6 @@
+duplicate
+=========
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_nexxim
+
+.. automethod:: NexximComponents.duplicate

@@ -1,0 +1,6 @@
+nominal\_adaptive
+=================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.nominal_adaptive

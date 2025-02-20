@@ -1,0 +1,6 @@
+check\_if\_project\_is\_loaded
+==============================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.check_if_project_is_loaded

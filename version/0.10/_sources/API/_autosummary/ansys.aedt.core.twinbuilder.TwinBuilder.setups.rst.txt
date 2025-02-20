@@ -1,0 +1,6 @@
+setups
+======
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.setups

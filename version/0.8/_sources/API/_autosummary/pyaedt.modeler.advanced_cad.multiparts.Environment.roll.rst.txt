@@ -1,0 +1,6 @@
+roll
+====
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.multiparts
+
+.. autoproperty:: Environment.roll

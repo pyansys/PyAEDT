@@ -1,0 +1,6 @@
+target\_coordinate\_system
+==========================
+
+.. currentmodule:: pyaedt.modeler.cad.components_3d
+
+.. autoproperty:: UserDefinedComponent.target_coordinate_system

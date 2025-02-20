@@ -1,0 +1,6 @@
+edge\_by\_point
+===============
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. automethod:: Rect3dLayout.edge_by_point

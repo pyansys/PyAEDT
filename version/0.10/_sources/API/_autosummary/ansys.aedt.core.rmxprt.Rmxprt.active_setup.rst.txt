@@ -1,0 +1,6 @@
+active\_setup
+=============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.active_setup

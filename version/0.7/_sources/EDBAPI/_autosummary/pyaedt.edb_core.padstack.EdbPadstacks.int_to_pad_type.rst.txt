@@ -1,0 +1,6 @@
+int\_to\_pad\_type
+==================
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.int_to_pad_type

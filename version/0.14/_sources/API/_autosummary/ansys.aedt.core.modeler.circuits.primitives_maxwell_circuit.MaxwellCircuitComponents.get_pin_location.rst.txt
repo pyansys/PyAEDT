@@ -1,0 +1,6 @@
+get\_pin\_location
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_maxwell_circuit
+
+.. automethod:: MaxwellCircuitComponents.get_pin_location

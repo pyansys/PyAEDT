@@ -1,0 +1,6 @@
+set\_registry\_from\_file
+=========================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.set_registry_from_file

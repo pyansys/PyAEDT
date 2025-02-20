@@ -1,0 +1,84 @@
+﻿SetupHFSSAuto
+=============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoclass:: SetupHFSSAuto
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SetupHFSSAuto.add_derivatives
+      
+      
+      SetupHFSSAuto.add_mesh_link
+      
+      
+      SetupHFSSAuto.add_subrange
+      
+      
+      SetupHFSSAuto.analyze
+      
+      
+      SetupHFSSAuto.create
+      
+      
+      SetupHFSSAuto.create_report
+      
+      
+      SetupHFSSAuto.delete
+      
+      
+      SetupHFSSAuto.disable
+      
+      
+      SetupHFSSAuto.enable
+      
+      
+      SetupHFSSAuto.enable_adaptive_setup_broadband
+      
+      
+      SetupHFSSAuto.enable_adaptive_setup_multifrequency
+      
+      
+      SetupHFSSAuto.enable_adaptive_setup_single
+      
+      
+      SetupHFSSAuto.enable_expression_cache
+      
+      
+      SetupHFSSAuto.get_derivative_variables
+      
+      
+      SetupHFSSAuto.get_solution_data
+      
+      
+      SetupHFSSAuto.start_continue_from_previous_setup
+      
+      
+      SetupHFSSAuto.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SetupHFSSAuto.available_properties
+      SetupHFSSAuto.default_intrinsics
+      SetupHFSSAuto.is_solved
+      SetupHFSSAuto.name
+      SetupHFSSAuto.omodule
+      SetupHFSSAuto.p_app
+   
+   

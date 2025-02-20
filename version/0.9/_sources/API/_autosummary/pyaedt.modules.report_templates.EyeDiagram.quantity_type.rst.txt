@@ -1,0 +1,6 @@
+quantity\_type
+==============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: EyeDiagram.quantity_type

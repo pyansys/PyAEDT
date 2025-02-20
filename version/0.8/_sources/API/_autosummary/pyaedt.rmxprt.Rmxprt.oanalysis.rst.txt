@@ -1,0 +1,6 @@
+oanalysis
+=========
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.oanalysis

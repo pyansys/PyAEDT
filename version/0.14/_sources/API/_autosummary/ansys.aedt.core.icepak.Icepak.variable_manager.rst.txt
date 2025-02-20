@@ -1,0 +1,6 @@
+variable\_manager
+=================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.variable_manager

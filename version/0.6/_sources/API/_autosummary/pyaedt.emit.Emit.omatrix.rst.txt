@@ -1,0 +1,6 @@
+omatrix
+=======
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.omatrix

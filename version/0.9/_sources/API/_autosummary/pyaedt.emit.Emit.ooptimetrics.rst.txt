@@ -1,0 +1,6 @@
+ooptimetrics
+============
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.ooptimetrics

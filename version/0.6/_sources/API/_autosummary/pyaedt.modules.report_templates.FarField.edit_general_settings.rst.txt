@@ -1,0 +1,6 @@
+edit\_general\_settings
+=======================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: FarField.edit_general_settings

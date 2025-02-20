@@ -1,0 +1,6 @@
+push\_time\_excitations
+=======================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.push_time_excitations

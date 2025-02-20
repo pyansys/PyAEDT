@@ -1,0 +1,6 @@
+write
+=====
+
+.. currentmodule:: ansys.aedt.core.visualization.post.fields_calculator
+
+.. automethod:: FieldsCalculator.write

@@ -1,0 +1,6 @@
+p\_app
+======
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. autoproperty:: SetupCircuit.p_app

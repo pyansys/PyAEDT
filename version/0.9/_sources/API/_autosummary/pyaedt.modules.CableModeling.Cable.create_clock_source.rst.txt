@@ -1,0 +1,6 @@
+create\_clock\_source
+=====================
+
+.. currentmodule:: pyaedt.modules.CableModeling
+
+.. automethod:: Cable.create_clock_source

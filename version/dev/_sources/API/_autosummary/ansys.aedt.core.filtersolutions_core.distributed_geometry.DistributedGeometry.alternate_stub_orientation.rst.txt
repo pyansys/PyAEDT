@@ -1,0 +1,6 @@
+alternate\_stub\_orientation
+============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_geometry
+
+.. autoproperty:: DistributedGeometry.alternate_stub_orientation

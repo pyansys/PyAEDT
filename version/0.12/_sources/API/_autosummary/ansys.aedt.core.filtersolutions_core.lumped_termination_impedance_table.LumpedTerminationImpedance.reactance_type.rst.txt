@@ -1,0 +1,6 @@
+reactance\_type
+===============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_termination_impedance_table
+
+.. autoproperty:: LumpedTerminationImpedance.reactance_type

@@ -1,0 +1,6 @@
+assign\_radiation\_boundary\_to\_faces
+======================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.assign_radiation_boundary_to_faces

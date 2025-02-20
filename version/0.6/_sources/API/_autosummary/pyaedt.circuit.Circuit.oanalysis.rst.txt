@@ -1,0 +1,6 @@
+oanalysis
+=========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.oanalysis

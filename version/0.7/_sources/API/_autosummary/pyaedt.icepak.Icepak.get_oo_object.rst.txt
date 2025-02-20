@@ -1,0 +1,6 @@
+get\_oo\_object
+===============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_oo_object

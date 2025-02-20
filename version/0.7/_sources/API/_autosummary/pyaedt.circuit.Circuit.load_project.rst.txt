@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.load_project

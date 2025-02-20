@@ -1,0 +1,6 @@
+project\_datasets
+=================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.project_datasets

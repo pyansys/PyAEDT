@@ -1,0 +1,6 @@
+objects\_by\_name
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. autoproperty:: Modeler3D.objects_by_name

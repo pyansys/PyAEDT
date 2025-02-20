@@ -1,0 +1,6 @@
+project\_list
+=============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.project_list

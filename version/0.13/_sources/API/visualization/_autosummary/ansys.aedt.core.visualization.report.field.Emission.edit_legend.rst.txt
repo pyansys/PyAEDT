@@ -1,0 +1,6 @@
+edit\_legend
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: Emission.edit_legend

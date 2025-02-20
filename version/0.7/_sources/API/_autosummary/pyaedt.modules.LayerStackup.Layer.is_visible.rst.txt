@@ -1,0 +1,6 @@
+is\_visible
+===========
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.is_visible

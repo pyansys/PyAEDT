@@ -1,0 +1,6 @@
+type
+====
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: BoundaryObject.type

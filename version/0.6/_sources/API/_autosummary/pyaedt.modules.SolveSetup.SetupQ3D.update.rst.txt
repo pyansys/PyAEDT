@@ -1,0 +1,6 @@
+update
+======
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupQ3D.update

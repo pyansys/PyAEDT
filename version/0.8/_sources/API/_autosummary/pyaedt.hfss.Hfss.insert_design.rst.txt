@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.insert_design

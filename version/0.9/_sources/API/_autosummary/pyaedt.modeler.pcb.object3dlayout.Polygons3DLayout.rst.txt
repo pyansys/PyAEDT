@@ -1,0 +1,61 @@
+﻿Polygons3DLayout
+================
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoclass:: Polygons3DLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Polygons3DLayout.change_property
+      
+      
+      Polygons3DLayout.create_clearance_on_component
+      
+      
+      Polygons3DLayout.edge_by_point
+      
+      
+      Polygons3DLayout.get_property_value
+      
+      
+      Polygons3DLayout.set_property_value
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Polygons3DLayout.absolute_angle
+      Polygons3DLayout.angle
+      Polygons3DLayout.bottom_edge_x
+      Polygons3DLayout.bottom_edge_y
+      Polygons3DLayout.bounding_box
+      Polygons3DLayout.edges
+      Polygons3DLayout.is_closed
+      Polygons3DLayout.location
+      Polygons3DLayout.lock_position
+      Polygons3DLayout.name
+      Polygons3DLayout.negative
+      Polygons3DLayout.net_name
+      Polygons3DLayout.object_units
+      Polygons3DLayout.obounding_box
+      Polygons3DLayout.placement_layer
+      Polygons3DLayout.points
+      Polygons3DLayout.polygon_voids
+      Polygons3DLayout.top_edge_x
+      Polygons3DLayout.top_edge_y
+   
+   

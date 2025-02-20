@@ -1,0 +1,6 @@
+update\_pwl\_source
+===================
+
+.. currentmodule:: pyaedt.modules.CableModeling
+
+.. automethod:: Cable.update_pwl_source

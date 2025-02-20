@@ -1,0 +1,6 @@
+object\_properties
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: NativeComponentObject.object_properties

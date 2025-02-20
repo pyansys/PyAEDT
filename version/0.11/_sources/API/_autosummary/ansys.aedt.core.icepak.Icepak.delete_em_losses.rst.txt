@@ -1,0 +1,6 @@
+delete\_em\_losses
+==================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.delete_em_losses

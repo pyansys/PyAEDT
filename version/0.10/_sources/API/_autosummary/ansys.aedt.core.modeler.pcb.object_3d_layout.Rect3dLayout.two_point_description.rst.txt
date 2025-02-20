@@ -1,0 +1,6 @@
+two\_point\_description
+=======================
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. autoproperty:: Rect3dLayout.two_point_description

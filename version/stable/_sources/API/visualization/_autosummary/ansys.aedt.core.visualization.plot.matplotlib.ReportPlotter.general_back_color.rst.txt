@@ -1,0 +1,6 @@
+general\_back\_color
+====================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. autoproperty:: ReportPlotter.general_back_color

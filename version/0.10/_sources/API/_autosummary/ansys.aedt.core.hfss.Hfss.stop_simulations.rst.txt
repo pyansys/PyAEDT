@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.stop_simulations

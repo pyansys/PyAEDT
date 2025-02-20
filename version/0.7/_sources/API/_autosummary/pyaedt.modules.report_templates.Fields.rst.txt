@@ -1,0 +1,111 @@
+﻿Fields
+======
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoclass:: Fields
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Fields.add_cartesian_x_marker
+      
+      
+      Fields.add_cartesian_y_marker
+      
+      
+      Fields.add_limit_line_from_equation
+      
+      
+      Fields.add_limit_line_from_points
+      
+      
+      Fields.add_note
+      
+      
+      Fields.add_trace_to_report
+      
+      
+      Fields.create
+      
+      
+      Fields.delete
+      
+      
+      Fields.delete_traces
+      
+      
+      Fields.edit_general_settings
+      
+      
+      Fields.edit_grid
+      
+      
+      Fields.edit_header
+      
+      
+      Fields.edit_legend
+      
+      
+      Fields.edit_x_axis
+      
+      
+      Fields.edit_x_axis_scaling
+      
+      
+      Fields.edit_y_axis
+      
+      
+      Fields.edit_y_axis_scaling
+      
+      
+      Fields.get_solution_data
+      
+      
+      Fields.hide_legend
+      
+      
+      Fields.import_traces
+      
+      
+      Fields.update_expressions_with_defaults
+      
+      
+      Fields.update_trace_in_report
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Fields.differential_pairs
+      Fields.domain
+      Fields.expressions
+      Fields.limit_lines
+      Fields.matrix
+      Fields.notes
+      Fields.plot_name
+      Fields.point_number
+      Fields.polyline
+      Fields.primary_sweep
+      Fields.primary_sweep_range
+      Fields.report_category
+      Fields.report_type
+      Fields.secondary_sweep
+      Fields.secondary_sweep_range
+      Fields.traces
+      Fields.use_pulse_in_tdr
+      Fields.variations
+   
+   

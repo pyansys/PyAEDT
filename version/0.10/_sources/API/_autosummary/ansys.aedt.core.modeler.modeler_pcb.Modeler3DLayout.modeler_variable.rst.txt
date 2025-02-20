@@ -1,0 +1,6 @@
+modeler\_variable
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. automethod:: Modeler3DLayout.modeler_variable

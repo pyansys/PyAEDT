@@ -1,0 +1,6 @@
+objects\_by\_layer
+==================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.objects_by_layer

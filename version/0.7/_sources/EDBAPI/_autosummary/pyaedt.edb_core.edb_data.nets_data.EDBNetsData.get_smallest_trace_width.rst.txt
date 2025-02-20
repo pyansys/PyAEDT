@@ -1,0 +1,6 @@
+get\_smallest\_trace\_width
+===========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. automethod:: EDBNetsData.get_smallest_trace_width

@@ -1,0 +1,6 @@
+export\_variables\_to\_csv
+==========================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.export_variables_to_csv

@@ -1,0 +1,6 @@
+native\_component\_names
+========================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.native_component_names

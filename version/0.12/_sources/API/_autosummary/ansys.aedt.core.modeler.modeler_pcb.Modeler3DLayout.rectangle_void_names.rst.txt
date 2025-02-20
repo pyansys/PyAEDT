@@ -1,0 +1,6 @@
+rectangle\_void\_names
+======================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. autoproperty:: Modeler3DLayout.rectangle_void_names

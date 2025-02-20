@@ -1,0 +1,6 @@
+get\_group\_bounding\_box
+=========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_group_bounding_box

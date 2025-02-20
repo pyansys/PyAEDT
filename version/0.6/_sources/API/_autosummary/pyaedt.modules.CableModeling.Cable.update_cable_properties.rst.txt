@@ -1,0 +1,6 @@
+update\_cable\_properties
+=========================
+
+.. currentmodule:: pyaedt.modules.CableModeling
+
+.. automethod:: Cable.update_cable_properties

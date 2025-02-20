@@ -1,0 +1,6 @@
+src\_dir
+========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.src_dir

@@ -1,0 +1,6 @@
+azimuth\_angle
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. autoproperty:: HDMPlotter.azimuth_angle

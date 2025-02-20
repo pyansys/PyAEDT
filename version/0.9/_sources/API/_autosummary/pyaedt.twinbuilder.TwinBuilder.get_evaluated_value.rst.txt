@@ -1,0 +1,6 @@
+get\_evaluated\_value
+=====================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.get_evaluated_value

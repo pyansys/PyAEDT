@@ -1,0 +1,6 @@
+design\_variation
+=================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.design_variation

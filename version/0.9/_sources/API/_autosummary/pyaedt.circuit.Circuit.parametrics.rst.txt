@@ -1,0 +1,6 @@
+parametrics
+===========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.parametrics

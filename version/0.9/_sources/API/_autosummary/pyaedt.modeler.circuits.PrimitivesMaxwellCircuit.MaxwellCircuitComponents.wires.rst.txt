@@ -1,0 +1,6 @@
+wires
+=====
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. autoproperty:: MaxwellCircuitComponents.wires

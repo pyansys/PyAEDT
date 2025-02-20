@@ -1,0 +1,6 @@
+read\_only\_variable
+====================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.read_only_variable

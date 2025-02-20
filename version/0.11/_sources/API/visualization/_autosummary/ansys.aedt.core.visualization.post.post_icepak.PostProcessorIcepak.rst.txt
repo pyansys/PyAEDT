@@ -1,0 +1,215 @@
+﻿PostProcessorIcepak
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. autoclass:: PostProcessorIcepak
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      PostProcessorIcepak.animate_fields_from_aedtplt
+      
+      
+      PostProcessorIcepak.available_display_types
+      
+      
+      PostProcessorIcepak.available_quantities_categories
+      
+      
+      PostProcessorIcepak.available_report_quantities
+      
+      
+      PostProcessorIcepak.available_report_solutions
+      
+      
+      PostProcessorIcepak.change_field_property
+      
+      
+      PostProcessorIcepak.copy_report_data
+      
+      
+      PostProcessorIcepak.create_3d_plot
+      
+      
+      PostProcessorIcepak.create_creeping_plane_visual_ray_tracing
+      
+      
+      PostProcessorIcepak.create_creeping_point_visual_ray_tracing
+      
+      
+      PostProcessorIcepak.create_field_summary
+      
+      
+      PostProcessorIcepak.create_fieldplot_cutplane
+      
+      
+      PostProcessorIcepak.create_fieldplot_layers
+      
+      
+      PostProcessorIcepak.create_fieldplot_layers_nets
+      
+      
+      PostProcessorIcepak.create_fieldplot_line
+      
+      
+      PostProcessorIcepak.create_fieldplot_line_traces
+      
+      
+      PostProcessorIcepak.create_fieldplot_nets
+      
+      
+      PostProcessorIcepak.create_fieldplot_surface
+      
+      
+      PostProcessorIcepak.create_fieldplot_volume
+      
+      
+      PostProcessorIcepak.create_report
+      
+      
+      PostProcessorIcepak.create_report_from_configuration
+      
+      
+      PostProcessorIcepak.create_sbr_plane_visual_ray_tracing
+      
+      
+      PostProcessorIcepak.create_sbr_point_visual_ray_tracing
+      
+      
+      PostProcessorIcepak.delete_field_plot
+      
+      
+      PostProcessorIcepak.delete_report
+      
+      
+      PostProcessorIcepak.evaluate_boundary_quantity
+      
+      
+      PostProcessorIcepak.evaluate_faces_quantity
+      
+      
+      PostProcessorIcepak.evaluate_monitor_quantity
+      
+      
+      PostProcessorIcepak.evaluate_object_quantity
+      
+      
+      PostProcessorIcepak.export_field_file
+      
+      
+      PostProcessorIcepak.export_field_file_on_grid
+      
+      
+      PostProcessorIcepak.export_field_jpg
+      
+      
+      PostProcessorIcepak.export_field_plot
+      
+      
+      PostProcessorIcepak.export_mesh_obj
+      
+      
+      PostProcessorIcepak.export_model_obj
+      
+      
+      PostProcessorIcepak.export_model_picture
+      
+      
+      PostProcessorIcepak.export_report_to_csv
+      
+      
+      PostProcessorIcepak.export_report_to_file
+      
+      
+      PostProcessorIcepak.export_report_to_jpg
+      
+      
+      PostProcessorIcepak.get_all_report_quantities
+      
+      
+      PostProcessorIcepak.get_efields_data
+      
+      
+      PostProcessorIcepak.get_fans_operating_point
+      
+      
+      PostProcessorIcepak.get_far_field_data
+      
+      
+      PostProcessorIcepak.get_model_plotter_geometries
+      
+      
+      PostProcessorIcepak.get_scalar_field_value
+      
+      
+      PostProcessorIcepak.get_solution_data
+      
+      
+      PostProcessorIcepak.get_solution_data_per_variation
+      
+      
+      PostProcessorIcepak.nb_display
+      
+      
+      PostProcessorIcepak.paste_report_data
+      
+      
+      PostProcessorIcepak.plot_animated_field
+      
+      
+      PostProcessorIcepak.plot_field
+      
+      
+      PostProcessorIcepak.plot_field_from_fieldplot
+      
+      
+      PostProcessorIcepak.plot_model_obj
+      
+      
+      PostProcessorIcepak.plot_scene
+      
+      
+      PostProcessorIcepak.power_budget
+      
+      
+      PostProcessorIcepak.rename_report
+      
+      
+      PostProcessorIcepak.set_tuning_offset
+      
+      
+      PostProcessorIcepak.steal_focus_oneditor
+      
+      
+      PostProcessorIcepak.volumetric_loss
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      PostProcessorIcepak.all_report_names
+      PostProcessorIcepak.available_report_types
+      PostProcessorIcepak.field_plot_names
+      PostProcessorIcepak.logger
+      PostProcessorIcepak.model_units
+      PostProcessorIcepak.modeler
+      PostProcessorIcepak.ofieldsreporter
+      PostProcessorIcepak.oreportsetup
+      PostProcessorIcepak.post_osolution
+      PostProcessorIcepak.post_solution_type
+      PostProcessorIcepak.update_report_dynamically
+   
+   

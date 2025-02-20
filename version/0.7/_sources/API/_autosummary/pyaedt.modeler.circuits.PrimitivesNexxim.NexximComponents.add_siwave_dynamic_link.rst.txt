@@ -1,0 +1,6 @@
+add\_siwave\_dynamic\_link
+==========================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.add_siwave_dynamic_link

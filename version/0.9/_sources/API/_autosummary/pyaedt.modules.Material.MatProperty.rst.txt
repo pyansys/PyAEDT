@@ -1,0 +1,49 @@
+﻿MatProperty
+===========
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoclass:: MatProperty
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MatProperty.add_spatial_modifier_dataset
+      
+      
+      MatProperty.add_spatial_modifier_free_form
+      
+      
+      MatProperty.add_thermal_modifier_closed_form
+      
+      
+      MatProperty.add_thermal_modifier_dataset
+      
+      
+      MatProperty.add_thermal_modifier_free_form
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MatProperty.data_set
+      MatProperty.evaluated_value
+      MatProperty.spatialmodifier
+      MatProperty.thermalmodifier
+      MatProperty.type
+      MatProperty.unit
+      MatProperty.value
+   
+   

@@ -1,0 +1,6 @@
+report\_type
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. autoproperty:: Standard.report_type

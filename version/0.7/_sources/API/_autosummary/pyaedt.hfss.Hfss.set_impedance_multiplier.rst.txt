@@ -1,0 +1,6 @@
+set\_impedance\_multiplier
+==========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.set_impedance_multiplier

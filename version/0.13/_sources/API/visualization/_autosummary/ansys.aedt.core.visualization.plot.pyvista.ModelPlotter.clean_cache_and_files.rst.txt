@@ -1,0 +1,6 @@
+clean\_cache\_and\_files
+========================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. automethod:: ModelPlotter.clean_cache_and_files

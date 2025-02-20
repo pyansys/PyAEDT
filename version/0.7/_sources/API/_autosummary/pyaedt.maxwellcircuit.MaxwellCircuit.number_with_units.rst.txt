@@ -1,0 +1,6 @@
+number\_with\_units
+===================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.number_with_units

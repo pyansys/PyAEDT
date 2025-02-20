@@ -1,0 +1,6 @@
+assign\_uniform\_convection
+===========================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.assign_uniform_convection

@@ -1,0 +1,6 @@
+oreportsetup
+============
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.oreportsetup

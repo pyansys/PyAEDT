@@ -1,0 +1,6 @@
+wave\_port
+==========
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.wave_port

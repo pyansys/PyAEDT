@@ -1,0 +1,6 @@
+set\_crosssection\_properties
+=============================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. automethod:: Object3d.set_crosssection_properties

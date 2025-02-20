@@ -1,0 +1,6 @@
+parametrics
+===========
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.parametrics

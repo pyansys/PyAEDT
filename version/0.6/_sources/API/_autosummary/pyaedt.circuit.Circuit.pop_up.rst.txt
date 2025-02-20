@@ -1,0 +1,6 @@
+pop\_up
+=======
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.pop_up

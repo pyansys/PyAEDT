@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>bounding_dimension &#8212; PyAEDT</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys_sphinx_theme.css?v=0909a4fa" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../_static/documentation_options.js?v=9f5afd58"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'API/_autosummary/ansys.aedt.core.modeler.cad.polylines.Polyline.bounding_dimension';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.14';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="color" href="ansys.aedt.core.modeler.cad.polylines.Polyline.color.html" />
+    <link rel="prev" title="bounding_box" href="ansys.aedt.core.modeler.cad.polylines.Polyline.bounding_box.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.14.1" />
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/API/_autosummary/ansys.aedt.core.modeler.cad.polylines.Polyline.bounding_dimension.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyAEDT - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Application.html">Application and solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MaterialManagement.html">Material and stackup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3D.html">3D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives2D.html">2D modeler</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Primitive_Objects.html">Primitives</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.object_3d.Object3d.html">Object3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.FacePrimitive.html">FacePrimitive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.EdgePrimitive.html">EdgePrimitive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.VertexPrimitive.html">VertexPrimitive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.PolylineSegment.html">PolylineSegment</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.html">Polyline</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.chamfer.html">chamfer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.clone.html">clone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.delete.html">delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.detach_faces.html">detach_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.duplicate_along_line.html">duplicate_along_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.duplicate_around_axis.html">duplicate_around_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.edges_by_length.html">edges_by_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.export_image.html">export_image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.faces_by_area.html">faces_by_area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.fillet.html">fillet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.get_touching_faces.html">get_touching_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.history.html">history</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.insert_segment.html">insert_segment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.intersect.html">intersect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.largest_face.html">largest_face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.longest_edge.html">longest_edge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.mirror.html">mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.move.html">move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.plot.html">plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.remove_point.html">remove_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.remove_segments.html">remove_segments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.rotate.html">rotate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.section.html">section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.set_crosssection_properties.html">set_crosssection_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.shortest_edge.html">shortest_edge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.smallest_face.html">smallest_face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.split.html">split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.subtract.html">subtract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.sweep_along_path.html">sweep_along_path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.sweep_along_vector.html">sweep_along_vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.sweep_around_axis.html">sweep_around_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.touching_conductors.html">touching_conductors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.unite.html">unite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.wrap_sheet.html">wrap_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.bottom_edge_x.html">bottom_edge_x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.bottom_edge_y.html">bottom_edge_y</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.bottom_edge_z.html">bottom_edge_z</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.bottom_face_x.html">bottom_face_x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.bottom_face_y.html">bottom_face_y</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.bottom_face_z.html">bottom_face_z</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.bounding_box.html">bounding_box</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">bounding_dimension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.color.html">color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.color_string.html">color_string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.display_wireframe.html">display_wireframe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.edges.html">edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.end_point.html">end_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.face_closest_to_bounding_box.html">face_closest_to_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.faces.html">faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.faces_on_bounding_box.html">faces_on_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.group_name.html">group_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.id.html">id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.is3d.html">is3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.is_conductor.html">is_conductor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.is_polyline.html">is_polyline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.logger.html">logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.mass.html">mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.material_appearance.html">material_appearance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.material_name.html">material_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.model.html">model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.name.html">name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.object_type.html">object_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.object_units.html">object_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.part_coordinate_system.html">part_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.points.html">points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.segment_types.html">segment_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.solve_inside.html">solve_inside</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.start_point.html">start_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.surface_material_name.html">surface_material_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.top_edge_x.html">top_edge_x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.top_edge_y.html">top_edge_y</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.top_edge_z.html">top_edge_z</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.top_face_x.html">top_face_x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.top_face_y.html">top_face_y</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.top_face_z.html">top_face_z</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.touching_objects.html">touching_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.transparency.html">transparency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.valid_properties.html">valid_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.vertex_positions.html">vertex_positions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.vertices.html">vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.volume.html">volume</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.component_array.ComponentArray.html">ComponentArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.components_3d.UserDefinedComponent.html">UserDefinedComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.Point.html">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.Plane.html">Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.HistoryProps.html">HistoryProps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.BinaryTreeNode.html">BinaryTreeNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.modeler.CoordinateSystem.html">CoordinateSystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.html">GeometryOperators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MultiPartComponent.html">Multi-part components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Stackup3D.html">Stackup 3D components</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3DLayout.html">Modeler in  HFSS 3D Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesCircuit.html">Modeler and components Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boundaries.html">Boundary objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mesh.html">Mesh operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup.html">Setup</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DesktopMessenger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optimetrics.html">Optimetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Configuration.html">Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SetupTemplates.html">Setup templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CableModeling.html">Cable modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FilterSolutions.html">Filter design</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../Primitive_Objects.html" class="nav-link">Primitives</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="ansys.aedt.core.modeler.cad.polylines.Polyline.html" class="nav-link">Polyline</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">bounding_dimension</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="bounding-dimension">
+<h1>bounding_dimension<a class="headerlink" href="#bounding-dimension" title="Link to this heading">#</a></h1>
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.aedt.core.modeler.cad.polylines.Polyline.bounding_dimension">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Polyline.</span></span><span class="sig-name descname"><span class="pre">bounding_dimension</span></span><a class="headerlink" href="#ansys.aedt.core.modeler.cad.polylines.Polyline.bounding_dimension" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve the dimension array of the bounding box.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#list" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></dt><dd><p>List of three float values representing the bounding box dimensions
+in the form <code class="docutils literal notranslate"><span class="pre">[dim_x,</span> <span class="pre">dim_y,</span> <span class="pre">dim_z]</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">oEditor</span><span class="o">.</span><span class="n">GetModelBoundingBox</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.aedt.core.modeler.cad.polylines.Polyline.bounding_dimension"><code class="docutils literal notranslate"><span class="pre">bounding_dimension</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/API/_autosummary/ansys.aedt.core.modeler.cad.polylines.Polyline.bounding_dimension.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/API/_autosummary/ansys.aedt.core.modeler.cad.polylines.Polyline.bounding_dimension.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"ignoreLocation": true, "keys": ["title", "text"], "limit": 10, "limite": 10, "minMatchCharLength": 2, "threshold": 0.5}');
+const SEARCH_FILE = "../../_static/search.json";
+</script>
+
+
+<script src="../../_static/js/search.js"></script>
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.3.1. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

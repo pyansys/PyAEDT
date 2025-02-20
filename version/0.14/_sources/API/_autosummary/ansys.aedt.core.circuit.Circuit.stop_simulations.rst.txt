@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.stop_simulations

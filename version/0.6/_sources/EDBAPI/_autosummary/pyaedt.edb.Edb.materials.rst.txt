@@ -1,0 +1,6 @@
+materials
+=========
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.materials

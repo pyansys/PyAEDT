@@ -1,0 +1,6 @@
+assign\_length\_mesh
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. automethod:: Mesh.assign_length_mesh

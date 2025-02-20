@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.valid_design

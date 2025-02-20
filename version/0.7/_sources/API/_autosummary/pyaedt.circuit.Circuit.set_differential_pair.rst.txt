@@ -1,0 +1,6 @@
+set\_differential\_pair
+=======================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.set_differential_pair

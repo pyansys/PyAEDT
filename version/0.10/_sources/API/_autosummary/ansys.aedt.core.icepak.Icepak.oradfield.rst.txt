@@ -1,0 +1,6 @@
+oradfield
+=========
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.oradfield

@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. autoproperty:: Wire.logger

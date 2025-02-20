@@ -1,0 +1,6 @@
+plot\_name
+==========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Fields.plot_name

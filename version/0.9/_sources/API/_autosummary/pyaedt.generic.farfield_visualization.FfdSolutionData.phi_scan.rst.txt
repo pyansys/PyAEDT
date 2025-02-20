@@ -1,0 +1,6 @@
+phi\_scan
+=========
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.phi_scan

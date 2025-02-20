@@ -1,0 +1,6 @@
+surface\_incident\_absorptance
+==============================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: SurfaceMaterial.surface_incident_absorptance

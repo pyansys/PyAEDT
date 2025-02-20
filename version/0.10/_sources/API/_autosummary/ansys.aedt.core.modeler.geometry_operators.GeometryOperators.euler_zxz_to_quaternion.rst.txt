@@ -1,0 +1,6 @@
+euler\_zxz\_to\_quaternion
+==========================
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.euler_zxz_to_quaternion

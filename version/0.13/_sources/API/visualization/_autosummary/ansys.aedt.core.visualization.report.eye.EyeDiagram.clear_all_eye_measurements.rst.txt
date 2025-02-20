@@ -1,0 +1,6 @@
+clear\_all\_eye\_measurements
+=============================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: EyeDiagram.clear_all_eye_measurements

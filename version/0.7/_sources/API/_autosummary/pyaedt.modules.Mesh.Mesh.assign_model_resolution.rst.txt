@@ -1,0 +1,6 @@
+assign\_model\_resolution
+=========================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.assign_model_resolution

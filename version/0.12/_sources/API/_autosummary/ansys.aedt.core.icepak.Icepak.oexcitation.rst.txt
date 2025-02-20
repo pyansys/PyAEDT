@@ -1,0 +1,6 @@
+oexcitation
+===========
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.oexcitation

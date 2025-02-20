@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.load_project

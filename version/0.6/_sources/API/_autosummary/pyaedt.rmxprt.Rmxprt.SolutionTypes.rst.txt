@@ -1,0 +1,6 @@
+SolutionTypes
+=============
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.SolutionTypes

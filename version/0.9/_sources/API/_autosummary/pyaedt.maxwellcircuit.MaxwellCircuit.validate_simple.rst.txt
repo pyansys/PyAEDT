@@ -1,0 +1,6 @@
+validate\_simple
+================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.validate_simple

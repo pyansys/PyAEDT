@@ -1,0 +1,6 @@
+time\_stop
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. autoproperty:: Spectral.time_stop

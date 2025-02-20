@@ -1,0 +1,6 @@
+pitch
+=====
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.parts
+
+.. autoproperty:: Antenna.pitch

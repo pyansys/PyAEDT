@@ -1,0 +1,6 @@
+create\_rectangle\_in\_pad
+==========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. automethod:: EDBPadstackInstance.create_rectangle_in_pad

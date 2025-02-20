@@ -1,0 +1,6 @@
+odefinition\_manager
+====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.odefinition_manager

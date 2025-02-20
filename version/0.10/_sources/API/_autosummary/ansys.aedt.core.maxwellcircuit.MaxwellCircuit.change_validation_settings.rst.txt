@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.change_validation_settings

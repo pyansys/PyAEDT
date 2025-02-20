@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.design_type

@@ -1,0 +1,6 @@
+flatten\_3d\_components
+=======================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.flatten_3d_components

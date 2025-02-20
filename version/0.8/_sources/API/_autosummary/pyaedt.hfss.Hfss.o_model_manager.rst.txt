@@ -1,0 +1,6 @@
+o\_model\_manager
+=================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.o_model_manager

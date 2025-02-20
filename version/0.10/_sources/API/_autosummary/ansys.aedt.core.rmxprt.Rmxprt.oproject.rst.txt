@@ -1,0 +1,6 @@
+oproject
+========
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.oproject

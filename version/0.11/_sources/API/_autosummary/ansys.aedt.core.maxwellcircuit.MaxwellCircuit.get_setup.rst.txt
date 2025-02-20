@@ -1,0 +1,6 @@
+get\_setup
+==========
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.get_setup

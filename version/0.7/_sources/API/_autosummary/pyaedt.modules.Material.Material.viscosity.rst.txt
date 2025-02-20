@@ -1,0 +1,6 @@
+viscosity
+=========
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.viscosity

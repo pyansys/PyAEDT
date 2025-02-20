@@ -1,0 +1,6 @@
+evaluate\_expression
+====================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.evaluate_expression

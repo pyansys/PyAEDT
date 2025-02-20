@@ -1,0 +1,281 @@
+{
+    "general": {
+        "pyaedt_version": "0.8.dev0",
+        "model_units": "mm",
+        "design_name": "HFSS 3D Layout Design_JLN",
+        "date": "09/01/2024 09:36:47",
+        "object_mapping": {},
+        "output_variables": {},
+        "variables": {},
+        "postprocessing_variables": {}
+    },
+    "setups": {
+        "My_HFSS_Setup_2": {
+            "Properties": {
+                "Enable": "true"
+            },
+            "CustomSetup": false,
+            "AutoSetup": false,
+            "SliderType": "Balanced",
+            "SolveSetupType": "HFSS",
+            "PercentRefinementPerPass": 30,
+            "MinNumberOfPasses": 1,
+            "MinNumberOfConvergedPasses": 1,
+            "UseDefaultLambda": true,
+            "UseMaxRefinement": false,
+            "MaxRefinement": 1000000,
+            "SaveAdaptiveCurrents": false,
+            "SaveLastAdaptiveRadFields": false,
+            "UseConvergenceMatrix": false,
+            "AllEntries": false,
+            "AllDiagEntries": false,
+            "AllOffDiagEntries": false,
+            "MagMinThreshold": 0.01,
+            "ProdMajVerID": -1,
+            "ProjDesignSetup": "",
+            "ProdMinVerID": -1,
+            "Refine": false,
+            "Frequency": "10GHz",
+            "LambdaRefine": true,
+            "MeshSizeFactor": 1.5,
+            "QualityRefine": true,
+            "MinAngle": "15deg",
+            "UniformityRefine": false,
+            "MaxRatio": 2,
+            "Smooth": false,
+            "SmoothingPasses": 5,
+            "UseEdgeMesh": false,
+            "UseEdgeMeshAbsLength": false,
+            "EdgeMeshRatio": 0.1,
+            "EdgeMeshAbsLength": "1000mm",
+            "LayerProjectThickness": "0meter",
+            "UseDefeature": true,
+            "UseDefeatureAbsLength": false,
+            "DefeatureRatio": 1e-06,
+            "DefeatureAbsLength": "0mm",
+            "InfArrayDimX": 0,
+            "InfArrayDimY": 0,
+            "InfArrayOrigX": 0,
+            "InfArrayOrigY": 0,
+            "InfArraySkew": 0,
+            "ViaNumSides": 6,
+            "ViaMaterial": "copper",
+            "Style25DVia": "Mesh",
+            "Replace3DTriangles": true,
+            "LayerSnapTol": "1e-05",
+            "ViaDensity": 0,
+            "HfssMesh": true,
+            "Q3dPostProc": false,
+            "UnitFactor": 1000,
+            "Verbose": false,
+            "NumberOfProcessors": 0,
+            "SmallVoidArea": -2e-09,
+            "RemoveFloatingGeometry": false,
+            "HealingOption": 1,
+            "InclBBoxOption": 1,
+            "ModelType": 0,
+            "ICModeAuto": 1,
+            "ICModeLength": "50nm",
+            "AuxBlock": {},
+            "DoAdaptive": true,
+            "Color": [
+                "R:=",
+                0,
+                "G:=",
+                0,
+                "B:=",
+                0
+            ],
+            "AdvancedSettings": {
+                "AccuracyLevel": 2,
+                "GapPortCalibration": true,
+                "ReferenceLengthRatio": 0.25,
+                "RefineAreaRatio": 4,
+                "DRCOn": false,
+                "FastSolverOn": false,
+                "StartFastSolverAt": 3000,
+                "LoopTreeOn": true,
+                "SingularElementsOn": false,
+                "UseStaticPortSolver": false,
+                "UseThinMetalPortSolver": false,
+                "ComputeBothEvenAndOddCPWModes": false,
+                "ZeroMetalLayerThickness": 0,
+                "ThinDielectric": 0,
+                "UseShellElements": false,
+                "SVDHighCompression": false,
+                "NumProcessors": 1,
+                "SolverType": "Direct Solver",
+                "UseHfssIterativeSolver": false,
+                "UseHfssMUMPSSolver": true,
+                "RelativeResidual": 1e-06,
+                "EnhancedLowFreqAccuracy": false,
+                "OrderBasis": -1,
+                "MaxDeltaZo": 2,
+                "UseRadBoundaryOnPorts": false,
+                "SetTrianglesForWavePort": false,
+                "MinTrianglesForWavePort": 100,
+                "MaxTrianglesForWavePort": 500,
+                "numprocessorsdistrib": 1,
+                "CausalMaterials": true,
+                "enabledsoforopti": true,
+                "usehfsssolvelicense": false,
+                "ExportAfterSolve": false,
+                "ExportDir": "",
+                "CircuitSparamDefinition": false,
+                "CircuitIntegrationType": "FFT",
+                "DesignType": "generic",
+                "MeshingMethod": "Phi",
+                "EnableDesignIntersectionCheck": true,
+                "UseAlternativeMeshMethodsAsFallBack": true,
+                "ModeOption": "General mode",
+                "BroadbandFreqOption": "AutoMaxFreq",
+                "BroadbandMaxNumFreq": 5,
+                "SaveADP": true,
+                "UseAdvancedDCExtrap": false,
+                "PhiMesherDeltaZRatio": 100000
+            },
+            "CurveApproximation": {
+                "ArcAngle": "30deg",
+                "StartAzimuth": "0deg",
+                "UseError": false,
+                "Error": "0meter",
+                "MaxPoints": 8,
+                "UnionPolys": true,
+                "Replace3DTriangles": true
+            },
+            "Q3D_DCSettings": {
+                "SolveResOnly": true,
+                "Cond": {
+                    "MaxPass": 10,
+                    "MinPass": 1,
+                    "MinConvPass": 1,
+                    "PerError": 1,
+                    "PerRefine": 30
+                },
+                "Mult": {
+                    "MaxPass": 1,
+                    "MinPass": 1,
+                    "MinConvPass": 1,
+                    "PerError": 1,
+                    "PerRefine": 30
+                },
+                "Solution Order": "Normal"
+            },
+            "AdaptiveSettings": {
+                "DoAdaptive": true,
+                "SaveFields": false,
+                "SaveRadFieldsOnly": false,
+                "MaxRefinePerPass": 30,
+                "MinPasses": 1,
+                "MinConvergedPasses": 1,
+                "AdaptType": "kSingle",
+                "Basic": true,
+                "SingleFrequencyDataList": {
+                    "AdaptiveFrequencyData": {
+                        "AdaptiveFrequency": "5GHz",
+                        "MaxDelta": "0.02",
+                        "MaxPasses": 10,
+                        "Expressions": []
+                    }
+                },
+                "BroadbandFrequencyDataList": {
+                    "AdaptiveFrequencyData": [
+                        {
+                            "AdaptiveFrequency": "5GHz",
+                            "MaxDelta": "0.02",
+                            "MaxPasses": 10,
+                            "Expressions": []
+                        },
+                        {
+                            "AdaptiveFrequency": "10GHz",
+                            "MaxDelta": "0.02",
+                            "MaxPasses": 10,
+                            "Expressions": []
+                        }
+                    ]
+                },
+                "MultiFrequencyDataList": {
+                    "AdaptiveFrequencyData": [
+                        {
+                            "AdaptiveFrequency": "2.5GHz",
+                            "MaxDelta": "0.02",
+                            "MaxPasses": 10,
+                            "Expressions": []
+                        },
+                        {
+                            "AdaptiveFrequency": "5GHz",
+                            "MaxDelta": "0.02",
+                            "MaxPasses": 10,
+                            "Expressions": []
+                        },
+                        {
+                            "AdaptiveFrequency": "10GHz",
+                            "MaxDelta": "0.02",
+                            "MaxPasses": 10,
+                            "Expressions": []
+                        }
+                    ]
+                }
+            },
+            "Data": {},
+            "MeshOps": {},
+            "SetupType": 29
+        }
+    },
+    "materials": {
+        "copper": {
+            "CoordinateSystemType": "Cartesian",
+            "BulkOrSurfaceType": 1,
+            "PhysicsTypes": {
+                "set": [
+                    "Electromagnetic",
+                    "Thermal",
+                    "Structural"
+                ]
+            },
+            "AttachedData": {
+                "MatAppearanceData": {
+                    "property_data": "appearance_data",
+                    "Red": 242,
+                    "Green": 140,
+                    "Blue": 102
+                }
+            },
+            "permeability": "0.999991",
+            "conductivity": "58000000",
+            "thermal_conductivity": "400",
+            "mass_density": "8933",
+            "specific_heat": "385",
+            "youngs_modulus": "120000000000",
+            "poissons_ratio": "0.38",
+            "thermal_expansion_coefficient": "1.77e-05"
+        },
+        "FR4_epoxy": {
+            "CoordinateSystemType": "Cartesian",
+            "BulkOrSurfaceType": 1,
+            "PhysicsTypes": {
+                "set": [
+                    "Electromagnetic",
+                    "Thermal",
+                    "Structural"
+                ]
+            },
+            "AttachedData": {
+                "MatAppearanceData": {
+                    "property_data": "appearance_data",
+                    "Red": 27,
+                    "Green": 110,
+                    "Blue": 76
+                }
+            },
+            "permittivity": "4.4",
+            "dielectric_loss_tangent": "0.02",
+            "thermal_conductivity": "0.294",
+            "mass_density": "1900",
+            "specific_heat": "1150",
+            "youngs_modulus": "11000000000",
+            "poissons_ratio": "0.28",
+            "thermal_expansion_coefficient": "1.5e-05"
+        }
+    }
+}

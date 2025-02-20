@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.insert_design

@@ -1,0 +1,6 @@
+create\_text
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. automethod:: Modeler3DLayout.create_text

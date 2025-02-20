@@ -1,0 +1,57 @@
+﻿Setup
+=====
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoclass:: Setup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Setup.add_mesh_link
+      
+      
+      Setup.analyze
+      
+      
+      Setup.create
+      
+      
+      Setup.delete
+      
+      
+      Setup.disable
+      
+      
+      Setup.enable
+      
+      
+      Setup.enable_expression_cache
+      
+      
+      Setup.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Setup.available_properties
+      Setup.default_intrinsics
+      Setup.is_solved
+      Setup.name
+      Setup.omodule
+      Setup.p_app
+   
+   

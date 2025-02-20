@@ -1,0 +1,6 @@
+get\_setup
+==========
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_setup

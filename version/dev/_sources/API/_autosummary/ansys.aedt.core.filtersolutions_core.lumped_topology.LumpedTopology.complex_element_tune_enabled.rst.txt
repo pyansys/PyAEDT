@@ -1,0 +1,6 @@
+complex\_element\_tune\_enabled
+===============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_topology
+
+.. autoproperty:: LumpedTopology.complex_element_tune_enabled

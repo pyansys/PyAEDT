@@ -1,0 +1,6 @@
+create\_schematic\_from\_asc\_file
+==================================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.create_schematic_from_asc_file

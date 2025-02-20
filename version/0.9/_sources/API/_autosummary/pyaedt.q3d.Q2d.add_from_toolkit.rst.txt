@@ -1,0 +1,6 @@
+add\_from\_toolkit
+==================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.add_from_toolkit

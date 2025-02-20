@@ -1,0 +1,6 @@
+warning
+=======
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. automethod:: AedtLogger.warning

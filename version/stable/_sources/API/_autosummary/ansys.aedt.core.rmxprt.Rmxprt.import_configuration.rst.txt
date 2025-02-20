@@ -1,0 +1,6 @@
+import\_configuration
+=====================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.import_configuration

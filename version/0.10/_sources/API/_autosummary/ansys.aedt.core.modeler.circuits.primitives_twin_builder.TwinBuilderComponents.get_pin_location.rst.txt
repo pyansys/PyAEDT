@@ -1,0 +1,6 @@
+get\_pin\_location
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_twin_builder
+
+.. automethod:: TwinBuilderComponents.get_pin_location

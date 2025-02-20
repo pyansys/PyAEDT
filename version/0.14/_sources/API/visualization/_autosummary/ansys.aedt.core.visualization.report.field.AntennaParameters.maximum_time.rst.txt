@@ -1,0 +1,6 @@
+maximum\_time
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. autoproperty:: AntennaParameters.maximum_time

@@ -1,0 +1,6 @@
+assign\_force
+=============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.assign_force

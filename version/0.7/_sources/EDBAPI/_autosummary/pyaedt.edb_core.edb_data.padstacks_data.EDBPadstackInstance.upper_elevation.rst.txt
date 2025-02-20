@@ -1,0 +1,6 @@
+upper\_elevation
+================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadstackInstance.upper_elevation

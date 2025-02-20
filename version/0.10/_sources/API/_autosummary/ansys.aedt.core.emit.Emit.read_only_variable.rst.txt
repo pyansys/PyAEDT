@@ -1,0 +1,6 @@
+read\_only\_variable
+====================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.read_only_variable

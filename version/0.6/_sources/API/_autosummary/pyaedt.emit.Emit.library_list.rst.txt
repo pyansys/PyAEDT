@@ -1,0 +1,6 @@
+library\_list
+=============
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.library_list

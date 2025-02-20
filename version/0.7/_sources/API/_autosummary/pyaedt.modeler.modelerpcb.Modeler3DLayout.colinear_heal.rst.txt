@@ -1,0 +1,6 @@
+colinear\_heal
+==============
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.colinear_heal

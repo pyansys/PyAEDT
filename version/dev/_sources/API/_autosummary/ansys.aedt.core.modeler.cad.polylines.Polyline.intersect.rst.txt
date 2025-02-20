@@ -1,0 +1,6 @@
+intersect
+=========
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.intersect

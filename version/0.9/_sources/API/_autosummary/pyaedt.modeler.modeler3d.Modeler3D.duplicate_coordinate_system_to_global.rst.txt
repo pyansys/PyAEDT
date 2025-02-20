@@ -1,0 +1,6 @@
+duplicate\_coordinate\_system\_to\_global
+=========================================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.duplicate_coordinate_system_to_global

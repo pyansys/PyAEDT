@@ -1,0 +1,6 @@
+is\_stackup\_layer
+==================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.layer_data
+
+.. autoproperty:: LayerEdbClass.is_stackup_layer

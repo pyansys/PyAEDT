@@ -1,0 +1,6 @@
+import\_materials\_from\_file
+=============================
+
+.. currentmodule:: pyaedt.modules.MaterialLib
+
+.. automethod:: Materials.import_materials_from_file

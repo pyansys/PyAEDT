@@ -1,0 +1,6 @@
+delete\_unused\_variables
+=========================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.delete_unused_variables

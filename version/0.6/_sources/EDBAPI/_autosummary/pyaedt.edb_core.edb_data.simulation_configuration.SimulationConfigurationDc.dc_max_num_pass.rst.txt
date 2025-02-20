@@ -1,0 +1,6 @@
+dc\_max\_num\_pass
+==================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_max_num_pass

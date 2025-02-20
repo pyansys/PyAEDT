@@ -1,0 +1,6 @@
+oanalysis
+=========
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.oanalysis

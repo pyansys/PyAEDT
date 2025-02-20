@@ -1,0 +1,72 @@
+﻿Line3dLayout
+============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoclass:: Line3dLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Line3dLayout.add
+      
+      
+      Line3dLayout.change_property
+      
+      
+      Line3dLayout.create_clearance_on_component
+      
+      
+      Line3dLayout.edge_by_point
+      
+      
+      Line3dLayout.get_property_value
+      
+      
+      Line3dLayout.remove
+      
+      
+      Line3dLayout.set_property_value
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Line3dLayout.absolute_angle
+      Line3dLayout.angle
+      Line3dLayout.bend_type
+      Line3dLayout.bottom_edge_x
+      Line3dLayout.bottom_edge_y
+      Line3dLayout.bounding_box
+      Line3dLayout.center_line
+      Line3dLayout.edges
+      Line3dLayout.end_cap_type
+      Line3dLayout.is_closed
+      Line3dLayout.length
+      Line3dLayout.location
+      Line3dLayout.lock_position
+      Line3dLayout.name
+      Line3dLayout.negative
+      Line3dLayout.net_name
+      Line3dLayout.object_units
+      Line3dLayout.obounding_box
+      Line3dLayout.placement_layer
+      Line3dLayout.points
+      Line3dLayout.start_cap_type
+      Line3dLayout.top_edge_x
+      Line3dLayout.top_edge_y
+      Line3dLayout.width
+   
+   

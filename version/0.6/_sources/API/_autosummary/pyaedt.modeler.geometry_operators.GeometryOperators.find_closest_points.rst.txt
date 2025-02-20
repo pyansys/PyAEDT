@@ -1,0 +1,6 @@
+find\_closest\_points
+=====================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.find_closest_points

@@ -1,0 +1,6 @@
+get\_model\_bounding\_box
+=========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.get_model_bounding_box

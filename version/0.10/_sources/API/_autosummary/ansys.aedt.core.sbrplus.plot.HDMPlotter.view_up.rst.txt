@@ -1,0 +1,6 @@
+view\_up
+========
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.view_up

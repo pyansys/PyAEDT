@@ -1,0 +1,6 @@
+design\_list
+============
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.design_list

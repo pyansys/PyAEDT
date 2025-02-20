@@ -1,0 +1,6 @@
+name
+====
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Trace.name

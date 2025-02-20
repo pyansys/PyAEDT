@@ -1,0 +1,85 @@
+﻿Setup
+=====
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. autoclass:: Setup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Setup.add_mesh_link
+      
+      
+      Setup.analyze
+      
+      
+      Setup.create
+      
+      
+      Setup.create_report
+      
+      
+      Setup.delete
+      
+      
+      Setup.disable
+      
+      
+      Setup.enable
+      
+      
+      Setup.enable_expression_cache
+      
+      
+      Setup.get_profile
+      
+      
+      Setup.get_solution_data
+      
+      
+      Setup.jsonalize_tree
+      
+      
+      Setup.start_continue_from_previous_setup
+      
+      
+      Setup.suppress_all
+      
+      
+      Setup.unsuppress_all
+      
+      
+      Setup.update
+      
+      
+      Setup.update_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Setup.available_properties
+      Setup.command
+      Setup.default_intrinsics
+      Setup.is_solved
+      Setup.name
+      Setup.omodule
+      Setup.p_app
+      Setup.properties
+      Setup.props
+      Setup.sweeps
+   
+   

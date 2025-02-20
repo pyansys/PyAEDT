@@ -1,0 +1,6 @@
+project\_timestamp\_changed
+===========================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.project_timestamp_changed

@@ -1,0 +1,6 @@
+value\_in\_object\_units
+========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.value_in_object_units

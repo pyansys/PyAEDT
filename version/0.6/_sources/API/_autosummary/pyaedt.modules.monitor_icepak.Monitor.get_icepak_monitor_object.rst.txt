@@ -1,0 +1,6 @@
+get\_icepak\_monitor\_object
+============================
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. automethod:: Monitor.get_icepak_monitor_object

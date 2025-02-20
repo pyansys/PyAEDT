@@ -1,0 +1,6 @@
+design\_name
+============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.design_name

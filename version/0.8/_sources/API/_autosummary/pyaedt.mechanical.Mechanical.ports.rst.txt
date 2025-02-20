@@ -1,0 +1,6 @@
+ports
+=====
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.ports

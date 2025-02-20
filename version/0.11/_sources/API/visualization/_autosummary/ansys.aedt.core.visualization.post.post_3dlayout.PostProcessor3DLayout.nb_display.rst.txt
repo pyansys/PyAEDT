@@ -1,0 +1,6 @@
+nb\_display
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.nb_display

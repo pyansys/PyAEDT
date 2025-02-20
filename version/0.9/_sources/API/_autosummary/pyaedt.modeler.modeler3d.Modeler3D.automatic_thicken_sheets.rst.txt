@@ -1,0 +1,6 @@
+automatic\_thicken\_sheets
+==========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.automatic_thicken_sheets

@@ -1,0 +1,6 @@
+convert\_segments\_to\_line
+===========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.convert_segments_to_line

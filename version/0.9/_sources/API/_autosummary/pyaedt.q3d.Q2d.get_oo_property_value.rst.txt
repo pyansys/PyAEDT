@@ -1,0 +1,6 @@
+get\_oo\_property\_value
+========================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.get_oo_property_value

@@ -1,0 +1,6 @@
+delete\_imported\_data
+======================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.delete_imported_data

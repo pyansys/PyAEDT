@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoproperty:: ModelerEmit.logger

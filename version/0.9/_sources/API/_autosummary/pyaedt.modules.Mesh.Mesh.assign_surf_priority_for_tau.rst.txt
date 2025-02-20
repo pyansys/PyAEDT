@@ -1,0 +1,6 @@
+assign\_surf\_priority\_for\_tau
+================================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.assign_surf_priority_for_tau

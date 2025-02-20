@@ -1,0 +1,6 @@
+create\_new\_project
+====================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.create_new_project

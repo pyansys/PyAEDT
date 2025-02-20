@@ -1,0 +1,6 @@
+solution\_type
+==============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.solution_type

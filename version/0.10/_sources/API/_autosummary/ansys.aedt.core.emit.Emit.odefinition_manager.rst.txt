@@ -1,0 +1,6 @@
+odefinition\_manager
+====================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.odefinition_manager

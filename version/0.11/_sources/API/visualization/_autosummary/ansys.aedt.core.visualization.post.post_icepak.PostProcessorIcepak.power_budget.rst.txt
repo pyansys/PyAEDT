@@ -1,0 +1,6 @@
+power\_budget
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.power_budget

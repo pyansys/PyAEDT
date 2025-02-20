@@ -1,0 +1,6 @@
+get\_primitives
+===============
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. automethod:: EdbLayout.get_primitives

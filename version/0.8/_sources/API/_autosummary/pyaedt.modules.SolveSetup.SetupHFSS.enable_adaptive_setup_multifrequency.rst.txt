@@ -1,0 +1,6 @@
+enable\_adaptive\_setup\_multifrequency
+=======================================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSS.enable_adaptive_setup_multifrequency

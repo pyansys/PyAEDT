@@ -1,0 +1,6 @@
+ic\_mode
+========
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.ic_mode

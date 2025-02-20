@@ -1,0 +1,6 @@
+get\_nominal\_variation
+=======================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.get_nominal_variation

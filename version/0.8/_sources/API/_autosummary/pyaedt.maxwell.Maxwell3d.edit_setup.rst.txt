@@ -1,0 +1,6 @@
+edit\_setup
+===========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.edit_setup

@@ -1,0 +1,6 @@
+set\_active\_variation
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. automethod:: SolutionData.set_active_variation

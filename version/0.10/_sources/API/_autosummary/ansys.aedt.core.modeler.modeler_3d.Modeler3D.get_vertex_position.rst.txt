@@ -1,0 +1,6 @@
+get\_vertex\_position
+=====================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.get_vertex_position

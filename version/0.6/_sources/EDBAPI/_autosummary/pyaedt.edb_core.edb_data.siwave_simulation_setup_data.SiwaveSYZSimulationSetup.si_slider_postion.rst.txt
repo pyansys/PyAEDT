@@ -1,0 +1,6 @@
+si\_slider\_postion
+===================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveSYZSimulationSetup.si_slider_postion

@@ -1,0 +1,6 @@
+edb\_uid
+========
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.edb_uid

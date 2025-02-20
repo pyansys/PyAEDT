@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. autoproperty:: NexximComponents.design_type

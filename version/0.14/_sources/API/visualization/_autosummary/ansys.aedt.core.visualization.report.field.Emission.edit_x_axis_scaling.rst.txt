@@ -1,0 +1,6 @@
+edit\_x\_axis\_scaling
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: Emission.edit_x_axis_scaling

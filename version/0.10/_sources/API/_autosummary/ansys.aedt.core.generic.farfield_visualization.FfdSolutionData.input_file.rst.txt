@@ -1,0 +1,6 @@
+input\_file
+===========
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.input_file

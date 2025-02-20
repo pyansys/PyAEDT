@@ -1,0 +1,6 @@
+set\_sbr\_current\_sources\_options
+===================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.set_sbr_current_sources_options

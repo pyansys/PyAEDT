@@ -1,0 +1,6 @@
+installed\_versions
+===================
+
+.. currentmodule:: pyaedt.desktop
+
+.. autoproperty:: Desktop.installed_versions

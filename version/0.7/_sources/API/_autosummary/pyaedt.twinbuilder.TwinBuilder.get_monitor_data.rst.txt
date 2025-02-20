@@ -1,0 +1,6 @@
+get\_monitor\_data
+==================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.get_monitor_data

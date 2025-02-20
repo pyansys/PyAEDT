@@ -1,0 +1,6 @@
+create\_polygon\_void
+=====================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. automethod:: Modeler3DLayout.create_polygon_void

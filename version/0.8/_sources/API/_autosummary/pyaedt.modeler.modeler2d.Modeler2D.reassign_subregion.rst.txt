@@ -1,0 +1,6 @@
+reassign\_subregion
+===================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.reassign_subregion

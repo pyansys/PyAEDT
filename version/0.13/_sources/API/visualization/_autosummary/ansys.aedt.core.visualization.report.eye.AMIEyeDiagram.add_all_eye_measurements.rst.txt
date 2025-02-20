@@ -1,0 +1,6 @@
+add\_all\_eye\_measurements
+===========================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: AMIEyeDiagram.add_all_eye_measurements

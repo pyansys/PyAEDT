@@ -1,0 +1,6 @@
+hole\_range
+===========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadstack.hole_range

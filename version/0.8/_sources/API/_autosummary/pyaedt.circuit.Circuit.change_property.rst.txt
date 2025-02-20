@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.change_property

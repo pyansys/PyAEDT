@@ -1,0 +1,6 @@
+get\_nominal\_variation
+=======================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.get_nominal_variation

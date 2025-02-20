@@ -1,0 +1,6 @@
+dependent\_variable\_names
+==========================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: VariableManager.dependent_variable_names

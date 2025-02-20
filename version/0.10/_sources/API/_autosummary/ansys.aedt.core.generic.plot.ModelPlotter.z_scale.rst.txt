@@ -1,0 +1,6 @@
+z\_scale
+========
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.z_scale

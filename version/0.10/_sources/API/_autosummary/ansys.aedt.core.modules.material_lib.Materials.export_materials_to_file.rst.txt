@@ -1,0 +1,6 @@
+export\_materials\_to\_file
+===========================
+
+.. currentmodule:: ansys.aedt.core.modules.material_lib
+
+.. automethod:: Materials.export_materials_to_file

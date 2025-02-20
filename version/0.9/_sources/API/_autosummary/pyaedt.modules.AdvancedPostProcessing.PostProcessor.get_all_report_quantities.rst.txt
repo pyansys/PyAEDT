@@ -1,0 +1,6 @@
+get\_all\_report\_quantities
+============================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.get_all_report_quantities

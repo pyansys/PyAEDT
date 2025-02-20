@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell3d.valid_design

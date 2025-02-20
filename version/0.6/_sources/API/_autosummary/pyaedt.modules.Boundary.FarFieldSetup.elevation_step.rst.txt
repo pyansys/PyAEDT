@@ -1,0 +1,6 @@
+elevation\_step
+===============
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: FarFieldSetup.elevation_step

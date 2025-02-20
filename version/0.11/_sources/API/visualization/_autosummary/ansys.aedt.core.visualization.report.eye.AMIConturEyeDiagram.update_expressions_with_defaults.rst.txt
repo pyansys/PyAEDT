@@ -1,0 +1,6 @@
+update\_expressions\_with\_defaults
+===================================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: AMIConturEyeDiagram.update_expressions_with_defaults

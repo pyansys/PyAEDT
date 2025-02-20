@@ -1,0 +1,6 @@
+include\_forward\_transfer\_s21\_enabled
+========================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.include_forward_transfer_s21_enabled

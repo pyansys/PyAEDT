@@ -1,0 +1,6 @@
+bottom\_roughness
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layer.bottom_roughness

@@ -1,0 +1,6 @@
+import\_from\_openstreet\_map
+=============================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.import_from_openstreet_map

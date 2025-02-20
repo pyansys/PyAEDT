@@ -1,0 +1,6 @@
+create\_object\_coordinate\_system
+==================================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.create_object_coordinate_system

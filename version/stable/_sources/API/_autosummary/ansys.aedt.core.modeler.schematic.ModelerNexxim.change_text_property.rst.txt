@@ -1,0 +1,6 @@
+change\_text\_property
+======================
+
+.. currentmodule:: ansys.aedt.core.modeler.schematic
+
+.. automethod:: ModelerNexxim.change_text_property

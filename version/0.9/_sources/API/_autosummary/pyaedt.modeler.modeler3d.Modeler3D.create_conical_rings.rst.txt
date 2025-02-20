@@ -1,0 +1,6 @@
+create\_conical\_rings
+======================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.create_conical_rings

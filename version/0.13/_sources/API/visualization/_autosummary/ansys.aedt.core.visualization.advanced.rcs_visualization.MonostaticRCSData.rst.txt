@@ -1,0 +1,56 @@
+﻿MonostaticRCSData
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. autoclass:: MonostaticRCSData
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MonostaticRCSData.window_function
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MonostaticRCSData.aspect_range
+      MonostaticRCSData.available_incident_wave_phi
+      MonostaticRCSData.available_incident_wave_theta
+      MonostaticRCSData.data_conversion_function
+      MonostaticRCSData.frequencies
+      MonostaticRCSData.frequency
+      MonostaticRCSData.frequency_units
+      MonostaticRCSData.incident_wave_phi
+      MonostaticRCSData.incident_wave_theta
+      MonostaticRCSData.input_file
+      MonostaticRCSData.isar_2d
+      MonostaticRCSData.metadata
+      MonostaticRCSData.name
+      MonostaticRCSData.range_profile
+      MonostaticRCSData.raw_data
+      MonostaticRCSData.rcs
+      MonostaticRCSData.rcs_active_frequency
+      MonostaticRCSData.rcs_active_phi
+      MonostaticRCSData.rcs_active_theta
+      MonostaticRCSData.rcs_active_theta_phi
+      MonostaticRCSData.solution
+      MonostaticRCSData.upsample_azimuth
+      MonostaticRCSData.upsample_range
+      MonostaticRCSData.waterfall
+      MonostaticRCSData.window
+      MonostaticRCSData.window_size
+   
+   

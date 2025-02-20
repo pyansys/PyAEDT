@@ -1,0 +1,6 @@
+time\_start
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. autoproperty:: AntennaParameters.time_start

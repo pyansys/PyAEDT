@@ -1,0 +1,6 @@
+edb\_sim\_setup\_info
+=====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: HfssSimulationSetup.edb_sim_setup_info

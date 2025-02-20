@@ -1,0 +1,6 @@
+cs\_xy\_pointing\_expression
+============================
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.cs_xy_pointing_expression

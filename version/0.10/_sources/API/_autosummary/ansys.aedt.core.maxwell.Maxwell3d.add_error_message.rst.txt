@@ -1,0 +1,6 @@
+add\_error\_message
+===================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.add_error_message

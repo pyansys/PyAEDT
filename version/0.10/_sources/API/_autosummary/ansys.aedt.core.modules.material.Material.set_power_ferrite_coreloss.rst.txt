@@ -1,0 +1,6 @@
+set\_power\_ferrite\_coreloss
+=============================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: Material.set_power_ferrite_coreloss

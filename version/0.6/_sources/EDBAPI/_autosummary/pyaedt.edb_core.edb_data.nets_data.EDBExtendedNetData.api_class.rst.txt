@@ -1,0 +1,6 @@
+api\_class
+==========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. autoproperty:: EDBExtendedNetData.api_class

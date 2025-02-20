@@ -1,0 +1,6 @@
+assign\_coil
+============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_coil

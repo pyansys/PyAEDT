@@ -1,0 +1,6 @@
+disable\_autosave
+=================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.disable_autosave

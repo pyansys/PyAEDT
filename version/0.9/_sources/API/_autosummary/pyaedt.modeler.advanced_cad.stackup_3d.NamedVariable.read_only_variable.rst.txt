@@ -1,0 +1,6 @@
+read\_only\_variable
+====================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: NamedVariable.read_only_variable

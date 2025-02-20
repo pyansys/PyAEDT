@@ -1,0 +1,6 @@
+assign\_power\_sinusoidal\_excitation\_to\_ports
+================================================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.assign_power_sinusoidal_excitation_to_ports

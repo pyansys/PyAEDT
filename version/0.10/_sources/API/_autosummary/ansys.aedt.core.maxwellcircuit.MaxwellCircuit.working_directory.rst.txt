@@ -1,0 +1,6 @@
+working\_directory
+==================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.working_directory

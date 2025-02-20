@@ -1,0 +1,6 @@
+excitations
+===========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.excitations

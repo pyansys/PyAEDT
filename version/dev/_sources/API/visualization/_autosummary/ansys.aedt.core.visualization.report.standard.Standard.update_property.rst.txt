@@ -1,0 +1,6 @@
+update\_property
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. automethod:: Standard.update_property

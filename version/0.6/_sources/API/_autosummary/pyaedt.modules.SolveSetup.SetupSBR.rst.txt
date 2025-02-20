@@ -1,0 +1,60 @@
+﻿SetupSBR
+========
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoclass:: SetupSBR
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SetupSBR.add_mesh_link
+      
+      
+      SetupSBR.add_subrange
+      
+      
+      SetupSBR.analyze
+      
+      
+      SetupSBR.create
+      
+      
+      SetupSBR.delete
+      
+      
+      SetupSBR.disable
+      
+      
+      SetupSBR.enable
+      
+      
+      SetupSBR.enable_expression_cache
+      
+      
+      SetupSBR.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SetupSBR.available_properties
+      SetupSBR.default_intrinsics
+      SetupSBR.is_solved
+      SetupSBR.name
+      SetupSBR.omodule
+      SetupSBR.p_app
+   
+   

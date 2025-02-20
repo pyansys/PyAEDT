@@ -1,0 +1,6 @@
+excitation\_objets
+==================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.excitation_objets

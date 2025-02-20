@@ -1,0 +1,6 @@
+get\_profile
+============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.get_profile

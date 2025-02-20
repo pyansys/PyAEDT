@@ -1,0 +1,6 @@
+add\_all\_eye\_measurements
+===========================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: EyeDiagram.add_all_eye_measurements

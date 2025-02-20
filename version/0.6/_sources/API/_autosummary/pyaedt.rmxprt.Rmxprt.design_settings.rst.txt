@@ -1,0 +1,6 @@
+design\_settings
+================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.design_settings

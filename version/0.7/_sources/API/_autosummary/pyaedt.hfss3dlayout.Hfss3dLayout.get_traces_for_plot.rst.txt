@@ -1,0 +1,6 @@
+get\_traces\_for\_plot
+======================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_traces_for_plot

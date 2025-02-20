@@ -1,0 +1,6 @@
+project\_variable\_names
+========================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: VariableManager.project_variable_names

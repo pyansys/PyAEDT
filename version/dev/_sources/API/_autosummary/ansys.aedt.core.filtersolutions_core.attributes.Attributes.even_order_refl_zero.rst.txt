@@ -1,0 +1,6 @@
+even\_order\_refl\_zero
+=======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.even_order_refl_zero

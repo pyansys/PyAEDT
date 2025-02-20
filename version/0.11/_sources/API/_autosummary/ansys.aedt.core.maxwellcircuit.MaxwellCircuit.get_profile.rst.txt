@@ -1,0 +1,6 @@
+get\_profile
+============
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.get_profile

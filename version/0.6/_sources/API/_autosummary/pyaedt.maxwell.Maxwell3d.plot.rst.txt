@@ -1,0 +1,6 @@
+plot
+====
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.plot

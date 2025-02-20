@@ -1,0 +1,6 @@
+project\_properties
+===================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.project_properties

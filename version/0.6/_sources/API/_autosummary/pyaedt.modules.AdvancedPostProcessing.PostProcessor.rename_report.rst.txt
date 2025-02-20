@@ -1,0 +1,6 @@
+rename\_report
+==============
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.rename_report

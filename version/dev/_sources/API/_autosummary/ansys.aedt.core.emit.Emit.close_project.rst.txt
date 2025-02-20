@@ -1,0 +1,6 @@
+close\_project
+==============
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.close_project

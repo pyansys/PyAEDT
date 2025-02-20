@@ -1,0 +1,6 @@
+create\_linear\_step\_sweep
+===========================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupQ3D.create_linear_step_sweep

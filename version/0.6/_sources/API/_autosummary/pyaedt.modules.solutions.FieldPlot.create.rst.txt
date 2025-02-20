@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FieldPlot.create

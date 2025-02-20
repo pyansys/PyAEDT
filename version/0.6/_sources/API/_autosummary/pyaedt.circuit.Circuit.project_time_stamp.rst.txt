@@ -1,0 +1,6 @@
+project\_time\_stamp
+====================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.project_time_stamp

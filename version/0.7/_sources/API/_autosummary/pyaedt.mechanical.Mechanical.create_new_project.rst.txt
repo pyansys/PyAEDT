@@ -1,0 +1,6 @@
+create\_new\_project
+====================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.create_new_project

@@ -1,0 +1,6 @@
+to\_degrees
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. automethod:: SolutionData.to_degrees

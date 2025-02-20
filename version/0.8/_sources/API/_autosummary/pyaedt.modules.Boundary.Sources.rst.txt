@@ -1,0 +1,37 @@
+﻿Sources
+=======
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoclass:: Sources
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Sources.create
+      
+      
+      Sources.delete
+      
+      
+      Sources.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Sources.name
+   
+   

@@ -1,0 +1,6 @@
+set\_solution\_broadband
+========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. automethod:: HfssSimulationSetup.set_solution_broadband

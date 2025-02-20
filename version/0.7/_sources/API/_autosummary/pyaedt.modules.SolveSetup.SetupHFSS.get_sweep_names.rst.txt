@@ -1,0 +1,6 @@
+get\_sweep\_names
+=================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSS.get_sweep_names

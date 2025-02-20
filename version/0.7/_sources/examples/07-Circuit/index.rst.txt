@@ -1,0 +1,170 @@
+
+
+.. _sphx_glr_examples_07-Circuit:
+
+Circuit examples
+~~~~~~~~~~~~~~~~
+These examples use PyAEDT to show some end-to-end workflows for Circuit.
+This includes schematic generation, setup, and postprocessing.
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Circuit: AMI PostProcessing">
+
+.. only:: html
+
+  .. image:: /examples/07-Circuit/images/thumb/sphx_glr_Circuit_AMI_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-Circuit_Circuit_AMI.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Circuit: AMI PostProcessing</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Circuit: schematic creation and analysis">
+
+.. only:: html
+
+  .. image:: /examples/07-Circuit/images/thumb/sphx_glr_Circuit_Example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-Circuit_Circuit_Example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Circuit: schematic creation and analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Circuit: Simulate multi-zones layout with Siwave">
+
+.. only:: html
+
+  .. image:: /examples/07-Circuit/images/thumb/sphx_glr_Circuit_Siwave_Multizones_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-Circuit_Circuit_Siwave_Multizones.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Circuit: Simulate multi-zones layout with Siwave</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Circuit: schematic subcircuit management">
+
+.. only:: html
+
+  .. image:: /examples/07-Circuit/images/thumb/sphx_glr_Circuit_Subcircuit_Example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-Circuit_Circuit_Subcircuit_Example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Circuit: schematic subcircuit management</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Circuit: transient analysis and eye plot">
+
+.. only:: html
+
+  .. image:: /examples/07-Circuit/images/thumb/sphx_glr_Circuit_Transient_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-Circuit_Circuit_Transient.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Circuit: transient analysis and eye plot</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Circuit: netlist to schematic import">
+
+.. only:: html
+
+  .. image:: /examples/07-Circuit/images/thumb/sphx_glr_Create_Netlist_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-Circuit_Create_Netlist.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Circuit: netlist to schematic import</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Circuit: automatic report creation">
+
+.. only:: html
+
+  .. image:: /examples/07-Circuit/images/thumb/sphx_glr_Reports_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-Circuit_Reports.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Circuit: automatic report creation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="To provide the advanced postprocessing features needed for this example, Matplotlib and NumPy m...">
+
+.. only:: html
+
+  .. image:: /examples/07-Circuit/images/thumb/sphx_glr_Touchstone_Management_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-Circuit_Touchstone_Management.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Circuit: Touchstone file management</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/07-Circuit/Circuit_AMI
+   /examples/07-Circuit/Circuit_Example
+   /examples/07-Circuit/Circuit_Siwave_Multizones
+   /examples/07-Circuit/Circuit_Subcircuit_Example
+   /examples/07-Circuit/Circuit_Transient
+   /examples/07-Circuit/Create_Netlist
+   /examples/07-Circuit/Reports
+   /examples/07-Circuit/Touchstone_Management
+

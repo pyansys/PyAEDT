@@ -1,0 +1,6 @@
+root\_raised\_cosine
+====================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.root_raised_cosine

@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.load_project

@@ -1,0 +1,55 @@
+﻿Siwave
+======
+
+.. currentmodule:: pyaedt.siwave
+
+.. autoclass:: Siwave
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Siwave.close_project
+      
+      
+      Siwave.export_element_data
+      
+      
+      Siwave.export_siwave_report
+      
+      
+      Siwave.open_project
+      
+      
+      Siwave.quit_application
+      
+      
+      Siwave.save_project
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Siwave.current_version
+      Siwave.lock_file
+      Siwave.oproject
+      Siwave.project_file
+      Siwave.project_name
+      Siwave.project_path
+      Siwave.pyaedt_dir
+      Siwave.results_directory
+      Siwave.src_dir
+      Siwave.version_keys
+   
+   

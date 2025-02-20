@@ -1,0 +1,6 @@
+get\_oo\_properties
+===================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.get_oo_properties

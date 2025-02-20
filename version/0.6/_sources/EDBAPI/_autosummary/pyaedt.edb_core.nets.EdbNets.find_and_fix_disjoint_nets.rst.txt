@@ -1,0 +1,6 @@
+find\_and\_fix\_disjoint\_nets
+==============================
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. automethod:: EdbNets.find_and_fix_disjoint_nets

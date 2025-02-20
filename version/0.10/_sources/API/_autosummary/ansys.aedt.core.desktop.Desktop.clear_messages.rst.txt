@@ -1,0 +1,6 @@
+clear\_messages
+===============
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.clear_messages

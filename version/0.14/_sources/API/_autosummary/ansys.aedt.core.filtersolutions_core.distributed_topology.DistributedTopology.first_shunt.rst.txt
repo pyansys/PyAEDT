@@ -1,0 +1,6 @@
+first\_shunt
+============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.first_shunt

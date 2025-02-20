@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.insert_design

@@ -1,0 +1,6 @@
+assign\_hybrid\_region
+======================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.assign_hybrid_region

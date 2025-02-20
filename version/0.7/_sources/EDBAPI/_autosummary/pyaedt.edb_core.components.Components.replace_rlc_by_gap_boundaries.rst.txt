@@ -1,0 +1,6 @@
+replace\_rlc\_by\_gap\_boundaries
+=================================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.replace_rlc_by_gap_boundaries

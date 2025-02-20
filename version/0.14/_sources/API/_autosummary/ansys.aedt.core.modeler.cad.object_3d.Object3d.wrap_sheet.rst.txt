@@ -1,0 +1,6 @@
+wrap\_sheet
+===========
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. automethod:: Object3d.wrap_sheet

@@ -1,0 +1,6 @@
+dataset\_exists
+===============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.dataset_exists

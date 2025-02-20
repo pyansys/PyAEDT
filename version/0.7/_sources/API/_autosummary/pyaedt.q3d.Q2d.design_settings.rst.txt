@@ -1,0 +1,6 @@
+design\_settings
+================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.design_settings

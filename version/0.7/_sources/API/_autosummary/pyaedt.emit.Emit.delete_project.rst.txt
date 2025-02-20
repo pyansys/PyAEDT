@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.delete_project

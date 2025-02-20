@@ -1,0 +1,6 @@
+solver\_type
+============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoproperty:: Setup3DLayout.solver_type

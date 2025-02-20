@@ -1,0 +1,6 @@
+project\_logger
+===============
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. autoproperty:: AedtLogger.project_logger

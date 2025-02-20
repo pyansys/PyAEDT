@@ -1,0 +1,6 @@
+get\_component\_by\_name
+========================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.get_component_by_name

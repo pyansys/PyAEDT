@@ -1,0 +1,6 @@
+dependent\_design\_variables
+============================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: VariableManager.dependent_design_variables

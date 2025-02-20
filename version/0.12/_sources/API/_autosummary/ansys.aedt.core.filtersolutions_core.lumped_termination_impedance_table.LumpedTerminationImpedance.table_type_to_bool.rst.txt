@@ -1,0 +1,6 @@
+table\_type\_to\_bool
+=====================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_termination_impedance_table
+
+.. automethod:: LumpedTerminationImpedance.table_type_to_bool

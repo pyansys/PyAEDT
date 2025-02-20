@@ -1,0 +1,6 @@
+materials
+=========
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.materials

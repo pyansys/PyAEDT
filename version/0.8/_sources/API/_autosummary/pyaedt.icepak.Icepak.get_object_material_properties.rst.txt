@@ -1,0 +1,6 @@
+get\_object\_material\_properties
+=================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_object_material_properties

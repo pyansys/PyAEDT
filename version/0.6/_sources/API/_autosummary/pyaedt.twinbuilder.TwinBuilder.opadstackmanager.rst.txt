@@ -1,0 +1,6 @@
+opadstackmanager
+================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.opadstackmanager

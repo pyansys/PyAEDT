@@ -1,0 +1,6 @@
+included\_parts
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: NativeComponentPCB.included_parts

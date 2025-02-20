@@ -1,0 +1,6 @@
+export\_config
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. automethod:: Spectral.export_config

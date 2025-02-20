@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q3d.design_type

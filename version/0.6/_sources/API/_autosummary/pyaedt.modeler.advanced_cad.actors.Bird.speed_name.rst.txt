@@ -1,0 +1,6 @@
+speed\_name
+===========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoproperty:: Bird.speed_name

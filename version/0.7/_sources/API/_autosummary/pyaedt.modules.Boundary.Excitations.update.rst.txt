@@ -1,0 +1,6 @@
+update
+======
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. automethod:: Excitations.update

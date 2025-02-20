@@ -1,0 +1,6 @@
+info
+====
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.info

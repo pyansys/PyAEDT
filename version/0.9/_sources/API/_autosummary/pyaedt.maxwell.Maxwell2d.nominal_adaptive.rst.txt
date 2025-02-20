@@ -1,0 +1,6 @@
+nominal\_adaptive
+=================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.nominal_adaptive

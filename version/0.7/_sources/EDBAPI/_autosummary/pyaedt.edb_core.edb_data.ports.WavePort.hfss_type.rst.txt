@@ -1,0 +1,6 @@
+hfss\_type
+==========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoproperty:: WavePort.hfss_type

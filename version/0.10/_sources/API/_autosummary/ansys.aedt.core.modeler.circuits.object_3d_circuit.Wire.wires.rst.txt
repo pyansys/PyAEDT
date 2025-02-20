@@ -1,0 +1,6 @@
+wires
+=====
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.object_3d_circuit
+
+.. autoproperty:: Wire.wires

@@ -1,0 +1,6 @@
+plot\_rays
+==========
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. automethod:: HDMPlotter.plot_rays

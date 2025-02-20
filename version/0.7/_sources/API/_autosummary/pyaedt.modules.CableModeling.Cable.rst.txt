@@ -1,0 +1,60 @@
+﻿Cable
+=====
+
+.. currentmodule:: pyaedt.modules.CableModeling
+
+.. autoclass:: Cable
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Cable.add_cable_to_bundle
+      
+      
+      Cable.create_cable
+      
+      
+      Cable.create_cable_harness
+      
+      
+      Cable.create_clock_source
+      
+      
+      Cable.create_pwl_source
+      
+      
+      Cable.create_pwl_source_from_file
+      
+      
+      Cable.remove_all_sources
+      
+      
+      Cable.remove_cables
+      
+      
+      Cable.remove_source
+      
+      
+      Cable.update_cable_properties
+      
+      
+      Cable.update_clock_source
+      
+      
+      Cable.update_pwl_source
+      
+      
+      Cable.update_shielding
+      
+   
+   
+
+   
+   
+   

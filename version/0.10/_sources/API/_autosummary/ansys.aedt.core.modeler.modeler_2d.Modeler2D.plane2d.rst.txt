@@ -1,0 +1,6 @@
+plane2d
+=======
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. autoproperty:: Modeler2D.plane2d

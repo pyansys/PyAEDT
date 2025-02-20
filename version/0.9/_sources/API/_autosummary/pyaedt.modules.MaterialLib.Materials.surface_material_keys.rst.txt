@@ -1,0 +1,6 @@
+surface\_material\_keys
+=======================
+
+.. currentmodule:: pyaedt.modules.MaterialLib
+
+.. autoproperty:: Materials.surface_material_keys

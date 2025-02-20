@@ -1,0 +1,6 @@
+get\_registry\_key\_int
+=======================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_registry_key_int

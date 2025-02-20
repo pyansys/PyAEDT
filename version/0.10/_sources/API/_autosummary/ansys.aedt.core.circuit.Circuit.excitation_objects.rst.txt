@@ -1,0 +1,6 @@
+excitation\_objects
+===================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.excitation_objects

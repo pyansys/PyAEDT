@@ -1,0 +1,6 @@
+element\_location
+=================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FfdSolutionData.element_location

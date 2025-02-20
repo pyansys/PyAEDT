@@ -1,0 +1,17 @@
+nav.bd-links ul li.toctree-l1 > a {
+  font-size: .90rem;
+}
+
+nav.bd-links ul li.toctree-l2 > a {
+    font-size: .85rem;
+    text-indent: 1px;
+}
+nav.bd-links ul li.toctree-l3 > a {
+    font-size: .85rem;
+    text-indent: 2px;
+}
+
+nav.bd-links ul li.toctree-l4 > a {
+    font-size: .8rem;
+    text-indent: 3px;
+}

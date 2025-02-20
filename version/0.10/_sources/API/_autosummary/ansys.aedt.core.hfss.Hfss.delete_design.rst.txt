@@ -1,0 +1,6 @@
+delete\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.delete_design

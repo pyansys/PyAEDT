@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.release_desktop

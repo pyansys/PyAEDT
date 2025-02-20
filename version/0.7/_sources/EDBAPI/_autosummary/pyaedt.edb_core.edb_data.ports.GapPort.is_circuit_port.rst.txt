@@ -1,0 +1,6 @@
+is\_circuit\_port
+=================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoproperty:: GapPort.is_circuit_port

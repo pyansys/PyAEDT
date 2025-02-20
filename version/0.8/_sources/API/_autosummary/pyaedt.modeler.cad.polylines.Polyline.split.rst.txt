@@ -1,0 +1,6 @@
+split
+=====
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.split

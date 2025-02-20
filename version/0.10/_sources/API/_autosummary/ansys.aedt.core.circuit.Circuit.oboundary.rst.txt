@@ -1,0 +1,6 @@
+oboundary
+=========
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.oboundary

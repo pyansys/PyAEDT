@@ -1,0 +1,6 @@
+variation\_values
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. automethod:: SolutionData.variation_values

@@ -1,0 +1,6 @@
+src\_dir
+========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.src_dir

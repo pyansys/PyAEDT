@@ -1,0 +1,6 @@
+o\_symbol\_manager
+==================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.o_symbol_manager

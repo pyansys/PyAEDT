@@ -1,0 +1,6 @@
+assign\_face\_monitor
+=====================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.monitor_icepak
+
+.. automethod:: Monitor.assign_face_monitor

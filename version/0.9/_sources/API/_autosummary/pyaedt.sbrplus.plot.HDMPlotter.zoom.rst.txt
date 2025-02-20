@@ -1,0 +1,6 @@
+zoom
+====
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.zoom

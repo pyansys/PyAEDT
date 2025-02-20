@@ -1,0 +1,6 @@
+edit\_notes
+===========
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.edit_notes

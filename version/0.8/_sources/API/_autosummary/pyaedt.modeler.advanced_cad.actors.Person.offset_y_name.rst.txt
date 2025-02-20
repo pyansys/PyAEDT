@@ -1,0 +1,6 @@
+offset\_y\_name
+===============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoproperty:: Person.offset_y_name

@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. autoproperty:: Mesh.omeshmodule

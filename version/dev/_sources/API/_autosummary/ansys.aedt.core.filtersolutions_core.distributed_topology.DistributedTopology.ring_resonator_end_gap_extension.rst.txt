@@ -1,0 +1,6 @@
+ring\_resonator\_end\_gap\_extension
+====================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.ring_resonator_end_gap_extension

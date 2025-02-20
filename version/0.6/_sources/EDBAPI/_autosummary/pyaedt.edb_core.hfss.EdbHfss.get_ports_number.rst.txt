@@ -1,0 +1,6 @@
+get\_ports\_number
+==================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.get_ports_number

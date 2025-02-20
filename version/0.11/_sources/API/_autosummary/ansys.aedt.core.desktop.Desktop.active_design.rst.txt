@@ -1,0 +1,6 @@
+active\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.active_design

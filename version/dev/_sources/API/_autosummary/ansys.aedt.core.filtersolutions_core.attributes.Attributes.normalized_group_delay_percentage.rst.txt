@@ -1,0 +1,6 @@
+normalized\_group\_delay\_percentage
+====================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.normalized_group_delay_percentage

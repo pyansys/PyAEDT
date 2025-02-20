@@ -1,0 +1,6 @@
+assign\_current\_source\_to\_sheet
+==================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.assign_current_source_to_sheet

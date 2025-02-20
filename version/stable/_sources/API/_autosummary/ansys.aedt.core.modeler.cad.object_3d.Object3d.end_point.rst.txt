@@ -1,0 +1,6 @@
+end\_point
+==========
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. autoproperty:: Object3d.end_point

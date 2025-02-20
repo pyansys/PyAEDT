@@ -1,0 +1,6 @@
+create\_fan
+===========
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.create_fan

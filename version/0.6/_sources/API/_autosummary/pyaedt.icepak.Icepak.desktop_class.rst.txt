@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.desktop_class

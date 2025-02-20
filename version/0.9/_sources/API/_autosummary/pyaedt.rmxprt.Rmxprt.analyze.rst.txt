@@ -1,0 +1,6 @@
+analyze
+=======
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.analyze

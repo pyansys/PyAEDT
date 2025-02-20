@@ -1,0 +1,37 @@
+﻿BoundaryObject3dLayout
+======================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoclass:: BoundaryObject3dLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      BoundaryObject3dLayout.delete
+      
+      
+      BoundaryObject3dLayout.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      BoundaryObject3dLayout.available_properties
+      BoundaryObject3dLayout.name
+      BoundaryObject3dLayout.object_properties
+      BoundaryObject3dLayout.props
+   
+   

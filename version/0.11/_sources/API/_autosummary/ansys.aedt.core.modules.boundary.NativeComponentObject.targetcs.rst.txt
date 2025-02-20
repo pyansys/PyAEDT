@@ -1,0 +1,6 @@
+targetcs
+========
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: NativeComponentObject.targetcs

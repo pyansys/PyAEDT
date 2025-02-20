@@ -1,0 +1,6 @@
+is\_dielectric
+==============
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: Material.is_dielectric

@@ -1,0 +1,6 @@
+connect\_components\_in\_parallel
+=================================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.connect_components_in_parallel

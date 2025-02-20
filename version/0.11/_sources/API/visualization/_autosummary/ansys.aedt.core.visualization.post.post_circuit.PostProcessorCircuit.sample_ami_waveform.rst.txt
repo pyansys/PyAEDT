@@ -1,0 +1,6 @@
+sample\_ami\_waveform
+=====================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.sample_ami_waveform

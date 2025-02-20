@@ -1,0 +1,6 @@
+hole\_offset\_y
+===============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadstack.hole_offset_y

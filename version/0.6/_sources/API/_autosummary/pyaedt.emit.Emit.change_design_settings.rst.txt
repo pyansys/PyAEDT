@@ -1,0 +1,6 @@
+change\_design\_settings
+========================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.change_design_settings

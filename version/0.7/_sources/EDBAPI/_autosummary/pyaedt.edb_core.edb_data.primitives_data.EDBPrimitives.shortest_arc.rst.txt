@@ -1,0 +1,6 @@
+shortest\_arc
+=============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.primitives_data
+
+.. autoproperty:: EDBPrimitives.shortest_arc

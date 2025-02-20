@@ -1,0 +1,6 @@
+native\_components
+==================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.native_components

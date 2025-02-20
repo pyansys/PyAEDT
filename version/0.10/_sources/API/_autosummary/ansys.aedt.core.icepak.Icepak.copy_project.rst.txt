@@ -1,0 +1,6 @@
+copy\_project
+=============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.copy_project

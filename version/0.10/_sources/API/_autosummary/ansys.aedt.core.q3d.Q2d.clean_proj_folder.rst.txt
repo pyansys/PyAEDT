@@ -1,0 +1,6 @@
+clean\_proj\_folder
+===================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.clean_proj_folder

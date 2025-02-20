@@ -1,0 +1,6 @@
+show\_extent
+============
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.show_extent

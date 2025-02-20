@@ -1,0 +1,6 @@
+get\_setups
+===========
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_setups

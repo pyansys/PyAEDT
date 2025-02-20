@@ -1,0 +1,6 @@
+assign\_stationary\_wall\_with\_temperature
+===========================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_stationary_wall_with_temperature

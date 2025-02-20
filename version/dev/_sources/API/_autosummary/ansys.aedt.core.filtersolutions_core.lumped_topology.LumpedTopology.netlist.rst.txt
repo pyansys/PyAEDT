@@ -1,0 +1,6 @@
+netlist
+=======
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_topology
+
+.. automethod:: LumpedTopology.netlist

@@ -1,0 +1,6 @@
+reports
+=======
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. autoproperty:: VirtualCompliance.reports

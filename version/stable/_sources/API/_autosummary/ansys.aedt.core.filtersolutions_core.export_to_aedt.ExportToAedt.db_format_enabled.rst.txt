@@ -1,0 +1,6 @@
+db\_format\_enabled
+===================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.db_format_enabled

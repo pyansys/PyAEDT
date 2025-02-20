@@ -1,0 +1,6 @@
+import\_datasets
+================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_datasets

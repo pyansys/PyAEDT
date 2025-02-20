@@ -1,0 +1,6 @@
+assign\_uniform\_temperature
+============================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.assign_uniform_temperature

@@ -1,0 +1,6 @@
+secondary\_sweep
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. autoproperty:: Standard.secondary_sweep

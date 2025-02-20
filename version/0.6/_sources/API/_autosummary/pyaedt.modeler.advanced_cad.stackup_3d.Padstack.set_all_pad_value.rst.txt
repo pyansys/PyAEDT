@@ -1,0 +1,6 @@
+set\_all\_pad\_value
+====================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: Padstack.set_all_pad_value

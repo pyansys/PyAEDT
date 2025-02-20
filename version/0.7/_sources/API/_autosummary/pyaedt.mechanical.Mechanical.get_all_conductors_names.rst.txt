@@ -1,0 +1,6 @@
+get\_all\_conductors\_names
+===========================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.get_all_conductors_names

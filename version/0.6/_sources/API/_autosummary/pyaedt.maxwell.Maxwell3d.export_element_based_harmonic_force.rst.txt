@@ -1,0 +1,6 @@
+export\_element\_based\_harmonic\_force
+=======================================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.export_element_based_harmonic_force

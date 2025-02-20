@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.modeler.cad.Modeler
+
+.. automethod:: CoordinateSystem.delete

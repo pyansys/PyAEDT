@@ -1,0 +1,6 @@
+power
+=====
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: NativeComponentPCB.power

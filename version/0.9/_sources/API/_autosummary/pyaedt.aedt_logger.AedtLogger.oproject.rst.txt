@@ -1,0 +1,6 @@
+oproject
+========
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. autoproperty:: AedtLogger.oproject

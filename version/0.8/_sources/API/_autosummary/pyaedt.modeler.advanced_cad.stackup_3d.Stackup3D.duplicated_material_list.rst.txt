@@ -1,0 +1,6 @@
+duplicated\_material\_list
+==========================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Stackup3D.duplicated_material_list

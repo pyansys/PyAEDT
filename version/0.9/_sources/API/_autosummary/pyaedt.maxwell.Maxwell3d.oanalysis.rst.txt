@@ -1,0 +1,6 @@
+oanalysis
+=========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.oanalysis

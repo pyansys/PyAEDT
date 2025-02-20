@@ -1,0 +1,6 @@
+assign\_surface\_mesh
+=====================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.assign_surface_mesh

@@ -1,0 +1,6 @@
+jsonalize\_tree
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.hfss_boundary
+
+.. automethod:: NearFieldSetup.jsonalize_tree

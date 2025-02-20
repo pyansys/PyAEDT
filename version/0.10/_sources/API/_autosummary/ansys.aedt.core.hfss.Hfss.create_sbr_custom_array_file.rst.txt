@@ -1,0 +1,6 @@
+create\_sbr\_custom\_array\_file
+================================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.create_sbr_custom_array_file

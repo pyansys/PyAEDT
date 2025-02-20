@@ -1,0 +1,6 @@
+x\_scale
+========
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. autoproperty:: ModelPlotter.x_scale

@@ -1,0 +1,6 @@
+add\_project\_info
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. autoproperty:: VirtualCompliance.add_project_info

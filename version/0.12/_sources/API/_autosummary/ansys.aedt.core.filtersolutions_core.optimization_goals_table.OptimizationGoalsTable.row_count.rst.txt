@@ -1,0 +1,6 @@
+row\_count
+==========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.optimization_goals_table
+
+.. autoproperty:: OptimizationGoalsTable.row_count

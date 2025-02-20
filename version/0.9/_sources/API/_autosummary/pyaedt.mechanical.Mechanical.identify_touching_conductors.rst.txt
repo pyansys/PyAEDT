@@ -1,0 +1,6 @@
+identify\_touching\_conductors
+==============================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.identify_touching_conductors

@@ -1,0 +1,6 @@
+is\_visible\_hole
+=================
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.is_visible_hole

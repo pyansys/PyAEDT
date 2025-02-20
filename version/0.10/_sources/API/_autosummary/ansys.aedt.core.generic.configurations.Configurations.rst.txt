@@ -1,0 +1,37 @@
+﻿Configurations
+==============
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. autoclass:: Configurations
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Configurations.export_config
+      
+      
+      Configurations.import_config
+      
+      
+      Configurations.validate
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Configurations.schema
+   
+   

@@ -1,0 +1,30 @@
+﻿FolderPlotSettings
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. autoclass:: FolderPlotSettings
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FolderPlotSettings.from_dict
+      
+      
+      FolderPlotSettings.to_dict
+      
+      
+      FolderPlotSettings.update
+      
+   
+   
+
+   
+   
+   

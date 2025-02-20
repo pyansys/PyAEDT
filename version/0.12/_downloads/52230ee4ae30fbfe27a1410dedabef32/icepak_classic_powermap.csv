@@ -1,0 +1,11 @@
+# Sources Polygon Object.1,# Sources Polygon Object.2,# Sources Polygon Object.3,# Sources Polygon Object.4,# Sources Polygon Object.5,# Sources Polygon Object.6,# Sources Polygon Object.7,# Sources Polygon Object.8,# Sources Polygon Object.9,# Sources Polygon Object.10,# Sources Polygon Object.11,# Sources Polygon Object.12,# Sources Polygon Object.13,# Sources Polygon Object.14,# Sources Polygon Object.15,# Sources Polygon Object.16,# Sources Polygon Object.17,# Sources Polygon Object.18
+#Name,Total source value,Total source value units,,,,,,,,,,,,,,,
+name,temp_total,temp_total_units,,,,,,,,,,,,,,,
+power_map_0,1,W,,,,,,,,,,,,,,,
+power_map_1,2,W,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+# Sources Polygon,,,,,,,,,,,,,,,,,
+#,,,,,,,,,,,,,,,,,
+name,volume_flag,split_flag,changes,nverts,plane,height,xoff,yoff,zoff,vert1,tvert1,vert2,tvert2,vert3,tvert3,vert4,tvert4
+power_map_0,0,0,0,4,2,0,0,0,0,0.00200000 -0.0008000 0,,0.00200000 -0.0009000 0,,0.00180000 -0.0009000 0,,0.00180000 -0.0008000 0,
+power_map_1,0,0,0,4,2,0,0,0,0,0.00200000 -0.0009000 0,,0.00200000 -0.0010000 0,,0.00180000 -0.0010000 0,,0.00180000 -0.0009000 0,

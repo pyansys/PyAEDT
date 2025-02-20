@@ -1,0 +1,6 @@
+delete\_unused\_variables
+=========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.delete_unused_variables

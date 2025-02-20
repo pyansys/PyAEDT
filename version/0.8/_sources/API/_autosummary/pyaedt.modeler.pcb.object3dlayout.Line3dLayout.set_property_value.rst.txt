@@ -1,0 +1,6 @@
+set\_property\_value
+====================
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. automethod:: Line3dLayout.set_property_value

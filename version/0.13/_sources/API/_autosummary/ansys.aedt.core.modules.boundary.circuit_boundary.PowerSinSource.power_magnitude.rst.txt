@@ -1,0 +1,6 @@
+power\_magnitude
+================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoproperty:: PowerSinSource.power_magnitude

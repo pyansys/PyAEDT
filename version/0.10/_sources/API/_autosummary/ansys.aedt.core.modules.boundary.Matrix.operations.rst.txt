@@ -1,0 +1,6 @@
+operations
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: Matrix.operations

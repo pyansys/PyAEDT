@@ -1,0 +1,6 @@
+delete\_report
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.delete_report

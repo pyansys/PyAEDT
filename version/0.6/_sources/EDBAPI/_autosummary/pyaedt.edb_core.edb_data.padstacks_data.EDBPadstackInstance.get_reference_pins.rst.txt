@@ -1,0 +1,6 @@
+get\_reference\_pins
+====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. automethod:: EDBPadstackInstance.get_reference_pins

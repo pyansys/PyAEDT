@@ -1,0 +1,85 @@
+﻿SetupQ3D
+========
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoclass:: SetupQ3D
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SetupQ3D.add_mesh_link
+      
+      
+      SetupQ3D.add_sweep
+      
+      
+      SetupQ3D.analyze
+      
+      
+      SetupQ3D.create
+      
+      
+      SetupQ3D.create_frequency_sweep
+      
+      
+      SetupQ3D.create_linear_step_sweep
+      
+      
+      SetupQ3D.create_report
+      
+      
+      SetupQ3D.create_single_point_sweep
+      
+      
+      SetupQ3D.delete
+      
+      
+      SetupQ3D.disable
+      
+      
+      SetupQ3D.enable
+      
+      
+      SetupQ3D.enable_expression_cache
+      
+      
+      SetupQ3D.get_solution_data
+      
+      
+      SetupQ3D.get_sweep
+      
+      
+      SetupQ3D.start_continue_from_previous_setup
+      
+      
+      SetupQ3D.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SetupQ3D.ac_rl_enabled
+      SetupQ3D.available_properties
+      SetupQ3D.capacitance_enabled
+      SetupQ3D.dc_enabled
+      SetupQ3D.dc_resistance_only
+      SetupQ3D.default_intrinsics
+      SetupQ3D.is_solved
+      SetupQ3D.name
+      SetupQ3D.omodule
+      SetupQ3D.p_app
+   
+   

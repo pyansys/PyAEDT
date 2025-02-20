@@ -1,0 +1,6 @@
+copy\_solid\_bodies\_from
+=========================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.copy_solid_bodies_from

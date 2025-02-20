@@ -1,0 +1,6 @@
+get\_monitor\_data
+==================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.get_monitor_data

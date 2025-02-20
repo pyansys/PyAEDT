@@ -1,0 +1,6 @@
+delete\_padstack\_instances
+===========================
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.delete_padstack_instances

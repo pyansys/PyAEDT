@@ -1,0 +1,6 @@
+create\_port\_on\_pins
+======================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.create_port_on_pins

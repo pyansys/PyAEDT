@@ -1,0 +1,6 @@
+variable\_exists
+================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.variable_exists

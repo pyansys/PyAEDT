@@ -1,0 +1,6 @@
+is\_negative
+============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.primitives_data
+
+.. autoproperty:: EDBPrimitives.is_negative

@@ -1,0 +1,165 @@
+﻿Polyline
+========
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoclass:: Polyline
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Polyline.clone
+      
+      
+      Polyline.delete
+      
+      
+      Polyline.duplicate_along_line
+      
+      
+      Polyline.duplicate_around_axis
+      
+      
+      Polyline.edges_by_length
+      
+      
+      Polyline.export_image
+      
+      
+      Polyline.faces_by_area
+      
+      
+      Polyline.get_touching_faces
+      
+      
+      Polyline.history
+      
+      
+      Polyline.insert_segment
+      
+      
+      Polyline.intersect
+      
+      
+      Polyline.largest_face
+      
+      
+      Polyline.longest_edge
+      
+      
+      Polyline.mirror
+      
+      
+      Polyline.move
+      
+      
+      Polyline.plot
+      
+      
+      Polyline.remove_point
+      
+      
+      Polyline.remove_segments
+      
+      
+      Polyline.rotate
+      
+      
+      Polyline.section
+      
+      
+      Polyline.set_crosssection_properties
+      
+      
+      Polyline.shortest_edge
+      
+      
+      Polyline.smallest_face
+      
+      
+      Polyline.split
+      
+      
+      Polyline.subtract
+      
+      
+      Polyline.sweep_along_path
+      
+      
+      Polyline.sweep_along_vector
+      
+      
+      Polyline.sweep_around_axis
+      
+      
+      Polyline.touching_conductors
+      
+      
+      Polyline.unite
+      
+      
+      Polyline.wrap_sheet
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Polyline.bottom_edge_x
+      Polyline.bottom_edge_y
+      Polyline.bottom_edge_z
+      Polyline.bottom_face_x
+      Polyline.bottom_face_y
+      Polyline.bottom_face_z
+      Polyline.bounding_box
+      Polyline.bounding_dimension
+      Polyline.color
+      Polyline.color_string
+      Polyline.display_wireframe
+      Polyline.edges
+      Polyline.end_point
+      Polyline.face_closest_to_bounding_box
+      Polyline.faces
+      Polyline.faces_on_bounding_box
+      Polyline.group_name
+      Polyline.id
+      Polyline.is3d
+      Polyline.is_conductor
+      Polyline.logger
+      Polyline.mass
+      Polyline.material_name
+      Polyline.model
+      Polyline.name
+      Polyline.object_type
+      Polyline.object_units
+      Polyline.part_coordinate_system
+      Polyline.points
+      Polyline.segment_types
+      Polyline.solve_inside
+      Polyline.start_point
+      Polyline.surface_material_name
+      Polyline.top_edge_x
+      Polyline.top_edge_y
+      Polyline.top_edge_z
+      Polyline.top_face_x
+      Polyline.top_face_y
+      Polyline.top_face_z
+      Polyline.touching_objects
+      Polyline.transparency
+      Polyline.valid_properties
+      Polyline.vertex_positions
+      Polyline.vertices
+      Polyline.volume
+   
+   

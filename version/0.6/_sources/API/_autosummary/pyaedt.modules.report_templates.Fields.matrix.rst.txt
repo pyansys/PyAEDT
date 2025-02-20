@@ -1,0 +1,6 @@
+matrix
+======
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Fields.matrix

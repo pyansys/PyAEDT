@@ -1,0 +1,6 @@
+load\_library\_parts\_config
+============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. automethod:: ExportToAedt.load_library_parts_config

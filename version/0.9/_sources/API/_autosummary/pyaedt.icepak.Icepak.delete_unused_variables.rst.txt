@@ -1,0 +1,6 @@
+delete\_unused\_variables
+=========================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.delete_unused_variables

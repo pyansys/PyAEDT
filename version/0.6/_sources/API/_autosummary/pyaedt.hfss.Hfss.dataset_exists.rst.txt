@@ -1,0 +1,6 @@
+dataset\_exists
+===============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.dataset_exists

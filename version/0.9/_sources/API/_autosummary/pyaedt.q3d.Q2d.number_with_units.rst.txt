@@ -1,0 +1,6 @@
+number\_with\_units
+===================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.number_with_units

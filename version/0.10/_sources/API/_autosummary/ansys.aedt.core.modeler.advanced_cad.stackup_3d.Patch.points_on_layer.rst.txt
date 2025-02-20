@@ -1,0 +1,6 @@
+points\_on\_layer
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Patch.points_on_layer

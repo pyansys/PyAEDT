@@ -1,0 +1,6 @@
+project\_time\_stamp
+====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.project_time_stamp

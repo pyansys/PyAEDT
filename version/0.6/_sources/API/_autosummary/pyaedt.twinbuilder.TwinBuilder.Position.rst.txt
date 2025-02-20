@@ -1,0 +1,6 @@
+Position
+========
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.Position

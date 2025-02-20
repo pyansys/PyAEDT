@@ -1,0 +1,6 @@
+get\_oo\_object
+===============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_oo_object

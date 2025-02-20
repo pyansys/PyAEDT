@@ -1,0 +1,6 @@
+substrate\_suspend\_dielectric\_height
+======================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_substrate
+
+.. autoproperty:: DistributedSubstrate.substrate_suspend_dielectric_height

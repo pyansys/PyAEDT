@@ -1,0 +1,148 @@
+﻿Object3d
+========
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoclass:: Object3d
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Object3d.clone
+      
+      
+      Object3d.delete
+      
+      
+      Object3d.duplicate_along_line
+      
+      
+      Object3d.duplicate_around_axis
+      
+      
+      Object3d.edges_by_length
+      
+      
+      Object3d.export_image
+      
+      
+      Object3d.faces_by_area
+      
+      
+      Object3d.get_touching_faces
+      
+      
+      Object3d.history
+      
+      
+      Object3d.intersect
+      
+      
+      Object3d.largest_face
+      
+      
+      Object3d.longest_edge
+      
+      
+      Object3d.mirror
+      
+      
+      Object3d.move
+      
+      
+      Object3d.plot
+      
+      
+      Object3d.rotate
+      
+      
+      Object3d.section
+      
+      
+      Object3d.shortest_edge
+      
+      
+      Object3d.smallest_face
+      
+      
+      Object3d.split
+      
+      
+      Object3d.subtract
+      
+      
+      Object3d.sweep_along_path
+      
+      
+      Object3d.sweep_along_vector
+      
+      
+      Object3d.sweep_around_axis
+      
+      
+      Object3d.touching_conductors
+      
+      
+      Object3d.unite
+      
+      
+      Object3d.wrap_sheet
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Object3d.bottom_edge_x
+      Object3d.bottom_edge_y
+      Object3d.bottom_edge_z
+      Object3d.bottom_face_x
+      Object3d.bottom_face_y
+      Object3d.bottom_face_z
+      Object3d.bounding_box
+      Object3d.bounding_dimension
+      Object3d.color
+      Object3d.color_string
+      Object3d.display_wireframe
+      Object3d.edges
+      Object3d.face_closest_to_bounding_box
+      Object3d.faces
+      Object3d.faces_on_bounding_box
+      Object3d.group_name
+      Object3d.id
+      Object3d.is3d
+      Object3d.is_conductor
+      Object3d.logger
+      Object3d.mass
+      Object3d.material_name
+      Object3d.model
+      Object3d.name
+      Object3d.object_type
+      Object3d.object_units
+      Object3d.part_coordinate_system
+      Object3d.solve_inside
+      Object3d.surface_material_name
+      Object3d.top_edge_x
+      Object3d.top_edge_y
+      Object3d.top_edge_z
+      Object3d.top_face_x
+      Object3d.top_face_y
+      Object3d.top_face_z
+      Object3d.touching_objects
+      Object3d.transparency
+      Object3d.valid_properties
+      Object3d.vertices
+      Object3d.volume
+   
+   

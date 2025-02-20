@@ -1,0 +1,6 @@
+unit\_system
+============
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.unit_system

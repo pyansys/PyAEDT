@@ -1,0 +1,6 @@
+available\_report\_quantities
+=============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.available_report_quantities

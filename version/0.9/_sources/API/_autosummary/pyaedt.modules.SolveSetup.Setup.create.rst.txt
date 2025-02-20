@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: Setup.create

@@ -1,0 +1,6 @@
+change\_text\_property
+======================
+
+.. currentmodule:: ansys.aedt.core.modeler.schematic
+
+.. automethod:: ModelerTwinBuilder.change_text_property

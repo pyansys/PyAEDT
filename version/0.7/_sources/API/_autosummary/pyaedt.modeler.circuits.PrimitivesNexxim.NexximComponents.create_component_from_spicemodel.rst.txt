@@ -1,0 +1,6 @@
+create\_component\_from\_spicemodel
+===================================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_component_from_spicemodel

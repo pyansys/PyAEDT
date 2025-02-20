@@ -1,0 +1,6 @@
+project\_timestamp\_changed
+===========================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q3d.project_timestamp_changed

@@ -1,0 +1,6 @@
+export\_parametric\_results
+===========================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.export_parametric_results

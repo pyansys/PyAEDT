@@ -1,0 +1,6 @@
+frequency\_value
+================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: FfdSolutionData.frequency_value

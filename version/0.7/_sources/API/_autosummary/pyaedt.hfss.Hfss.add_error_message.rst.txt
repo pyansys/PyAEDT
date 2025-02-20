@@ -1,0 +1,6 @@
+add\_error\_message
+===================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.add_error_message

@@ -1,0 +1,6 @@
+oradfield
+=========
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. autoproperty:: Hfss.oradfield

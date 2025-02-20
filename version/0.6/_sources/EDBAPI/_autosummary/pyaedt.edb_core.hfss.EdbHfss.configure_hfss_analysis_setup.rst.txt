@@ -1,0 +1,6 @@
+configure\_hfss\_analysis\_setup
+================================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.configure_hfss_analysis_setup

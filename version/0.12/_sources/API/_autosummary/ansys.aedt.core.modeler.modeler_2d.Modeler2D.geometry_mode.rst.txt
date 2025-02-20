@@ -1,0 +1,6 @@
+geometry\_mode
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. autoproperty:: Modeler2D.geometry_mode

@@ -1,0 +1,6 @@
+add\_stackup\_3d
+================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.add_stackup_3d

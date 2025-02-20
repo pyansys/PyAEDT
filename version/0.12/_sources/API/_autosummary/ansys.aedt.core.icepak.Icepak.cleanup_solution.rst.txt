@@ -1,0 +1,6 @@
+cleanup\_solution
+=================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.cleanup_solution

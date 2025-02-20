@@ -1,0 +1,6 @@
+duplicate\_material
+===================
+
+.. currentmodule:: pyaedt.modules.MaterialLib
+
+.. automethod:: Materials.duplicate_material

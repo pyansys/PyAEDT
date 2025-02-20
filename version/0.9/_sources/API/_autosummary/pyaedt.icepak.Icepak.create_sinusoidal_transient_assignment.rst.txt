@@ -1,0 +1,6 @@
+create\_sinusoidal\_transient\_assignment
+=========================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_sinusoidal_transient_assignment

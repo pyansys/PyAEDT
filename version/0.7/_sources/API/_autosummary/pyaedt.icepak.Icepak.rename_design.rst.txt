@@ -1,0 +1,6 @@
+rename\_design
+==============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.rename_design

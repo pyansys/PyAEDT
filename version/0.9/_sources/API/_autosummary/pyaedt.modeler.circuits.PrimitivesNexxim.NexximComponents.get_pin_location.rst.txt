@@ -1,0 +1,6 @@
+get\_pin\_location
+==================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.get_pin_location

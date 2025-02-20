@@ -1,0 +1,6 @@
+create\_meshregion\_component
+=============================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_meshregion_component

@@ -1,0 +1,6 @@
+diplexer\_lower\_band\_width
+============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.diplexer_lower_band_width

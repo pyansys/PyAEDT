@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.change_property

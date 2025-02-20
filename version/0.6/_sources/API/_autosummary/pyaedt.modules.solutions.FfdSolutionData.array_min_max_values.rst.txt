@@ -1,0 +1,6 @@
+array\_min\_max\_values
+=======================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FfdSolutionData.array_min_max_values

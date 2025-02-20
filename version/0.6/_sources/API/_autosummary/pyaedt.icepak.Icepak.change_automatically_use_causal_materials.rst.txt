@@ -1,0 +1,6 @@
+change\_automatically\_use\_causal\_materials
+=============================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.change_automatically_use_causal_materials

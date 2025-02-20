@@ -1,0 +1,6 @@
+cleanup\_objects
+================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.cleanup_objects

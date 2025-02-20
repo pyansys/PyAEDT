@@ -1,0 +1,6 @@
+active\_setup
+=============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.active_setup

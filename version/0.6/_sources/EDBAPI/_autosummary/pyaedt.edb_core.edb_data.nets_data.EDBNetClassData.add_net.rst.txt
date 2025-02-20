@@ -1,0 +1,6 @@
+add\_net
+========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. automethod:: EDBNetClassData.add_net

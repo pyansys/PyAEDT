@@ -1,0 +1,6 @@
+add\_from\_toolkit
+==================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.add_from_toolkit

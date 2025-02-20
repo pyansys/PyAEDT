@@ -1,0 +1,6 @@
+remove\_point\_from\_index
+==========================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. automethod:: DataSet.remove_point_from_index

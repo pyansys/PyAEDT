@@ -1,0 +1,945 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Layer &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'API/_autosummary/ansys.aedt.core.modules.layer_stackup.Layer';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="create_stackup_layer" href="ansys.aedt.core.modules.layer_stackup.Layer.create_stackup_layer.html" />
+    <link rel="prev" title="zones" href="ansys.aedt.core.modules.layer_stackup.Layers.zones.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/API/_autosummary/ansys.aedt.core.modules.layer_stackup.Layer.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Application.html">Application and solvers</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../MaterialManagement.html">Material and stackup</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modules.material_lib.Materials.html">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modules.material.Material.html">Material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modules.material.SurfaceMaterial.html">SurfaceMaterial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modules.material.MatProperties.html">MatProperties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modules.material.SurfMatProperties.html">SurfMatProperties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modules.material.MatProperty.html">MatProperty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layers.html">Layers</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Layer</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.create_stackup_layer.html">create_stackup_layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.remove_stackup_layer.html">remove_stackup_layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.set_layer_color.html">set_layer_color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.update_stackup_layer.html">update_stackup_layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.bottom_huray_ratio.html">bottom_huray_ratio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.bottom_nodule_radius.html">bottom_nodule_radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.bottom_roughness.html">bottom_roughness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.bottom_roughness_model.html">bottom_roughness_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.color.html">color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.draw_override.html">draw_override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.etch.html">etch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.fill_material.html">fill_material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.hfss_solver_settings.html">hfss_solver_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.index.html">index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_mesh_background.html">is_mesh_background</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_mesh_overlay.html">is_mesh_overlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_negative.html">is_negative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible.html">is_visible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_component.html">is_visible_component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_hole.html">is_visible_hole</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_pad.html">is_visible_pad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_path.html">is_visible_path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_shape.html">is_visible_shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.locked.html">locked</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.lower_elevation.html">lower_elevation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.material.html">material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.oeditor.html">oeditor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.pattern.html">pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.planar_em_solver_settings.html">planar_em_solver_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.roughness.html">roughness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.side_huray_ratio.html">side_huray_ratio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.side_model.html">side_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.side_nodule_radius.html">side_nodule_radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.side_roughness.html">side_roughness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.thickness.html">thickness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.thickness_units.html">thickness_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.top_bottom.html">top_bottom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.top_huray_ratio.html">top_huray_ratio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.top_nodule_radius.html">top_nodule_radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.top_roughness.html">top_roughness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.top_roughness_model.html">top_roughness_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.transparency.html">transparency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.upper_elevation.html">upper_elevation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.use_etch.html">use_etch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.user.html">user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.usp.html">usp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.visflag.html">visflag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.zones.html">zones</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3D.html">3D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives2D.html">2D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitive_Objects.html">Primitives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3DLayout.html">Modeler in  HFSS 3D Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesCircuit.html">Modeler and components Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boundaries.html">Boundary objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mesh.html">Mesh operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup.html">Setup</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Post.html">Post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DesktopMessenger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optimetrics.html">Optimetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Configuration.html">Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SetupTemplates.html">Setup templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CableModeling.html">Cable modeling</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../MaterialManagement.html" class="nav-link">Material and stackup</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">Layer</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="layer">
+<h1>Layer<a class="headerlink" href="#layer" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.aedt.core.modules.layer_stackup.Layer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.aedt.core.modules.layer_stackup.</span></span><span class="sig-name descname"><span class="pre">Layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layertype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'signal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/ansys/pyaedt/blob/main/ansys/aedt/core/modules/layer_stackup.py#L129-L1150"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ansys.aedt.core.modules.layer_stackup.Layer" title="Link to this definition">#</a></dt>
+<dd><p>Manages the stackup layer for the Circuit and HFSS 3D Layout tools.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>app</strong><span class="classifier"><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layers.html#ansys.aedt.core.modules.layer_stackup.Layers" title="ansys.aedt.core.modules.layer_stackup.Layers"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.aedt.core.modules.layer_stackup.Layers</span></code></a></span></dt><dd></dd>
+<dt><strong>layertype</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>The default is <code class="docutils literal notranslate"><span class="pre">&quot;signal&quot;</span></code>.</p>
+</dd>
+<dt><strong>negative</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether the geometry on the layer is cut away
+from the layer. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Hfss3dLayout</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">app</span> <span class="o">=</span> <span class="n">Hfss3dLayout</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">layers</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="s2">&quot;Top&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.create_stackup_layer.html#ansys.aedt.core.modules.layer_stackup.Layer.create_stackup_layer" title="ansys.aedt.core.modules.layer_stackup.Layer.create_stackup_layer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.create_stackup_layer</span></code></a>()</p></td>
+<td><p>Create a stackup layer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.remove_stackup_layer.html#ansys.aedt.core.modules.layer_stackup.Layer.remove_stackup_layer" title="ansys.aedt.core.modules.layer_stackup.Layer.remove_stackup_layer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.remove_stackup_layer</span></code></a>()</p></td>
+<td><p>Remove the stackup layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.set_layer_color.html#ansys.aedt.core.modules.layer_stackup.Layer.set_layer_color" title="ansys.aedt.core.modules.layer_stackup.Layer.set_layer_color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.set_layer_color</span></code></a>(r, g, b)</p></td>
+<td><p>Update the color of the layer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.update_stackup_layer.html#ansys.aedt.core.modules.layer_stackup.Layer.update_stackup_layer" title="ansys.aedt.core.modules.layer_stackup.Layer.update_stackup_layer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.update_stackup_layer</span></code></a>()</p></td>
+<td><p>Update the stackup layer.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.bottom_huray_ratio.html#ansys.aedt.core.modules.layer_stackup.Layer.bottom_huray_ratio" title="ansys.aedt.core.modules.layer_stackup.Layer.bottom_huray_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.bottom_huray_ratio</span></code></a></p></td>
+<td><p>Get/Set the active layer bottom roughness ratio.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.bottom_nodule_radius.html#ansys.aedt.core.modules.layer_stackup.Layer.bottom_nodule_radius" title="ansys.aedt.core.modules.layer_stackup.Layer.bottom_nodule_radius"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.bottom_nodule_radius</span></code></a></p></td>
+<td><p>Get/Set the active layer bottom roughness radius.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.bottom_roughness.html#ansys.aedt.core.modules.layer_stackup.Layer.bottom_roughness" title="ansys.aedt.core.modules.layer_stackup.Layer.bottom_roughness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.bottom_roughness</span></code></a></p></td>
+<td><p>Return or set the active layer bottom roughness (with units).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.bottom_roughness_model.html#ansys.aedt.core.modules.layer_stackup.Layer.bottom_roughness_model" title="ansys.aedt.core.modules.layer_stackup.Layer.bottom_roughness_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.bottom_roughness_model</span></code></a></p></td>
+<td><p>Get/Set the active layer bottom roughness model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.color.html#ansys.aedt.core.modules.layer_stackup.Layer.color" title="ansys.aedt.core.modules.layer_stackup.Layer.color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.color</span></code></a></p></td>
+<td><p>Return or set the property of the active layer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.draw_override.html#ansys.aedt.core.modules.layer_stackup.Layer.draw_override" title="ansys.aedt.core.modules.layer_stackup.Layer.draw_override"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.draw_override</span></code></a></p></td>
+<td><p>Get/Set the active layer draw override value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.etch.html#ansys.aedt.core.modules.layer_stackup.Layer.etch" title="ansys.aedt.core.modules.layer_stackup.Layer.etch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.etch</span></code></a></p></td>
+<td><p>Get/Set the active layer etch value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.fill_material.html#ansys.aedt.core.modules.layer_stackup.Layer.fill_material" title="ansys.aedt.core.modules.layer_stackup.Layer.fill_material"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.fill_material</span></code></a></p></td>
+<td><p>Get/Set the active layer filling material.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.hfss_solver_settings.html#ansys.aedt.core.modules.layer_stackup.Layer.hfss_solver_settings" title="ansys.aedt.core.modules.layer_stackup.Layer.hfss_solver_settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.hfss_solver_settings</span></code></a></p></td>
+<td><p>Get/Set the active layer hfss solver settings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.index.html#ansys.aedt.core.modules.layer_stackup.Layer.index" title="ansys.aedt.core.modules.layer_stackup.Layer.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.index</span></code></a></p></td>
+<td><p>Get/Set the active layer index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_mesh_background.html#ansys.aedt.core.modules.layer_stackup.Layer.is_mesh_background" title="ansys.aedt.core.modules.layer_stackup.Layer.is_mesh_background"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.is_mesh_background</span></code></a></p></td>
+<td><p>Get/Set the active layer mesh backgraound.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_mesh_overlay.html#ansys.aedt.core.modules.layer_stackup.Layer.is_mesh_overlay" title="ansys.aedt.core.modules.layer_stackup.Layer.is_mesh_overlay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.is_mesh_overlay</span></code></a></p></td>
+<td><p>Get/Set the active layer mesh overlay.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_negative.html#ansys.aedt.core.modules.layer_stackup.Layer.is_negative" title="ansys.aedt.core.modules.layer_stackup.Layer.is_negative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.is_negative</span></code></a></p></td>
+<td><p>Get/Set the active layer negative flag.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible.html#ansys.aedt.core.modules.layer_stackup.Layer.is_visible" title="ansys.aedt.core.modules.layer_stackup.Layer.is_visible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.is_visible</span></code></a></p></td>
+<td><p>Get/Set the active layer visibility.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_component.html#ansys.aedt.core.modules.layer_stackup.Layer.is_visible_component" title="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_component"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.is_visible_component</span></code></a></p></td>
+<td><p>Get/Set the active layer component visibility.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_hole.html#ansys.aedt.core.modules.layer_stackup.Layer.is_visible_hole" title="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_hole"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.is_visible_hole</span></code></a></p></td>
+<td><p>Get/Set the active layer hole visibility.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_pad.html#ansys.aedt.core.modules.layer_stackup.Layer.is_visible_pad" title="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.is_visible_pad</span></code></a></p></td>
+<td><p>Get/Set the active layer pad visibility.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_path.html#ansys.aedt.core.modules.layer_stackup.Layer.is_visible_path" title="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.is_visible_path</span></code></a></p></td>
+<td><p>Get/Set the active layer paths visibility.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_shape.html#ansys.aedt.core.modules.layer_stackup.Layer.is_visible_shape" title="ansys.aedt.core.modules.layer_stackup.Layer.is_visible_shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.is_visible_shape</span></code></a></p></td>
+<td><p>Get/Set the active layer shape visibility.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.locked.html#ansys.aedt.core.modules.layer_stackup.Layer.locked" title="ansys.aedt.core.modules.layer_stackup.Layer.locked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.locked</span></code></a></p></td>
+<td><p>Get/Set the active layer lock flag.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.lower_elevation.html#ansys.aedt.core.modules.layer_stackup.Layer.lower_elevation" title="ansys.aedt.core.modules.layer_stackup.Layer.lower_elevation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.lower_elevation</span></code></a></p></td>
+<td><p>Get/Set the active layer lower elevation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.material.html#ansys.aedt.core.modules.layer_stackup.Layer.material" title="ansys.aedt.core.modules.layer_stackup.Layer.material"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.material</span></code></a></p></td>
+<td><p>Get/Set the active layer material name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.oeditor.html#ansys.aedt.core.modules.layer_stackup.Layer.oeditor" title="ansys.aedt.core.modules.layer_stackup.Layer.oeditor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.oeditor</span></code></a></p></td>
+<td><p>Oeditor Module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.pattern.html#ansys.aedt.core.modules.layer_stackup.Layer.pattern" title="ansys.aedt.core.modules.layer_stackup.Layer.pattern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.pattern</span></code></a></p></td>
+<td><p>Get/Set the active layer pattern.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.planar_em_solver_settings.html#ansys.aedt.core.modules.layer_stackup.Layer.planar_em_solver_settings" title="ansys.aedt.core.modules.layer_stackup.Layer.planar_em_solver_settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.planar_em_solver_settings</span></code></a></p></td>
+<td><p>Get/Set the active layer PlanarEm solver settings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.roughness.html#ansys.aedt.core.modules.layer_stackup.Layer.roughness" title="ansys.aedt.core.modules.layer_stackup.Layer.roughness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.roughness</span></code></a></p></td>
+<td><p>Return or set the active layer roughness (with units).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.side_huray_ratio.html#ansys.aedt.core.modules.layer_stackup.Layer.side_huray_ratio" title="ansys.aedt.core.modules.layer_stackup.Layer.side_huray_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.side_huray_ratio</span></code></a></p></td>
+<td><p>Get/Set the active layer bottom roughness ratio.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.side_model.html#ansys.aedt.core.modules.layer_stackup.Layer.side_model" title="ansys.aedt.core.modules.layer_stackup.Layer.side_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.side_model</span></code></a></p></td>
+<td><p>Get/Set the active layer side roughness model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.side_nodule_radius.html#ansys.aedt.core.modules.layer_stackup.Layer.side_nodule_radius" title="ansys.aedt.core.modules.layer_stackup.Layer.side_nodule_radius"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.side_nodule_radius</span></code></a></p></td>
+<td><p>Get/Set the active layer side roughness radius.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.side_roughness.html#ansys.aedt.core.modules.layer_stackup.Layer.side_roughness" title="ansys.aedt.core.modules.layer_stackup.Layer.side_roughness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.side_roughness</span></code></a></p></td>
+<td><p>Get/Set the active layer side roughness (with units).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.thickness.html#ansys.aedt.core.modules.layer_stackup.Layer.thickness" title="ansys.aedt.core.modules.layer_stackup.Layer.thickness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.thickness</span></code></a></p></td>
+<td><p>Get/Set the active layer thickness value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.thickness_units.html#ansys.aedt.core.modules.layer_stackup.Layer.thickness_units" title="ansys.aedt.core.modules.layer_stackup.Layer.thickness_units"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.thickness_units</span></code></a></p></td>
+<td><p>Get the active layer thickness units value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.top_bottom.html#ansys.aedt.core.modules.layer_stackup.Layer.top_bottom" title="ansys.aedt.core.modules.layer_stackup.Layer.top_bottom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.top_bottom</span></code></a></p></td>
+<td><p>Get/Set the active layer top bottom alignment.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.top_huray_ratio.html#ansys.aedt.core.modules.layer_stackup.Layer.top_huray_ratio" title="ansys.aedt.core.modules.layer_stackup.Layer.top_huray_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.top_huray_ratio</span></code></a></p></td>
+<td><p>Get/Set the active layer top roughness ratio.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.top_nodule_radius.html#ansys.aedt.core.modules.layer_stackup.Layer.top_nodule_radius" title="ansys.aedt.core.modules.layer_stackup.Layer.top_nodule_radius"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.top_nodule_radius</span></code></a></p></td>
+<td><p>Get/Set the active layer top roughness radius.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.top_roughness.html#ansys.aedt.core.modules.layer_stackup.Layer.top_roughness" title="ansys.aedt.core.modules.layer_stackup.Layer.top_roughness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.top_roughness</span></code></a></p></td>
+<td><p>Get/Set the active layer top roughness (with units).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.top_roughness_model.html#ansys.aedt.core.modules.layer_stackup.Layer.top_roughness_model" title="ansys.aedt.core.modules.layer_stackup.Layer.top_roughness_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.top_roughness_model</span></code></a></p></td>
+<td><p>Get/Set the active layer top roughness model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.transparency.html#ansys.aedt.core.modules.layer_stackup.Layer.transparency" title="ansys.aedt.core.modules.layer_stackup.Layer.transparency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.transparency</span></code></a></p></td>
+<td><p>Get/Set the property to the active layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.upper_elevation.html#ansys.aedt.core.modules.layer_stackup.Layer.upper_elevation" title="ansys.aedt.core.modules.layer_stackup.Layer.upper_elevation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.upper_elevation</span></code></a></p></td>
+<td><p>Get the active layer upper elevation value with units.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.use_etch.html#ansys.aedt.core.modules.layer_stackup.Layer.use_etch" title="ansys.aedt.core.modules.layer_stackup.Layer.use_etch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.use_etch</span></code></a></p></td>
+<td><p>Get/Set the active layer etiching flag.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.user.html#ansys.aedt.core.modules.layer_stackup.Layer.user" title="ansys.aedt.core.modules.layer_stackup.Layer.user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.user</span></code></a></p></td>
+<td><p>Get/Set the active layer user flag.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.usp.html#ansys.aedt.core.modules.layer_stackup.Layer.usp" title="ansys.aedt.core.modules.layer_stackup.Layer.usp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.usp</span></code></a></p></td>
+<td><p>Get/Set the active layer usp flag.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.visflag.html#ansys.aedt.core.modules.layer_stackup.Layer.visflag" title="ansys.aedt.core.modules.layer_stackup.Layer.visflag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.visflag</span></code></a></p></td>
+<td><p>Visibility flag for objects on the layer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modules.layer_stackup.Layer.zones.html#ansys.aedt.core.modules.layer_stackup.Layer.zones" title="ansys.aedt.core.modules.layer_stackup.Layer.zones"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layer.zones</span></code></a></p></td>
+<td><p>Get/Set the active layer zoness.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.aedt.core.modules.layer_stackup.Layer"><code class="docutils literal notranslate"><span class="pre">Layer</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="http://github.com/ansys/pyaedt/edit/main/ansys/aedt/core/modules/layer_stackup.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/API/_autosummary/ansys.aedt.core.modules.layer_stackup.Layer.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

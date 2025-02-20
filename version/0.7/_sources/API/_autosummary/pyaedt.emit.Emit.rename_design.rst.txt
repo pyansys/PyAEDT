@@ -1,0 +1,6 @@
+rename\_design
+==============
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.rename_design

@@ -1,0 +1,69 @@
+﻿FfdSolutionData
+===============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoclass:: FfdSolutionData
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FfdSolutionData.array_center_and_edge
+      
+      
+      FfdSolutionData.array_min_max_values
+      
+      
+      FfdSolutionData.assign_weight
+      
+      
+      FfdSolutionData.beamform
+      
+      
+      FfdSolutionData.beamform_2beams
+      
+      
+      FfdSolutionData.element_location
+      
+      
+      FfdSolutionData.get_array_index
+      
+      
+      FfdSolutionData.get_lattice_vectors
+      
+      
+      FfdSolutionData.plot_2d_cut
+      
+      
+      FfdSolutionData.plot_farfield_contour
+      
+      
+      FfdSolutionData.polar_plot_3d
+      
+      
+      FfdSolutionData.polar_plot_3d_pyvista
+      
+      
+      FfdSolutionData.polar_plot_3d_pyvista_2beams
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      FfdSolutionData.frequency
+      FfdSolutionData.mag_offset
+      FfdSolutionData.phase_offset
+   
+   

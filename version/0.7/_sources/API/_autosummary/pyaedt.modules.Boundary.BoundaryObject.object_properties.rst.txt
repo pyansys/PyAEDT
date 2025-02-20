@@ -1,0 +1,6 @@
+object\_properties
+==================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: BoundaryObject.object_properties

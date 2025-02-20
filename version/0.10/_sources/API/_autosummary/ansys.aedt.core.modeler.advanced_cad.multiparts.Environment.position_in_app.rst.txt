@@ -1,0 +1,6 @@
+position\_in\_app
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.multiparts
+
+.. automethod:: Environment.position_in_app

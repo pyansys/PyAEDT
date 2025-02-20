@@ -1,0 +1,6 @@
+create\_creeping\_point\_visual\_ray\_tracing
+=============================================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_common_3d
+
+.. automethod:: PostProcessor3D.create_creeping_point_visual_ray_tracing

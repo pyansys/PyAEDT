@@ -1,0 +1,6 @@
+isometric\_view
+===============
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.isometric_view

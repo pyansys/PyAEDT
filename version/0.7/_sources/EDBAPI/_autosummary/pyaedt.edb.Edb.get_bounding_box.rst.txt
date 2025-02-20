@@ -1,0 +1,6 @@
+get\_bounding\_box
+==================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.get_bounding_box

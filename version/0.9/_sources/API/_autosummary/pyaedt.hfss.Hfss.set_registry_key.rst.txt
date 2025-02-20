@@ -1,0 +1,6 @@
+set\_registry\_key
+==================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.set_registry_key

@@ -1,0 +1,6 @@
+oexcitation
+===========
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.oexcitation

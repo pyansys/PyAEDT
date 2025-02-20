@@ -1,0 +1,6 @@
+native\_components
+==================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. autoproperty:: Hfss.native_components

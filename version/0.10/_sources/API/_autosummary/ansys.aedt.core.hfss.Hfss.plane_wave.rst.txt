@@ -1,0 +1,6 @@
+plane\_wave
+===========
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.plane_wave

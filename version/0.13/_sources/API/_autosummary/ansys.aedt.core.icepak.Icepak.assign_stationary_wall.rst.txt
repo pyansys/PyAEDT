@@ -1,0 +1,6 @@
+assign\_stationary\_wall
+========================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.assign_stationary_wall

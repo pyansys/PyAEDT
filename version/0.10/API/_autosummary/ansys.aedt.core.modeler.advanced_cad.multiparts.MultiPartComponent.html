@@ -1,0 +1,876 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MultiPartComponent &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'API/_autosummary/ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="insert" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.insert.html" />
+    <link rel="prev" title="yaw_name" href="ansys.aedt.core.modeler.advanced_cad.parts.Antenna.yaw_name.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/API/_autosummary/ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Application.html">Application and solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MaterialManagement.html">Material and stackup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3D.html">3D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives2D.html">2D modeler</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Primitive_Objects.html">Primitives</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.object_3d.Object3d.html">Object3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.FacePrimitive.html">FacePrimitive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.EdgePrimitive.html">EdgePrimitive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.VertexPrimitive.html">VertexPrimitive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.PolylineSegment.html">PolylineSegment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.html">Polyline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.component_array.ComponentArray.html">ComponentArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.components_3d.UserDefinedComponent.html">UserDefinedComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.Point.html">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.Plane.html">Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.HistoryProps.html">HistoryProps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.BinaryTreeNode.html">BinaryTreeNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.modeler.CoordinateSystem.html">CoordinateSystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.html">GeometryOperators</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../MultiPartComponent.html">Multi-part components</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.actors.Person.html">Person</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.actors.Vehicle.html">Vehicle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.actors.Bird.html">Bird</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.actors.Radar.html">Radar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.parts.Part.html">Part</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.parts.Antenna.html">Antenna</a></li>
+<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">MultiPartComponent</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.insert.html">insert</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.position_in_app.html">position_in_app</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.start.html">start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.cs_name.html">cs_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.index.html">index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.modeler_units.html">modeler_units</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.name.html">name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset.html">offset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_names.html">offset_names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_x_name.html">offset_x_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_y_name.html">offset_y_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_z_name.html">offset_z_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.pitch.html">pitch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.pitch_name.html">pitch_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.roll.html">roll</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.roll_name.html">roll_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.use_global_cs.html">use_global_cs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.yaw.html">yaw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.yaw_name.html">yaw_name</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.Environment.html">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.Actor.html">Actor</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Stackup3D.html">Stackup 3D components</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3DLayout.html">Modeler in  HFSS 3D Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesCircuit.html">Modeler and components Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boundaries.html">Boundary objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mesh.html">Mesh operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup.html">Setup</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Post.html">Post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DesktopMessenger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optimetrics.html">Optimetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Configuration.html">Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SetupTemplates.html">Setup templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CableModeling.html">Cable modeling</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../Primitive_Objects.html" class="nav-link">Primitives</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../MultiPartComponent.html" class="nav-link">Multi-part components</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">MultiPartComponent</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="multipartcomponent">
+<h1>MultiPartComponent<a class="headerlink" href="#multipartcomponent" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.aedt.core.modeler.advanced_cad.multiparts.</span></span><span class="sig-name descname"><span class="pre">MultiPartComponent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comp_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_relative_cs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_cs_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('0',</span> <span class="pre">'0',</span> <span class="pre">'0')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'0deg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'0deg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roll</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'0deg'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/ansys/pyaedt/blob/main/ansys/aedt/core/modeler/advanced_cad/multiparts.py#L35-L494"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent" title="Link to this definition">#</a></dt>
+<dd><p>Supports multi-part 3D components for HFSS SBR+.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Forward motion is in the X-axis direction if motion is set.</p>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>comp_folder</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Full path to the folder with the JSON file containing the component definition.
+This JSON file must have the same name as the folder.</p>
+</dd>
+<dt><strong>name</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Name of the multipart component. If this value is set, the
+component is selected from the corresponding JSON file in
+<code class="docutils literal notranslate"><span class="pre">comp_folder</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case the
+name of the first JSON file in the folder is used.</p>
+</dd>
+<dt><strong>use_relative_cs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to use the relative coordinate system. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> if the multi-part component doesn’t move. Set to <code class="docutils literal notranslate"><span class="pre">True</span></code>
+if the multi-part component moves relative to the global coordinate system.</p>
+</dd>
+<dt><strong>relative_cs_name</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Name of the coordinate system to connect the multipart relative system to
+when <code class="docutils literal notranslate"><span class="pre">use_relative_cs=True</span></code>.</p>
+</dd>
+<dt><strong>motion</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether expressions should be used to define the position and orientation of
+the multi-part component. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+<dt><strong>offset</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#list" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>List of <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code> coordinate values defining the component offset.
+The default is <code class="docutils literal notranslate"><span class="pre">[&quot;0&quot;,</span> <span class="pre">&quot;0&quot;,</span> <span class="pre">&quot;0&quot;]</span></code>.</p>
+</dd>
+<dt><strong>yaw</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3.11/library/functions.html#float" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Yaw angle, indicating the rotation about the component’s Z-axis. The default
+is <code class="docutils literal notranslate"><span class="pre">&quot;0deg&quot;</span></code>.</p>
+</dd>
+<dt><strong>pitch</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3.11/library/functions.html#float" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Pitch angle, indicating the rotation about the component Y-axis The default
+is <code class="docutils literal notranslate"><span class="pre">&quot;0deg&quot;</span></code>.</p>
+</dd>
+<dt><strong>roll</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3.11/library/functions.html#float" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Roll angle, indicating the rotation about the component X-axis. The default
+is <code class="docutils literal notranslate"><span class="pre">&quot;0deg&quot;</span></code>.</p>
+</dd>
+<dt><strong>roll</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3.11/library/functions.html#float" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Roll angle, indicating the rotation about the component’s X-axis. The default</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.insert.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.insert" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.insert</span></code></a>(app[, motion])</p></td>
+<td><p>Insert the object in HFSS SBR+.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.position_in_app.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.position_in_app" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.position_in_app"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.position_in_app</span></code></a>(app)</p></td>
+<td><p>Set up design variables and values to enable motion for the multi-part 3D component.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.start.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.start" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.start</span></code></a>(app)</p></td>
+<td><p>Initialize app for SBR+ simulation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.cs_name.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.cs_name" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.cs_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.cs_name</span></code></a></p></td>
+<td><p>Coordinate system name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.index.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.index" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.index</span></code></a></p></td>
+<td><p>Number of multi-part components.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.modeler_units.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.modeler_units" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.modeler_units"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.modeler_units</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.name.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.name" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.name</span></code></a></p></td>
+<td><p>Unique instance name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.offset</span></code></a></p></td>
+<td><p>Offset values for the multi-part component.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_names.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_names" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.offset_names</span></code></a></p></td>
+<td><p>X-, Y-, and Z-axis offset names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_x_name.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_x_name" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_x_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.offset_x_name</span></code></a></p></td>
+<td><p>X-axis offset name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_y_name.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_y_name" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_y_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.offset_y_name</span></code></a></p></td>
+<td><p>Y-axis offset name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_z_name.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_z_name" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.offset_z_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.offset_z_name</span></code></a></p></td>
+<td><p>Z-axis offset name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.pitch.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.pitch" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.pitch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.pitch</span></code></a></p></td>
+<td><p>Pitch variable value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.pitch_name.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.pitch_name" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.pitch_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.pitch_name</span></code></a></p></td>
+<td><p>Pitch variable name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.roll.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.roll" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.roll"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.roll</span></code></a></p></td>
+<td><p>Roll variable value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.roll_name.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.roll_name" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.roll_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.roll_name</span></code></a></p></td>
+<td><p>Roll variable name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.use_global_cs.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.use_global_cs" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.use_global_cs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.use_global_cs</span></code></a></p></td>
+<td><p>Global coordinate system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.yaw.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.yaw" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.yaw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.yaw</span></code></a></p></td>
+<td><p>Yaw variable value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.yaw_name.html#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.yaw_name" title="ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.yaw_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiPartComponent.yaw_name</span></code></a></p></td>
+<td><p>Yaw variable name.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent"><code class="docutils literal notranslate"><span class="pre">MultiPartComponent</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="http://github.com/ansys/pyaedt/edit/main/ansys/aedt/core/modeler/advanced_cad/multiparts.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/API/_autosummary/ansys.aedt.core.modeler.advanced_cad.multiparts.MultiPartComponent.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

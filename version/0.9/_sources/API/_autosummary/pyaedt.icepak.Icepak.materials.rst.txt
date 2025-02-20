@@ -1,0 +1,6 @@
+materials
+=========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.materials

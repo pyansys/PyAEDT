@@ -1,0 +1,6 @@
+carrier\_frequency
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoproperty:: PowerIQSource.carrier_frequency

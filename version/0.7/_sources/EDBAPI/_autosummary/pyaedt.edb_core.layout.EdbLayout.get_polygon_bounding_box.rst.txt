@@ -1,0 +1,6 @@
+get\_polygon\_bounding\_box
+===========================
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. automethod:: EdbLayout.get_polygon_bounding_box

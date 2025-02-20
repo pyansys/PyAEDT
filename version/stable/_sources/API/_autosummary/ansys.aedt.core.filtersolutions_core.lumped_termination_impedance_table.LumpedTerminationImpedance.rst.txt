@@ -1,0 +1,50 @@
+﻿LumpedTerminationImpedance
+==========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_termination_impedance_table
+
+.. autoclass:: LumpedTerminationImpedance
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      LumpedTerminationImpedance.append_row
+      
+      
+      LumpedTerminationImpedance.insert_row
+      
+      
+      LumpedTerminationImpedance.remove_row
+      
+      
+      LumpedTerminationImpedance.row
+      
+      
+      LumpedTerminationImpedance.table_type_to_bool
+      
+      
+      LumpedTerminationImpedance.update_row
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      LumpedTerminationImpedance.compensation_enabled
+      LumpedTerminationImpedance.compensation_order
+      LumpedTerminationImpedance.complex_definition
+      LumpedTerminationImpedance.reactance_type
+      LumpedTerminationImpedance.row_count
+   
+   

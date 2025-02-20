@@ -1,0 +1,6 @@
+layouteditor
+============
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.layouteditor

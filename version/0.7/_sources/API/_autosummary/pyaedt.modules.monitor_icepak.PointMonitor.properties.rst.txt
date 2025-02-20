@@ -1,0 +1,6 @@
+properties
+==========
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. autoproperty:: PointMonitor.properties

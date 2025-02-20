@@ -1,0 +1,6 @@
+connect\_schematic\_components
+==============================
+
+.. currentmodule:: ansys.aedt.core.modeler.schematic
+
+.. automethod:: ModelerMaxwellCircuit.connect_schematic_components

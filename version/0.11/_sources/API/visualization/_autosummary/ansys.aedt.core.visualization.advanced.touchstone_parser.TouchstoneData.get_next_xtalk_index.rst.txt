@@ -1,0 +1,6 @@
+﻿get\_next\_xtalk\_index
+=======================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.touchstone_parser
+
+.. automethod:: TouchstoneData.get_next_xtalk_index

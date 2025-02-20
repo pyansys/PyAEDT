@@ -1,0 +1,6 @@
+boundaries\_by\_type
+====================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.boundaries_by_type

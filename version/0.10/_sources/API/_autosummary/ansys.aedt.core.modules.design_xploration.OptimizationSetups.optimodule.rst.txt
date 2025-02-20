@@ -1,0 +1,6 @@
+optimodule
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.design_xploration
+
+.. autoproperty:: OptimizationSetups.optimodule

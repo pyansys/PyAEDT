@@ -1,0 +1,6 @@
+add\_new\_user\_defined\_component
+==================================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.add_new_user_defined_component

@@ -1,0 +1,6 @@
+create\_faceted\_bondwire\_from\_true\_surface
+==============================================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.create_faceted_bondwire_from_true_surface

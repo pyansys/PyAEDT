@@ -1,0 +1,6 @@
+background\_color
+=================
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.background_color

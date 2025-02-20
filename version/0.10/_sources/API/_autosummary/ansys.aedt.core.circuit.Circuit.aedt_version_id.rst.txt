@@ -1,0 +1,6 @@
+aedt\_version\_id
+=================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.aedt_version_id

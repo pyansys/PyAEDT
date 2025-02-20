@@ -1,0 +1,33 @@
+﻿FfdSolutionDataExporter
+=======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.farfield_exporter
+
+.. autoclass:: FfdSolutionDataExporter
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FfdSolutionDataExporter.export_farfield
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      FfdSolutionDataExporter.farfield_data
+      FfdSolutionDataExporter.metadata_file
+      FfdSolutionDataExporter.model_info
+   
+   

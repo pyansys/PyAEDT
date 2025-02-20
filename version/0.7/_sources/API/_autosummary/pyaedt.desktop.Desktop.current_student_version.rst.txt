@@ -1,0 +1,6 @@
+current\_student\_version
+=========================
+
+.. currentmodule:: pyaedt.desktop
+
+.. autoproperty:: Desktop.current_student_version

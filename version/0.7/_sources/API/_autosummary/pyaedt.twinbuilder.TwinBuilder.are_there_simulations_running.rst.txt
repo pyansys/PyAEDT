@@ -1,0 +1,6 @@
+are\_there\_simulations\_running
+================================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.are_there_simulations_running

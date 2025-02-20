@@ -1,0 +1,6 @@
+objects
+=======
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.objects

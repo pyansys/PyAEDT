@@ -1,0 +1,6 @@
+personallib
+===========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.personallib

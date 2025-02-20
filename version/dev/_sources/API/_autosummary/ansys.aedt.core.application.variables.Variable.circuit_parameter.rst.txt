@@ -1,0 +1,6 @@
+circuit\_parameter
+==================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.circuit_parameter

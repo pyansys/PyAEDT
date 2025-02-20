@@ -1,0 +1,6 @@
+export\_convergence
+===================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.export_convergence

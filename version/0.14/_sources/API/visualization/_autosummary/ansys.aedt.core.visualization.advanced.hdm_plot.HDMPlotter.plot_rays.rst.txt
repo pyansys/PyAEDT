@@ -1,0 +1,6 @@
+plot\_rays
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. automethod:: HDMPlotter.plot_rays

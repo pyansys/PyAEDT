@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.valid_design

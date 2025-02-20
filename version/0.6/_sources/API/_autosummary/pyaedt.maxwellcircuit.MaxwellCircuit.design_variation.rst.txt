@@ -1,0 +1,6 @@
+design\_variation
+=================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.design_variation

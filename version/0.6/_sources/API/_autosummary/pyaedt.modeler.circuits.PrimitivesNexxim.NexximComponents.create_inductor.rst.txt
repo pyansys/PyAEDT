@@ -1,0 +1,6 @@
+create\_inductor
+================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_inductor

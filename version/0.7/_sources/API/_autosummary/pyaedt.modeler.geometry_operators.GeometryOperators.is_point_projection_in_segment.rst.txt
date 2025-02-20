@@ -1,0 +1,6 @@
+is\_point\_projection\_in\_segment
+==================================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.is_point_projection_in_segment

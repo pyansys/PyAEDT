@@ -1,0 +1,6 @@
+existing\_analysis\_setups
+==========================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.existing_analysis_setups

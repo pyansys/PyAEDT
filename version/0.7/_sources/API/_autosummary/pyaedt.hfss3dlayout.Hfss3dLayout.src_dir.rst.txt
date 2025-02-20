@@ -1,0 +1,6 @@
+src\_dir
+========
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.src_dir

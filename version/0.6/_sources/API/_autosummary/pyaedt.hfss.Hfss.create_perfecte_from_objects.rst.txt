@@ -1,0 +1,6 @@
+create\_perfecte\_from\_objects
+===============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_perfecte_from_objects

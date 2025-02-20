@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.release_desktop

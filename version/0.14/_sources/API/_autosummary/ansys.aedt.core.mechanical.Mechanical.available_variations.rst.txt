@@ -1,0 +1,6 @@
+available\_variations
+=====================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.available_variations

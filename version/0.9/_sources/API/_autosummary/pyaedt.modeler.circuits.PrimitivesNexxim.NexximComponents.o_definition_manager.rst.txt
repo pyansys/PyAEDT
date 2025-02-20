@@ -1,0 +1,6 @@
+o\_definition\_manager
+======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. autoproperty:: NexximComponents.o_definition_manager

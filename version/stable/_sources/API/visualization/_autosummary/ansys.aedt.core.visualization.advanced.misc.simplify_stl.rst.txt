@@ -1,0 +1,6 @@
+﻿simplify\_stl
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.misc
+
+.. autofunction:: simplify_stl

@@ -1,0 +1,6 @@
+pass\_band\_definition
+======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.pass_band_definition

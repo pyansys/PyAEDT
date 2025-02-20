@@ -1,0 +1,6 @@
+elevation\_start
+================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.hfss_boundary
+
+.. autoproperty:: FarFieldSetup.elevation_start

@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.insert_design

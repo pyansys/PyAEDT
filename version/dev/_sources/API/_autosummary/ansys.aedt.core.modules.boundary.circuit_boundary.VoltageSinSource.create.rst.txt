@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. automethod:: VoltageSinSource.create

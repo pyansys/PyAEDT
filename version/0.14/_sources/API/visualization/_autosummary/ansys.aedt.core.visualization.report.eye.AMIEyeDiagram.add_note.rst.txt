@@ -1,0 +1,6 @@
+add\_note
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: AMIEyeDiagram.add_note

@@ -1,0 +1,6 @@
+wire\_thickness\_direction
+==========================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.wire_thickness_direction

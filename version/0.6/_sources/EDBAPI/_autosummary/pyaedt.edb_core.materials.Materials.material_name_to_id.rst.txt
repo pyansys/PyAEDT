@@ -1,0 +1,6 @@
+material\_name\_to\_id
+======================
+
+.. currentmodule:: pyaedt.edb_core.materials
+
+.. automethod:: Materials.material_name_to_id

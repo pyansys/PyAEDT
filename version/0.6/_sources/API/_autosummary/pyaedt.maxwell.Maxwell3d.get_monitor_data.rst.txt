@@ -1,0 +1,6 @@
+get\_monitor\_data
+==================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.get_monitor_data

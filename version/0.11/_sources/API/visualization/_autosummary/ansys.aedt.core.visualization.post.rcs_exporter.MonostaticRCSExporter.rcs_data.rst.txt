@@ -1,0 +1,6 @@
+rcs\_data
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.rcs_exporter
+
+.. autoproperty:: MonostaticRCSExporter.rcs_data

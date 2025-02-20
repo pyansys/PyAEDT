@@ -1,0 +1,6 @@
+model\_info
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.rcs_exporter
+
+.. autoproperty:: MonostaticRCSExporter.model_info

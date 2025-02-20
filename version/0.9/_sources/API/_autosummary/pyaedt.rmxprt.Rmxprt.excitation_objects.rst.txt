@@ -1,0 +1,6 @@
+excitation\_objects
+===================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.excitation_objects

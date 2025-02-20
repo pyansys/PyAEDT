@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.logger

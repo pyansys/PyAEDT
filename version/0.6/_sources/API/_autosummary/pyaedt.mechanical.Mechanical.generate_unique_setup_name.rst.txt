@@ -1,0 +1,6 @@
+generate\_unique\_setup\_name
+=============================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.generate_unique_setup_name

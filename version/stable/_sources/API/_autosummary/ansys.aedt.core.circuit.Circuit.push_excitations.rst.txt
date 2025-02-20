@@ -1,0 +1,6 @@
+push\_excitations
+=================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.push_excitations

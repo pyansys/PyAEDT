@@ -1,0 +1,6 @@
+find\_dc\_short
+===============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. automethod:: EDBNetsData.find_dc_short

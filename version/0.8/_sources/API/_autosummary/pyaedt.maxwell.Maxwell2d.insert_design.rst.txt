@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.insert_design

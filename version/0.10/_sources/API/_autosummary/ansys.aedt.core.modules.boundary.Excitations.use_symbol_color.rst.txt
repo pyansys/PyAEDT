@@ -1,0 +1,6 @@
+use\_symbol\_color
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: Excitations.use_symbol_color

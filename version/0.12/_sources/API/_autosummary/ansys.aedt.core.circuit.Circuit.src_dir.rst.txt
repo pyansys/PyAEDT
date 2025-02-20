@@ -1,0 +1,6 @@
+src\_dir
+========
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.src_dir

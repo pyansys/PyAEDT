@@ -1,0 +1,6 @@
+plot
+====
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.plot

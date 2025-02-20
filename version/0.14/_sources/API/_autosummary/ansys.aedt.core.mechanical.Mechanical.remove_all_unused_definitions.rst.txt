@@ -1,0 +1,6 @@
+remove\_all\_unused\_definitions
+================================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.remove_all_unused_definitions

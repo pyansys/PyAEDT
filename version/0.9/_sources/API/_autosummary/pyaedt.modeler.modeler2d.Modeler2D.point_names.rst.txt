@@ -1,0 +1,6 @@
+point\_names
+============
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. autoproperty:: Modeler2D.point_names

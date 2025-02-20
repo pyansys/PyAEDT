@@ -1,0 +1,6 @@
+create\_current\_source\_on\_net
+================================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.create_current_source_on_net

@@ -1,0 +1,6 @@
+report\_type
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. autoproperty:: FarField.report_type

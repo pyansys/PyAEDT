@@ -1,0 +1,6 @@
+number\_with\_units
+===================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.number_with_units

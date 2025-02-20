@@ -1,0 +1,6 @@
+copy\_project
+=============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.copy_project

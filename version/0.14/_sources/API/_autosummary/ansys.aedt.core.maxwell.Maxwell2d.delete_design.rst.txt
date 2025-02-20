@@ -1,0 +1,6 @@
+delete\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.delete_design

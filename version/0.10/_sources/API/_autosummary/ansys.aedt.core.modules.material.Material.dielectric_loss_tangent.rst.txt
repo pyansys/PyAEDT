@@ -1,0 +1,6 @@
+dielectric\_loss\_tangent
+=========================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.dielectric_loss_tangent

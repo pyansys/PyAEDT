@@ -1,0 +1,6 @@
+set\_low\_side\_radiation
+=========================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. automethod:: NativeComponentPCB.set_low_side_radiation

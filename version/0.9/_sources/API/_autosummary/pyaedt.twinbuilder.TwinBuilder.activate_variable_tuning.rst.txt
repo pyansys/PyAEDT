@@ -1,0 +1,6 @@
+activate\_variable\_tuning
+==========================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.activate_variable_tuning

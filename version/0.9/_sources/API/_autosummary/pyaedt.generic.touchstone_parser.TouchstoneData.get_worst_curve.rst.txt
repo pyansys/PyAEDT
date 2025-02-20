@@ -1,0 +1,6 @@
+﻿get\_worst\_curve
+=================
+
+.. currentmodule:: pyaedt.generic.touchstone_parser
+
+.. automethod:: TouchstoneData.get_worst_curve

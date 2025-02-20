@@ -1,0 +1,6 @@
+get\_all\_sparameter\_list
+==========================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.get_all_sparameter_list

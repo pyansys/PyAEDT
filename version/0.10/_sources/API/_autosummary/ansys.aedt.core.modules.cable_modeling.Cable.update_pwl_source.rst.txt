@@ -1,0 +1,6 @@
+update\_pwl\_source
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.cable_modeling
+
+.. automethod:: Cable.update_pwl_source

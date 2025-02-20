@@ -1,0 +1,6 @@
+expressions
+===========
+
+.. currentmodule:: ansys.aedt.core.modules.solutions
+
+.. autoproperty:: SolutionData.expressions

@@ -1,0 +1,6 @@
+available\_variations
+=====================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q3d.available_variations

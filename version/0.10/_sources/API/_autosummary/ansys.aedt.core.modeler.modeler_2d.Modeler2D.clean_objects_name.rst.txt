@@ -1,0 +1,6 @@
+clean\_objects\_name
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.clean_objects_name

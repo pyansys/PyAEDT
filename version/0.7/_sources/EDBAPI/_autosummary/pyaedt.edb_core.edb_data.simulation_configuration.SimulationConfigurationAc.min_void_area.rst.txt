@@ -1,0 +1,6 @@
+min\_void\_area
+===============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.min_void_area

@@ -1,0 +1,6 @@
+opadstackmanager
+================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.opadstackmanager

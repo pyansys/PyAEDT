@@ -1,0 +1,6 @@
+export\_datasets
+================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.export_datasets

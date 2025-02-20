@@ -1,0 +1,6 @@
+p\_app
+======
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoproperty:: SetupQ3D.p_app

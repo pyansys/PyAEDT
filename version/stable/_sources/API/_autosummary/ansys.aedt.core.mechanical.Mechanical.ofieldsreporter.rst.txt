@@ -1,0 +1,6 @@
+ofieldsreporter
+===============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.ofieldsreporter

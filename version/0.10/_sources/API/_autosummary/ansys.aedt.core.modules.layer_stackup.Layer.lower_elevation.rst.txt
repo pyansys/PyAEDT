@@ -1,0 +1,6 @@
+lower\_elevation
+================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layer.lower_elevation

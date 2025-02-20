@@ -1,0 +1,6 @@
+get\_solder\_ball\_height
+=========================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.get_solder_ball_height

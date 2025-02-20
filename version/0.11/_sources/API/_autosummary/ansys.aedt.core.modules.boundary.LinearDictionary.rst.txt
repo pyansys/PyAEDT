@@ -1,0 +1,22 @@
+﻿LinearDictionary
+================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoclass:: LinearDictionary
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      LinearDictionary.props
+   
+   

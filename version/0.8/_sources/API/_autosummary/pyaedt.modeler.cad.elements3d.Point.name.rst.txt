@@ -1,0 +1,6 @@
+name
+====
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoproperty:: Point.name

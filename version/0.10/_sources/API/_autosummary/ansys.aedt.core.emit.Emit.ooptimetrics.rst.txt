@@ -1,0 +1,6 @@
+ooptimetrics
+============
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.ooptimetrics

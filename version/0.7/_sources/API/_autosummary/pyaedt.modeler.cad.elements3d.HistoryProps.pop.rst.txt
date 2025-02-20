@@ -1,0 +1,6 @@
+pop
+===
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. automethod:: HistoryProps.pop

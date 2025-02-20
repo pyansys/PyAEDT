@@ -1,0 +1,6 @@
+lumped\_port
+============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.lumped_port

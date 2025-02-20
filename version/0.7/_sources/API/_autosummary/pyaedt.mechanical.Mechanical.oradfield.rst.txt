@@ -1,0 +1,6 @@
+oradfield
+=========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.oradfield

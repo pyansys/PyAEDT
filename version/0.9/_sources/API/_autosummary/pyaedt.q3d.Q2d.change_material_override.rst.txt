@@ -1,0 +1,6 @@
+change\_material\_override
+==========================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.change_material_override

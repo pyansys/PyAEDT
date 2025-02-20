@@ -1,0 +1,36 @@
+﻿SurfMatProperties
+=================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoclass:: SurfMatProperties
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SurfMatProperties.get_defaultunit
+      
+      
+      SurfMatProperties.get_defaultvalue
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SurfMatProperties.aedtname
+      SurfMatProperties.defaultunit
+      SurfMatProperties.defaultvalue
+   
+   

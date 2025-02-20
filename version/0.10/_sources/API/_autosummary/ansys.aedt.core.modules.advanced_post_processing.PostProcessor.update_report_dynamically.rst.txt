@@ -1,0 +1,6 @@
+update\_report\_dynamically
+===========================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. autoproperty:: PostProcessor.update_report_dynamically

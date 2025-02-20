@@ -1,0 +1,51 @@
+﻿IcepakMesh
+==========
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. autoclass:: IcepakMesh
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      IcepakMesh.add_priority
+      
+      
+      IcepakMesh.assign_mesh_from_file
+      
+      
+      IcepakMesh.assign_mesh_level
+      
+      
+      IcepakMesh.assign_mesh_level_to_group
+      
+      
+      IcepakMesh.assign_mesh_region
+      
+      
+      IcepakMesh.automatic_mesh_3D
+      
+      
+      IcepakMesh.generate_mesh
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      IcepakMesh.boundingdimension
+      IcepakMesh.meshregions_dict
+      IcepakMesh.omeshmodule
+   
+   

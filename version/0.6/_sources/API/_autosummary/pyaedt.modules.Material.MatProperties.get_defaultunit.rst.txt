@@ -1,0 +1,6 @@
+get\_defaultunit
+================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: MatProperties.get_defaultunit

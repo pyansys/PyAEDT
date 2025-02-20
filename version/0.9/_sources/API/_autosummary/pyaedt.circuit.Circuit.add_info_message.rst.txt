@@ -1,0 +1,6 @@
+add\_info\_message
+==================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.add_info_message

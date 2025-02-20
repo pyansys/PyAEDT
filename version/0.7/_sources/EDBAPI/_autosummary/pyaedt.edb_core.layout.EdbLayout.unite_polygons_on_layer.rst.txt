@@ -1,0 +1,6 @@
+unite\_polygons\_on\_layer
+==========================
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. automethod:: EdbLayout.unite_polygons_on_layer

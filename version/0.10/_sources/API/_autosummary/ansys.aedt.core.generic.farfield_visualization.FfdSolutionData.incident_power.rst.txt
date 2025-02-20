@@ -1,0 +1,6 @@
+incident\_power
+===============
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.incident_power

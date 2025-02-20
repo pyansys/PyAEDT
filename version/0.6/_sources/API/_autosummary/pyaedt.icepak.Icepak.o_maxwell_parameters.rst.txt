@@ -1,0 +1,6 @@
+o\_maxwell\_parameters
+======================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.o_maxwell_parameters

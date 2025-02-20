@@ -1,0 +1,6 @@
+get\_vertex\_position
+=====================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.get_vertex_position

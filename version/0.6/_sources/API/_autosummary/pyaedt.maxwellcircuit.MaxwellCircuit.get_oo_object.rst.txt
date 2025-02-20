@@ -1,0 +1,6 @@
+get\_oo\_object
+===============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.get_oo_object

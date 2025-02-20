@@ -1,0 +1,6 @@
+o\_model\_manager
+=================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.o_model_manager

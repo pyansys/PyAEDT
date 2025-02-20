@@ -1,0 +1,6 @@
+add\_via
+========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: Padstack.add_via

@@ -1,0 +1,6 @@
+design\_variation
+=================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.design_variation

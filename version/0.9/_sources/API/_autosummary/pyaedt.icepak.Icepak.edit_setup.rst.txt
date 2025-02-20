@@ -1,0 +1,6 @@
+edit\_setup
+===========
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.edit_setup

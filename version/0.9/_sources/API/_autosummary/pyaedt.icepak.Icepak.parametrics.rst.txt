@@ -1,0 +1,6 @@
+parametrics
+===========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.parametrics

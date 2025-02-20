@@ -1,0 +1,6 @@
+analyze\_setup
+==============
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.analyze_setup

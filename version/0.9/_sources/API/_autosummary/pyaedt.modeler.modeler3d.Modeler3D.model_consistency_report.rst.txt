@@ -1,0 +1,6 @@
+model\_consistency\_report
+==========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. autoproperty:: Modeler3D.model_consistency_report

@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.desktop_class

@@ -1,0 +1,6 @@
+set\_non\_linear
+================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: MatProperty.set_non_linear

@@ -1,0 +1,6 @@
+defeature\_abs\_length
+======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.defeature_abs_length

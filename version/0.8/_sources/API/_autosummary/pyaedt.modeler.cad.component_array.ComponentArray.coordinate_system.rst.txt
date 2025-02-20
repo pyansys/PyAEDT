@@ -1,0 +1,6 @@
+coordinate\_system
+==================
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.coordinate_system

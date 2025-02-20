@@ -1,0 +1,6 @@
+is\_general\_expression
+=======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.fields_calculator
+
+.. automethod:: FieldsCalculator.is_general_expression

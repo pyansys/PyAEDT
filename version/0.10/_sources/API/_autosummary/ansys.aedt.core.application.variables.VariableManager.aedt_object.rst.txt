@@ -1,0 +1,6 @@
+aedt\_object
+============
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. automethod:: VariableManager.aedt_object

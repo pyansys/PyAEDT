@@ -1,0 +1,6 @@
+﻿read\_template
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pdf
+
+.. automethod:: AnsysReport.read_template

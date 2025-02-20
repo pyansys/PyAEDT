@@ -1,0 +1,6 @@
+create\_exec\_file
+==================
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. automethod:: EdbSiwave.create_exec_file

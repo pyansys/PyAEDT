@@ -1,0 +1,6 @@
+layouteditor
+============
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.layouteditor

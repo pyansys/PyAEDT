@@ -1,0 +1,6 @@
+no\_nets
+========
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. autoproperty:: Modeler3DLayout.no_nets

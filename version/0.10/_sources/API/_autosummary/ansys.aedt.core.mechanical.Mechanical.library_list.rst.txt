@@ -1,0 +1,6 @@
+library\_list
+=============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.library_list

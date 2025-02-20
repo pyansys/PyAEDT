@@ -1,0 +1,6 @@
+data\_db10
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. automethod:: SolutionData.data_db10

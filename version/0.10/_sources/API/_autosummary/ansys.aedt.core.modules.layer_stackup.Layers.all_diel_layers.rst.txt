@@ -1,0 +1,6 @@
+all\_diel\_layers
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layers.all_diel_layers

@@ -1,0 +1,6 @@
+import\_definition
+==================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.import_definition

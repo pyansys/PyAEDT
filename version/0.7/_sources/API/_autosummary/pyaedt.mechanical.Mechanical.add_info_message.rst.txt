@@ -1,0 +1,6 @@
+add\_info\_message
+==================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.add_info_message

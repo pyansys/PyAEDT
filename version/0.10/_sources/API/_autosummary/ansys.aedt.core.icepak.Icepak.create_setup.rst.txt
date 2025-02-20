@@ -1,0 +1,6 @@
+create\_setup
+=============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.create_setup

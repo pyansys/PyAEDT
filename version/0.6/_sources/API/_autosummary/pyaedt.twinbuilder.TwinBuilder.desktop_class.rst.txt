@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.desktop_class

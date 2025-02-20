@@ -1,0 +1,6 @@
+clean\_proj\_folder
+===================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.clean_proj_folder

@@ -1,0 +1,6 @@
+interconnect\_geometry\_optimization\_enabled
+=============================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.interconnect_geometry_optimization_enabled

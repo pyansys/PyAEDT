@@ -1,0 +1,6 @@
+sheet\_names
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. autoproperty:: Modeler3D.sheet_names

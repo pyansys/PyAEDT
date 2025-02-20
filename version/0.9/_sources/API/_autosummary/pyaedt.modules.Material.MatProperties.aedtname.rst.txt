@@ -1,0 +1,6 @@
+aedtname
+========
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoattribute:: MatProperties.aedtname

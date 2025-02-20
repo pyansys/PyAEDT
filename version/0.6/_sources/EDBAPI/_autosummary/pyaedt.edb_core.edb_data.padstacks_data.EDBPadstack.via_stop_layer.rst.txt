@@ -1,0 +1,6 @@
+via\_stop\_layer
+================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadstack.via_stop_layer

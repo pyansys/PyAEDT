@@ -1,0 +1,6 @@
+circuit\_port
+=============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.circuit_port

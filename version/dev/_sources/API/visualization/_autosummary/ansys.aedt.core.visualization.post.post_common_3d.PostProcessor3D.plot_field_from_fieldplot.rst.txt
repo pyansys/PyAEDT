@@ -1,0 +1,6 @@
+plot\_field\_from\_fieldplot
+============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_common_3d
+
+.. automethod:: PostProcessor3D.plot_field_from_fieldplot

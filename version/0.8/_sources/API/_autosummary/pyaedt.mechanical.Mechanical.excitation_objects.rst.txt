@@ -1,0 +1,6 @@
+excitation\_objects
+===================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.excitation_objects

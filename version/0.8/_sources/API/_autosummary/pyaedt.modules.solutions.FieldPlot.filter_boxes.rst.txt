@@ -1,0 +1,6 @@
+filter\_boxes
+=============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: FieldPlot.filter_boxes

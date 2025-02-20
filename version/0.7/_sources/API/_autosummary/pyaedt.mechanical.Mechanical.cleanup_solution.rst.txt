@@ -1,0 +1,6 @@
+cleanup\_solution
+=================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.cleanup_solution

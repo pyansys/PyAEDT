@@ -1,0 +1,6 @@
+get\_available\_toolkits
+========================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.get_available_toolkits

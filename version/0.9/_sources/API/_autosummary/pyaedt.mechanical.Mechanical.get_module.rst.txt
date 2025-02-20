@@ -1,0 +1,6 @@
+get\_module
+===========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.get_module

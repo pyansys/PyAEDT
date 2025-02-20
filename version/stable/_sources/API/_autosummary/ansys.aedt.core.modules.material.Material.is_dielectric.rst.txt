@@ -1,0 +1,6 @@
+is\_dielectric
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: Material.is_dielectric

@@ -1,0 +1,6 @@
+o\_maxwell\_parameters
+======================
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.o_maxwell_parameters

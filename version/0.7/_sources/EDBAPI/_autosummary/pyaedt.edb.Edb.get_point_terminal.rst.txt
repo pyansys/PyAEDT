@@ -1,0 +1,6 @@
+get\_point\_terminal
+====================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.get_point_terminal

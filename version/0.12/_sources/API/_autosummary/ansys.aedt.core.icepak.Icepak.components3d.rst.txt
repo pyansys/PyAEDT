@@ -1,0 +1,6 @@
+components3d
+============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.components3d

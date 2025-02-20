@@ -1,0 +1,32 @@
+﻿DistributedSubstrate
+====================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_substrate
+
+.. autoclass:: DistributedSubstrate
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      DistributedSubstrate.substrate_conductor_thickness
+      DistributedSubstrate.substrate_cover_height
+      DistributedSubstrate.substrate_cover_height_enabled
+      DistributedSubstrate.substrate_dielectric_height
+      DistributedSubstrate.substrate_er
+      DistributedSubstrate.substrate_loss_tangent
+      DistributedSubstrate.substrate_resistivity
+      DistributedSubstrate.substrate_suspend_dielectric_height
+      DistributedSubstrate.substrate_type
+      DistributedSubstrate.substrate_unbalanced_lower_dielectric_height
+      DistributedSubstrate.substrate_unbalanced_stripline_enabled
+   
+   

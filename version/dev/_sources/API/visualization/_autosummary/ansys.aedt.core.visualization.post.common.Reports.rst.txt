@@ -1,0 +1,69 @@
+﻿Reports
+=======
+
+.. currentmodule:: ansys.aedt.core.visualization.post.common
+
+.. autoclass:: Reports
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Reports.antenna_parameters
+      
+      
+      Reports.cg_fields
+      
+      
+      Reports.dc_fields
+      
+      
+      Reports.eigenmode
+      
+      
+      Reports.emi_receiver
+      
+      
+      Reports.eye_diagram
+      
+      
+      Reports.far_field
+      
+      
+      Reports.fields
+      
+      
+      Reports.modal_solution
+      
+      
+      Reports.monitor
+      
+      
+      Reports.near_field
+      
+      
+      Reports.rl_fields
+      
+      
+      Reports.spectral
+      
+      
+      Reports.standard
+      
+      
+      Reports.statistical_eye_contour
+      
+      
+      Reports.terminal_solution
+      
+   
+   
+
+   
+   
+   

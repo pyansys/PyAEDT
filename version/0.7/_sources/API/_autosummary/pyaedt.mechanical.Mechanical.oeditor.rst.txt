@@ -1,0 +1,6 @@
+oeditor
+=======
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.oeditor

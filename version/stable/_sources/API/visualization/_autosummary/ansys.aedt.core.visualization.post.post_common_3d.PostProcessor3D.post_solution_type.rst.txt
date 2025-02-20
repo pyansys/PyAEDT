@@ -1,0 +1,6 @@
+post\_solution\_type
+====================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_common_3d
+
+.. autoproperty:: PostProcessor3D.post_solution_type

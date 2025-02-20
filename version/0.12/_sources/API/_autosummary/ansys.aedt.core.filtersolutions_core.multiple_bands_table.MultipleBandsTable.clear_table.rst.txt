@@ -1,0 +1,6 @@
+clear\_table
+============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.multiple_bands_table
+
+.. automethod:: MultipleBandsTable.clear_table

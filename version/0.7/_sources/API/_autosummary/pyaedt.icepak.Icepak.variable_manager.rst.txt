@@ -1,0 +1,6 @@
+variable\_manager
+=================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.variable_manager

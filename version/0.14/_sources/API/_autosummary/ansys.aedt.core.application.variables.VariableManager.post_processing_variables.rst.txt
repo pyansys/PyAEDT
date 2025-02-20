@@ -1,0 +1,6 @@
+post\_processing\_variables
+===========================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: VariableManager.post_processing_variables

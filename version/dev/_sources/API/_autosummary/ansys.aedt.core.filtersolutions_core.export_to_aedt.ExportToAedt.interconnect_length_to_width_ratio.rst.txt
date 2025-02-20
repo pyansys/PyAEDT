@@ -1,0 +1,6 @@
+interconnect\_length\_to\_width\_ratio
+======================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.interconnect_length_to_width_ratio

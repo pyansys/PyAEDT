@@ -1,0 +1,6 @@
+close\_project
+==============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.close_project

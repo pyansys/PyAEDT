@@ -1,0 +1,6 @@
+explicitly\_subtract
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.explicitly_subtract

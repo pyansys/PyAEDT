@@ -1,0 +1,6 @@
+report\_category
+================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: NearField.report_category

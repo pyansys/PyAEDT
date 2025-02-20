@@ -1,0 +1,6 @@
+get\_statistics
+===============
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.get_statistics

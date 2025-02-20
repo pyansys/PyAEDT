@@ -1,0 +1,6 @@
+sensitivity\_max\_value
+=======================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.sensitivity_max_value

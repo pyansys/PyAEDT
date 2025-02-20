@@ -1,0 +1,6 @@
+get\_evaluated\_value
+=====================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.get_evaluated_value

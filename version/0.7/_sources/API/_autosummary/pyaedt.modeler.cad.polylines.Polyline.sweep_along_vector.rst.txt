@@ -1,0 +1,6 @@
+sweep\_along\_vector
+====================
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.sweep_along_vector

@@ -1,0 +1,6 @@
+get\_nominal\_variation
+=======================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_nominal_variation

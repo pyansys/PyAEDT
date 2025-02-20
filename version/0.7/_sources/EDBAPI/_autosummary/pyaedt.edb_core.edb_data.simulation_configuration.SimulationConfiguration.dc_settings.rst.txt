@@ -1,0 +1,6 @@
+dc\_settings
+============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfiguration.dc_settings

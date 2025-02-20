@@ -1,0 +1,6 @@
+o\_maxwell\_parameters
+======================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.o_maxwell_parameters

@@ -1,0 +1,6 @@
+change\_type
+============
+
+.. currentmodule:: ansys.aedt.core.modules.solve_sweeps
+
+.. automethod:: SweepHFSS3DLayout.change_type

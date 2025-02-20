@@ -1,0 +1,6 @@
+incident\_wave\_theta
+=====================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. autoproperty:: MonostaticRCSData.incident_wave_theta

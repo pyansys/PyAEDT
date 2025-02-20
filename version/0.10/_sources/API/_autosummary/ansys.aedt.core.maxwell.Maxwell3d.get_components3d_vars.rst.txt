@@ -1,0 +1,6 @@
+get\_components3d\_vars
+=======================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.get_components3d_vars

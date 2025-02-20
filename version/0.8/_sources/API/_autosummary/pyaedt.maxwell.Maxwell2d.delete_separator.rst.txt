@@ -1,0 +1,6 @@
+delete\_separator
+=================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.delete_separator

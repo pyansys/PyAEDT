@@ -1,0 +1,41 @@
+﻿BinaryTreeNode
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. autoclass:: BinaryTreeNode
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      BinaryTreeNode.jsonalize_tree
+      
+      
+      BinaryTreeNode.suppress_all
+      
+      
+      BinaryTreeNode.unsuppress_all
+      
+      
+      BinaryTreeNode.update_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      BinaryTreeNode.command
+      BinaryTreeNode.properties
+   
+   

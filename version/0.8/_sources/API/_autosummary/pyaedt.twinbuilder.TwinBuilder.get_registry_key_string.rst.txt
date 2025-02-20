@@ -1,0 +1,6 @@
+get\_registry\_key\_string
+==========================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.get_registry_key_string

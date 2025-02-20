@@ -1,0 +1,6 @@
+data\_db10
+==========
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.data_db10

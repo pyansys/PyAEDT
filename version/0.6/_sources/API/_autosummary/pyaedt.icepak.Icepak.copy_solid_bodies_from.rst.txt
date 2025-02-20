@@ -1,0 +1,6 @@
+copy\_solid\_bodies\_from
+=========================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.copy_solid_bodies_from

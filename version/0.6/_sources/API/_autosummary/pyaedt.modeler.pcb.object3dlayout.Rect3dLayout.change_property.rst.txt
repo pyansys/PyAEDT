@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. automethod:: Rect3dLayout.change_property

@@ -1,0 +1,170 @@
+{
+    "Add_Cable": "True",
+    "Update_Cable": "False",
+    "Remove_Cable": "False",
+    "Add_CablesToBundle": "False",
+    "Add_Source": "False",
+    "Update_Source": "False",
+    "Remove_Source": "False",
+    "Add_CableHarness": "False",
+    "Cable_prop": {
+      "CableType":"bundle",
+      "IsJacketTypeInsulation": "True",
+      "IsJacketTypeBraidShield": "False",
+      "IsJacketTypeNoJacket": "False",
+      "UpdatedName": "",
+      "CablesToRemove": ""
+    },
+    "CablesToBundle_prop": {
+		"CablesToAdd": "",
+		"BundleCable": "",
+		"NumberOfCableToAdd": 1
+	},
+    "Source_prop": {
+      "AddClockSource": "False",
+      "UpdateClockSource": "False",
+      "AddPwlSource": "False",
+      "AddPwlSourceFromFile": "",
+      "UpdatePwlSource": "False",
+      "UpdatedSourceName": "update_pwl_source",
+      "SourcesToRemove": ""
+    },
+    "CableHarness_prop": {
+      "Name": "cable_harness_test",
+      "Bundle": "bundle1",
+      "TwistAngleAlongRoute": "20deg",
+      "Polyline": "polyline1",
+      "AutoOrient": "False",
+      "XAxis": "Undefined",
+      "XAxisOrigin": ["0mm", "0mm", "0mm"],
+      "XAxisEnd": ["0mm", "0mm", "0mm"],
+      "ReverseYAxisDirection": "True",
+      "CableTerminationsToInclude": [
+        {
+          "CableName": "stwire1",
+          "Assignment": "Reference Conductor",
+          "AssignmentType": "Impedance",
+          "Impedance": "40ohm",
+          "Source": {
+            "Type": "Single Value",
+            "Signal": "10V",
+            "ImpedanceValue": "23ohm"
+          }
+        },
+        {
+          "CableName": "stwire2",
+          "Assignment": "Input Terminations",
+          "AssignmentType": "Source",
+          "Impedance": "40ohm",
+          "Source": {
+            "Type": "Single Value",
+            "Signal": "4V",
+            "ImpedanceValue": "23ohm"
+          }
+        },
+        {
+        "CableName": "stwire3",
+        "Assignment": "Output Terminations",
+        "AssignmentType": "Source",
+        "Impedance": "40ohm",
+        "Source": {
+          "Type": "Transient",
+          "Signal": "clock1",
+          "ImpedanceValue": "23ohm"
+        }
+        }
+      ]
+    },
+	"CableManager": {
+      "TDSources": {
+        "ClockSourceDef": {
+          "ClockSignalParams": {
+            "Period": "40us",
+            "LowPulseVal": "0.1V",
+            "HighPulseVal": "2V",
+            "Risetime": "5us",
+            "Falltime": "10us",
+            "PulseWidth": "23us"
+          },
+          "TDSourceAttribs": {
+            "Name": "clock_test"
+          }
+        },
+        "PWLSourceDef": {
+          "PWLSignalParams": {
+              "SignalValues": [
+                  "0V",
+                  "0.5V",
+                  "0V",
+                  "3V",
+                  "4V",
+                  "0V"
+              ],
+              "TimeValues": [
+                  "0ns",
+                  "1ns",
+                  "2ns",
+                  "3ns",
+                  "4ns",
+                  "5ns"
+              ]
+          },
+          "TDSourceAttribs": {
+              "Name": "pwl4"
+          }
+        }
+      },
+      "Definitions": {
+        "CableBundle":{
+            "BundleParams": {
+                "AutoPack": "True",
+                "InsulationJacketParams": {
+                    "InsThickness": "3.66mm",
+                    "JacketMaterial": "pec",
+                    "InnerDiameter": "2.88mm"
+                },
+                "BraidShieldJacketParams": {
+                    "JacketMaterial": "pec",
+                    "InnerDiameter": "6mm",
+                    "NumCarriers": "36",
+                    "NumWiresInCarrier": "52",
+                    "WireDiameter": "0.242424mm",
+                    "WeaveAngle": "33deg"
+                },
+                "VirtualJacketParams": {
+                    "JacketMaterial": "copper",
+                    "InnerDiameter": "2.5mm"
+                }
+            },
+            "BundleAttribs": {
+                "Name": "Bundle_Cable_Insulation"
+            }
+        },
+        "StWireCable": {
+                "StWireParams": {
+                    "WireStandard": "ISO",
+                    "WireGauge": "2.5",
+                    "CondDiameter": "10mm",
+                    "CondMaterial": "pec",
+                    "InsThickness": "0.9mm",
+                    "InsMaterial": "copper",
+                    "InsType": "Thin Wall"
+                },
+                "StWireAttribs": {
+                    "Name": "stwire_Test_ISO_70"
+                }
+        },
+        "TwistedPairCable": {
+            "TwistedPairParams": {
+                "StraightWireCableID": 1003,
+                "IsLayLengthSpecified": "False",
+                "LayLength": "34mm",
+                "TurnsPerMeter": "99"
+            },
+            "TwistedPairAttribs": {
+                "Name": "twisted_pair_test_1003_1"
+            }
+        }
+      }
+	}
+}

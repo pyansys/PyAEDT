@@ -1,0 +1,6 @@
+residual\_copper\_area\_per\_layer
+==================================
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. automethod:: Stackup.residual_copper_area_per_layer

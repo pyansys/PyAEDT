@@ -1,0 +1,6 @@
+number\_with\_units
+===================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.number_with_units

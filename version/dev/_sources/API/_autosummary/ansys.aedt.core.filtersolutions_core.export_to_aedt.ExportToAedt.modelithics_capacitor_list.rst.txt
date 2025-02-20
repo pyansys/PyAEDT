@@ -1,0 +1,6 @@
+modelithics\_capacitor\_list
+============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. automethod:: ExportToAedt.modelithics_capacitor_list

@@ -1,0 +1,6 @@
+boundingdimension
+=================
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. autoproperty:: IcepakMesh.boundingdimension

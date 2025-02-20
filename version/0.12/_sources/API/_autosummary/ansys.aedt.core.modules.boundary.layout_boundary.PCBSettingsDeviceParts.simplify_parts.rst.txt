@@ -1,0 +1,6 @@
+simplify\_parts
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoproperty:: PCBSettingsDeviceParts.simplify_parts

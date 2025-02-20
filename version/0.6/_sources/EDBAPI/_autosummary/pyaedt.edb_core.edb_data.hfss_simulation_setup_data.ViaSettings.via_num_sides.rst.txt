@@ -1,0 +1,6 @@
+via\_num\_sides
+===============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: ViaSettings.via_num_sides

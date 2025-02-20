@@ -1,0 +1,6 @@
+hidden\_variable
+================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.hidden_variable

@@ -1,0 +1,6 @@
+is\_mesh\_background
+====================
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.is_mesh_background

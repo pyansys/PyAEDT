@@ -1,0 +1,6 @@
+browse\_log\_file
+=================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.browse_log_file

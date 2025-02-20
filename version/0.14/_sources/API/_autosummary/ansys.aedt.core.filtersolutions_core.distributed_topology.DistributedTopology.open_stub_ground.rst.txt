@@ -1,0 +1,6 @@
+open\_stub\_ground
+==================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.open_stub_ground

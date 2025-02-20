@@ -1,0 +1,6 @@
+assignmaterial\_from\_sherlock\_files
+=====================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assignmaterial_from_sherlock_files

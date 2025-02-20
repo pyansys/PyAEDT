@@ -1,0 +1,6 @@
+get\_registry\_key\_int
+=======================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.get_registry_key_int

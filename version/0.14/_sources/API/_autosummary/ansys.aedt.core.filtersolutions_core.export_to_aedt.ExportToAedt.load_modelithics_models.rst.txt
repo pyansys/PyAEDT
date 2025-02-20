@@ -1,0 +1,6 @@
+load\_modelithics\_models
+=========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. automethod:: ExportToAedt.load_modelithics_models

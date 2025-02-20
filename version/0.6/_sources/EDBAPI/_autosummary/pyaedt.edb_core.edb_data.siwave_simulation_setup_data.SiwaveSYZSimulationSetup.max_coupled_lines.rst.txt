@@ -1,0 +1,6 @@
+max\_coupled\_lines
+===================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveSYZSimulationSetup.max_coupled_lines

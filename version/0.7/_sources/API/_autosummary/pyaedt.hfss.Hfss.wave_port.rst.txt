@@ -1,0 +1,6 @@
+wave\_port
+==========
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.wave_port

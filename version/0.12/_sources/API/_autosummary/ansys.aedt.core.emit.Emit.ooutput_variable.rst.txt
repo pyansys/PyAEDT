@@ -1,0 +1,6 @@
+ooutput\_variable
+=================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.ooutput_variable

@@ -1,0 +1,6 @@
+oreportsetup
+============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.oreportsetup

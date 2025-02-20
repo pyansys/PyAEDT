@@ -1,0 +1,6 @@
+specific\_heat
+==============
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.specific_heat

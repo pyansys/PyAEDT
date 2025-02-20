@@ -1,0 +1,6 @@
+export\_design\_preview\_to\_jpg
+================================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.export_design_preview_to_jpg

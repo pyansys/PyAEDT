@@ -1,0 +1,6 @@
+solution\_type
+==============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.solution_type

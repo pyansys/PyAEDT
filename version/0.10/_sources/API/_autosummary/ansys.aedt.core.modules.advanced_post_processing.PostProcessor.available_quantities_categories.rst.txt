@@ -1,0 +1,6 @@
+available\_quantities\_categories
+=================================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.available_quantities_categories

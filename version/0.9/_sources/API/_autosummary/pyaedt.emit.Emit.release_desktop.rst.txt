@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.release_desktop

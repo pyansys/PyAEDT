@@ -1,0 +1,6 @@
+excitation\_objects
+===================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.excitation_objects

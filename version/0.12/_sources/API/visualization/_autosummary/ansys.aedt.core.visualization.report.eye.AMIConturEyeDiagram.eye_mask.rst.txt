@@ -1,0 +1,6 @@
+eye\_mask
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: AMIConturEyeDiagram.eye_mask

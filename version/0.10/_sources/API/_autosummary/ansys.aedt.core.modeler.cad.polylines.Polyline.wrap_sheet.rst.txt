@@ -1,0 +1,6 @@
+wrap\_sheet
+===========
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.wrap_sheet

@@ -1,0 +1,6 @@
+does\_object\_exists
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.does_object_exists

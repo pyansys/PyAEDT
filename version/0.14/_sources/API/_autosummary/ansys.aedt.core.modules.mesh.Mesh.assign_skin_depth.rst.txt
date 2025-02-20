@@ -1,0 +1,6 @@
+assign\_skin\_depth
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. automethod:: Mesh.assign_skin_depth

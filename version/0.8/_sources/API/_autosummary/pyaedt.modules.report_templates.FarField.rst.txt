@@ -1,0 +1,111 @@
+﻿FarField
+========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoclass:: FarField
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FarField.add_cartesian_x_marker
+      
+      
+      FarField.add_cartesian_y_marker
+      
+      
+      FarField.add_limit_line_from_equation
+      
+      
+      FarField.add_limit_line_from_points
+      
+      
+      FarField.add_note
+      
+      
+      FarField.add_trace_to_report
+      
+      
+      FarField.create
+      
+      
+      FarField.delete
+      
+      
+      FarField.delete_traces
+      
+      
+      FarField.edit_general_settings
+      
+      
+      FarField.edit_grid
+      
+      
+      FarField.edit_header
+      
+      
+      FarField.edit_legend
+      
+      
+      FarField.edit_x_axis
+      
+      
+      FarField.edit_x_axis_scaling
+      
+      
+      FarField.edit_y_axis
+      
+      
+      FarField.edit_y_axis_scaling
+      
+      
+      FarField.get_solution_data
+      
+      
+      FarField.hide_legend
+      
+      
+      FarField.import_traces
+      
+      
+      FarField.update_expressions_with_defaults
+      
+      
+      FarField.update_trace_in_report
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      FarField.differential_pairs
+      FarField.domain
+      FarField.expressions
+      FarField.far_field_sphere
+      FarField.limit_lines
+      FarField.matrix
+      FarField.notes
+      FarField.plot_name
+      FarField.polyline
+      FarField.primary_sweep
+      FarField.primary_sweep_range
+      FarField.report_category
+      FarField.report_type
+      FarField.secondary_sweep
+      FarField.secondary_sweep_range
+      FarField.traces
+      FarField.use_pulse_in_tdr
+      FarField.variations
+   
+   

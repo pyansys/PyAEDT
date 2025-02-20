@@ -1,0 +1,6 @@
+assign\_resistance
+==================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_resistance

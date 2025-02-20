@@ -1,0 +1,6 @@
+add\_frames\_from\_file
+=======================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: ModelPlotter.add_frames_from_file

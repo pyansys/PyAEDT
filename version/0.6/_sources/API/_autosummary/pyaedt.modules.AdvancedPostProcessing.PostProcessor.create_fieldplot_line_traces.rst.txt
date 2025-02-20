@@ -1,0 +1,6 @@
+create\_fieldplot\_line\_traces
+===============================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.create_fieldplot_line_traces

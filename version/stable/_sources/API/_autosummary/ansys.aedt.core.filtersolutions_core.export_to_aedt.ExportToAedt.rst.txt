@@ -1,0 +1,138 @@
+﻿ExportToAedt
+============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoclass:: ExportToAedt
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ExportToAedt.export_design
+      
+      
+      ExportToAedt.import_tuned_variables
+      
+      
+      ExportToAedt.load_library_parts_config
+      
+      
+      ExportToAedt.load_modelithics_models
+      
+      
+      ExportToAedt.modelithics_capacitor_add_family
+      
+      
+      ExportToAedt.modelithics_capacitor_family_list
+      
+      
+      ExportToAedt.modelithics_capacitor_list
+      
+      
+      ExportToAedt.modelithics_capacitor_remove_family
+      
+      
+      ExportToAedt.modelithics_inductor_add_family
+      
+      
+      ExportToAedt.modelithics_inductor_family_list
+      
+      
+      ExportToAedt.modelithics_inductor_list
+      
+      
+      ExportToAedt.modelithics_inductor_remove_family
+      
+      
+      ExportToAedt.modelithics_resistor_add_family
+      
+      
+      ExportToAedt.modelithics_resistor_family_list
+      
+      
+      ExportToAedt.modelithics_resistor_list
+      
+      
+      ExportToAedt.modelithics_resistor_remove_family
+      
+      
+      ExportToAedt.save_library_parts_config
+      
+      
+      ExportToAedt.update_inductor_capacitor_tolerances
+      
+      
+      ExportToAedt.update_interconncet_parameters
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ExportToAedt.db_format_enabled
+      ExportToAedt.include_forward_transfer_s21_enabled
+      ExportToAedt.include_group_delay_enabled
+      ExportToAedt.include_gt_gain_enabled
+      ExportToAedt.include_input_return_loss_s11_enabled
+      ExportToAedt.include_output_return_loss_s22_enabled
+      ExportToAedt.include_reverse_transfer_s12_enabled
+      ExportToAedt.include_vgin_enabled
+      ExportToAedt.include_vgsl_enabled
+      ExportToAedt.interconnect_capacitor_tolerance_value
+      ExportToAedt.interconnect_geometry_optimization_enabled
+      ExportToAedt.interconnect_inductor_tolerance_value
+      ExportToAedt.interconnect_length_to_width_ratio
+      ExportToAedt.interconnect_length_value
+      ExportToAedt.interconnect_line_to_termination_width_ratio
+      ExportToAedt.interconnect_line_width_value
+      ExportToAedt.interconnect_maximum_length_to_width_ratio
+      ExportToAedt.interconnect_maximum_length_value
+      ExportToAedt.interconnect_maximum_line_to_termination_width_ratio
+      ExportToAedt.interconnect_maximum_width_value
+      ExportToAedt.interconnect_minimum_length_to_width_ratio
+      ExportToAedt.interconnect_minimum_length_value
+      ExportToAedt.interconnect_minimum_line_to_termination_width_ratio
+      ExportToAedt.interconnect_minimum_width_value
+      ExportToAedt.modelithics_capacitor_family_list_count
+      ExportToAedt.modelithics_capacitor_list_count
+      ExportToAedt.modelithics_capacitor_selection
+      ExportToAedt.modelithics_include_interconnect_enabled
+      ExportToAedt.modelithics_inductor_family_list_count
+      ExportToAedt.modelithics_inductor_list_count
+      ExportToAedt.modelithics_inductor_selection
+      ExportToAedt.modelithics_resistor_family_list_count
+      ExportToAedt.modelithics_resistor_list_count
+      ExportToAedt.modelithics_resistor_selection
+      ExportToAedt.optimitrics_enabled
+      ExportToAedt.optimize_after_export_enabled
+      ExportToAedt.part_libraries
+      ExportToAedt.polar_plot_enabled
+      ExportToAedt.rectangular_plot_enabled
+      ExportToAedt.schematic_name
+      ExportToAedt.simulate_after_export_enabled
+      ExportToAedt.smith_plot_enabled
+      ExportToAedt.substrate_conductor_thickness
+      ExportToAedt.substrate_cover_height
+      ExportToAedt.substrate_cover_height_enabled
+      ExportToAedt.substrate_dielectric_height
+      ExportToAedt.substrate_er
+      ExportToAedt.substrate_loss_tangent
+      ExportToAedt.substrate_resistivity
+      ExportToAedt.substrate_suspend_dielectric_height
+      ExportToAedt.substrate_type
+      ExportToAedt.substrate_unbalanced_lower_dielectric_height
+      ExportToAedt.substrate_unbalanced_stripline_enabled
+      ExportToAedt.table_data_enabled
+   
+   

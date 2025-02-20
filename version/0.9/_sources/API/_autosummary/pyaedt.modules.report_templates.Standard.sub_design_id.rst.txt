@@ -1,0 +1,6 @@
+sub\_design\_id
+===============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Standard.sub_design_id

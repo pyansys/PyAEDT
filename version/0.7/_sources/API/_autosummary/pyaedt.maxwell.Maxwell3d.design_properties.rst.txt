@@ -1,0 +1,6 @@
+design\_properties
+==================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.design_properties

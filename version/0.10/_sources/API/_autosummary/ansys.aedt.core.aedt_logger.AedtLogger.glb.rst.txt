@@ -1,0 +1,6 @@
+glb
+===
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. autoproperty:: AedtLogger.glb

@@ -1,0 +1,6 @@
+valid\_properties
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. autoproperty:: Plane.valid_properties

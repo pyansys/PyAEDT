@@ -1,0 +1,6 @@
+project\_time\_stamp
+====================
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.project_time_stamp

@@ -1,0 +1,6 @@
+rename\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.rename_design

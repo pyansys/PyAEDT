@@ -1,0 +1,6 @@
+import\_discovery\_model
+========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.import_discovery_model

@@ -1,0 +1,6 @@
+import\_dxf
+===========
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.import_dxf

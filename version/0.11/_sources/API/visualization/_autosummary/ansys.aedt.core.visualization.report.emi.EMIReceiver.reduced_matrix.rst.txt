@@ -1,0 +1,6 @@
+reduced\_matrix
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.emi
+
+.. autoproperty:: EMIReceiver.reduced_matrix

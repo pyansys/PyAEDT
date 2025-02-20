@@ -1,0 +1,6 @@
+defaultunit
+===========
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoattribute:: SurfMatProperties.defaultunit

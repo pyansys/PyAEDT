@@ -1,0 +1,32 @@
+﻿Nets3DLayout
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. autoclass:: Nets3DLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Nets3DLayout.plot
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Nets3DLayout.components
+      Nets3DLayout.geometry_names
+   
+   

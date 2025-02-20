@@ -1,0 +1,6 @@
+o\_component\_manager
+=====================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q3d.o_component_manager

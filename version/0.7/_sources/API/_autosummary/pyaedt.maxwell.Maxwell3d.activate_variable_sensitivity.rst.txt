@@ -1,0 +1,6 @@
+activate\_variable\_sensitivity
+===============================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.activate_variable_sensitivity

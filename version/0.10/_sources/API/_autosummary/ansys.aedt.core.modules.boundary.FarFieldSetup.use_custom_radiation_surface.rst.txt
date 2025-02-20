@@ -1,0 +1,6 @@
+use\_custom\_radiation\_surface
+===============================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: FarFieldSetup.use_custom_radiation_surface

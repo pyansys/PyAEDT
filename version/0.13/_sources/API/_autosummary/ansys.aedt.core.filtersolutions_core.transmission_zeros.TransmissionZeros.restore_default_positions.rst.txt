@@ -1,0 +1,6 @@
+restore\_default\_positions
+===========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.transmission_zeros
+
+.. automethod:: TransmissionZeros.restore_default_positions

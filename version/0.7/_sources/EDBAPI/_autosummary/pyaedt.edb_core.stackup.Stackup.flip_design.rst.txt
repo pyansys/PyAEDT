@@ -1,0 +1,6 @@
+flip\_design
+============
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. automethod:: Stackup.flip_design

@@ -1,0 +1,6 @@
+convert\_to\_3d\_microvias
+==========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. automethod:: EDBPadstack.convert_to_3d_microvias

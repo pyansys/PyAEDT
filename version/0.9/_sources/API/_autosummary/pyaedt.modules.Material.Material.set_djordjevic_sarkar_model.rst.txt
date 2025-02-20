@@ -1,0 +1,6 @@
+set\_djordjevic\_sarkar\_model
+==============================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: Material.set_djordjevic_sarkar_model

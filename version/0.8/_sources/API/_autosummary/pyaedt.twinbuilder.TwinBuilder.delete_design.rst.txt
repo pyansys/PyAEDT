@@ -1,0 +1,6 @@
+delete\_design
+==============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.delete_design

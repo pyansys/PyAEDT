@@ -1,0 +1,6 @@
+existing\_analysis\_sweeps
+==========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.existing_analysis_sweeps

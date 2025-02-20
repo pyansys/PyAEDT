@@ -1,0 +1,6 @@
+detach\_faces
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. automethod:: Object3d.detach_faces

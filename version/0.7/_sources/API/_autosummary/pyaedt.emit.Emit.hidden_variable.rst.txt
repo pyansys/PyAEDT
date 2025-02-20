@@ -1,0 +1,6 @@
+hidden\_variable
+================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.hidden_variable

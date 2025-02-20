@@ -1,0 +1,6 @@
+s\_param\_model
+===============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.components_data
+
+.. autoproperty:: EDBComponent.s_param_model

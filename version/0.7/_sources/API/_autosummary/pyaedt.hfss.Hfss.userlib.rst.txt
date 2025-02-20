@@ -1,0 +1,6 @@
+userlib
+=======
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.userlib

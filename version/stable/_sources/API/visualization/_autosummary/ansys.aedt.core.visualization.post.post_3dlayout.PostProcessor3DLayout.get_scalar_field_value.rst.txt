@@ -1,0 +1,6 @@
+get\_scalar\_field\_value
+=========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.get_scalar_field_value

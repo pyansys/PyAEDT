@@ -1,0 +1,6 @@
+freq\_sweep\_type
+=================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: EdbFrequencySweep.freq_sweep_type

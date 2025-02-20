@@ -1,0 +1,6 @@
+signal\_layers\_properties
+==========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.signal_layers_properties

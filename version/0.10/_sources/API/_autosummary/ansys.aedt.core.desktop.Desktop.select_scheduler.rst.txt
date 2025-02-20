@@ -1,0 +1,6 @@
+select\_scheduler
+=================
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.select_scheduler

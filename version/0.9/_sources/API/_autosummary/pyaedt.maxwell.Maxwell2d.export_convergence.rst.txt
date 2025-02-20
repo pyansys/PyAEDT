@@ -1,0 +1,6 @@
+export\_convergence
+===================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.export_convergence

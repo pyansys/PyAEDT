@@ -1,0 +1,6 @@
+change\_design\_settings
+========================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.change_design_settings

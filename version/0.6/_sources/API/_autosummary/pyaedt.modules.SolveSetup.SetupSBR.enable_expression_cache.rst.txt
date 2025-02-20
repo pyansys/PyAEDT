@@ -1,0 +1,6 @@
+enable\_expression\_cache
+=========================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupSBR.enable_expression_cache

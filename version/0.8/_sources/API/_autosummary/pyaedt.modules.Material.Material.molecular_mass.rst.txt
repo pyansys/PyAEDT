@@ -1,0 +1,6 @@
+molecular\_mass
+===============
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.molecular_mass

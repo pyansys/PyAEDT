@@ -1,0 +1,6 @@
+add\_warning\_message
+=====================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.add_warning_message

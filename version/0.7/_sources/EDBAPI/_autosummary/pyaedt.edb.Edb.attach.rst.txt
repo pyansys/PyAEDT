@@ -1,0 +1,6 @@
+attach
+======
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.attach

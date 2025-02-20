@@ -1,0 +1,6 @@
+assign\_mesh\_level\_to\_group
+==============================
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. automethod:: IcepakMesh.assign_mesh_level_to_group

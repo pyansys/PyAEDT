@@ -1,0 +1,6 @@
+deactivate\_variable\_sensitivity
+=================================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.deactivate_variable_sensitivity

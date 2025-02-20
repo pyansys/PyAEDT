@@ -1,0 +1,6 @@
+oimport\_export
+===============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.oimport_export

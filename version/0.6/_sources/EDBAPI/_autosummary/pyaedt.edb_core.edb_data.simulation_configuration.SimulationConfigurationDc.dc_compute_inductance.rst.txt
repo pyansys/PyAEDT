@@ -1,0 +1,6 @@
+dc\_compute\_inductance
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_compute_inductance

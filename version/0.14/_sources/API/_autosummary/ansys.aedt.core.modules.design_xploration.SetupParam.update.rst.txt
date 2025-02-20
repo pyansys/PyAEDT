@@ -1,0 +1,6 @@
+update
+======
+
+.. currentmodule:: ansys.aedt.core.modules.design_xploration
+
+.. automethod:: SetupParam.update

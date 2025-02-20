@@ -1,0 +1,6 @@
+radial\_extent\_factor
+======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoproperty:: WavePort.radial_extent_factor

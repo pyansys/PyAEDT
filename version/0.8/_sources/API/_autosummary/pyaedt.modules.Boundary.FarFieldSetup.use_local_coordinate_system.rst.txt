@@ -1,0 +1,6 @@
+use\_local\_coordinate\_system
+==============================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: FarFieldSetup.use_local_coordinate_system

@@ -1,0 +1,6 @@
+use\_airbox\_horizontal\_extent\_multiple
+=========================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.use_airbox_horizontal_extent_multiple

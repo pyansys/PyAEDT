@@ -1,0 +1,6 @@
+variations
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. autoproperty:: AMIConturEyeDiagram.variations

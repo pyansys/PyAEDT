@@ -1,0 +1,6 @@
+clip\_plane
+===========
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. automethod:: Modeler3DLayout.clip_plane

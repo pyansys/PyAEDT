@@ -1,0 +1,6 @@
+working\_directory
+==================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.working_directory

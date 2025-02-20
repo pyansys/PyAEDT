@@ -1,0 +1,6 @@
+num\_sides
+==========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Padstack.num_sides

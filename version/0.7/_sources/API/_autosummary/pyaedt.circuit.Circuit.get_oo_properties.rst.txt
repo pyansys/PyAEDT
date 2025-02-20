@@ -1,0 +1,6 @@
+get\_oo\_properties
+===================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_oo_properties

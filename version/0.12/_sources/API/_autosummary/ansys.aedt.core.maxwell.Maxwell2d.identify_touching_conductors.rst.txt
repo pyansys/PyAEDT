@@ -1,0 +1,6 @@
+identify\_touching\_conductors
+==============================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.identify_touching_conductors

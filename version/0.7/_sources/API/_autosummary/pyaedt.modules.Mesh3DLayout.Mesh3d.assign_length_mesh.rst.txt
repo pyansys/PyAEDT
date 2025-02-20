@@ -1,0 +1,6 @@
+assign\_length\_mesh
+====================
+
+.. currentmodule:: pyaedt.modules.Mesh3DLayout
+
+.. automethod:: Mesh3d.assign_length_mesh

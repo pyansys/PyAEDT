@@ -1,0 +1,6 @@
+terminal\_solution
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.common
+
+.. automethod:: Reports.terminal_solution

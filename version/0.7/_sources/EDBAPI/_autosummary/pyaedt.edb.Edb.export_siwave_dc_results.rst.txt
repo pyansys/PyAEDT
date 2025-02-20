@@ -1,0 +1,6 @@
+export\_siwave\_dc\_results
+===========================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.export_siwave_dc_results

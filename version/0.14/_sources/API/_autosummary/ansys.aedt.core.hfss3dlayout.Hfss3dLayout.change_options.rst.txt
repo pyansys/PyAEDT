@@ -1,0 +1,6 @@
+change\_options
+===============
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.change_options

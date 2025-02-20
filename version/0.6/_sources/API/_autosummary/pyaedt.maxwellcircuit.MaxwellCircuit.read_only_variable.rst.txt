@@ -1,0 +1,6 @@
+read\_only\_variable
+====================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.read_only_variable

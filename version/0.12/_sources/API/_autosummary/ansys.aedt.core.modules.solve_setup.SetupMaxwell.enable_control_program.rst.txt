@@ -1,0 +1,6 @@
+enable\_control\_program
+========================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupMaxwell.enable_control_program

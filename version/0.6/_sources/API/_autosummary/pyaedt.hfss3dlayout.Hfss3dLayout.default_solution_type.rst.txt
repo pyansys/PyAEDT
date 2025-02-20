@@ -1,0 +1,6 @@
+default\_solution\_type
+=======================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.default_solution_type

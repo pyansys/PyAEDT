@@ -1,0 +1,6 @@
+signal\_layers
+==============
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. autoproperty:: Stackup.signal_layers

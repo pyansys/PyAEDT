@@ -1,0 +1,6 @@
+validate
+========
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. automethod:: Configurations.validate

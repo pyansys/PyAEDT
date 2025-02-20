@@ -1,0 +1,6 @@
+get\_all\_conductors\_names
+===========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_all_conductors_names

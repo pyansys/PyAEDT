@@ -1,0 +1,6 @@
+use\_pulse\_in\_tdr
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Standard.use_pulse_in_tdr

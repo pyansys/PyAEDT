@@ -1,0 +1,6 @@
+odesktop
+========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.odesktop

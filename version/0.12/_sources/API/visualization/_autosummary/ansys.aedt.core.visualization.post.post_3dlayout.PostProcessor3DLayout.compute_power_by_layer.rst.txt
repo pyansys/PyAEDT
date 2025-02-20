@@ -1,0 +1,6 @@
+compute\_power\_by\_layer
+=========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.compute_power_by_layer

@@ -1,0 +1,6 @@
+fields
+======
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.fields

@@ -1,0 +1,6 @@
+disable\_data\_netlist
+======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.disable_data_netlist

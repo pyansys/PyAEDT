@@ -1,0 +1,1220 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Maxwell 3D: asymmetric conductor analysis &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/03-Maxwell/Maxwell3DTeam7';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Maxwell 3D: choke setup" href="Maxwell3D_Choke.html" />
+    <link rel="prev" title="Maxwell 2D: transient winding analysis" href="Maxwell2D_Transient.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/03-Maxwell/Maxwell3DTeam7.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Modeling-Setup/index.html">General model and setup examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-HFSS/index.html">HFSS examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Maxwell examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_DCConduction.html">Maxwell 2D: resistance calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_Electrostatic.html">Maxwell 2D Electrostatic analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_PMSynchronousMotor.html">Maxwell 2D: PM synchronous motor transient analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_Transformer_LL.html">Transformer leakage inductance calculation in Maxwell 2D Magnetostatic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_Transient.html">Maxwell 2D: transient winding analysis</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Maxwell 3D: asymmetric conductor analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3D_Choke.html">Maxwell 3D: choke setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3D_Segmentation.html">Maxwell 3D: magnet segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3D_Team3_bath_plate.html">Maxwell 3D: bath plate analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell_Control_Program.html">Enabling Control Program in a Maxwell 2D Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell_Magnet.html">Maxwell 3D: magnet DC analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell_Transformer_Coreloss.html">Maxwell 3D: Transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RMxprt.html">Rmxprt: Create and export motor</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-Multiphysics/index.html">Multiphysics examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-Circuit/index.html">Circuit examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-EMIT/index.html">EMIT examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">Maxwell examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">Maxwell 3D: asymmetric conductor analysis</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-03-maxwell-maxwell3dteam7-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="maxwell-3d-asymmetric-conductor-analysis">
+<span id="sphx-glr-examples-03-maxwell-maxwell3dteam7-py"></span><h1>Maxwell 3D: asymmetric conductor analysis<a class="headerlink" href="#maxwell-3d-asymmetric-conductor-analysis" title="Link to this heading">#</a></h1>
+<p>This example uses PyAEDT to set up the TEAM 7 problem for an asymmetric
+conductor with a hole and solve it using the Maxwell 3D Eddy Current solver.
+<a class="reference external" href="https://www.compumag.org/wp/wp-content/uploads/2018/06/problem7.pdf">https://www.compumag.org/wp/wp-content/uploads/2018/06/problem7.pdf</a></p>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+
+<span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Maxwell3d</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core.generic.general_methods</span> <span class="kn">import</span> <span class="n">write_csv</span>
+</pre></div>
+</div>
+</section>
+<section id="set-aedt-version">
+<h2>Set AEDT version<a class="headerlink" href="#set-aedt-version" title="Link to this heading">#</a></h2>
+<p>Set AEDT version.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedt_version</span> <span class="o">=</span> <span class="s2">&quot;2024.2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="create-temporary-directory">
+<h2>Create temporary directory<a class="headerlink" href="#create-temporary-directory" title="Link to this heading">#</a></h2>
+<p>Create temporary directory.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">temp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.ansys&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="set-non-graphical-mode">
+<h2>Set non-graphical mode<a class="headerlink" href="#set-non-graphical-mode" title="Link to this heading">#</a></h2>
+<p>Set non-graphical mode.
+You can set <code class="docutils literal notranslate"><span class="pre">non_graphical</span></code> either to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">non_graphical</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="launch-aedt-and-maxwell-3d">
+<h2>Launch AEDT and Maxwell 3D<a class="headerlink" href="#launch-aedt-and-maxwell-3d" title="Link to this heading">#</a></h2>
+<p>Launch AEDT and Maxwell 3D. The following code sets up the project and design names, the solver, and
+the version. It also creates an instance of the <code class="docutils literal notranslate"><span class="pre">Maxwell3d</span></code> class named <code class="docutils literal notranslate"><span class="pre">m3d</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">project_name</span> <span class="o">=</span> <span class="s2">&quot;COMPUMAG&quot;</span>
+<span class="n">design_name</span> <span class="o">=</span> <span class="s2">&quot;TEAM 7 Asymmetric Conductor&quot;</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="s2">&quot;EddyCurrent&quot;</span>
+
+<span class="n">m3d</span> <span class="o">=</span> <span class="n">Maxwell3d</span><span class="p">(</span>
+    <span class="n">project</span><span class="o">=</span><span class="n">project_name</span><span class="p">,</span>
+    <span class="n">design</span><span class="o">=</span><span class="n">design_name</span><span class="p">,</span>
+    <span class="n">solution_type</span><span class="o">=</span><span class="n">solver</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="n">aedt_version</span><span class="p">,</span>
+    <span class="n">non_graphical</span><span class="o">=</span><span class="n">non_graphical</span><span class="p">,</span>
+    <span class="n">new_desktop</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">model_units</span> <span class="o">=</span> <span class="s2">&quot;mm&quot;</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\_tool\Python\3.10.9\x64\lib\subprocess.py:1072: ResourceWarning: subprocess 4392 is still running
+  _warn(&quot;subprocess %s is still running&quot; % self.pid,
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\ansys\aedt\core\generic\settings.py:231: ResourceWarning: unclosed file &lt;_io.TextIOWrapper name=&#39;D:\\Temp\\pyaedt_ansys_260622a4-692f-48cc-bef3-b1a76554a3cc.log&#39; mode=&#39;a&#39; encoding=&#39;cp1252&#39;&gt;
+  self.__logger = val
+</pre></div>
+</div>
+</section>
+<section id="add-maxwell-3d-setup">
+<h2>Add Maxwell 3D setup<a class="headerlink" href="#add-maxwell-3d-setup" title="Link to this heading">#</a></h2>
+<p>Add a Maxwell 3D setup with frequency points at DC, 50 Hz, and 200Hz.
+Otherwise, the default PyAEDT setup values are used. To approximate a DC field in the
+Eddy Current solver, use a low frequency value. Second-order shape functions improve
+the smoothness of the induced currents in the plate.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">dc_freq</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">stop_freq</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">setup</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">create_setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Setup1&quot;</span><span class="p">)</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;200Hz&quot;</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;HasSweepSetup&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">add_eddy_current_sweep</span><span class="p">(</span><span class="s2">&quot;LinearStep&quot;</span><span class="p">,</span> <span class="n">dc_freq</span><span class="p">,</span> <span class="n">stop_freq</span><span class="p">,</span> <span class="n">stop_freq</span> <span class="o">-</span> <span class="n">dc_freq</span><span class="p">,</span> <span class="n">clear</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;UseHighOrderShapeFunc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;PercentError&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="define-coil-dimensions">
+<h2>Define coil dimensions<a class="headerlink" href="#define-coil-dimensions" title="Link to this heading">#</a></h2>
+<p>Define coil dimensions as shown on the TEAM7 drawing of the coil.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">coil_external</span> <span class="o">=</span> <span class="mi">150</span> <span class="o">+</span> <span class="mi">25</span> <span class="o">+</span> <span class="mi">25</span>
+<span class="n">coil_internal</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="n">coil_r1</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">coil_r2</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">coil_thk</span> <span class="o">=</span> <span class="n">coil_r2</span> <span class="o">-</span> <span class="n">coil_r1</span>
+<span class="n">coil_height</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">coil_centre</span> <span class="o">=</span> <span class="p">[</span><span class="mi">294</span> <span class="o">-</span> <span class="mi">25</span> <span class="o">-</span> <span class="mi">150</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">25</span> <span class="o">+</span> <span class="mi">150</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">19</span> <span class="o">+</span> <span class="mi">30</span> <span class="o">+</span> <span class="mi">100</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Use expressions to construct the three dimensions needed to describe the midpoints of</span>
+<span class="c1"># the coil.</span>
+
+<span class="n">dim1</span> <span class="o">=</span> <span class="n">coil_internal</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">coil_external</span> <span class="o">-</span> <span class="n">coil_internal</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="n">dim2</span> <span class="o">=</span> <span class="n">coil_internal</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">coil_r1</span>
+<span class="n">dim3</span> <span class="o">=</span> <span class="n">dim2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">coil_r1</span> <span class="o">+</span> <span class="p">(</span><span class="n">coil_r2</span> <span class="o">-</span> <span class="n">coil_r1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Use coordinates to draw a polyline along which to sweep the coil cross sections.</span>
+<span class="n">P1</span> <span class="o">=</span> <span class="p">[</span><span class="n">dim1</span><span class="p">,</span> <span class="o">-</span><span class="n">dim2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">P2</span> <span class="o">=</span> <span class="p">[</span><span class="n">dim1</span><span class="p">,</span> <span class="n">dim2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">P3</span> <span class="o">=</span> <span class="p">[</span><span class="n">dim3</span><span class="p">,</span> <span class="n">dim3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">P4</span> <span class="o">=</span> <span class="p">[</span><span class="n">dim2</span><span class="p">,</span> <span class="n">dim1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="create-coordinate-system-for-positioning-coil">
+<h2>Create coordinate system for positioning coil<a class="headerlink" href="#create-coordinate-system-for-positioning-coil" title="Link to this heading">#</a></h2>
+<p>Create a coordinate system for positioning the coil.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_coordinate_system</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="n">coil_centre</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;view&quot;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s2">&quot;XY&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Coil_CS&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modeler.cad.modeler.CoordinateSystem object at 0x000002B31DB20A00&gt;
+</pre></div>
+</div>
+</section>
+<section id="create-polyline">
+<h2>Create polyline<a class="headerlink" href="#create-polyline" title="Link to this heading">#</a></h2>
+<p>Create a polyline. One quarter of the coil is modeled by sweeping a 2D sheet along a polyline.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">P1</span><span class="p">,</span> <span class="n">P2</span><span class="p">,</span> <span class="n">P3</span><span class="p">,</span> <span class="n">P4</span><span class="p">],</span> <span class="n">segment_type</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Line&quot;</span><span class="p">,</span> <span class="s2">&quot;Arc&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Coil&quot;</span><span class="p">)</span>
+<span class="n">test</span><span class="o">.</span><span class="n">set_crosssection_properties</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">coil_thk</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">coil_height</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modeler.cad.object_3d.Object3d object at 0x000002B31DB23B80&gt;
+</pre></div>
+</div>
+</section>
+<section id="duplicate-and-unite-polyline-to-create-full-coil">
+<h2>Duplicate and unite polyline to create full coil<a class="headerlink" href="#duplicate-and-unite-polyline-to-create-full-coil" title="Link to this heading">#</a></h2>
+<p>Duplicate and unit the polyline to create a full coil.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">duplicate_around_axis</span><span class="p">(</span>
+    <span class="s2">&quot;Coil&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;Global&quot;</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">clones</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">create_new_objects</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_3d_comp</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">unite</span><span class="p">(</span><span class="s2">&quot;Coil, Coil_1, Coil_2&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">unite</span><span class="p">(</span><span class="s2">&quot;Coil, Coil_3&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">fit_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="assign-material-and-if-solution-is-allowed-inside-coil">
+<h2>Assign material and if solution is allowed inside coil<a class="headerlink" href="#assign-material-and-if-solution-is-allowed-inside-coil" title="Link to this heading">#</a></h2>
+<p>Assign the material <code class="docutils literal notranslate"><span class="pre">Cooper</span></code> from the Maxwell internal library to the coil and
+allow a solution inside the coil.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">assign_material</span><span class="p">(</span><span class="s2">&quot;Coil&quot;</span><span class="p">,</span> <span class="s2">&quot;Copper&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">solve_inside</span><span class="p">(</span><span class="s2">&quot;Coil&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="create-terminal">
+<h2>Create terminal<a class="headerlink" href="#create-terminal" title="Link to this heading">#</a></h2>
+<p>Create a terminal for the coil from a cross-section that is split and one half deleted.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">section</span><span class="p">(</span><span class="s2">&quot;Coil&quot;</span><span class="p">,</span> <span class="s2">&quot;YZ&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">separate_bodies</span><span class="p">(</span><span class="s2">&quot;Coil_Section1&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;Coil_Section1_Separate1&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add variable for coil excitation</span>
+<span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="c1"># Add a design variable for coil excitation. The NB units here are AmpereTurns.</span>
+
+<span class="n">Coil_Excitation</span> <span class="o">=</span> <span class="mi">2742</span>
+<span class="n">m3d</span><span class="p">[</span><span class="s2">&quot;Coil_Excitation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Coil_Excitation</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;A&quot;</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_current</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;Coil_Section1&quot;</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="s2">&quot;Coil_Excitation&quot;</span><span class="p">,</span> <span class="n">solid</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">set_working_coordinate_system</span><span class="p">(</span><span class="s2">&quot;Global&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="add-a-material">
+<h2>Add a material<a class="headerlink" href="#add-a-material" title="Link to this heading">#</a></h2>
+<p>Add a material named <code class="docutils literal notranslate"><span class="pre">team3_aluminium</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">add_material</span><span class="p">(</span><span class="s2">&quot;team7_aluminium&quot;</span><span class="p">)</span>
+<span class="n">mat</span><span class="o">.</span><span class="n">conductivity</span> <span class="o">=</span> <span class="mf">3.526e7</span>
+</pre></div>
+</div>
+</section>
+<section id="model-aluminium-plate-with-a-hole">
+<h2>Model aluminium plate with a hole<a class="headerlink" href="#model-aluminium-plate-with-a-hole" title="Link to this heading">#</a></h2>
+<p>Model the aluminium plate with a hole by subtracting two rectangular cuboids.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">plate</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_box</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">294</span><span class="p">,</span> <span class="mi">294</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Plate&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;team7_aluminium&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">fit_all</span><span class="p">()</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_box</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">108</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Hole&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">blank_list</span><span class="o">=</span><span class="s2">&quot;Plate&quot;</span><span class="p">,</span> <span class="n">tool_list</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Hole&quot;</span><span class="p">],</span> <span class="n">keep_originals</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="draw-a-background-region">
+<h2>Draw a background region<a class="headerlink" href="#draw-a-background-region" title="Link to this heading">#</a></h2>
+<p>Draw a background region that uses the default properties for an air region.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_air_region</span><span class="p">(</span><span class="n">x_pos</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y_pos</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">z_pos</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">x_neg</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y_neg</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">z_neg</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modeler.cad.object_3d.Object3d object at 0x000002B31927D4E0&gt;
+</pre></div>
+</div>
+</section>
+<section id="adjust-eddy-effects-for-plate-and-coil">
+<h2>Adjust eddy effects for plate and coil<a class="headerlink" href="#adjust-eddy-effects-for-plate-and-coil" title="Link to this heading">#</a></h2>
+<p>Adjust the eddy effects for the plate and coil by turning off displacement currents
+for all parts. The setting for eddy effect is ignored for the stranded conductor type
+used in the coil.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">eddy_effects_on</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;Plate&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">eddy_effects_on</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Coil&quot;</span><span class="p">,</span> <span class="s2">&quot;Region&quot;</span><span class="p">,</span> <span class="s2">&quot;Line_A1_B1mesh&quot;</span><span class="p">,</span> <span class="s2">&quot;Line_A2_B2mesh&quot;</span><span class="p">],</span> <span class="n">enable_eddy_effects</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">enable_displacement_current</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="create-expression-for-z-component-of-b-in-gauss">
+<h2>Create expression for Z component of B in Gauss<a class="headerlink" href="#create-expression-for-z-component-of-b-in-gauss" title="Link to this heading">#</a></h2>
+<p>Create an expression for the Z component of B in Gauss using the fields calculator.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">Fields</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">ofieldsreporter</span>
+<span class="n">Fields</span><span class="o">.</span><span class="n">CalcStack</span><span class="p">(</span><span class="s2">&quot;clear&quot;</span><span class="p">)</span>
+<span class="n">Fields</span><span class="o">.</span><span class="n">EnterQty</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">Fields</span><span class="o">.</span><span class="n">CalcOp</span><span class="p">(</span><span class="s2">&quot;ScalarZ&quot;</span><span class="p">)</span>
+<span class="n">Fields</span><span class="o">.</span><span class="n">EnterScalarFunc</span><span class="p">(</span><span class="s2">&quot;Phase&quot;</span><span class="p">)</span>
+<span class="n">Fields</span><span class="o">.</span><span class="n">CalcOp</span><span class="p">(</span><span class="s2">&quot;AtPhase&quot;</span><span class="p">)</span>
+<span class="n">Fields</span><span class="o">.</span><span class="n">EnterScalar</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">Fields</span><span class="o">.</span><span class="n">CalcOp</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+<span class="n">Fields</span><span class="o">.</span><span class="n">CalcOp</span><span class="p">(</span><span class="s2">&quot;Smooth&quot;</span><span class="p">)</span>
+<span class="n">Fields</span><span class="o">.</span><span class="n">AddNamedExpression</span><span class="p">(</span><span class="s2">&quot;Bz&quot;</span><span class="p">,</span> <span class="s2">&quot;Fields&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="draw-two-lines-along-which-to-plot-bz">
+<h2>Draw two lines along which to plot Bz<a class="headerlink" href="#draw-two-lines-along-which-to-plot-bz" title="Link to this heading">#</a></h2>
+<p>Draw two lines along which to plot Bz. The following code also adds a small cylinder
+to refine the mesh locally around each line.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Line_A1_B1&quot;</span><span class="p">,</span> <span class="s2">&quot;Line_A2_B2&quot;</span><span class="p">]</span>
+<span class="n">mesh_diameter</span> <span class="o">=</span> <span class="s2">&quot;2mm&quot;</span>
+
+<span class="n">line_points_1</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;72mm&quot;</span><span class="p">,</span> <span class="s2">&quot;34mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;288mm&quot;</span><span class="p">,</span> <span class="s2">&quot;72mm&quot;</span><span class="p">,</span> <span class="s2">&quot;34mm&quot;</span><span class="p">]]</span>
+<span class="n">polyline</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">line_points_1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">l1_mesh</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">line_points_1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;mesh&quot;</span><span class="p">)</span>
+<span class="n">l1_mesh</span><span class="o">.</span><span class="n">set_crosssection_properties</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Circle&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">mesh_diameter</span><span class="p">)</span>
+
+<span class="n">line_points_2</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;144mm&quot;</span><span class="p">,</span> <span class="s2">&quot;34mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;288mm&quot;</span><span class="p">,</span> <span class="s2">&quot;144mm&quot;</span><span class="p">,</span> <span class="s2">&quot;34mm&quot;</span><span class="p">]]</span>
+<span class="n">polyline2</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">line_points_2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">l2_mesh</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">line_points_2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;mesh&quot;</span><span class="p">)</span>
+<span class="n">l2_mesh</span><span class="o">.</span><span class="n">set_crosssection_properties</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Circle&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">mesh_diameter</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modeler.cad.object_3d.Object3d object at 0x000002B31927E3E0&gt;
+</pre></div>
+</div>
+</section>
+<section id="plot-model">
+<h2>Plot model<a class="headerlink" href="#plot-model" title="Link to this heading">#</a></h2>
+<p>Plot the model.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;model.jpg&quot;</span><span class="p">),</span> <span class="n">plot_air_objects</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_Maxwell3DTeam7_001.png" srcset="../../_images/sphx_glr_Maxwell3DTeam7_001.png" alt="Maxwell3DTeam7" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.generic.plot.ModelPlotter object at 0x000002B3174DF610&gt;
+</pre></div>
+</div>
+<p>Published measurement results are included with this script via the list below.
+Test results are used to create text files for import into a rectangular plot
+and to overlay simulation results.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Bz A1_B1 000 0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bz A1_B1 050 0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bz A1_B1 050 90&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bz A1_B1 200 0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bz A1_B1 200 90&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bz A2_B2 050 0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bz A2_B2 050 90&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bz A2_B2 200 0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Bz A2_B2 200 90&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Distance [mm]&quot;</span><span class="p">,</span> <span class="s2">&quot;Bz [Tesla]&quot;</span><span class="p">]</span>
+
+<span class="n">line_length</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">162</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span> <span class="mi">216</span><span class="p">,</span> <span class="mi">234</span><span class="p">,</span> <span class="mi">252</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="mi">288</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span>
+        <span class="o">-</span><span class="mf">6.667</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">7.764</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">8.707</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">8.812</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">5.870</span><span class="p">,</span>
+        <span class="mf">8.713</span><span class="p">,</span>
+        <span class="mf">50.40</span><span class="p">,</span>
+        <span class="mf">88.47</span><span class="p">,</span>
+        <span class="mf">100.9</span><span class="p">,</span>
+        <span class="mf">104.0</span><span class="p">,</span>
+        <span class="mf">104.8</span><span class="p">,</span>
+        <span class="mf">104.9</span><span class="p">,</span>
+        <span class="mf">104.6</span><span class="p">,</span>
+        <span class="mf">103.1</span><span class="p">,</span>
+        <span class="mf">97.32</span><span class="p">,</span>
+        <span class="mf">75.19</span><span class="p">,</span>
+        <span class="mf">29.04</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+        <span class="mf">4.90</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">17.88</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">22.13</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">20.19</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">15.67</span><span class="p">,</span>
+        <span class="mf">0.36</span><span class="p">,</span>
+        <span class="mf">43.64</span><span class="p">,</span>
+        <span class="mf">78.11</span><span class="p">,</span>
+        <span class="mf">71.55</span><span class="p">,</span>
+        <span class="mf">60.44</span><span class="p">,</span>
+        <span class="mf">53.91</span><span class="p">,</span>
+        <span class="mf">52.62</span><span class="p">,</span>
+        <span class="mf">53.81</span><span class="p">,</span>
+        <span class="mf">56.91</span><span class="p">,</span>
+        <span class="mf">59.24</span><span class="p">,</span>
+        <span class="mf">52.78</span><span class="p">,</span>
+        <span class="mf">27.61</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">1.16</span><span class="p">,</span> <span class="mf">2.84</span><span class="p">,</span> <span class="mf">4.15</span><span class="p">,</span> <span class="mf">4.00</span><span class="p">,</span> <span class="mf">3.07</span><span class="p">,</span> <span class="mf">2.31</span><span class="p">,</span> <span class="mf">1.89</span><span class="p">,</span> <span class="mf">4.97</span><span class="p">,</span> <span class="mf">12.61</span><span class="p">,</span> <span class="mf">14.15</span><span class="p">,</span> <span class="mf">13.04</span><span class="p">,</span> <span class="mf">12.40</span><span class="p">,</span> <span class="mf">12.05</span><span class="p">,</span> <span class="mf">12.27</span><span class="p">,</span> <span class="mf">12.66</span><span class="p">,</span> <span class="mf">9.96</span><span class="p">,</span> <span class="mf">2.36</span><span class="p">],</span>
+    <span class="p">[</span>
+        <span class="o">-</span><span class="mf">3.63</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">18.46</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">23.62</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">21.59</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">16.09</span><span class="p">,</span>
+        <span class="mf">0.23</span><span class="p">,</span>
+        <span class="mf">44.35</span><span class="p">,</span>
+        <span class="mf">75.53</span><span class="p">,</span>
+        <span class="mf">63.42</span><span class="p">,</span>
+        <span class="mf">53.20</span><span class="p">,</span>
+        <span class="mf">48.66</span><span class="p">,</span>
+        <span class="mf">47.31</span><span class="p">,</span>
+        <span class="mf">48.31</span><span class="p">,</span>
+        <span class="mf">51.26</span><span class="p">,</span>
+        <span class="mf">53.61</span><span class="p">,</span>
+        <span class="mf">46.11</span><span class="p">,</span>
+        <span class="mf">24.96</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">1.38</span><span class="p">,</span> <span class="mf">1.20</span><span class="p">,</span> <span class="mf">2.15</span><span class="p">,</span> <span class="mf">1.63</span><span class="p">,</span> <span class="mf">1.10</span><span class="p">,</span> <span class="mf">0.27</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.28</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.40</span><span class="p">,</span> <span class="mf">4.17</span><span class="p">,</span> <span class="mf">3.94</span><span class="p">,</span> <span class="mf">4.86</span><span class="p">,</span> <span class="mf">4.09</span><span class="p">,</span> <span class="mf">3.69</span><span class="p">,</span> <span class="mf">4.60</span><span class="p">,</span> <span class="mf">3.48</span><span class="p">,</span> <span class="mf">4.10</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">],</span>
+    <span class="p">[</span>
+        <span class="o">-</span><span class="mf">1.83</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">8.50</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">13.60</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">15.21</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">14.48</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">5.62</span><span class="p">,</span>
+        <span class="mf">28.77</span><span class="p">,</span>
+        <span class="mf">60.34</span><span class="p">,</span>
+        <span class="mf">61.84</span><span class="p">,</span>
+        <span class="mf">56.64</span><span class="p">,</span>
+        <span class="mf">53.40</span><span class="p">,</span>
+        <span class="mf">52.36</span><span class="p">,</span>
+        <span class="mf">53.93</span><span class="p">,</span>
+        <span class="mf">56.82</span><span class="p">,</span>
+        <span class="mf">59.48</span><span class="p">,</span>
+        <span class="mf">52.08</span><span class="p">,</span>
+        <span class="mf">26.56</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">1.63</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.60</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.43</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">1.26</span><span class="p">,</span> <span class="mf">3.40</span><span class="p">,</span> <span class="mf">6.53</span><span class="p">,</span> <span class="mf">10.25</span><span class="p">,</span> <span class="mf">11.83</span><span class="p">,</span> <span class="mf">11.83</span><span class="p">,</span> <span class="mf">11.01</span><span class="p">,</span> <span class="mf">10.58</span><span class="p">,</span> <span class="mf">10.80</span><span class="p">,</span> <span class="mf">10.54</span><span class="p">,</span> <span class="mf">10.62</span><span class="p">,</span> <span class="mf">9.03</span><span class="p">,</span> <span class="mf">1.79</span><span class="p">],</span>
+    <span class="p">[</span>
+        <span class="o">-</span><span class="mf">0.86</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">7.00</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">11.58</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">13.36</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">13.77</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">6.74</span><span class="p">,</span>
+        <span class="mf">24.63</span><span class="p">,</span>
+        <span class="mf">53.19</span><span class="p">,</span>
+        <span class="mf">54.89</span><span class="p">,</span>
+        <span class="mf">50.72</span><span class="p">,</span>
+        <span class="mf">48.03</span><span class="p">,</span>
+        <span class="mf">47.13</span><span class="p">,</span>
+        <span class="mf">48.25</span><span class="p">,</span>
+        <span class="mf">51.35</span><span class="p">,</span>
+        <span class="mf">53.35</span><span class="p">,</span>
+        <span class="mf">45.37</span><span class="p">,</span>
+        <span class="mf">24.01</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">1.35</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.71</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.81</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.67</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">1.39</span><span class="p">,</span> <span class="mf">2.67</span><span class="p">,</span> <span class="mf">3.00</span><span class="p">,</span> <span class="mf">4.01</span><span class="p">,</span> <span class="mf">3.80</span><span class="p">,</span> <span class="mf">4.00</span><span class="p">,</span> <span class="mf">3.02</span><span class="p">,</span> <span class="mf">2.20</span><span class="p">,</span> <span class="mf">2.78</span><span class="p">,</span> <span class="mf">1.58</span><span class="p">,</span> <span class="mf">1.37</span><span class="p">,</span> <span class="mf">0.93</span><span class="p">],</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="write-dataset-values-in-a-csv-file">
+<h2>Write dataset values in a CSV file<a class="headerlink" href="#write-dataset-values-in-a-csv-file" title="Link to this heading">#</a></h2>
+<p>Dataset details are used to encode test parameters in the text files.
+For example, <code class="docutils literal notranslate"><span class="pre">Bz</span> <span class="pre">A1_B1</span> <span class="pre">050</span> <span class="pre">0</span></code> is the Z component of flux density <code class="docutils literal notranslate"><span class="pre">B</span></code>.
+along line <code class="docutils literal notranslate"><span class="pre">A1_B1</span></code> at 50 Hz and 0 deg.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">line_length</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)):</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">ziplist</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">line_length</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;.csv&quot;</span><span class="p">)</span>
+    <span class="n">write_csv</span><span class="p">(</span><span class="n">output_file</span><span class="o">=</span><span class="n">file_path</span><span class="p">,</span> <span class="n">list_data</span><span class="o">=</span><span class="n">ziplist</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-rectangular-plots-and-import-test-data-into-report">
+<h2>Create rectangular plots and import test data into report<a class="headerlink" href="#create-rectangular-plots-and-import-test-data-into-report" title="Link to this heading">#</a></h2>
+<p>Create rectangular plots, using text file encoding to control their formatting.
+Import test data into correct plot and overlay with simulation results.
+Variations for a DC plot must have different frequency and phase than the other plots.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="n">plot_name</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;Along the Line&quot;</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;Hz&quot;</span>
+        <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;000&quot;</span><span class="p">:</span>
+            <span class="n">variations</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;Distance&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;All&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;Freq&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">dc_freq</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;Hz&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;Phase&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0deg&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;Coil_Excitation&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;All&quot;</span><span class="p">],</span>
+            <span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">variations</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;Distance&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;All&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;Freq&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;Hz&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;Phase&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0deg&quot;</span><span class="p">,</span> <span class="s2">&quot;90deg&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;Coil_Excitation&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;All&quot;</span><span class="p">],</span>
+            <span class="p">}</span>
+        <span class="n">report</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_report</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">variations</span><span class="o">=</span><span class="n">variations</span><span class="p">,</span> <span class="n">primary_sweep_variable</span><span class="o">=</span><span class="s2">&quot;Distance&quot;</span><span class="p">,</span>
+                                        <span class="n">report_category</span><span class="o">=</span><span class="s2">&quot;Fields&quot;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;Line_&quot;</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">8</span><span class="p">],</span> <span class="n">plot_name</span><span class="o">=</span><span class="n">plot_name</span><span class="p">)</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;.csv&quot;</span><span class="p">)</span>
+        <span class="n">report</span><span class="o">.</span><span class="n">import_traces</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">plot_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="analyze-project">
+<h2>Analyze project<a class="headerlink" href="#analyze-project" title="Link to this heading">#</a></h2>
+<p>Analyze the project.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="create-plots-of-induced-current-and-flux-density-on-surface-of-plate">
+<h2>Create plots of induced current and flux density on surface of plate<a class="headerlink" href="#create-plots-of-induced-current-and-flux-density-on-surface-of-plate" title="Link to this heading">#</a></h2>
+<p>Create two plots of the induced current (<code class="docutils literal notranslate"><span class="pre">Mag_J</span></code>) and the flux density (<code class="docutils literal notranslate"><span class="pre">Mag_B</span></code>) on the
+surface of the plate.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">surf_list</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="s2">&quot;Plate&quot;</span><span class="p">)</span>
+<span class="n">intrinsic_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Freq&quot;</span><span class="p">:</span> <span class="s2">&quot;200Hz&quot;</span><span class="p">,</span> <span class="s2">&quot;Phase&quot;</span><span class="p">:</span> <span class="s2">&quot;0deg&quot;</span><span class="p">}</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_fieldplot_surface</span><span class="p">(</span><span class="n">surf_list</span><span class="p">,</span> <span class="s2">&quot;Mag_J&quot;</span><span class="p">,</span> <span class="n">intrinsics</span><span class="o">=</span><span class="n">intrinsic_dict</span><span class="p">,</span> <span class="n">plot_name</span><span class="o">=</span><span class="s2">&quot;Mag_J&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_fieldplot_surface</span><span class="p">(</span><span class="n">surf_list</span><span class="p">,</span> <span class="s2">&quot;Mag_B&quot;</span><span class="p">,</span> <span class="n">intrinsics</span><span class="o">=</span><span class="n">intrinsic_dict</span><span class="p">,</span> <span class="n">plot_name</span><span class="o">=</span><span class="s2">&quot;Mag_B&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_fieldplot_surface</span><span class="p">(</span><span class="n">surf_list</span><span class="p">,</span> <span class="s2">&quot;Mesh&quot;</span><span class="p">,</span> <span class="n">intrinsics</span><span class="o">=</span><span class="n">intrinsic_dict</span><span class="p">,</span> <span class="n">plot_name</span><span class="o">=</span><span class="s2">&quot;Mesh&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.solutions.FieldPlot object at 0x000002B3191B5870&gt;
+</pre></div>
+</div>
+</section>
+<section id="release-aedt-and-clean-up-temporary-directory">
+<h2>Release AEDT and clean up temporary directory<a class="headerlink" href="#release-aedt-and-clean-up-temporary-directory" title="Link to this heading">#</a></h2>
+<p>Release AEDT and remove both the project and temporary directories.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">temp_dir</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (6 minutes 58.524 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-03-maxwell-maxwell3dteam7-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/bff82223783d88e82227125fba51f23c/Maxwell3DTeam7.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Maxwell3DTeam7.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8b986a64b6ba596a3c13633bd7ddcc1c/Maxwell3DTeam7.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Maxwell3DTeam7.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/c876868ee85ee7895109ceacb212a55f/Maxwell3DTeam7.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">Maxwell3DTeam7.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-aedt-version">Set AEDT version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-temporary-directory">Create temporary directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-non-graphical-mode">Set non-graphical mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-aedt-and-maxwell-3d">Launch AEDT and Maxwell 3D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-maxwell-3d-setup">Add Maxwell 3D setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-coil-dimensions">Define coil dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-coordinate-system-for-positioning-coil">Create coordinate system for positioning coil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-polyline">Create polyline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duplicate-and-unite-polyline-to-create-full-coil">Duplicate and unite polyline to create full coil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-material-and-if-solution-is-allowed-inside-coil">Assign material and if solution is allowed inside coil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-terminal">Create terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-material">Add a material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-aluminium-plate-with-a-hole">Model aluminium plate with a hole</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-a-background-region">Draw a background region</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-eddy-effects-for-plate-and-coil">Adjust eddy effects for plate and coil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-expression-for-z-component-of-b-in-gauss">Create expression for Z component of B in Gauss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-two-lines-along-which-to-plot-bz">Draw two lines along which to plot Bz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-model">Plot model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-dataset-values-in-a-csv-file">Write dataset values in a CSV file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-rectangular-plots-and-import-test-data-into-report">Create rectangular plots and import test data into report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-project">Analyze project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-plots-of-induced-current-and-flux-density-on-surface-of-plate">Create plots of induced current and flux density on surface of plate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-aedt-and-clean-up-temporary-directory">Release AEDT and clean up temporary directory</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/03-Maxwell/Maxwell3DTeam7.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/03-Maxwell/Maxwell3DTeam7.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

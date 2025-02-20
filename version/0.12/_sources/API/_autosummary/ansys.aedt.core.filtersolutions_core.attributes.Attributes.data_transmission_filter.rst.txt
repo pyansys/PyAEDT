@@ -1,0 +1,6 @@
+data\_transmission\_filter
+==========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.data_transmission_filter

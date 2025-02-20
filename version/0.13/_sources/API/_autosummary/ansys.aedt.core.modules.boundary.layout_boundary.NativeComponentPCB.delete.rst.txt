@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. automethod:: NativeComponentPCB.delete

@@ -1,0 +1,6 @@
+move\_face
+==========
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.move_face

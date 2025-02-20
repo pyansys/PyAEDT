@@ -1,0 +1,6 @@
+view\_up
+========
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.view_up

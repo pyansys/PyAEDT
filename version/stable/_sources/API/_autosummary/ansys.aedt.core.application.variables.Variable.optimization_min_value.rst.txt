@@ -1,0 +1,6 @@
+optimization\_min\_value
+========================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.optimization_min_value

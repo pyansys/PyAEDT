@@ -1,0 +1,6 @@
+add\_isar\_2d\_settings
+=======================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. automethod:: MonostaticRCSPlotter.add_isar_2d_settings

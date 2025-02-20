@@ -1,0 +1,6 @@
+get\_object\_from\_name
+=======================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_object_from_name

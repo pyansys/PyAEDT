@@ -1,0 +1,6 @@
+ooutput\_variable
+=================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.ooutput_variable

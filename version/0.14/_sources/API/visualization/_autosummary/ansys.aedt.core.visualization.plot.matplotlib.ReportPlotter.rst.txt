@@ -1,0 +1,67 @@
+﻿ReportPlotter
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. autoclass:: ReportPlotter
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ReportPlotter.add_limit_line
+      
+      
+      ReportPlotter.add_note
+      
+      
+      ReportPlotter.add_trace
+      
+      
+      ReportPlotter.apply_style
+      
+      
+      ReportPlotter.plot_2d
+      
+      
+      ReportPlotter.plot_3d
+      
+      
+      ReportPlotter.plot_contour
+      
+      
+      ReportPlotter.plot_polar
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ReportPlotter.general_back_color
+      ReportPlotter.general_plot_color
+      ReportPlotter.grid_color
+      ReportPlotter.grid_enable_major_x
+      ReportPlotter.grid_enable_major_y
+      ReportPlotter.grid_enable_minor_x
+      ReportPlotter.grid_enable_minor_y
+      ReportPlotter.grid_style
+      ReportPlotter.interactive
+      ReportPlotter.limit_lines
+      ReportPlotter.size
+      ReportPlotter.trace_names
+      ReportPlotter.traces
+      ReportPlotter.traces_by_index
+      ReportPlotter.x_scale
+      ReportPlotter.y_scale
+   
+   

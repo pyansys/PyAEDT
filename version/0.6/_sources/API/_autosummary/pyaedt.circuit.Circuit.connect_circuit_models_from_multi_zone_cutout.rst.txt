@@ -1,0 +1,6 @@
+connect\_circuit\_models\_from\_multi\_zone\_cutout
+===================================================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.connect_circuit_models_from_multi_zone_cutout

@@ -1,0 +1,6 @@
+add\_spatial\_modifier\_free\_form
+==================================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: MatProperty.add_spatial_modifier_free_form

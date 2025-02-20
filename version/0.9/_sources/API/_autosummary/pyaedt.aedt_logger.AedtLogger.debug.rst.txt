@@ -1,0 +1,6 @@
+debug
+=====
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. automethod:: AedtLogger.debug

@@ -1,0 +1,6 @@
+merge\_nets\_polygons
+=====================
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. automethod:: EdbNets.merge_nets_polygons

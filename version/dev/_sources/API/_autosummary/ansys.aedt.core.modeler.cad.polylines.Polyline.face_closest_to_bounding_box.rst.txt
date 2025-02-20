@@ -1,0 +1,6 @@
+face\_closest\_to\_bounding\_box
+================================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. autoproperty:: Polyline.face_closest_to_bounding_box

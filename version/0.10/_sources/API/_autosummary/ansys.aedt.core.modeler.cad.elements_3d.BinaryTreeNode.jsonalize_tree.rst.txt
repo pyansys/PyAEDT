@@ -1,0 +1,6 @@
+jsonalize\_tree
+===============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. automethod:: BinaryTreeNode.jsonalize_tree

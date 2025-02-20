@@ -1,0 +1,6 @@
+optimization\_max\_value
+========================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.optimization_max_value

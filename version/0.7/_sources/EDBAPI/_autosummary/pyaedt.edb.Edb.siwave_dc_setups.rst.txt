@@ -1,0 +1,6 @@
+siwave\_dc\_setups
+==================
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.siwave_dc_setups

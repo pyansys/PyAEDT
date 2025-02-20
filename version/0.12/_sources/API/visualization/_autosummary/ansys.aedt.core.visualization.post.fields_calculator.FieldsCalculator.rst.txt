@@ -1,0 +1,64 @@
+﻿FieldsCalculator
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.fields_calculator
+
+.. autoclass:: FieldsCalculator
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FieldsCalculator.add_expression
+      
+      
+      FieldsCalculator.calculator_write
+      
+      
+      FieldsCalculator.create_expression_file
+      
+      
+      FieldsCalculator.delete_expression
+      
+      
+      FieldsCalculator.evaluate
+      
+      
+      FieldsCalculator.export
+      
+      
+      FieldsCalculator.expression_plot
+      
+      
+      FieldsCalculator.is_expression_defined
+      
+      
+      FieldsCalculator.is_general_expression
+      
+      
+      FieldsCalculator.load_expression_file
+      
+      
+      FieldsCalculator.validate_expression
+      
+      
+      FieldsCalculator.write
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      FieldsCalculator.expression_names
+   
+   

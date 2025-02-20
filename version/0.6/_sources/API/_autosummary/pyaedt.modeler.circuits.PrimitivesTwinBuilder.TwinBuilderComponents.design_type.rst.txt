@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. autoproperty:: TwinBuilderComponents.design_type

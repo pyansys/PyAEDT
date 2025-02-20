@@ -1,0 +1,6 @@
+create\_linear\_count\_sweep
+============================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.create_linear_count_sweep

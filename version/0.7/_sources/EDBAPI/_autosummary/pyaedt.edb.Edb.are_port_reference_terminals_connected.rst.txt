@@ -1,0 +1,6 @@
+are\_port\_reference\_terminals\_connected
+==========================================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.are_port_reference_terminals_connected

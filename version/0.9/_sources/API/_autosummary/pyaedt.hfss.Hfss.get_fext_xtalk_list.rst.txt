@@ -1,0 +1,6 @@
+get\_fext\_xtalk\_list
+======================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_fext_xtalk_list

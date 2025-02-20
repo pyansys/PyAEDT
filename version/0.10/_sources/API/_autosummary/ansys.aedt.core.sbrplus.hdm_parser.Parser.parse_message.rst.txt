@@ -1,0 +1,6 @@
+parse\_message
+==============
+
+.. currentmodule:: ansys.aedt.core.sbrplus.hdm_parser
+
+.. automethod:: Parser.parse_message

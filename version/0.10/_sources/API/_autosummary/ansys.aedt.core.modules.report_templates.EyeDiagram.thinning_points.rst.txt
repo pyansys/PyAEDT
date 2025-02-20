@@ -1,0 +1,6 @@
+thinning\_points
+================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: EyeDiagram.thinning_points

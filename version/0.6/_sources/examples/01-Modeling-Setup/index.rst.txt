@@ -1,0 +1,97 @@
+
+
+.. _sphx_glr_examples_01-Modeling-Setup:
+
+General model and setup examples
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+These examples use PyAEDT to show some general model and simulation
+setup features inside AEDT.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" HFSS  2D Extractor and Q3D Extractor  Maxwell  Icepak (in AEDT) * Mechanical (in AEDT)">
+
+.. only:: html
+
+  .. image:: /examples/01-Modeling-Setup/images/thumb/sphx_glr_Configurations_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_01-Modeling-Setup_Configurations.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">General: configuration files</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="General: coordinate system creation">
+
+.. only:: html
+
+  .. image:: /examples/01-Modeling-Setup/images/thumb/sphx_glr_HFSS_CoordinateSystem_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_01-Modeling-Setup_HFSS_CoordinateSystem.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">General: coordinate system creation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="General: optimetrics setup">
+
+.. only:: html
+
+  .. image:: /examples/01-Modeling-Setup/images/thumb/sphx_glr_Optimetrics_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_01-Modeling-Setup_Optimetrics.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">General: optimetrics setup</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="General: polyline creation">
+
+.. only:: html
+
+  .. image:: /examples/01-Modeling-Setup/images/thumb/sphx_glr_Polyline_Primitives_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_01-Modeling-Setup_Polyline_Primitives.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">General: polyline creation</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/01-Modeling-Setup/Configurations
+   /examples/01-Modeling-Setup/HFSS_CoordinateSystem
+   /examples/01-Modeling-Setup/Optimetrics
+   /examples/01-Modeling-Setup/Polyline_Primitives
+

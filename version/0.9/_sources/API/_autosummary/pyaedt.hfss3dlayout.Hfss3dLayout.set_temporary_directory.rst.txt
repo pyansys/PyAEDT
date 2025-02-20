@@ -1,0 +1,6 @@
+set\_temporary\_directory
+=========================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.set_temporary_directory

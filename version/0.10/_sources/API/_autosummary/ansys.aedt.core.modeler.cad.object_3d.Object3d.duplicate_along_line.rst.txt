@@ -1,0 +1,6 @@
+duplicate\_along\_line
+======================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. automethod:: Object3d.duplicate_along_line

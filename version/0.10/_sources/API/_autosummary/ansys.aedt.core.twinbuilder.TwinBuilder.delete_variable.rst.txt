@@ -1,0 +1,6 @@
+delete\_variable
+================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.delete_variable

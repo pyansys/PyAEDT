@@ -1,0 +1,6 @@
+create\_parametric\_fin\_heat\_sink
+===================================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.create_parametric_fin_heat_sink

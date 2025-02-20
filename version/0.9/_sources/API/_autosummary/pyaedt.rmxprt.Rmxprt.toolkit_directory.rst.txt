@@ -1,0 +1,6 @@
+toolkit\_directory
+==================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.toolkit_directory

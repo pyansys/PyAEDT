@@ -1,0 +1,54 @@
+﻿HistoryProps
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. autoclass:: HistoryProps
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      HistoryProps.clear
+      
+      
+      HistoryProps.copy
+      
+      
+      HistoryProps.fromkeys
+      
+      
+      HistoryProps.get
+      
+      
+      HistoryProps.items
+      
+      
+      HistoryProps.keys
+      
+      
+      HistoryProps.pop
+      
+      
+      HistoryProps.popitem
+      
+      
+      HistoryProps.setdefault
+      
+      
+      HistoryProps.update
+      
+      
+      HistoryProps.values
+      
+   
+   
+
+   
+   
+   

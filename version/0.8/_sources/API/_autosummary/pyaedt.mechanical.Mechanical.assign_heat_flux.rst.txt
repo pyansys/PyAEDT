@@ -1,0 +1,6 @@
+assign\_heat\_flux
+==================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.assign_heat_flux

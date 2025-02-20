@@ -1,0 +1,6 @@
+add\_from\_toolkit
+==================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.add_from_toolkit

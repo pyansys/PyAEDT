@@ -1,0 +1,6 @@
+add\_thermal\_modifier\_free\_form
+==================================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: MatProperty.add_thermal_modifier_free_form

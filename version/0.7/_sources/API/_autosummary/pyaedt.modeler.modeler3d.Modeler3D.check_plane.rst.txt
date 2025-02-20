@@ -1,0 +1,6 @@
+check\_plane
+============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.check_plane

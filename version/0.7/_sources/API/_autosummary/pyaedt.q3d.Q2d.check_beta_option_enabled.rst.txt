@@ -1,0 +1,6 @@
+check\_beta\_option\_enabled
+============================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.check_beta_option_enabled

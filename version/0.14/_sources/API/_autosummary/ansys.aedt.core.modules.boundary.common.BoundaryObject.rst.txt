@@ -1,0 +1,58 @@
+﻿BoundaryObject
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.common
+
+.. autoclass:: BoundaryObject
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      BoundaryObject.create
+      
+      
+      BoundaryObject.delete
+      
+      
+      BoundaryObject.jsonalize_tree
+      
+      
+      BoundaryObject.suppress_all
+      
+      
+      BoundaryObject.unsuppress_all
+      
+      
+      BoundaryObject.update
+      
+      
+      BoundaryObject.update_assignment
+      
+      
+      BoundaryObject.update_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      BoundaryObject.available_properties
+      BoundaryObject.children
+      BoundaryObject.command
+      BoundaryObject.name
+      BoundaryObject.properties
+      BoundaryObject.props
+      BoundaryObject.type
+   
+   

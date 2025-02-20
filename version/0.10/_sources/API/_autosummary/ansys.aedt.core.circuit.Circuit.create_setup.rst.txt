@@ -1,0 +1,6 @@
+create\_setup
+=============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.create_setup

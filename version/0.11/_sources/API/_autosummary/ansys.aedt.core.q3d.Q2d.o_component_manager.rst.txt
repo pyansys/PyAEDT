@@ -1,0 +1,6 @@
+o\_component\_manager
+=====================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q2d.o_component_manager

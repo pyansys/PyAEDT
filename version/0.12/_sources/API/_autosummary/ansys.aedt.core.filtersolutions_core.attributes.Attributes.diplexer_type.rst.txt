@@ -1,0 +1,6 @@
+diplexer\_type
+==============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.diplexer_type

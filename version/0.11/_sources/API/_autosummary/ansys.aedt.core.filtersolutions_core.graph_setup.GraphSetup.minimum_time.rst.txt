@@ -1,0 +1,6 @@
+minimum\_time
+=============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.graph_setup
+
+.. autoproperty:: GraphSetup.minimum_time

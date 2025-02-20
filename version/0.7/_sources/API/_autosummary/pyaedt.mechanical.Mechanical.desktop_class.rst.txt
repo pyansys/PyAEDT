@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.desktop_class

@@ -1,0 +1,6 @@
+differential\_pairs
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. autoproperty:: AntennaParameters.differential_pairs

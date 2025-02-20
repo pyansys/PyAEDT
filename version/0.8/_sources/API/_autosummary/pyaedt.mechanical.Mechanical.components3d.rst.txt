@@ -1,0 +1,6 @@
+components3d
+============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.components3d

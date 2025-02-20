@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.release_desktop

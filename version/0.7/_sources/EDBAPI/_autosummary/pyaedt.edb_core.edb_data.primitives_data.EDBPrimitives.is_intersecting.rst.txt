@@ -1,0 +1,6 @@
+is\_intersecting
+================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.primitives_data
+
+.. automethod:: EDBPrimitives.is_intersecting

@@ -1,0 +1,6 @@
+oboundary
+=========
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.oboundary

@@ -1,0 +1,6 @@
+enable\_harmonic\_force
+=======================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.enable_harmonic_force

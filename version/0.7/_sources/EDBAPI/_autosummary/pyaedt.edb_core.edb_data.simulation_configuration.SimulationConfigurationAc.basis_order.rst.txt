@@ -1,0 +1,6 @@
+basis\_order
+============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.basis_order

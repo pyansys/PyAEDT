@@ -1,0 +1,6 @@
+assign\_surface\_mesh\_manual
+=============================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. automethod:: Mesh.assign_surface_mesh_manual

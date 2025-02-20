@@ -1,0 +1,6 @@
+set\_objects\_temperature
+=========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.set_objects_temperature

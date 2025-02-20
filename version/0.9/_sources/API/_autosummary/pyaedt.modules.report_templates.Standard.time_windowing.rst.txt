@@ -1,0 +1,6 @@
+time\_windowing
+===============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Standard.time_windowing

@@ -1,0 +1,6 @@
+syslib
+======
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.syslib

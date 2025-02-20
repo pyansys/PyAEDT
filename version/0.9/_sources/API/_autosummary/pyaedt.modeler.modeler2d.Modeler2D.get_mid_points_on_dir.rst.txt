@@ -1,0 +1,6 @@
+get\_mid\_points\_on\_dir
+=========================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.get_mid_points_on_dir

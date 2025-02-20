@@ -1,0 +1,6 @@
+create\_circle
+==============
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. automethod:: EdbLayout.create_circle

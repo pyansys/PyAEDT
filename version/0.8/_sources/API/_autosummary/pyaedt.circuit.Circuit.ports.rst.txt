@@ -1,0 +1,6 @@
+ports
+=====
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.ports

@@ -1,0 +1,6 @@
+close\_project
+==============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.close_project

@@ -1,0 +1,6 @@
+omaterial\_manager
+==================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.omaterial_manager

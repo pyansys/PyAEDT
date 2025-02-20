@@ -1,0 +1,6 @@
+modeler
+=======
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. autoproperty:: PostProcessorIcepak.modeler

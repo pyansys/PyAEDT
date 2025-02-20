@@ -1,0 +1,6 @@
+duplicate\_and\_mirror
+======================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.duplicate_and_mirror

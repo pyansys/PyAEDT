@@ -1,0 +1,6 @@
+assign\_point\_monitor\_in\_object
+==================================
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. automethod:: Monitor.assign_point_monitor_in_object

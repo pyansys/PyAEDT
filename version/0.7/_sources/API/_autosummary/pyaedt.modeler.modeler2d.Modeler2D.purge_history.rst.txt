@@ -1,0 +1,6 @@
+purge\_history
+==============
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.purge_history

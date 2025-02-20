@@ -1,0 +1,6 @@
+get\_edgeids\_from\_vertexid
+============================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.get_edgeids_from_vertexid

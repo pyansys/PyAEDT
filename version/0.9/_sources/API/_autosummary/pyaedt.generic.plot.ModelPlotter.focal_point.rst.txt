@@ -1,0 +1,6 @@
+focal\_point
+============
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. autoproperty:: ModelPlotter.focal_point

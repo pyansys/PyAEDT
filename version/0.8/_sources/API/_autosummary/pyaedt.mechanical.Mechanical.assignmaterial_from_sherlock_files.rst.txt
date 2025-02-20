@@ -1,0 +1,6 @@
+assignmaterial\_from\_sherlock\_files
+=====================================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.assignmaterial_from_sherlock_files

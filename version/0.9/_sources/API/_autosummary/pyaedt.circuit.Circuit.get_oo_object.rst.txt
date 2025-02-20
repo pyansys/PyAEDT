@@ -1,0 +1,6 @@
+get\_oo\_object
+===============
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_oo_object

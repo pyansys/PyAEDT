@@ -1,0 +1,6 @@
+model\_units
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_emit
+
+.. autoproperty:: EmitComponents.model_units

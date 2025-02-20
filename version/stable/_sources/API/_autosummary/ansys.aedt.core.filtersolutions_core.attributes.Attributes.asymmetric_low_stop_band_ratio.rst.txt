@@ -1,0 +1,6 @@
+asymmetric\_low\_stop\_band\_ratio
+==================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.asymmetric_low_stop_band_ratio

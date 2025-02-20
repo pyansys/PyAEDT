@@ -1,0 +1,6 @@
+project\_datasets
+=================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.project_datasets

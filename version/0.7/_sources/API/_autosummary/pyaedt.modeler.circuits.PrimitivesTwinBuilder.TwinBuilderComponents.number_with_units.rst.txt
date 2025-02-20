@@ -1,0 +1,6 @@
+number\_with\_units
+===================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.number_with_units

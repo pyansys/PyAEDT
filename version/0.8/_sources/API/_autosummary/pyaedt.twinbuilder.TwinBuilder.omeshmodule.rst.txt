@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.omeshmodule

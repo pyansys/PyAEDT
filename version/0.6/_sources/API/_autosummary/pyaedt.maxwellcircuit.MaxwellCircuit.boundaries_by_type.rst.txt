@@ -1,0 +1,6 @@
+boundaries\_by\_type
+====================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.boundaries_by_type

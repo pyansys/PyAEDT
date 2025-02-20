@@ -1,0 +1,6 @@
+get\_fans\_operating\_point
+===========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.get_fans_operating_point

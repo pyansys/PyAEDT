@@ -1,0 +1,6 @@
+get\_objects\_by\_material
+==========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_objects_by_material

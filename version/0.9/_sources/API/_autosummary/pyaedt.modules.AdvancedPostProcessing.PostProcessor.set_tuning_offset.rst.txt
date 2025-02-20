@@ -1,0 +1,6 @@
+set\_tuning\_offset
+===================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.set_tuning_offset

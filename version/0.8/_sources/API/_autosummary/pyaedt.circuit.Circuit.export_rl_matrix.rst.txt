@@ -1,0 +1,6 @@
+export\_rl\_matrix
+==================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.export_rl_matrix

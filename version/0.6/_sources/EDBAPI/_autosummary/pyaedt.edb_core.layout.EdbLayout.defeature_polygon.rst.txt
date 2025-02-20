@@ -1,0 +1,6 @@
+defeature\_polygon
+==================
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. automethod:: EdbLayout.defeature_polygon

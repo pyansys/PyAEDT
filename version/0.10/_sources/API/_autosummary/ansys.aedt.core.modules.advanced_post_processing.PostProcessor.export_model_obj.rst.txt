@@ -1,0 +1,6 @@
+export\_model\_obj
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.export_model_obj

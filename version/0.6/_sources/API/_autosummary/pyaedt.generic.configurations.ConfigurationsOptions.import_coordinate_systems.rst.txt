@@ -1,0 +1,6 @@
+import\_coordinate\_systems
+===========================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_coordinate_systems

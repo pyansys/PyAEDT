@@ -1,0 +1,6 @@
+detach\_faces
+=============
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.detach_faces

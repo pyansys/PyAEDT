@@ -1,0 +1,58 @@
+﻿Components3DLayout
+==================
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoclass:: Components3DLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Components3DLayout.change_property
+      
+      
+      Components3DLayout.create_clearance_on_component
+      
+      
+      Components3DLayout.set_die_type
+      
+      
+      Components3DLayout.set_property_value
+      
+      
+      Components3DLayout.set_solderball
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Components3DLayout.absolute_angle
+      Components3DLayout.angle
+      Components3DLayout.bounding_box
+      Components3DLayout.die_enabled
+      Components3DLayout.die_type
+      Components3DLayout.enabled
+      Components3DLayout.location
+      Components3DLayout.lock_position
+      Components3DLayout.model
+      Components3DLayout.net_name
+      Components3DLayout.object_units
+      Components3DLayout.part
+      Components3DLayout.part_type
+      Components3DLayout.pins
+      Components3DLayout.placement_layer
+      Components3DLayout.solderball_enabled
+   
+   

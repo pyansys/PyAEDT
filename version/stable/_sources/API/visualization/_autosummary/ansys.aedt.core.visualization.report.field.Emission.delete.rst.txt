@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: Emission.delete

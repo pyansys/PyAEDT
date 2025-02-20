@@ -1,0 +1,6 @@
+get\_core\_loss\_coefficients
+=============================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: Material.get_core_loss_coefficients

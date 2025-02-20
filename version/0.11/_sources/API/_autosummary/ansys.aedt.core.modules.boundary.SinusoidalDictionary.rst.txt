@@ -1,0 +1,22 @@
+﻿SinusoidalDictionary
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoclass:: SinusoidalDictionary
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SinusoidalDictionary.props
+   
+   

@@ -1,0 +1,6 @@
+active\_setup
+=============
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.active_setup

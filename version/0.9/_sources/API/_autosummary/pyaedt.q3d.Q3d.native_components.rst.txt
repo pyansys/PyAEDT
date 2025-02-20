@@ -1,0 +1,6 @@
+native\_components
+==================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q3d.native_components

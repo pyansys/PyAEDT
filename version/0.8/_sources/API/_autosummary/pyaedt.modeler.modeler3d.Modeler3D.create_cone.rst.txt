@@ -1,0 +1,6 @@
+create\_cone
+============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.create_cone

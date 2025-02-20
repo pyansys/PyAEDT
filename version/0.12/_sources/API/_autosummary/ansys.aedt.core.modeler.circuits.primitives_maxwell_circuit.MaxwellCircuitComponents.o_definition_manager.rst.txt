@@ -1,0 +1,6 @@
+o\_definition\_manager
+======================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_maxwell_circuit
+
+.. autoproperty:: MaxwellCircuitComponents.o_definition_manager

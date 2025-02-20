@@ -1,0 +1,6 @@
+is\_visible\_shape
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layer.is_visible_shape

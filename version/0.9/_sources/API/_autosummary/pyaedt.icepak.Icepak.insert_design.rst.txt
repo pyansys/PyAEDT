@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.insert_design

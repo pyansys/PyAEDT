@@ -1,0 +1,6 @@
+odesign
+=======
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.odesign

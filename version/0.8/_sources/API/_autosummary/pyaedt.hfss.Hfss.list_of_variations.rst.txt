@@ -1,0 +1,6 @@
+list\_of\_variations
+====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.list_of_variations

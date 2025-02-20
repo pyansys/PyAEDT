@@ -1,0 +1,6 @@
+design\_options
+===============
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.design_options

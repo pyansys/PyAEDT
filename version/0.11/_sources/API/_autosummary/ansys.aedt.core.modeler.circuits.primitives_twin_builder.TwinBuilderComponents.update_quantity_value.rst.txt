@@ -1,0 +1,6 @@
+update\_quantity\_value
+=======================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_twin_builder
+
+.. automethod:: TwinBuilderComponents.update_quantity_value

@@ -1,0 +1,6 @@
+userlib
+=======
+
+.. currentmodule:: pyaedt.desktop
+
+.. autoproperty:: Desktop.userlib

@@ -1,0 +1,6 @@
+open\_edb\_after\_build
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfiguration.open_edb_after_build

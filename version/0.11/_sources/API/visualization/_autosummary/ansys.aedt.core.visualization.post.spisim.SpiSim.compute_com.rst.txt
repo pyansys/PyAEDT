@@ -1,0 +1,6 @@
+compute\_com
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.spisim
+
+.. automethod:: SpiSim.compute_com

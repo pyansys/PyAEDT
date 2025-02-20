@@ -1,0 +1,6 @@
+move
+====
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. automethod:: ModelerNexxim.move

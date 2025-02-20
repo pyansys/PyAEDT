@@ -1,0 +1,6 @@
+change\_material\_override
+==========================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.change_material_override

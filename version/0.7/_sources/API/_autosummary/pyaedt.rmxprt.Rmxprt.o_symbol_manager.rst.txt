@@ -1,0 +1,6 @@
+o\_symbol\_manager
+==================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.o_symbol_manager

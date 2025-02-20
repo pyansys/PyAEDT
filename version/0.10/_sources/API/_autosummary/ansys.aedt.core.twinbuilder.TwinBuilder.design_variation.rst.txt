@@ -1,0 +1,6 @@
+design\_variation
+=================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.design_variation

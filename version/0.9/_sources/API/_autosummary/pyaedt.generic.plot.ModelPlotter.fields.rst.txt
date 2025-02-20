@@ -1,0 +1,6 @@
+fields
+======
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. autoproperty:: ModelPlotter.fields

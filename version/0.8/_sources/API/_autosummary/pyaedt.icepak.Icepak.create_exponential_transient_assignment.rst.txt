@@ -1,0 +1,6 @@
+create\_exponential\_transient\_assignment
+==========================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_exponential_transient_assignment

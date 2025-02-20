@@ -1,0 +1,6 @@
+set\_auto\_open
+===============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.set_auto_open

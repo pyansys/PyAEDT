@@ -1,0 +1,6 @@
+substrate\_resistivity
+======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_substrate
+
+.. autoproperty:: DistributedSubstrate.substrate_resistivity

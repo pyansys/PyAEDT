@@ -1,0 +1,6 @@
+focal\_point
+============
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.focal_point

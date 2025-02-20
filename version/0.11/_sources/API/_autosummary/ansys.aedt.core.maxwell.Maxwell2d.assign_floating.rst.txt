@@ -1,0 +1,6 @@
+assign\_floating
+================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.assign_floating

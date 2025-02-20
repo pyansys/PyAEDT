@@ -1,0 +1,6 @@
+create\_setup
+=============
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.create_setup

@@ -1,0 +1,6 @@
+import\_gds\_3d
+===============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.import_gds_3d

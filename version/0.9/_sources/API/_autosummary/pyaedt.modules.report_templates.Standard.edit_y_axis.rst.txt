@@ -1,0 +1,6 @@
+edit\_y\_axis
+=============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Standard.edit_y_axis

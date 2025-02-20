@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.omeshmodule

@@ -1,0 +1,6 @@
+get\_ibis\_model\_from\_file
+============================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_ibis_model_from_file

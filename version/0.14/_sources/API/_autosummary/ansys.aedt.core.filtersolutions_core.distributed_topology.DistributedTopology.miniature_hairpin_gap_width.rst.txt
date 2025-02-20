@@ -1,0 +1,6 @@
+miniature\_hairpin\_gap\_width
+==============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.miniature_hairpin_gap_width

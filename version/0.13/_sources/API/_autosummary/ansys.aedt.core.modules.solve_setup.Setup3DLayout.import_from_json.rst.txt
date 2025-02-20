@@ -1,0 +1,6 @@
+import\_from\_json
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: Setup3DLayout.import_from_json

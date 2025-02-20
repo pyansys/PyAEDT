@@ -1,0 +1,6 @@
+bottom\_nodule\_radius
+======================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layer.bottom_nodule_radius

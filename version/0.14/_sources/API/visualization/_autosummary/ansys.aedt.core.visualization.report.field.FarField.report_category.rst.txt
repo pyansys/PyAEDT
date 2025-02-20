@@ -1,0 +1,6 @@
+report\_category
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. autoproperty:: FarField.report_category

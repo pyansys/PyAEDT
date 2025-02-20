@@ -1,0 +1,6 @@
+user\_lists
+===========
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. autoproperty:: Modeler3D.user_lists

@@ -1,0 +1,6 @@
+snap\_length\_threshold
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.snap_length_threshold

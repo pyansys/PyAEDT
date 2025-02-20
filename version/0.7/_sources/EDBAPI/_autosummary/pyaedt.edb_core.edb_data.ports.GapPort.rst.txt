@@ -1,0 +1,70 @@
+﻿GapPort
+=======
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoclass:: GapPort
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      GapPort.couple_ports
+      
+      
+      GapPort.delete
+      
+      
+      GapPort.get_edge_terminal_reference_primitive
+      
+      
+      GapPort.get_pad_edge_terminal_reference_pin
+      
+      
+      GapPort.get_padstack_terminal_reference_pin
+      
+      
+      GapPort.get_pin_group_terminal_reference_pin
+      
+      
+      GapPort.get_point_terminal_reference_primitive
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      GapPort.boundary_type
+      GapPort.component
+      GapPort.deembed
+      GapPort.do_renormalize
+      GapPort.hfss_type
+      GapPort.id
+      GapPort.impedance
+      GapPort.is_circuit_port
+      GapPort.is_null
+      GapPort.is_reference_terminal
+      GapPort.magnitude
+      GapPort.name
+      GapPort.net
+      GapPort.net_name
+      GapPort.phase
+      GapPort.ref_terminal
+      GapPort.reference_net_name
+      GapPort.reference_object
+      GapPort.renormalize
+      GapPort.renormalize_z0
+      GapPort.terminal_type
+      GapPort.type
+   
+   

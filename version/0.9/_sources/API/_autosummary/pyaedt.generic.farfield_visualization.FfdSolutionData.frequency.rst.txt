@@ -1,0 +1,6 @@
+frequency
+=========
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.frequency

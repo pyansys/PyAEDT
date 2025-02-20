@@ -1,0 +1,6 @@
+create\_rectangle
+=================
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. automethod:: EdbLayout.create_rectangle

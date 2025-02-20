@@ -1,0 +1,53 @@
+﻿Antenna
+=======
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.parts
+
+.. autoclass:: Antenna
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Antenna.do_rotate
+      
+      
+      Antenna.insert
+      
+      
+      Antenna.set_relative_cs
+      
+      
+      Antenna.zero_offset
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Antenna.allowed_keys
+      Antenna.cs_name
+      Antenna.file_name
+      Antenna.local_origin
+      Antenna.name
+      Antenna.params
+      Antenna.pitch
+      Antenna.pitch_name
+      Antenna.roll
+      Antenna.roll_name
+      Antenna.rot_cs_name
+      Antenna.rotate_origin
+      Antenna.yaw
+      Antenna.yaw_name
+   
+   

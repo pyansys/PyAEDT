@@ -1,0 +1,6 @@
+copy\_design\_from
+==================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.copy_design_from

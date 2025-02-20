@@ -1,0 +1,6 @@
+o\_symbol\_manager
+==================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.o_symbol_manager

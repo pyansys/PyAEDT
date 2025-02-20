@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.omeshmodule

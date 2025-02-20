@@ -1,0 +1,6 @@
+get\_dcir\_element\_data\_via
+=============================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_dcir_element_data_via

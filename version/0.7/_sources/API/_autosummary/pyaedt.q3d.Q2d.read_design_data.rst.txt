@@ -1,0 +1,6 @@
+read\_design\_data
+==================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.read_design_data

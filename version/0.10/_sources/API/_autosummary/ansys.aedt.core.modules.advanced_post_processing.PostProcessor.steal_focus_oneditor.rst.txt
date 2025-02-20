@@ -1,0 +1,6 @@
+steal\_focus\_oneditor
+======================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.steal_focus_oneditor

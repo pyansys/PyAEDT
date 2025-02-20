@@ -1,0 +1,6 @@
+save\_goals
+===========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.optimization_goals_table
+
+.. automethod:: OptimizationGoalsTable.save_goals

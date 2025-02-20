@@ -1,0 +1,6 @@
+configurations
+==============
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.configurations

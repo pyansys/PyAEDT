@@ -1,0 +1,6 @@
+sar\_setup
+==========
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.sar_setup

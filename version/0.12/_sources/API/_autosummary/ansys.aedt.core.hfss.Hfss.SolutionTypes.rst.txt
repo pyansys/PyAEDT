@@ -1,0 +1,6 @@
+SolutionTypes
+=============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. autoproperty:: Hfss.SolutionTypes

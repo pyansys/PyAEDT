@@ -1,0 +1,6 @@
+get\_all\_insertion\_loss\_list
+===============================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_all_insertion_loss_list

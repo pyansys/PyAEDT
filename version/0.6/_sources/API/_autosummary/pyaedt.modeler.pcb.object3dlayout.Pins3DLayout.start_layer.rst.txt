@@ -1,0 +1,6 @@
+start\_layer
+============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Pins3DLayout.start_layer

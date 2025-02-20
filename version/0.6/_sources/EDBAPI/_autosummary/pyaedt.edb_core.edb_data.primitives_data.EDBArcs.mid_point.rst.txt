@@ -1,0 +1,6 @@
+mid\_point
+==========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.primitives_data
+
+.. autoproperty:: EDBArcs.mid_point

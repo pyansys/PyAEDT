@@ -1,0 +1,6 @@
+ports
+=====
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.ports

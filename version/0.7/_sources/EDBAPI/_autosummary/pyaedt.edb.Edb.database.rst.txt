@@ -1,0 +1,6 @@
+database
+========
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.database

@@ -1,0 +1,6 @@
+create\_lna\_schematic\_from\_snp
+=================================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.create_lna_schematic_from_snp

@@ -1,0 +1,6 @@
+read\_design\_data
+==================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.read_design_data

@@ -1,0 +1,6 @@
+omatrix
+=======
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.omatrix

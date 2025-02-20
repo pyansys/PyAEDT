@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.release_desktop

@@ -1,0 +1,6 @@
+o\_symbol\_manager
+==================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.o_symbol_manager

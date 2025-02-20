@@ -1,0 +1,6 @@
+add\_layer
+==========
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. automethod:: Layers.add_layer

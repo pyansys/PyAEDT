@@ -1,0 +1,41 @@
+﻿NativeComponentObject
+=====================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoclass:: NativeComponentObject
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      NativeComponentObject.create
+      
+      
+      NativeComponentObject.delete
+      
+      
+      NativeComponentObject.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      NativeComponentObject.available_properties
+      NativeComponentObject.definition_name
+      NativeComponentObject.name
+      NativeComponentObject.object_properties
+      NativeComponentObject.targetcs
+   
+   

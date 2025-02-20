@@ -1,0 +1,88 @@
+﻿EdbPadstacks
+============
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. autoclass:: EdbPadstacks
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EdbPadstacks.check_and_fix_via_plating
+      
+      
+      EdbPadstacks.create
+      
+      
+      EdbPadstacks.create_circular_padstack
+      
+      
+      EdbPadstacks.create_coax_port
+      
+      
+      EdbPadstacks.delete_padstack_instances
+      
+      
+      EdbPadstacks.duplicate
+      
+      
+      EdbPadstacks.get_pad_parameters
+      
+      
+      EdbPadstacks.get_padstack_instance_by_net_name
+      
+      
+      EdbPadstacks.get_pinlist_from_component_and_net
+      
+      
+      EdbPadstacks.get_reference_pins
+      
+      
+      EdbPadstacks.get_via_instance_from_net
+      
+      
+      EdbPadstacks.int_to_geometry_type
+      
+      
+      EdbPadstacks.int_to_pad_type
+      
+      
+      EdbPadstacks.place
+      
+      
+      EdbPadstacks.remove_pads_from_padstack
+      
+      
+      EdbPadstacks.set_all_antipad_value
+      
+      
+      EdbPadstacks.set_pad_property
+      
+      
+      EdbPadstacks.set_solderball
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EdbPadstacks.db
+      EdbPadstacks.definitions
+      EdbPadstacks.instances
+      EdbPadstacks.pad_type
+      EdbPadstacks.pingroups
+      EdbPadstacks.pins
+      EdbPadstacks.vias
+   
+   

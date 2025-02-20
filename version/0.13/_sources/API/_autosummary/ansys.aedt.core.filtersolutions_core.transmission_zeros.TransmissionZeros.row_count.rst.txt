@@ -1,0 +1,6 @@
+row\_count
+==========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.transmission_zeros
+
+.. autoproperty:: TransmissionZeros.row_count

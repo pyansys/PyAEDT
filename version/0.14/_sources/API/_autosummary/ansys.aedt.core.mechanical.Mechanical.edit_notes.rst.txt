@@ -1,0 +1,6 @@
+edit\_notes
+===========
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.edit_notes

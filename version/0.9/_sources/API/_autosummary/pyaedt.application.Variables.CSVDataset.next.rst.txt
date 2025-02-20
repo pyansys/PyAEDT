@@ -1,0 +1,6 @@
+next
+====
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. automethod:: CSVDataset.next

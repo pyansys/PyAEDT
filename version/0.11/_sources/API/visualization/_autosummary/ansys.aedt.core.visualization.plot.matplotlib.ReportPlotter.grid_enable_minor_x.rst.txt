@@ -1,0 +1,6 @@
+grid\_enable\_minor\_x
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. autoproperty:: ReportPlotter.grid_enable_minor_x

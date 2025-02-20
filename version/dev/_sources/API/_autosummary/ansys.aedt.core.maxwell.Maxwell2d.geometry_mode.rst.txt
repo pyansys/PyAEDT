@@ -1,0 +1,6 @@
+geometry\_mode
+==============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.geometry_mode

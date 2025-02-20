@@ -1,0 +1,6 @@
+resize\_around\_element
+=======================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: Stackup3D.resize_around_element

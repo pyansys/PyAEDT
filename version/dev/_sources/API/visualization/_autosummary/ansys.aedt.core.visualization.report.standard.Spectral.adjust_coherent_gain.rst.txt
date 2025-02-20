@@ -1,0 +1,6 @@
+adjust\_coherent\_gain
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. autoproperty:: Spectral.adjust_coherent_gain

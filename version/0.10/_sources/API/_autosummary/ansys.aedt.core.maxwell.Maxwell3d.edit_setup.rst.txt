@@ -1,0 +1,6 @@
+edit\_setup
+===========
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.edit_setup

@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. autoproperty:: Modeler3D.logger

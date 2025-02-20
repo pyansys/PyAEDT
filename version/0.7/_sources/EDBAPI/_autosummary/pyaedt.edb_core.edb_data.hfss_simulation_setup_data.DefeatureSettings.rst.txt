@@ -1,0 +1,30 @@
+﻿DefeatureSettings
+=================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: DefeatureSettings
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      DefeatureSettings.defeature_abs_length
+      DefeatureSettings.defeature_ratio
+      DefeatureSettings.healing_option
+      DefeatureSettings.model_type
+      DefeatureSettings.remove_floating_geometry
+      DefeatureSettings.small_void_area
+      DefeatureSettings.union_polygons
+      DefeatureSettings.use_defeature
+      DefeatureSettings.use_defeature_abs_length
+   
+   

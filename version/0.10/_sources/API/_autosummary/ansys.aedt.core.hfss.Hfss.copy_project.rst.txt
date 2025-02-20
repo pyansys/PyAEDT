@@ -1,0 +1,6 @@
+copy\_project
+=============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.copy_project

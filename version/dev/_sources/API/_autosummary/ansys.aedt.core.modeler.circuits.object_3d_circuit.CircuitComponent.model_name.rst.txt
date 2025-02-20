@@ -1,0 +1,6 @@
+model\_name
+===========
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.object_3d_circuit
+
+.. autoproperty:: CircuitComponent.model_name

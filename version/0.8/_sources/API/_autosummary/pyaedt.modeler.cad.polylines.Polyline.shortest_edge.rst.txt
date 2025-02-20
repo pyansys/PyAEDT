@@ -1,0 +1,6 @@
+shortest\_edge
+==============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.shortest_edge

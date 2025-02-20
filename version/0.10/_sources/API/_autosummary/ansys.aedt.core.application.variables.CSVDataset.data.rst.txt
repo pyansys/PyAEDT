@@ -1,0 +1,6 @@
+data
+====
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: CSVDataset.data

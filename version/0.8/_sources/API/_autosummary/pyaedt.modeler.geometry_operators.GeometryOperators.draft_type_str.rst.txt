@@ -1,0 +1,6 @@
+draft\_type\_str
+================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.draft_type_str

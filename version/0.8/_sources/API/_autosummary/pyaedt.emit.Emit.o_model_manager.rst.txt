@@ -1,0 +1,6 @@
+o\_model\_manager
+=================
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.o_model_manager

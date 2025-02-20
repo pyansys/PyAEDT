@@ -1,0 +1,66 @@
+﻿WavePort
+========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoclass:: WavePort
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      WavePort.couple_ports
+      
+      
+      WavePort.get_edge_terminal_reference_primitive
+      
+      
+      WavePort.get_pad_edge_terminal_reference_pin
+      
+      
+      WavePort.get_padstack_terminal_reference_pin
+      
+      
+      WavePort.get_pin_group_terminal_reference_pin
+      
+      
+      WavePort.get_point_terminal_reference_primitive
+      
+      
+      WavePort.is_null
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      WavePort.boundary_type
+      WavePort.component
+      WavePort.deembed
+      WavePort.deembed_length
+      WavePort.do_renormalize
+      WavePort.hfss_type
+      WavePort.horizontal_extent_factor
+      WavePort.impedance
+      WavePort.is_circuit_port
+      WavePort.name
+      WavePort.net
+      WavePort.net_name
+      WavePort.pec_launch_width
+      WavePort.radial_extent_factor
+      WavePort.reference_net_name
+      WavePort.reference_object
+      WavePort.terminal_type
+      WavePort.vertical_extent_factor
+   
+   

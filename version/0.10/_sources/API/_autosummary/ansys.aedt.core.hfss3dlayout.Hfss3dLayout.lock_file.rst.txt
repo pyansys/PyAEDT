@@ -1,0 +1,6 @@
+lock\_file
+==========
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.lock_file

@@ -1,0 +1,6 @@
+set\_temporary\_directory
+=========================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.set_temporary_directory

@@ -1,0 +1,6 @@
+nominal\_adaptive
+=================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.nominal_adaptive

@@ -1,0 +1,6 @@
+init\_solutions\_data
+=====================
+
+.. currentmodule:: ansys.aedt.core.modules.solutions
+
+.. automethod:: SolutionData.init_solutions_data

@@ -1,0 +1,6 @@
+calculate\_radius\_2D
+=====================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.calculate_radius_2D

@@ -1,0 +1,6 @@
+native\_components
+==================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.native_components

@@ -1,0 +1,6 @@
+equal\_stub\_widths
+===================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.equal_stub_widths

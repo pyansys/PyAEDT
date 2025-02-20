@@ -1,0 +1,6 @@
+add\_mesh\_link
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupHFSS.add_mesh_link

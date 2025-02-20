@@ -1,0 +1,6 @@
+get\_through\_resistor\_list
+============================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.get_through_resistor_list

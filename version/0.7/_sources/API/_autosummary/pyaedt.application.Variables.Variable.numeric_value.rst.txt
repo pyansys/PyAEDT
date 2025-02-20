@@ -1,0 +1,6 @@
+numeric\_value
+==============
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.numeric_value

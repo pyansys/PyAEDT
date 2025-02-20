@@ -1,0 +1,6 @@
+duplicate\_around\_axis
+=======================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.duplicate_around_axis

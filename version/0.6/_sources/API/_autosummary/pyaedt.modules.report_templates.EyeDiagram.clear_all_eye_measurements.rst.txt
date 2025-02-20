@@ -1,0 +1,6 @@
+clear\_all\_eye\_measurements
+=============================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: EyeDiagram.clear_all_eye_measurements

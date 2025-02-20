@@ -1,0 +1,6 @@
+project\_path
+=============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.project_path

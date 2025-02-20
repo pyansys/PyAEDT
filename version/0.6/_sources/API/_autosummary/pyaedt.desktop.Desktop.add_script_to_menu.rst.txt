@@ -1,0 +1,6 @@
+add\_script\_to\_menu
+=====================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.add_script_to_menu

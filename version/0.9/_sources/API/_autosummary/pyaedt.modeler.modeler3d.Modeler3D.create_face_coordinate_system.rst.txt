@@ -1,0 +1,6 @@
+create\_face\_coordinate\_system
+================================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.create_face_coordinate_system

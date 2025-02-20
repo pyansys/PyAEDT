@@ -1,0 +1,6 @@
+data\_magnitude
+===============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.data_magnitude

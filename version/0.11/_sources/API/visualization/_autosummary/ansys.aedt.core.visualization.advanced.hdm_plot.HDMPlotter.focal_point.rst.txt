@@ -1,0 +1,6 @@
+focal\_point
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. autoproperty:: HDMPlotter.focal_point

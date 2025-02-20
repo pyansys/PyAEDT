@@ -1,0 +1,6 @@
+get\_solution\_data
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: Setup3DLayout.get_solution_data

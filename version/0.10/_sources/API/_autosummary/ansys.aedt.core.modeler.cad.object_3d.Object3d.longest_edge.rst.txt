@@ -1,0 +1,6 @@
+longest\_edge
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. automethod:: Object3d.longest_edge

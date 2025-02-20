@@ -1,0 +1,6 @@
+add\_from\_file
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.design_xploration
+
+.. automethod:: ParametricSetups.add_from_file

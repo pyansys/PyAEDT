@@ -1,0 +1,6 @@
+update\_object
+==============
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.update_object

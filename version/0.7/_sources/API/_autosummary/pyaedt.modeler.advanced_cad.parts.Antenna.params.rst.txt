@@ -1,0 +1,6 @@
+params
+======
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.parts
+
+.. autoproperty:: Antenna.params

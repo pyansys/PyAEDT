@@ -1,0 +1,6 @@
+oboundary
+=========
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.oboundary

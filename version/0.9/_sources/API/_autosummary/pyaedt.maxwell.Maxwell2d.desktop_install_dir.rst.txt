@@ -1,0 +1,6 @@
+desktop\_install\_dir
+=====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.desktop_install_dir

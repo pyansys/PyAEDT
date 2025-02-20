@@ -1,0 +1,6 @@
+duplicate\_and\_mirror
+======================
+
+.. currentmodule:: pyaedt.modeler.cad.components_3d
+
+.. automethod:: UserDefinedComponent.duplicate_and_mirror

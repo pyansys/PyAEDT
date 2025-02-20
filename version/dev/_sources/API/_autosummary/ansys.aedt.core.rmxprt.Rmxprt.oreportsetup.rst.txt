@@ -1,0 +1,6 @@
+oreportsetup
+============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.oreportsetup

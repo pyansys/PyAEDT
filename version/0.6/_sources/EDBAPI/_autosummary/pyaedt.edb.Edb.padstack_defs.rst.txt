@@ -1,0 +1,6 @@
+padstack\_defs
+==============
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.padstack_defs

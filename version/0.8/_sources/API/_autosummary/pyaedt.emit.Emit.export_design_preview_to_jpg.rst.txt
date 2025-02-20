@@ -1,0 +1,6 @@
+export\_design\_preview\_to\_jpg
+================================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.export_design_preview_to_jpg

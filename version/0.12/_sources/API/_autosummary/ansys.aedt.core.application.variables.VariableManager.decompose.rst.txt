@@ -1,0 +1,6 @@
+decompose
+=========
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. automethod:: VariableManager.decompose

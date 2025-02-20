@@ -1,0 +1,6 @@
+import\_gds\_3d
+===============
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.import_gds_3d

@@ -1,0 +1,6 @@
+lock\_file
+==========
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.lock_file

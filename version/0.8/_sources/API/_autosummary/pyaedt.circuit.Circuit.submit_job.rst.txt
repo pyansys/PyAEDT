@@ -1,0 +1,6 @@
+submit\_job
+===========
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.submit_job

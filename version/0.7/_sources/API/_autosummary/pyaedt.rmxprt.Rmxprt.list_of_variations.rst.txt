@@ -1,0 +1,6 @@
+list\_of\_variations
+====================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.list_of_variations

@@ -1,0 +1,6 @@
+create\_periodic\_waveform\_source
+==================================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.create_periodic_waveform_source

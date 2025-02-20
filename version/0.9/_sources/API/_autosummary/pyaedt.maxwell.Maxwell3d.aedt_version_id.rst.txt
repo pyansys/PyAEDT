@@ -1,0 +1,6 @@
+aedt\_version\_id
+=================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.aedt_version_id

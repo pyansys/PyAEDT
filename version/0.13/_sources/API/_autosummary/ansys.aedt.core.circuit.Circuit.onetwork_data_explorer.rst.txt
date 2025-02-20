@@ -1,0 +1,6 @@
+onetwork\_data\_explorer
+========================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.onetwork_data_explorer

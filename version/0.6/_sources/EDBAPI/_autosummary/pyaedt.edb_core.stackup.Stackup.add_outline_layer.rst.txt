@@ -1,0 +1,6 @@
+add\_outline\_layer
+===================
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. automethod:: Stackup.add_outline_layer

@@ -1,0 +1,6 @@
+ooutput\_variable
+=================
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.ooutput_variable

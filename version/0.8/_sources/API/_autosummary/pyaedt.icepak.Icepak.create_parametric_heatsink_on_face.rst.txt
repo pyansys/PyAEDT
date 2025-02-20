@@ -1,0 +1,6 @@
+create\_parametric\_heatsink\_on\_face
+======================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_parametric_heatsink_on_face

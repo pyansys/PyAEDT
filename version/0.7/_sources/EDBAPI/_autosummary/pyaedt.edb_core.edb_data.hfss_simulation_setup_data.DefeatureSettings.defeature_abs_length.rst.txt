@@ -1,0 +1,6 @@
+defeature\_abs\_length
+======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: DefeatureSettings.defeature_abs_length

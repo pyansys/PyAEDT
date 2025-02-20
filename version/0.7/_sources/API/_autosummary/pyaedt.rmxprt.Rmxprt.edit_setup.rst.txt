@@ -1,0 +1,6 @@
+edit\_setup
+===========
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.edit_setup

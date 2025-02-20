@@ -1,0 +1,6 @@
+roll\_name
+==========
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.actors
+
+.. autoproperty:: Vehicle.roll_name

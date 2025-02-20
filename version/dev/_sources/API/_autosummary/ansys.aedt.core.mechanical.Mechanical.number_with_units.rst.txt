@@ -1,0 +1,6 @@
+number\_with\_units
+===================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.number_with_units

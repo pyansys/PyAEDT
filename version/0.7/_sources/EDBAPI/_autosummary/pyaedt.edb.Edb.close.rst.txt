@@ -1,0 +1,6 @@
+close
+=====
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.close

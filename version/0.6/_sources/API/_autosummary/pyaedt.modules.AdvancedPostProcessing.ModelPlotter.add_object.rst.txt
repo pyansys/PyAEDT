@@ -1,0 +1,6 @@
+add\_object
+===========
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: ModelPlotter.add_object

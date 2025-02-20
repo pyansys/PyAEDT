@@ -1,0 +1,6 @@
+create\_voltage\_source\_from\_objects
+======================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_voltage_source_from_objects

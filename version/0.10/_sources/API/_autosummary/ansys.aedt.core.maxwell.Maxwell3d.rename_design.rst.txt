@@ -1,0 +1,6 @@
+rename\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.rename_design

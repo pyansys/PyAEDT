@@ -1,0 +1,6 @@
+create\_current\_source\_on\_pin
+================================
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. automethod:: EdbSiwave.create_current_source_on_pin

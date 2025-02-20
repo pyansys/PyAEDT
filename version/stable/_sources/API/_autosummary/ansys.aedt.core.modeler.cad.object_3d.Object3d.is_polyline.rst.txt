@@ -1,0 +1,6 @@
+is\_polyline
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. autoproperty:: Object3d.is_polyline

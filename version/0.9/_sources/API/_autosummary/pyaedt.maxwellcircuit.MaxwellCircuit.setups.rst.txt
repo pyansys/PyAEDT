@@ -1,0 +1,6 @@
+setups
+======
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.setups

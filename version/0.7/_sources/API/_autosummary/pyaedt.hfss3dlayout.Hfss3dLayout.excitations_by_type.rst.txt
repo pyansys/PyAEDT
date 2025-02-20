@@ -1,0 +1,6 @@
+excitations\_by\_type
+=====================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.excitations_by_type

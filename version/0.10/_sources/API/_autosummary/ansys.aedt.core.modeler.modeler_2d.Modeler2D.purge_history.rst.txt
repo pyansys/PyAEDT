@@ -1,0 +1,6 @@
+purge\_history
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.purge_history

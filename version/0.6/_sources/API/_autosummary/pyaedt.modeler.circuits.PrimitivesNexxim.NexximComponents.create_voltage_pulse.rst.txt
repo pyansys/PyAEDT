@@ -1,0 +1,6 @@
+create\_voltage\_pulse
+======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_voltage_pulse

@@ -1,0 +1,6 @@
+segment\_types
+==============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.segment_types

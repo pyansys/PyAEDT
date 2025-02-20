@@ -1,0 +1,6 @@
+project\_datasets
+=================
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.project_datasets

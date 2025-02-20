@@ -1,0 +1,6 @@
+odefinition\_manager
+====================
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.odefinition_manager

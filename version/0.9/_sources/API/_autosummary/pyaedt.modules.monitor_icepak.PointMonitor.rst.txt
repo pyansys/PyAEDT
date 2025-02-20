@@ -1,0 +1,40 @@
+﻿PointMonitor
+============
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. autoclass:: PointMonitor
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      PointMonitor.delete
+      
+      
+      PointMonitor.value
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      PointMonitor.geometry_assignment
+      PointMonitor.id
+      PointMonitor.location
+      PointMonitor.name
+      PointMonitor.properties
+      PointMonitor.quantities
+      PointMonitor.type
+   
+   

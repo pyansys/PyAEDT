@@ -1,0 +1,6 @@
+get\_oo\_name
+=============
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_oo_name

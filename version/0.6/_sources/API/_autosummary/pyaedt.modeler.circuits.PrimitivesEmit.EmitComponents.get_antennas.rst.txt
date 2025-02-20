@@ -1,0 +1,6 @@
+get\_antennas
+=============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesEmit
+
+.. automethod:: EmitComponents.get_antennas

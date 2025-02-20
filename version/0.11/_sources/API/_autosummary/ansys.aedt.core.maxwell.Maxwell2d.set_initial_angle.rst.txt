@@ -1,0 +1,6 @@
+set\_initial\_angle
+===================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.set_initial_angle

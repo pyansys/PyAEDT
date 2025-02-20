@@ -1,0 +1,6 @@
+activate\_variable\_optimization
+================================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.activate_variable_optimization

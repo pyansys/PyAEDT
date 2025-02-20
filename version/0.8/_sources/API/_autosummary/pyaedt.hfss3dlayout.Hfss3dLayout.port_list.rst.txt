@@ -1,0 +1,6 @@
+port\_list
+==========
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.port_list

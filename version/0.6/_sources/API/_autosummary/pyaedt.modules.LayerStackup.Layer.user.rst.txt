@@ -1,0 +1,6 @@
+user
+====
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.user

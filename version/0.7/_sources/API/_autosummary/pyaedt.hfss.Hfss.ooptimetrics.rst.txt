@@ -1,0 +1,6 @@
+ooptimetrics
+============
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.ooptimetrics

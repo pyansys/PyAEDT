@@ -1,0 +1,6 @@
+assign\_em\_losses
+==================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.assign_em_losses

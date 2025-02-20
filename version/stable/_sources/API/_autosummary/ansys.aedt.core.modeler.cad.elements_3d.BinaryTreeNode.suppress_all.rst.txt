@@ -1,0 +1,6 @@
+suppress\_all
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. automethod:: BinaryTreeNode.suppress_all

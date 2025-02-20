@@ -1,0 +1,6 @@
+maximum\_frequency
+==================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.graph_setup
+
+.. autoproperty:: GraphSetup.maximum_frequency

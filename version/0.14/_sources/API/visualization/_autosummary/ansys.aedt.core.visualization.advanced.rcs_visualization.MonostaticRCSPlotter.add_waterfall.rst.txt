@@ -1,0 +1,6 @@
+add\_waterfall
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. automethod:: MonostaticRCSPlotter.add_waterfall

@@ -1,0 +1,6 @@
+is\_negative
+============
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.is_negative

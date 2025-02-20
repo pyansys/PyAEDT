@@ -1,0 +1,6 @@
+get\_traces\_for\_plot
+======================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_traces_for_plot

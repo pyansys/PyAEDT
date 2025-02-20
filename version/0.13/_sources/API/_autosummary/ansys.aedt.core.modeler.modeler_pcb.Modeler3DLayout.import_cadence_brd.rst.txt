@@ -1,0 +1,6 @@
+import\_cadence\_brd
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. automethod:: Modeler3DLayout.import_cadence_brd

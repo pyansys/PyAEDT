@@ -1,0 +1,6 @@
+validate\_simple
+================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.validate_simple

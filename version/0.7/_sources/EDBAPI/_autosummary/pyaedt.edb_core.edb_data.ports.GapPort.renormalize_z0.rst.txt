@@ -1,0 +1,6 @@
+renormalize\_z0
+===============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoproperty:: GapPort.renormalize_z0

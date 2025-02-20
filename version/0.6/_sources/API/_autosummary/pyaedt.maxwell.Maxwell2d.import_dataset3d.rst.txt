@@ -1,0 +1,6 @@
+import\_dataset3d
+=================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.import_dataset3d

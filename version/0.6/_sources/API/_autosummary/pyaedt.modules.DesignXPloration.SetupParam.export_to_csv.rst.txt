@@ -1,0 +1,6 @@
+export\_to\_csv
+===============
+
+.. currentmodule:: pyaedt.modules.DesignXPloration
+
+.. automethod:: SetupParam.export_to_csv

@@ -1,0 +1,6 @@
+create\_model\_from\_touchstone
+===============================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.create_model_from_touchstone

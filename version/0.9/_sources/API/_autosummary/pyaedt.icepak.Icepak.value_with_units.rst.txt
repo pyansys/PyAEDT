@@ -1,0 +1,6 @@
+value\_with\_units
+==================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.value_with_units

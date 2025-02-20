@@ -1,0 +1,6 @@
+get\_gas\_objects
+=================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_gas_objects

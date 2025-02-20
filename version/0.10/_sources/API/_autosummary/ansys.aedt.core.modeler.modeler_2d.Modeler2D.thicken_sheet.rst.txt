@@ -1,0 +1,6 @@
+thicken\_sheet
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.thicken_sheet

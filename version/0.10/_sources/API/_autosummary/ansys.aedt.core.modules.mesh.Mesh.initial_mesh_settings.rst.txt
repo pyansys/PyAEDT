@@ -1,0 +1,6 @@
+initial\_mesh\_settings
+=======================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. autoproperty:: Mesh.initial_mesh_settings

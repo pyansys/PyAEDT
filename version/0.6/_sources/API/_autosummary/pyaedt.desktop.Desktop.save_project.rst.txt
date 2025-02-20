@@ -1,0 +1,6 @@
+save\_project
+=============
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.save_project

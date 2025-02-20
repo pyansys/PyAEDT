@@ -1,0 +1,6 @@
+available\_variations
+=====================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.available_variations

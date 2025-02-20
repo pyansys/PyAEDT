@@ -1,0 +1,6 @@
+src\_dir
+========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.src_dir

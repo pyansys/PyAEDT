@@ -1,0 +1,6 @@
+enable\_expression\_cache
+=========================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupQ3D.enable_expression_cache

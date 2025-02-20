@@ -1,0 +1,6 @@
+create\_clearance\_on\_component
+================================
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. automethod:: Rect3dLayout.create_clearance_on_component

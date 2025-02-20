@@ -1,0 +1,6 @@
+circuit\_parameter
+==================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.circuit_parameter

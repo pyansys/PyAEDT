@@ -1,0 +1,6 @@
+import\_3d\_cad
+===============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.import_3d_cad

@@ -1,0 +1,6 @@
+nodes
+=====
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: NetworkObject.nodes

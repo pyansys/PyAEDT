@@ -1,0 +1,6 @@
+tab\_name
+=========
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_maxwell_circuit
+
+.. autoproperty:: MaxwellCircuitComponents.tab_name

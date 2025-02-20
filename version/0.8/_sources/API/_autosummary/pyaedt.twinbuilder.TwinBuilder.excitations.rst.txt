@@ -1,0 +1,6 @@
+excitations
+===========
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.excitations

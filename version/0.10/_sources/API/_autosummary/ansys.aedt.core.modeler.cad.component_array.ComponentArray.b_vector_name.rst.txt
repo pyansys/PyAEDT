@@ -1,0 +1,6 @@
+b\_vector\_name
+===============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.b_vector_name

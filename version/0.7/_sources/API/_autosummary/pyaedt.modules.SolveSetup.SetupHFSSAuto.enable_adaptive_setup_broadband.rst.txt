@@ -1,0 +1,6 @@
+enable\_adaptive\_setup\_broadband
+==================================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSSAuto.enable_adaptive_setup_broadband

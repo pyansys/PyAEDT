@@ -1,0 +1,6 @@
+full\_matrix\_mag\_phase
+========================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: SolutionData.full_matrix_mag_phase

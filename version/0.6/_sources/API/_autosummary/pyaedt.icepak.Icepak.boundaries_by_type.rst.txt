@@ -1,0 +1,6 @@
+boundaries\_by\_type
+====================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.boundaries_by_type

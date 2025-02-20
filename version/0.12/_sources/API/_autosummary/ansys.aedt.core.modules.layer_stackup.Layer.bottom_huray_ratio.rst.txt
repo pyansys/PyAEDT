@@ -1,0 +1,6 @@
+bottom\_huray\_ratio
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layer.bottom_huray_ratio

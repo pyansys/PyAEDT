@@ -1,0 +1,24 @@
+﻿Parser
+======
+
+.. currentmodule:: ansys.aedt.core.sbrplus.hdm_parser
+
+.. autoclass:: Parser
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Parser.parse_message
+      
+   
+   
+
+   
+   
+   

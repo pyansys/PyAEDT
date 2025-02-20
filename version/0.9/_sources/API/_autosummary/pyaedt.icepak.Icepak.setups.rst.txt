@@ -1,0 +1,6 @@
+setups
+======
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.setups

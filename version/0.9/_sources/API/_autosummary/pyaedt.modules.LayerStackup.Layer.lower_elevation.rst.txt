@@ -1,0 +1,6 @@
+lower\_elevation
+================
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.lower_elevation

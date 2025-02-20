@@ -1,0 +1,6 @@
+b\_length
+=========
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.b_length

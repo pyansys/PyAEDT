@@ -1,0 +1,6 @@
+activate\_variable\_statistical
+===============================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.activate_variable_statistical

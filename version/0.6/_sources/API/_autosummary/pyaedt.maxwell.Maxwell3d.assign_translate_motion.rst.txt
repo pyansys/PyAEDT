@@ -1,0 +1,6 @@
+assign\_translate\_motion
+=========================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_translate_motion

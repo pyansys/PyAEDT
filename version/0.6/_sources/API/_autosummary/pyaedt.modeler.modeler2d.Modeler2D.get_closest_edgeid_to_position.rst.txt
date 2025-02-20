@@ -1,0 +1,6 @@
+get\_closest\_edgeid\_to\_position
+==================================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.get_closest_edgeid_to_position

@@ -1,0 +1,6 @@
+thicken\_port\_sheets
+=====================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.thicken_port_sheets

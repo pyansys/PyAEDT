@@ -1,0 +1,6 @@
+preserve\_partner\_solution
+===========================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoproperty:: NativeComponentPCB.preserve_partner_solution

@@ -1,0 +1,6 @@
+enable
+======
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupQ3D.enable

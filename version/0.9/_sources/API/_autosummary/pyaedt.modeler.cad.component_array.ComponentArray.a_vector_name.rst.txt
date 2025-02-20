@@ -1,0 +1,6 @@
+a\_vector\_name
+===============
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.a_vector_name

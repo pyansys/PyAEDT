@@ -1,0 +1,6 @@
+hide\_legend
+============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: NearField.hide_legend

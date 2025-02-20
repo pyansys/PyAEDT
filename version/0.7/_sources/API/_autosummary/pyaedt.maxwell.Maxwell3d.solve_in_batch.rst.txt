@@ -1,0 +1,6 @@
+solve\_in\_batch
+================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.solve_in_batch

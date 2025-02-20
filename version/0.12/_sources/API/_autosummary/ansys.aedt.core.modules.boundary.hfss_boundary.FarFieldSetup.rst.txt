@@ -1,0 +1,72 @@
+﻿FarFieldSetup
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.hfss_boundary
+
+.. autoclass:: FarFieldSetup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FarFieldSetup.create
+      
+      
+      FarFieldSetup.delete
+      
+      
+      FarFieldSetup.jsonalize_tree
+      
+      
+      FarFieldSetup.suppress_all
+      
+      
+      FarFieldSetup.unsuppress_all
+      
+      
+      FarFieldSetup.update
+      
+      
+      FarFieldSetup.update_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      FarFieldSetup.available_properties
+      FarFieldSetup.azimuth_start
+      FarFieldSetup.azimuth_step
+      FarFieldSetup.azimuth_stop
+      FarFieldSetup.command
+      FarFieldSetup.custom_radiation_surface
+      FarFieldSetup.definition
+      FarFieldSetup.elevation_start
+      FarFieldSetup.elevation_step
+      FarFieldSetup.elevation_stop
+      FarFieldSetup.local_coordinate_system
+      FarFieldSetup.name
+      FarFieldSetup.phi_start
+      FarFieldSetup.phi_step
+      FarFieldSetup.phi_stop
+      FarFieldSetup.polarization
+      FarFieldSetup.properties
+      FarFieldSetup.props
+      FarFieldSetup.slant_angle
+      FarFieldSetup.theta_start
+      FarFieldSetup.theta_step
+      FarFieldSetup.theta_stop
+      FarFieldSetup.use_custom_radiation_surface
+      FarFieldSetup.use_local_coordinate_system
+   
+   

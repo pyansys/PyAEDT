@@ -1,0 +1,6 @@
+add\_limit\_line\_from\_points
+==============================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Standard.add_limit_line_from_points

@@ -1,0 +1,6 @@
+read\_only
+==========
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.read_only

@@ -1,0 +1,6 @@
+oimport\_export
+===============
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.oimport_export

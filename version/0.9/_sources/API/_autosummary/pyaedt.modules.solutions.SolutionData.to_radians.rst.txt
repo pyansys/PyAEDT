@@ -1,0 +1,6 @@
+to\_radians
+===========
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.to_radians

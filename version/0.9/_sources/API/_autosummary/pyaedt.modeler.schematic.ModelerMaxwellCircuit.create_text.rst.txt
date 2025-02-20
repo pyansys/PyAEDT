@@ -1,0 +1,6 @@
+create\_text
+============
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. automethod:: ModelerMaxwellCircuit.create_text

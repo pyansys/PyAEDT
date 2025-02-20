@@ -1,0 +1,6 @@
+get\_nominal\_variation
+=======================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.get_nominal_variation

@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.load_project

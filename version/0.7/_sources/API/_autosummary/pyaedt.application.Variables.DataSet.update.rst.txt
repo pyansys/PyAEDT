@@ -1,0 +1,6 @@
+update
+======
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. automethod:: DataSet.update

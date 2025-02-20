@@ -1,0 +1,6 @@
+project\_path
+=============
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.project_path

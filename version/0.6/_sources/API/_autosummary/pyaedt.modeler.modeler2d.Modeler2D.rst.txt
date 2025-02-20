@@ -1,0 +1,485 @@
+﻿Modeler2D
+=========
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. autoclass:: Modeler2D
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Modeler2D.add_new_objects
+      
+      
+      Modeler2D.add_new_user_defined_component
+      
+      
+      Modeler2D.automatic_thicken_sheets
+      
+      
+      Modeler2D.break_spaceclaim_connection
+      
+      
+      Modeler2D.calculate_radius_2D
+      
+      
+      Modeler2D.chassis_subtraction
+      
+      
+      Modeler2D.check_plane
+      
+      
+      Modeler2D.clean_objects_name
+      
+      
+      Modeler2D.cleanup_objects
+      
+      
+      Modeler2D.clone
+      
+      
+      Modeler2D.connect
+      
+      
+      Modeler2D.convert_to_selections
+      
+      
+      Modeler2D.copy
+      
+      
+      Modeler2D.cover_faces
+      
+      
+      Modeler2D.cover_lines
+      
+      
+      Modeler2D.create_air_region
+      
+      
+      Modeler2D.create_airbox
+      
+      
+      Modeler2D.create_circle
+      
+      
+      Modeler2D.create_coordinate_system
+      
+      
+      Modeler2D.create_ellipse
+      
+      
+      Modeler2D.create_face_coordinate_system
+      
+      
+      Modeler2D.create_face_list
+      
+      
+      Modeler2D.create_faceted_bondwire_from_true_surface
+      
+      
+      Modeler2D.create_group
+      
+      
+      Modeler2D.create_object_coordinate_system
+      
+      
+      Modeler2D.create_object_from_edge
+      
+      
+      Modeler2D.create_object_from_face
+      
+      
+      Modeler2D.create_object_list
+      
+      
+      Modeler2D.create_outer_facelist
+      
+      
+      Modeler2D.create_plane
+      
+      
+      Modeler2D.create_point
+      
+      
+      Modeler2D.create_polyline
+      
+      
+      Modeler2D.create_rectangle
+      
+      
+      Modeler2D.create_region
+      
+      
+      Modeler2D.create_regular_polygon
+      
+      
+      Modeler2D.create_sheet_to_ground
+      
+      
+      Modeler2D.create_spiral_on_face
+      
+      
+      Modeler2D.create_udp
+      
+      
+      Modeler2D.delete
+      
+      
+      Modeler2D.delete_objects_containing
+      
+      
+      Modeler2D.does_object_exists
+      
+      
+      Modeler2D.duplicate_along_line
+      
+      
+      Modeler2D.duplicate_and_mirror
+      
+      
+      Modeler2D.duplicate_around_axis
+      
+      
+      Modeler2D.duplicate_coordinate_system_to_global
+      
+      
+      Modeler2D.edit_region_dimensions
+      
+      
+      Modeler2D.explicitly_subtract
+      
+      
+      Modeler2D.find_closest_edges
+      
+      
+      Modeler2D.find_new_objects
+      
+      
+      Modeler2D.find_point_around
+      
+      
+      Modeler2D.find_port_faces
+      
+      
+      Modeler2D.fit_all
+      
+      
+      Modeler2D.flatten_assembly
+      
+      
+      Modeler2D.generate_object_history
+      
+      
+      Modeler2D.get_bodynames_from_position
+      
+      
+      Modeler2D.get_boundaries_name
+      
+      
+      Modeler2D.get_bounding_dimension
+      
+      
+      Modeler2D.get_closest_edgeid_to_position
+      
+      
+      Modeler2D.get_edge_length
+      
+      
+      Modeler2D.get_edge_midpoint
+      
+      
+      Modeler2D.get_edge_vertices
+      
+      
+      Modeler2D.get_edgeid_from_position
+      
+      
+      Modeler2D.get_edgeids_from_vertexid
+      
+      
+      Modeler2D.get_edges_for_circuit_port
+      
+      
+      Modeler2D.get_edges_for_circuit_port_from_sheet
+      
+      
+      Modeler2D.get_edges_on_bounding_box
+      
+      
+      Modeler2D.get_entitylist_id
+      
+      
+      Modeler2D.get_equivalent_parallel_edges
+      
+      
+      Modeler2D.get_existing_polyline
+      
+      
+      Modeler2D.get_face_area
+      
+      
+      Modeler2D.get_face_by_id
+      
+      
+      Modeler2D.get_face_center
+      
+      
+      Modeler2D.get_face_edges
+      
+      
+      Modeler2D.get_face_vertices
+      
+      
+      Modeler2D.get_faceid_from_position
+      
+      
+      Modeler2D.get_faces_from_materials
+      
+      
+      Modeler2D.get_group_bounding_box
+      
+      
+      Modeler2D.get_line_ids
+      
+      
+      Modeler2D.get_matched_object_name
+      
+      
+      Modeler2D.get_mid_points_on_dir
+      
+      
+      Modeler2D.get_model_bounding_box
+      
+      
+      Modeler2D.get_obj_id
+      
+      
+      Modeler2D.get_object_edges
+      
+      
+      Modeler2D.get_object_faces
+      
+      
+      Modeler2D.get_object_from_name
+      
+      
+      Modeler2D.get_object_name_from_edge_id
+      
+      
+      Modeler2D.get_object_vertices
+      
+      
+      Modeler2D.get_objects_by_material
+      
+      
+      Modeler2D.get_objects_in_group
+      
+      
+      Modeler2D.get_objects_w_string
+      
+      
+      Modeler2D.get_solving_volume
+      
+      
+      Modeler2D.get_vertex_position
+      
+      
+      Modeler2D.get_vertices_of_line
+      
+      
+      Modeler2D.global_to_cs
+      
+      
+      Modeler2D.heal_objects
+      
+      
+      Modeler2D.import_3d_cad
+      
+      
+      Modeler2D.import_spaceclaim_document
+      
+      
+      Modeler2D.imprint
+      
+      
+      Modeler2D.imprint_normal_projection
+      
+      
+      Modeler2D.imprint_vector_projection
+      
+      
+      Modeler2D.intersect
+      
+      
+      Modeler2D.invert_cs
+      
+      
+      Modeler2D.load_scdm_in_hfss
+      
+      
+      Modeler2D.mirror
+      
+      
+      Modeler2D.modeler_variable
+      
+      
+      Modeler2D.move
+      
+      
+      Modeler2D.move_edge
+      
+      
+      Modeler2D.move_face
+      
+      
+      Modeler2D.objects_in_bounding_box
+      
+      
+      Modeler2D.paste
+      
+      
+      Modeler2D.polyline_segment
+      
+      
+      Modeler2D.purge_history
+      
+      
+      Modeler2D.radial_split_2D
+      
+      
+      Modeler2D.reference_cs_to_global
+      
+      
+      Modeler2D.refresh
+      
+      
+      Modeler2D.refresh_all_ids
+      
+      
+      Modeler2D.rotate
+      
+      
+      Modeler2D.scale
+      
+      
+      Modeler2D.section
+      
+      
+      Modeler2D.select_allfaces_fromobjects
+      
+      
+      Modeler2D.separate_bodies
+      
+      
+      Modeler2D.set_object_model_state
+      
+      
+      Modeler2D.set_objects_deformation
+      
+      
+      Modeler2D.set_objects_temperature
+      
+      
+      Modeler2D.set_working_coordinate_system
+      
+      
+      Modeler2D.setunassigned_mats
+      
+      
+      Modeler2D.simplify_objects
+      
+      
+      Modeler2D.split
+      
+      
+      Modeler2D.subtract
+      
+      
+      Modeler2D.sweep_along_normal
+      
+      
+      Modeler2D.sweep_along_path
+      
+      
+      Modeler2D.sweep_along_vector
+      
+      
+      Modeler2D.sweep_around_axis
+      
+      
+      Modeler2D.thicken_sheet
+      
+      
+      Modeler2D.ungroup
+      
+      
+      Modeler2D.unite
+      
+      
+      Modeler2D.update_object
+      
+      
+      Modeler2D.update_udp
+      
+      
+      Modeler2D.value_in_object_units
+      
+      
+      Modeler2D.vertex_data_of_lines
+      
+      
+      Modeler2D.wrap_sheet
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Modeler2D.coordinate_systems
+      Modeler2D.defaultmaterial
+      Modeler2D.design_type
+      Modeler2D.dimension
+      Modeler2D.geometry_mode
+      Modeler2D.line_names
+      Modeler2D.line_objects
+      Modeler2D.logger
+      Modeler2D.materials
+      Modeler2D.model_consistency_report
+      Modeler2D.model_objects
+      Modeler2D.model_units
+      Modeler2D.modeler
+      Modeler2D.non_model_objects
+      Modeler2D.object_list
+      Modeler2D.object_names
+      Modeler2D.objects_by_name
+      Modeler2D.obounding_box
+      Modeler2D.oeditor
+      Modeler2D.plane2d
+      Modeler2D.planes
+      Modeler2D.point_names
+      Modeler2D.point_objects
+      Modeler2D.projdir
+      Modeler2D.selections
+      Modeler2D.sheet_names
+      Modeler2D.sheet_objects
+      Modeler2D.solid_bodies
+      Modeler2D.solid_names
+      Modeler2D.solid_objects
+      Modeler2D.unclassified_names
+      Modeler2D.unclassified_objects
+      Modeler2D.user_defined_component_names
+      Modeler2D.user_lists
+      Modeler2D.version
+   
+   

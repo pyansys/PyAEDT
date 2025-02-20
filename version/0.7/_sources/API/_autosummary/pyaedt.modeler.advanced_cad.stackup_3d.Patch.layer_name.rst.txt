@@ -1,0 +1,6 @@
+layer\_name
+===========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Patch.layer_name

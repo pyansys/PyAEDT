@@ -1,0 +1,6 @@
+add\_variation
+==============
+
+.. currentmodule:: pyaedt.modules.DesignXPloration
+
+.. automethod:: SetupOpti.add_variation

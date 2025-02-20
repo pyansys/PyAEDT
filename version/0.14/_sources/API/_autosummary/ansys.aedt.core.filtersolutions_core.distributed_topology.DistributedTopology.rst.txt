@@ -1,0 +1,65 @@
+﻿DistributedTopology
+===================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoclass:: DistributedTopology
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      DistributedTopology.netlist
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      DistributedTopology.center_z0_impedance
+      DistributedTopology.combine_stubs
+      DistributedTopology.combline_half_length_frequency
+      DistributedTopology.coupled_segments_quarter_length_frequency
+      DistributedTopology.equal_stub_widths
+      DistributedTopology.equal_width_approx
+      DistributedTopology.equal_width_conductors
+      DistributedTopology.first_fat
+      DistributedTopology.first_shunt
+      DistributedTopology.hairpin_extension_length
+      DistributedTopology.hairpin_gap_width
+      DistributedTopology.left_ground_side
+      DistributedTopology.load_resistance
+      DistributedTopology.miniature_hairpin_end_curl_extension
+      DistributedTopology.miniature_hairpin_gap_width
+      DistributedTopology.mitered_corners
+      DistributedTopology.open_ends
+      DistributedTopology.open_stub_ground
+      DistributedTopology.pinned
+      DistributedTopology.quick_optimize
+      DistributedTopology.resonator_length_extension
+      DistributedTopology.resonator_line_width
+      DistributedTopology.resonator_rotation_angle
+      DistributedTopology.ring_resonator_end_gap_extension
+      DistributedTopology.ring_resonator_gap_width
+      DistributedTopology.source_resistance
+      DistributedTopology.stub_taps
+      DistributedTopology.tap_position
+      DistributedTopology.tapped
+      DistributedTopology.topology_type
+      DistributedTopology.tuning_type_1
+      DistributedTopology.use_coupled_lines
+      DistributedTopology.use_series_caps
+      DistributedTopology.via_ends
+      DistributedTopology.wide_band
+   
+   

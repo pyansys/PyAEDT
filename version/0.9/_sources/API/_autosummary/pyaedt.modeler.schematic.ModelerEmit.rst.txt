@@ -1,0 +1,46 @@
+﻿ModelerEmit
+===========
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoclass:: ModelerEmit
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ModelerEmit.change_text_property
+      
+      
+      ModelerEmit.connect_schematic_components
+      
+      
+      ModelerEmit.create_text
+      
+      
+      ModelerEmit.zoom_to_fit
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ModelerEmit.logger
+      ModelerEmit.o_component_manager
+      ModelerEmit.o_def_manager
+      ModelerEmit.o_model_manager
+      ModelerEmit.oeditor
+      ModelerEmit.projdir
+      ModelerEmit.schematic_units
+   
+   

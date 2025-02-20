@@ -1,0 +1,6 @@
+create\_external\_circuit
+=========================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.create_external_circuit

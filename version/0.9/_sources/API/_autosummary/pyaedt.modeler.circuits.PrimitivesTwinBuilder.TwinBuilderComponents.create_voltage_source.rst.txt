@@ -1,0 +1,6 @@
+create\_voltage\_source
+=======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.create_voltage_source

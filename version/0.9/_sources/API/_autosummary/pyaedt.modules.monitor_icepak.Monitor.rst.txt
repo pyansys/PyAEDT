@@ -1,0 +1,57 @@
+﻿Monitor
+=======
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. autoclass:: Monitor
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Monitor.assign_face_monitor
+      
+      
+      Monitor.assign_point_monitor
+      
+      
+      Monitor.assign_point_monitor_in_object
+      
+      
+      Monitor.assign_point_monitor_to_vertex
+      
+      
+      Monitor.assign_surface_monitor
+      
+      
+      Monitor.delete_monitor
+      
+      
+      Monitor.get_icepak_monitor_object
+      
+      
+      Monitor.get_monitor_object_assignment
+      
+      
+      Monitor.insert_monitor_object_from_dict
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Monitor.all_monitors
+      Monitor.face_monitors
+      Monitor.point_monitors
+   
+   

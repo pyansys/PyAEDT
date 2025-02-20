@@ -1,0 +1,6 @@
+install\_path
+=============
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. autoproperty:: Desktop.install_path

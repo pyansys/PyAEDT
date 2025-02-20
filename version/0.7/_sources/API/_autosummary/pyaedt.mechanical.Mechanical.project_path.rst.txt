@@ -1,0 +1,6 @@
+project\_path
+=============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.project_path

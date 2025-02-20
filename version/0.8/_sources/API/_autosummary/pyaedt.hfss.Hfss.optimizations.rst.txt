@@ -1,0 +1,6 @@
+optimizations
+=============
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.optimizations

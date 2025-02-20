@@ -1,0 +1,6 @@
+set\_sim\_setup\_parameter
+==========================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.set_sim_setup_parameter

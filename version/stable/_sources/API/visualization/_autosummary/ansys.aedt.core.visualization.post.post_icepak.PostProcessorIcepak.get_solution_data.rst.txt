@@ -1,0 +1,6 @@
+get\_solution\_data
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.get_solution_data

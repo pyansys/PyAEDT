@@ -1,0 +1,6 @@
+omaterial\_manager
+==================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.omaterial_manager

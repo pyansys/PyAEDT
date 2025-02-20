@@ -1,0 +1,6 @@
+project\_properties
+===================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.project_properties

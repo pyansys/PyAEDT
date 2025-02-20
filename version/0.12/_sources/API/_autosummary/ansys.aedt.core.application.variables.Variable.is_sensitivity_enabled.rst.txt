@@ -1,0 +1,6 @@
+is\_sensitivity\_enabled
+========================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.is_sensitivity_enabled

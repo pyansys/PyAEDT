@@ -1,0 +1,6 @@
+boundaries\_by\_type
+====================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.boundaries_by_type

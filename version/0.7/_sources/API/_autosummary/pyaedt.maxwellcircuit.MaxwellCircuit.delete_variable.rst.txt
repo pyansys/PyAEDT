@@ -1,0 +1,6 @@
+delete\_variable
+================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.delete_variable

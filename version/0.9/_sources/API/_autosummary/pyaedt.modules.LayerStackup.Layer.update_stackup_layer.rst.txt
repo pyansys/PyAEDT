@@ -1,0 +1,6 @@
+update\_stackup\_layer
+======================
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. automethod:: Layer.update_stackup_layer

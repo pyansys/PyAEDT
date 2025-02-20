@@ -1,0 +1,6 @@
+emissivity
+==========
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: SurfaceMaterial.emissivity

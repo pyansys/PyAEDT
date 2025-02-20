@@ -1,0 +1,6 @@
+number\_of\_layer\_elements
+===========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: MeshOperationSkinDepth.number_of_layer_elements

@@ -1,0 +1,6 @@
+assign\_resistive\_sheet
+========================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.assign_resistive_sheet

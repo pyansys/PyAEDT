@@ -1,0 +1,6 @@
+opadstackmanager
+================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.opadstackmanager

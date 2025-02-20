@@ -1,0 +1,6 @@
+get\_profile
+============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupCircuit.get_profile

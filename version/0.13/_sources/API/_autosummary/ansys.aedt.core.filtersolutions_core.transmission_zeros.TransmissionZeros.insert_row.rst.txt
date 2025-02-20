@@ -1,0 +1,6 @@
+insert\_row
+===========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.transmission_zeros
+
+.. automethod:: TransmissionZeros.insert_row

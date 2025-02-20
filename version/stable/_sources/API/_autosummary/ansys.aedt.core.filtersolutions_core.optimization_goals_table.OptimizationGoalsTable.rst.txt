@@ -1,0 +1,58 @@
+﻿OptimizationGoalsTable
+======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.optimization_goals_table
+
+.. autoclass:: OptimizationGoalsTable
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      OptimizationGoalsTable.adjust_goal_frequency
+      
+      
+      OptimizationGoalsTable.append_row
+      
+      
+      OptimizationGoalsTable.clear_goal_entries
+      
+      
+      OptimizationGoalsTable.insert_row
+      
+      
+      OptimizationGoalsTable.load_goals
+      
+      
+      OptimizationGoalsTable.remove_row
+      
+      
+      OptimizationGoalsTable.restore_design_goals
+      
+      
+      OptimizationGoalsTable.row
+      
+      
+      OptimizationGoalsTable.save_goals
+      
+      
+      OptimizationGoalsTable.update_row
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      OptimizationGoalsTable.row_count
+   
+   

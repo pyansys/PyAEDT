@@ -1,0 +1,74 @@
+﻿ComponentArray
+==============
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. autoclass:: ComponentArray
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ComponentArray.delete
+      
+      
+      ComponentArray.edit_array
+      
+      
+      ComponentArray.export_array_info
+      
+      
+      ComponentArray.get_cell
+      
+      
+      ComponentArray.get_cell_position
+      
+      
+      ComponentArray.get_component_objects
+      
+      
+      ComponentArray.lattice_vector
+      
+      
+      ComponentArray.parse_array_info_from_csv
+      
+      
+      ComponentArray.update_properties
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ComponentArray.a_length
+      ComponentArray.a_size
+      ComponentArray.a_vector_choices
+      ComponentArray.a_vector_name
+      ComponentArray.b_length
+      ComponentArray.b_size
+      ComponentArray.b_vector_choices
+      ComponentArray.b_vector_name
+      ComponentArray.cells
+      ComponentArray.component_names
+      ComponentArray.coordinate_system
+      ComponentArray.name
+      ComponentArray.padding_cells
+      ComponentArray.post_processing_cells
+      ComponentArray.properties
+      ComponentArray.render
+      ComponentArray.render_choices
+      ComponentArray.render_id
+      ComponentArray.show_cell_number
+      ComponentArray.visible
+   
+   

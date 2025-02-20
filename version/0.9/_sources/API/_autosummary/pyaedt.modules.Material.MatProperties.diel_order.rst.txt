@@ -1,0 +1,6 @@
+diel\_order
+===========
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoattribute:: MatProperties.diel_order

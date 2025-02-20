@@ -1,0 +1,6 @@
+get\_group\_bounding\_box
+=========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.get_group_bounding_box

@@ -1,0 +1,6 @@
+SimulationSetupTypes
+====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.SimulationSetupTypes

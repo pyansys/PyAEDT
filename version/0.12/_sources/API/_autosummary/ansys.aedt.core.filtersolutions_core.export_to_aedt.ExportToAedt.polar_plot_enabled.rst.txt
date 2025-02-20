@@ -1,0 +1,6 @@
+polar\_plot\_enabled
+====================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.polar_plot_enabled

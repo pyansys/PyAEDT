@@ -1,0 +1,6 @@
+create\_report
+==============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupCircuit.create_report

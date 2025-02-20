@@ -1,0 +1,6 @@
+set\_all\_import
+================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. automethod:: ConfigurationsOptions.set_all_import

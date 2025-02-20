@@ -1,0 +1,6 @@
+create\_sbr\_file\_based\_antenna
+=================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_sbr_file_based_antenna

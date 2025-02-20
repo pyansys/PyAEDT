@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. automethod:: Sources.delete

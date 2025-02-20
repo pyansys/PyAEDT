@@ -1,0 +1,6 @@
+debug
+=====
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. automethod:: AedtLogger.debug

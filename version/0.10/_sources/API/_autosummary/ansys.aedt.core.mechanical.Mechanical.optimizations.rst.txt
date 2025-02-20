@@ -1,0 +1,6 @@
+optimizations
+=============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.optimizations

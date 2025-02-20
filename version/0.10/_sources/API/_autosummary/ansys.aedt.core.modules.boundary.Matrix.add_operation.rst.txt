@@ -1,0 +1,6 @@
+add\_operation
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. automethod:: Matrix.add_operation

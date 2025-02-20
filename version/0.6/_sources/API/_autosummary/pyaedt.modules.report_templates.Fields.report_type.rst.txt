@@ -1,0 +1,6 @@
+report\_type
+============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Fields.report_type

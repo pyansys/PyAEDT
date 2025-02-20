@@ -1,0 +1,6 @@
+add\_new\_points
+================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.add_new_points

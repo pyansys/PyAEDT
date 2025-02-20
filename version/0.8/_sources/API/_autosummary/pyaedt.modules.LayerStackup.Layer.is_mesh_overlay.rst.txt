@@ -1,0 +1,6 @@
+is\_mesh\_overlay
+=================
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.is_mesh_overlay

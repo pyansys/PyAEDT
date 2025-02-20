@@ -1,0 +1,6 @@
+modelithics\_inductor\_add\_family
+==================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. automethod:: ExportToAedt.modelithics_inductor_add_family

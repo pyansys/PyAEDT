@@ -1,0 +1,6 @@
+import\_3d\_cad
+===============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.import_3d_cad

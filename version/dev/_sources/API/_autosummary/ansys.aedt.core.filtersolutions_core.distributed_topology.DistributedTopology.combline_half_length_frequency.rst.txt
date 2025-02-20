@@ -1,0 +1,6 @@
+combline\_half\_length\_frequency
+=================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.combline_half_length_frequency

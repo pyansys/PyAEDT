@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.stop_simulations

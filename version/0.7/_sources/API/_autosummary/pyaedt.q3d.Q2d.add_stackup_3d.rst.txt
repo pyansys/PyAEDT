@@ -1,0 +1,6 @@
+add\_stackup\_3d
+================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.add_stackup_3d

@@ -1,0 +1,6 @@
+numeric\_value
+==============
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.numeric_value

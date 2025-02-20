@@ -1,0 +1,6 @@
+create\_pin\_group
+==================
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. automethod:: EdbSiwave.create_pin_group

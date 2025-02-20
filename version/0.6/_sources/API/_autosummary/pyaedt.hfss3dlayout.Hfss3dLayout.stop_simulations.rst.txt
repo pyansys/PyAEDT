@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.stop_simulations

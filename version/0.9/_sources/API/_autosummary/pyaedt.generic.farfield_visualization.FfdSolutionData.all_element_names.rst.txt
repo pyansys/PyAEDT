@@ -1,0 +1,6 @@
+all\_element\_names
+===================
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.all_element_names

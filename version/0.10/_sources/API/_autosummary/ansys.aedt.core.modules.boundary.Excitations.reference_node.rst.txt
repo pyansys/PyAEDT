@@ -1,0 +1,6 @@
+reference\_node
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: Excitations.reference_node

@@ -1,0 +1,6 @@
+dependent\_project\_variables
+=============================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: VariableManager.dependent_project_variables

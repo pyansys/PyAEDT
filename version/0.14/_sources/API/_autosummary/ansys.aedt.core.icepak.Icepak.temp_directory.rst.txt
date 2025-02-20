@@ -1,0 +1,6 @@
+temp\_directory
+===============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.temp_directory

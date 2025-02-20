@@ -1,0 +1,6 @@
+operations
+==========
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: Matrix.operations

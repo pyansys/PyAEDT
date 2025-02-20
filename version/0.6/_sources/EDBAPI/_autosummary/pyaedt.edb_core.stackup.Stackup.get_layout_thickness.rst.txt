@@ -1,0 +1,6 @@
+get\_layout\_thickness
+======================
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. automethod:: Stackup.get_layout_thickness

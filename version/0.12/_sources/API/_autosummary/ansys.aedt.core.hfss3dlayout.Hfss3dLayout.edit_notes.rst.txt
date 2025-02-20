@@ -1,0 +1,6 @@
+edit\_notes
+===========
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.edit_notes

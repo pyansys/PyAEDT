@@ -1,0 +1,6 @@
+exists\_material
+================
+
+.. currentmodule:: ansys.aedt.core.modules.material_lib
+
+.. automethod:: Materials.exists_material

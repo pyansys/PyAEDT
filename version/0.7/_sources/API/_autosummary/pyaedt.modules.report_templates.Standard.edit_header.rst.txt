@@ -1,0 +1,6 @@
+edit\_header
+============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Standard.edit_header

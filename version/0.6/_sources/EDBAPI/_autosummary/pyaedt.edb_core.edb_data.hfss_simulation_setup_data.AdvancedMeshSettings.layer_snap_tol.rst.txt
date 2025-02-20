@@ -1,0 +1,6 @@
+layer\_snap\_tol
+================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: AdvancedMeshSettings.layer_snap_tol

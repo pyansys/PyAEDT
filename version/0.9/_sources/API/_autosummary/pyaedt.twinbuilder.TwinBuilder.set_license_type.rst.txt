@@ -1,0 +1,6 @@
+set\_license\_type
+==================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.set_license_type

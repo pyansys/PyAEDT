@@ -1,0 +1,6 @@
+topology\_type
+==============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.topology_type

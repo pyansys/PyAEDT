@@ -1,0 +1,6 @@
+edit\_setup
+===========
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.edit_setup

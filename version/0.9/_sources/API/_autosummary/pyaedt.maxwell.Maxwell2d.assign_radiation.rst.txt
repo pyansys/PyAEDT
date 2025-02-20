@@ -1,0 +1,6 @@
+assign\_radiation
+=================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.assign_radiation

@@ -1,0 +1,6 @@
+unite
+=====
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.unite

@@ -1,0 +1,6 @@
+aedt\_version\_id
+=================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.aedt_version_id

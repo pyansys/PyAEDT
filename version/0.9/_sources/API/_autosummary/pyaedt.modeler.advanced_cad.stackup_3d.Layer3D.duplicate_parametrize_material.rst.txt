@@ -1,0 +1,6 @@
+duplicate\_parametrize\_material
+================================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: Layer3D.duplicate_parametrize_material

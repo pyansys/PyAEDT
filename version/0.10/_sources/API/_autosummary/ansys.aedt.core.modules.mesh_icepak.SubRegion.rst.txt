@@ -1,0 +1,50 @@
+﻿SubRegion
+=========
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. autoclass:: SubRegion
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SubRegion.create
+      
+      
+      SubRegion.delete
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SubRegion.name
+      SubRegion.negative_x_padding
+      SubRegion.negative_x_padding_type
+      SubRegion.negative_y_padding
+      SubRegion.negative_y_padding_type
+      SubRegion.negative_z_padding
+      SubRegion.negative_z_padding_type
+      SubRegion.object
+      SubRegion.padding_types
+      SubRegion.padding_values
+      SubRegion.parts
+      SubRegion.positive_x_padding
+      SubRegion.positive_x_padding_type
+      SubRegion.positive_y_padding
+      SubRegion.positive_y_padding_type
+      SubRegion.positive_z_padding
+      SubRegion.positive_z_padding_type
+   
+   

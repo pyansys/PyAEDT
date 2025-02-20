@@ -1,0 +1,6 @@
+use\_global\_cs
+===============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.multiparts
+
+.. autoproperty:: Environment.use_global_cs

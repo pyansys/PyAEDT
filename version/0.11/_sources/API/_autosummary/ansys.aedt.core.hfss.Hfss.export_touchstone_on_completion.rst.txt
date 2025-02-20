@@ -1,0 +1,6 @@
+export\_touchstone\_on\_completion
+==================================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.export_touchstone_on_completion

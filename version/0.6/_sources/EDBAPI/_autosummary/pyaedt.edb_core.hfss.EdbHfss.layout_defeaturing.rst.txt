@@ -1,0 +1,6 @@
+layout\_defeaturing
+===================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.layout_defeaturing

@@ -1,0 +1,6 @@
+create\_setup
+=============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.create_setup

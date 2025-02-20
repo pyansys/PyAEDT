@@ -1,0 +1,6 @@
+sweep\_around\_axis
+===================
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.sweep_around_axis

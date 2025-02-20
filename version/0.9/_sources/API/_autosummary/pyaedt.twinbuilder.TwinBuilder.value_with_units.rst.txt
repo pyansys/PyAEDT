@@ -1,0 +1,6 @@
+value\_with\_units
+==================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.value_with_units

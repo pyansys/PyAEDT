@@ -1,0 +1,6 @@
+delete\_sweep
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupHFSS.delete_sweep

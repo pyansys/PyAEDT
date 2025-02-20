@@ -1,0 +1,6 @@
+export\_image
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.solutions
+
+.. automethod:: FieldPlot.export_image

@@ -1,0 +1,27 @@
+﻿MinMaxScale
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. autoclass:: MinMaxScale
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MinMaxScale.from_dict
+      
+      
+      MinMaxScale.to_dict
+      
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+standard\_delay\_equ\_pass\_band\_attenuation
+=============================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.standard_delay_equ_pass_band_attenuation

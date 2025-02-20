@@ -1,0 +1,6 @@
+component\_info
+===============
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. autoproperty:: CircuitComponent.component_info

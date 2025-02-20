@@ -1,0 +1,6 @@
+api\_object
+===========
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.api_object

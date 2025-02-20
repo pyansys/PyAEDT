@@ -1,0 +1,6 @@
+max\_delta\_z0
+==============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: HfssPortSettings.max_delta_z0

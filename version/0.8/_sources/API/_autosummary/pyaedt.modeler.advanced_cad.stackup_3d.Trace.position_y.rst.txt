@@ -1,0 +1,6 @@
+position\_y
+===========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Trace.position_y

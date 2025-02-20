@@ -1,0 +1,6 @@
+desktop\_install\_dir
+=====================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.desktop_install_dir

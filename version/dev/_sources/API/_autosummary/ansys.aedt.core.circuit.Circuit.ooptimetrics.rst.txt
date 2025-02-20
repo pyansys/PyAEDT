@@ -1,0 +1,6 @@
+ooptimetrics
+============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.ooptimetrics

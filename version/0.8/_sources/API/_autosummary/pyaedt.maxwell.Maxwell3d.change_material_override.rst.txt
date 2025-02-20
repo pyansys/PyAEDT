@@ -1,0 +1,6 @@
+change\_material\_override
+==========================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.change_material_override

@@ -1,0 +1,6 @@
+create\_face\_list
+==================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.create_face_list

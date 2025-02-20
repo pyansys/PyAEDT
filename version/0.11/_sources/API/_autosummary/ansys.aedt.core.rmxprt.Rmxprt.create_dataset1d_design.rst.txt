@@ -1,0 +1,6 @@
+create\_dataset1d\_design
+=========================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.create_dataset1d_design

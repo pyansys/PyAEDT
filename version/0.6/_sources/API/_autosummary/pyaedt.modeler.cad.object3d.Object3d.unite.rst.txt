@@ -1,0 +1,6 @@
+unite
+=====
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.unite

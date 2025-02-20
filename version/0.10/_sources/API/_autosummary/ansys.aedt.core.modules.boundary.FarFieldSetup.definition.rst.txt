@@ -1,0 +1,6 @@
+definition
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: FarFieldSetup.definition

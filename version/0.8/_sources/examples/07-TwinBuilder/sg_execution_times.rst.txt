@@ -1,0 +1,46 @@
+
+:orphan:
+
+.. _sphx_glr_examples_07-TwinBuilder_sg_execution_times:
+
+
+Computation times
+=================
+**03:45.741** total execution time for 4 files **from examples\07-TwinBuilder**:
+
+.. container::
+
+  .. raw:: html
+
+    <style scoped>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+    } );
+    </script>
+
+  .. list-table::
+   :header-rows: 1
+   :class: table table-striped sg-datatable
+
+   * - Example
+     - Time
+     - Mem (MB)
+   * - :ref:`sphx_glr_examples_07-TwinBuilder_03-Dynamic_ROM_Creation_And_Visualization.py` (``03-Dynamic_ROM_Creation_And_Visualization.py``)
+     - 01:12.554
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-TwinBuilder_01-RC_Circuit_Example.py` (``01-RC_Circuit_Example.py``)
+     - 00:54.462
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-TwinBuilder_02-Wiring_A_Rectifier.py` (``02-Wiring_A_Rectifier.py``)
+     - 00:53.633
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-TwinBuilder_04-Static_ROM_Creation_And_Visualization.py` (``04-Static_ROM_Creation_And_Visualization.py``)
+     - 00:45.092
+     - 0.0

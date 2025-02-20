@@ -1,0 +1,6 @@
+deactivate\_variable\_statistical
+=================================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.deactivate_variable_statistical

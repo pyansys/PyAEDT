@@ -1,0 +1,6 @@
+schematic\_units
+================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. autoproperty:: MaxwellCircuitComponents.schematic_units

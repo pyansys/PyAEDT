@@ -1,0 +1,35 @@
+﻿CSVDataset
+==========
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoclass:: CSVDataset
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      CSVDataset.next
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      CSVDataset.data
+      CSVDataset.header
+      CSVDataset.number_of_columns
+      CSVDataset.number_of_rows
+      CSVDataset.path
+   
+   

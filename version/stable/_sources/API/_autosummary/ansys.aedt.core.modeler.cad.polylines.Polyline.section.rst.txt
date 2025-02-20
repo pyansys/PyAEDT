@@ -1,0 +1,6 @@
+section
+=======
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.section

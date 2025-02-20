@@ -1,0 +1,6 @@
+suppress\_all
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: NearField.suppress_all

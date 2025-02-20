@@ -1,0 +1,6 @@
+disable
+=======
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupCircuit.disable

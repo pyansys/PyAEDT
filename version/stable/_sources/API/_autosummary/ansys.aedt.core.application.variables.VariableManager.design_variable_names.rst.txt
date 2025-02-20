@@ -1,0 +1,6 @@
+design\_variable\_names
+=======================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: VariableManager.design_variable_names

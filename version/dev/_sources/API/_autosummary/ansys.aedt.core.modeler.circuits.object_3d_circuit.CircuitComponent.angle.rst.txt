@@ -1,0 +1,6 @@
+angle
+=====
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.object_3d_circuit
+
+.. autoproperty:: CircuitComponent.angle

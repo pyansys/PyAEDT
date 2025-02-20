@@ -1,0 +1,6 @@
+autosave\_disable
+=================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.autosave_disable

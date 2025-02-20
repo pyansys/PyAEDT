@@ -1,0 +1,6 @@
+differential\_pairs
+===================
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.differential_pairs

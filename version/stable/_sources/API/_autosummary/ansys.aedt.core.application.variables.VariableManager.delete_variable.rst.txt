@@ -1,0 +1,6 @@
+delete\_variable
+================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. automethod:: VariableManager.delete_variable

@@ -1,0 +1,6 @@
+working\_directory
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.spisim
+
+.. autoproperty:: SpiSim.working_directory

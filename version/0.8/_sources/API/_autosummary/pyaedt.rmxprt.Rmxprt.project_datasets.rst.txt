@@ -1,0 +1,6 @@
+project\_datasets
+=================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.project_datasets

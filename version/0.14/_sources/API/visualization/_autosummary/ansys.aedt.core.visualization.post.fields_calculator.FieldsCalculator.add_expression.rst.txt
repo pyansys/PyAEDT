@@ -1,0 +1,6 @@
+add\_expression
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.fields_calculator
+
+.. automethod:: FieldsCalculator.add_expression

@@ -1,0 +1,207 @@
+
+
+.. _sphx_glr_examples_03-Maxwell:
+
+Maxwell examples
+~~~~~~~~~~~~~~~~
+These examples use PyAEDT to show some end-to-end workflows for Maxwell 2D and
+Maxwell 3D. This includes model generation, setup, meshing, and postprocessing.
+Examples cover different Maxwell solution types (Eddy Current, Magnetostatic,
+and Transient).
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Maxwell 2D: resistance calculation">
+
+.. only:: html
+
+  .. image:: /examples/03-Maxwell/images/thumb/sphx_glr_Maxwell2D_DCConduction_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_03-Maxwell_Maxwell2D_DCConduction.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Maxwell 2D: resistance calculation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Maxwell 2D Electrostatic analysis">
+
+.. only:: html
+
+  .. image:: /examples/03-Maxwell/images/thumb/sphx_glr_Maxwell2D_Electrostatic_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_03-Maxwell_Maxwell2D_Electrostatic.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Maxwell 2D Electrostatic analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Maxwell 2D: PM synchronous motor transient analysis">
+
+.. only:: html
+
+  .. image:: /examples/03-Maxwell/images/thumb/sphx_glr_Maxwell2D_NissanLeaf_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_03-Maxwell_Maxwell2D_NissanLeaf.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Maxwell 2D: PM synchronous motor transient analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The following libraries are required for the advanced postprocessing features used in this exam...">
+
+.. only:: html
+
+  .. image:: /examples/03-Maxwell/images/thumb/sphx_glr_Maxwell2D_Transient_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_03-Maxwell_Maxwell2D_Transient.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Maxwell 2D: transient winding analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Maxwell 3D: asymmetric conductor analysis">
+
+.. only:: html
+
+  .. image:: /examples/03-Maxwell/images/thumb/sphx_glr_Maxwell3DTeam7_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_03-Maxwell_Maxwell3DTeam7.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Maxwell 3D: asymmetric conductor analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Maxwell 3D: choke setup">
+
+.. only:: html
+
+  .. image:: /examples/03-Maxwell/images/thumb/sphx_glr_Maxwell3D_Choke_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_03-Maxwell_Maxwell3D_Choke.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Maxwell 3D: choke setup</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Maxwell 3D: magnet segmentation">
+
+.. only:: html
+
+  .. image:: /examples/03-Maxwell/images/thumb/sphx_glr_Maxwell3D_Segmentation_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_03-Maxwell_Maxwell3D_Segmentation.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Maxwell 3D: magnet segmentation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Maxwell 3D: bath plate analysis">
+
+.. only:: html
+
+  .. image:: /examples/03-Maxwell/images/thumb/sphx_glr_Maxwell3D_Team3_bath_plate_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_03-Maxwell_Maxwell3D_Team3_bath_plate.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Maxwell 3D: bath plate analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Enabling Control Program in a Maxwell 2D Project">
+
+.. only:: html
+
+  .. image:: /examples/03-Maxwell/images/thumb/sphx_glr_Maxwell_Control_Program_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_03-Maxwell_Maxwell_Control_Program.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Enabling Control Program in a Maxwell 2D Project</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Maxwell 3D: magnet DC analysis">
+
+.. only:: html
+
+  .. image:: /examples/03-Maxwell/images/thumb/sphx_glr_Maxwell_Magnet_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_03-Maxwell_Maxwell_Magnet.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Maxwell 3D: magnet DC analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/03-Maxwell/Maxwell2D_DCConduction
+   /examples/03-Maxwell/Maxwell2D_Electrostatic
+   /examples/03-Maxwell/Maxwell2D_NissanLeaf
+   /examples/03-Maxwell/Maxwell2D_Transient
+   /examples/03-Maxwell/Maxwell3DTeam7
+   /examples/03-Maxwell/Maxwell3D_Choke
+   /examples/03-Maxwell/Maxwell3D_Segmentation
+   /examples/03-Maxwell/Maxwell3D_Team3_bath_plate
+   /examples/03-Maxwell/Maxwell_Control_Program
+   /examples/03-Maxwell/Maxwell_Magnet
+

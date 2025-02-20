@@ -1,0 +1,59 @@
+﻿SiwaveSYZSimulationSetup
+========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoclass:: SiwaveSYZSimulationSetup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SiwaveSYZSimulationSetup.add_frequency_sweep
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SiwaveSYZSimulationSetup.automatic_mesh
+      SiwaveSYZSimulationSetup.dc_settings
+      SiwaveSYZSimulationSetup.edb_sim_setup_info
+      SiwaveSYZSimulationSetup.enabled
+      SiwaveSYZSimulationSetup.frequency_sweeps
+      SiwaveSYZSimulationSetup.ignore_non_functional_pads
+      SiwaveSYZSimulationSetup.include_coplane_coupling
+      SiwaveSYZSimulationSetup.include_fringe_coupling
+      SiwaveSYZSimulationSetup.include_infinite_ground
+      SiwaveSYZSimulationSetup.include_inter_plane_coupling
+      SiwaveSYZSimulationSetup.include_split_plane_coupling
+      SiwaveSYZSimulationSetup.include_trace_coupling
+      SiwaveSYZSimulationSetup.include_vi_sources
+      SiwaveSYZSimulationSetup.infinite_ground_location
+      SiwaveSYZSimulationSetup.max_coupled_lines
+      SiwaveSYZSimulationSetup.mesh_frequency
+      SiwaveSYZSimulationSetup.min_pad_area_to_mesh
+      SiwaveSYZSimulationSetup.min_plane_area_to_mesh
+      SiwaveSYZSimulationSetup.min_void_area
+      SiwaveSYZSimulationSetup.name
+      SiwaveSYZSimulationSetup.perform_erc
+      SiwaveSYZSimulationSetup.pi_slider_postion
+      SiwaveSYZSimulationSetup.return_current_distribution
+      SiwaveSYZSimulationSetup.si_slider_postion
+      SiwaveSYZSimulationSetup.sim_setup_info
+      SiwaveSYZSimulationSetup.snap_length_threshold
+      SiwaveSYZSimulationSetup.use_custom_settings
+      SiwaveSYZSimulationSetup.use_si_settings
+      SiwaveSYZSimulationSetup.xtalk_threshold
+   
+   

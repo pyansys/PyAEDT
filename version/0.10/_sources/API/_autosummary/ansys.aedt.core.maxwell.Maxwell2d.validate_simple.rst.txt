@@ -1,0 +1,6 @@
+validate\_simple
+================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.validate_simple

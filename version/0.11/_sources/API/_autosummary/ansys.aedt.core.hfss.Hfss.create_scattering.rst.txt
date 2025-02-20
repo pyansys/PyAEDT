@@ -1,0 +1,6 @@
+create\_scattering
+==================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.create_scattering

@@ -1,0 +1,6 @@
+dc\_report\_config\_file
+========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_report_config_file

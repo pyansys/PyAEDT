@@ -1,0 +1,6 @@
+insert\_monitor\_object\_from\_dict
+===================================
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. automethod:: Monitor.insert_monitor_object_from_dict

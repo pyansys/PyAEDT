@@ -1,0 +1,6 @@
+oboundary
+=========
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell3d.oboundary

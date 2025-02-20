@@ -1,0 +1,6 @@
+info
+====
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.info

@@ -1,0 +1,6 @@
+get\_solution\_data
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.get_solution_data

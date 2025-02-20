@@ -1,0 +1,44 @@
+﻿BoundaryObject
+==============
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoclass:: BoundaryObject
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      BoundaryObject.create
+      
+      
+      BoundaryObject.delete
+      
+      
+      BoundaryObject.update
+      
+      
+      BoundaryObject.update_assignment
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      BoundaryObject.available_properties
+      BoundaryObject.name
+      BoundaryObject.object_properties
+      BoundaryObject.props
+      BoundaryObject.type
+   
+   

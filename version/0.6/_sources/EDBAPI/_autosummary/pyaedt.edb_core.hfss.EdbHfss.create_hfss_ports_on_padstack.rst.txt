@@ -1,0 +1,6 @@
+create\_hfss\_ports\_on\_padstack
+=================================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.create_hfss_ports_on_padstack

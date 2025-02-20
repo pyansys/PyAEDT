@@ -1,0 +1,6 @@
+assign\_master\_slave
+=====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_master_slave

@@ -1,0 +1,6 @@
+remove\_row
+===========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_termination_impedance_table
+
+.. automethod:: LumpedTerminationImpedance.remove_row

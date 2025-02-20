@@ -1,0 +1,6 @@
+name
+====
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoproperty:: Vehicle.name

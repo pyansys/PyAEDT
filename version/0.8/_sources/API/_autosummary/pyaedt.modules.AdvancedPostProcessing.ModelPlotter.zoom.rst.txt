@@ -1,0 +1,6 @@
+zoom
+====
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.zoom

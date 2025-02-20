@@ -1,0 +1,6 @@
+animate\_fields\_from\_aedtplt
+==============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.animate_fields_from_aedtplt

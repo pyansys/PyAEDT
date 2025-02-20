@@ -1,0 +1,6 @@
+top\_bottom
+===========
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.top_bottom

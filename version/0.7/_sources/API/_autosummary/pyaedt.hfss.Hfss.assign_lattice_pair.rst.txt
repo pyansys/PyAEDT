@@ -1,0 +1,6 @@
+assign\_lattice\_pair
+=====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.assign_lattice_pair

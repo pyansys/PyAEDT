@@ -1,0 +1,6 @@
+write\_export3d\_option\_config\_file
+=====================================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.write_export3d_option_config_file

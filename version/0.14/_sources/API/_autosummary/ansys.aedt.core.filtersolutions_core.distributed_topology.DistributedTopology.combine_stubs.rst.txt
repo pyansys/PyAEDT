@@ -1,0 +1,6 @@
+combine\_stubs
+==============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.combine_stubs

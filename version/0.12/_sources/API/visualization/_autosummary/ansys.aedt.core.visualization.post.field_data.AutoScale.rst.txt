@@ -1,0 +1,27 @@
+﻿AutoScale
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. autoclass:: AutoScale
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      AutoScale.from_dict
+      
+      
+      AutoScale.to_dict
+      
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+omodelsetup
+===========
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.omodelsetup

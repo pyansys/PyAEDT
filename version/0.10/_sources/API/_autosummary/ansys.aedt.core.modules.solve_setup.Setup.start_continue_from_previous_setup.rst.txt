@@ -1,0 +1,6 @@
+start\_continue\_from\_previous\_setup
+======================================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: Setup.start_continue_from_previous_setup

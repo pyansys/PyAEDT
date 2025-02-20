@@ -1,0 +1,6 @@
+import\_materials\_from\_file
+=============================
+
+.. currentmodule:: ansys.aedt.core.modules.material_lib
+
+.. automethod:: Materials.import_materials_from_file

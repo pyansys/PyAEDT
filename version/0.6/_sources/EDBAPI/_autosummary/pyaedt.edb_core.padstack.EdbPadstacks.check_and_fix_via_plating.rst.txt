@@ -1,0 +1,6 @@
+check\_and\_fix\_via\_plating
+=============================
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.check_and_fix_via_plating

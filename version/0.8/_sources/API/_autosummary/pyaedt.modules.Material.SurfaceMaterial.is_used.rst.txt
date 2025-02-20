@@ -1,0 +1,6 @@
+is\_used
+========
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: SurfaceMaterial.is_used

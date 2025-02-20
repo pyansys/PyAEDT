@@ -1,0 +1,6 @@
+close\_project
+==============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.close_project

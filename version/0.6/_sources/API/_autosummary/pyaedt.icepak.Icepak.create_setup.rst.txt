@@ -1,0 +1,6 @@
+create\_setup
+=============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_setup

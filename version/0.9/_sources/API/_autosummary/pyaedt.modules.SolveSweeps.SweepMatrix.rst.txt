@@ -1,0 +1,39 @@
+﻿SweepMatrix
+===========
+
+.. currentmodule:: pyaedt.modules.SolveSweeps
+
+.. autoclass:: SweepMatrix
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SweepMatrix.add_subrange
+      
+      
+      SweepMatrix.create
+      
+      
+      SweepMatrix.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SweepMatrix.basis_frequencies
+      SweepMatrix.frequencies
+      SweepMatrix.is_solved
+   
+   

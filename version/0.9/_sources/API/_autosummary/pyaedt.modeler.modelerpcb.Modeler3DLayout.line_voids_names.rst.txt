@@ -1,0 +1,6 @@
+line\_voids\_names
+==================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. autoproperty:: Modeler3DLayout.line_voids_names

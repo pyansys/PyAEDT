@@ -1,0 +1,484 @@
+﻿Q2d
+===
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoclass:: Q2d
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Q2d.activate_variable_optimization
+      
+      
+      Q2d.activate_variable_sensitivity
+      
+      
+      Q2d.activate_variable_statistical
+      
+      
+      Q2d.activate_variable_tuning
+      
+      
+      Q2d.add_error_message
+      
+      
+      Q2d.add_from_toolkit
+      
+      
+      Q2d.add_info_message
+      
+      
+      Q2d.add_stackup_3d
+      
+      
+      Q2d.add_warning_message
+      
+      
+      Q2d.analyze
+      
+      
+      Q2d.analyze_setup
+      
+      
+      Q2d.archive_project
+      
+      
+      Q2d.assign_huray_finitecond_to_edges
+      
+      
+      Q2d.assign_material
+      
+      
+      Q2d.assign_single_conductor
+      
+      
+      Q2d.assign_single_signal_line
+      
+      
+      Q2d.assignmaterial_from_sherlock_files
+      
+      
+      Q2d.auto_assign_conductors
+      
+      
+      Q2d.autosave_disable
+      
+      
+      Q2d.autosave_enable
+      
+      
+      Q2d.change_automatically_use_causal_materials
+      
+      
+      Q2d.change_design_settings
+      
+      
+      Q2d.change_material_override
+      
+      
+      Q2d.change_property
+      
+      
+      Q2d.change_validation_settings
+      
+      
+      Q2d.check_beta_option_enabled
+      
+      
+      Q2d.check_if_project_is_loaded
+      
+      
+      Q2d.clean_proj_folder
+      
+      
+      Q2d.cleanup_solution
+      
+      
+      Q2d.close_desktop
+      
+      
+      Q2d.close_project
+      
+      
+      Q2d.copy_design_from
+      
+      
+      Q2d.copy_project
+      
+      
+      Q2d.copy_solid_bodies_from
+      
+      
+      Q2d.create_dataset
+      
+      
+      Q2d.create_dataset1d_design
+      
+      
+      Q2d.create_dataset1d_project
+      
+      
+      Q2d.create_dataset3d
+      
+      
+      Q2d.create_new_project
+      
+      
+      Q2d.create_output_variable
+      
+      
+      Q2d.create_rectangle
+      
+      
+      Q2d.create_setup
+      
+      
+      Q2d.dataset_exists
+      
+      
+      Q2d.deactivate_variable_optimization
+      
+      
+      Q2d.deactivate_variable_sensitivity
+      
+      
+      Q2d.deactivate_variable_statistical
+      
+      
+      Q2d.deactivate_variable_tuning
+      
+      
+      Q2d.delete_design
+      
+      
+      Q2d.delete_project
+      
+      
+      Q2d.delete_separator
+      
+      
+      Q2d.delete_setup
+      
+      
+      Q2d.delete_variable
+      
+      
+      Q2d.design_settings
+      
+      
+      Q2d.design_variation
+      
+      
+      Q2d.duplicate_design
+      
+      
+      Q2d.edit_setup
+      
+      
+      Q2d.edit_sources
+      
+      
+      Q2d.evaluate_expression
+      
+      
+      Q2d.export_3d_model
+      
+      
+      Q2d.export_convergence
+      
+      
+      Q2d.export_design_preview_to_jpg
+      
+      
+      Q2d.export_equivalent_circuit
+      
+      
+      Q2d.export_matrix_data
+      
+      
+      Q2d.export_mesh_stats
+      
+      
+      Q2d.export_parametric_results
+      
+      
+      Q2d.export_profile
+      
+      
+      Q2d.export_results
+      
+      
+      Q2d.export_rl_matrix
+      
+      
+      Q2d.export_variables_to_csv
+      
+      
+      Q2d.export_w_elements
+      
+      
+      Q2d.flatten_3d_components
+      
+      
+      Q2d.generate_temp_project_directory
+      
+      
+      Q2d.generate_unique_setup_name
+      
+      
+      Q2d.get_all_conductors_names
+      
+      
+      Q2d.get_all_dielectrics_names
+      
+      
+      Q2d.get_all_sources
+      
+      
+      Q2d.get_components3d_vars
+      
+      
+      Q2d.get_dxf_layers
+      
+      
+      Q2d.get_evaluated_value
+      
+      
+      Q2d.get_module
+      
+      
+      Q2d.get_monitor_data
+      
+      
+      Q2d.get_nominal_variation
+      
+      
+      Q2d.get_object_material_properties
+      
+      
+      Q2d.get_oo_name
+      
+      
+      Q2d.get_oo_object
+      
+      
+      Q2d.get_oo_properties
+      
+      
+      Q2d.get_oo_property_value
+      
+      
+      Q2d.get_output_variable
+      
+      
+      Q2d.get_property_value
+      
+      
+      Q2d.get_registry_key_int
+      
+      
+      Q2d.get_registry_key_string
+      
+      
+      Q2d.get_setup
+      
+      
+      Q2d.get_setups
+      
+      
+      Q2d.get_sweeps
+      
+      
+      Q2d.get_traces_for_plot
+      
+      
+      Q2d.hidden_variable
+      
+      
+      Q2d.identify_touching_conductors
+      
+      
+      Q2d.import_dataset1d
+      
+      
+      Q2d.import_dataset3d
+      
+      
+      Q2d.import_dxf
+      
+      
+      Q2d.insert_design
+      
+      
+      Q2d.insert_reduced_matrix
+      
+      
+      Q2d.list_of_variations
+      
+      
+      Q2d.load_project
+      
+      
+      Q2d.number_with_units
+      
+      
+      Q2d.plot
+      
+      
+      Q2d.read_design_data
+      
+      
+      Q2d.read_only_variable
+      
+      
+      Q2d.release_desktop
+      
+      
+      Q2d.rename_design
+      
+      
+      Q2d.save_project
+      
+      
+      Q2d.set_active_design
+      
+      
+      Q2d.set_active_dso_config_name
+      
+      
+      Q2d.set_license_type
+      
+      
+      Q2d.set_registry_from_file
+      
+      
+      Q2d.set_registry_key
+      
+      
+      Q2d.set_source_context
+      
+      
+      Q2d.set_temporary_directory
+      
+      
+      Q2d.solve_in_batch
+      
+      
+      Q2d.stop_simulations
+      
+      
+      Q2d.submit_job
+      
+      
+      Q2d.toggle_conductor_type
+      
+      
+      Q2d.validate_simple
+      
+      
+      Q2d.value_with_units
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Q2d.Position
+      Q2d.SimulationSetupTypes
+      Q2d.SolutionTypes
+      Q2d.active_setup
+      Q2d.aedt_version_id
+      Q2d.are_there_simulations_running
+      Q2d.available_variations
+      Q2d.boundaries
+      Q2d.boundaries_by_type
+      Q2d.components3d
+      Q2d.configurations
+      Q2d.default_solution_type
+      Q2d.design_datasets
+      Q2d.design_excitations
+      Q2d.design_file
+      Q2d.design_list
+      Q2d.design_name
+      Q2d.design_properties
+      Q2d.design_type
+      Q2d.desktop_class
+      Q2d.desktop_install_dir
+      Q2d.dim
+      Q2d.excitations
+      Q2d.excitations_by_type
+      Q2d.existing_analysis_setups
+      Q2d.existing_analysis_sweeps
+      Q2d.layouteditor
+      Q2d.library_list
+      Q2d.lock_file
+      Q2d.logger
+      Q2d.materials
+      Q2d.mesh
+      Q2d.modeler
+      Q2d.native_components
+      Q2d.nominal_adaptive
+      Q2d.nominal_sweep
+      Q2d.o_component_manager
+      Q2d.o_maxwell_parameters
+      Q2d.o_model_manager
+      Q2d.o_symbol_manager
+      Q2d.oanalysis
+      Q2d.oboundary
+      Q2d.odefinition_manager
+      Q2d.odesign
+      Q2d.odesktop
+      Q2d.oeditor
+      Q2d.oexcitation
+      Q2d.ofieldsreporter
+      Q2d.oimport_export
+      Q2d.omaterial_manager
+      Q2d.omatrix
+      Q2d.omeshmodule
+      Q2d.omodelsetup
+      Q2d.omonitor
+      Q2d.ooptimetrics
+      Q2d.ooutput_variable
+      Q2d.opadstackmanager
+      Q2d.oproject
+      Q2d.oradfield
+      Q2d.oreportsetup
+      Q2d.osolution
+      Q2d.output_variables
+      Q2d.personallib
+      Q2d.post
+      Q2d.project_datasets
+      Q2d.project_file
+      Q2d.project_list
+      Q2d.project_name
+      Q2d.project_path
+      Q2d.project_properties
+      Q2d.project_time_stamp
+      Q2d.project_timestamp_changed
+      Q2d.pyaedt_dir
+      Q2d.results_directory
+      Q2d.settings
+      Q2d.setup_names
+      Q2d.solution_type
+      Q2d.src_dir
+      Q2d.syslib
+      Q2d.temp_directory
+      Q2d.toolkit_directory
+      Q2d.userlib
+      Q2d.valid_design
+      Q2d.variable_manager
+      Q2d.working_directory
+   
+   

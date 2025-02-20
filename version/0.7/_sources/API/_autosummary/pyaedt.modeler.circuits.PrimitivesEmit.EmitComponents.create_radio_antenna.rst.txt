@@ -1,0 +1,6 @@
+create\_radio\_antenna
+======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesEmit
+
+.. automethod:: EmitComponents.create_radio_antenna

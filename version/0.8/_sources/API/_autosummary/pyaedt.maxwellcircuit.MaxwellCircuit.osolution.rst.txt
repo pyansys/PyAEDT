@@ -1,0 +1,6 @@
+osolution
+=========
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.osolution

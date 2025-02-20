@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.logger

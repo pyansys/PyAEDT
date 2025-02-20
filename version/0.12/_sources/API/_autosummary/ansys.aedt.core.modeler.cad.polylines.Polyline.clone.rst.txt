@@ -1,0 +1,6 @@
+clone
+=====
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.clone

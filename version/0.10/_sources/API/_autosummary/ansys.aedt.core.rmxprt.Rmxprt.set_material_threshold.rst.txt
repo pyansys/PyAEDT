@@ -1,0 +1,6 @@
+set\_material\_threshold
+========================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.set_material_threshold

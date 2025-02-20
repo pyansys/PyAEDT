@@ -1,0 +1,6 @@
+export\_image
+=============
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.export_image

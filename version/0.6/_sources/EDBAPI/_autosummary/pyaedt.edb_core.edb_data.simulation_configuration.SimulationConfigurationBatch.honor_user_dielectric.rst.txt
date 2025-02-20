@@ -1,0 +1,6 @@
+honor\_user\_dielectric
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.honor_user_dielectric

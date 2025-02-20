@@ -1,0 +1,6 @@
+add\_operation
+==============
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. automethod:: Matrix.add_operation

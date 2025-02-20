@@ -1,0 +1,6 @@
+open\_edb\_inside\_aedt
+=======================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.open_edb_inside_aedt

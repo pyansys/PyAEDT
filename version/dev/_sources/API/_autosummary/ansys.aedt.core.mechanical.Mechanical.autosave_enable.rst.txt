@@ -1,0 +1,6 @@
+autosave\_enable
+================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.autosave_enable

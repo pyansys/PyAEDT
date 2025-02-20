@@ -1,0 +1,6 @@
+get\_dxf\_layers
+================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_dxf_layers

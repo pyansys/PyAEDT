@@ -1,0 +1,6 @@
+is\_sensitivity\_enabled
+========================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.is_sensitivity_enabled

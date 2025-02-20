@@ -1,0 +1,6 @@
+results
+=======
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoattribute:: Emit.results

@@ -1,0 +1,6 @@
+syslib
+======
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.syslib

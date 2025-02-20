@@ -1,0 +1,6 @@
+odesign
+=======
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.odesign

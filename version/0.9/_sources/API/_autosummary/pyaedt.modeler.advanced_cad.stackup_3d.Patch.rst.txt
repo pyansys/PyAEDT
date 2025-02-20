@@ -1,0 +1,60 @@
+﻿Patch
+=====
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoclass:: Patch
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Patch.create_lumped_port
+      
+      
+      Patch.create_probe_port
+      
+      
+      Patch.quarter_wave_feeding_line
+      
+      
+      Patch.set_optimal_width
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Patch.added_length
+      Patch.aedt_object
+      Patch.application
+      Patch.dielectric_layer
+      Patch.effective_permittivity
+      Patch.frequency
+      Patch.impedance
+      Patch.layer_name
+      Patch.layer_number
+      Patch.length
+      Patch.material_name
+      Patch.name
+      Patch.permittivity
+      Patch.points_on_layer
+      Patch.position_x
+      Patch.position_y
+      Patch.reference_system
+      Patch.signal_layer
+      Patch.substrate_thickness
+      Patch.wave_length
+      Patch.width
+   
+   

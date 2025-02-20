@@ -1,0 +1,6 @@
+set\_temporary\_directory
+=========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.set_temporary_directory

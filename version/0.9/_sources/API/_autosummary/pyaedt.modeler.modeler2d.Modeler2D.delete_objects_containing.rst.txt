@@ -1,0 +1,6 @@
+delete\_objects\_containing
+===========================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.delete_objects_containing

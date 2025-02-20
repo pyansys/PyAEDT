@@ -1,0 +1,6 @@
+﻿add\_caption
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pdf
+
+.. automethod:: AnsysReport.add_caption

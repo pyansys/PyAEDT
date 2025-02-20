@@ -1,0 +1,6 @@
+duplicate
+=========
+
+.. currentmodule:: pyaedt.edb_core.materials
+
+.. automethod:: Materials.duplicate

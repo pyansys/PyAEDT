@@ -1,0 +1,6 @@
+export\_profile
+===============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.export_profile

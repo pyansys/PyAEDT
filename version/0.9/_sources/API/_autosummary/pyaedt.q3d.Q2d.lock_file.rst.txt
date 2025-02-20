@@ -1,0 +1,6 @@
+lock\_file
+==========
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.lock_file

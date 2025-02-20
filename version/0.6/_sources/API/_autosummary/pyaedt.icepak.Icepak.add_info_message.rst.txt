@@ -1,0 +1,6 @@
+add\_info\_message
+==================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.add_info_message

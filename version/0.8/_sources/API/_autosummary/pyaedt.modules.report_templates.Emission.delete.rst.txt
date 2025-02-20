@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Emission.delete

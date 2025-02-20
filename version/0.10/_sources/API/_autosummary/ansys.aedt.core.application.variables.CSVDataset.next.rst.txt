@@ -1,0 +1,6 @@
+next
+====
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. automethod:: CSVDataset.next

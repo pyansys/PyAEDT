@@ -1,0 +1,6 @@
+change\_stackup\_type
+=====================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. automethod:: Layers.change_stackup_type

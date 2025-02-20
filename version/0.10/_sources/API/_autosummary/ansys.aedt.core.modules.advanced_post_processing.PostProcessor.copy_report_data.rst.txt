@@ -1,0 +1,6 @@
+copy\_report\_data
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.copy_report_data

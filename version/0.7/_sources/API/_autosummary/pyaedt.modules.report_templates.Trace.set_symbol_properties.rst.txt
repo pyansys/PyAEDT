@@ -1,0 +1,6 @@
+set\_symbol\_properties
+=======================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Trace.set_symbol_properties

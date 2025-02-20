@@ -1,0 +1,6 @@
+a\_size
+=======
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.a_size

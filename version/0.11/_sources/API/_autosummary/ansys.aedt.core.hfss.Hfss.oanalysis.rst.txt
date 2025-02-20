@@ -1,0 +1,6 @@
+oanalysis
+=========
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. autoproperty:: Hfss.oanalysis

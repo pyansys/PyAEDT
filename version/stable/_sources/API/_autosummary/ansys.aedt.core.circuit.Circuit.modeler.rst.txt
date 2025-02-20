@@ -1,0 +1,6 @@
+modeler
+=======
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.modeler

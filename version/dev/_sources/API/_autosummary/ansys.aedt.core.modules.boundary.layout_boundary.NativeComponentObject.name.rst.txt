@@ -1,0 +1,6 @@
+name
+====
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoproperty:: NativeComponentObject.name

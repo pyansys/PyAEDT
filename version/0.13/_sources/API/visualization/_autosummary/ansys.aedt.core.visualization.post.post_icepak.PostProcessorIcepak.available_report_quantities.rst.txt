@@ -1,0 +1,6 @@
+available\_report\_quantities
+=============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.available_report_quantities

@@ -1,0 +1,6 @@
+merge\_design
+=============
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.merge_design

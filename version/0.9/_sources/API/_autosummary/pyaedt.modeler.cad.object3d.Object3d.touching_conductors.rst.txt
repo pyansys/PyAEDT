@@ -1,0 +1,6 @@
+touching\_conductors
+====================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.touching_conductors

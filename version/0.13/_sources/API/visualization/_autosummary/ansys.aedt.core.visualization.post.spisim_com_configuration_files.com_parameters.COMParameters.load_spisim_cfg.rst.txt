@@ -1,0 +1,6 @@
+load\_spisim\_cfg
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.spisim_com_configuration_files.com_parameters
+
+.. automethod:: COMParameters.load_spisim_cfg

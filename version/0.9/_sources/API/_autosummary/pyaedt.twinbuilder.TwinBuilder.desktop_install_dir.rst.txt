@@ -1,0 +1,6 @@
+desktop\_install\_dir
+=====================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.desktop_install_dir

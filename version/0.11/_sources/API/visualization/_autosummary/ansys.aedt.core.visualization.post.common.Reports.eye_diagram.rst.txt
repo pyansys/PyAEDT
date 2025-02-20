@@ -1,0 +1,6 @@
+eye\_diagram
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.common
+
+.. automethod:: Reports.eye_diagram

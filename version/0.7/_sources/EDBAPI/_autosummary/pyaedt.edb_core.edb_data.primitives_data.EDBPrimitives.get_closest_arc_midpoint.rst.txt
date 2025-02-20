@@ -1,0 +1,6 @@
+get\_closest\_arc\_midpoint
+===========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.primitives_data
+
+.. automethod:: EDBPrimitives.get_closest_arc_midpoint

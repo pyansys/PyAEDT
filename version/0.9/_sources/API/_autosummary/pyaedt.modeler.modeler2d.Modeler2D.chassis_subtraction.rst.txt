@@ -1,0 +1,6 @@
+chassis\_subtraction
+====================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.chassis_subtraction

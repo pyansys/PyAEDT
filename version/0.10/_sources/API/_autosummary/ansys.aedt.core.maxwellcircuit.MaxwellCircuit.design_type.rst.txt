@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.design_type

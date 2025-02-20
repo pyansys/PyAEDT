@@ -1,0 +1,6 @@
+odesktop
+========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.odesktop

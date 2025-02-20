@@ -1,0 +1,6 @@
+create\_siwave\_dc\_setup
+=========================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.create_siwave_dc_setup

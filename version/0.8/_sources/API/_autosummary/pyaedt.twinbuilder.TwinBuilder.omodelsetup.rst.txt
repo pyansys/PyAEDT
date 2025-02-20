@@ -1,0 +1,6 @@
+omodelsetup
+===========
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.omodelsetup

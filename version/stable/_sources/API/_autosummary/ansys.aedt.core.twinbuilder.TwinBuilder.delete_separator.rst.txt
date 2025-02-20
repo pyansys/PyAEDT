@@ -1,0 +1,6 @@
+delete\_separator
+=================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.delete_separator

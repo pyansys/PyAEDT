@@ -1,0 +1,6 @@
+export\_mask\_violation
+=======================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: EyeDiagram.export_mask_violation

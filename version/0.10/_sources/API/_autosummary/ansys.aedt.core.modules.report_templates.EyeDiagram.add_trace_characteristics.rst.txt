@@ -1,0 +1,6 @@
+add\_trace\_characteristics
+===========================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: EyeDiagram.add_trace_characteristics

@@ -1,0 +1,6 @@
+jsonalize\_tree
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: FarField.jsonalize_tree

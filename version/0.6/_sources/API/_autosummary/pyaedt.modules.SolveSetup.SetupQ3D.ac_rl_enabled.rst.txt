@@ -1,0 +1,6 @@
+ac\_rl\_enabled
+===============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoproperty:: SetupQ3D.ac_rl_enabled

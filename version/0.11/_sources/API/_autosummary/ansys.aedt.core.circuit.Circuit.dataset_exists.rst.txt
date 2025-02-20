@@ -1,0 +1,6 @@
+dataset\_exists
+===============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.dataset_exists

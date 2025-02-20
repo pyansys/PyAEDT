@@ -1,0 +1,6 @@
+edit\_grid
+==========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Fields.edit_grid

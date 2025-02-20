@@ -1,0 +1,6 @@
+adjust\_length\_on\_limit
+=========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_geometry
+
+.. autoproperty:: DistributedGeometry.adjust_length_on_limit

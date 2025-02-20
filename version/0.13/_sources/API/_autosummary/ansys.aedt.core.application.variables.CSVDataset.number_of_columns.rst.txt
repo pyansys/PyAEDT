@@ -1,0 +1,6 @@
+number\_of\_columns
+===================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: CSVDataset.number_of_columns

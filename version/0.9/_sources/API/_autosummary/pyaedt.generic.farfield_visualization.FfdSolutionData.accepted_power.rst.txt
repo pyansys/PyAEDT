@@ -1,0 +1,6 @@
+accepted\_power
+===============
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.accepted_power

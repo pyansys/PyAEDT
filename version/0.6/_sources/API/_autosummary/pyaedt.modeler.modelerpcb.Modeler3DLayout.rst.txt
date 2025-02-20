@@ -1,0 +1,172 @@
+﻿Modeler3DLayout
+===============
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. autoclass:: Modeler3DLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Modeler3DLayout.change_clip_plane_position
+      
+      
+      Modeler3DLayout.change_net_visibility
+      
+      
+      Modeler3DLayout.change_property
+      
+      
+      Modeler3DLayout.cleanup_objects
+      
+      
+      Modeler3DLayout.clip_plane
+      
+      
+      Modeler3DLayout.colinear_heal
+      
+      
+      Modeler3DLayout.convert_to_selections
+      
+      
+      Modeler3DLayout.create_circle
+      
+      
+      Modeler3DLayout.create_line
+      
+      
+      Modeler3DLayout.create_polygon
+      
+      
+      Modeler3DLayout.create_polygon_void
+      
+      
+      Modeler3DLayout.create_rectangle
+      
+      
+      Modeler3DLayout.create_text
+      
+      
+      Modeler3DLayout.create_via
+      
+      
+      Modeler3DLayout.duplicate
+      
+      
+      Modeler3DLayout.duplicate_across_layers
+      
+      
+      Modeler3DLayout.expand
+      
+      
+      Modeler3DLayout.fit_all
+      
+      
+      Modeler3DLayout.geometry_check_and_fix_all
+      
+      
+      Modeler3DLayout.import_cadence_brd
+      
+      
+      Modeler3DLayout.import_ipc2581
+      
+      
+      Modeler3DLayout.intersect
+      
+      
+      Modeler3DLayout.merge_design
+      
+      
+      Modeler3DLayout.modeler_variable
+      
+      
+      Modeler3DLayout.new_padstack
+      
+      
+      Modeler3DLayout.number_with_units
+      
+      
+      Modeler3DLayout.objects_by_layer
+      
+      
+      Modeler3DLayout.objects_by_net
+      
+      
+      Modeler3DLayout.obounding_box
+      
+      
+      Modeler3DLayout.place_3d_component
+      
+      
+      Modeler3DLayout.set_spice_model
+      
+      
+      Modeler3DLayout.set_temperature_dependence
+      
+      
+      Modeler3DLayout.subtract
+      
+      
+      Modeler3DLayout.unite
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Modeler3DLayout.Padstack
+      Modeler3DLayout.circle_names
+      Modeler3DLayout.circle_voids_names
+      Modeler3DLayout.circles
+      Modeler3DLayout.circles_voids
+      Modeler3DLayout.clip_planes
+      Modeler3DLayout.components
+      Modeler3DLayout.components_3d
+      Modeler3DLayout.defaultmaterial
+      Modeler3DLayout.edb
+      Modeler3DLayout.geometries
+      Modeler3DLayout.line_names
+      Modeler3DLayout.line_voids_names
+      Modeler3DLayout.lines
+      Modeler3DLayout.lines_voids
+      Modeler3DLayout.logger
+      Modeler3DLayout.model_units
+      Modeler3DLayout.modeler
+      Modeler3DLayout.nets
+      Modeler3DLayout.no_nets
+      Modeler3DLayout.o_component_manager
+      Modeler3DLayout.o_def_manager
+      Modeler3DLayout.o_model_manager
+      Modeler3DLayout.oeditor
+      Modeler3DLayout.opadstackmanager
+      Modeler3DLayout.padstacks
+      Modeler3DLayout.pins
+      Modeler3DLayout.polygon_names
+      Modeler3DLayout.polygon_voids_names
+      Modeler3DLayout.polygons
+      Modeler3DLayout.polygons_voids
+      Modeler3DLayout.power_nets
+      Modeler3DLayout.projdir
+      Modeler3DLayout.rectangle_names
+      Modeler3DLayout.rectangle_void_names
+      Modeler3DLayout.rectangles
+      Modeler3DLayout.rectangles_voids
+      Modeler3DLayout.signal_nets
+      Modeler3DLayout.stackup
+      Modeler3DLayout.version
+      Modeler3DLayout.via_names
+      Modeler3DLayout.vias
+      Modeler3DLayout.voids
+   
+   

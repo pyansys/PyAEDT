@@ -1,0 +1,6 @@
+active\_db
+==========
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.active_db

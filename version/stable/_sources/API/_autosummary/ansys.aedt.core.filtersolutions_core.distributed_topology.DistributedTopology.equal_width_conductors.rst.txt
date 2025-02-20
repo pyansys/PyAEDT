@@ -1,0 +1,6 @@
+equal\_width\_conductors
+========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.equal_width_conductors

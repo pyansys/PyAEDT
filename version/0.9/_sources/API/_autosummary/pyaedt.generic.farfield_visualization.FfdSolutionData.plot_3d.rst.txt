@@ -1,0 +1,6 @@
+plot\_3d
+========
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. automethod:: FfdSolutionData.plot_3d

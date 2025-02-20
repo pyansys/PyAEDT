@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.delete_project

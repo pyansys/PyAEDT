@@ -1,0 +1,6 @@
+set\_save\_fields
+=================
+
+.. currentmodule:: pyaedt.modules.SolveSweeps
+
+.. automethod:: SweepHFSS3DLayout.set_save_fields

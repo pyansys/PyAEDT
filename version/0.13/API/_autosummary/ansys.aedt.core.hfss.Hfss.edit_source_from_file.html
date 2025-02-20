@@ -1,0 +1,1027 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>edit_source_from_file &#8212; PyAEDT</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys_sphinx_theme.css?v=77703c5e" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+  
+    <link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../_static/documentation_options.js?v=f3b52448"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js/table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'API/_autosummary/ansys.aedt.core.hfss.Hfss.edit_source_from_file';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.13';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="edit_sources" href="ansys.aedt.core.hfss.Hfss.edit_sources.html" />
+    <link rel="prev" title="edit_setup" href="ansys.aedt.core.hfss.Hfss.edit_setup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.13.3" />
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/API/_autosummary/ansys.aedt.core.hfss.Hfss.edit_source_from_file.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyAEDT - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Application.html">Application and solvers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.desktop.Desktop.html">Desktop</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.html">Hfss</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.activate_variable_optimization.html">activate_variable_optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.activate_variable_sensitivity.html">activate_variable_sensitivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.activate_variable_statistical.html">activate_variable_statistical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.activate_variable_tuning.html">activate_variable_tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.add_3d_component_array_from_json.html">add_3d_component_array_from_json</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.add_error_message.html">add_error_message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.add_from_toolkit.html">add_from_toolkit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.add_info_message.html">add_info_message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.add_stackup_3d.html">add_stackup_3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.add_warning_message.html">add_warning_message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.analyze.html">analyze</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.analyze_setup.html">analyze_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.archive_project.html">archive_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_coating.html">assign_coating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_current_source_to_sheet.html">assign_current_source_to_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_febi.html">assign_febi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_hybrid_region.html">assign_hybrid_region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_impedance_to_sheet.html">assign_impedance_to_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_lattice_pair.html">assign_lattice_pair</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_lumped_rlc_to_sheet.html">assign_lumped_rlc_to_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_material.html">assign_material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_perfecte_to_sheets.html">assign_perfecte_to_sheets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_perfecth_to_sheets.html">assign_perfecth_to_sheets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_primary.html">assign_primary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_radiation_boundary_to_faces.html">assign_radiation_boundary_to_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_radiation_boundary_to_objects.html">assign_radiation_boundary_to_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_secondary.html">assign_secondary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_symmetry.html">assign_symmetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assign_voltage_source_to_sheet.html">assign_voltage_source_to_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.assignmaterial_from_sherlock_files.html">assignmaterial_from_sherlock_files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.auto_assign_lattice_pairs.html">auto_assign_lattice_pairs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.autosave_disable.html">autosave_disable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.autosave_enable.html">autosave_enable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.change_automatically_use_causal_materials.html">change_automatically_use_causal_materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.change_design_settings.html">change_design_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.change_material_override.html">change_material_override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.change_property.html">change_property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.change_validation_settings.html">change_validation_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.check_beta_option_enabled.html">check_beta_option_enabled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.check_if_project_is_loaded.html">check_if_project_is_loaded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.circuit_port.html">circuit_port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.clean_proj_folder.html">clean_proj_folder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.cleanup_solution.html">cleanup_solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.close_desktop.html">close_desktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.close_project.html">close_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.copy_design_from.html">copy_design_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.copy_project.html">copy_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.copy_solid_bodies_from.html">copy_solid_bodies_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_boundary.html">create_boundary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_current_source_from_objects.html">create_current_source_from_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_dataset.html">create_dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_dataset1d_design.html">create_dataset1d_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_dataset1d_project.html">create_dataset1d_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_dataset3d.html">create_dataset3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_floquet_port.html">create_floquet_port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_impedance_between_objects.html">create_impedance_between_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_linear_count_sweep.html">create_linear_count_sweep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_linear_step_sweep.html">create_linear_step_sweep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_lumped_rlc_between_objects.html">create_lumped_rlc_between_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_new_project.html">create_new_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_open_region.html">create_open_region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_output_variable.html">create_output_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_perfecte_from_objects.html">create_perfecte_from_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_perfecth_from_objects.html">create_perfecth_from_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_qfactor_report.html">create_qfactor_report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_sbr_antenna.html">create_sbr_antenna</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_sbr_chirp_i_doppler_setup.html">create_sbr_chirp_i_doppler_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_sbr_chirp_iq_doppler_setup.html">create_sbr_chirp_iq_doppler_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_sbr_custom_array_file.html">create_sbr_custom_array_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_sbr_file_based_antenna.html">create_sbr_file_based_antenna</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_sbr_linked_antenna.html">create_sbr_linked_antenna</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_sbr_pulse_doppler_setup.html">create_sbr_pulse_doppler_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_sbr_radar_from_json.html">create_sbr_radar_from_json</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_scattering.html">create_scattering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_setup.html">create_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_single_point_sweep.html">create_single_point_sweep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_source_excitation.html">create_source_excitation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_spiral_lumped_port.html">create_spiral_lumped_port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.create_voltage_source_from_objects.html">create_voltage_source_from_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.dataset_exists.html">dataset_exists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.deactivate_variable_optimization.html">deactivate_variable_optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.deactivate_variable_sensitivity.html">deactivate_variable_sensitivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.deactivate_variable_statistical.html">deactivate_variable_statistical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.deactivate_variable_tuning.html">deactivate_variable_tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.delete_design.html">delete_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.delete_project.html">delete_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.delete_separator.html">delete_separator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.delete_setup.html">delete_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.delete_table.html">delete_table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.delete_unused_variables.html">delete_unused_variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.delete_variable.html">delete_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.design_variation.html">design_variation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.duplicate_design.html">duplicate_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.edit_notes.html">edit_notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.edit_setup.html">edit_setup</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">edit_source_from_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.edit_sources.html">edit_sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.evaluate_expression.html">evaluate_expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_3d_model.html">export_3d_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_antenna_metadata.html">export_antenna_metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_convergence.html">export_convergence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_design_preview_to_jpg.html">export_design_preview_to_jpg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_element_pattern.html">export_element_pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_mesh_stats.html">export_mesh_stats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_parametric_results.html">export_parametric_results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_profile.html">export_profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_results.html">export_results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_rl_matrix.html">export_rl_matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_touchstone.html">export_touchstone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_touchstone_on_completion.html">export_touchstone_on_completion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.export_variables_to_csv.html">export_variables_to_csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.flatten_3d_components.html">flatten_3d_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.generate_temp_project_directory.html">generate_temp_project_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.generate_unique_setup_name.html">generate_unique_setup_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_all_conductors_names.html">get_all_conductors_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_all_dielectrics_names.html">get_all_dielectrics_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_all_insertion_loss_list.html">get_all_insertion_loss_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_all_return_loss_list.html">get_all_return_loss_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_all_source_modes.html">get_all_source_modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_all_sources.html">get_all_sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_antenna_data.html">get_antenna_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_components3d_vars.html">get_components3d_vars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_dxf_layers.html">get_dxf_layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_evaluated_value.html">get_evaluated_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_fext_xtalk_list.html">get_fext_xtalk_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_hdm_plotter.html">get_hdm_plotter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_module.html">get_module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_monitor_data.html">get_monitor_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_next_xtalk_list.html">get_next_xtalk_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_nominal_variation.html">get_nominal_variation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_object_material_properties.html">get_object_material_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_oo_name.html">get_oo_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_oo_object.html">get_oo_object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_oo_properties.html">get_oo_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_oo_property_value.html">get_oo_property_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_output_variable.html">get_output_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_profile.html">get_profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_property_value.html">get_property_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_rcs_data.html">get_rcs_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_registry_key_int.html">get_registry_key_int</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_registry_key_string.html">get_registry_key_string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_setup.html">get_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_setups.html">get_setups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_sweeps.html">get_sweeps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_touchstone_data.html">get_touchstone_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_traces_for_plot.html">get_traces_for_plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.hertzian_dipole_wave.html">hertzian_dipole_wave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.hidden_variable.html">hidden_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.identify_touching_conductors.html">identify_touching_conductors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.import_3d_cad.html">import_3d_cad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.import_dataset1d.html">import_dataset1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.import_dataset3d.html">import_dataset3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.import_dxf.html">import_dxf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.import_gds_3d.html">import_gds_3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.import_table.html">import_table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.insert_design.html">insert_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.insert_infinite_sphere.html">insert_infinite_sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.insert_near_field_box.html">insert_near_field_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.insert_near_field_line.html">insert_near_field_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.insert_near_field_rectangle.html">insert_near_field_rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.insert_near_field_sphere.html">insert_near_field_sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.list_of_variations.html">list_of_variations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.load_project.html">load_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.lumped_port.html">lumped_port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.number_with_units.html">number_with_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.parse_hdm_file.html">parse_hdm_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.plane_wave.html">plane_wave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.plot.html">plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.read_design_data.html">read_design_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.read_only_variable.html">read_only_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.release_desktop.html">release_desktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.remove_all_unused_definitions.html">remove_all_unused_definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.rename_design.html">rename_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.sar_setup.html">sar_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.save_project.html">save_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_active_design.html">set_active_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_active_dso_config_name.html">set_active_dso_config_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_auto_open.html">set_auto_open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_differential_pair.html">set_differential_pair</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_export_touchstone.html">set_export_touchstone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_impedance_multiplier.html">set_impedance_multiplier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_license_type.html">set_license_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_material_threshold.html">set_material_threshold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_mesh_fusion_settings.html">set_mesh_fusion_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_oo_property_value.html">set_oo_property_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_phase_center_per_port.html">set_phase_center_per_port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_radiated_power_calc_method.html">set_radiated_power_calc_method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_registry_from_file.html">set_registry_from_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_registry_key.html">set_registry_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_sbr_current_sources_options.html">set_sbr_current_sources_options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_sbr_txrx_settings.html">set_sbr_txrx_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_source_context.html">set_source_context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.set_temporary_directory.html">set_temporary_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.solve_in_batch.html">solve_in_batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.stop_simulations.html">stop_simulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.submit_job.html">submit_job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.thicken_port_sheets.html">thicken_port_sheets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.validate_full_design.html">validate_full_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.validate_simple.html">validate_simple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.value_with_units.html">value_with_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.wave_port.html">wave_port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.Position.html">Position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.SimulationSetupTypes.html">SimulationSetupTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.SolutionTypes.html">SolutionTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.active_setup.html">active_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.aedt_version_id.html">aedt_version_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.are_there_simulations_running.html">are_there_simulations_running</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.available_variations.html">available_variations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.boundaries.html">boundaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.boundaries_by_type.html">boundaries_by_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.components3d.html">components3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.composite.html">composite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.configurations.html">configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.default_solution_type.html">default_solution_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.design_datasets.html">design_datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.design_list.html">design_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.design_name.html">design_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.design_properties.html">design_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.design_type.html">design_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.desktop_class.html">desktop_class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.desktop_install_dir.html">desktop_install_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.excitation_objects.html">excitation_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.excitations.html">excitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.excitations_by_type.html">excitations_by_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.existing_analysis_setups.html">existing_analysis_setups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.existing_analysis_sweeps.html">existing_analysis_sweeps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.field_setup_names.html">field_setup_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.field_setups.html">field_setups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.get_all_sparameter_list.html">get_all_sparameter_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.hybrid.html">hybrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.info.html">info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.layouteditor.html">layouteditor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.library_list.html">library_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.lock_file.html">lock_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.logger.html">logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.materials.html">materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.mesh.html">mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.modeler.html">modeler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.native_component_names.html">native_component_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.native_components.html">native_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.nominal_adaptive.html">nominal_adaptive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.nominal_sweep.html">nominal_sweep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.o_component_manager.html">o_component_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.o_maxwell_parameters.html">o_maxwell_parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.o_model_manager.html">o_model_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.o_symbol_manager.html">o_symbol_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.oanalysis.html">oanalysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.oboundary.html">oboundary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.odefinition_manager.html">odefinition_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.odesign.html">odesign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.odesktop.html">odesktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.oeditor.html">oeditor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.oexcitation.html">oexcitation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.ofieldsreporter.html">ofieldsreporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.oimport_export.html">oimport_export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.omaterial_manager.html">omaterial_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.omatrix.html">omatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.omeshmodule.html">omeshmodule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.omodelsetup.html">omodelsetup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.omonitor.html">omonitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.onetwork_data_explorer.html">onetwork_data_explorer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.ooptimetrics.html">ooptimetrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.ooutput_variable.html">ooutput_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.opadstackmanager.html">opadstackmanager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.oproject.html">oproject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.optimizations.html">optimizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.oradfield.html">oradfield</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.oreportsetup.html">oreportsetup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.osolution.html">osolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.output_variables.html">output_variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.parametrics.html">parametrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.personallib.html">personallib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.ports.html">ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.post.html">post</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.project_datasets.html">project_datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.project_file.html">project_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.project_list.html">project_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.project_name.html">project_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.project_path.html">project_path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.project_properties.html">project_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.project_time_stamp.html">project_time_stamp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.project_timestamp_changed.html">project_timestamp_changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.pyaedt_dir.html">pyaedt_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.results_directory.html">results_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.settings.html">settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.setup_names.html">setup_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.setups.html">setups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.solution_type.html">solution_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.src_dir.html">src_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.syslib.html">syslib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.table_names.html">table_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.temp_directory.html">temp_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.toolkit_directory.html">toolkit_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.userlib.html">userlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.valid_design.html">valid_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.variable_manager.html">variable_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.working_directory.html">working_directory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.q3d.Q3d.html">Q3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.q3d.Q2d.html">Q2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.maxwell.Maxwell2d.html">Maxwell2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.maxwell.Maxwell3d.html">Maxwell3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.html">Icepak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.hfss3dlayout.Hfss3dLayout.html">Hfss3dLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.mechanical.Mechanical.html">Mechanical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.rmxprt.Rmxprt.html">Rmxprt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.html">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.maxwellcircuit.MaxwellCircuit.html">MaxwellCircuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.emit.Emit.html">Emit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.twinbuilder.TwinBuilder.html">TwinBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.filtersolutions.FilterSolutions.html">FilterSolutions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../MaterialManagement.html">Material and stackup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3D.html">3D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives2D.html">2D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitive_Objects.html">Primitives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3DLayout.html">Modeler in  HFSS 3D Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesCircuit.html">Modeler and components Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boundaries.html">Boundary objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mesh.html">Mesh operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup.html">Setup</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DesktopMessenger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optimetrics.html">Optimetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Configuration.html">Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SetupTemplates.html">Setup templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CableModeling.html">Cable modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FilterSolutions.html">Filter design</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../Application.html" class="nav-link">Application and solvers</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="ansys.aedt.core.hfss.Hfss.html" class="nav-link">Hfss</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">edit_source_from_file</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="edit-source-from-file">
+<h1>edit_source_from_file<a class="headerlink" href="#edit-source-from-file" title="Link to this heading">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.aedt.core.hfss.Hfss.edit_source_from_file">
+<span class="sig-prename descclassname"><span class="pre">Hfss.</span></span><span class="sig-name descname"><span class="pre">edit_source_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_time_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impedance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Power'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'utf-8'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hamming'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.aedt.core.hfss.Hfss.edit_source_from_file" title="Link to this definition">#</a></dt>
+<dd><p>Edit a source from file data.</p>
+<p>File data is a CSV containing either frequency data or time domain data that will be converted through FFT.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>input_file</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Full name of the input file. If <code class="docutils literal notranslate"><span class="pre">assignment</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, it loads directly the file, in this case
+the file must have AEDT format.</p>
+</dd>
+<dt><strong>assignment</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Port name and mode. For example, <code class="docutils literal notranslate"><span class="pre">&quot;Port1:1&quot;</span></code>.
+The port name must be defined if the solution type is other than Eigenmodal.</p>
+</dd>
+<dt><strong>is_time_domain</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether the input data is time-based or frequency-based. Frequency based data are Mag/Phase (deg).</p>
+</dd>
+<dt><strong>x_scale</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/functions.html#float" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><dl class="simple">
+<dt>Scaling factor for the x axis. This argument is ignored if the algorithm</dt><dd><p>identifies the format from the file header.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>y_scale</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/functions.html#float" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><dl class="simple">
+<dt>Scaling factor for the y axis. This argument is ignored if the algorithm</dt><dd><p>identifies the format from the file header.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>impedance</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/functions.html#float" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Excitation impedance. Default is <cite>50</cite>.</p>
+</dd>
+<dt><strong>data_format</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Data format. Options are <code class="docutils literal notranslate"><span class="pre">&quot;Current&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Power&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Voltage&quot;</span></code>. This
+argument is ignored if the algoritmm identifies the format from the
+file header.</p>
+</dd>
+<dt><strong>encoding</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>CSV file encoding.</p>
+</dd>
+<dt><strong>window</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Fft window. Options are <code class="docutils literal notranslate"><span class="pre">&quot;hamming&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;hanning&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;blackman&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bartlett&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.aedt.core.hfss.Hfss.edit_source_from_file"><code class="docutils literal notranslate"><span class="pre">edit_source_from_file()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/API/_autosummary/ansys.aedt.core.hfss.Hfss.edit_source_from_file.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/API/_autosummary/ansys.aedt.core.hfss.Hfss.edit_source_from_file.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+<link rel="stylesheet" href="../../_static/css/fuse-search.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"ignoreLocation": true, "keys": ["title", "text"], "limit": 10, "limite": 10, "minMatchCharLength": 2, "threshold": 0.5}');
+const SEARCH_FILE = "../../_static/search.json";
+</script>
+
+
+<script src="../../_static/js/search.js"></script>
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.2.6. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

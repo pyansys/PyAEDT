@@ -1,0 +1,6 @@
+create\_pwl\_source\_from\_file
+===============================
+
+.. currentmodule:: ansys.aedt.core.modules.cable_modeling
+
+.. automethod:: Cable.create_pwl_source_from_file

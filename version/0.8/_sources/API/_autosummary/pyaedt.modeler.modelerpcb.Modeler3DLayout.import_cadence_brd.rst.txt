@@ -1,0 +1,6 @@
+import\_cadence\_brd
+====================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.import_cadence_brd

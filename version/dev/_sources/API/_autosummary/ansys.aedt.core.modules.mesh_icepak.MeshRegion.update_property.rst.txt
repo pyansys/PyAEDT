@@ -1,0 +1,6 @@
+update\_property
+================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. automethod:: MeshRegion.update_property

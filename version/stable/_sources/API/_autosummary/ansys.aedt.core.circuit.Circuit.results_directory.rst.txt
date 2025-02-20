@@ -1,0 +1,6 @@
+results\_directory
+==================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.results_directory

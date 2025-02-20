@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.design_type

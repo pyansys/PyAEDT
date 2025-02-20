@@ -1,0 +1,6 @@
+get\_faces\_from\_materials
+===========================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.get_faces_from_materials

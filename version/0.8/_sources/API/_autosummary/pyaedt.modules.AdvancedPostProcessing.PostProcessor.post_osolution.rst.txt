@@ -1,0 +1,6 @@
+post\_osolution
+===============
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: PostProcessor.post_osolution

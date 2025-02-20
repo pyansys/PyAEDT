@@ -1,0 +1,6 @@
+get\_solution\_data
+===================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Emission.get_solution_data

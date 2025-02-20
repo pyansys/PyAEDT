@@ -1,0 +1,601 @@
+﻿Icepak
+======
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoclass:: Icepak
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Icepak.activate_variable_optimization
+      
+      
+      Icepak.activate_variable_sensitivity
+      
+      
+      Icepak.activate_variable_statistical
+      
+      
+      Icepak.activate_variable_tuning
+      
+      
+      Icepak.add_error_message
+      
+      
+      Icepak.add_from_toolkit
+      
+      
+      Icepak.add_info_message
+      
+      
+      Icepak.add_stackup_3d
+      
+      
+      Icepak.add_warning_message
+      
+      
+      Icepak.analyze
+      
+      
+      Icepak.analyze_setup
+      
+      
+      Icepak.apply_icepak_settings
+      
+      
+      Icepak.archive_project
+      
+      
+      Icepak.assign_2way_coupling
+      
+      
+      Icepak.assign_block_from_sherlock_file
+      
+      
+      Icepak.assign_em_losses
+      
+      
+      Icepak.assign_free_opening
+      
+      
+      Icepak.assign_grille
+      
+      
+      Icepak.assign_hollow_block
+      
+      
+      Icepak.assign_mass_flow_free_opening
+      
+      
+      Icepak.assign_material
+      
+      
+      Icepak.assign_openings
+      
+      
+      Icepak.assign_point_monitor
+      
+      
+      Icepak.assign_point_monitor_in_object
+      
+      
+      Icepak.assign_pressure_free_opening
+      
+      
+      Icepak.assign_priority_on_intersections
+      
+      
+      Icepak.assign_solid_block
+      
+      
+      Icepak.assign_source
+      
+      
+      Icepak.assign_stationary_wall
+      
+      
+      Icepak.assign_stationary_wall_with_heat_flux
+      
+      
+      Icepak.assign_stationary_wall_with_htc
+      
+      
+      Icepak.assign_stationary_wall_with_temperature
+      
+      
+      Icepak.assign_surface_material
+      
+      
+      Icepak.assign_surface_monitor
+      
+      
+      Icepak.assign_symmetry_wall
+      
+      
+      Icepak.assign_velocity_free_opening
+      
+      
+      Icepak.assignmaterial_from_sherlock_files
+      
+      
+      Icepak.autosave_disable
+      
+      
+      Icepak.autosave_enable
+      
+      
+      Icepak.change_automatically_use_causal_materials
+      
+      
+      Icepak.change_design_settings
+      
+      
+      Icepak.change_material_override
+      
+      
+      Icepak.change_property
+      
+      
+      Icepak.change_validation_settings
+      
+      
+      Icepak.check_beta_option_enabled
+      
+      
+      Icepak.check_if_project_is_loaded
+      
+      
+      Icepak.clean_proj_folder
+      
+      
+      Icepak.cleanup_solution
+      
+      
+      Icepak.close_desktop
+      
+      
+      Icepak.close_project
+      
+      
+      Icepak.copyGroupFrom
+      
+      
+      Icepak.copy_design_from
+      
+      
+      Icepak.copy_project
+      
+      
+      Icepak.copy_solid_bodies_from
+      
+      
+      Icepak.create_conduting_plate
+      
+      
+      Icepak.create_dataset
+      
+      
+      Icepak.create_dataset1d_design
+      
+      
+      Icepak.create_dataset1d_project
+      
+      
+      Icepak.create_dataset3d
+      
+      
+      Icepak.create_fan
+      
+      
+      Icepak.create_ipk_3dcomponent_pcb
+      
+      
+      Icepak.create_meshregion_component
+      
+      
+      Icepak.create_network_blocks
+      
+      
+      Icepak.create_network_object
+      
+      
+      Icepak.create_new_project
+      
+      
+      Icepak.create_output_variable
+      
+      
+      Icepak.create_parametric_fin_heat_sink
+      
+      
+      Icepak.create_pcb_from_3dlayout
+      
+      
+      Icepak.create_resistor_network_from_matrix
+      
+      
+      Icepak.create_setup
+      
+      
+      Icepak.create_source_blocks_from_list
+      
+      
+      Icepak.create_two_resistor_network_block
+      
+      
+      Icepak.dataset_exists
+      
+      
+      Icepak.deactivate_variable_optimization
+      
+      
+      Icepak.deactivate_variable_sensitivity
+      
+      
+      Icepak.deactivate_variable_statistical
+      
+      
+      Icepak.deactivate_variable_tuning
+      
+      
+      Icepak.delete_design
+      
+      
+      Icepak.delete_em_losses
+      
+      
+      Icepak.delete_pcb_component
+      
+      
+      Icepak.delete_project
+      
+      
+      Icepak.delete_separator
+      
+      
+      Icepak.delete_setup
+      
+      
+      Icepak.delete_variable
+      
+      
+      Icepak.design_settings
+      
+      
+      Icepak.design_variation
+      
+      
+      Icepak.duplicate_design
+      
+      
+      Icepak.edit_design_settings
+      
+      
+      Icepak.edit_setup
+      
+      
+      Icepak.eval_surface_quantity_from_field_summary
+      
+      
+      Icepak.eval_volume_quantity_from_field_summary
+      
+      
+      Icepak.evaluate_expression
+      
+      
+      Icepak.export_3d_model
+      
+      
+      Icepak.export_convergence
+      
+      
+      Icepak.export_design_preview_to_jpg
+      
+      
+      Icepak.export_mesh_stats
+      
+      
+      Icepak.export_parametric_results
+      
+      
+      Icepak.export_profile
+      
+      
+      Icepak.export_results
+      
+      
+      Icepak.export_rl_matrix
+      
+      
+      Icepak.export_summary
+      
+      
+      Icepak.export_variables_to_csv
+      
+      
+      Icepak.find_top
+      
+      
+      Icepak.flatten_3d_components
+      
+      
+      Icepak.generate_fluent_mesh
+      
+      
+      Icepak.generate_temp_project_directory
+      
+      
+      Icepak.generate_unique_setup_name
+      
+      
+      Icepak.get_all_conductors_names
+      
+      
+      Icepak.get_all_dielectrics_names
+      
+      
+      Icepak.get_all_sources
+      
+      
+      Icepak.get_components3d_vars
+      
+      
+      Icepak.get_dxf_layers
+      
+      
+      Icepak.get_evaluated_value
+      
+      
+      Icepak.get_fans_operating_point
+      
+      
+      Icepak.get_gas_objects
+      
+      
+      Icepak.get_link_data
+      
+      
+      Icepak.get_liquid_objects
+      
+      
+      Icepak.get_module
+      
+      
+      Icepak.get_monitor_data
+      
+      
+      Icepak.get_nominal_variation
+      
+      
+      Icepak.get_object_material_properties
+      
+      
+      Icepak.get_oo_name
+      
+      
+      Icepak.get_oo_object
+      
+      
+      Icepak.get_oo_properties
+      
+      
+      Icepak.get_oo_property_value
+      
+      
+      Icepak.get_output_variable
+      
+      
+      Icepak.get_property_value
+      
+      
+      Icepak.get_radiation_settings
+      
+      
+      Icepak.get_registry_key_int
+      
+      
+      Icepak.get_registry_key_string
+      
+      
+      Icepak.get_setup
+      
+      
+      Icepak.get_setups
+      
+      
+      Icepak.get_sweeps
+      
+      
+      Icepak.get_traces_for_plot
+      
+      
+      Icepak.globalMeshSettings
+      
+      
+      Icepak.hidden_variable
+      
+      
+      Icepak.identify_touching_conductors
+      
+      
+      Icepak.import_dataset1d
+      
+      
+      Icepak.import_dataset3d
+      
+      
+      Icepak.import_dxf
+      
+      
+      Icepak.import_idf
+      
+      
+      Icepak.insert_design
+      
+      
+      Icepak.list_of_variations
+      
+      
+      Icepak.load_project
+      
+      
+      Icepak.number_with_units
+      
+      
+      Icepak.plot
+      
+      
+      Icepak.read_design_data
+      
+      
+      Icepak.read_only_variable
+      
+      
+      Icepak.release_desktop
+      
+      
+      Icepak.rename_design
+      
+      
+      Icepak.save_project
+      
+      
+      Icepak.set_active_design
+      
+      
+      Icepak.set_active_dso_config_name
+      
+      
+      Icepak.set_license_type
+      
+      
+      Icepak.set_registry_from_file
+      
+      
+      Icepak.set_registry_key
+      
+      
+      Icepak.set_source_context
+      
+      
+      Icepak.set_temporary_directory
+      
+      
+      Icepak.solve_in_batch
+      
+      
+      Icepak.stop_simulations
+      
+      
+      Icepak.submit_job
+      
+      
+      Icepak.validate_simple
+      
+      
+      Icepak.value_with_units
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Icepak.Position
+      Icepak.SimulationSetupTypes
+      Icepak.SolutionTypes
+      Icepak.active_setup
+      Icepak.aedt_version_id
+      Icepak.are_there_simulations_running
+      Icepak.available_variations
+      Icepak.boundaries
+      Icepak.boundaries_by_type
+      Icepak.components3d
+      Icepak.configurations
+      Icepak.default_solution_type
+      Icepak.design_datasets
+      Icepak.design_excitations
+      Icepak.design_list
+      Icepak.design_name
+      Icepak.design_properties
+      Icepak.design_type
+      Icepak.desktop_class
+      Icepak.desktop_install_dir
+      Icepak.excitations
+      Icepak.excitations_by_type
+      Icepak.existing_analysis_setups
+      Icepak.existing_analysis_sweeps
+      Icepak.layouteditor
+      Icepak.library_list
+      Icepak.lock_file
+      Icepak.logger
+      Icepak.materials
+      Icepak.mesh
+      Icepak.modeler
+      Icepak.monitor
+      Icepak.native_components
+      Icepak.nominal_adaptive
+      Icepak.nominal_sweep
+      Icepak.o_component_manager
+      Icepak.o_maxwell_parameters
+      Icepak.o_model_manager
+      Icepak.o_symbol_manager
+      Icepak.oanalysis
+      Icepak.oboundary
+      Icepak.odefinition_manager
+      Icepak.odesign
+      Icepak.odesktop
+      Icepak.oeditor
+      Icepak.oexcitation
+      Icepak.ofieldsreporter
+      Icepak.oimport_export
+      Icepak.omaterial_manager
+      Icepak.omatrix
+      Icepak.omeshmodule
+      Icepak.omodelsetup
+      Icepak.omonitor
+      Icepak.ooptimetrics
+      Icepak.ooutput_variable
+      Icepak.opadstackmanager
+      Icepak.oproject
+      Icepak.oradfield
+      Icepak.oreportsetup
+      Icepak.osolution
+      Icepak.output_variables
+      Icepak.personallib
+      Icepak.post
+      Icepak.problem_type
+      Icepak.project_datasets
+      Icepak.project_file
+      Icepak.project_list
+      Icepak.project_name
+      Icepak.project_path
+      Icepak.project_properties
+      Icepak.project_time_stamp
+      Icepak.project_timestamp_changed
+      Icepak.pyaedt_dir
+      Icepak.results_directory
+      Icepak.settings
+      Icepak.setup_names
+      Icepak.solution_type
+      Icepak.src_dir
+      Icepak.syslib
+      Icepak.temp_directory
+      Icepak.toolkit_directory
+      Icepak.userlib
+      Icepak.valid_design
+      Icepak.variable_manager
+      Icepak.working_directory
+   
+   

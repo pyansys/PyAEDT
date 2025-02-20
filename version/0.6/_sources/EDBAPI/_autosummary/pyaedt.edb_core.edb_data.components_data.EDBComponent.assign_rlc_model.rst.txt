@@ -1,0 +1,6 @@
+assign\_rlc\_model
+==================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.components_data
+
+.. automethod:: EDBComponent.assign_rlc_model

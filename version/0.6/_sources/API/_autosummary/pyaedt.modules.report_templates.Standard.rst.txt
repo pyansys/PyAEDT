@@ -1,0 +1,106 @@
+﻿Standard
+========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoclass:: Standard
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Standard.add_cartesian_x_marker
+      
+      
+      Standard.add_cartesian_y_marker
+      
+      
+      Standard.add_limit_line_from_equation
+      
+      
+      Standard.add_limit_line_from_points
+      
+      
+      Standard.add_note
+      
+      
+      Standard.add_trace_to_report
+      
+      
+      Standard.create
+      
+      
+      Standard.delete_traces
+      
+      
+      Standard.edit_general_settings
+      
+      
+      Standard.edit_grid
+      
+      
+      Standard.edit_header
+      
+      
+      Standard.edit_legend
+      
+      
+      Standard.edit_x_axis
+      
+      
+      Standard.edit_x_axis_scaling
+      
+      
+      Standard.edit_y_axis
+      
+      
+      Standard.edit_y_axis_scaling
+      
+      
+      Standard.get_solution_data
+      
+      
+      Standard.import_traces
+      
+      
+      Standard.update_expressions_with_defaults
+      
+      
+      Standard.update_trace_in_report
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Standard.differential_pairs
+      Standard.domain
+      Standard.expressions
+      Standard.limit_lines
+      Standard.matrix
+      Standard.notes
+      Standard.plot_name
+      Standard.polyline
+      Standard.primary_sweep
+      Standard.primary_sweep_range
+      Standard.report_category
+      Standard.report_type
+      Standard.secondary_sweep
+      Standard.secondary_sweep_range
+      Standard.sub_design_id
+      Standard.time_start
+      Standard.time_stop
+      Standard.traces
+      Standard.variations
+   
+   

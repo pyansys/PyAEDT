@@ -1,0 +1,6 @@
+get\_touchstone\_data
+=====================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.get_touchstone_data

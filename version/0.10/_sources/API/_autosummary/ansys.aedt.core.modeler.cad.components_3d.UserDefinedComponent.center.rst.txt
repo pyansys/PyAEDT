@@ -1,0 +1,6 @@
+center
+======
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.components_3d
+
+.. autoproperty:: UserDefinedComponent.center

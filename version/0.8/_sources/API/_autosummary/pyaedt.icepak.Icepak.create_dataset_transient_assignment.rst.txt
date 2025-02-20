@@ -1,0 +1,6 @@
+create\_dataset\_transient\_assignment
+======================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_dataset_transient_assignment

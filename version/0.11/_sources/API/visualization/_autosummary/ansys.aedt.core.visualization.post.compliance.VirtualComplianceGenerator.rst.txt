@@ -1,0 +1,33 @@
+﻿VirtualComplianceGenerator
+==========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. autoclass:: VirtualComplianceGenerator
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      VirtualComplianceGenerator.add_erl_parameters
+      
+      
+      VirtualComplianceGenerator.add_report
+      
+      
+      VirtualComplianceGenerator.add_report_from_folder
+      
+      
+      VirtualComplianceGenerator.save_configuration
+      
+   
+   
+
+   
+   
+   

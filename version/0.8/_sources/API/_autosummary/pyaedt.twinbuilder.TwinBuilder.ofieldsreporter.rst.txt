@@ -1,0 +1,6 @@
+ofieldsreporter
+===============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.ofieldsreporter

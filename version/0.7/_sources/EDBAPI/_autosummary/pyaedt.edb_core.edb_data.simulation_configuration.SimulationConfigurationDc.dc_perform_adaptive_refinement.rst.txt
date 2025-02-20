@@ -1,0 +1,6 @@
+dc\_perform\_adaptive\_refinement
+=================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_perform_adaptive_refinement

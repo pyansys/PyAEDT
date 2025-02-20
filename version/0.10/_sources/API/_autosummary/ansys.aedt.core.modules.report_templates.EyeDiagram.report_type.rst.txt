@@ -1,0 +1,6 @@
+report\_type
+============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: EyeDiagram.report_type

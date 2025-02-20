@@ -1,0 +1,6 @@
+get\_nets\_from\_pin\_list
+==========================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.get_nets_from_pin_list

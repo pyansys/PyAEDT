@@ -1,0 +1,6 @@
+background\_color
+=================
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.background_color

@@ -1,0 +1,6 @@
+frames
+======
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.frames

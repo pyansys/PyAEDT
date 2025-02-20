@@ -1,0 +1,6 @@
+get\_edges\_for\_circuit\_port\_from\_sheet
+===========================================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_edges_for_circuit_port_from_sheet

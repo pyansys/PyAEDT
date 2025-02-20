@@ -1,0 +1,6 @@
+get\_profile
+============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.get_profile

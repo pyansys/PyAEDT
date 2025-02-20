@@ -1,0 +1,6 @@
+ac\_phase
+=========
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoproperty:: PowerSinSource.ac_phase

@@ -1,0 +1,6 @@
+create\_dataset3d
+=================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.create_dataset3d

@@ -1,0 +1,74 @@
+﻿FfdSolutionData
+===============
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. autoclass:: FfdSolutionData
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FfdSolutionData.combine_farfield
+      
+      
+      FfdSolutionData.get_accepted_power
+      
+      
+      FfdSolutionData.get_far_field_mesh
+      
+      
+      FfdSolutionData.get_port_index
+      
+      
+      FfdSolutionData.plot_3d
+      
+      
+      FfdSolutionData.plot_3d_chart
+      
+      
+      FfdSolutionData.plot_contour
+      
+      
+      FfdSolutionData.plot_cut
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      FfdSolutionData.accepted_power
+      FfdSolutionData.accepted_power_element
+      FfdSolutionData.active_s_parameters
+      FfdSolutionData.all_element_names
+      FfdSolutionData.element_info
+      FfdSolutionData.farfield_data
+      FfdSolutionData.frequencies
+      FfdSolutionData.frequency
+      FfdSolutionData.incident_power
+      FfdSolutionData.incident_power_element
+      FfdSolutionData.input_file
+      FfdSolutionData.magnitude
+      FfdSolutionData.metadata
+      FfdSolutionData.origin
+      FfdSolutionData.phase
+      FfdSolutionData.phi_scan
+      FfdSolutionData.radiated_power
+      FfdSolutionData.radiated_power_element
+      FfdSolutionData.s_parameters
+      FfdSolutionData.taper
+      FfdSolutionData.theta_scan
+      FfdSolutionData.touchstone_data
+      FfdSolutionData.weight
+   
+   

@@ -1,0 +1,6 @@
+add\_pin\_iports
+================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_maxwell_circuit
+
+.. automethod:: MaxwellCircuitComponents.add_pin_iports

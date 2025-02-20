@@ -1,0 +1,6 @@
+import\_object\_properties
+==========================
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_object_properties

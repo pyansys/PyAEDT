@@ -1,0 +1,6 @@
+solve\_in\_batch
+================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.solve_in_batch

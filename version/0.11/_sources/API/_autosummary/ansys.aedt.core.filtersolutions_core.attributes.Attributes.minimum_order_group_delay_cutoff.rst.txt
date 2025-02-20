@@ -1,0 +1,6 @@
+minimum\_order\_group\_delay\_cutoff
+====================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.minimum_order_group_delay_cutoff

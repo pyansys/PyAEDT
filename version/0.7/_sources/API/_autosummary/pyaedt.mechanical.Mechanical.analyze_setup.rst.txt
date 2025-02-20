@@ -1,0 +1,6 @@
+analyze\_setup
+==============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.analyze_setup

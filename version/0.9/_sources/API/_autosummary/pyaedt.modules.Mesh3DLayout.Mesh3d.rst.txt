@@ -1,0 +1,40 @@
+﻿Mesh3d
+======
+
+.. currentmodule:: pyaedt.modules.Mesh3DLayout
+
+.. autoclass:: Mesh3d
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Mesh3d.assign_length_mesh
+      
+      
+      Mesh3d.assign_skin_depth
+      
+      
+      Mesh3d.delete_mesh_operations
+      
+      
+      Mesh3d.generate_mesh
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Mesh3d.omeshmodule
+   
+   

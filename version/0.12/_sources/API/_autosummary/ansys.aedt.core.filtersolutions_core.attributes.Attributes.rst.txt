@@ -1,0 +1,85 @@
+﻿Attributes
+==========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoclass:: Attributes
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Attributes.arith_symmetry
+      Attributes.asymmetric
+      Attributes.asymmetric_high_order
+      Attributes.asymmetric_high_stop_band_attenuation_db
+      Attributes.asymmetric_high_stop_band_ratio
+      Attributes.asymmetric_low_order
+      Attributes.asymmetric_low_stop_band_attenuation_db
+      Attributes.asymmetric_low_stop_band_ratio
+      Attributes.bessel_normalized_delay
+      Attributes.bessel_normalized_delay_percentage
+      Attributes.bessel_normalized_delay_period
+      Attributes.constrict_ripple
+      Attributes.constrict_ripple_percent
+      Attributes.data_transmission_filter
+      Attributes.delay_equalizer
+      Attributes.delay_equalizer_order
+      Attributes.delay_time
+      Attributes.diplexer_inner_band_width
+      Attributes.diplexer_lower_band_width
+      Attributes.diplexer_lower_center_frequency
+      Attributes.diplexer_outer_band_width
+      Attributes.diplexer_type
+      Attributes.diplexer_upper_band_width
+      Attributes.diplexer_upper_center_frequency
+      Attributes.equiripple_delay
+      Attributes.even_order
+      Attributes.even_order_refl_zero
+      Attributes.even_order_trn_zero
+      Attributes.filter_class
+      Attributes.filter_implementation
+      Attributes.filter_multiple_bands_enabled
+      Attributes.filter_multiple_bands_high_pass_frequency
+      Attributes.filter_multiple_bands_low_pass_frequency
+      Attributes.filter_order
+      Attributes.filter_type
+      Attributes.gaussian_bessel_reflection
+      Attributes.gaussian_transition
+      Attributes.group_delay_ripple_period
+      Attributes.half_band_ripple
+      Attributes.ideal_minimum_order
+      Attributes.lower_frequency
+      Attributes.minimum_order_group_delay_cutoff
+      Attributes.minimum_order_group_delay_error_percent
+      Attributes.minimum_order_stop_band_attenuation_db
+      Attributes.minimum_order_stop_band_frequency
+      Attributes.normalized_group_delay_percentage
+      Attributes.pass_band_center_frequency
+      Attributes.pass_band_definition
+      Attributes.pass_band_ripple
+      Attributes.pass_band_width_frequency
+      Attributes.raised_cosine_alpha_percentage
+      Attributes.ripple_constriction_band
+      Attributes.root_raised_cosine
+      Attributes.single_point_ripple
+      Attributes.single_point_ripple_inf_zeros
+      Attributes.standard_delay_equ_pass_band_attenuation
+      Attributes.standard_delay_equ_pass_band_attenuation_value_db
+      Attributes.standard_pass_band_attenuation
+      Attributes.standard_pass_band_attenuation_value_db
+      Attributes.stop_band_attenuation_db
+      Attributes.stop_band_definition
+      Attributes.stop_band_frequency
+      Attributes.stop_band_ratio
+      Attributes.upper_frequency
+   
+   

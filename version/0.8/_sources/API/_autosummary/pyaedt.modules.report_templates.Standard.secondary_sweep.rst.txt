@@ -1,0 +1,6 @@
+secondary\_sweep
+================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Standard.secondary_sweep

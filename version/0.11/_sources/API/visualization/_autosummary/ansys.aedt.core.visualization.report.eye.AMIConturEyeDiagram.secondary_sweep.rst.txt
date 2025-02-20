@@ -1,0 +1,6 @@
+secondary\_sweep
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. autoproperty:: AMIConturEyeDiagram.secondary_sweep

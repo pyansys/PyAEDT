@@ -1,0 +1,6 @@
+get\_sweeps
+===========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.get_sweeps

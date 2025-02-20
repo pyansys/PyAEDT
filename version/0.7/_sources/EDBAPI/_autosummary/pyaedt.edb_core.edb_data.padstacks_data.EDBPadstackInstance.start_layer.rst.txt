@@ -1,0 +1,6 @@
+start\_layer
+============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadstackInstance.start_layer

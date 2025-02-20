@@ -1,0 +1,6 @@
+terminals
+=========
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.terminals

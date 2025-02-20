@@ -1,0 +1,51 @@
+﻿EDBNetsData
+===========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. autoclass:: EDBNetsData
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EDBNetsData.create
+      
+      
+      EDBNetsData.delete
+      
+      
+      EDBNetsData.find_by_name
+      
+      
+      EDBNetsData.get_smallest_trace_width
+      
+      
+      EDBNetsData.plot
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EDBNetsData.api_class
+      EDBNetsData.api_object
+      EDBNetsData.components
+      EDBNetsData.extended_net
+      EDBNetsData.is_null
+      EDBNetsData.is_power_ground
+      EDBNetsData.name
+      EDBNetsData.padstack_instances
+      EDBNetsData.primitives
+   
+   

@@ -1,0 +1,6 @@
+oboundary
+=========
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.oboundary

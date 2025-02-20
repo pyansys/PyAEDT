@@ -1,0 +1,6 @@
+set\_power\_ferrite\_coreloss
+=============================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: Material.set_power_ferrite_coreloss

@@ -1,0 +1,6 @@
+SimulationSetupTypes
+====================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.SimulationSetupTypes

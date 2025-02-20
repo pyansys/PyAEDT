@@ -1,0 +1,6 @@
+is\_optimization\_enabled
+=========================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.is_optimization_enabled

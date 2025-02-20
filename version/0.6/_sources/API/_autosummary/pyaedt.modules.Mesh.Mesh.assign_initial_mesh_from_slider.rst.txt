@@ -1,0 +1,6 @@
+assign\_initial\_mesh\_from\_slider
+===================================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.assign_initial_mesh_from_slider

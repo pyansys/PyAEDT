@@ -1,0 +1,6 @@
+disable\_stdout\_log
+====================
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. automethod:: AedtLogger.disable_stdout_log

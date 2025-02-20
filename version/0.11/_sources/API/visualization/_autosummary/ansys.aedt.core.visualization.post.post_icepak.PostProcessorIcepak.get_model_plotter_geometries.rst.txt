@@ -1,0 +1,6 @@
+get\_model\_plotter\_geometries
+===============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.get_model_plotter_geometries

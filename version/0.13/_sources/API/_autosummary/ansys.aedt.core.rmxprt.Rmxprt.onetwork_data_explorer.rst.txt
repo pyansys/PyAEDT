@@ -1,0 +1,6 @@
+onetwork\_data\_explorer
+========================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.onetwork_data_explorer

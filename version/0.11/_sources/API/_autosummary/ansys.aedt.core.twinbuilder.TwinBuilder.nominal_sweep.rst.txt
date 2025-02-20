@@ -1,0 +1,6 @@
+nominal\_sweep
+==============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.nominal_sweep

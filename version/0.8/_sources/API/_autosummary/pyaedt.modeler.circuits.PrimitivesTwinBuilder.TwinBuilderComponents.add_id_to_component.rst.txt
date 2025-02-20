@@ -1,0 +1,6 @@
+add\_id\_to\_component
+======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.add_id_to_component

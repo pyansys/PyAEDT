@@ -1,0 +1,6 @@
+are\_there\_simulations\_running
+================================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.are_there_simulations_running

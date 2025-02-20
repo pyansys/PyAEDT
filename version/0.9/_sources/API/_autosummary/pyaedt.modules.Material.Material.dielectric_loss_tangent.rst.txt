@@ -1,0 +1,6 @@
+dielectric\_loss\_tangent
+=========================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.dielectric_loss_tangent

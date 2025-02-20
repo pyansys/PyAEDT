@@ -1,0 +1,6 @@
+available\_quantities\_categories
+=================================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.available_quantities_categories

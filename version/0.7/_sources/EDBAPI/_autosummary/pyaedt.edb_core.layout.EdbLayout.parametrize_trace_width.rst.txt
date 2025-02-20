@@ -1,0 +1,6 @@
+parametrize\_trace\_width
+=========================
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. automethod:: EdbLayout.parametrize_trace_width

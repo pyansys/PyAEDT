@@ -1,0 +1,6 @@
+auto\_delay
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. autoproperty:: EyeDiagram.auto_delay

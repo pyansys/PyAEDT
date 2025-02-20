@@ -1,0 +1,6 @@
+set\_hysteresis\_coreloss
+=========================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: Material.set_hysteresis_coreloss

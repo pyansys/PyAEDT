@@ -1,0 +1,6 @@
+metadata\_file
+==============
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionDataExporter.metadata_file

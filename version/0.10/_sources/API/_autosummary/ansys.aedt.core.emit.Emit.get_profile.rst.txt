@@ -1,0 +1,6 @@
+get\_profile
+============
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.get_profile

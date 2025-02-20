@@ -1,0 +1,39 @@
+﻿SweepHFSS
+=========
+
+.. currentmodule:: pyaedt.modules.SolveSweeps
+
+.. autoclass:: SweepHFSS
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SweepHFSS.add_subrange
+      
+      
+      SweepHFSS.create
+      
+      
+      SweepHFSS.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SweepHFSS.basis_frequencies
+      SweepHFSS.frequencies
+      SweepHFSS.is_solved
+   
+   

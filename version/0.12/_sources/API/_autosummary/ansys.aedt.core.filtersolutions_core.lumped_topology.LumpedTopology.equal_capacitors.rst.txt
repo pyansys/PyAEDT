@@ -1,0 +1,6 @@
+equal\_capacitors
+=================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_topology
+
+.. autoproperty:: LumpedTopology.equal_capacitors

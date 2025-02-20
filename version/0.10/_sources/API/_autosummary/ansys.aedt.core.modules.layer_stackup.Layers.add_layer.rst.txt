@@ -1,0 +1,6 @@
+add\_layer
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. automethod:: Layers.add_layer

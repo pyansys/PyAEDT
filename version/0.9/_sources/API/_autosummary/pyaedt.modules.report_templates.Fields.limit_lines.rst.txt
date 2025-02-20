@@ -1,0 +1,6 @@
+limit\_lines
+============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Fields.limit_lines

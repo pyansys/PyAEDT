@@ -1,0 +1,6 @@
+find\_top
+=========
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.find_top

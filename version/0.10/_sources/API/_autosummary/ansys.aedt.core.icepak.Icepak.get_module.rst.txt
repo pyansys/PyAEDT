@@ -1,0 +1,6 @@
+get\_module
+===========
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.get_module

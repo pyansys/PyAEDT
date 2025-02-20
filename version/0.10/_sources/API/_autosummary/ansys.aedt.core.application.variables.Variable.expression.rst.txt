@@ -1,0 +1,6 @@
+expression
+==========
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.expression

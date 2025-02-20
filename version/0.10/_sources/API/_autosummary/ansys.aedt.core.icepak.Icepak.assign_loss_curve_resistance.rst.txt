@@ -1,0 +1,6 @@
+assign\_loss\_curve\_resistance
+===============================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.assign_loss_curve_resistance

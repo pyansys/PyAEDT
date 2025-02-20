@@ -1,0 +1,6 @@
+rename
+======
+
+.. currentmodule:: pyaedt.modeler.cad.Modeler
+
+.. automethod:: CoordinateSystem.rename

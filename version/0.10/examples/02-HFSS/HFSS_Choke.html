@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>HFSS: choke &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/02-HFSS/HFSS_Choke';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HFSS: dipole antenna" href="HFSS_Dipole.html" />
+    <link rel="prev" title="HFSS: flex cable CPWG" href="Flex_CPWG.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/02-HFSS/HFSS_Choke.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Modeling-Setup/index.html">General model and setup examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">HFSS examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Array.html">HFSS: component antenna array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Create_3d_Component_and_use_it.html">Create a 3D Component and reuse it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Flex_CPWG.html">HFSS: flex cable CPWG</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">HFSS: choke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HFSS_Dipole.html">HFSS: dipole antenna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HFSS_FSS_unitcell.html">HFSS: FSS Unitcell Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HFSS_Spiral.html">HFSS: spiral inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HFSS_eigenmode.html">HFSS: Eigenmode filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Probe_Fed_Patch.html">HFSS: Probe-fed patch antenna</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="Waveguide_Filter.html">HFSS: Inductive Iris waveguide filter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-Maxwell/index.html">Maxwell examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-Multiphysics/index.html">Multiphysics examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-Circuit/index.html">Circuit examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-EMIT/index.html">EMIT examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">HFSS examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">HFSS: choke</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-02-hfss-hfss-choke-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="hfss-choke">
+<span id="sphx-glr-examples-02-hfss-hfss-choke-py"></span><h1>HFSS: choke<a class="headerlink" href="#hfss-choke" title="Link to this heading">#</a></h1>
+<p>This example shows how you can use PyAEDT to create a choke setup in HFSS.</p>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">ansys.aedt.core</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+</pre></div>
+</div>
+</section>
+<section id="create-temporary-directory">
+<h2>Create temporary directory<a class="headerlink" href="#create-temporary-directory" title="Link to this heading">#</a></h2>
+<p>Create temporary directory.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">temp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.ansys&quot;</span><span class="p">)</span>
+
+<span class="n">project_name</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">generate_unique_project_name</span><span class="p">(</span><span class="n">root_name</span><span class="o">=</span><span class="n">temp_dir</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">folder_name</span><span class="o">=</span><span class="s2">&quot;choke&quot;</span><span class="p">,</span>
+                                                   <span class="n">project_name</span><span class="o">=</span><span class="s2">&quot;choke&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="set-aedt-version">
+<h2>Set AEDT version<a class="headerlink" href="#set-aedt-version" title="Link to this heading">#</a></h2>
+<p>Set AEDT version.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedt_version</span> <span class="o">=</span> <span class="s2">&quot;2024.2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="set-non-graphical-mode">
+<h2>Set non-graphical mode<a class="headerlink" href="#set-non-graphical-mode" title="Link to this heading">#</a></h2>
+<p>Set non-graphical mode.
+You can set <code class="docutils literal notranslate"><span class="pre">non_graphical</span></code> either to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">non_graphical</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="launch-hfss">
+<h2>Launch HFSS<a class="headerlink" href="#launch-hfss" title="Link to this heading">#</a></h2>
+<p>Launches HFSS 2023 R2 in graphical mode.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">hfss</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Hfss</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="n">project_name</span><span class="p">,</span>
+                   <span class="n">version</span><span class="o">=</span><span class="n">aedt_version</span><span class="p">,</span>
+                   <span class="n">non_graphical</span><span class="o">=</span><span class="n">non_graphical</span><span class="p">,</span>
+                   <span class="n">new_desktop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                   <span class="n">solution_type</span><span class="o">=</span><span class="s2">&quot;Terminal&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="rules-and-information-of-use">
+<h2>Rules and information of use<a class="headerlink" href="#rules-and-information-of-use" title="Link to this heading">#</a></h2>
+<p>The dictionary values contain the different parameter values of the core and
+the windings that compose the choke. You must not change the main structure of
+the dictionary. The dictionary has many primary keys, including
+<code class="docutils literal notranslate"><span class="pre">&quot;Number</span> <span class="pre">of</span> <span class="pre">Windings&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Layer&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Layer</span> <span class="pre">Type&quot;</span></code>, that have
+dictionaries as values. The keys of these dictionaries are secondary keys
+of the dictionary values, such as <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;4&quot;</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">&quot;Simple&quot;</span></code>.</p>
+<p>You must not modify the primary or secondary keys. You can modify only their values.
+You must not change the data types for these keys. For the dictionaries from
+<code class="docutils literal notranslate"><span class="pre">&quot;Number</span> <span class="pre">of</span> <span class="pre">Windings&quot;</span></code> through <code class="docutils literal notranslate"><span class="pre">&quot;Wire</span> <span class="pre">Section&quot;</span></code>, values must be Boolean. Only
+one value per dictionary can be <code class="docutils literal notranslate"><span class="pre">True</span></code>. If all values are <code class="docutils literal notranslate"><span class="pre">True</span></code>, only the first one
+remains set to <code class="docutils literal notranslate"><span class="pre">True</span></code>. If all values are <code class="docutils literal notranslate"><span class="pre">False</span></code>, the first value is chosen as the
+correct one by default. For the dictionaries from <code class="docutils literal notranslate"><span class="pre">&quot;Core&quot;</span></code> through <code class="docutils literal notranslate"><span class="pre">&quot;Inner</span> <span class="pre">Winding&quot;</span></code>,
+values must be strings, floats, or integers.</p>
+<p>Descriptions follow for primary keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Number</span> <span class="pre">of</span> <span class="pre">Windings&quot;</span></code>: Number of windings around the core</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Layer&quot;</span></code>: Number of layers of all windings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Layer</span> <span class="pre">Type&quot;</span></code>: Whether layers of a winding are linked to each other</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Similar</span> <span class="pre">Layer&quot;</span></code>: Whether layers of a winding have the same number of turns and same spacing between turns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Mode&quot;</span></code>: When there are only two windows, whether they are in common or differential mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Wire</span> <span class="pre">Section&quot;</span></code>: Type of wire section and number of segments</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Core&quot;</span></code>: Design of the core</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Outer</span> <span class="pre">Winding&quot;</span></code>: Design of the first layer or outer layer of a winding and the common parameters for all layers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Mid</span> <span class="pre">Winding&quot;</span></code>: Turns and turns spacing (“Coil Pit”) for the second or mid layer if it is necessary</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Inner</span> <span class="pre">Winding&quot;</span></code>: Turns and turns spacing (“Coil Pit”) for the third or inner layer if it is necessary</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Occupation(%)&quot;</span></code>: An informative parameter that is useless to modify</p></li>
+</ul>
+<p>The following parameter values work. You can modify them if you want.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Number of Windings&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="s2">&quot;Layer&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Simple&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Double&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Triple&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="s2">&quot;Layer Type&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Separate&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Linked&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="s2">&quot;Similar Layer&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Similar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Different&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="s2">&quot;Mode&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Differential&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Common&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="s2">&quot;Wire Section&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;None&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Hexagon&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Octagon&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Circle&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="s2">&quot;Core&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Core&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Material&quot;</span><span class="p">:</span> <span class="s2">&quot;ferrite&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Inner Radius&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;Outer Radius&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="s2">&quot;Height&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;Chamfer&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Outer Winding&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Winding&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Material&quot;</span><span class="p">:</span> <span class="s2">&quot;copper&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Inner Radius&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;Outer Radius&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="s2">&quot;Height&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;Wire Diameter&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+        <span class="s2">&quot;Turns&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;Coil Pit(deg)&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+        <span class="s2">&quot;Occupation(%)&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Mid Winding&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Turns&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Coil Pit(deg)&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;Occupation(%)&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="s2">&quot;Inner Winding&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Turns&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Coil Pit(deg)&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;Occupation(%)&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="convert-dictionary-to-json-file">
+<h2>Convert dictionary to JSON file<a class="headerlink" href="#convert-dictionary-to-json-file" title="Link to this heading">#</a></h2>
+<p>Convert a dictionary to a JSON file. You must supply the path of the
+JSON file as an argument.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">json_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">hfss</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;choke_example.json&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="verify-parameters-of-json-file">
+<h2>Verify parameters of JSON file<a class="headerlink" href="#verify-parameters-of-json-file" title="Link to this heading">#</a></h2>
+<p>Verify parameters of the JSON file. The <code class="docutils literal notranslate"><span class="pre">check_choke_values</span></code> method takes
+the JSON file path as an argument and does the following:</p>
+<ul class="simple">
+<li><p>Checks if the JSON file is correctly written (as explained in the rules)</p></li>
+<li><p>Checks in equations on windings parameters to avoid having unintended intersections</p></li>
+</ul>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary_values</span> <span class="o">=</span> <span class="n">hfss</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">check_choke_values</span><span class="p">(</span><span class="n">json_path</span><span class="p">,</span> <span class="n">create_another_file</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dictionary_values</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[True, {&#39;Number of Windings&#39;: {&#39;1&#39;: False, &#39;2&#39;: True, &#39;3&#39;: False, &#39;4&#39;: False}, &#39;Layer&#39;: {&#39;Simple&#39;: False, &#39;Double&#39;: True, &#39;Triple&#39;: False}, &#39;Layer Type&#39;: {&#39;Separate&#39;: False, &#39;Linked&#39;: True}, &#39;Similar Layer&#39;: {&#39;Similar&#39;: False, &#39;Different&#39;: True}, &#39;Mode&#39;: {&#39;Differential&#39;: False, &#39;Common&#39;: True}, &#39;Wire Section&#39;: {&#39;None&#39;: False, &#39;Hexagon&#39;: True, &#39;Octagon&#39;: False, &#39;Circle&#39;: False}, &#39;Core&#39;: {&#39;Name&#39;: &#39;Core&#39;, &#39;Material&#39;: &#39;ferrite&#39;, &#39;Inner Radius&#39;: 20, &#39;Outer Radius&#39;: 30, &#39;Height&#39;: 10, &#39;Chamfer&#39;: 0.8}, &#39;Outer Winding&#39;: {&#39;Name&#39;: &#39;Winding&#39;, &#39;Material&#39;: &#39;copper&#39;, &#39;Inner Radius&#39;: 17.525, &#39;Outer Radius&#39;: 32.475, &#39;Height&#39;: 14.95, &#39;Wire Diameter&#39;: 1.5, &#39;Turns&#39;: 20, &#39;Coil Pit(deg)&#39;: 2.699, &#39;Occupation(%)&#39;: 59.977777777777774}, &#39;Mid Winding&#39;: {&#39;Turns&#39;: 25, &#39;Coil Pit(deg)&#39;: 2.466, &#39;Occupation(%)&#39;: 68.50000000000001}, &#39;Inner Winding&#39;: {&#39;Turns&#39;: 4, &#39;Coil Pit(deg)&#39;: 0.1, &#39;Occupation(%)&#39;: 0}}]
+</pre></div>
+</div>
+</section>
+<section id="create-choke">
+<h2>Create choke<a class="headerlink" href="#create-choke" title="Link to this heading">#</a></h2>
+<p>Create the choke. The <code class="docutils literal notranslate"><span class="pre">create_choke</span></code> method takes the JSON file path as an
+argument.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">list_object</span> <span class="o">=</span> <span class="n">hfss</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_choke</span><span class="p">(</span><span class="n">json_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_object</span><span class="p">)</span>
+<span class="n">core</span> <span class="o">=</span> <span class="n">list_object</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">first_winding_list</span> <span class="o">=</span> <span class="n">list_object</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">second_winding_list</span> <span class="o">=</span> <span class="n">list_object</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;ansys.aedt.core.modeler.cad.object_3d.Object3d object at 0x000002B307513460&gt;, &lt;ansys.aedt.core.modeler.cad.object_3d.Object3d object at 0x000002B316333910&gt;, [&lt;ansys.aedt.core.modeler.cad.polylines.Polyline object at 0x000002B3163319F0&gt;, [[-9.105371275769, 16.875213744732, -14.95], [-9.105371275769, 16.875213744732, 4.541726188958], [-9.714742044896, 18.004575927489, 5.825], [-15.133715602029, 25.37093294107, 5.825], [-15.791114589875, 26.473030144081, 4.541726188958], [-15.791114589875, 26.473030144081, -4.541726188958], [-15.133715602029, 25.37093294107, -5.825], [-11.2266867204, 17.102703663736, -5.825], [-10.522477108869, 16.029912678905, -4.541726188958], [-10.522477108869, 16.029912678905, 4.541726188958], [-11.2266867204, 17.102703663736, 5.825], [-17.258906742015, 23.975898821395, 5.825], [-18.008622682363, 25.017396628832, 4.541726188958], [-18.008622682363, 25.017396628832, -4.541726188958], [-17.258906742015, 23.975898821395, -5.825], [-12.655496321042, 16.074183655653, -5.825], [-11.861662630843, 15.065908025475, -4.541726188958], [-11.861662630843, 15.065908025475, 4.541726188958], [-12.655496321042, 16.074183655653, 5.825], [-19.256293433567, 22.403320053593, 5.825], [-20.0927745824, 23.376506038775, 4.541726188958], [-20.0927745824, 23.376506038775, -4.541726188958], [-19.256293433567, 22.403320053593, -5.825], [-13.990590325955, 14.926632227628, -5.825], [-13.113010998777, 13.990338364241, -4.541726188958], [-13.113010998777, 13.990338364241, 4.541726188958], [-13.990590325955, 14.926632227628, 5.825], [-21.111084768533, 20.664841787906, 5.825], [-22.028136874184, 21.562509382079, 4.541726188958], [-22.028136874184, 21.562509382079, -4.541726188958], [-21.111084768533, 20.664841787906, -5.825], [-15.222082190442, 13.668547147192, -5.825], [-14.267255815306, 12.811168428391, -4.541726188958], [-14.267255815306, 12.811168428391, 4.541726188958], [-15.222082190442, 13.668547147192, 5.825], [-22.809545775916, 18.773337681929, 5.825], [-23.800377948308, 19.588839539842, 4.541726188958], [-23.800377948308, 19.588839539842, -4.541726188958], [-22.809545775916, 18.773337681929, -5.825], [-16.340852557127, 12.309244697941, -5.825], [-15.315849747489, 11.537130124616, -4.541726188958], [-15.315849747489, 11.537130124616, 4.541726188958], [-16.340852557127, 12.309244697941, 5.825], [-24.339099131124, 16.742814569501, 5.825], [-25.396374129191, 17.470111793866, 4.541726188958], [-25.396374129191, 17.470111793866, -4.541726188958], [-24.339099131124, 16.742814569501, -5.825], [-17.338616785984, 10.85879069125, -5.825], [-16.25102782092, 10.177657872206, -4.541726188958], [-16.25102782092, 10.177657872206, 4.541726188958], [-17.338616785984, 10.85879069125, 5.825], [-25.688418292686, 14.588308738278, 5.825], [-26.804306857601, 15.222015598585, 4.541726188958], [-26.804306857601, 15.222015598585, -4.541726188958], [-25.688418292686, 14.588308738278, -5.825], [-18.207986303167, 9.327925927625, -5.825], [-17.065864920372, 8.74281873995, -4.541726188958], [-17.065864920372, 8.74281873995, 4.541726188958], [-18.207986303167, 9.327925927625, 5.825], [-26.847511376774, 12.325774584072, 5.825], [-28.013750208625, 12.861198398624, 4.541726188958], [-28.013750208625, 12.861198398624, -4.541726188958], [-26.847511376774, 12.325774584072, -5.825], [-18.942523314366, 7.727986659686, -5.825], [-17.754327071178, 7.24323789818, -4.541726188958], [-17.754327071178, 7.24323789818, 4.541726188958], [-18.942523314366, 7.727986659686, 5.825], [-27.807795148393, 9.971966466468, 5.825], [-29.015748096995, 10.405142352304, 4.541726188958], [-29.015748096995, 10.405142352304, -4.541726188958], [-27.807795148393, 9.971966466468, -5.825], [-19.536788477508, 6.070820645736, -5.825], [-18.311316121598, 5.690019938005, -4.541726188958], [-18.311316121598, 5.690019938005, 4.541726188958], [-19.536788477508, 6.070820645736, 5.825], [-28.562158581358, 7.544314640622, 5.825], [-29.802880598069, 7.872034873984, 4.541726188958], [-29.802880598069, 7.872034873984, -4.541726188958], [-28.562158581358, 7.544314640622, -5.825], [-19.986381181793, 4.368699415575, -5.825], [-18.732707495294, 4.094666640371, -4.541726188958], [-18.732707495294, 4.094666640371, 4.541726188958], [-19.986381181793, 4.368699415575, 5.825], [-29.105015516366, 5.060796183947, 5.825], [-30.369318893333, 5.280633953898, 4.541726188958], [-30.369318893333, 5.280633953898, -4.541726188958], [-29.105015516366, 5.060796183947, -5.825], [-20.287972134791, 2.634227398221, -5.825], [-19.015380734353, 2.468991803874, -4.541726188958], [-19.015380734353, 2.468991803874, 4.541726188958], [-20.287972134791, 2.634227398221, 5.825], [-29.43234602723, 2.539801873523, 5.825], [-30.710868433561, 2.650129252793, 4.541726188958], [-30.710868433561, 2.650129252793, -4.541726188958], [-29.43234602723, 2.539801873523, -5.825], [-20.43932801628, 0.88024858448, -5.825], [-19.157242606687, 0.825033762051, -4.541726188958], [-19.157242606687, 0.825033762051, 4.541726188958], [-20.43932801628, 0.88024858448, 5.825], [-29.541726188958, 0.0, 5.825], [-30.825, 0.0, 4.541726188958], [-30.825, 0.0, -4.541726188958], [-29.541726188958, 0.0, -5.825], [-20.43932801628, -0.88024858448, -5.825], [-19.157242606687, -0.825033762051, -4.541726188958], [-19.157242606687, -0.825033762051, 4.541726188958], [-20.43932801628, -0.88024858448, 5.825], [-29.43234602723, -2.539801873523, 5.825], [-30.710868433561, -2.650129252793, 4.541726188958], [-30.710868433561, -2.650129252793, -4.541726188958], [-29.43234602723, -2.539801873523, -5.825], [-20.287972134791, -2.634227398221, -5.825], [-19.015380734353, -2.468991803874, -4.541726188958], [-19.015380734353, -2.468991803874, 4.541726188958], [-20.287972134791, -2.634227398221, 5.825], [-29.105015516366, -5.060796183947, 5.825], [-30.369318893333, -5.280633953898, 4.541726188958], [-30.369318893333, -5.280633953898, -4.541726188958], [-29.105015516366, -5.060796183947, -5.825], [-19.986381181793, -4.368699415575, -5.825], [-18.732707495294, -4.094666640371, -4.541726188958], [-18.732707495294, -4.094666640371, 4.541726188958], [-19.986381181793, -4.368699415575, 5.825], [-28.562158581358, -7.544314640622, 5.825], [-29.802880598069, -7.872034873984, 4.541726188958], [-29.802880598069, -7.872034873984, -4.541726188958], [-28.562158581358, -7.544314640622, -5.825], [-19.536788477508, -6.070820645736, -5.825], [-18.311316121598, -5.690019938005, -4.541726188958], [-18.311316121598, -5.690019938005, 4.541726188958], [-19.536788477508, -6.070820645736, 5.825], [-27.807795148393, -9.971966466468, 5.825], [-29.015748096995, -10.405142352304, 4.541726188958], [-29.015748096995, -10.405142352304, -4.541726188958], [-27.807795148393, -9.971966466468, -5.825], [-18.942523314366, -7.727986659686, -5.825], [-17.754327071178, -7.24323789818, -4.541726188958], [-17.754327071178, -7.24323789818, 4.541726188958], [-18.942523314366, -7.727986659686, 5.825], [-26.847511376774, -12.325774584072, 5.825], [-28.013750208625, -12.861198398624, 4.541726188958], [-28.013750208625, -12.861198398624, -4.541726188958], [-26.847511376774, -12.325774584072, -5.825], [-18.207986303167, -9.327925927625, -5.825], [-17.065864920372, -8.74281873995, -4.541726188958], [-17.065864920372, -8.74281873995, 4.541726188958], [-18.207986303167, -9.327925927625, 5.825], [-25.688418292686, -14.588308738278, 5.825], [-26.804306857601, -15.222015598585, 4.541726188958], [-26.804306857601, -15.222015598585, -4.541726188958], [-25.688418292686, -14.588308738278, -5.825], [-17.338616785984, -10.858790691249, -5.825], [-16.25102782092, -10.177657872206, -4.541726188958], [-16.25102782092, -10.177657872206, 4.541726188958], [-17.338616785984, -10.85879069125, 5.825], [-24.339099131124, -16.742814569501, 5.825], [-25.396374129191, -17.470111793866, 4.541726188958], [-25.396374129191, -17.470111793866, -4.541726188958], [-24.339099131124, -16.742814569501, -5.825], [-16.340852557127, -12.309244697941, -5.825], [-15.315849747489, -11.537130124616, -4.541726188958], [-15.315849747489, -11.537130124616, 4.541726188958], [-16.340852557127, -12.309244697941, 5.825], [-22.809545775916, -18.773337681929, 5.825], [-23.800377948308, -19.588839539842, 4.541726188958], [-23.800377948308, -19.588839539842, -4.541726188958], [-22.809545775916, -18.773337681929, -5.825], [-15.222082190442, -13.668547147192, -5.825], [-14.267255815306, -12.811168428391, -4.541726188958], [-14.267255815306, -12.811168428391, 4.541726188958], [-15.222082190442, -13.668547147192, 5.825], [-21.111084768533, -20.664841787906, 5.825], [-22.028136874184, -21.562509382079, 4.541726188958], [-22.028136874184, -21.562509382079, -4.541726188958], [-21.111084768533, -20.664841787906, -5.825], [-13.990590325955, -14.926632227628, -5.825], [-13.113010998777, -13.990338364241, -4.541726188958], [-13.113010998777, -13.990338364241, 4.541726188958], [-13.990590325955, -14.926632227628, 5.825], [-19.256293433567, -22.403320053593, 5.825], [-20.0927745824, -23.376506038775, 4.541726188958], [-20.0927745824, -23.376506038775, -4.541726188958], [-19.256293433567, -22.403320053593, -5.825], [-12.655496321042, -16.074183655653, -5.825], [-11.861662630843, -15.065908025475, -4.541726188958], [-11.861662630843, -15.065908025475, 4.541726188958], [-12.655496321042, -16.074183655653, 5.825], [-17.258906742015, -23.975898821395, 5.825], [-18.008622682363, -25.017396628832, 4.541726188958], [-18.008622682363, -25.017396628832, -4.541726188958], [-17.258906742015, -23.975898821395, -5.825], [-11.2266867204, -17.102703663736, -5.825], [-10.522477108869, -16.029912678905, -4.541726188958], [-10.522477108869, -16.029912678905, 4.541726188958], [-11.2266867204, -17.102703663736, 5.825], [-15.133715602029, -25.37093294107, 5.825], [-15.791114589875, -26.473030144081, 4.541726188958], [-15.791114589875, -26.473030144081, -4.541726188958], [-15.133715602029, -25.37093294107, -5.825], [-9.714742044896, -18.004575927489, -5.825], [-9.105371275769, -16.875213744732, -4.541726188958], [-9.105371275769, -16.875213744732, 5.225178566873], [-9.714742044896, -18.004575927489, 7.475], [-15.589268932331, -25.89471207708, 7.475], [-16.749661460472, -27.822193766121, 5.225178566873], [-16.749661460472, -27.822193766121, -5.225178566873], [-15.589268932331, -25.89471207708, -7.475], [-10.985728205065, -16.442546594627, -7.475], [-9.73585968626, -14.571844810094, -5.225178566873], [-9.73585968626, -14.571844810094, 5.225178566873], [-10.985728205065, -16.442546594627, 7.475], [-17.956142197799, -24.313337425615, 7.475], [-19.292713741404, -26.123108955334, 5.225178566873], [-19.292713741404, -26.123108955334, -5.225178566873], [-17.956142197799, -24.313337425615, -7.475], [-12.483818155695, -15.336161415673, -7.475], [-11.063508913009, -13.591335310843, -5.225178566873], [-11.063508913009, -13.591335310843, 5.225178566873], [-12.483818155695, -15.336161415673, 7.475], [-20.163753424001, -22.516315579052, 7.475], [-21.664649259082, -24.192325177232, 5.225178566873], [-21.664649259082, -24.192325177232, -5.225178566873], [-20.163753424001, -22.516315579052, -7.475], [-13.871182856134, -14.093752122261, -7.475], [-12.293030325246, -12.490277435773, -5.225178566873], [-12.293030325246, -12.490277435773, 5.225178566873], [-13.871182856134, -14.093752122261, 7.475], [-22.192522198737, -20.519585226265, 7.475], [-23.844430126671, -22.046967522412, 5.225178566873], [-23.844430126671, -22.046967522412, -5.225178566873], [-22.192522198737, -20.519585226265, -7.475], [-15.135517072389, -12.72633826611, -7.475], [-13.413518680339, -11.278437019915, -5.225178566873], [-13.413518680339, -11.278437019915, 5.225178566873], [-15.135517072389, -12.72633826611, 7.475], [-24.024454353285, -18.340856371127, 7.475], [-25.812722773391, -19.706064244899, 5.225178566873], [-25.812722773391, -19.706064244899, -5.225178566873], [-24.024454353285, -18.340856371127, -7.475], [-16.26560678959, -11.246048127164, -7.475], [-14.415035804573, -9.96656248427, -5.225178566873], [-14.415035804573, -9.96656248427, 5.225178566873], [-16.26560678959, -11.246048127164, 7.475], [-25.643301561725, -15.999453253591, 7.475], [-27.55206942366, -17.190377991011, 5.225178566873], [-27.55206942366, -17.190377991011, -5.225178566873], [-25.643301561725, -15.999453253591, -7.475], [-17.251428674722, -9.66601114178, -7.475], [-15.288698739805, -8.566289502667, -5.225178566873], [-15.288698739805, -8.566289502667, 5.225178566873], [-17.251428674722, -9.66601114178, 7.475], [-27.034705455491, -13.516142953307, 7.475], [-29.047042938873, -14.522221645027, 5.225178566873], [-29.047042938873, -14.522221645027, -5.225178566873], [-27.034705455491, -13.516142953307, -7.475], [-18.084238978596, -8.000241451173, -7.475], [-16.026758530875, -7.090037799125, -5.225178566873], [-16.026758530875, -7.090037799125, 5.225178566873], [-18.084238978596, -8.000241451173, 7.475], [-28.186324974955, -10.91295119597, 7.475], [-30.284383648435, -11.725260425013, 5.225178566873], [-30.284383648435, -11.725260425013, -5.225178566873], [-28.186324974955, -10.91295119597, -7.475], [-18.756651088551, -6.263513602956, -7.475], [-16.622668954987, -5.550900991092, -5.225178566873], [-16.622668954987, -5.550900991092, 5.225178566873], [-18.756651088551, -6.263513602956, 7.475], [-29.087945828478, -8.212966996095, 7.475], [-31.253116956441, -8.824301984124, 5.225178566873], [-31.253116956441, -8.824301984124, -5.225178566873], [-29.087945828478, -8.212966996095, -7.475], [-19.262701044026, -4.471231508266, -7.475], [-17.071144583437, -3.962530455577, -5.225178566873], [-17.071144583437, -3.962530455577, 5.225178566873], [-19.262701044026, -4.471231508266, 7.475], [-29.731571088089, -5.440137868962, 7.475], [-31.94465068087, -5.845076379075, 5.225178566873], [-31.94465068087, -5.845076379075, -5.225178566873], [-29.731571088089, -5.440137868962, -7.475], [-19.597900433928, -2.639291816738, -7.475], [-17.368207660739, -2.339014248233, -5.225178566873], [-17.368207660739, -2.339014248233, 5.225178566873], [-19.597900433928, -2.639291816738, 7.475], [-30.111492118256, -2.619057428082, 7.475], [-32.352851261964, -2.814007857349, 5.225178566873], [-32.352851261964, -2.814007857349, -5.225178566873], [-30.111492118256, -2.619057428082, -7.475], [-19.759276206593, -0.783942921144, -7.475], [-17.511223385333, -0.694752149319, -5.225178566873], [-17.511223385333, -0.694752149319, 5.225178566873], [-19.759276206593, -0.783942921144, 7.475], [-30.22433920864, 0.225252747914, 7.475], [-32.474098163852, 0.242019512716, 5.225178566873], [-32.474098163852, 0.242019512716, -5.225178566873], [-30.22433920864, 0.225252747914, -7.475], [-19.745397039283, 1.078359157762, -7.475], [-17.498923278961, 0.955672055178, -5.225178566873], [-17.498923278961, 0.955672055178, 5.225178566873], [-19.745397039283, 1.078359157762, 7.475], [-30.069111461746, 3.06756504421, 7.475], [-32.307315986892, 3.295900290227, 5.225178566873], [-32.307315986892, 3.295900290227, -5.225178566873], [-30.069111461746, 3.06756504421, -7.475], [-19.556386033299, 2.931096727954, -7.475], [-17.331416437442, 2.597619924464, -5.225178566873], [-17.331416437442, 2.597619924464, 5.225178566873], [-19.556386033299, 2.931096727954, 7.475], [-29.647185670387, 5.882669566189, 7.475], [-31.853984005939, 6.320548073498, 5.225178566873], [-31.853984005939, 6.320548073498, -5.225178566873], [-29.647185670387, 5.882669566189, -7.475], [-19.193919622139, 4.757836929835, -7.475], [-17.010188563043, 4.216528198615, -5.225178566873], [-17.010188563043, 4.216528198615, 5.225178566873], [-19.193919622139, 4.757836929835, 7.475], [-28.962304106216, 8.645597738643, 7.475], [-31.118123049907, 9.289135742945, 5.225178566873], [-31.118123049907, 9.289135742945, -5.225178566873], [-28.962304106216, 8.645597738643, -7.475], [-18.661212702364, 6.542377487516, -7.475], [-16.538088787041, 5.798037967445, -5.225178566873], [-16.538088787041, 5.798037967445, 5.225178566873], [-18.661212702364, 6.542377487516, 7.475], [-28.020541327642, 11.3318437646, 7.475], [-30.106259839023, 12.175333404274, 5.225178566873], [-30.106259839023, 12.175333404274, -5.225178566873], [-28.020541327642, 11.3318437646, -7.475], [-17.962990119069, 8.268890414939, -7.475], [-15.919304399347, 7.328122026885, -5.225178566873], [-15.919304399347, 7.328122026885, 5.225178566873], [-17.962990119069, 8.268890414939, 7.475], [-26.830250301518, 13.917581979542, 7.475], [-28.827369096067, 14.953541921535, 5.225178566873], [-28.827369096067, 14.953541921535, -5.225178566873], [-26.830250301518, 13.917581979542, -7.475], [-17.105444758857, 9.92206240223, -7.475], [-15.15932370933, 8.793209293298, -5.225178566873], [-15.15932370933, 8.793209293298, 5.225178566873], [-17.105444758857, 9.92206240223, 7.475], [-25.401988316491, 16.379878173181, 7.475], [-27.292793945051, 17.599119968709, 5.225178566873], [-27.292793945051, 17.599119968709, -5.225178566873], [-25.401988316491, 16.379878173181, -7.475], [-16.096182622021, 11.487230637129, -7.475], [-14.264887367244, 10.180305172235, -5.225178566873], [-14.264887367244, 10.180305172235, 5.225178566873], [-16.096182622021, 11.487230637129, 7.475], [-23.748423345103, 18.696893004485, 7.475], [-25.516145303356, 20.088602585994, 5.225178566873], [-25.516145303356, 20.088602585994, -5.225178566873], [-23.748423345103, 18.696893004485, -7.475], [-14.944155361111, 12.950512856834, -7.475], [-13.243928578022, 11.477106814012, -5.225178566873], [-13.243928578022, 11.477106814012, 5.225178566873], [-14.944155361111, 12.950512856834, 7.475], [-21.884221685188, 20.848075705756, 7.475], [-23.513181159677, 22.399909302321, 5.225178566873], [-23.513181159677, 22.399909302321, -5.225178566873], [-23.513181159677, 22.399909302321, -14.95]]], [&lt;ansys.aedt.core.modeler.cad.polylines.Polyline object at 0x000002B316333B80&gt;, [[9.105371275769, 16.875213744732, -14.95], [9.105371275769, 16.875213744732, 4.541726188958], [9.714742044896, 18.004575927489, 5.825], [15.133715602029, 25.37093294107, 5.825], [15.791114589875, 26.473030144081, 4.541726188958], [15.791114589875, 26.473030144081, -4.541726188958], [15.133715602029, 25.37093294107, -5.825], [11.2266867204, 17.102703663736, -5.825], [10.522477108869, 16.029912678905, -4.541726188958], [10.522477108869, 16.029912678905, 4.541726188958], [11.2266867204, 17.102703663736, 5.825], [17.258906742015, 23.975898821395, 5.825], [18.008622682363, 25.017396628832, 4.541726188958], [18.008622682363, 25.017396628832, -4.541726188958], [17.258906742015, 23.975898821395, -5.825], [12.655496321042, 16.074183655653, -5.825], [11.861662630843, 15.065908025475, -4.541726188958], [11.861662630843, 15.065908025475, 4.541726188958], [12.655496321042, 16.074183655653, 5.825], [19.256293433567, 22.403320053593, 5.825], [20.0927745824, 23.376506038775, 4.541726188958], [20.0927745824, 23.376506038775, -4.541726188958], [19.256293433567, 22.403320053593, -5.825], [13.990590325955, 14.926632227628, -5.825], [13.113010998777, 13.990338364241, -4.541726188958], [13.113010998777, 13.990338364241, 4.541726188958], [13.990590325955, 14.926632227628, 5.825], [21.111084768533, 20.664841787906, 5.825], [22.028136874184, 21.562509382079, 4.541726188958], [22.028136874184, 21.562509382079, -4.541726188958], [21.111084768533, 20.664841787906, -5.825], [15.222082190442, 13.668547147192, -5.825], [14.267255815306, 12.811168428391, -4.541726188958], [14.267255815306, 12.811168428391, 4.541726188958], [15.222082190442, 13.668547147192, 5.825], [22.809545775916, 18.773337681929, 5.825], [23.800377948308, 19.588839539842, 4.541726188958], [23.800377948308, 19.588839539842, -4.541726188958], [22.809545775916, 18.773337681929, -5.825], [16.340852557127, 12.309244697941, -5.825], [15.315849747489, 11.537130124616, -4.541726188958], [15.315849747489, 11.537130124616, 4.541726188958], [16.340852557127, 12.309244697941, 5.825], [24.339099131124, 16.742814569501, 5.825], [25.396374129191, 17.470111793866, 4.541726188958], [25.396374129191, 17.470111793866, -4.541726188958], [24.339099131124, 16.742814569501, -5.825], [17.338616785984, 10.85879069125, -5.825], [16.25102782092, 10.177657872206, -4.541726188958], [16.25102782092, 10.177657872206, 4.541726188958], [17.338616785984, 10.85879069125, 5.825], [25.688418292686, 14.588308738278, 5.825], [26.804306857601, 15.222015598585, 4.541726188958], [26.804306857601, 15.222015598585, -4.541726188958], [25.688418292686, 14.588308738278, -5.825], [18.207986303167, 9.327925927625, -5.825], [17.065864920372, 8.74281873995, -4.541726188958], [17.065864920372, 8.74281873995, 4.541726188958], [18.207986303167, 9.327925927625, 5.825], [26.847511376774, 12.325774584072, 5.825], [28.013750208625, 12.861198398624, 4.541726188958], [28.013750208625, 12.861198398624, -4.541726188958], [26.847511376774, 12.325774584072, -5.825], [18.942523314366, 7.727986659686, -5.825], [17.754327071178, 7.24323789818, -4.541726188958], [17.754327071178, 7.24323789818, 4.541726188958], [18.942523314366, 7.727986659686, 5.825], [27.807795148393, 9.971966466468, 5.825], [29.015748096995, 10.405142352304, 4.541726188958], [29.015748096995, 10.405142352304, -4.541726188958], [27.807795148393, 9.971966466468, -5.825], [19.536788477508, 6.070820645736, -5.825], [18.311316121598, 5.690019938005, -4.541726188958], [18.311316121598, 5.690019938005, 4.541726188958], [19.536788477508, 6.070820645736, 5.825], [28.562158581358, 7.544314640622, 5.825], [29.802880598069, 7.872034873984, 4.541726188958], [29.802880598069, 7.872034873984, -4.541726188958], [28.562158581358, 7.544314640622, -5.825], [19.986381181793, 4.368699415575, -5.825], [18.732707495294, 4.094666640371, -4.541726188958], [18.732707495294, 4.094666640371, 4.541726188958], [19.986381181793, 4.368699415575, 5.825], [29.105015516366, 5.060796183947, 5.825], [30.369318893333, 5.280633953898, 4.541726188958], [30.369318893333, 5.280633953898, -4.541726188958], [29.105015516366, 5.060796183947, -5.825], [20.287972134791, 2.634227398221, -5.825], [19.015380734353, 2.468991803874, -4.541726188958], [19.015380734353, 2.468991803874, 4.541726188958], [20.287972134791, 2.634227398221, 5.825], [29.43234602723, 2.539801873523, 5.825], [30.710868433561, 2.650129252793, 4.541726188958], [30.710868433561, 2.650129252793, -4.541726188958], [29.43234602723, 2.539801873523, -5.825], [20.43932801628, 0.88024858448, -5.825], [19.157242606687, 0.825033762051, -4.541726188958], [19.157242606687, 0.825033762051, 4.541726188958], [20.43932801628, 0.88024858448, 5.825], [29.541726188958, 0.0, 5.825], [30.825, 0.0, 4.541726188958], [30.825, 0.0, -4.541726188958], [29.541726188958, 0.0, -5.825], [20.43932801628, -0.88024858448, -5.825], [19.157242606687, -0.825033762051, -4.541726188958], [19.157242606687, -0.825033762051, 4.541726188958], [20.43932801628, -0.88024858448, 5.825], [29.43234602723, -2.539801873523, 5.825], [30.710868433561, -2.650129252793, 4.541726188958], [30.710868433561, -2.650129252793, -4.541726188958], [29.43234602723, -2.539801873523, -5.825], [20.287972134791, -2.634227398221, -5.825], [19.015380734353, -2.468991803874, -4.541726188958], [19.015380734353, -2.468991803874, 4.541726188958], [20.287972134791, -2.634227398221, 5.825], [29.105015516366, -5.060796183947, 5.825], [30.369318893333, -5.280633953898, 4.541726188958], [30.369318893333, -5.280633953898, -4.541726188958], [29.105015516366, -5.060796183947, -5.825], [19.986381181793, -4.368699415575, -5.825], [18.732707495294, -4.094666640371, -4.541726188958], [18.732707495294, -4.094666640371, 4.541726188958], [19.986381181793, -4.368699415575, 5.825], [28.562158581358, -7.544314640622, 5.825], [29.802880598069, -7.872034873984, 4.541726188958], [29.802880598069, -7.872034873984, -4.541726188958], [28.562158581358, -7.544314640622, -5.825], [19.536788477508, -6.070820645736, -5.825], [18.311316121598, -5.690019938005, -4.541726188958], [18.311316121598, -5.690019938005, 4.541726188958], [19.536788477508, -6.070820645736, 5.825], [27.807795148393, -9.971966466468, 5.825], [29.015748096995, -10.405142352304, 4.541726188958], [29.015748096995, -10.405142352304, -4.541726188958], [27.807795148393, -9.971966466468, -5.825], [18.942523314366, -7.727986659686, -5.825], [17.754327071178, -7.24323789818, -4.541726188958], [17.754327071178, -7.24323789818, 4.541726188958], [18.942523314366, -7.727986659686, 5.825], [26.847511376774, -12.325774584072, 5.825], [28.013750208625, -12.861198398624, 4.541726188958], [28.013750208625, -12.861198398624, -4.541726188958], [26.847511376774, -12.325774584072, -5.825], [18.207986303167, -9.327925927625, -5.825], [17.065864920372, -8.74281873995, -4.541726188958], [17.065864920372, -8.74281873995, 4.541726188958], [18.207986303167, -9.327925927625, 5.825], [25.688418292686, -14.588308738278, 5.825], [26.804306857601, -15.222015598585, 4.541726188958], [26.804306857601, -15.222015598585, -4.541726188958], [25.688418292686, -14.588308738278, -5.825], [17.338616785984, -10.858790691249, -5.825], [16.25102782092, -10.177657872206, -4.541726188958], [16.25102782092, -10.177657872206, 4.541726188958], [17.338616785984, -10.85879069125, 5.825], [24.339099131124, -16.742814569501, 5.825], [25.396374129191, -17.470111793866, 4.541726188958], [25.396374129191, -17.470111793866, -4.541726188958], [24.339099131124, -16.742814569501, -5.825], [16.340852557127, -12.309244697941, -5.825], [15.315849747489, -11.537130124616, -4.541726188958], [15.315849747489, -11.537130124616, 4.541726188958], [16.340852557127, -12.309244697941, 5.825], [22.809545775916, -18.773337681929, 5.825], [23.800377948308, -19.588839539842, 4.541726188958], [23.800377948308, -19.588839539842, -4.541726188958], [22.809545775916, -18.773337681929, -5.825], [15.222082190442, -13.668547147192, -5.825], [14.267255815306, -12.811168428391, -4.541726188958], [14.267255815306, -12.811168428391, 4.541726188958], [15.222082190442, -13.668547147192, 5.825], [21.111084768533, -20.664841787906, 5.825], [22.028136874184, -21.562509382079, 4.541726188958], [22.028136874184, -21.562509382079, -4.541726188958], [21.111084768533, -20.664841787906, -5.825], [13.990590325955, -14.926632227628, -5.825], [13.113010998777, -13.990338364241, -4.541726188958], [13.113010998777, -13.990338364241, 4.541726188958], [13.990590325955, -14.926632227628, 5.825], [19.256293433567, -22.403320053593, 5.825], [20.0927745824, -23.376506038775, 4.541726188958], [20.0927745824, -23.376506038775, -4.541726188958], [19.256293433567, -22.403320053593, -5.825], [12.655496321042, -16.074183655653, -5.825], [11.861662630843, -15.065908025475, -4.541726188958], [11.861662630843, -15.065908025475, 4.541726188958], [12.655496321042, -16.074183655653, 5.825], [17.258906742015, -23.975898821395, 5.825], [18.008622682363, -25.017396628832, 4.541726188958], [18.008622682363, -25.017396628832, -4.541726188958], [17.258906742015, -23.975898821395, -5.825], [11.2266867204, -17.102703663736, -5.825], [10.522477108869, -16.029912678905, -4.541726188958], [10.522477108869, -16.029912678905, 4.541726188958], [11.2266867204, -17.102703663736, 5.825], [15.133715602029, -25.37093294107, 5.825], [15.791114589875, -26.473030144081, 4.541726188958], [15.791114589875, -26.473030144081, -4.541726188958], [15.133715602029, -25.37093294107, -5.825], [9.714742044896, -18.004575927489, -5.825], [9.105371275769, -16.875213744732, -4.541726188958], [9.105371275769, -16.875213744732, 5.225178566873], [9.714742044896, -18.004575927489, 7.475], [15.589268932331, -25.89471207708, 7.475], [16.749661460472, -27.822193766121, 5.225178566873], [16.749661460472, -27.822193766121, -5.225178566873], [15.589268932331, -25.89471207708, -7.475], [10.985728205065, -16.442546594627, -7.475], [9.73585968626, -14.571844810094, -5.225178566873], [9.73585968626, -14.571844810094, 5.225178566873], [10.985728205065, -16.442546594627, 7.475], [17.956142197799, -24.313337425615, 7.475], [19.292713741404, -26.123108955334, 5.225178566873], [19.292713741404, -26.123108955334, -5.225178566873], [17.956142197799, -24.313337425615, -7.475], [12.483818155695, -15.336161415673, -7.475], [11.063508913009, -13.591335310843, -5.225178566873], [11.063508913009, -13.591335310843, 5.225178566873], [12.483818155695, -15.336161415673, 7.475], [20.163753424001, -22.516315579052, 7.475], [21.664649259082, -24.192325177232, 5.225178566873], [21.664649259082, -24.192325177232, -5.225178566873], [20.163753424001, -22.516315579052, -7.475], [13.871182856134, -14.093752122261, -7.475], [12.293030325246, -12.490277435773, -5.225178566873], [12.293030325246, -12.490277435773, 5.225178566873], [13.871182856134, -14.093752122261, 7.475], [22.192522198737, -20.519585226265, 7.475], [23.844430126671, -22.046967522412, 5.225178566873], [23.844430126671, -22.046967522412, -5.225178566873], [22.192522198737, -20.519585226265, -7.475], [15.135517072389, -12.72633826611, -7.475], [13.413518680339, -11.278437019915, -5.225178566873], [13.413518680339, -11.278437019915, 5.225178566873], [15.135517072389, -12.72633826611, 7.475], [24.024454353285, -18.340856371127, 7.475], [25.812722773391, -19.706064244899, 5.225178566873], [25.812722773391, -19.706064244899, -5.225178566873], [24.024454353285, -18.340856371127, -7.475], [16.26560678959, -11.246048127164, -7.475], [14.415035804573, -9.96656248427, -5.225178566873], [14.415035804573, -9.96656248427, 5.225178566873], [16.26560678959, -11.246048127164, 7.475], [25.643301561725, -15.999453253591, 7.475], [27.55206942366, -17.190377991011, 5.225178566873], [27.55206942366, -17.190377991011, -5.225178566873], [25.643301561725, -15.999453253591, -7.475], [17.251428674722, -9.66601114178, -7.475], [15.288698739805, -8.566289502667, -5.225178566873], [15.288698739805, -8.566289502667, 5.225178566873], [17.251428674722, -9.66601114178, 7.475], [27.034705455491, -13.516142953307, 7.475], [29.047042938873, -14.522221645027, 5.225178566873], [29.047042938873, -14.522221645027, -5.225178566873], [27.034705455491, -13.516142953307, -7.475], [18.084238978596, -8.000241451173, -7.475], [16.026758530875, -7.090037799125, -5.225178566873], [16.026758530875, -7.090037799125, 5.225178566873], [18.084238978596, -8.000241451173, 7.475], [28.186324974955, -10.91295119597, 7.475], [30.284383648435, -11.725260425013, 5.225178566873], [30.284383648435, -11.725260425013, -5.225178566873], [28.186324974955, -10.91295119597, -7.475], [18.756651088551, -6.263513602956, -7.475], [16.622668954987, -5.550900991092, -5.225178566873], [16.622668954987, -5.550900991092, 5.225178566873], [18.756651088551, -6.263513602956, 7.475], [29.087945828478, -8.212966996095, 7.475], [31.253116956441, -8.824301984124, 5.225178566873], [31.253116956441, -8.824301984124, -5.225178566873], [29.087945828478, -8.212966996095, -7.475], [19.262701044026, -4.471231508266, -7.475], [17.071144583437, -3.962530455577, -5.225178566873], [17.071144583437, -3.962530455577, 5.225178566873], [19.262701044026, -4.471231508266, 7.475], [29.731571088089, -5.440137868962, 7.475], [31.94465068087, -5.845076379075, 5.225178566873], [31.94465068087, -5.845076379075, -5.225178566873], [29.731571088089, -5.440137868962, -7.475], [19.597900433928, -2.639291816738, -7.475], [17.368207660739, -2.339014248233, -5.225178566873], [17.368207660739, -2.339014248233, 5.225178566873], [19.597900433928, -2.639291816738, 7.475], [30.111492118256, -2.619057428082, 7.475], [32.352851261964, -2.814007857349, 5.225178566873], [32.352851261964, -2.814007857349, -5.225178566873], [30.111492118256, -2.619057428082, -7.475], [19.759276206593, -0.783942921144, -7.475], [17.511223385333, -0.694752149319, -5.225178566873], [17.511223385333, -0.694752149319, 5.225178566873], [19.759276206593, -0.783942921144, 7.475], [30.22433920864, 0.225252747914, 7.475], [32.474098163852, 0.242019512716, 5.225178566873], [32.474098163852, 0.242019512716, -5.225178566873], [30.22433920864, 0.225252747914, -7.475], [19.745397039283, 1.078359157762, -7.475], [17.498923278961, 0.955672055178, -5.225178566873], [17.498923278961, 0.955672055178, 5.225178566873], [19.745397039283, 1.078359157762, 7.475], [30.069111461746, 3.06756504421, 7.475], [32.307315986892, 3.295900290227, 5.225178566873], [32.307315986892, 3.295900290227, -5.225178566873], [30.069111461746, 3.06756504421, -7.475], [19.556386033299, 2.931096727954, -7.475], [17.331416437442, 2.597619924464, -5.225178566873], [17.331416437442, 2.597619924464, 5.225178566873], [19.556386033299, 2.931096727954, 7.475], [29.647185670387, 5.882669566189, 7.475], [31.853984005939, 6.320548073498, 5.225178566873], [31.853984005939, 6.320548073498, -5.225178566873], [29.647185670387, 5.882669566189, -7.475], [19.193919622139, 4.757836929835, -7.475], [17.010188563043, 4.216528198615, -5.225178566873], [17.010188563043, 4.216528198615, 5.225178566873], [19.193919622139, 4.757836929835, 7.475], [28.962304106216, 8.645597738643, 7.475], [31.118123049907, 9.289135742945, 5.225178566873], [31.118123049907, 9.289135742945, -5.225178566873], [28.962304106216, 8.645597738643, -7.475], [18.661212702364, 6.542377487516, -7.475], [16.538088787041, 5.798037967445, -5.225178566873], [16.538088787041, 5.798037967445, 5.225178566873], [18.661212702364, 6.542377487516, 7.475], [28.020541327642, 11.3318437646, 7.475], [30.106259839023, 12.175333404274, 5.225178566873], [30.106259839023, 12.175333404274, -5.225178566873], [28.020541327642, 11.3318437646, -7.475], [17.962990119069, 8.268890414939, -7.475], [15.919304399347, 7.328122026885, -5.225178566873], [15.919304399347, 7.328122026885, 5.225178566873], [17.962990119069, 8.268890414939, 7.475], [26.830250301518, 13.917581979542, 7.475], [28.827369096067, 14.953541921535, 5.225178566873], [28.827369096067, 14.953541921535, -5.225178566873], [26.830250301518, 13.917581979542, -7.475], [17.105444758857, 9.92206240223, -7.475], [15.15932370933, 8.793209293298, -5.225178566873], [15.15932370933, 8.793209293298, 5.225178566873], [17.105444758857, 9.92206240223, 7.475], [25.401988316491, 16.379878173181, 7.475], [27.292793945051, 17.599119968709, 5.225178566873], [27.292793945051, 17.599119968709, -5.225178566873], [25.401988316491, 16.379878173181, -7.475], [16.096182622021, 11.487230637129, -7.475], [14.264887367244, 10.180305172235, -5.225178566873], [14.264887367244, 10.180305172235, 5.225178566873], [16.096182622021, 11.487230637129, 7.475], [23.748423345103, 18.696893004485, 7.475], [25.516145303356, 20.088602585994, 5.225178566873], [25.516145303356, 20.088602585994, -5.225178566873], [23.748423345103, 18.696893004485, -7.475], [14.944155361111, 12.950512856834, -7.475], [13.243928578022, 11.477106814012, -5.225178566873], [13.243928578022, 11.477106814012, 5.225178566873], [14.944155361111, 12.950512856834, 7.475], [21.884221685188, 20.848075705756, 7.475], [23.513181159677, 22.399909302321, 5.225178566873], [23.513181159677, 22.399909302321, -5.225178566873], [23.513181159677, 22.399909302321, -14.95]]]]
+</pre></div>
+</div>
+</section>
+<section id="create-ground">
+<h2>Create ground<a class="headerlink" href="#create-ground" title="Link to this heading">#</a></h2>
+<p>Create a ground.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ground_radius</span> <span class="o">=</span> <span class="mf">1.2</span> <span class="o">*</span> <span class="n">dictionary_values</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;Outer Winding&quot;</span><span class="p">][</span><span class="s2">&quot;Outer Radius&quot;</span><span class="p">]</span>
+<span class="n">ground_position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">first_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">ground</span> <span class="o">=</span> <span class="n">hfss</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_circle</span><span class="p">(</span><span class="s2">&quot;XY&quot;</span><span class="p">,</span> <span class="n">ground_position</span><span class="p">,</span> <span class="n">ground_radius</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;GND&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;copper&quot;</span><span class="p">)</span>
+<span class="n">coat</span> <span class="o">=</span> <span class="n">hfss</span><span class="o">.</span><span class="n">assign_coating</span><span class="p">(</span><span class="n">ground</span><span class="p">,</span> <span class="n">is_infinite_ground</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-lumped-ports">
+<h2>Create lumped ports<a class="headerlink" href="#create-lumped-ports" title="Link to this heading">#</a></h2>
+<p>Create lumped ports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">port_position_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="n">first_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">first_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">first_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">first_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">first_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">first_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">second_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">second_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">second_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">second_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">second_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">second_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="n">port_dimension_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">dictionary_values</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;Outer Winding&quot;</span><span class="p">][</span><span class="s2">&quot;Wire Diameter&quot;</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">port_position_list</span><span class="p">:</span>
+    <span class="n">sheet</span> <span class="o">=</span> <span class="n">hfss</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="s2">&quot;XZ&quot;</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">port_dimension_list</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sheet_port&quot;</span><span class="p">)</span>
+    <span class="n">sheet</span><span class="o">.</span><span class="n">move</span><span class="p">([</span><span class="o">-</span><span class="n">dictionary_values</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;Outer Winding&quot;</span><span class="p">][</span><span class="s2">&quot;Wire Diameter&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">hfss</span><span class="o">.</span><span class="n">lumped_port</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="n">sheet</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="p">[</span><span class="n">ground</span><span class="p">],</span>
+                     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;port_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">port_position_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">position</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="create-mesh">
+<h2>Create mesh<a class="headerlink" href="#create-mesh" title="Link to this heading">#</a></h2>
+<p>Create the mesh.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">cylinder_height</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">dictionary_values</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;Outer Winding&quot;</span><span class="p">][</span><span class="s2">&quot;Height&quot;</span><span class="p">]</span>
+<span class="n">cylinder_position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">first_winding_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">mesh_operation_cylinder</span> <span class="o">=</span> <span class="n">hfss</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_cylinder</span><span class="p">(</span><span class="s2">&quot;XY&quot;</span><span class="p">,</span> <span class="n">cylinder_position</span><span class="p">,</span> <span class="n">ground_radius</span><span class="p">,</span> <span class="n">cylinder_height</span><span class="p">,</span>
+                                                       <span class="n">num_sides</span><span class="o">=</span><span class="mi">36</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mesh_cylinder&quot;</span><span class="p">)</span>
+<span class="n">hfss</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">assign_length_mesh</span><span class="p">([</span><span class="n">mesh_operation_cylinder</span><span class="p">],</span> <span class="n">maximum_length</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">maximum_elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;choke_mesh&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.mesh.MeshOperation object at 0x000002B3162BD570&gt;
+</pre></div>
+</div>
+</section>
+<section id="create-boundaries">
+<h2>Create boundaries<a class="headerlink" href="#create-boundaries" title="Link to this heading">#</a></h2>
+<p>Create the boundaries. A region with openings is needed to run the analysis.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="n">hfss</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_region</span><span class="p">(</span><span class="n">pad_percent</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-setup">
+<h2>Create setup<a class="headerlink" href="#create-setup" title="Link to this heading">#</a></h2>
+<p>Create a setup with a sweep to run the simulation. Depending on your machine’s
+computing power, the simulation can take some time to run.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span> <span class="o">=</span> <span class="n">hfss</span><span class="o">.</span><span class="n">create_setup</span><span class="p">(</span><span class="s2">&quot;MySetup&quot;</span><span class="p">)</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;50MHz&quot;</span>
+<span class="n">setup</span><span class="p">[</span><span class="s2">&quot;MaximumPasses&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">hfss</span><span class="o">.</span><span class="n">create_linear_count_sweep</span><span class="p">(</span><span class="n">setup</span><span class="o">=</span><span class="n">setup</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;MHz&quot;</span><span class="p">,</span> <span class="n">start_frequency</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">stop_frequency</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                               <span class="n">num_of_freq_points</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sweep1&quot;</span><span class="p">,</span> <span class="n">save_fields</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sweep_type</span><span class="o">=</span><span class="s2">&quot;Interpolating&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.solve_sweeps.SweepHFSS object at 0x000002B3162BFA90&gt;
+</pre></div>
+</div>
+</section>
+<section id="save-project">
+<h2>Save project<a class="headerlink" href="#save-project" title="Link to this heading">#</a></h2>
+<p>Save the project.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">hfss</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">fit_all</span><span class="p">()</span>
+<span class="n">hfss</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">hfss</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;Image.jpg&quot;</span><span class="p">),</span> <span class="n">plot_air_objects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_HFSS_Choke_001.png" srcset="../../_images/sphx_glr_HFSS_Choke_001.png" alt="HFSS Choke" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.generic.plot.ModelPlotter object at 0x000002B3162BC0D0&gt;
+</pre></div>
+</div>
+</section>
+<section id="close-aedt">
+<h2>Close AEDT<a class="headerlink" href="#close-aedt" title="Link to this heading">#</a></h2>
+<p>After the simulation completes, you can close AEDT or release it using the
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.aedt.core.Desktop.release_desktop()</span></code> method.
+All methods provide for saving the project before closing.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">hfss</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (1 minutes 22.065 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-02-hfss-hfss-choke-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/448cf803192fb967c0c71823e1cea37c/HFSS_Choke.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">HFSS_Choke.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/650d52a1b2aad53f45a0c19d06001111/HFSS_Choke.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">HFSS_Choke.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/989d69c28091a95fa1990fe52656ead0/HFSS_Choke.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">HFSS_Choke.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-temporary-directory">Create temporary directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-aedt-version">Set AEDT version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-non-graphical-mode">Set non-graphical mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-hfss">Launch HFSS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-and-information-of-use">Rules and information of use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-dictionary-to-json-file">Convert dictionary to JSON file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-parameters-of-json-file">Verify parameters of JSON file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-choke">Create choke</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-ground">Create ground</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-lumped-ports">Create lumped ports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-mesh">Create mesh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-boundaries">Create boundaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-setup">Create setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-project">Save project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-aedt">Close AEDT</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/02-HFSS/HFSS_Choke.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/02-HFSS/HFSS_Choke.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

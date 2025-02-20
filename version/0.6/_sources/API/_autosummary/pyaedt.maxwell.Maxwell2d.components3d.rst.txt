@@ -1,0 +1,6 @@
+components3d
+============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.components3d

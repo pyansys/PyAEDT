@@ -1,0 +1,6 @@
+project\_name
+=============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.project_name

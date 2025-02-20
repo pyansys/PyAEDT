@@ -1,0 +1,6 @@
+omodelsetup
+===========
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.omodelsetup

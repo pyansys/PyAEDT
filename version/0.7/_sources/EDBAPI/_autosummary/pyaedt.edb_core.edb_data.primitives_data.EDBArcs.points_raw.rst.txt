@@ -1,0 +1,6 @@
+points\_raw
+===========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.primitives_data
+
+.. autoproperty:: EDBArcs.points_raw

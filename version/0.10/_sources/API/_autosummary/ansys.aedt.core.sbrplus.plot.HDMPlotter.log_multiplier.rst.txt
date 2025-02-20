@@ -1,0 +1,6 @@
+log\_multiplier
+===============
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.log_multiplier

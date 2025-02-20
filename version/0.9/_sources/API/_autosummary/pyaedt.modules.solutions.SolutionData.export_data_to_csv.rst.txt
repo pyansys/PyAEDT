@@ -1,0 +1,6 @@
+export\_data\_to\_csv
+=====================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.export_data_to_csv

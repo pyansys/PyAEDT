@@ -1,0 +1,6 @@
+signals
+=======
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layers.signals

@@ -1,0 +1,6 @@
+set\_as\_working\_cs
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.modeler
+
+.. automethod:: CoordinateSystem.set_as_working_cs

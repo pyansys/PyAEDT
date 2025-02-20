@@ -1,0 +1,6 @@
+assign\_block\_from\_sherlock\_file
+===================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_block_from_sherlock_file

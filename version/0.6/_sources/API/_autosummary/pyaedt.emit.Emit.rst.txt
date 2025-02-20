@@ -1,0 +1,309 @@
+﻿Emit
+====
+
+.. currentmodule:: pyaedt.emit
+
+.. autoclass:: Emit
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Emit.activate_variable_optimization
+      
+      
+      Emit.activate_variable_sensitivity
+      
+      
+      Emit.activate_variable_statistical
+      
+      
+      Emit.activate_variable_tuning
+      
+      
+      Emit.add_error_message
+      
+      
+      Emit.add_from_toolkit
+      
+      
+      Emit.add_info_message
+      
+      
+      Emit.add_warning_message
+      
+      
+      Emit.archive_project
+      
+      
+      Emit.autosave_disable
+      
+      
+      Emit.autosave_enable
+      
+      
+      Emit.change_automatically_use_causal_materials
+      
+      
+      Emit.change_design_settings
+      
+      
+      Emit.change_material_override
+      
+      
+      Emit.change_validation_settings
+      
+      
+      Emit.check_beta_option_enabled
+      
+      
+      Emit.check_if_project_is_loaded
+      
+      
+      Emit.clean_proj_folder
+      
+      
+      Emit.close_desktop
+      
+      
+      Emit.close_project
+      
+      
+      Emit.copy_design_from
+      
+      
+      Emit.copy_project
+      
+      
+      Emit.create_dataset
+      
+      
+      Emit.create_dataset1d_design
+      
+      
+      Emit.create_dataset1d_project
+      
+      
+      Emit.create_dataset3d
+      
+      
+      Emit.create_new_project
+      
+      
+      Emit.dataset_exists
+      
+      
+      Emit.deactivate_variable_optimization
+      
+      
+      Emit.deactivate_variable_sensitivity
+      
+      
+      Emit.deactivate_variable_statistical
+      
+      
+      Emit.deactivate_variable_tuning
+      
+      
+      Emit.delete_design
+      
+      
+      Emit.delete_project
+      
+      
+      Emit.delete_separator
+      
+      
+      Emit.delete_variable
+      
+      
+      Emit.design_settings
+      
+      
+      Emit.design_variation
+      
+      
+      Emit.duplicate_design
+      
+      
+      Emit.evaluate_expression
+      
+      
+      Emit.export_design_preview_to_jpg
+      
+      
+      Emit.export_profile
+      
+      
+      Emit.export_variables_to_csv
+      
+      
+      Emit.generate_temp_project_directory
+      
+      
+      Emit.get_evaluated_value
+      
+      
+      Emit.get_module
+      
+      
+      Emit.get_oo_name
+      
+      
+      Emit.get_oo_object
+      
+      
+      Emit.get_oo_properties
+      
+      
+      Emit.get_oo_property_value
+      
+      
+      Emit.get_registry_key_int
+      
+      
+      Emit.get_registry_key_string
+      
+      
+      Emit.get_units
+      
+      
+      Emit.hidden_variable
+      
+      
+      Emit.import_dataset1d
+      
+      
+      Emit.import_dataset3d
+      
+      
+      Emit.insert_design
+      
+      
+      Emit.load_project
+      
+      
+      Emit.read_design_data
+      
+      
+      Emit.read_only_variable
+      
+      
+      Emit.release_desktop
+      
+      
+      Emit.rename_design
+      
+      
+      Emit.save_project
+      
+      
+      Emit.set_active_design
+      
+      
+      Emit.set_active_dso_config_name
+      
+      
+      Emit.set_license_type
+      
+      
+      Emit.set_registry_from_file
+      
+      
+      Emit.set_registry_key
+      
+      
+      Emit.set_temporary_directory
+      
+      
+      Emit.set_units
+      
+      
+      Emit.validate_simple
+      
+      
+      Emit.version
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Emit.aedt_version_id
+      Emit.boundaries
+      Emit.boundaries_by_type
+      Emit.couplings
+      Emit.default_solution_type
+      Emit.design_datasets
+      Emit.design_excitations
+      Emit.design_list
+      Emit.design_name
+      Emit.design_properties
+      Emit.design_type
+      Emit.desktop_class
+      Emit.desktop_install_dir
+      Emit.excitations_by_type
+      Emit.layouteditor
+      Emit.library_list
+      Emit.lock_file
+      Emit.logger
+      Emit.modeler
+      Emit.o_component_manager
+      Emit.o_maxwell_parameters
+      Emit.o_model_manager
+      Emit.o_symbol_manager
+      Emit.oanalysis
+      Emit.oboundary
+      Emit.odefinition_manager
+      Emit.odesign
+      Emit.odesktop
+      Emit.oeditor
+      Emit.oexcitation
+      Emit.ofieldsreporter
+      Emit.oimport_export
+      Emit.omaterial_manager
+      Emit.omatrix
+      Emit.omeshmodule
+      Emit.omodelsetup
+      Emit.omonitor
+      Emit.ooptimetrics
+      Emit.ooutput_variable
+      Emit.opadstackmanager
+      Emit.oproject
+      Emit.oradfield
+      Emit.oreportsetup
+      Emit.osolution
+      Emit.personallib
+      Emit.project_datasets
+      Emit.project_file
+      Emit.project_list
+      Emit.project_name
+      Emit.project_path
+      Emit.project_properties
+      Emit.project_time_stamp
+      Emit.project_timestamp_changed
+      Emit.pyaedt_dir
+      Emit.results_directory
+      Emit.settings
+      Emit.solution_type
+      Emit.src_dir
+      Emit.syslib
+      Emit.temp_directory
+      Emit.toolkit_directory
+      Emit.userlib
+      Emit.valid_design
+      Emit.variable_manager
+      Emit.working_directory
+      Emit.results
+   
+   

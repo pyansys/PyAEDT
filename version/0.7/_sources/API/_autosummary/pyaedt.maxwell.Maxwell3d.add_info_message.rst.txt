@@ -1,0 +1,6 @@
+add\_info\_message
+==================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.add_info_message

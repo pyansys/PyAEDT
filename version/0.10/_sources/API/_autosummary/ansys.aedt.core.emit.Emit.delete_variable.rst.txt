@@ -1,0 +1,6 @@
+delete\_variable
+================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.delete_variable

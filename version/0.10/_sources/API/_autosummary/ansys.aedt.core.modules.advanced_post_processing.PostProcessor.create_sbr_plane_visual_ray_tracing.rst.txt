@@ -1,0 +1,6 @@
+create\_sbr\_plane\_visual\_ray\_tracing
+========================================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.create_sbr_plane_visual_ray_tracing

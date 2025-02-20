@@ -1,0 +1,6 @@
+project\_datasets
+=================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q2d.project_datasets

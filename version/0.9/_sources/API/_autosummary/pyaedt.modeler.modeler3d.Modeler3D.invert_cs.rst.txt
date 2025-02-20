@@ -1,0 +1,6 @@
+invert\_cs
+==========
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.invert_cs

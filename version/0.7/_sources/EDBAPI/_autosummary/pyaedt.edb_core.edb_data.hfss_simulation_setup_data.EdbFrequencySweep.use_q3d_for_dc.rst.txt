@@ -1,0 +1,6 @@
+use\_q3d\_for\_dc
+=================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: EdbFrequencySweep.use_q3d_for_dc

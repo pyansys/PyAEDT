@@ -1,0 +1,6 @@
+expression\_plot
+================
+
+.. currentmodule:: ansys.aedt.core.modules.fields_calculator
+
+.. automethod:: FieldsCalculator.expression_plot

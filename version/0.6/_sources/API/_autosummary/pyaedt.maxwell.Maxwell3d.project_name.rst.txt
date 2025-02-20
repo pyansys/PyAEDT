@@ -1,0 +1,6 @@
+project\_name
+=============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.project_name

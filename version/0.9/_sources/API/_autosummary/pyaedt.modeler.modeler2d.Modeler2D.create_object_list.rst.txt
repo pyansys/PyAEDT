@@ -1,0 +1,6 @@
+create\_object\_list
+====================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.create_object_list

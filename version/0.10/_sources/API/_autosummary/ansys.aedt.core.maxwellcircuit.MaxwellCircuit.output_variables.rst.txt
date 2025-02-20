@@ -1,0 +1,6 @@
+output\_variables
+=================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.output_variables

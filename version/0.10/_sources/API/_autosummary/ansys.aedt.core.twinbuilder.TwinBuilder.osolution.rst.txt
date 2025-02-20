@@ -1,0 +1,6 @@
+osolution
+=========
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.osolution

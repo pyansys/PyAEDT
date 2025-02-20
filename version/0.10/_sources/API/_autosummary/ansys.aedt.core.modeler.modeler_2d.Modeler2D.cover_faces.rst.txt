@@ -1,0 +1,6 @@
+cover\_faces
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.cover_faces

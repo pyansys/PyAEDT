@@ -1,0 +1,6 @@
+restore\_design\_goals
+======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.optimization_goals_table
+
+.. automethod:: OptimizationGoalsTable.restore_design_goals

@@ -1,0 +1,90 @@
+﻿SolutionData
+============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoclass:: SolutionData
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SolutionData.data_db10
+      
+      
+      SolutionData.data_db20
+      
+      
+      SolutionData.data_imag
+      
+      
+      SolutionData.data_magnitude
+      
+      
+      SolutionData.data_phase
+      
+      
+      SolutionData.data_real
+      
+      
+      SolutionData.export_data_to_csv
+      
+      
+      SolutionData.ifft
+      
+      
+      SolutionData.ifft_to_file
+      
+      
+      SolutionData.init_solutions_data
+      
+      
+      SolutionData.is_real_only
+      
+      
+      SolutionData.plot
+      
+      
+      SolutionData.plot_3d
+      
+      
+      SolutionData.set_active_variation
+      
+      
+      SolutionData.to_degrees
+      
+      
+      SolutionData.to_radians
+      
+      
+      SolutionData.update_sweeps
+      
+      
+      SolutionData.variation_values
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SolutionData.enable_pandas_output
+      SolutionData.expressions
+      SolutionData.full_matrix_mag_phase
+      SolutionData.full_matrix_real_imag
+      SolutionData.intrinsics
+      SolutionData.nominal_variation
+      SolutionData.primary_sweep
+      SolutionData.primary_sweep_values
+      SolutionData.primary_sweep_variations
+   
+   

@@ -1,0 +1,6 @@
+assign\_initial\_mesh\_from\_slider
+===================================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. automethod:: Mesh.assign_initial_mesh_from_slider

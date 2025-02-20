@@ -1,0 +1,6 @@
+get\_all\_dielectrics\_names
+============================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.get_all_dielectrics_names

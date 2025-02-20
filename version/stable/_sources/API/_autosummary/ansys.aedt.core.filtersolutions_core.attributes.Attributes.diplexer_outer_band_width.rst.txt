@@ -1,0 +1,6 @@
+diplexer\_outer\_band\_width
+============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.diplexer_outer_band_width

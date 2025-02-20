@@ -1,0 +1,6 @@
+create\_page\_port
+==================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.create_page_port

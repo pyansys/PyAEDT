@@ -1,0 +1,6 @@
+layer\_number
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Trace.layer_number

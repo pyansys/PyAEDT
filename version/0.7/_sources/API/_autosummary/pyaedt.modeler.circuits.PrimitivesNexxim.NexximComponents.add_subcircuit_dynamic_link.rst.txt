@@ -1,0 +1,6 @@
+add\_subcircuit\_dynamic\_link
+==============================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.add_subcircuit_dynamic_link

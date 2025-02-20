@@ -1,0 +1,6 @@
+value\_in\_object\_units
+========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.value_in_object_units

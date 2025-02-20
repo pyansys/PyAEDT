@@ -1,0 +1,6 @@
+onetwork\_data\_explorer
+========================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.onetwork_data_explorer

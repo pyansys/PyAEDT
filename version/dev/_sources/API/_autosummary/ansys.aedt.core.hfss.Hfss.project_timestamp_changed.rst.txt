@@ -1,0 +1,6 @@
+project\_timestamp\_changed
+===========================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. autoproperty:: Hfss.project_timestamp_changed

@@ -1,0 +1,6 @@
+get\_oo\_object
+===============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.get_oo_object

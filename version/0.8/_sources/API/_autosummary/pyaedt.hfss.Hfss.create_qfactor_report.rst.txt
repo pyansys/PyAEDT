@@ -1,0 +1,6 @@
+create\_qfactor\_report
+=======================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_qfactor_report

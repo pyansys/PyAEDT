@@ -1,0 +1,6 @@
+activate\_variable\_sensitivity
+===============================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.activate_variable_sensitivity

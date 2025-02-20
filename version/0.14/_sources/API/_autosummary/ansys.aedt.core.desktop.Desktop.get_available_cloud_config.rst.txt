@@ -1,0 +1,6 @@
+get\_available\_cloud\_config
+=============================
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.get_available_cloud_config

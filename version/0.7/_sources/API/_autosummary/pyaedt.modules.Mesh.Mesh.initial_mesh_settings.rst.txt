@@ -1,0 +1,6 @@
+initial\_mesh\_settings
+=======================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. autoproperty:: Mesh.initial_mesh_settings

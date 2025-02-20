@@ -1,0 +1,6 @@
+create\_page\_port
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_twin_builder
+
+.. automethod:: TwinBuilderComponents.create_page_port

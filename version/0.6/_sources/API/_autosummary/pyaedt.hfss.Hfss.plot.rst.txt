@@ -1,0 +1,6 @@
+plot
+====
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.plot

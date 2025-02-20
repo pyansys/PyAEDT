@@ -1,0 +1,6 @@
+conduction\_per\_error
+======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: DcrSettings.conduction_per_error

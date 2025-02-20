@@ -1,0 +1,6 @@
+parse\_array\_info\_from\_csv
+=============================
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. automethod:: ComponentArray.parse_array_info_from_csv

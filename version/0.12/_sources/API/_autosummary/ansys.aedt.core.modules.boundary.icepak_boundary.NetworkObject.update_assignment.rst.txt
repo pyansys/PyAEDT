@@ -1,0 +1,6 @@
+update\_assignment
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.icepak_boundary
+
+.. automethod:: NetworkObject.update_assignment

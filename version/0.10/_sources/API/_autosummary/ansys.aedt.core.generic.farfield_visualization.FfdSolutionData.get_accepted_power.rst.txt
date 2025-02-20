@@ -1,0 +1,6 @@
+get\_accepted\_power
+====================
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. automethod:: FfdSolutionData.get_accepted_power

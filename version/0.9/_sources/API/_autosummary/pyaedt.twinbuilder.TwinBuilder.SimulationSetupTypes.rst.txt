@@ -1,0 +1,6 @@
+SimulationSetupTypes
+====================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.SimulationSetupTypes

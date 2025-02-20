@@ -1,0 +1,6 @@
+meshoperation\_names
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. autoproperty:: Mesh.meshoperation_names

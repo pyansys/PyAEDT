@@ -1,0 +1,6 @@
+nominal\_sweep
+==============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.nominal_sweep

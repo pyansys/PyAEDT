@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.stop_simulations

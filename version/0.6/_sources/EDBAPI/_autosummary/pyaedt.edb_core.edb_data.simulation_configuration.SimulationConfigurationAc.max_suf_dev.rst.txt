@@ -1,0 +1,6 @@
+max\_suf\_dev
+=============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.max_suf_dev

@@ -1,0 +1,32 @@
+﻿MeshOperationSkinDepth
+======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: MeshOperationSkinDepth
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MeshOperationSkinDepth.enabled
+      MeshOperationSkinDepth.max_elements
+      MeshOperationSkinDepth.mesh_operation_type
+      MeshOperationSkinDepth.mesh_region
+      MeshOperationSkinDepth.name
+      MeshOperationSkinDepth.nets_layers_list
+      MeshOperationSkinDepth.number_of_layer_elements
+      MeshOperationSkinDepth.refine_inside
+      MeshOperationSkinDepth.restrict_max_elements
+      MeshOperationSkinDepth.skin_depth
+      MeshOperationSkinDepth.surface_triangle_length
+   
+   

@@ -1,0 +1,6 @@
+secondary\_sweep\_range
+=======================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: NearField.secondary_sweep_range

@@ -1,0 +1,6 @@
+enforce\_touchstone\_model\_passive
+===================================
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. automethod:: CircuitComponent.enforce_touchstone_model_passive

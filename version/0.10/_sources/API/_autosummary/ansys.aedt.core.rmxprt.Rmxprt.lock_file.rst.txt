@@ -1,0 +1,6 @@
+lock\_file
+==========
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.lock_file

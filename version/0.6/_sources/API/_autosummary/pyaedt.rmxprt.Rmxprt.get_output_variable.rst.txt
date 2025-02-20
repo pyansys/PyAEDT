@@ -1,0 +1,6 @@
+get\_output\_variable
+=====================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.get_output_variable

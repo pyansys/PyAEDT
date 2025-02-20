@@ -1,0 +1,6 @@
+quaternion
+==========
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.modeler
+
+.. autoproperty:: CoordinateSystem.quaternion

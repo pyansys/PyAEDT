@@ -1,0 +1,6 @@
+links
+=====
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: NetworkObject.links

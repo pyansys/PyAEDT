@@ -1,0 +1,6 @@
+add\_conductor\_material
+========================
+
+.. currentmodule:: pyaedt.edb_core.materials
+
+.. automethod:: Materials.add_conductor_material

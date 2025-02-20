@@ -1,0 +1,6 @@
+project\_timestamp\_changed
+===========================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q2d.project_timestamp_changed

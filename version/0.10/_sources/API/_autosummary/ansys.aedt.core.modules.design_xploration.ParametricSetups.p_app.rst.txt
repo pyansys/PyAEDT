@@ -1,0 +1,6 @@
+p\_app
+======
+
+.. currentmodule:: ansys.aedt.core.modules.design_xploration
+
+.. autoproperty:: ParametricSetups.p_app

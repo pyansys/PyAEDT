@@ -1,0 +1,6 @@
+enable\_expression\_cache
+=========================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupHFSS.enable_expression_cache

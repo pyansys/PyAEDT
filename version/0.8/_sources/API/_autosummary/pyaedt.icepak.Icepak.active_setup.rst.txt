@@ -1,0 +1,6 @@
+active\_setup
+=============
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.active_setup

@@ -1,0 +1,6 @@
+excitation\_names
+=================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.excitation_names

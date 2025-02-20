@@ -1,0 +1,6 @@
+pin\_groups
+===========
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. autoproperty:: EdbSiwave.pin_groups

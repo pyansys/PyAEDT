@@ -1,0 +1,6 @@
+set\_units
+==========
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.set_units

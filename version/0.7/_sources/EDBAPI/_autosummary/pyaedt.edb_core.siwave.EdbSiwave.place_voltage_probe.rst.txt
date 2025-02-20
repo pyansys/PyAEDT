@@ -1,0 +1,6 @@
+place\_voltage\_probe
+=====================
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. automethod:: EdbSiwave.place_voltage_probe

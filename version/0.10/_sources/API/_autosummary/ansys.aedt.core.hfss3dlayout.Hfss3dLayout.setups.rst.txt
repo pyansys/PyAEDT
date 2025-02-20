@@ -1,0 +1,6 @@
+setups
+======
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.setups

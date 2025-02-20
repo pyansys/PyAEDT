@@ -1,0 +1,6 @@
+solve\_siwave
+=============
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.solve_siwave

@@ -1,0 +1,6 @@
+create\_dataset3d
+=================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.create_dataset3d

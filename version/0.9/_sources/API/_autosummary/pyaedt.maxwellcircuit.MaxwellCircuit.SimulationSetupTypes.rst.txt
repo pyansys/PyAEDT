@@ -1,0 +1,6 @@
+SimulationSetupTypes
+====================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.SimulationSetupTypes

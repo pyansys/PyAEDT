@@ -1,0 +1,6 @@
+isometric\_view
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. autoproperty:: HDMPlotter.isometric_view

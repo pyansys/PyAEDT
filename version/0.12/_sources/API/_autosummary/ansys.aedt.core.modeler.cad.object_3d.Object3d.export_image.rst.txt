@@ -1,0 +1,6 @@
+export\_image
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. automethod:: Object3d.export_image

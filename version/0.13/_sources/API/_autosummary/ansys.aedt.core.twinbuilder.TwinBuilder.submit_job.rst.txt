@@ -1,0 +1,6 @@
+submit\_job
+===========
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.submit_job

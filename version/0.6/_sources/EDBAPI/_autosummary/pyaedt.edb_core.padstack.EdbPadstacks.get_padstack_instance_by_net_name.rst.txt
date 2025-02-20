@@ -1,0 +1,6 @@
+get\_padstack\_instance\_by\_net\_name
+======================================
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.get_padstack_instance_by_net_name

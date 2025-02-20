@@ -1,0 +1,6 @@
+z\_scale
+========
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. autoproperty:: ModelPlotter.z_scale

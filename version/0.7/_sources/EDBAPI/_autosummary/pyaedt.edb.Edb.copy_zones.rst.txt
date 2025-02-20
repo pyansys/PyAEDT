@@ -1,0 +1,6 @@
+copy\_zones
+===========
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.copy_zones

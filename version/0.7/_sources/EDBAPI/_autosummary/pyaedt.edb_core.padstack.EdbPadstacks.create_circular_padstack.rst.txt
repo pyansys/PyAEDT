@@ -1,0 +1,6 @@
+create\_circular\_padstack
+==========================
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.create_circular_padstack

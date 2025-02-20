@@ -1,0 +1,6 @@
+get\_output\_variable
+=====================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.get_output_variable

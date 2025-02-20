@@ -1,0 +1,6 @@
+model\_units
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. autoproperty:: Modeler3D.model_units

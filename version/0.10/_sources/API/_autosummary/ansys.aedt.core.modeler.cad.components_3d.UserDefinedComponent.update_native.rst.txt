@@ -1,0 +1,6 @@
+update\_native
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.components_3d
+
+.. automethod:: UserDefinedComponent.update_native

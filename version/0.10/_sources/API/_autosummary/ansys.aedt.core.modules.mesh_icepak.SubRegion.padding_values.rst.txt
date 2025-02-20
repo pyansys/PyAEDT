@@ -1,0 +1,6 @@
+padding\_values
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. autoproperty:: SubRegion.padding_values

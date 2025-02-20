@@ -1,0 +1,6 @@
+layers
+======
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layers.layers

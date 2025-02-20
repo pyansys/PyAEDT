@@ -1,0 +1,6 @@
+create\_ipk\_3dcomponent\_pcb
+=============================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_ipk_3dcomponent_pcb

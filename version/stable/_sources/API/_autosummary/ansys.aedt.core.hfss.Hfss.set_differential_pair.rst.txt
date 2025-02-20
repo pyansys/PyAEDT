@@ -1,0 +1,6 @@
+set\_differential\_pair
+=======================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.set_differential_pair

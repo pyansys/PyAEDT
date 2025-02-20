@@ -1,0 +1,6 @@
+import\_dataset3d
+=================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.import_dataset3d

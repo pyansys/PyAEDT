@@ -1,0 +1,6 @@
+export\_element\_pattern
+========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.export_element_pattern

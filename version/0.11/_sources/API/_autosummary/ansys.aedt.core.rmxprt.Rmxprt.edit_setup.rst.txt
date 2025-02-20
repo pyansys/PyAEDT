@@ -1,0 +1,6 @@
+edit\_setup
+===========
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.edit_setup

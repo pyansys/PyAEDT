@@ -1,0 +1,6 @@
+get\_mid\_point
+===============
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.get_mid_point

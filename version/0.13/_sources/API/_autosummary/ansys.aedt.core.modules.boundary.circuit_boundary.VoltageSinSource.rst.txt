@@ -1,0 +1,47 @@
+﻿VoltageSinSource
+================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoclass:: VoltageSinSource
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      VoltageSinSource.create
+      
+      
+      VoltageSinSource.delete
+      
+      
+      VoltageSinSource.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      VoltageSinSource.ac_magnitude
+      VoltageSinSource.ac_phase
+      VoltageSinSource.damping_factor
+      VoltageSinSource.dc_magnitude
+      VoltageSinSource.delay
+      VoltageSinSource.frequency
+      VoltageSinSource.name
+      VoltageSinSource.phase_delay
+      VoltageSinSource.tone
+      VoltageSinSource.voltage_amplitude
+      VoltageSinSource.voltage_offset
+   
+   

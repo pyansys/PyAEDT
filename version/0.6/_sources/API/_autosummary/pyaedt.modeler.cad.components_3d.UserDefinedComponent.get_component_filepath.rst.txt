@@ -1,0 +1,6 @@
+get\_component\_filepath
+========================
+
+.. currentmodule:: pyaedt.modeler.cad.components_3d
+
+.. automethod:: UserDefinedComponent.get_component_filepath

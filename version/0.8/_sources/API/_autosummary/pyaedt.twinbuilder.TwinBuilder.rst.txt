@@ -1,0 +1,421 @@
+﻿TwinBuilder
+===========
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoclass:: TwinBuilder
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      TwinBuilder.activate_variable_optimization
+      
+      
+      TwinBuilder.activate_variable_sensitivity
+      
+      
+      TwinBuilder.activate_variable_statistical
+      
+      
+      TwinBuilder.activate_variable_tuning
+      
+      
+      TwinBuilder.add_error_message
+      
+      
+      TwinBuilder.add_from_toolkit
+      
+      
+      TwinBuilder.add_info_message
+      
+      
+      TwinBuilder.add_q3d_dynamic_component
+      
+      
+      TwinBuilder.add_warning_message
+      
+      
+      TwinBuilder.analyze
+      
+      
+      TwinBuilder.analyze_setup
+      
+      
+      TwinBuilder.archive_project
+      
+      
+      TwinBuilder.autosave_disable
+      
+      
+      TwinBuilder.autosave_enable
+      
+      
+      TwinBuilder.change_automatically_use_causal_materials
+      
+      
+      TwinBuilder.change_design_settings
+      
+      
+      TwinBuilder.change_material_override
+      
+      
+      TwinBuilder.change_property
+      
+      
+      TwinBuilder.change_validation_settings
+      
+      
+      TwinBuilder.check_beta_option_enabled
+      
+      
+      TwinBuilder.check_if_project_is_loaded
+      
+      
+      TwinBuilder.clean_proj_folder
+      
+      
+      TwinBuilder.close_desktop
+      
+      
+      TwinBuilder.close_project
+      
+      
+      TwinBuilder.copy_design_from
+      
+      
+      TwinBuilder.copy_project
+      
+      
+      TwinBuilder.create_dataset
+      
+      
+      TwinBuilder.create_dataset1d_design
+      
+      
+      TwinBuilder.create_dataset1d_project
+      
+      
+      TwinBuilder.create_dataset3d
+      
+      
+      TwinBuilder.create_new_project
+      
+      
+      TwinBuilder.create_output_variable
+      
+      
+      TwinBuilder.create_schematic_from_netlist
+      
+      
+      TwinBuilder.create_setup
+      
+      
+      TwinBuilder.dataset_exists
+      
+      
+      TwinBuilder.deactivate_variable_optimization
+      
+      
+      TwinBuilder.deactivate_variable_sensitivity
+      
+      
+      TwinBuilder.deactivate_variable_statistical
+      
+      
+      TwinBuilder.deactivate_variable_tuning
+      
+      
+      TwinBuilder.delete_design
+      
+      
+      TwinBuilder.delete_project
+      
+      
+      TwinBuilder.delete_separator
+      
+      
+      TwinBuilder.delete_setup
+      
+      
+      TwinBuilder.delete_unused_variables
+      
+      
+      TwinBuilder.delete_variable
+      
+      
+      TwinBuilder.design_variation
+      
+      
+      TwinBuilder.duplicate_design
+      
+      
+      TwinBuilder.edit_setup
+      
+      
+      TwinBuilder.evaluate_expression
+      
+      
+      TwinBuilder.export_convergence
+      
+      
+      TwinBuilder.export_design_preview_to_jpg
+      
+      
+      TwinBuilder.export_parametric_results
+      
+      
+      TwinBuilder.export_profile
+      
+      
+      TwinBuilder.export_results
+      
+      
+      TwinBuilder.export_rl_matrix
+      
+      
+      TwinBuilder.export_variables_to_csv
+      
+      
+      TwinBuilder.generate_temp_project_directory
+      
+      
+      TwinBuilder.generate_unique_setup_name
+      
+      
+      TwinBuilder.get_evaluated_value
+      
+      
+      TwinBuilder.get_module
+      
+      
+      TwinBuilder.get_monitor_data
+      
+      
+      TwinBuilder.get_nominal_variation
+      
+      
+      TwinBuilder.get_object_material_properties
+      
+      
+      TwinBuilder.get_oo_name
+      
+      
+      TwinBuilder.get_oo_object
+      
+      
+      TwinBuilder.get_oo_properties
+      
+      
+      TwinBuilder.get_oo_property_value
+      
+      
+      TwinBuilder.get_output_variable
+      
+      
+      TwinBuilder.get_registry_key_int
+      
+      
+      TwinBuilder.get_registry_key_string
+      
+      
+      TwinBuilder.get_setup
+      
+      
+      TwinBuilder.get_setups
+      
+      
+      TwinBuilder.get_sweeps
+      
+      
+      TwinBuilder.get_traces_for_plot
+      
+      
+      TwinBuilder.hidden_variable
+      
+      
+      TwinBuilder.import_dataset1d
+      
+      
+      TwinBuilder.import_dataset3d
+      
+      
+      TwinBuilder.insert_design
+      
+      
+      TwinBuilder.list_of_variations
+      
+      
+      TwinBuilder.load_project
+      
+      
+      TwinBuilder.number_with_units
+      
+      
+      TwinBuilder.read_design_data
+      
+      
+      TwinBuilder.read_only_variable
+      
+      
+      TwinBuilder.release_desktop
+      
+      
+      TwinBuilder.remove_all_unused_definitions
+      
+      
+      TwinBuilder.rename_design
+      
+      
+      TwinBuilder.save_project
+      
+      
+      TwinBuilder.set_active_design
+      
+      
+      TwinBuilder.set_active_dso_config_name
+      
+      
+      TwinBuilder.set_end_time
+      
+      
+      TwinBuilder.set_hmax
+      
+      
+      TwinBuilder.set_hmin
+      
+      
+      TwinBuilder.set_license_type
+      
+      
+      TwinBuilder.set_oo_property_value
+      
+      
+      TwinBuilder.set_registry_from_file
+      
+      
+      TwinBuilder.set_registry_key
+      
+      
+      TwinBuilder.set_sim_setup_parameter
+      
+      
+      TwinBuilder.set_temporary_directory
+      
+      
+      TwinBuilder.solve_in_batch
+      
+      
+      TwinBuilder.stop_simulations
+      
+      
+      TwinBuilder.submit_job
+      
+      
+      TwinBuilder.validate_simple
+      
+      
+      TwinBuilder.value_with_units
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      TwinBuilder.Position
+      TwinBuilder.SimulationSetupTypes
+      TwinBuilder.SolutionTypes
+      TwinBuilder.active_setup
+      TwinBuilder.aedt_version_id
+      TwinBuilder.are_there_simulations_running
+      TwinBuilder.available_variations
+      TwinBuilder.boundaries
+      TwinBuilder.boundaries_by_type
+      TwinBuilder.default_solution_type
+      TwinBuilder.design_datasets
+      TwinBuilder.design_list
+      TwinBuilder.design_name
+      TwinBuilder.design_properties
+      TwinBuilder.design_type
+      TwinBuilder.desktop_class
+      TwinBuilder.desktop_install_dir
+      TwinBuilder.excitation_objects
+      TwinBuilder.excitations
+      TwinBuilder.excitations_by_type
+      TwinBuilder.existing_analysis_setups
+      TwinBuilder.existing_analysis_sweeps
+      TwinBuilder.info
+      TwinBuilder.layouteditor
+      TwinBuilder.library_list
+      TwinBuilder.lock_file
+      TwinBuilder.logger
+      TwinBuilder.materials
+      TwinBuilder.modeler
+      TwinBuilder.native_components
+      TwinBuilder.nominal_adaptive
+      TwinBuilder.nominal_sweep
+      TwinBuilder.o_component_manager
+      TwinBuilder.o_maxwell_parameters
+      TwinBuilder.o_model_manager
+      TwinBuilder.o_symbol_manager
+      TwinBuilder.oanalysis
+      TwinBuilder.oboundary
+      TwinBuilder.odefinition_manager
+      TwinBuilder.odesign
+      TwinBuilder.odesktop
+      TwinBuilder.oeditor
+      TwinBuilder.oexcitation
+      TwinBuilder.ofieldsreporter
+      TwinBuilder.oimport_export
+      TwinBuilder.omaterial_manager
+      TwinBuilder.omatrix
+      TwinBuilder.omeshmodule
+      TwinBuilder.omodelsetup
+      TwinBuilder.omonitor
+      TwinBuilder.ooptimetrics
+      TwinBuilder.ooutput_variable
+      TwinBuilder.opadstackmanager
+      TwinBuilder.oproject
+      TwinBuilder.optimizations
+      TwinBuilder.oradfield
+      TwinBuilder.oreportsetup
+      TwinBuilder.osolution
+      TwinBuilder.output_variables
+      TwinBuilder.parametrics
+      TwinBuilder.personallib
+      TwinBuilder.ports
+      TwinBuilder.post
+      TwinBuilder.project_datasets
+      TwinBuilder.project_file
+      TwinBuilder.project_list
+      TwinBuilder.project_name
+      TwinBuilder.project_path
+      TwinBuilder.project_properties
+      TwinBuilder.project_time_stamp
+      TwinBuilder.project_timestamp_changed
+      TwinBuilder.pyaedt_dir
+      TwinBuilder.results_directory
+      TwinBuilder.settings
+      TwinBuilder.setup_names
+      TwinBuilder.setups
+      TwinBuilder.solution_type
+      TwinBuilder.src_dir
+      TwinBuilder.syslib
+      TwinBuilder.temp_directory
+      TwinBuilder.toolkit_directory
+      TwinBuilder.userlib
+      TwinBuilder.valid_design
+      TwinBuilder.variable_manager
+      TwinBuilder.working_directory
+   
+   

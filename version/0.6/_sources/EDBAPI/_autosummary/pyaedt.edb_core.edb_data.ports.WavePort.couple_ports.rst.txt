@@ -1,0 +1,6 @@
+couple\_ports
+=============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. automethod:: WavePort.couple_ports

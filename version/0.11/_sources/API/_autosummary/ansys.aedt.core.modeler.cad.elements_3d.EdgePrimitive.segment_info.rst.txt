@@ -1,0 +1,6 @@
+segment\_info
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. autoproperty:: EdgePrimitive.segment_info

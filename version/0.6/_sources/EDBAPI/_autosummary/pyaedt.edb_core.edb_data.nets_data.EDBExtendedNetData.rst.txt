@@ -1,0 +1,47 @@
+﻿EDBExtendedNetData
+==================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. autoclass:: EDBExtendedNetData
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EDBExtendedNetData.add_net
+      
+      
+      EDBExtendedNetData.api_create
+      
+      
+      EDBExtendedNetData.delete
+      
+      
+      EDBExtendedNetData.find_by_name
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EDBExtendedNetData.api_class
+      EDBExtendedNetData.api_nets
+      EDBExtendedNetData.components
+      EDBExtendedNetData.is_null
+      EDBExtendedNetData.name
+      EDBExtendedNetData.nets
+      EDBExtendedNetData.rlc
+      EDBExtendedNetData.serial_rlc
+   
+   

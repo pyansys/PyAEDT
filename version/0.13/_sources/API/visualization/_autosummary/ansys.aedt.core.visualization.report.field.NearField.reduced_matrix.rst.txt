@@ -1,0 +1,6 @@
+reduced\_matrix
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. autoproperty:: NearField.reduced_matrix

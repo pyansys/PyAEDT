@@ -1,0 +1,6 @@
+plot\_3d
+========
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.plot_3d

@@ -1,0 +1,6 @@
+max\_num\_pass
+==============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveDCSimulationSetup.max_num_pass

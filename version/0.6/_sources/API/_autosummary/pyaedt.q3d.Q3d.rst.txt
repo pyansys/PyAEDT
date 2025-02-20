@@ -1,0 +1,502 @@
+﻿Q3d
+===
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoclass:: Q3d
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Q3d.activate_variable_optimization
+      
+      
+      Q3d.activate_variable_sensitivity
+      
+      
+      Q3d.activate_variable_statistical
+      
+      
+      Q3d.activate_variable_tuning
+      
+      
+      Q3d.add_error_message
+      
+      
+      Q3d.add_from_toolkit
+      
+      
+      Q3d.add_info_message
+      
+      
+      Q3d.add_stackup_3d
+      
+      
+      Q3d.add_warning_message
+      
+      
+      Q3d.analyze
+      
+      
+      Q3d.analyze_setup
+      
+      
+      Q3d.archive_project
+      
+      
+      Q3d.assign_material
+      
+      
+      Q3d.assign_net
+      
+      
+      Q3d.assign_sink_to_objectface
+      
+      
+      Q3d.assign_sink_to_sheet
+      
+      
+      Q3d.assignmaterial_from_sherlock_files
+      
+      
+      Q3d.auto_identify_nets
+      
+      
+      Q3d.autosave_disable
+      
+      
+      Q3d.autosave_enable
+      
+      
+      Q3d.change_automatically_use_causal_materials
+      
+      
+      Q3d.change_design_settings
+      
+      
+      Q3d.change_material_override
+      
+      
+      Q3d.change_property
+      
+      
+      Q3d.change_validation_settings
+      
+      
+      Q3d.check_beta_option_enabled
+      
+      
+      Q3d.check_if_project_is_loaded
+      
+      
+      Q3d.clean_proj_folder
+      
+      
+      Q3d.cleanup_solution
+      
+      
+      Q3d.close_desktop
+      
+      
+      Q3d.close_project
+      
+      
+      Q3d.copy_design_from
+      
+      
+      Q3d.copy_project
+      
+      
+      Q3d.copy_solid_bodies_from
+      
+      
+      Q3d.create_dataset
+      
+      
+      Q3d.create_dataset1d_design
+      
+      
+      Q3d.create_dataset1d_project
+      
+      
+      Q3d.create_dataset3d
+      
+      
+      Q3d.create_discrete_sweep
+      
+      
+      Q3d.create_frequency_sweep
+      
+      
+      Q3d.create_new_project
+      
+      
+      Q3d.create_output_variable
+      
+      
+      Q3d.create_setup
+      
+      
+      Q3d.dataset_exists
+      
+      
+      Q3d.deactivate_variable_optimization
+      
+      
+      Q3d.deactivate_variable_sensitivity
+      
+      
+      Q3d.deactivate_variable_statistical
+      
+      
+      Q3d.deactivate_variable_tuning
+      
+      
+      Q3d.delete_all_nets
+      
+      
+      Q3d.delete_design
+      
+      
+      Q3d.delete_project
+      
+      
+      Q3d.delete_separator
+      
+      
+      Q3d.delete_setup
+      
+      
+      Q3d.delete_variable
+      
+      
+      Q3d.design_settings
+      
+      
+      Q3d.design_variation
+      
+      
+      Q3d.duplicate_design
+      
+      
+      Q3d.edit_setup
+      
+      
+      Q3d.edit_sources
+      
+      
+      Q3d.evaluate_expression
+      
+      
+      Q3d.export_3d_model
+      
+      
+      Q3d.export_convergence
+      
+      
+      Q3d.export_design_preview_to_jpg
+      
+      
+      Q3d.export_equivalent_circuit
+      
+      
+      Q3d.export_matrix_data
+      
+      
+      Q3d.export_mesh_stats
+      
+      
+      Q3d.export_parametric_results
+      
+      
+      Q3d.export_profile
+      
+      
+      Q3d.export_results
+      
+      
+      Q3d.export_rl_matrix
+      
+      
+      Q3d.export_variables_to_csv
+      
+      
+      Q3d.flatten_3d_components
+      
+      
+      Q3d.generate_temp_project_directory
+      
+      
+      Q3d.generate_unique_setup_name
+      
+      
+      Q3d.get_all_conductors_names
+      
+      
+      Q3d.get_all_dielectrics_names
+      
+      
+      Q3d.get_all_sources
+      
+      
+      Q3d.get_components3d_vars
+      
+      
+      Q3d.get_dxf_layers
+      
+      
+      Q3d.get_evaluated_value
+      
+      
+      Q3d.get_module
+      
+      
+      Q3d.get_monitor_data
+      
+      
+      Q3d.get_nominal_variation
+      
+      
+      Q3d.get_object_material_properties
+      
+      
+      Q3d.get_oo_name
+      
+      
+      Q3d.get_oo_object
+      
+      
+      Q3d.get_oo_properties
+      
+      
+      Q3d.get_oo_property_value
+      
+      
+      Q3d.get_output_variable
+      
+      
+      Q3d.get_property_value
+      
+      
+      Q3d.get_registry_key_int
+      
+      
+      Q3d.get_registry_key_string
+      
+      
+      Q3d.get_setup
+      
+      
+      Q3d.get_setups
+      
+      
+      Q3d.get_sweeps
+      
+      
+      Q3d.get_traces_for_plot
+      
+      
+      Q3d.hidden_variable
+      
+      
+      Q3d.identify_touching_conductors
+      
+      
+      Q3d.import_dataset1d
+      
+      
+      Q3d.import_dataset3d
+      
+      
+      Q3d.import_dxf
+      
+      
+      Q3d.insert_design
+      
+      
+      Q3d.insert_reduced_matrix
+      
+      
+      Q3d.list_of_variations
+      
+      
+      Q3d.load_project
+      
+      
+      Q3d.net_sinks
+      
+      
+      Q3d.net_sources
+      
+      
+      Q3d.number_with_units
+      
+      
+      Q3d.objects_from_nets
+      
+      
+      Q3d.plot
+      
+      
+      Q3d.read_design_data
+      
+      
+      Q3d.read_only_variable
+      
+      
+      Q3d.release_desktop
+      
+      
+      Q3d.rename_design
+      
+      
+      Q3d.save_project
+      
+      
+      Q3d.set_active_design
+      
+      
+      Q3d.set_active_dso_config_name
+      
+      
+      Q3d.set_license_type
+      
+      
+      Q3d.set_material_thresholds
+      
+      
+      Q3d.set_registry_from_file
+      
+      
+      Q3d.set_registry_key
+      
+      
+      Q3d.set_source_context
+      
+      
+      Q3d.set_temporary_directory
+      
+      
+      Q3d.sink
+      
+      
+      Q3d.solve_in_batch
+      
+      
+      Q3d.source
+      
+      
+      Q3d.stop_simulations
+      
+      
+      Q3d.submit_job
+      
+      
+      Q3d.validate_simple
+      
+      
+      Q3d.value_with_units
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Q3d.Position
+      Q3d.SimulationSetupTypes
+      Q3d.SolutionTypes
+      Q3d.active_setup
+      Q3d.aedt_version_id
+      Q3d.are_there_simulations_running
+      Q3d.available_variations
+      Q3d.boundaries
+      Q3d.boundaries_by_type
+      Q3d.components3d
+      Q3d.configurations
+      Q3d.default_solution_type
+      Q3d.design_datasets
+      Q3d.design_excitations
+      Q3d.design_file
+      Q3d.design_list
+      Q3d.design_name
+      Q3d.design_properties
+      Q3d.design_type
+      Q3d.desktop_class
+      Q3d.desktop_install_dir
+      Q3d.excitations
+      Q3d.excitations_by_type
+      Q3d.existing_analysis_setups
+      Q3d.existing_analysis_sweeps
+      Q3d.layouteditor
+      Q3d.library_list
+      Q3d.lock_file
+      Q3d.logger
+      Q3d.materials
+      Q3d.mesh
+      Q3d.modeler
+      Q3d.native_components
+      Q3d.nets
+      Q3d.nominal_adaptive
+      Q3d.nominal_sweep
+      Q3d.o_component_manager
+      Q3d.o_maxwell_parameters
+      Q3d.o_model_manager
+      Q3d.o_symbol_manager
+      Q3d.oanalysis
+      Q3d.oboundary
+      Q3d.odefinition_manager
+      Q3d.odesign
+      Q3d.odesktop
+      Q3d.oeditor
+      Q3d.oexcitation
+      Q3d.ofieldsreporter
+      Q3d.oimport_export
+      Q3d.omaterial_manager
+      Q3d.omatrix
+      Q3d.omeshmodule
+      Q3d.omodelsetup
+      Q3d.omonitor
+      Q3d.ooptimetrics
+      Q3d.ooutput_variable
+      Q3d.opadstackmanager
+      Q3d.oproject
+      Q3d.oradfield
+      Q3d.oreportsetup
+      Q3d.osolution
+      Q3d.output_variables
+      Q3d.personallib
+      Q3d.post
+      Q3d.project_datasets
+      Q3d.project_file
+      Q3d.project_list
+      Q3d.project_name
+      Q3d.project_path
+      Q3d.project_properties
+      Q3d.project_time_stamp
+      Q3d.project_timestamp_changed
+      Q3d.pyaedt_dir
+      Q3d.results_directory
+      Q3d.settings
+      Q3d.setup_names
+      Q3d.solution_type
+      Q3d.src_dir
+      Q3d.syslib
+      Q3d.temp_directory
+      Q3d.toolkit_directory
+      Q3d.userlib
+      Q3d.valid_design
+      Q3d.variable_manager
+      Q3d.working_directory
+   
+   

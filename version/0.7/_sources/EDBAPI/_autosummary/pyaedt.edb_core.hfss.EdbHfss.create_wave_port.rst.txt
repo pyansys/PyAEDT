@@ -1,0 +1,6 @@
+create\_wave\_port
+==================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.create_wave_port

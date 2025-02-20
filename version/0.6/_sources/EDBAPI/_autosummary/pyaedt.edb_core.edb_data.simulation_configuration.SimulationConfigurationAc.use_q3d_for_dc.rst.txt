@@ -1,0 +1,6 @@
+use\_q3d\_for\_dc
+=================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.use_q3d_for_dc

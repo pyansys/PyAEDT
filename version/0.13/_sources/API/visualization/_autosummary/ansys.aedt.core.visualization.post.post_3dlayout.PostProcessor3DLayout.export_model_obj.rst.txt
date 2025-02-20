@@ -1,0 +1,6 @@
+export\_model\_obj
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.export_model_obj

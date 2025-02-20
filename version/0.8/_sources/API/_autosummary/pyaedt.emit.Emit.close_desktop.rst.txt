@@ -1,0 +1,6 @@
+close\_desktop
+==============
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.close_desktop

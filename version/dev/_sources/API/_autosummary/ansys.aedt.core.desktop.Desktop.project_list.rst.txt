@@ -1,0 +1,6 @@
+project\_list
+=============
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.project_list

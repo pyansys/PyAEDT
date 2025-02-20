@@ -1,0 +1,6 @@
+get\_used\_project\_material\_names
+===================================
+
+.. currentmodule:: pyaedt.modules.MaterialLib
+
+.. automethod:: Materials.get_used_project_material_names

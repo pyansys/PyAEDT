@@ -1,0 +1,44 @@
+﻿COMParameters
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.spisim_com_configuration_files.com_parameters
+
+.. autoclass:: COMParameters
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      COMParameters.export
+      
+      
+      COMParameters.export_spisim_cfg
+      
+      
+      COMParameters.load
+      
+      
+      COMParameters.load_spisim_cfg
+      
+      
+      COMParameters.set_parameter
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      COMParameters.parameters
+      COMParameters.standard
+   
+   

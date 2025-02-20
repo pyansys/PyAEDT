@@ -1,0 +1,6 @@
+faces\_on\_bounding\_box
+========================
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.faces_on_bounding_box

@@ -1,0 +1,6 @@
+update\_object\_properties
+==========================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesEmit
+
+.. automethod:: EmitComponents.update_object_properties

@@ -1,0 +1,6 @@
+all\_monitors
+=============
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. autoproperty:: Monitor.all_monitors

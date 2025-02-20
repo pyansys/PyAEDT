@@ -1,0 +1,6 @@
+current\_source
+===============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_topology
+
+.. autoproperty:: LumpedTopology.current_source

@@ -1,0 +1,6 @@
+theta\_scan
+===========
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.theta_scan

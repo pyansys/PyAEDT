@@ -1,0 +1,6 @@
+create\_parametric\_fin\_heat\_sink
+===================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_parametric_fin_heat_sink

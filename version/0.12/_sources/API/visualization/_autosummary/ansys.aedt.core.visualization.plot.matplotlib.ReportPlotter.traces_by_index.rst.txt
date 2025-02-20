@@ -1,0 +1,6 @@
+traces\_by\_index
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. autoproperty:: ReportPlotter.traces_by_index

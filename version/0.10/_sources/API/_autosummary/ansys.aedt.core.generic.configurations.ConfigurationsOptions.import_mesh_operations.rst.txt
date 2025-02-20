@@ -1,0 +1,6 @@
+import\_mesh\_operations
+========================
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_mesh_operations

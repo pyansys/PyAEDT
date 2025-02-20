@@ -1,0 +1,6 @@
+layouteditor
+============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.layouteditor

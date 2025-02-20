@@ -1,0 +1,6 @@
+get\_comp\_custom\_settings
+===========================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.get_comp_custom_settings

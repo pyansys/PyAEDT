@@ -1,0 +1,6 @@
+post\_solution\_type
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. autoproperty:: PostProcessor.post_solution_type

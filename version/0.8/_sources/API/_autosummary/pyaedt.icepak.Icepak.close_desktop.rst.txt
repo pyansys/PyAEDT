@@ -1,0 +1,6 @@
+close\_desktop
+==============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.close_desktop

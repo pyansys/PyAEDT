@@ -1,0 +1,6 @@
+dy\_dx\_tolerance
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: EyeDiagram.dy_dx_tolerance

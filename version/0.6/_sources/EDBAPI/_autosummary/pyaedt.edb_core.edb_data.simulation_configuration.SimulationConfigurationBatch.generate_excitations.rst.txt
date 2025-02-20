@@ -1,0 +1,6 @@
+generate\_excitations
+=====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.generate_excitations

@@ -1,0 +1,6 @@
+omodelsetup
+===========
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.omodelsetup

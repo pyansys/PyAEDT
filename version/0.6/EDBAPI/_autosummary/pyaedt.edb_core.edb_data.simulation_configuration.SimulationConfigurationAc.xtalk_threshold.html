@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>xtalk_threshold &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=62c9ccaa" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=1dce540c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5f376057"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'EDBAPI/_autosummary/pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.xtalk_threshold';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.6';
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SimulationConfigurationBatch" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationBatch.html" />
+    <link rel="prev" title="use_q3d_for_dc" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.use_q3d_for_dc.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/EDBAPI/_autosummary/pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.xtalk_threshold.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+ 
+<!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+<link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+
+<!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+<form
+  class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get"
+>
+  <input
+    type="search"
+    placeholder="Search"
+    class="form-control"
+    id="search-bar-input"
+    autofocus
+  />
+  <span class="search-button__kbd-shortcut"
+    ><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span
+  >
+  <style>
+    .bd-search .search-button__kbd-shortcut {
+      right: 33%;
+    }
+  </style>
+  
+  <select id="indexUidSelector" class="index-select">
+    
+    <option value="pyaedt-v0-6">PyAEDT</option>
+    
+    <option value="pyedb-v0-6">EDB API</option>
+    
+  </select>
+  
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdn.jsdelivr.net/npm/docs-searchbar.js@latest/dist/cdn/docs-searchbar.min.js"></script>
+
+    
+
+  <script>
+    document.body.style.overflow = "hidden !important";
+    // Initialize the MeiliSearch bar with the given API key and host
+    // inspect the first value of index UID as default
+    var theSearchBar = docsSearchBar({
+      hostUrl: "https://backend.search.pyansys.com/",
+      apiKey: "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d",
+      indexUid: "pyaedt-v0-6",
+      inputSelector: "#search-bar-input",
+      debug: true, // Set debug to true if you want to inspect the dropdown
+      meilisearchOptions: {
+        limit: 1000,
+      },
+    });
+
+    // Listen for changes in the dropdown selector and update the index uid and suggestion accordingly
+    document
+      .getElementById("indexUidSelector")
+      .addEventListener("change", function () {
+        theSearchBar.indexUid = this.value;
+        theSearchBar.suggestionIndexUid = this.value;
+        theSearchBar.autocomplete.autocomplete.setVal("");
+      });
+
+    // Listen for changes in the search bar input and update the suggestion accordingly
+    document
+      .getElementById("search-bar-input")
+      .addEventListener("change", function () {
+        theSearchBar.suggestionIndexUid =
+          document.getElementById("indexUidSelector").value;
+      });
+
+    // Set the focus on the search bar input
+    document.getElementById("searchbar").focus();
+
+    // Set the focus on the dropdown selector
+    document
+      .getElementById("searchbar")
+      .addEventListener("indexUidSelector", function () {
+        theSearchBar.autocomplete.autocomplete.close();
+      });
+  </script>
+</form>
+</div>
+  </div>
+   
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys-logo-black-cropped.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/pyansys-logo-black-cropped.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+                        Getting started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../User_guide/index.html">
+                        User guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../API/index.html">
+                        AEDT API
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        EDB API
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
+      0.6  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa fa-comment fa-fw"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>   <div class="container-xl">
+  <div class="row">
+    <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
+    <div class="col-12 col-md-11 col-xl-9" id="breadcrumbs">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul> 
+<li class="nav-item nav-item-additional-breadcrumb">
+  <a href="https://docs.pyansys.com/">PyAnsys</a> » 
+</li>
+ 
+<li class="nav-item nav-item-0">
+  <a href="../../index.html">PyAEDT</a> » 
+</li>
+ 
+          <li class="nav-item nav-item-1"><a href="../index.html" >EDB API</a> » </li>
+          <li class="nav-item nav-item-2"><a href="../SimulationConfigurationEdb.html" >Simulation configuration</a> » </li>
+          <li class="nav-item nav-item-3"><a href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.html" accesskey="U">SimulationConfigurationAc</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">xtalk_threshold</a></li> 
+      </ul>
+    </div></div>
+  </div>
+</div>
+ 
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+                        Getting started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../User_guide/index.html">
+                        User guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../API/index.html">
+                        AEDT API
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        EDB API
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
+      0.6  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa fa-comment fa-fw"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../CoreEdb.html">EDB manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LayerData.html">Stackup &amp; layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesEdb.html">Modeler &amp; primitives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComponentsEdb.html">Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NetsEdb.html">Nets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PadstackEdb.html">vias and padstacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SourcesEdb.html">Sources and excitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SimulationEdb.html">Simulation setups</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../SimulationConfigurationEdb.html">Simulation configuration</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfiguration.html">SimulationConfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationDc.html">SimulationConfigurationDc</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.html">SimulationConfigurationAc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.arc_angle.html">arc_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.arc_to_chord_error.html">arc_to_chord_error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.basis_order.html">basis_order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.decade_count.html">decade_count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.defeature_abs_length.html">defeature_abs_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.defeature_layout.html">defeature_layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.do_lambda_refinement.html">do_lambda_refinement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.enforce_causality.html">enforce_causality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.enforce_passivity.html">enforce_passivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.ignore_non_functional_pads.html">ignore_non_functional_pads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.include_inter_plane_coupling.html">include_inter_plane_coupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.max_arc_points.html">max_arc_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.max_mag_delta_s.html">max_mag_delta_s</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.max_num_passes.html">max_num_passes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.max_suf_dev.html">max_suf_dev</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.mesh_freq.html">mesh_freq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.mesh_sizefactor.html">mesh_sizefactor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.min_num_passes.html">min_num_passes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.min_pad_area_to_mesh.html">min_pad_area_to_mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.min_plane_area_to_mesh.html">min_plane_area_to_mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.min_void_area.html">min_void_area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.minimum_void_surface.html">minimum_void_surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.passivity_tolerance.html">passivity_tolerance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.percentage_error_z0.html">percentage_error_z0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.process_padstack_definitions.html">process_padstack_definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.radiation_box.html">radiation_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.relative_error.html">relative_error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.return_current_distribution.html">return_current_distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.snap_length_threshold.html">snap_length_threshold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.start_azimuth.html">start_azimuth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.start_freq.html">start_freq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.step_freq.html">step_freq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.stop_freq.html">stop_freq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.sweep_interpolating.html">sweep_interpolating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.sweep_name.html">sweep_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.sweep_type.html">sweep_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.use_arc_to_chord_error.html">use_arc_to_chord_error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.use_error_z0.html">use_error_z0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.use_q3d_for_dc.html">use_q3d_for_dc</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">xtalk_threshold</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationBatch.html">SimulationConfigurationBatch</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../SiWave.html">Siwave manager</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="xtalk-threshold">
+<h1>xtalk_threshold<a class="headerlink" href="#xtalk-threshold" title="Link to this heading">#</a></h1>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.xtalk_threshold">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SimulationConfigurationAc.</span></span><span class="sig-name descname"><span class="pre">xtalk_threshold</span></span><a class="reference external" href="http://github.com/ansys/pyaedt/blob/main/pyaedt/edb_core/edb_data/simulation_configuration.py#L1785-L1796"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.xtalk_threshold" title="Link to this definition">#</a></dt>
+<dd><p>Return the value for Siwave cross talk threshold. THis value specifies the distance for the solver to
+consider lines coupled during the cross-section computation. Decreasing the value below -60dB can
+potentially cause solver failure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">flot</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Value</span></code> <code class="xref py py-obj docutils literal notranslate"><span class="pre">of</span></code> cross-talk threshold.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.xtalk_threshold"><code class="docutils literal notranslate"><span class="pre">xtalk_threshold</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="http://github.com/ansys/pyaedt/edit/main/pyaedt/edb_core/edb_data/simulation_configuration.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/EDBAPI/_autosummary/pyaedt.edb_core.edb_data.simulation_configuration.SimulationConfigurationAc.xtalk_threshold.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright (c) 2023 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  0.11.2. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

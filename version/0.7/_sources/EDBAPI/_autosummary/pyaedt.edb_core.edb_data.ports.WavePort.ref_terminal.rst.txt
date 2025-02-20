@@ -1,0 +1,6 @@
+ref\_terminal
+=============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoproperty:: WavePort.ref_terminal

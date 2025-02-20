@@ -1,0 +1,6 @@
+assign\_blower\_type2
+=====================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_blower_type2

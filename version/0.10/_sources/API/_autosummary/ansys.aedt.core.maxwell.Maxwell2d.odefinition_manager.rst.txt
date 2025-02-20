@@ -1,0 +1,6 @@
+odefinition\_manager
+====================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.odefinition_manager

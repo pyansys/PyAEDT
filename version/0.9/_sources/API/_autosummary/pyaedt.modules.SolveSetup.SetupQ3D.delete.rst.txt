@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupQ3D.delete

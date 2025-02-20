@@ -1,0 +1,6 @@
+resonator\_line\_width
+======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.resonator_line_width

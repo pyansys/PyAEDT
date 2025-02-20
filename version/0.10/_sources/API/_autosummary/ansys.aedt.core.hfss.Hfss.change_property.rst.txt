@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.change_property

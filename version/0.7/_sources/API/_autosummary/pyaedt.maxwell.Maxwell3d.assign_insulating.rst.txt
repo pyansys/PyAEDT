@@ -1,0 +1,6 @@
+assign\_insulating
+==================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_insulating

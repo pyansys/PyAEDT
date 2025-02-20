@@ -1,0 +1,6 @@
+resonator\_length\_extension
+============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.resonator_length_extension

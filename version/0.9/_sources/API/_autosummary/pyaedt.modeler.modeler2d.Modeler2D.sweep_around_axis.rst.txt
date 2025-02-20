@@ -1,0 +1,6 @@
+sweep\_around\_axis
+===================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.sweep_around_axis

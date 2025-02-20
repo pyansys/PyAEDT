@@ -1,0 +1,6 @@
+create\_port
+============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. automethod:: EDBPadstackInstance.create_port

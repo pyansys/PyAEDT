@@ -1,0 +1,54 @@
+﻿NearFieldSetup
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.hfss_boundary
+
+.. autoclass:: NearFieldSetup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      NearFieldSetup.create
+      
+      
+      NearFieldSetup.delete
+      
+      
+      NearFieldSetup.jsonalize_tree
+      
+      
+      NearFieldSetup.suppress_all
+      
+      
+      NearFieldSetup.unsuppress_all
+      
+      
+      NearFieldSetup.update
+      
+      
+      NearFieldSetup.update_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      NearFieldSetup.available_properties
+      NearFieldSetup.children
+      NearFieldSetup.command
+      NearFieldSetup.name
+      NearFieldSetup.properties
+      NearFieldSetup.props
+   
+   

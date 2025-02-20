@@ -1,0 +1,19 @@
+
+:orphan:
+
+.. _sphx_glr_examples_07-EMIT_sg_execution_times:
+
+
+Computation times
+=================
+**03:28.665** total execution time for **examples_07-EMIT** files:
+
++----------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_07-EMIT_ComputeInterferenceType.py` (``ComputeInterferenceType.py``) | 01:45.576 | 0.0 MB |
++----------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_07-EMIT_EMIT_Example.py` (``EMIT_Example.py``)                       | 00:41.734 | 0.0 MB |
++----------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_07-EMIT_ComputeProtectionLevels.py` (``ComputeProtectionLevels.py``) | 00:31.595 | 0.0 MB |
++----------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_07-EMIT_interference_gui.py` (``interference_gui.py``)               | 00:29.761 | 0.0 MB |
++----------------------------------------------------------------------------------------------+-----------+--------+

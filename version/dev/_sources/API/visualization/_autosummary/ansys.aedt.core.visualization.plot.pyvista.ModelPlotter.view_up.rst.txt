@@ -1,0 +1,6 @@
+view\_up
+========
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. autoproperty:: ModelPlotter.view_up

@@ -1,0 +1,6 @@
+complex\_definition
+===================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_termination_impedance_table
+
+.. autoproperty:: LumpedTerminationImpedance.complex_definition

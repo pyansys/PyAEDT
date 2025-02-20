@@ -1,0 +1,6 @@
+ofieldsreporter
+===============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.ofieldsreporter

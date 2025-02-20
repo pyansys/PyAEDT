@@ -1,0 +1,6 @@
+sweep\_along\_normal
+====================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.sweep_along_normal

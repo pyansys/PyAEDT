@@ -1,0 +1,6 @@
+validate\_simple
+================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.validate_simple

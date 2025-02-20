@@ -1,0 +1,6 @@
+impedance
+=========
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: Excitations.impedance

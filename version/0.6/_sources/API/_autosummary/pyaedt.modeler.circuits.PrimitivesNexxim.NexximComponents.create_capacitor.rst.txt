@@ -1,0 +1,6 @@
+create\_capacitor
+=================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_capacitor

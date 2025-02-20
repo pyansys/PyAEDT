@@ -1,0 +1,6 @@
+assign\_febi
+============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.assign_febi

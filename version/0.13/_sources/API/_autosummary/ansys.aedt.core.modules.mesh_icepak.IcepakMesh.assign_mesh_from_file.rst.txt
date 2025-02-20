@@ -1,0 +1,6 @@
+assign\_mesh\_from\_file
+========================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. automethod:: IcepakMesh.assign_mesh_from_file

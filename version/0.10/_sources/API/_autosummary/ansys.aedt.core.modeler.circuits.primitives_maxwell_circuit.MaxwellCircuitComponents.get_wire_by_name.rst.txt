@@ -1,0 +1,6 @@
+get\_wire\_by\_name
+===================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_maxwell_circuit
+
+.. automethod:: MaxwellCircuitComponents.get_wire_by_name

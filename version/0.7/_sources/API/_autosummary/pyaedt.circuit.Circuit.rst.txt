@@ -1,0 +1,492 @@
+﻿Circuit
+=======
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoclass:: Circuit
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Circuit.activate_variable_optimization
+      
+      
+      Circuit.activate_variable_sensitivity
+      
+      
+      Circuit.activate_variable_statistical
+      
+      
+      Circuit.activate_variable_tuning
+      
+      
+      Circuit.add_error_message
+      
+      
+      Circuit.add_from_toolkit
+      
+      
+      Circuit.add_info_message
+      
+      
+      Circuit.add_netlist_datablock
+      
+      
+      Circuit.add_warning_message
+      
+      
+      Circuit.analyze
+      
+      
+      Circuit.analyze_setup
+      
+      
+      Circuit.archive_project
+      
+      
+      Circuit.assign_current_sinusoidal_excitation_to_ports
+      
+      
+      Circuit.assign_power_sinusoidal_excitation_to_ports
+      
+      
+      Circuit.assign_voltage_frequency_dependent_excitation_to_ports
+      
+      
+      Circuit.assign_voltage_sinusoidal_excitation_to_ports
+      
+      
+      Circuit.autosave_disable
+      
+      
+      Circuit.autosave_enable
+      
+      
+      Circuit.browse_log_file
+      
+      
+      Circuit.change_automatically_use_causal_materials
+      
+      
+      Circuit.change_design_settings
+      
+      
+      Circuit.change_material_override
+      
+      
+      Circuit.change_property
+      
+      
+      Circuit.change_validation_settings
+      
+      
+      Circuit.check_beta_option_enabled
+      
+      
+      Circuit.check_if_project_is_loaded
+      
+      
+      Circuit.clean_proj_folder
+      
+      
+      Circuit.close_desktop
+      
+      
+      Circuit.close_project
+      
+      
+      Circuit.connect_circuit_models_from_multi_zone_cutout
+      
+      
+      Circuit.copy_design_from
+      
+      
+      Circuit.copy_project
+      
+      
+      Circuit.create_dataset
+      
+      
+      Circuit.create_dataset1d_design
+      
+      
+      Circuit.create_dataset1d_project
+      
+      
+      Circuit.create_dataset3d
+      
+      
+      Circuit.create_new_project
+      
+      
+      Circuit.create_output_variable
+      
+      
+      Circuit.create_schematic_from_mentor_netlist
+      
+      
+      Circuit.create_schematic_from_netlist
+      
+      
+      Circuit.create_setup
+      
+      
+      Circuit.create_source
+      
+      
+      Circuit.create_touchstone_report
+      
+      
+      Circuit.dataset_exists
+      
+      
+      Circuit.deactivate_variable_optimization
+      
+      
+      Circuit.deactivate_variable_sensitivity
+      
+      
+      Circuit.deactivate_variable_statistical
+      
+      
+      Circuit.deactivate_variable_tuning
+      
+      
+      Circuit.delete_design
+      
+      
+      Circuit.delete_project
+      
+      
+      Circuit.delete_separator
+      
+      
+      Circuit.delete_setup
+      
+      
+      Circuit.delete_unused_variables
+      
+      
+      Circuit.delete_variable
+      
+      
+      Circuit.design_settings
+      
+      
+      Circuit.design_variation
+      
+      
+      Circuit.duplicate_design
+      
+      
+      Circuit.edit_setup
+      
+      
+      Circuit.evaluate_expression
+      
+      
+      Circuit.export_convergence
+      
+      
+      Circuit.export_design_preview_to_jpg
+      
+      
+      Circuit.export_fullwave_spice
+      
+      
+      Circuit.export_parametric_results
+      
+      
+      Circuit.export_profile
+      
+      
+      Circuit.export_results
+      
+      
+      Circuit.export_rl_matrix
+      
+      
+      Circuit.export_touchstone
+      
+      
+      Circuit.export_variables_to_csv
+      
+      
+      Circuit.generate_temp_project_directory
+      
+      
+      Circuit.generate_unique_setup_name
+      
+      
+      Circuit.get_all_insertion_loss_list
+      
+      
+      Circuit.get_all_return_loss_list
+      
+      
+      Circuit.get_evaluated_value
+      
+      
+      Circuit.get_fext_xtalk_list
+      
+      
+      Circuit.get_ibis_model_from_file
+      
+      
+      Circuit.get_module
+      
+      
+      Circuit.get_monitor_data
+      
+      
+      Circuit.get_next_xtalk_list
+      
+      
+      Circuit.get_nominal_variation
+      
+      
+      Circuit.get_object_material_properties
+      
+      
+      Circuit.get_oo_name
+      
+      
+      Circuit.get_oo_object
+      
+      
+      Circuit.get_oo_properties
+      
+      
+      Circuit.get_oo_property_value
+      
+      
+      Circuit.get_output_variable
+      
+      
+      Circuit.get_registry_key_int
+      
+      
+      Circuit.get_registry_key_string
+      
+      
+      Circuit.get_setup
+      
+      
+      Circuit.get_setups
+      
+      
+      Circuit.get_source_pin_names
+      
+      
+      Circuit.get_sweeps
+      
+      
+      Circuit.get_touchstone_data
+      
+      
+      Circuit.get_traces_for_plot
+      
+      
+      Circuit.hidden_variable
+      
+      
+      Circuit.import_dataset1d
+      
+      
+      Circuit.import_dataset3d
+      
+      
+      Circuit.import_edb_in_circuit
+      
+      
+      Circuit.import_touchstone_solution
+      
+      
+      Circuit.insert_design
+      
+      
+      Circuit.list_of_variations
+      
+      
+      Circuit.load_diff_pairs_from_file
+      
+      
+      Circuit.load_project
+      
+      
+      Circuit.number_with_units
+      
+      
+      Circuit.pop_up
+      
+      
+      Circuit.push_down
+      
+      
+      Circuit.push_excitations
+      
+      
+      Circuit.push_time_excitations
+      
+      
+      Circuit.read_design_data
+      
+      
+      Circuit.read_only_variable
+      
+      
+      Circuit.release_desktop
+      
+      
+      Circuit.rename_design
+      
+      
+      Circuit.retrieve_mentor_comp
+      
+      
+      Circuit.save_diff_pairs_to_file
+      
+      
+      Circuit.save_project
+      
+      
+      Circuit.set_active_design
+      
+      
+      Circuit.set_active_dso_config_name
+      
+      
+      Circuit.set_differential_pair
+      
+      
+      Circuit.set_license_type
+      
+      
+      Circuit.set_registry_from_file
+      
+      
+      Circuit.set_registry_key
+      
+      
+      Circuit.set_temporary_directory
+      
+      
+      Circuit.solve_in_batch
+      
+      
+      Circuit.stop_simulations
+      
+      
+      Circuit.submit_job
+      
+      
+      Circuit.validate_simple
+      
+      
+      Circuit.value_with_units
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Circuit.Position
+      Circuit.SimulationSetupTypes
+      Circuit.SolutionTypes
+      Circuit.active_setup
+      Circuit.aedt_version_id
+      Circuit.are_there_simulations_running
+      Circuit.available_variations
+      Circuit.boundaries
+      Circuit.boundaries_by_type
+      Circuit.default_solution_type
+      Circuit.design_datasets
+      Circuit.design_excitations
+      Circuit.design_list
+      Circuit.design_name
+      Circuit.design_properties
+      Circuit.design_type
+      Circuit.desktop_class
+      Circuit.desktop_install_dir
+      Circuit.excitation_names
+      Circuit.excitation_objets
+      Circuit.excitations
+      Circuit.excitations_by_type
+      Circuit.existing_analysis_setups
+      Circuit.existing_analysis_sweeps
+      Circuit.get_all_sparameter_list
+      Circuit.info
+      Circuit.layouteditor
+      Circuit.library_list
+      Circuit.lock_file
+      Circuit.logger
+      Circuit.materials
+      Circuit.modeler
+      Circuit.native_components
+      Circuit.nominal_adaptive
+      Circuit.nominal_sweep
+      Circuit.o_component_manager
+      Circuit.o_maxwell_parameters
+      Circuit.o_model_manager
+      Circuit.o_symbol_manager
+      Circuit.oanalysis
+      Circuit.oboundary
+      Circuit.odefinition_manager
+      Circuit.odesign
+      Circuit.odesktop
+      Circuit.oeditor
+      Circuit.oexcitation
+      Circuit.ofieldsreporter
+      Circuit.oimport_export
+      Circuit.omaterial_manager
+      Circuit.omatrix
+      Circuit.omeshmodule
+      Circuit.omodelsetup
+      Circuit.omonitor
+      Circuit.ooptimetrics
+      Circuit.ooutput_variable
+      Circuit.opadstackmanager
+      Circuit.oproject
+      Circuit.oradfield
+      Circuit.oreportsetup
+      Circuit.osolution
+      Circuit.output_variables
+      Circuit.personallib
+      Circuit.post
+      Circuit.project_datasets
+      Circuit.project_file
+      Circuit.project_list
+      Circuit.project_name
+      Circuit.project_path
+      Circuit.project_properties
+      Circuit.project_time_stamp
+      Circuit.project_timestamp_changed
+      Circuit.pyaedt_dir
+      Circuit.results_directory
+      Circuit.settings
+      Circuit.setup_names
+      Circuit.solution_type
+      Circuit.source_names
+      Circuit.source_objects
+      Circuit.sources
+      Circuit.src_dir
+      Circuit.syslib
+      Circuit.temp_directory
+      Circuit.toolkit_directory
+      Circuit.userlib
+      Circuit.valid_design
+      Circuit.variable_manager
+      Circuit.working_directory
+   
+   

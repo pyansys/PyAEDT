@@ -1,0 +1,6 @@
+add\_stackup\_3d
+================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.add_stackup_3d

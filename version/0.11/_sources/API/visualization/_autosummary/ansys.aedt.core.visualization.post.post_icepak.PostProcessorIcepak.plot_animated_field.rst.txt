@@ -1,0 +1,6 @@
+plot\_animated\_field
+=====================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.plot_animated_field

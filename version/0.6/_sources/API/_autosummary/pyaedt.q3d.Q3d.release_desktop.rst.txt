@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.release_desktop

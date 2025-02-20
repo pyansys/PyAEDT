@@ -1,0 +1,6 @@
+wire\_width\_direction
+======================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.wire_width_direction

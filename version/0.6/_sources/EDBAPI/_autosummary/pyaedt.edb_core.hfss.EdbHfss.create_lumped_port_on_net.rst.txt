@@ -1,0 +1,6 @@
+create\_lumped\_port\_on\_net
+=============================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.create_lumped_port_on_net

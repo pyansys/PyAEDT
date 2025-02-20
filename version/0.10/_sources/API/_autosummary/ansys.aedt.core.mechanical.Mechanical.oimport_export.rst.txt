@@ -1,0 +1,6 @@
+oimport\_export
+===============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.oimport_export

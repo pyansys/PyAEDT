@@ -1,0 +1,6 @@
+add\_file\_logger
+=================
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. automethod:: AedtLogger.add_file_logger

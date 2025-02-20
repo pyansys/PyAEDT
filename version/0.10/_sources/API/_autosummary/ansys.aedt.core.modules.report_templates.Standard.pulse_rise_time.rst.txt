@@ -1,0 +1,6 @@
+pulse\_rise\_time
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Standard.pulse_rise_time

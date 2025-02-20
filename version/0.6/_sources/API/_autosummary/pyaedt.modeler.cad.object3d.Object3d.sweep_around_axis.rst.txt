@@ -1,0 +1,6 @@
+sweep\_around\_axis
+===================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.sweep_around_axis

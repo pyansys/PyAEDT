@@ -1,0 +1,6 @@
+existing\_analysis\_sweeps
+==========================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.existing_analysis_sweeps

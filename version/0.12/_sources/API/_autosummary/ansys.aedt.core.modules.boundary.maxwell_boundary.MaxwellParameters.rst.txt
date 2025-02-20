@@ -1,0 +1,60 @@
+﻿MaxwellParameters
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.maxwell_boundary
+
+.. autoclass:: MaxwellParameters
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MaxwellParameters.create
+      
+      
+      MaxwellParameters.delete
+      
+      
+      MaxwellParameters.join_parallel
+      
+      
+      MaxwellParameters.join_series
+      
+      
+      MaxwellParameters.jsonalize_tree
+      
+      
+      MaxwellParameters.suppress_all
+      
+      
+      MaxwellParameters.unsuppress_all
+      
+      
+      MaxwellParameters.update
+      
+      
+      MaxwellParameters.update_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MaxwellParameters.available_properties
+      MaxwellParameters.command
+      MaxwellParameters.name
+      MaxwellParameters.properties
+      MaxwellParameters.props
+      MaxwellParameters.reduced_matrices
+   
+   

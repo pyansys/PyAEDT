@@ -1,0 +1,6 @@
+power\_budget
+=============
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.power_budget

@@ -1,0 +1,6 @@
+properties
+==========
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.properties

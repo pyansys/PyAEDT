@@ -1,0 +1,6 @@
+add\_3d\_component\_array\_from\_json
+=====================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.add_3d_component_array_from_json

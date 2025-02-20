@@ -1,0 +1,6 @@
+stacking\_factor
+================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.stacking_factor

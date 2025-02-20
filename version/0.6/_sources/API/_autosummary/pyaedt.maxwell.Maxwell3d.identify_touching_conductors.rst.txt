@@ -1,0 +1,6 @@
+identify\_touching\_conductors
+==============================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.identify_touching_conductors

@@ -1,0 +1,6 @@
+create\_fieldplot\_cutplane
+===========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.create_fieldplot_cutplane

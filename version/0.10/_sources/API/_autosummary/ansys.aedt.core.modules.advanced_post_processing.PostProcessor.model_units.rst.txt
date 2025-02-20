@@ -1,0 +1,6 @@
+model\_units
+============
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. autoproperty:: PostProcessor.model_units

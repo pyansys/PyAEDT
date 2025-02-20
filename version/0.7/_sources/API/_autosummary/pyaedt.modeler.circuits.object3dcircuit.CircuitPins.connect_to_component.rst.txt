@@ -1,0 +1,6 @@
+connect\_to\_component
+======================
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. automethod:: CircuitPins.connect_to_component

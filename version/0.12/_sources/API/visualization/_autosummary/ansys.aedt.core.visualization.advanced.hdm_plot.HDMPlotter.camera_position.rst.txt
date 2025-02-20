@@ -1,0 +1,6 @@
+camera\_position
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. autoproperty:: HDMPlotter.camera_position

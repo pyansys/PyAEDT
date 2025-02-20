@@ -1,0 +1,565 @@
+﻿Modeler3D
+=========
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. autoclass:: Modeler3D
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Modeler3D.add_bird
+      
+      
+      Modeler3D.add_environment
+      
+      
+      Modeler3D.add_new_objects
+      
+      
+      Modeler3D.add_new_user_defined_component
+      
+      
+      Modeler3D.add_person
+      
+      
+      Modeler3D.add_vehicle
+      
+      
+      Modeler3D.automatic_thicken_sheets
+      
+      
+      Modeler3D.break_spaceclaim_connection
+      
+      
+      Modeler3D.change_region_coordinate_system
+      
+      
+      Modeler3D.change_region_padding
+      
+      
+      Modeler3D.chassis_subtraction
+      
+      
+      Modeler3D.check_choke_values
+      
+      
+      Modeler3D.check_plane
+      
+      
+      Modeler3D.clean_objects_name
+      
+      
+      Modeler3D.cleanup_objects
+      
+      
+      Modeler3D.clone
+      
+      
+      Modeler3D.connect
+      
+      
+      Modeler3D.convert_segments_to_line
+      
+      
+      Modeler3D.convert_to_selections
+      
+      
+      Modeler3D.copy
+      
+      
+      Modeler3D.cover_faces
+      
+      
+      Modeler3D.cover_lines
+      
+      
+      Modeler3D.create_3dcomponent
+      
+      
+      Modeler3D.create_air_region
+      
+      
+      Modeler3D.create_airbox
+      
+      
+      Modeler3D.create_bondwire
+      
+      
+      Modeler3D.create_box
+      
+      
+      Modeler3D.create_choke
+      
+      
+      Modeler3D.create_circle
+      
+      
+      Modeler3D.create_coaxial
+      
+      
+      Modeler3D.create_cone
+      
+      
+      Modeler3D.create_coordinate_system
+      
+      
+      Modeler3D.create_cylinder
+      
+      
+      Modeler3D.create_ellipse
+      
+      
+      Modeler3D.create_equationbased_curve
+      
+      
+      Modeler3D.create_face_coordinate_system
+      
+      
+      Modeler3D.create_face_list
+      
+      
+      Modeler3D.create_faceted_bondwire_from_true_surface
+      
+      
+      Modeler3D.create_group
+      
+      
+      Modeler3D.create_helix
+      
+      
+      Modeler3D.create_object_coordinate_system
+      
+      
+      Modeler3D.create_object_from_edge
+      
+      
+      Modeler3D.create_object_from_face
+      
+      
+      Modeler3D.create_object_list
+      
+      
+      Modeler3D.create_outer_facelist
+      
+      
+      Modeler3D.create_plane
+      
+      
+      Modeler3D.create_point
+      
+      
+      Modeler3D.create_polyhedron
+      
+      
+      Modeler3D.create_polyline
+      
+      
+      Modeler3D.create_rectangle
+      
+      
+      Modeler3D.create_region
+      
+      
+      Modeler3D.create_sheet_to_ground
+      
+      
+      Modeler3D.create_sphere
+      
+      
+      Modeler3D.create_spiral
+      
+      
+      Modeler3D.create_spiral_on_face
+      
+      
+      Modeler3D.create_torus
+      
+      
+      Modeler3D.create_udm
+      
+      
+      Modeler3D.create_udp
+      
+      
+      Modeler3D.create_waveguide
+      
+      
+      Modeler3D.delete
+      
+      
+      Modeler3D.delete_objects_containing
+      
+      
+      Modeler3D.does_object_exists
+      
+      
+      Modeler3D.duplicate_along_line
+      
+      
+      Modeler3D.duplicate_and_mirror
+      
+      
+      Modeler3D.duplicate_around_axis
+      
+      
+      Modeler3D.duplicate_coordinate_system_to_global
+      
+      
+      Modeler3D.edit_region_dimensions
+      
+      
+      Modeler3D.explicitly_subtract
+      
+      
+      Modeler3D.find_closest_edges
+      
+      
+      Modeler3D.find_new_objects
+      
+      
+      Modeler3D.find_point_around
+      
+      
+      Modeler3D.find_port_faces
+      
+      
+      Modeler3D.fit_all
+      
+      
+      Modeler3D.flatten_assembly
+      
+      
+      Modeler3D.generate_object_history
+      
+      
+      Modeler3D.get_3d_component_object_list
+      
+      
+      Modeler3D.get_bodynames_from_position
+      
+      
+      Modeler3D.get_boundaries_name
+      
+      
+      Modeler3D.get_bounding_dimension
+      
+      
+      Modeler3D.get_closest_edgeid_to_position
+      
+      
+      Modeler3D.get_edge_length
+      
+      
+      Modeler3D.get_edge_midpoint
+      
+      
+      Modeler3D.get_edge_vertices
+      
+      
+      Modeler3D.get_edgeid_from_position
+      
+      
+      Modeler3D.get_edgeids_from_vertexid
+      
+      
+      Modeler3D.get_edges_for_circuit_port
+      
+      
+      Modeler3D.get_edges_for_circuit_port_from_sheet
+      
+      
+      Modeler3D.get_edges_on_bounding_box
+      
+      
+      Modeler3D.get_entitylist_id
+      
+      
+      Modeler3D.get_equivalent_parallel_edges
+      
+      
+      Modeler3D.get_existing_polyline
+      
+      
+      Modeler3D.get_face_area
+      
+      
+      Modeler3D.get_face_by_id
+      
+      
+      Modeler3D.get_face_center
+      
+      
+      Modeler3D.get_face_edges
+      
+      
+      Modeler3D.get_face_vertices
+      
+      
+      Modeler3D.get_faceid_from_position
+      
+      
+      Modeler3D.get_faces_from_materials
+      
+      
+      Modeler3D.get_group_bounding_box
+      
+      
+      Modeler3D.get_line_ids
+      
+      
+      Modeler3D.get_matched_object_name
+      
+      
+      Modeler3D.get_mid_points_on_dir
+      
+      
+      Modeler3D.get_model_bounding_box
+      
+      
+      Modeler3D.get_obj_id
+      
+      
+      Modeler3D.get_object_edges
+      
+      
+      Modeler3D.get_object_faces
+      
+      
+      Modeler3D.get_object_from_name
+      
+      
+      Modeler3D.get_object_name_from_edge_id
+      
+      
+      Modeler3D.get_object_vertices
+      
+      
+      Modeler3D.get_objects_by_material
+      
+      
+      Modeler3D.get_objects_in_group
+      
+      
+      Modeler3D.get_objects_w_string
+      
+      
+      Modeler3D.get_solving_volume
+      
+      
+      Modeler3D.get_vertex_position
+      
+      
+      Modeler3D.get_vertices_of_line
+      
+      
+      Modeler3D.global_to_cs
+      
+      
+      Modeler3D.heal_objects
+      
+      
+      Modeler3D.import_3d_cad
+      
+      
+      Modeler3D.import_from_openstreet_map
+      
+      
+      Modeler3D.import_nastran
+      
+      
+      Modeler3D.import_spaceclaim_document
+      
+      
+      Modeler3D.imprint
+      
+      
+      Modeler3D.imprint_normal_projection
+      
+      
+      Modeler3D.imprint_vector_projection
+      
+      
+      Modeler3D.insert_3d_component
+      
+      
+      Modeler3D.insert_layout_component
+      
+      
+      Modeler3D.intersect
+      
+      
+      Modeler3D.invert_cs
+      
+      
+      Modeler3D.load_scdm_in_hfss
+      
+      
+      Modeler3D.mirror
+      
+      
+      Modeler3D.modeler_variable
+      
+      
+      Modeler3D.move
+      
+      
+      Modeler3D.move_edge
+      
+      
+      Modeler3D.move_face
+      
+      
+      Modeler3D.objects_in_bounding_box
+      
+      
+      Modeler3D.objects_segmentation
+      
+      
+      Modeler3D.paste
+      
+      
+      Modeler3D.polyline_segment
+      
+      
+      Modeler3D.purge_history
+      
+      
+      Modeler3D.reference_cs_to_global
+      
+      
+      Modeler3D.refresh
+      
+      
+      Modeler3D.refresh_all_ids
+      
+      
+      Modeler3D.replace_3dcomponent
+      
+      
+      Modeler3D.rotate
+      
+      
+      Modeler3D.scale
+      
+      
+      Modeler3D.section
+      
+      
+      Modeler3D.select_allfaces_fromobjects
+      
+      
+      Modeler3D.separate_bodies
+      
+      
+      Modeler3D.set_object_model_state
+      
+      
+      Modeler3D.set_objects_deformation
+      
+      
+      Modeler3D.set_objects_temperature
+      
+      
+      Modeler3D.set_working_coordinate_system
+      
+      
+      Modeler3D.setunassigned_mats
+      
+      
+      Modeler3D.simplify_objects
+      
+      
+      Modeler3D.split
+      
+      
+      Modeler3D.subtract
+      
+      
+      Modeler3D.sweep_along_normal
+      
+      
+      Modeler3D.sweep_along_path
+      
+      
+      Modeler3D.sweep_along_vector
+      
+      
+      Modeler3D.sweep_around_axis
+      
+      
+      Modeler3D.thicken_sheet
+      
+      
+      Modeler3D.ungroup
+      
+      
+      Modeler3D.unite
+      
+      
+      Modeler3D.update_object
+      
+      
+      Modeler3D.update_udp
+      
+      
+      Modeler3D.value_in_object_units
+      
+      
+      Modeler3D.vertex_data_of_lines
+      
+      
+      Modeler3D.wrap_sheet
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Modeler3D.coordinate_systems
+      Modeler3D.defaultmaterial
+      Modeler3D.design_type
+      Modeler3D.dimension
+      Modeler3D.geometry_mode
+      Modeler3D.layout_component_names
+      Modeler3D.line_names
+      Modeler3D.line_objects
+      Modeler3D.logger
+      Modeler3D.materials
+      Modeler3D.model_consistency_report
+      Modeler3D.model_objects
+      Modeler3D.model_units
+      Modeler3D.non_model_objects
+      Modeler3D.object_list
+      Modeler3D.object_names
+      Modeler3D.objects_by_name
+      Modeler3D.obounding_box
+      Modeler3D.oeditor
+      Modeler3D.planes
+      Modeler3D.point_names
+      Modeler3D.point_objects
+      Modeler3D.projdir
+      Modeler3D.selections
+      Modeler3D.sheet_names
+      Modeler3D.sheet_objects
+      Modeler3D.solid_bodies
+      Modeler3D.solid_names
+      Modeler3D.solid_objects
+      Modeler3D.unclassified_names
+      Modeler3D.unclassified_objects
+      Modeler3D.user_defined_component_names
+      Modeler3D.user_lists
+      Modeler3D.version
+   
+   

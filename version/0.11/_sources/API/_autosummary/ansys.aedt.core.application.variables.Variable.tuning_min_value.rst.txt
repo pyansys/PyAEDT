@@ -1,0 +1,6 @@
+tuning\_min\_value
+==================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.tuning_min_value

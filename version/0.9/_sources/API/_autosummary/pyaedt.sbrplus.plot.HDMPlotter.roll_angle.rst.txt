@@ -1,0 +1,6 @@
+roll\_angle
+===========
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.roll_angle

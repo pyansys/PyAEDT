@@ -1,0 +1,6 @@
+is\_closed
+==========
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Circle3dLayout.is_closed

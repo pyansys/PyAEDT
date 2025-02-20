@@ -1,0 +1,6 @@
+delete\_all\_eddy\_current\_sweeps
+==================================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupMaxwell.delete_all_eddy_current_sweeps

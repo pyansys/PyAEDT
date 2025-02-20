@@ -1,0 +1,6 @@
+create\_new\_project
+====================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_new_project

@@ -1,0 +1,6 @@
+corner\_radius
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. autoproperty:: Rect3dLayout.corner_radius

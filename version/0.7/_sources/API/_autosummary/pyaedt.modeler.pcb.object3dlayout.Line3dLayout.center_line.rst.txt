@@ -1,0 +1,6 @@
+center\_line
+============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Line3dLayout.center_line

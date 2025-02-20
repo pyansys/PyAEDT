@@ -1,0 +1,6 @@
+set\_hmin
+=========
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.set_hmin

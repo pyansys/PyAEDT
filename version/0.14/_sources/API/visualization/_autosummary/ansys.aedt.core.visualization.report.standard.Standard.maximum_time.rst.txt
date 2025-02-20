@@ -1,0 +1,6 @@
+maximum\_time
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. autoproperty:: Standard.maximum_time

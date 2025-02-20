@@ -1,0 +1,6 @@
+parametrics
+===========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.parametrics

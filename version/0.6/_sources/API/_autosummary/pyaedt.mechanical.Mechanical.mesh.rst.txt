@@ -1,0 +1,6 @@
+mesh
+====
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.mesh

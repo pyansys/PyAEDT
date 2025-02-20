@@ -1,0 +1,6 @@
+boundaries
+==========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.boundaries

@@ -1,0 +1,6 @@
+create\_report\_from\_configuration
+===================================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.create_report_from_configuration

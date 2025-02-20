@@ -1,0 +1,6 @@
+add\_boundary\_node
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. automethod:: NetworkObject.add_boundary_node

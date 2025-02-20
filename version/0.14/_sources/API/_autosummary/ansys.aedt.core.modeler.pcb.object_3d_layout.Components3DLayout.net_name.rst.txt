@@ -1,0 +1,6 @@
+net\_name
+=========
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. autoproperty:: Components3DLayout.net_name

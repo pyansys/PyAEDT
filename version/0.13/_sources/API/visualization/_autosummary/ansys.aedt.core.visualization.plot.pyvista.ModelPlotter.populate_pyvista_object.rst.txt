@@ -1,0 +1,6 @@
+populate\_pyvista\_object
+=========================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. automethod:: ModelPlotter.populate_pyvista_object

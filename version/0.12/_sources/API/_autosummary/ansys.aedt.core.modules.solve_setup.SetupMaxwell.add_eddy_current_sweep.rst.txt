@@ -1,0 +1,6 @@
+add\_eddy\_current\_sweep
+=========================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupMaxwell.add_eddy_current_sweep

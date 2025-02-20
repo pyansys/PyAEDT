@@ -1,0 +1,6 @@
+solve\_in\_batch
+================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.solve_in_batch

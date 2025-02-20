@@ -1,0 +1,6 @@
+create\_dataset1d\_design
+=========================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.create_dataset1d_design

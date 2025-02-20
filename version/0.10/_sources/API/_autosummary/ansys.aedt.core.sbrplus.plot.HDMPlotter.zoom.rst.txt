@@ -1,0 +1,6 @@
+zoom
+====
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.zoom

@@ -1,0 +1,6 @@
+identify\_touching\_conductors
+==============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.identify_touching_conductors

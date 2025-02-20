@@ -1,0 +1,6 @@
+update\_rlc\_from\_bom
+======================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.update_rlc_from_bom

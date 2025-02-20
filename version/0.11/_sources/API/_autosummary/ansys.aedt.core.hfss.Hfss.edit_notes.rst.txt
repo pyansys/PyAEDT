@@ -1,0 +1,6 @@
+edit\_notes
+===========
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.edit_notes

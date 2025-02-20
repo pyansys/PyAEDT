@@ -1,0 +1,6 @@
+sensitivity\_initial\_disp
+==========================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.sensitivity_initial_disp

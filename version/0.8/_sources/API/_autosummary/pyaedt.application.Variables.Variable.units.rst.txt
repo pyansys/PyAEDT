@@ -1,0 +1,6 @@
+units
+=====
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.units

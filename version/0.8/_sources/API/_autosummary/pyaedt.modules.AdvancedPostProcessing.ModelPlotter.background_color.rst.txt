@@ -1,0 +1,6 @@
+background\_color
+=================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.background_color

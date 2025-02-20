@@ -1,0 +1,6 @@
+override\_instance
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. automethod:: PCBSettingsDeviceParts.override_instance

@@ -1,0 +1,6 @@
+activate\_variable\_statistical
+===============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.activate_variable_statistical

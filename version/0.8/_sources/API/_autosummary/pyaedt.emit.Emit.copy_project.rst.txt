@@ -1,0 +1,6 @@
+copy\_project
+=============
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.copy_project

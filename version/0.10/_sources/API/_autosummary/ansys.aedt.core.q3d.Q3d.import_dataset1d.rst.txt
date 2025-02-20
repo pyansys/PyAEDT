@@ -1,0 +1,6 @@
+import\_dataset1d
+=================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.import_dataset1d

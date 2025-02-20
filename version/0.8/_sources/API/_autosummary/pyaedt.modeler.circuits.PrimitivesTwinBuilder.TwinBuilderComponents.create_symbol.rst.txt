@@ -1,0 +1,6 @@
+create\_symbol
+==============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.create_symbol

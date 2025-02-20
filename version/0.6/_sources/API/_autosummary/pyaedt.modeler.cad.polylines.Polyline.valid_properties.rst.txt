@@ -1,0 +1,6 @@
+valid\_properties
+=================
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.valid_properties

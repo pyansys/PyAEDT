@@ -1,0 +1,6 @@
+archive\_project
+================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.archive_project

@@ -1,0 +1,6 @@
+get\_profile
+============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.get_profile

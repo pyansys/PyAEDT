@@ -1,0 +1,6 @@
+optimodule
+==========
+
+.. currentmodule:: pyaedt.modules.DesignXPloration
+
+.. autoproperty:: OptimizationSetups.optimodule

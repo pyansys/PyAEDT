@@ -1,0 +1,40 @@
+﻿EDBNetClassData
+===============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. autoclass:: EDBNetClassData
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EDBNetClassData.add_net
+      
+      
+      EDBNetClassData.api_create
+      
+      
+      EDBNetClassData.delete
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EDBNetClassData.api_nets
+      EDBNetClassData.is_null
+      EDBNetClassData.name
+      EDBNetClassData.nets
+   
+   

@@ -1,0 +1,6 @@
+oanalysis
+=========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.oanalysis

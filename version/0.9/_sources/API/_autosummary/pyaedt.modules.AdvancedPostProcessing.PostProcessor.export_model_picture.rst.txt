@@ -1,0 +1,6 @@
+export\_model\_picture
+======================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.export_model_picture

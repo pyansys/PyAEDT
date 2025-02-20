@@ -1,0 +1,6 @@
+thicken\_port\_sheets
+=====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.thicken_port_sheets

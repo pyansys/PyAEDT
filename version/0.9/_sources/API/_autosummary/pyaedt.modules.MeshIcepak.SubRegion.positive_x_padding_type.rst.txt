@@ -1,0 +1,6 @@
+positive\_x\_padding\_type
+==========================
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. autoproperty:: SubRegion.positive_x_padding_type

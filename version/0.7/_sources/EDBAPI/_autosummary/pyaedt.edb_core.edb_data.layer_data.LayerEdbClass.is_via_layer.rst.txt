@@ -1,0 +1,6 @@
+is\_via\_layer
+==============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.layer_data
+
+.. autoproperty:: LayerEdbClass.is_via_layer

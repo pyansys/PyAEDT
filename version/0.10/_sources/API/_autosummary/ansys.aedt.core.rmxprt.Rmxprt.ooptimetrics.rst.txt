@@ -1,0 +1,6 @@
+ooptimetrics
+============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.ooptimetrics

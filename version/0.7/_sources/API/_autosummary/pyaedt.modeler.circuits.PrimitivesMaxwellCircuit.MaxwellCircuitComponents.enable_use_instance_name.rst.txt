@@ -1,0 +1,6 @@
+enable\_use\_instance\_name
+===========================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.enable_use_instance_name

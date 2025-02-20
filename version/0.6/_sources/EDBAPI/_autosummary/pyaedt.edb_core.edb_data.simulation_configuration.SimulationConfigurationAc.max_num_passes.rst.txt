@@ -1,0 +1,6 @@
+max\_num\_passes
+================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.max_num_passes

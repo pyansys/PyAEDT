@@ -1,0 +1,6 @@
+Submodels
+=========
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. autoproperty:: MeshRegion.Submodels

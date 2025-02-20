@@ -1,0 +1,6 @@
+bessel\_normalized\_delay\_period
+=================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.bessel_normalized_delay_period

@@ -1,0 +1,6 @@
+assign\_fixed\_support
+======================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.assign_fixed_support

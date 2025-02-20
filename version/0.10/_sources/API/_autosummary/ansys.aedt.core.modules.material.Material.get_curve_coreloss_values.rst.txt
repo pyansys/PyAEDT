@@ -1,0 +1,6 @@
+get\_curve\_coreloss\_values
+============================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: Material.get_curve_coreloss_values

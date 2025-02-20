@@ -1,0 +1,6 @@
+desktop\_install\_dir
+=====================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.desktop_install_dir

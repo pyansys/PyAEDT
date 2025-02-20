@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.stop_simulations

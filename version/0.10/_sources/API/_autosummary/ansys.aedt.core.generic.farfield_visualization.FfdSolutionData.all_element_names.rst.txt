@@ -1,0 +1,6 @@
+all\_element\_names
+===================
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.all_element_names

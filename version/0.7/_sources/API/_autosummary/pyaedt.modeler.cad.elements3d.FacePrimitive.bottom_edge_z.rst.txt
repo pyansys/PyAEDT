@@ -1,0 +1,6 @@
+bottom\_edge\_z
+===============
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoproperty:: FacePrimitive.bottom_edge_z

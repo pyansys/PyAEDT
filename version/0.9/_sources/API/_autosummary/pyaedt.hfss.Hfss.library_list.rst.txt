@@ -1,0 +1,6 @@
+library\_list
+=============
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.library_list

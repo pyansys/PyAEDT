@@ -1,0 +1,6 @@
+problem\_type
+=============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.problem_type

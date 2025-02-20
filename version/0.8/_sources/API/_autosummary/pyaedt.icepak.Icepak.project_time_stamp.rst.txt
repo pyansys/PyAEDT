@@ -1,0 +1,6 @@
+project\_time\_stamp
+====================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.project_time_stamp

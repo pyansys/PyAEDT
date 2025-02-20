@@ -1,0 +1,6 @@
+activate\_variable\_tuning
+==========================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.activate_variable_tuning

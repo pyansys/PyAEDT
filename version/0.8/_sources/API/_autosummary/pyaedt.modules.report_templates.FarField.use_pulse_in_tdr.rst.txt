@@ -1,0 +1,6 @@
+use\_pulse\_in\_tdr
+===================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: FarField.use_pulse_in_tdr

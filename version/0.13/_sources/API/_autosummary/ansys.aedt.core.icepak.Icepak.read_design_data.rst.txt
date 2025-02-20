@@ -1,0 +1,6 @@
+read\_design\_data
+==================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.read_design_data

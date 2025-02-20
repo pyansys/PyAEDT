@@ -1,0 +1,6 @@
+existing\_analysis\_sweeps
+==========================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.existing_analysis_sweeps

@@ -1,0 +1,6 @@
+select\_scheduler
+=================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.select_scheduler

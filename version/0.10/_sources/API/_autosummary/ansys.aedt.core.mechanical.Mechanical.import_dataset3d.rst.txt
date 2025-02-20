@@ -1,0 +1,6 @@
+import\_dataset3d
+=================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.import_dataset3d

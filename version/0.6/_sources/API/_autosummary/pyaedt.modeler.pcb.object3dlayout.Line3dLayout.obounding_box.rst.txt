@@ -1,0 +1,6 @@
+obounding\_box
+==============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Line3dLayout.obounding_box

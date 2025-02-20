@@ -1,0 +1,6 @@
+field\_plot\_settings
+=====================
+
+.. currentmodule:: ansys.aedt.core.modules.solutions
+
+.. autoproperty:: FieldPlot.field_plot_settings

@@ -1,0 +1,6 @@
+export\_rl\_matrix
+==================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.export_rl_matrix

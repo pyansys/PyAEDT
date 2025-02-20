@@ -1,0 +1,6 @@
+radiated\_power
+===============
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.radiated_power

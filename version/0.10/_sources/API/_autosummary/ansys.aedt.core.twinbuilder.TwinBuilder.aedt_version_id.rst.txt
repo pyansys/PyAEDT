@@ -1,0 +1,6 @@
+aedt\_version\_id
+=================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.aedt_version_id

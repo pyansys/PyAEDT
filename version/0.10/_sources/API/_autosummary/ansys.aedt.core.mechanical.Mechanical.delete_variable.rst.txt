@@ -1,0 +1,6 @@
+delete\_variable
+================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.delete_variable

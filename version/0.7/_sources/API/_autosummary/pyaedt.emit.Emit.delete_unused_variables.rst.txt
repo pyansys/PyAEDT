@@ -1,0 +1,6 @@
+delete\_unused\_variables
+=========================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.delete_unused_variables

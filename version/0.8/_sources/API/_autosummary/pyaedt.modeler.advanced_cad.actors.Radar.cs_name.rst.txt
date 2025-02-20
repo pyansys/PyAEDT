@@ -1,0 +1,6 @@
+cs\_name
+========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoproperty:: Radar.cs_name

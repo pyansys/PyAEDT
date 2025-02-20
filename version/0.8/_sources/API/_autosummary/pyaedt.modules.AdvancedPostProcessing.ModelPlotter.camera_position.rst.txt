@@ -1,0 +1,6 @@
+camera\_position
+================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.camera_position

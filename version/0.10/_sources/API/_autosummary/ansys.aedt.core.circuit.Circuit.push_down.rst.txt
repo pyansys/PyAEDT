@@ -1,0 +1,6 @@
+push\_down
+==========
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.push_down

@@ -1,0 +1,6 @@
+get\_touching\_faces
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.get_touching_faces

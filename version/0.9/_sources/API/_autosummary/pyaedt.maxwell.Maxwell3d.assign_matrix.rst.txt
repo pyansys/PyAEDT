@@ -1,0 +1,6 @@
+assign\_matrix
+==============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_matrix

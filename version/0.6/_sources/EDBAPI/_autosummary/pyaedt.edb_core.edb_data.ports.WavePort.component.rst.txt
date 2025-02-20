@@ -1,0 +1,6 @@
+component
+=========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoproperty:: WavePort.component

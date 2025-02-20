@@ -1,0 +1,145 @@
+﻿AMIEyeDiagram
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. autoclass:: AMIEyeDiagram
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      AMIEyeDiagram.add_all_eye_measurements
+      
+      
+      AMIEyeDiagram.add_cartesian_x_marker
+      
+      
+      AMIEyeDiagram.add_cartesian_y_marker
+      
+      
+      AMIEyeDiagram.add_limit_line_from_equation
+      
+      
+      AMIEyeDiagram.add_limit_line_from_points
+      
+      
+      AMIEyeDiagram.add_note
+      
+      
+      AMIEyeDiagram.add_trace_characteristics
+      
+      
+      AMIEyeDiagram.add_trace_to_report
+      
+      
+      AMIEyeDiagram.apply_report_template
+      
+      
+      AMIEyeDiagram.clear_all_eye_measurements
+      
+      
+      AMIEyeDiagram.create
+      
+      
+      AMIEyeDiagram.delete
+      
+      
+      AMIEyeDiagram.delete_traces
+      
+      
+      AMIEyeDiagram.edit_general_settings
+      
+      
+      AMIEyeDiagram.edit_grid
+      
+      
+      AMIEyeDiagram.edit_header
+      
+      
+      AMIEyeDiagram.edit_legend
+      
+      
+      AMIEyeDiagram.edit_x_axis
+      
+      
+      AMIEyeDiagram.edit_x_axis_scaling
+      
+      
+      AMIEyeDiagram.edit_y_axis
+      
+      
+      AMIEyeDiagram.edit_y_axis_scaling
+      
+      
+      AMIEyeDiagram.export_config
+      
+      
+      AMIEyeDiagram.export_mask_violation
+      
+      
+      AMIEyeDiagram.eye_mask
+      
+      
+      AMIEyeDiagram.get_solution_data
+      
+      
+      AMIEyeDiagram.hide_legend
+      
+      
+      AMIEyeDiagram.import_traces
+      
+      
+      AMIEyeDiagram.rectangular_plot
+      
+      
+      AMIEyeDiagram.update_expressions_with_defaults
+      
+      
+      AMIEyeDiagram.update_trace_in_report
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      AMIEyeDiagram.auto_compute_eye_meas
+      AMIEyeDiagram.auto_cross_amplitude
+      AMIEyeDiagram.auto_delay
+      AMIEyeDiagram.cross_amplitude
+      AMIEyeDiagram.differential_pairs
+      AMIEyeDiagram.domain
+      AMIEyeDiagram.expressions
+      AMIEyeDiagram.eye_measurement_point
+      AMIEyeDiagram.limit_lines
+      AMIEyeDiagram.manual_delay
+      AMIEyeDiagram.matrix
+      AMIEyeDiagram.notes
+      AMIEyeDiagram.offset
+      AMIEyeDiagram.plot_name
+      AMIEyeDiagram.polyline
+      AMIEyeDiagram.primary_sweep
+      AMIEyeDiagram.primary_sweep_range
+      AMIEyeDiagram.properties
+      AMIEyeDiagram.quantity_type
+      AMIEyeDiagram.reduced_matrix
+      AMIEyeDiagram.report_category
+      AMIEyeDiagram.report_type
+      AMIEyeDiagram.secondary_sweep
+      AMIEyeDiagram.secondary_sweep_range
+      AMIEyeDiagram.traces
+      AMIEyeDiagram.unit_interval
+      AMIEyeDiagram.use_pulse_in_tdr
+      AMIEyeDiagram.variations
+   
+   

@@ -1,0 +1,6 @@
+connect\_schematic\_components
+==============================
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. automethod:: ModelerTwinBuilder.connect_schematic_components

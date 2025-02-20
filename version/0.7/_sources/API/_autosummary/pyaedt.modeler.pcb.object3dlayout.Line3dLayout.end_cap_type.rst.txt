@@ -1,0 +1,6 @@
+end\_cap\_type
+==============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Line3dLayout.end_cap_type

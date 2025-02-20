@@ -1,0 +1,6 @@
+global\_to\_cs
+==============
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.global_to_cs

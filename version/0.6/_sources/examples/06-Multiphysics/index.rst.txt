@@ -1,0 +1,80 @@
+
+
+.. _sphx_glr_examples_06-Multiphysics:
+
+Multiphysics examples
+~~~~~~~~~~~~~~~~~~~~~
+These examples use PyAEDT to create some multiphysics workflows. They might use
+an electromagnetic tool like HFSS or Maxwell and a thermal or structural tool
+like Icepak or Mechanical.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="To provide the advanced postprocessing features needed for this example, the numpy, matplotlib,...">
+
+.. only:: html
+
+  .. image:: /examples/06-Multiphysics/images/thumb/sphx_glr_Hfss_Icepak_Coupling_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_06-Multiphysics_Hfss_Icepak_Coupling.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Multiphysics: HFSS-Icepak multiphysics analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Multiphysics: HFSS-Mechanical multiphysics analysis">
+
+.. only:: html
+
+  .. image:: /examples/06-Multiphysics/images/thumb/sphx_glr_Hfss_Mechanical_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_06-Multiphysics_Hfss_Mechanical.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Multiphysics: HFSS-Mechanical multiphysics analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Steps to follow Step 1: Simulate coil loaded by empty phantom: Scale input to coil ports to pro...">
+
+.. only:: html
+
+  .. image:: /examples/06-Multiphysics/images/thumb/sphx_glr_MRI_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_06-Multiphysics_MRI.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Multiphysics: HFSS-Mechanical MRI analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/06-Multiphysics/Hfss_Icepak_Coupling
+   /examples/06-Multiphysics/Hfss_Mechanical
+   /examples/06-Multiphysics/MRI
+

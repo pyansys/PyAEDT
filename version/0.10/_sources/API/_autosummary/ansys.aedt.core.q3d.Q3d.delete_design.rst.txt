@@ -1,0 +1,6 @@
+delete\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.delete_design

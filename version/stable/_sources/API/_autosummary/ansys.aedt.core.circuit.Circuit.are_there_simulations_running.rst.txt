@@ -1,0 +1,6 @@
+are\_there\_simulations\_running
+================================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.are_there_simulations_running

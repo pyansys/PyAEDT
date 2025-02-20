@@ -1,0 +1,120 @@
+﻿Desktop
+=======
+
+.. currentmodule:: pyaedt.desktop
+
+.. autoclass:: Desktop
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Desktop.active_design
+      
+      
+      Desktop.active_project
+      
+      
+      Desktop.analyze_all
+      
+      
+      Desktop.change_active_dso_config_name
+      
+      
+      Desktop.change_license_type
+      
+      
+      Desktop.change_registry_from_file
+      
+      
+      Desktop.change_registry_key
+      
+      
+      Desktop.clear_messages
+      
+      
+      Desktop.close_desktop
+      
+      
+      Desktop.design_list
+      
+      
+      Desktop.design_type
+      
+      
+      Desktop.disable_autosave
+      
+      
+      Desktop.download_job_results
+      
+      
+      Desktop.enable_autosave
+      
+      
+      Desktop.get_ansyscloud_job_info
+      
+      
+      Desktop.get_available_cloud_config
+      
+      
+      Desktop.get_available_toolkits
+      
+      
+      Desktop.get_monitor_data
+      
+      
+      Desktop.load_project
+      
+      
+      Desktop.project_list
+      
+      
+      Desktop.project_path
+      
+      
+      Desktop.release_desktop
+      
+      
+      Desktop.save_project
+      
+      
+      Desktop.select_scheduler
+      
+      
+      Desktop.stop_simulations
+      
+      
+      Desktop.submit_ansys_cloud_job
+      
+      
+      Desktop.submit_job
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Desktop.are_there_simulations_running
+      Desktop.current_student_version
+      Desktop.current_version
+      Desktop.install_path
+      Desktop.installed_versions
+      Desktop.logger
+      Desktop.messenger
+      Desktop.personallib
+      Desktop.pyaedt_dir
+      Desktop.src_dir
+      Desktop.syslib
+      Desktop.userlib
+   
+   

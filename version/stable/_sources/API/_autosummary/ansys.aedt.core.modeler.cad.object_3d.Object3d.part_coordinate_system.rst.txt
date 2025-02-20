@@ -1,0 +1,6 @@
+part\_coordinate\_system
+========================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. autoproperty:: Object3d.part_coordinate_system

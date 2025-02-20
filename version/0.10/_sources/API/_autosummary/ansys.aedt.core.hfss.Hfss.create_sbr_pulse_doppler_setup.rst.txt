@@ -1,0 +1,6 @@
+create\_sbr\_pulse\_doppler\_setup
+==================================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.create_sbr_pulse_doppler_setup

@@ -1,0 +1,6 @@
+flatten\_3d\_components
+=======================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.flatten_3d_components

@@ -1,0 +1,6 @@
+animate\_fields\_from\_aedtplt
+==============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.animate_fields_from_aedtplt

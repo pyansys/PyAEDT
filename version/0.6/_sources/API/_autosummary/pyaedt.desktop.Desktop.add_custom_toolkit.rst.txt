@@ -1,0 +1,6 @@
+add\_custom\_toolkit
+====================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.add_custom_toolkit

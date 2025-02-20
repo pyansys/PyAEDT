@@ -1,0 +1,6 @@
+differential\_pairs
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Fields.differential_pairs

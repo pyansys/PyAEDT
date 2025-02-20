@@ -1,0 +1,6 @@
+delete\_traces
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: Fields.delete_traces

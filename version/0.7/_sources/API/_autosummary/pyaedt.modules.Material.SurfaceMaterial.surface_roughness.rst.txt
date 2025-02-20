@@ -1,0 +1,6 @@
+surface\_roughness
+==================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: SurfaceMaterial.surface_roughness

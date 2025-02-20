@@ -1,0 +1,6 @@
+autosave\_enable
+================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.autosave_enable

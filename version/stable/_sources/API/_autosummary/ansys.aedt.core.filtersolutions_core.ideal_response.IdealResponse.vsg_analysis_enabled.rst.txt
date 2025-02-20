@@ -1,0 +1,6 @@
+vsg\_analysis\_enabled
+======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.ideal_response
+
+.. autoproperty:: IdealResponse.vsg_analysis_enabled

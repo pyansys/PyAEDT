@@ -1,0 +1,6 @@
+add\_logger
+===========
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. automethod:: AedtLogger.add_logger

@@ -1,0 +1,6 @@
+normal
+======
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoproperty:: FacePrimitive.normal

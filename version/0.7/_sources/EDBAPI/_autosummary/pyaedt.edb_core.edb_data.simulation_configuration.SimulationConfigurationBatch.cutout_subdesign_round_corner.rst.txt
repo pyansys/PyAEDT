@@ -1,0 +1,6 @@
+cutout\_subdesign\_round\_corner
+================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.cutout_subdesign_round_corner

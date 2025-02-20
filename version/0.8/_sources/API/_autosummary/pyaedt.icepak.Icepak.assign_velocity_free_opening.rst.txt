@@ -1,0 +1,6 @@
+assign\_velocity\_free\_opening
+===============================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_velocity_free_opening

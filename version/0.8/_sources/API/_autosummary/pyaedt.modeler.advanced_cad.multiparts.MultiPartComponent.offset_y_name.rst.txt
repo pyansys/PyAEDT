@@ -1,0 +1,6 @@
+offset\_y\_name
+===============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.multiparts
+
+.. autoproperty:: MultiPartComponent.offset_y_name

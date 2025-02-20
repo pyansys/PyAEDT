@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.change_validation_settings

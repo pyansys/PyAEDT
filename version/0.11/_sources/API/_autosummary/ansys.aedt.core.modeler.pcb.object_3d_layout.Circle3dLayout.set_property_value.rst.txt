@@ -1,0 +1,6 @@
+set\_property\_value
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. automethod:: Circle3dLayout.set_property_value

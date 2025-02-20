@@ -1,0 +1,6 @@
+from\_dict
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. automethod:: ColorMapSettings.from_dict

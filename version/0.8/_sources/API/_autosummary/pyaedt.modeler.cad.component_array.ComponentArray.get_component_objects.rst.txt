@@ -1,0 +1,6 @@
+get\_component\_objects
+=======================
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. automethod:: ComponentArray.get_component_objects

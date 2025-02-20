@@ -1,0 +1,6 @@
+get\_padstack\_terminal\_reference\_pin
+=======================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. automethod:: GapPort.get_padstack_terminal_reference_pin

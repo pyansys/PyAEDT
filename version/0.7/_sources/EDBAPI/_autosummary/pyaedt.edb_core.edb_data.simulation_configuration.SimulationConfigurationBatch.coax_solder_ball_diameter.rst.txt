@@ -1,0 +1,6 @@
+coax\_solder\_ball\_diameter
+============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.coax_solder_ball_diameter

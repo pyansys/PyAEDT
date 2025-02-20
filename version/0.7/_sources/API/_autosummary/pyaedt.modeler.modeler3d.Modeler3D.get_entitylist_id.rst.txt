@@ -1,0 +1,6 @@
+get\_entitylist\_id
+===================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_entitylist_id

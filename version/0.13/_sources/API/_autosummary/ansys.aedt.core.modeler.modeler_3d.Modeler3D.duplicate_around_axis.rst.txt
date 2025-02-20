@@ -1,0 +1,6 @@
+duplicate\_around\_axis
+=======================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.duplicate_around_axis

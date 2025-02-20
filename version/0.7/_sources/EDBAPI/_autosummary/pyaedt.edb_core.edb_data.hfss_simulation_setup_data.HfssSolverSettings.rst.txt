@@ -1,0 +1,26 @@
+﻿HfssSolverSettings
+==================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: HfssSolverSettings
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      HfssSolverSettings.enhanced_low_freq_accuracy
+      HfssSolverSettings.order_basis
+      HfssSolverSettings.relative_residual
+      HfssSolverSettings.solver_type
+      HfssSolverSettings.use_shell_elements
+   
+   

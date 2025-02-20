@@ -1,0 +1,6 @@
+enhanced\_low\_freq\_accuracy
+=============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: HfssSolverSettings.enhanced_low_freq_accuracy

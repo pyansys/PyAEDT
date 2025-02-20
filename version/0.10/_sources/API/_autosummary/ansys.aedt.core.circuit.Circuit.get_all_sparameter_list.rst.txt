@@ -1,0 +1,6 @@
+get\_all\_sparameter\_list
+==========================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.get_all_sparameter_list

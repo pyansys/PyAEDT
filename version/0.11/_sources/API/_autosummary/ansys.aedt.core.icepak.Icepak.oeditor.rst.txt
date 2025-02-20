@@ -1,0 +1,6 @@
+oeditor
+=======
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.oeditor

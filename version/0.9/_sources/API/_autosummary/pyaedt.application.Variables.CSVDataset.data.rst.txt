@@ -1,0 +1,6 @@
+data
+====
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: CSVDataset.data

@@ -1,0 +1,6 @@
+table\_format\_to\_bool
+=======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.transmission_zeros
+
+.. automethod:: TransmissionZeros.table_format_to_bool

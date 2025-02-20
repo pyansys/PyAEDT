@@ -1,0 +1,6 @@
+frequency\_units
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. autoproperty:: MonostaticRCSData.frequency_units

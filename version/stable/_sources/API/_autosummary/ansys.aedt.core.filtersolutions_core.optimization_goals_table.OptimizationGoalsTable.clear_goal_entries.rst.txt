@@ -1,0 +1,6 @@
+clear\_goal\_entries
+====================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.optimization_goals_table
+
+.. automethod:: OptimizationGoalsTable.clear_goal_entries

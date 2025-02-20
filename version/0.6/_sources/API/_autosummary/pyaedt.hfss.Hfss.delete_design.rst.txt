@@ -1,0 +1,6 @@
+delete\_design
+==============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.delete_design

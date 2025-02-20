@@ -1,0 +1,6 @@
+export\_siwave\_report
+======================
+
+.. currentmodule:: pyaedt.siwave
+
+.. automethod:: Siwave.export_siwave_report

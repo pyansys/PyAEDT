@@ -1,0 +1,6 @@
+enable\_harmonic\_force\_on\_layout\_component
+==============================================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.enable_harmonic_force_on_layout_component

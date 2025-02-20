@@ -1,0 +1,6 @@
+delete\_traces
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: FarField.delete_traces

@@ -1,0 +1,6 @@
+activate\_variable\_statistical
+===============================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.activate_variable_statistical

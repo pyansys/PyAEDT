@@ -1,0 +1,6 @@
+atan2
+=====
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.atan2

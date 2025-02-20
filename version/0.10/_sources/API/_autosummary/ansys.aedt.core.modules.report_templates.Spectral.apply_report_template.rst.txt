@@ -1,0 +1,6 @@
+apply\_report\_template
+=======================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: Spectral.apply_report_template

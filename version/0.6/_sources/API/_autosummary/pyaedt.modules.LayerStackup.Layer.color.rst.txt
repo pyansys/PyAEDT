@@ -1,0 +1,6 @@
+color
+=====
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.color

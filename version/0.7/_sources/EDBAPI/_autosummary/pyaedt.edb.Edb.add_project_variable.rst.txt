@@ -1,0 +1,6 @@
+add\_project\_variable
+======================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.add_project_variable

@@ -1,0 +1,6 @@
+add\_cable\_to\_bundle
+======================
+
+.. currentmodule:: ansys.aedt.core.modules.cable_modeling
+
+.. automethod:: Cable.add_cable_to_bundle

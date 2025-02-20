@@ -1,0 +1,6 @@
+quantities
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.monitor_icepak
+
+.. autoproperty:: PointMonitor.quantities

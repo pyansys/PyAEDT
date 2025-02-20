@@ -1,0 +1,6 @@
+drawing\_layers
+===============
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layers.drawing_layers

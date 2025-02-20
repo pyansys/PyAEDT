@@ -1,0 +1,6 @@
+add\_trace\_characteristics
+===========================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: AMIEyeDiagram.add_trace_characteristics

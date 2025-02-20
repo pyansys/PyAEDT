@@ -1,0 +1,6 @@
+create\_dataset1d\_design
+=========================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.create_dataset1d_design

@@ -1,0 +1,6 @@
+create\_object\_from\_edge
+==========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.create_object_from_edge

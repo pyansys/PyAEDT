@@ -1,0 +1,6 @@
+via\_names
+==========
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. autoproperty:: Modeler3DLayout.via_names

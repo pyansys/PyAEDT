@@ -1,0 +1,6 @@
+design\_list
+============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.design_list

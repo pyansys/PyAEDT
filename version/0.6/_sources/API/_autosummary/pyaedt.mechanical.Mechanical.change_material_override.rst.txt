@@ -1,0 +1,6 @@
+change\_material\_override
+==========================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.change_material_override

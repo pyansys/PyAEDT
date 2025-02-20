@@ -1,0 +1,6 @@
+add\_dc\_ground\_source\_term
+=============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. automethod:: SimulationConfiguration.add_dc_ground_source_term

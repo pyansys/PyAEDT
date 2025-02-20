@@ -1,0 +1,6 @@
+package\_defs
+=============
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.package_defs

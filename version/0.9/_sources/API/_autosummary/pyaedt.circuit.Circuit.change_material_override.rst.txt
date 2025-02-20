@@ -1,0 +1,6 @@
+change\_material\_override
+==========================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.change_material_override

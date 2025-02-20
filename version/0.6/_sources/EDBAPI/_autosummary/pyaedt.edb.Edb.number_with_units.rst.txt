@@ -1,0 +1,6 @@
+number\_with\_units
+===================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.number_with_units

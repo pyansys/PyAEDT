@@ -1,0 +1,6 @@
+design\_libray
+==============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. autoproperty:: TwinBuilderComponents.design_libray

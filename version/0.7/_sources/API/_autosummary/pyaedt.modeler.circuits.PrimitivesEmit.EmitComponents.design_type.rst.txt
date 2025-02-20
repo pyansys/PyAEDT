@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesEmit
+
+.. autoproperty:: EmitComponents.design_type

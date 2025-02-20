@@ -1,0 +1,6 @@
+layout
+======
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoproperty:: ModelerNexxim.layout

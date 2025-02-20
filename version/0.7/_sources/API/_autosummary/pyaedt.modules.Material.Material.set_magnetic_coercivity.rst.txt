@@ -1,0 +1,6 @@
+set\_magnetic\_coercivity
+=========================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: Material.set_magnetic_coercivity

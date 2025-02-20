@@ -1,0 +1,6 @@
+assign\_grille
+==============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_grille

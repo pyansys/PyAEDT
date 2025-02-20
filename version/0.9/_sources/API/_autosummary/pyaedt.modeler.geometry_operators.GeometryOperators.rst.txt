@@ -1,0 +1,216 @@
+﻿GeometryOperators
+=================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. autoclass:: GeometryOperators
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      GeometryOperators.List2list
+      
+      
+      GeometryOperators.are_segments_intersecting
+      
+      
+      GeometryOperators.arrays_positions_sum
+      
+      
+      GeometryOperators.atan2
+      
+      
+      GeometryOperators.axis_angle_to_quaternion
+      
+      
+      GeometryOperators.axis_to_euler_zxz
+      
+      
+      GeometryOperators.axis_to_euler_zyz
+      
+      
+      GeometryOperators.cs_axis_str
+      
+      
+      GeometryOperators.cs_plane_to_axis_str
+      
+      
+      GeometryOperators.cs_plane_to_plane_str
+      
+      
+      GeometryOperators.cs_xy_pointing_expression
+      
+      
+      GeometryOperators.deg2rad
+      
+      
+      GeometryOperators.degrees_default_rounded
+      
+      
+      GeometryOperators.degrees_over_rounded
+      
+      
+      GeometryOperators.distance_vector
+      
+      
+      GeometryOperators.draft_type_str
+      
+      
+      GeometryOperators.euler_zxz_to_quaternion
+      
+      
+      GeometryOperators.euler_zyz_to_quaternion
+      
+      
+      GeometryOperators.find_closest_points
+      
+      
+      GeometryOperators.find_largest_rectangle_inside_polygon
+      
+      
+      GeometryOperators.find_point_on_plane
+      
+      
+      GeometryOperators.get_mid_point
+      
+      
+      GeometryOperators.get_numeric
+      
+      
+      GeometryOperators.get_polygon_centroid
+      
+      
+      GeometryOperators.get_triangle_area
+      
+      
+      GeometryOperators.is_between_points
+      
+      
+      GeometryOperators.is_collinear
+      
+      
+      GeometryOperators.is_parallel
+      
+      
+      GeometryOperators.is_perpendicular
+      
+      
+      GeometryOperators.is_point_in_polygon
+      
+      
+      GeometryOperators.is_point_projection_in_segment
+      
+      
+      GeometryOperators.is_projection_inside
+      
+      
+      GeometryOperators.is_segment_intersecting_polygon
+      
+      
+      GeometryOperators.is_small
+      
+      
+      GeometryOperators.mirror_point
+      
+      
+      GeometryOperators.normalize_vector
+      
+      
+      GeometryOperators.numeric_cs
+      
+      
+      GeometryOperators.orient_polygon
+      
+      
+      GeometryOperators.parallel_coeff
+      
+      
+      GeometryOperators.parse_dim_arg
+      
+      
+      GeometryOperators.point_in_polygon
+      
+      
+      GeometryOperators.point_segment_distance
+      
+      
+      GeometryOperators.pointing_to_axis
+      
+      
+      GeometryOperators.points_distance
+      
+      
+      GeometryOperators.q_prod
+      
+      
+      GeometryOperators.q_rotation
+      
+      
+      GeometryOperators.q_rotation_inv
+      
+      
+      GeometryOperators.quaternion_to_axis
+      
+      
+      GeometryOperators.quaternion_to_axis_angle
+      
+      
+      GeometryOperators.quaternion_to_euler_zxz
+      
+      
+      GeometryOperators.quaternion_to_euler_zyz
+      
+      
+      GeometryOperators.rad2deg
+      
+      
+      GeometryOperators.radians_default_rounded
+      
+      
+      GeometryOperators.radians_over_rounded
+      
+      
+      GeometryOperators.v_angle
+      
+      
+      GeometryOperators.v_angle_sign
+      
+      
+      GeometryOperators.v_angle_sign_2D
+      
+      
+      GeometryOperators.v_cross
+      
+      
+      GeometryOperators.v_dot
+      
+      
+      GeometryOperators.v_norm
+      
+      
+      GeometryOperators.v_points
+      
+      
+      GeometryOperators.v_prod
+      
+      
+      GeometryOperators.v_rotate_about_axis
+      
+      
+      GeometryOperators.v_sub
+      
+      
+      GeometryOperators.v_sum
+      
+   
+   
+
+   
+   
+   

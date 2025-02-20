@@ -1,0 +1,6 @@
+set\_color
+==========
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. automethod:: Plane.set_color

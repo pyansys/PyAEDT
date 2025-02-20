@@ -1,0 +1,6 @@
+v\_rotate\_about\_axis
+======================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.v_rotate_about_axis

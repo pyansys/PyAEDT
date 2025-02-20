@@ -1,0 +1,6 @@
+create\_component\_on\_pins
+===========================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.create_component_on_pins

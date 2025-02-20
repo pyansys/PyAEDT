@@ -1,0 +1,6 @@
+src\_dir
+========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.src_dir

@@ -1,0 +1,6 @@
+userlib
+=======
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.userlib

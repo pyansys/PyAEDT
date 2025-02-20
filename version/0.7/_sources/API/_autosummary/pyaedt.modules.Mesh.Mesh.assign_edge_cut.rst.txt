@@ -1,0 +1,6 @@
+assign\_edge\_cut
+=================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.assign_edge_cut

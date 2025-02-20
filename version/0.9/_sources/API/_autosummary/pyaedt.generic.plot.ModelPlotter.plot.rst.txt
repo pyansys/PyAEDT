@@ -1,0 +1,6 @@
+plot
+====
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. automethod:: ModelPlotter.plot

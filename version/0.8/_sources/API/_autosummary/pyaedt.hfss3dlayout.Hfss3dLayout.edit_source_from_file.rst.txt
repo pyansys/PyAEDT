@@ -1,0 +1,6 @@
+edit\_source\_from\_file
+========================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.edit_source_from_file

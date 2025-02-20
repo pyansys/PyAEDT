@@ -1,0 +1,6 @@
+get\_obj\_id
+============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.get_obj_id

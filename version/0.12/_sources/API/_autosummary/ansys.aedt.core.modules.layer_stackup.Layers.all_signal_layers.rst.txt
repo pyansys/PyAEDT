@@ -1,0 +1,6 @@
+all\_signal\_layers
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layers.all_signal_layers

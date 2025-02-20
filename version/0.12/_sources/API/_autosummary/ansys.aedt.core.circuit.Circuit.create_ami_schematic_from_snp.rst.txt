@@ -1,0 +1,6 @@
+create\_ami\_schematic\_from\_snp
+=================================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.create_ami_schematic_from_snp

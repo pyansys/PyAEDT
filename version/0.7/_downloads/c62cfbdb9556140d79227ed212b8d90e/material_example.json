@@ -1,0 +1,23 @@
+{
+    "materials": {
+        "new_material": {
+            "CoordinateSystemType": "Cartesian",
+            "BulkOrSurfaceType": 1,
+            "PhysicsTypes": {
+                "set": [
+                    "Electromagnetic"
+                ]
+            },
+            "AttachedData": {
+                "MatAppearanceData": {
+                    "property_data": "appearance_data",
+                    "Red": 230,
+                    "Green": 230,
+                    "Blue": 230,
+                    "Transparency": 0.949999988079071
+                }
+            },
+            "permittivity": "1"
+        }
+    }
+}

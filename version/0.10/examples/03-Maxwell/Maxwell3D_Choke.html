@@ -1,0 +1,992 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Maxwell 3D: choke setup &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/03-Maxwell/Maxwell3D_Choke';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Maxwell 3D: magnet segmentation" href="Maxwell3D_Segmentation.html" />
+    <link rel="prev" title="Maxwell 3D: asymmetric conductor analysis" href="Maxwell3DTeam7.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/03-Maxwell/Maxwell3D_Choke.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Modeling-Setup/index.html">General model and setup examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-HFSS/index.html">HFSS examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Maxwell examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_DCConduction.html">Maxwell 2D: resistance calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_Electrostatic.html">Maxwell 2D Electrostatic analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_PMSynchronousMotor.html">Maxwell 2D: PM synchronous motor transient analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_Transformer_LL.html">Transformer leakage inductance calculation in Maxwell 2D Magnetostatic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_Transient.html">Maxwell 2D: transient winding analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3DTeam7.html">Maxwell 3D: asymmetric conductor analysis</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Maxwell 3D: choke setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3D_Segmentation.html">Maxwell 3D: magnet segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3D_Team3_bath_plate.html">Maxwell 3D: bath plate analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell_Control_Program.html">Enabling Control Program in a Maxwell 2D Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell_Magnet.html">Maxwell 3D: magnet DC analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell_Transformer_Coreloss.html">Maxwell 3D: Transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RMxprt.html">Rmxprt: Create and export motor</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-Multiphysics/index.html">Multiphysics examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-Circuit/index.html">Circuit examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-EMIT/index.html">EMIT examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">Maxwell examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">Maxwell 3D: choke setup</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-03-maxwell-maxwell3d-choke-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="maxwell-3d-choke-setup">
+<span id="sphx-glr-examples-03-maxwell-maxwell3d-choke-py"></span><h1>Maxwell 3D: choke setup<a class="headerlink" href="#maxwell-3d-choke-setup" title="Link to this heading">#</a></h1>
+<p>This example shows how you can use PyAEDT to create a choke setup in Maxwell 3D.</p>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">ansys.aedt.core</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+</pre></div>
+</div>
+</section>
+<section id="set-aedt-version">
+<h2>Set AEDT version<a class="headerlink" href="#set-aedt-version" title="Link to this heading">#</a></h2>
+<p>Set AEDT version.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedt_version</span> <span class="o">=</span> <span class="s2">&quot;2024.2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="create-temporary-directory">
+<h2>Create temporary directory<a class="headerlink" href="#create-temporary-directory" title="Link to this heading">#</a></h2>
+<p>Create temporary directory.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">temp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.ansys&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="set-non-graphical-mode">
+<h2>Set non-graphical mode<a class="headerlink" href="#set-non-graphical-mode" title="Link to this heading">#</a></h2>
+<p>Set non-graphical mode.
+You can define <code class="docutils literal notranslate"><span class="pre">non_graphical</span></code> either to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">non_graphical</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="launch-maxwell3d">
+<h2>Launch Maxwell3D<a class="headerlink" href="#launch-maxwell3d" title="Link to this heading">#</a></h2>
+<p>Launch Maxwell 3D 2023 R2 in graphical mode.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Maxwell3d</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">generate_unique_project_name</span><span class="p">(),</span>
+                       <span class="n">solution_type</span><span class="o">=</span><span class="s2">&quot;EddyCurrent&quot;</span><span class="p">,</span>
+                       <span class="n">version</span><span class="o">=</span><span class="n">aedt_version</span><span class="p">,</span>
+                       <span class="n">non_graphical</span><span class="o">=</span><span class="n">non_graphical</span><span class="p">,</span>
+                       <span class="n">new_desktop</span><span class="o">=</span><span class="kc">True</span>
+                       <span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\_tool\Python\3.10.9\x64\lib\subprocess.py:1072: ResourceWarning: subprocess 8448 is still running
+  _warn(&quot;subprocess %s is still running&quot; % self.pid,
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\ansys\aedt\core\generic\settings.py:231: ResourceWarning: unclosed file &lt;_io.TextIOWrapper name=&#39;D:\\Temp\\pyaedt_ansys_260622a4-692f-48cc-bef3-b1a76554a3cc.log&#39; mode=&#39;a&#39; encoding=&#39;cp1252&#39;&gt;
+  self.__logger = val
+</pre></div>
+</div>
+</section>
+<section id="rules-and-information-of-use">
+<h2>Rules and information of use<a class="headerlink" href="#rules-and-information-of-use" title="Link to this heading">#</a></h2>
+<p>The dictionary values containing the different parameters of the core and
+the windings that compose the choke. You must not change the main structure of
+the dictionary. The dictionary has many primary keys, including
+<code class="docutils literal notranslate"><span class="pre">&quot;Number</span> <span class="pre">of</span> <span class="pre">Windings&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Layer&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Layer</span> <span class="pre">Type&quot;</span></code>, that have
+dictionaries as values. The keys of these dictionaries are secondary keys
+of the dictionary values, such as <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;4&quot;</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">&quot;Simple&quot;</span></code>.</p>
+<p>You must not modify the primary or secondary keys. You can modify only their values.
+You must not change the data types for these keys. For the dictionaries from
+<code class="docutils literal notranslate"><span class="pre">&quot;Number</span> <span class="pre">of</span> <span class="pre">Windings&quot;</span></code> through <code class="docutils literal notranslate"><span class="pre">&quot;Wire</span> <span class="pre">Section&quot;</span></code>, values must be Boolean. Only
+one value per dictionary can be <code class="docutils literal notranslate"><span class="pre">&quot;True&quot;</span></code>. If all values are <code class="docutils literal notranslate"><span class="pre">True</span></code>, only the first one
+remains set to <code class="docutils literal notranslate"><span class="pre">True</span></code>. If all values are <code class="docutils literal notranslate"><span class="pre">False</span></code>, the first value is chosen as the
+correct one by default. For the dictionaries from <code class="docutils literal notranslate"><span class="pre">&quot;Core&quot;</span></code> through <code class="docutils literal notranslate"><span class="pre">&quot;Inner</span> <span class="pre">Winding&quot;</span></code>,
+values must be strings, floats, or integers.</p>
+<p>Descriptions follow for primary keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Number</span> <span class="pre">of</span> <span class="pre">Windings&quot;</span></code>: Number of windings around the core</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Layer&quot;</span></code>: Number of layers of all windings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Layer</span> <span class="pre">Type&quot;</span></code>: Whether layers of a winding are linked to each other</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Similar</span> <span class="pre">Layer&quot;</span></code>: Whether layers of a winding have the same number of turns and same spacing between turns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Mode&quot;</span></code>: When there are only two windows, whether they are in common or differential mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Wire</span> <span class="pre">Section&quot;</span></code>: Type of wire section and number of segments</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Core&quot;</span></code>: Design of the core</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Outer</span> <span class="pre">Winding&quot;</span></code>: Design of the first layer or outer layer of a winding and the common parameters for all layers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Mid</span> <span class="pre">Winding&quot;</span></code>: Turns and turns spacing (“Coil Pit”) for the second or mid layer if it is necessary</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Inner</span> <span class="pre">Winding&quot;</span></code>: Turns and turns spacing (“Coil Pit”) for the third or inner layer if it is necessary</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Occupation(%)&quot;</span></code>: An informative parameter that is useless to modify</p></li>
+</ul>
+<p>The following parameter values work. You can modify them if you want.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Number of Windings&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="s2">&quot;Layer&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Simple&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Double&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Triple&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="s2">&quot;Layer Type&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Separate&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Linked&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="s2">&quot;Similar Layer&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Similar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Different&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="s2">&quot;Mode&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Differential&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Common&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="s2">&quot;Wire Section&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;None&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Hexagon&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Octagon&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Circle&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="s2">&quot;Core&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Core&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Material&quot;</span><span class="p">:</span> <span class="s2">&quot;ferrite&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Inner Radius&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;Outer Radius&quot;</span><span class="p">:</span> <span class="mi">143</span><span class="p">,</span>
+        <span class="s2">&quot;Height&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+        <span class="s2">&quot;Chamfer&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Outer Winding&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Winding&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Material&quot;</span><span class="p">:</span> <span class="s2">&quot;copper&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Inner Radius&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;Outer Radius&quot;</span><span class="p">:</span> <span class="mi">143</span><span class="p">,</span>
+        <span class="s2">&quot;Height&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+        <span class="s2">&quot;Wire Diameter&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;Turns&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&quot;Coil Pit(deg)&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s2">&quot;Occupation(%)&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Mid Winding&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Turns&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;Coil Pit(deg)&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Occupation(%)&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="s2">&quot;Inner Winding&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Turns&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Coil Pit(deg)&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Occupation(%)&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="convert-dictionary-to-json-file">
+<h2>Convert dictionary to JSON file<a class="headerlink" href="#convert-dictionary-to-json-file" title="Link to this heading">#</a></h2>
+<p>Covert a dictionary to a JSON file. PyAEDT methods ask for the path of the
+JSON file as an argument. You can convert a dictionary to a JSON file.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">json_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;choke_example.json&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="verify-parameters-of-json-file">
+<h2>Verify parameters of JSON file<a class="headerlink" href="#verify-parameters-of-json-file" title="Link to this heading">#</a></h2>
+<p>Verify parameters of the JSON file. The <code class="docutils literal notranslate"><span class="pre">check_choke_values</span></code> method takes
+the JSON file path as an argument and does the following:</p>
+<ul class="simple">
+<li><p>Checks if the JSON file is correctly written (as explained in the rules)</p></li>
+<li><p>Checks inequations on windings parameters to avoid having unintended intersections</p></li>
+</ul>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary_values</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">check_choke_values</span><span class="p">(</span><span class="n">json_path</span><span class="p">,</span> <span class="n">create_another_file</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dictionary_values</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[True, {&#39;Number of Windings&#39;: {&#39;1&#39;: False, &#39;2&#39;: False, &#39;3&#39;: True, &#39;4&#39;: False}, &#39;Layer&#39;: {&#39;Simple&#39;: False, &#39;Double&#39;: False, &#39;Triple&#39;: True}, &#39;Layer Type&#39;: {&#39;Separate&#39;: False, &#39;Linked&#39;: True}, &#39;Similar Layer&#39;: {&#39;Similar&#39;: False, &#39;Different&#39;: True}, &#39;Mode&#39;: {&#39;Differential&#39;: True, &#39;Common&#39;: False}, &#39;Wire Section&#39;: {&#39;None&#39;: False, &#39;Hexagon&#39;: False, &#39;Octagon&#39;: True, &#39;Circle&#39;: False}, &#39;Core&#39;: {&#39;Name&#39;: &#39;Core&#39;, &#39;Material&#39;: &#39;ferrite&#39;, &#39;Inner Radius&#39;: 100, &#39;Outer Radius&#39;: 143, &#39;Height&#39;: 25, &#39;Chamfer&#39;: 0.8}, &#39;Outer Winding&#39;: {&#39;Name&#39;: &#39;Winding&#39;, &#39;Material&#39;: &#39;copper&#39;, &#39;Inner Radius&#39;: 86.25, &#39;Outer Radius&#39;: 156.75, &#39;Height&#39;: 52.5, &#39;Wire Diameter&#39;: 5, &#39;Turns&#39;: 2, &#39;Coil Pit(deg)&#39;: 4, &#39;Occupation(%)&#39;: 13.333333333333334}, &#39;Mid Winding&#39;: {&#39;Turns&#39;: 7, &#39;Coil Pit(deg)&#39;: 4.0, &#39;Occupation(%)&#39;: 46.666666666666664}, &#39;Inner Winding&#39;: {&#39;Turns&#39;: 10, &#39;Coil Pit(deg)&#39;: 4.0, &#39;Occupation(%)&#39;: 66.66666666666667}}]
+</pre></div>
+</div>
+</section>
+<section id="create-choke">
+<h2>Create choke<a class="headerlink" href="#create-choke" title="Link to this heading">#</a></h2>
+<p>Create the choke. The <code class="docutils literal notranslate"><span class="pre">create_choke</span></code> method takes the JSON file path as an
+argument.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">list_object</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_choke</span><span class="p">(</span><span class="n">json_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_object</span><span class="p">)</span>
+<span class="n">core</span> <span class="o">=</span> <span class="n">list_object</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">first_winding_list</span> <span class="o">=</span> <span class="n">list_object</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">second_winding_list</span> <span class="o">=</span> <span class="n">list_object</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">third_winding_list</span> <span class="o">=</span> <span class="n">list_object</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;ansys.aedt.core.modeler.cad.object_3d.Object3d object at 0x000002B31DB21F90&gt;, &lt;ansys.aedt.core.modeler.cad.object_3d.Object3d object at 0x000002B31DAF34F0&gt;, [&lt;ansys.aedt.core.modeler.cad.polylines.Polyline object at 0x000002B3187149A0&gt;, [[-74.497822093321, 62.511095042016, -52.5], [-74.497822093321, 62.511095042016, 12.839087296526], [-76.344688372662, 64.060799855845, 15.25], [-115.963757581084, 84.252601589961, 15.25], [-117.914226930149, 85.669700521628, 12.839087296526], [-117.914226930149, 85.669700521628, -12.839087296526], [-115.963757581084, 84.252601589961, -15.25], [-84.517247279393, 52.812237532635, -15.25], [-82.472677351212, 51.534648446679, -12.839087296526], [-82.472677351212, 51.534648446679, 12.839087296526], [-84.517247279393, 52.812237532635, 15.25], [-126.560902091063, 67.293625321403, 15.25], [-128.689611659189, 68.425480276044, 12.839087296526], [-128.689611659189, 68.425480276044, -12.839087296526], [-126.560902091063, 67.293625321403, -15.25], [-91.044774104774, 40.535745078881, -15.25], [-88.842295755743, 39.555138539122, -12.839087296526], [-88.842295755743, 39.555138539122, 12.839087296526], [-91.044774104774, 40.535745078881, 15.25], [-134.694682602733, 49.024855181328, 15.25], [-136.960199479546, 49.849435889716, 12.839087296526], [-136.960199479546, 49.849435889716, -12.839087296526], [-134.694682602733, 49.024855181328, -15.25], [-95.800217964102, 27.470270455894, -15.25], [-93.482699930001, 26.805732853203, -12.839087296526], [-93.482699930001, 26.805732853203, 12.839087296526], [-95.800217964102, 27.470270455894, 15.25], [-140.20678433047, 29.801872000095, 15.25], [-142.565012806952, 30.303128936688, 12.839087296526], [-142.565012806952, 30.303128936688, -12.839087296526], [-140.20678433047, 29.801872000095, -15.25], [-98.691019551891, 13.870118265453, -15.25], [-96.303569685118, 13.534584068366, -12.839087296526], [-96.303569685118, 13.534584068366, 12.839087296526], [-98.691019551891, 13.870118265453, 15.25], [-142.989920484069, 9.998829279507, 15.25], [-145.394960325369, 10.167006048206, 12.839087296526], [-145.394960325369, 10.167006048206, -12.839087296526], [-142.989920484069, 9.998829279507, -15.25], [-99.660912703474, 0.0, -15.25], [-97.25, 0.0, -12.839087296526], [-97.25, 0.0, 12.839087296526], [-99.660912703474, 0.0, 15.25], [-142.989920484069, -9.998829279507, 15.25], [-145.394960325369, -10.167006048206, 12.839087296526], [-145.394960325369, -10.167006048206, -12.839087296526], [-142.989920484069, -9.998829279507, -15.25], [-98.691019551891, -13.870118265453, -15.25], [-96.303569685118, -13.534584068366, -12.839087296526], [-96.303569685118, -13.534584068366, 12.839087296526], [-98.691019551891, -13.870118265453, 15.25], [-140.20678433047, -29.801872000095, 15.25], [-142.565012806952, -30.303128936688, 12.839087296526], [-142.565012806952, -30.303128936688, -12.839087296526], [-140.20678433047, -29.801872000095, -15.25], [-95.800217964102, -27.470270455894, -15.25], [-93.482699930001, -26.805732853203, -12.839087296526], [-93.482699930001, -26.805732853203, 12.839087296526], [-95.800217964102, -27.470270455894, 15.25], [-134.694682602733, -49.024855181328, 15.25], [-136.960199479546, -49.849435889716, 12.839087296526], [-136.960199479546, -49.849435889716, -12.839087296526], [-134.694682602733, -49.024855181328, -15.25], [-91.044774104774, -40.535745078881, -15.25], [-88.842295755743, -39.555138539122, -12.839087296526], [-88.842295755743, -39.555138539122, 12.839087296526], [-91.044774104774, -40.535745078881, 15.25], [-126.560902091063, -67.293625321403, 15.25], [-128.689611659189, -68.425480276044, 12.839087296526], [-128.689611659189, -68.425480276044, -12.839087296526], [-126.560902091063, -67.293625321403, -15.25], [-84.517247279393, -52.812237532635, -15.25], [-82.472677351212, -51.534648446679, -12.839087296526], [-82.472677351212, -51.534648446679, 12.839087296526], [-84.517247279393, -52.812237532635, 15.25], [-115.963757581084, -84.252601589961, 15.25], [-117.914226930149, -85.669700521628, 12.839087296526], [-117.914226930149, -85.669700521628, -12.839087296526], [-115.963757581084, -84.252601589961, -15.25], [-76.344688372662, -64.060799855845, -15.25], [-74.497822093321, -62.511095042016, -12.839087296526], [-74.497822093321, -62.511095042016, 15.117261889578], [-76.344688372662, -64.060799855845, 20.75], [-117.806839543016, -85.591679017905, 20.75], [-122.363820399211, -88.902519409237, 15.117261889578], [-122.363820399211, -88.902519409237, -15.117261889578], [-117.806839543016, -85.591679017905, -20.75], [-82.585245653043, -51.60498892849, -20.75], [-77.808412822352, -48.620092493397, -15.117261889578], [-77.808412822352, -48.620092493397, 15.117261889578], [-82.585245653043, -51.60498892849, 20.75], [-128.572410864111, -68.363163507903, 20.75], [-133.545823419913, -71.007573871366, 15.117261889578], [-133.545823419913, -71.007573871366, -15.117261889578], [-128.572410864111, -68.363163507903, -20.75], [-88.963558053575, -39.609127992563, -20.75], [-83.817795738709, -37.318087002205, -15.117261889578], [-83.817795738709, -37.318087002205, 15.117261889578], [-88.963558053575, -39.609127992563, 20.75], [-136.835466456686, -49.804036782165, 20.75], [-142.128508893869, -51.730546678007, 15.117261889578], [-142.128508893869, -51.730546678007, -15.117261889578], [-136.835466456686, -49.804036782165, -20.75], [-93.610295991141, -26.842320434976, -20.75], [-88.195760602341, -25.28972739621, -15.117261889578], [-88.195760602341, -25.28972739621, 15.117261889578], [-93.610295991141, -26.842320434976, 20.75], [-142.435175342717, -30.275531131715, 20.75], [-147.944824610988, -31.446643236186, 15.117261889578], [-147.944824610988, -31.446643236186, -15.117261889578], [-142.435175342717, -30.275531131715, -20.75], [-96.435015997374, -13.553057642809, -20.75], [-90.857095307039, -12.769132013086, -15.117261889578], [-90.857095307039, -12.769132013086, 15.117261889578], [-96.435015997374, -13.553057642809, 20.75], [-145.262545558313, -10.157746705692, 20.75], [-150.881562601798, -10.550666653799, 15.117261889578], [-150.881562601798, -10.550666653799, -15.117261889578], [-145.262545558313, -10.157746705692, -20.75], [-97.382738110422, 0.0, -20.75], [-91.75, 0.0, -15.117261889578], [-91.75, 0.0, 15.117261889578], [-97.382738110422, 0.0, 20.75], [-145.262545558313, 10.157746705692, 20.75], [-150.881562601798, 10.550666653799, 15.117261889578], [-150.881562601798, 10.550666653799, -15.117261889578], [-145.262545558313, 10.157746705692, -20.75], [-96.435015997374, 13.553057642809, -20.75], [-90.857095307039, 12.769132013086, -15.117261889578], [-90.857095307039, 12.769132013086, 15.117261889578], [-96.435015997374, 13.553057642809, 20.75], [-142.435175342717, 30.275531131715, 20.75], [-147.944824610988, 31.446643236186, 15.117261889578], [-147.944824610988, 31.446643236186, -15.117261889578], [-147.944824610988, 31.446643236186, -17.39543648263], [-142.435175342717, 30.275531131715, -26.25], [-94.179012442856, 13.235997020166, -26.25], [-85.41062092896, 12.003679957806, -17.39543648263], [-85.41062092896, 12.003679957806, 17.39543648263], [-94.179012442856, 13.235997020166, 26.25], [-147.535170632557, 10.316664131877, 26.25], [-156.368164878227, 10.934327259392, 17.39543648263], [-156.368164878227, 10.934327259392, -17.39543648263], [-147.535170632557, 10.316664131877, -26.25], [-95.10456351737, 0.0, -26.25], [-86.25, 0.0, -17.39543648263], [-86.25, 0.0, 17.39543648263], [-95.10456351737, 0.0, 26.25], [-147.535170632557, -10.316664131877, 26.25], [-156.368164878227, -10.934327259392, 17.39543648263], [-156.368164878227, -10.934327259392, -17.39543648263], [-156.368164878227, -10.934327259392, -52.5]]], [&lt;ansys.aedt.core.modeler.cad.polylines.Polyline object at 0x000002B318715F30&gt;, [[-16.887285278109, -95.772553980438, -52.5], [-16.887285278109, -95.772553980438, 12.839087296526], [-17.305935875581, -98.146839502654, 15.25], [-14.983014521293, -142.553860778499, 15.25], [-15.23502352126, -144.951566249926, 12.839087296526], [-15.23502352126, -144.951566249926, -12.839087296526], [-14.983014521293, -142.553860778499, -15.25], [-3.478115694263, -99.600201968203, -15.25], [-3.393976054318, -97.190757927607, -12.839087296526], [-3.393976054318, -97.190757927607, 12.839087296526], [-3.478115694263, -99.600201968203, 15.25], [5.002462004445, -143.251768997437, 15.25], [5.086601644389, -145.661213038034, 12.839087296526], [5.086601644389, -145.661213038034, -12.839087296526], [5.002462004445, -143.251768997437, -15.25], [10.417402052746, -99.11495979599, -15.25], [10.165393052779, -96.717254324565, -12.839087296526], [10.165393052779, -96.717254324565, 12.839087296526], [10.417402052746, -99.11495979599, 15.25], [24.890571297483, -141.161444479313, 15.25], [25.309221894955, -143.535730001529, 12.839087296526], [25.309221894955, -143.535730001529, -12.839087296526], [24.890571297483, -141.161444479313, -15.25], [24.110156918418, -96.700557672946, -15.25], [23.526904347068, -94.36125938034, -12.839087296526], [23.526904347068, -94.36125938034, 12.839087296526], [24.110156918418, -96.700557672946, 15.25], [44.294213932821, -136.32357301316, 15.25], [45.039226930149, -138.616487250018, 12.839087296526], [45.039226930149, -138.616487250018, -12.839087296526], [44.294213932821, -136.32357301316, -15.25], [37.333635004569, -92.403989190051, -15.25], [36.430491209698, -90.16862985662, -12.839087296526], [36.430491209698, -90.16862985662, 12.839087296526], [37.333635004569, -92.403989190051, 15.25], [62.835720077878, -128.832318264074, 15.25], [63.892594644508, -130.999232248103, 12.839087296526], [63.892594644508, -130.999232248103, -12.839087296526], [62.835720077878, -128.832318264074, -15.25], [49.830456351737, -86.308882165552, -15.25], [48.625, -84.220970518037, -12.839087296526], [48.625, -84.220970518037, 12.839087296526], [49.830456351737, -86.308882165552, 15.25], [80.154200406191, -118.833488984567, 15.25], [81.502365680861, -120.832226199897, 12.839087296526], [81.502365680861, -120.832226199897, -12.839087296526], [80.154200406191, -118.833488984567, -15.25], [61.357384547322, -78.533870924598, -15.25], [59.87307847542, -76.634045788254, -12.839087296526], [59.87307847542, -76.634045788254, 12.839087296526], [61.357384547322, -78.533870924598, 15.25], [95.912570397649, -106.521701013065, 15.25], [97.525785876803, -108.31335831333, 12.839087296526], [97.525785876803, -108.31335831333, -12.839087296526], [95.912570397649, -106.521701013065, -15.25], [71.690061045684, -69.230287217052, -15.25], [69.955795582933, -67.555526527137, -12.839087296526], [69.955795582933, -67.555526527137, 12.839087296526], [71.690061045684, -69.230287217052, 15.25], [109.80411130525, -92.136589297985, 15.25], [111.650977584591, -93.686294111813, 12.839087296526], [111.650977584591, -93.686294111813, -12.839087296526], [109.80411130525, -92.136589297985, -15.25], [80.627372052028, -58.579214717109, -15.25], [78.676902702964, -57.162115785443, -12.839087296526], [78.676902702964, -57.162115785443, 12.839087296526], [80.627372052028, -58.579214717109, 15.25], [121.558440086618, -75.958143676034, 15.25], [123.6030100148, -77.23573276199, 12.839087296526], [123.6030100148, -77.23573276199, -12.839087296526], [121.558440086618, -75.958143676034, -15.25], [87.995362973656, -46.787964435568, -15.25], [85.86665340553, -45.656109480928, -12.839087296526], [85.86665340553, -45.656109480928, 12.839087296526], [87.995362973656, -46.787964435568, 15.25], [130.946772102377, -58.301259188539, 15.25], [133.149250451409, -59.281865728298, 12.839087296526], [133.149250451409, -59.281865728298, -12.839087296526], [130.946772102377, -58.301259188539, -15.25], [93.650624248243, -34.086039646809, -15.25], [91.38510737143, -33.261458938422, -12.839087296526], [91.38510737143, -33.261458938422, 15.117261889578], [93.650624248243, -34.086039646809, 20.75], [133.027988153577, -59.227876274857, 20.75], [138.173750468444, -61.518917265215, 15.117261889578], [138.173750468444, -61.518917265215, -15.117261889578], [133.027988153577, -59.227876274857, -20.75], [85.983854200609, -45.718426249069, -20.75], [81.010441644807, -43.074015885605, -15.117261889578], [81.010441644807, -43.074015885605, 15.117261889578], [85.983854200609, -45.718426249069, 20.75], [123.490441712969, -77.165392280179, 20.75], [128.26727454366, -80.150288715273, 15.117261889578], [128.26727454366, -80.150288715273, -15.117261889578], [123.490441712969, -77.165392280179, -20.75], [78.784290090096, -57.240137289166, -20.75], [74.227309233902, -53.929296897835, -15.117261889578], [74.227309233902, -53.929296897835, 15.117261889578], [78.784290090096, -57.240137289166, 20.75], [111.549294292712, -93.600971699101, 20.75], [115.864222021745, -97.22162596509, 15.117261889578], [115.864222021745, -97.22162596509, -15.117261889578], [111.549294292712, -93.600971699101, -20.75], [70.051279388782, -67.647734166621, -20.75], [65.999426681072, -63.734905489613, -15.117261889578], [65.999426681072, -63.734905489613, 15.117261889578], [70.051279388782, -67.647734166621, 20.75], [97.43696674449, -108.214714673426, 20.75], [101.206004211777, -112.400654853456, 15.117261889578], [101.206004211777, -112.400654853456, -15.117261889578], [97.43696674449, -108.214714673426, -20.75], [59.954800216314, -76.73864484668, -20.75], [56.486940361129, -72.299986643417, -15.117261889578], [56.486940361129, -72.299986643417, 15.117261889578], [59.954800216314, -76.73864484668, 20.75], [81.428139471493, -120.722181319047, 20.75], [84.57792664995, -125.39193284895, 15.117261889578], [84.57792664995, -125.39193284895, -15.117261889578], [81.428139471493, -120.722181319047, -20.75], [48.691369055211, -84.335925093712, -20.75], [45.875, -79.457830797222, -15.117261889578], [45.875, -79.457830797222, 15.117261889578], [48.691369055211, -84.335925093712, 20.75], [63.83440608682, -130.879928024739, 20.75], [66.303635951848, -135.942599502749, 15.117261889578], [66.303635951848, -135.942599502749, -15.117261889578], [63.83440608682, -130.879928024739, -20.75], [36.48021578106, -90.291702489489, -20.75], [34.37015494591, -85.069118656503, -15.117261889578], [34.37015494591, -85.069118656503, 15.117261889578], [36.48021578106, -90.291702489489, 20.75], [44.998208598227, -138.490245805141, 20.75], [46.738820399211, -143.847298089642, 15.117261889578], [46.738820399211, -143.847298089642, -15.117261889578], [46.738820399211, -143.847298089642, -17.39543648263], [44.998208598227, -138.490245805141, -26.25], [35.626796557549, -88.179415788927, -26.25], [32.309818682122, -79.969607456385, -17.39543648263], [32.309818682122, -79.969607456385, 17.39543648263], [35.626796557549, -88.179415788927, 26.25], [64.833092095761, -132.927537785405, 26.25], [68.714677259187, -140.885966757394, 17.39543648263], [68.714677259187, -140.885966757394, -17.39543648263], [64.833092095761, -132.927537785405, -26.25], [47.552281758685, -82.362968021873, -26.25], [43.125, -74.694691076408, -17.39543648263], [43.125, -74.694691076408, 17.39543648263], [47.552281758685, -82.362968021873, 26.25], [82.702078536796, -122.610873653528, 26.25], [87.65348761904, -129.951639498002, 17.39543648263], [87.65348761904, -129.951639498002, -17.39543648263], [87.65348761904, -129.951639498002, -52.5]]], [&lt;ansys.aedt.core.modeler.cad.polylines.Polyline object at 0x000002B31DB213C0&gt;, [[91.38510737143, 33.261458938422, -52.5], [91.38510737143, 33.261458938422, 12.839087296526], [93.650624248243, 34.086039646809, 15.25], [130.946772102377, 58.301259188538, 15.25], [133.149250451409, 59.281865728298, 12.839087296526], [133.149250451409, 59.281865728298, -12.839087296526], [130.946772102377, 58.301259188538, -15.25], [87.995362973656, 46.787964435568, -15.25], [85.86665340553, 45.656109480928, -12.839087296526], [85.86665340553, 45.656109480928, 12.839087296526], [87.995362973656, 46.787964435568, 15.25], [121.558440086618, 75.958143676034, 15.25], [123.6030100148, 77.23573276199, 12.839087296526], [123.6030100148, 77.23573276199, -12.839087296526], [121.558440086618, 75.958143676034, -15.25], [80.627372052028, 58.579214717109, -15.25], [78.676902702964, 57.162115785443, -12.839087296526], [78.676902702964, 57.162115785443, 12.839087296526], [80.627372052028, 58.579214717109, 15.25], [109.80411130525, 92.136589297985, 15.25], [111.650977584591, 93.686294111813, 12.839087296526], [111.650977584591, 93.686294111813, -12.839087296526], [109.80411130525, 92.136589297985, -15.25], [71.690061045684, 69.230287217052, -15.25], [69.955795582933, 67.555526527137, -12.839087296526], [69.955795582933, 67.555526527137, 12.839087296526], [71.690061045684, 69.230287217052, 15.25], [95.912570397649, 106.521701013065, 15.25], [97.525785876803, 108.31335831333, 12.839087296526], [97.525785876803, 108.31335831333, -12.839087296526], [95.912570397649, 106.521701013065, -15.25], [61.357384547322, 78.533870924598, -15.25], [59.87307847542, 76.634045788254, -12.839087296526], [59.87307847542, 76.634045788254, 12.839087296526], [61.357384547322, 78.533870924598, 15.25], [80.154200406191, 118.833488984567, 15.25], [81.502365680861, 120.832226199897, 12.839087296526], [81.502365680861, 120.832226199897, -12.839087296526], [80.154200406191, 118.833488984567, -15.25], [49.830456351737, 86.308882165552, -15.25], [48.625, 84.220970518037, -12.839087296526], [48.625, 84.220970518037, 12.839087296526], [49.830456351737, 86.308882165552, 15.25], [62.835720077878, 128.832318264074, 15.25], [63.892594644508, 130.999232248103, 12.839087296526], [63.892594644508, 130.999232248103, -12.839087296526], [62.835720077878, 128.832318264074, -15.25], [37.333635004569, 92.403989190051, -15.25], [36.430491209698, 90.16862985662, -12.839087296526], [36.430491209698, 90.16862985662, 12.839087296526], [37.333635004569, 92.403989190051, 15.25], [44.294213932821, 136.32357301316, 15.25], [45.039226930149, 138.616487250018, 12.839087296526], [45.039226930149, 138.616487250018, -12.839087296526], [44.294213932821, 136.32357301316, -15.25], [24.110156918418, 96.700557672946, -15.25], [23.526904347068, 94.36125938034, -12.839087296526], [23.526904347068, 94.36125938034, 12.839087296526], [24.110156918418, 96.700557672946, 15.25], [24.890571297483, 141.161444479313, 15.25], [25.309221894955, 143.535730001529, 12.839087296526], [25.309221894955, 143.535730001529, -12.839087296526], [24.890571297483, 141.161444479313, -15.25], [10.417402052746, 99.11495979599, -15.25], [10.165393052779, 96.717254324565, -12.839087296526], [10.165393052779, 96.717254324565, 12.839087296526], [10.417402052746, 99.11495979599, 15.25], [5.002462004445, 143.251768997437, 15.25], [5.086601644389, 145.661213038034, 12.839087296526], [5.086601644389, 145.661213038034, -12.839087296526], [5.002462004445, 143.251768997437, -15.25], [-3.478115694263, 99.600201968203, -15.25], [-3.393976054318, 97.190757927607, -12.839087296526], [-3.393976054318, 97.190757927607, 12.839087296526], [-3.478115694263, 99.600201968203, 15.25], [-14.983014521293, 142.5538607785, 15.25], [-15.23502352126, 144.951566249926, 12.839087296526], [-15.23502352126, 144.951566249926, -12.839087296526], [-14.983014521293, 142.5538607785, -15.25], [-17.305935875581, 98.146839502654, -15.25], [-16.887285278109, 95.772553980438, -12.839087296526], [-16.887285278109, 95.772553980438, 15.117261889578], [-17.305935875581, 98.146839502654, 20.75], [-15.221148610561, 144.819555292762, 20.75], [-15.809930069233, 150.421436674452, 15.117261889578], [-15.809930069233, 150.421436674452, -15.117261889578], [-15.221148610561, 144.819555292762, -20.75], [-3.398608547565, 97.323415177559, -20.75], [-3.202028822455, 91.694108379002, -15.117261889578], [-3.202028822455, 91.694108379002, 15.117261889578], [-3.398608547565, 97.323415177559, 20.75], [5.081969151142, 145.528555788082, 20.75], [5.278548876253, 151.157862586639, 15.117261889578], [5.278548876253, 151.157862586639, -15.117261889578], [5.081969151142, 145.528555788082, -20.75], [10.179267963479, 96.849265281729, -20.75], [9.590486504807, 91.24738390004, -15.117261889578], [9.590486504807, 91.24738390004, 15.117261889578], [10.179267963479, 96.849265281729, 20.75], [25.286172163974, 143.405008481266, 20.75], [26.264286872124, 148.952172643097, 15.117261889578], [26.264286872124, 148.952172643097, -15.117261889578], [25.286172163974, 143.405008481266, -20.75], [23.559016602359, 94.490054601597, -20.75], [22.196333921269, 89.024632885823, -15.117261889578], [22.196333921269, 89.024632885823, 15.117261889578], [23.559016602359, 94.490054601597, 20.75], [44.998208598227, 138.490245805141, 20.75], [46.738820399211, 143.847298089642, 15.117261889578], [46.738820399211, 143.847298089642, -15.117261889578], [44.998208598227, 138.490245805141, -20.75], [36.48021578106, 90.291702489489, -20.75], [34.37015494591, 85.069118656503, -15.117261889578], [34.37015494591, 85.069118656503, 15.117261889578], [36.48021578106, 90.291702489489, 20.75], [63.83440608682, 130.879928024739, 20.75], [66.303635951848, 135.942599502749, 15.117261889578], [66.303635951848, 135.942599502749, -15.117261889578], [63.83440608682, 130.879928024739, -20.75], [48.691369055211, 84.335925093712, -20.75], [45.875, 79.457830797222, -15.117261889578], [45.875, 79.457830797222, 15.117261889578], [48.691369055211, 84.335925093712, 20.75], [81.428139471494, 120.722181319047, 20.75], [84.57792664995, 125.39193284895, 15.117261889578], [84.57792664995, 125.39193284895, -15.117261889578], [81.428139471494, 120.722181319047, -20.75], [59.954800216314, 76.73864484668, -20.75], [56.486940361129, 72.299986643417, -15.117261889578], [56.486940361129, 72.299986643417, 15.117261889578], [59.954800216314, 76.73864484668, 20.75], [97.43696674449, 108.214714673426, 20.75], [101.206004211777, 112.400654853456, 15.117261889578], [101.206004211777, 112.400654853456, -15.117261889578], [101.206004211777, 112.400654853456, -17.39543648263], [97.43696674449, 108.214714673426, -26.25], [58.552215885307, 74.943418768761, -26.25], [53.100802246838, 67.965927498579, -17.39543648263], [53.100802246838, 67.965927498579, 17.39543648263], [58.552215885307, 74.943418768761, 26.25], [82.702078536796, 122.610873653528, 26.25], [87.65348761904, 129.951639498002, 17.39543648263], [87.65348761904, 129.951639498002, -17.39543648263], [82.702078536796, 122.610873653528, -26.25], [47.552281758685, 82.362968021873, -26.25], [43.125, 74.694691076408, -17.39543648263], [43.125, 74.694691076408, 17.39543648263], [47.552281758685, 82.362968021873, 26.25], [64.833092095761, 132.927537785405, 26.25], [68.714677259187, 140.885966757394, 17.39543648263], [68.714677259187, 140.885966757394, -17.39543648263], [68.714677259187, 140.885966757394, -52.5]]]]
+</pre></div>
+</div>
+</section>
+<section id="assign-excitations">
+<h2>Assign excitations<a class="headerlink" href="#assign-excitations" title="Link to this heading">#</a></h2>
+<p>Assign excitations.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">first_winding_faces</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="n">first_winding_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">second_winding_faces</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="n">second_winding_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">third_winding_faces</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="n">third_winding_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_current</span><span class="p">([</span><span class="n">first_winding_faces</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;0deg&quot;</span><span class="p">,</span> <span class="n">swap_direction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;phase_1_in&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_current</span><span class="p">([</span><span class="n">first_winding_faces</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]],</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;0deg&quot;</span><span class="p">,</span> <span class="n">swap_direction</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;phase_1_out&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_current</span><span class="p">([</span><span class="n">second_winding_faces</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;120deg&quot;</span><span class="p">,</span> <span class="n">swap_direction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;phase_2_in&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_current</span><span class="p">([</span><span class="n">second_winding_faces</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]],</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;120deg&quot;</span><span class="p">,</span> <span class="n">swap_direction</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;phase_2_out&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_current</span><span class="p">([</span><span class="n">third_winding_faces</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;240deg&quot;</span><span class="p">,</span> <span class="n">swap_direction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;phase_3_in&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_current</span><span class="p">([</span><span class="n">third_winding_faces</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]],</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;240deg&quot;</span><span class="p">,</span> <span class="n">swap_direction</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;phase_3_out&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.boundary.BoundaryObject object at 0x000002B3191B4D00&gt;
+</pre></div>
+</div>
+</section>
+<section id="assign-matrix">
+<h2>Assign matrix<a class="headerlink" href="#assign-matrix" title="Link to this heading">#</a></h2>
+<p>Assign the matrix.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">assign_matrix</span><span class="p">([</span><span class="s2">&quot;phase_1_in&quot;</span><span class="p">,</span> <span class="s2">&quot;phase_2_in&quot;</span><span class="p">,</span> <span class="s2">&quot;phase_3_in&quot;</span><span class="p">],</span> <span class="n">matrix_name</span><span class="o">=</span><span class="s2">&quot;current_matrix&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.boundary.MaxwellParameters object at 0x000002B3191B70A0&gt;
+</pre></div>
+</div>
+</section>
+<section id="create-mesh-operation">
+<h2>Create mesh operation<a class="headerlink" href="#create-mesh-operation" title="Link to this heading">#</a></h2>
+<p>Create the mesh operation.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">mesh</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">assign_skin_depth</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="p">[</span><span class="n">first_winding_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">second_winding_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">third_winding_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                       <span class="n">skin_depth</span><span class="o">=</span><span class="mf">0.20</span><span class="p">,</span> <span class="n">triangulation_max_length</span><span class="o">=</span><span class="s2">&quot;10mm&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;skin_depth&quot;</span><span class="p">)</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">assign_surface_mesh_manual</span><span class="p">([</span><span class="n">first_winding_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">second_winding_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">third_winding_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                                <span class="n">surface_deviation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normal_dev</span><span class="o">=</span><span class="s2">&quot;30deg&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;surface_approx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.mesh.MeshOperation object at 0x000002B3191B7AC0&gt;
+</pre></div>
+</div>
+</section>
+<section id="create-boundaries">
+<h2>Create boundaries<a class="headerlink" href="#create-boundaries" title="Link to this heading">#</a></h2>
+<p>Create the boundaries. A region with openings is needed to run the analysis.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_air_region</span><span class="p">(</span><span class="n">x_pos</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y_pos</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">z_pos</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">x_neg</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y_neg</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">z_neg</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-setup">
+<h2>Create setup<a class="headerlink" href="#create-setup" title="Link to this heading">#</a></h2>
+<p>Create a setup with a sweep to run the simulation. Depending on your machine’s
+computing power, the simulation can take some time to run.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">create_setup</span><span class="p">(</span><span class="s2">&quot;MySetup&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">)</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;100kHz&quot;</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;PercentRefinement&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;MaximumPasses&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;HasSweepSetup&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">add_eddy_current_sweep</span><span class="p">(</span><span class="n">range_type</span><span class="o">=</span><span class="s2">&quot;LinearCount&quot;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;kHz&quot;</span><span class="p">,</span> <span class="n">clear</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;Enabled&#39;: True, &#39;MeshLink&#39;: {&#39;ImportMesh&#39;: False}, &#39;MaximumPasses&#39;: 6, &#39;MinimumPasses&#39;: 1, &#39;MinimumConvergedPasses&#39;: 1, &#39;PercentRefinement&#39;: 30, &#39;SolveFieldOnly&#39;: False, &#39;PercentError&#39;: 1, &#39;SolveMatrixAtLast&#39;: True, &#39;UseIterativeSolver&#39;: False, &#39;RelativeResidual&#39;: 1e-05, &#39;NonLinearResidual&#39;: 0.0001, &#39;SmoothBHCurve&#39;: False, &#39;Frequency&#39;: &#39;60Hz&#39;, &#39;HasSweepSetup&#39;: False, &#39;SweepRanges&#39;: {&#39;Subrange&#39;: {&#39;SweepSetupType&#39;: &#39;LinearStep&#39;, &#39;StartValue&#39;: &#39;1e-08GHz&#39;, &#39;StopValue&#39;: &#39;1e-06GHz&#39;, &#39;StepSize&#39;: &#39;1e-08GHz&#39;}}, &#39;UseHighOrderShapeFunc&#39;: False, &#39;UseMuLink&#39;: False}
+
+True
+</pre></div>
+</div>
+</section>
+<section id="save-project">
+<h2>Save project<a class="headerlink" href="#save-project" title="Link to this heading">#</a></h2>
+<p>Save the project.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">fit_all</span><span class="p">()</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Image.jpg&quot;</span><span class="p">),</span> <span class="n">plot_air_objects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_Maxwell3D_Choke_001.png" srcset="../../_images/sphx_glr_Maxwell3D_Choke_001.png" alt="Maxwell3D Choke" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.generic.plot.ModelPlotter object at 0x000002B3191B6B30&gt;
+</pre></div>
+</div>
+</section>
+<section id="close-aedt">
+<h2>Close AEDT<a class="headerlink" href="#close-aedt" title="Link to this heading">#</a></h2>
+<p>After the simulation completes, you can close AEDT or release it using the
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.aedt.core.Desktop.release_desktop()</span></code> method.
+All methods provide for saving the project before closing.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">()</span>
+<span class="n">temp_dir</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (1 minutes 17.695 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-03-maxwell-maxwell3d-choke-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/dd44ac2daabe400a6716568b8aa8c371/Maxwell3D_Choke.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Maxwell3D_Choke.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/027ccb10be3bfbd5b58bc438ac8f482b/Maxwell3D_Choke.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Maxwell3D_Choke.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/81bd93c3d4b35285116b3f7b189bee1d/Maxwell3D_Choke.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">Maxwell3D_Choke.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-aedt-version">Set AEDT version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-temporary-directory">Create temporary directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-non-graphical-mode">Set non-graphical mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-maxwell3d">Launch Maxwell3D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-and-information-of-use">Rules and information of use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-dictionary-to-json-file">Convert dictionary to JSON file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-parameters-of-json-file">Verify parameters of JSON file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-choke">Create choke</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-excitations">Assign excitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-matrix">Assign matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-mesh-operation">Create mesh operation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-boundaries">Create boundaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-setup">Create setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-project">Save project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-aedt">Close AEDT</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/03-Maxwell/Maxwell3D_Choke.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/03-Maxwell/Maxwell3D_Choke.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

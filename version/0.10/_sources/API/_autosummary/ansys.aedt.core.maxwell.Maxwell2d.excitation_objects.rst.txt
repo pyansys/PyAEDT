@@ -1,0 +1,6 @@
+excitation\_objects
+===================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.excitation_objects

@@ -1,0 +1,6 @@
+available\_report\_solutions
+============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.available_report_solutions

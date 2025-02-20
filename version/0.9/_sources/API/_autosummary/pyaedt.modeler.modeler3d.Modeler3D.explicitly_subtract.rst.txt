@@ -1,0 +1,6 @@
+explicitly\_subtract
+====================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.explicitly_subtract

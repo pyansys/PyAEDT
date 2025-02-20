@@ -1,0 +1,6 @@
+get\_all\_sources
+=================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.get_all_sources

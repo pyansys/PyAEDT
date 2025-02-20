@@ -1,0 +1,6 @@
+get\_antennas
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_emit
+
+.. automethod:: EmitComponents.get_antennas

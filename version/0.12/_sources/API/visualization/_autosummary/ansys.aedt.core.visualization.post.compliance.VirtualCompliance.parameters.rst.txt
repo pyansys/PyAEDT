@@ -1,0 +1,6 @@
+parameters
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. autoproperty:: VirtualCompliance.parameters

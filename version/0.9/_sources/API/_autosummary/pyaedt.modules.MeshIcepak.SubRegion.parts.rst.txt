@@ -1,0 +1,6 @@
+parts
+=====
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. autoproperty:: SubRegion.parts

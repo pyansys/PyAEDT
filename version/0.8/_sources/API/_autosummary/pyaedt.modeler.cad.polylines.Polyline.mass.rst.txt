@@ -1,0 +1,6 @@
+mass
+====
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.mass

@@ -1,0 +1,6 @@
+add\_report\_from\_folder
+=========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. automethod:: VirtualComplianceGenerator.add_report_from_folder

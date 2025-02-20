@@ -1,0 +1,6 @@
+layouteditor
+============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.layouteditor

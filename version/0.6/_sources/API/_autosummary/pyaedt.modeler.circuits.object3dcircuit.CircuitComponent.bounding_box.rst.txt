@@ -1,0 +1,6 @@
+bounding\_box
+=============
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. autoproperty:: CircuitComponent.bounding_box

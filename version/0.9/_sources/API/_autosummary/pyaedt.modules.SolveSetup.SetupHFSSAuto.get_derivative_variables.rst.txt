@@ -1,0 +1,6 @@
+get\_derivative\_variables
+==========================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSSAuto.get_derivative_variables

@@ -1,0 +1,6 @@
+phi\_stop
+=========
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: FarFieldSetup.phi_stop

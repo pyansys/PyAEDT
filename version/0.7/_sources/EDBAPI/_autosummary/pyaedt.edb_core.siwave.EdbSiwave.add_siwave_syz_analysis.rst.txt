@@ -1,0 +1,6 @@
+add\_siwave\_syz\_analysis
+==========================
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. automethod:: EdbSiwave.add_siwave_syz_analysis

@@ -1,0 +1,6 @@
+analyze\_all
+============
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.analyze_all

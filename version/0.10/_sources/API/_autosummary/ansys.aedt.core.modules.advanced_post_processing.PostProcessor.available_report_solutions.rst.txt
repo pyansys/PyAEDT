@@ -1,0 +1,6 @@
+available\_report\_solutions
+============================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.available_report_solutions

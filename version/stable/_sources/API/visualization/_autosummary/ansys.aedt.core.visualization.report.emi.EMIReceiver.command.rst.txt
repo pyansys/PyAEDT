@@ -1,0 +1,6 @@
+command
+=======
+
+.. currentmodule:: ansys.aedt.core.visualization.report.emi
+
+.. autoproperty:: EMIReceiver.command

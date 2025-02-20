@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.delete_project

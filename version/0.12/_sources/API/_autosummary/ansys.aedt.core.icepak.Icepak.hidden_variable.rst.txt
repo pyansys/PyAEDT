@@ -1,0 +1,6 @@
+hidden\_variable
+================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.hidden_variable

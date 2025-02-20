@@ -1,0 +1,6 @@
+get\_sweep
+==========
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: Setup3DLayout.get_sweep

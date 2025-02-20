@@ -1,0 +1,6 @@
+project\_timestamp\_changed
+===========================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.project_timestamp_changed

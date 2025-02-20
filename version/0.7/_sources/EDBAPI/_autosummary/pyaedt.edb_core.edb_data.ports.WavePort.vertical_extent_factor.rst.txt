@@ -1,0 +1,6 @@
+vertical\_extent\_factor
+========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoproperty:: WavePort.vertical_extent_factor

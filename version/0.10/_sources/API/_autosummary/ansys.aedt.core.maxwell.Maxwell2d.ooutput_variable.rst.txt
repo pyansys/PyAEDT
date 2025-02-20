@@ -1,0 +1,6 @@
+ooutput\_variable
+=================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.ooutput_variable

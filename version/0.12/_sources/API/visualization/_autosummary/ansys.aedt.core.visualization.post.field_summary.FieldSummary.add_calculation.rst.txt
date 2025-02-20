@@ -1,0 +1,6 @@
+add\_calculation
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_summary
+
+.. automethod:: FieldSummary.add_calculation

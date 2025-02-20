@@ -1,0 +1,6 @@
+surfacePlotInstructionLineTraces
+================================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: FieldPlot.surfacePlotInstructionLineTraces

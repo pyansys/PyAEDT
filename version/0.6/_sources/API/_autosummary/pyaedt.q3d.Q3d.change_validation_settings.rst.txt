@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.change_validation_settings

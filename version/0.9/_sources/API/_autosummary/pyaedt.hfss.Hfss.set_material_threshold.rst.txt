@@ -1,0 +1,6 @@
+set\_material\_threshold
+========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.set_material_threshold

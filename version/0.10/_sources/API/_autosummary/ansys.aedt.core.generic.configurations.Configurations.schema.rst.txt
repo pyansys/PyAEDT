@@ -1,0 +1,6 @@
+schema
+======
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. autoproperty:: Configurations.schema

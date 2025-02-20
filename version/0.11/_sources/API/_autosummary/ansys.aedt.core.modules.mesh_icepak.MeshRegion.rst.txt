@@ -1,0 +1,41 @@
+﻿MeshRegion
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. autoclass:: MeshRegion
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MeshRegion.create
+      
+      
+      MeshRegion.delete
+      
+      
+      MeshRegion.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MeshRegion.Enable
+      MeshRegion.Objects
+      MeshRegion.Submodels
+      MeshRegion.assignment
+      MeshRegion.name
+   
+   

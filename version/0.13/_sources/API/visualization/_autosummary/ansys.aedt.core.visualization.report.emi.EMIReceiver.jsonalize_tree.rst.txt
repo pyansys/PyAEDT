@@ -1,0 +1,6 @@
+jsonalize\_tree
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.emi
+
+.. automethod:: EMIReceiver.jsonalize_tree

@@ -1,0 +1,6 @@
+check\_thermal\_modifier
+========================
+
+.. currentmodule:: pyaedt.modules.MaterialLib
+
+.. automethod:: Materials.check_thermal_modifier

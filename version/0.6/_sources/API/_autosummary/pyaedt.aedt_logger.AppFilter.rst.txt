@@ -1,0 +1,24 @@
+﻿AppFilter
+=========
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. autoclass:: AppFilter
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      AppFilter.filter
+      
+   
+   
+
+   
+   
+   

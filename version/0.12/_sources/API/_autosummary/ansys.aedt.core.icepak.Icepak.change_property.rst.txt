@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.change_property

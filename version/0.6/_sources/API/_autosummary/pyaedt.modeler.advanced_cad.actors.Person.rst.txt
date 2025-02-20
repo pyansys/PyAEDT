@@ -1,0 +1,55 @@
+﻿Person
+======
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoclass:: Person
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Person.insert
+      
+      
+      Person.position_in_app
+      
+      
+      Person.start
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Person.cs_name
+      Person.index
+      Person.modeler_units
+      Person.name
+      Person.offset
+      Person.offset_names
+      Person.offset_x_name
+      Person.offset_y_name
+      Person.offset_z_name
+      Person.pitch
+      Person.pitch_name
+      Person.roll
+      Person.roll_name
+      Person.speed_expression
+      Person.speed_name
+      Person.stride
+      Person.use_global_cs
+      Person.yaw
+      Person.yaw_name
+   
+   

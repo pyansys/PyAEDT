@@ -1,0 +1,6 @@
+ideal\_minimum\_order
+=====================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.ideal_minimum_order

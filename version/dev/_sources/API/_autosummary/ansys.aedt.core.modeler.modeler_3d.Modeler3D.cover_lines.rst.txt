@@ -1,0 +1,6 @@
+cover\_lines
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.cover_lines

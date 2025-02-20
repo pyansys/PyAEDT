@@ -1,0 +1,6 @@
+extended\_nets
+==============
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.extended_nets

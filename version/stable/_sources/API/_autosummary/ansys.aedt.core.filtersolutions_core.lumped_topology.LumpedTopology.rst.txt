@@ -1,0 +1,51 @@
+﻿LumpedTopology
+==============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_topology
+
+.. autoclass:: LumpedTopology
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      LumpedTopology.netlist
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      LumpedTopology.bridge_t
+      LumpedTopology.bridge_t_high
+      LumpedTopology.bridge_t_low
+      LumpedTopology.complex_element_tune_enabled
+      LumpedTopology.complex_termination
+      LumpedTopology.current_source
+      LumpedTopology.equal_capacitors
+      LumpedTopology.equal_inductors
+      LumpedTopology.equal_legs
+      LumpedTopology.first_shunt
+      LumpedTopology.high_low_pass
+      LumpedTopology.high_low_pass_min_ind
+      LumpedTopology.load_resistance
+      LumpedTopology.match_impedance
+      LumpedTopology.min_cap
+      LumpedTopology.min_ind
+      LumpedTopology.node_cap_ground
+      LumpedTopology.set_source_res
+      LumpedTopology.source_resistance
+      LumpedTopology.trap_topology
+      LumpedTopology.zig_zag
+   
+   

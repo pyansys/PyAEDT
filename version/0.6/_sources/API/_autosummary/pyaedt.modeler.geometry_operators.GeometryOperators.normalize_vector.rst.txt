@@ -1,0 +1,6 @@
+normalize\_vector
+=================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.normalize_vector

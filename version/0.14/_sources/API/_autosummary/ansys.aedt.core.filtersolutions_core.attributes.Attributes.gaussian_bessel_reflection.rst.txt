@@ -1,0 +1,6 @@
+gaussian\_bessel\_reflection
+============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.gaussian_bessel_reflection

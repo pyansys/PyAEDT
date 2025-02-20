@@ -1,0 +1,62 @@
+﻿Circle3dLayout
+==============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoclass:: Circle3dLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Circle3dLayout.change_property
+      
+      
+      Circle3dLayout.create_clearance_on_component
+      
+      
+      Circle3dLayout.edge_by_point
+      
+      
+      Circle3dLayout.get_property_value
+      
+      
+      Circle3dLayout.set_property_value
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Circle3dLayout.absolute_angle
+      Circle3dLayout.angle
+      Circle3dLayout.bottom_edge_x
+      Circle3dLayout.bottom_edge_y
+      Circle3dLayout.bounding_box
+      Circle3dLayout.center
+      Circle3dLayout.edges
+      Circle3dLayout.is_closed
+      Circle3dLayout.location
+      Circle3dLayout.lock_position
+      Circle3dLayout.name
+      Circle3dLayout.negative
+      Circle3dLayout.net_name
+      Circle3dLayout.object_units
+      Circle3dLayout.obounding_box
+      Circle3dLayout.placement_layer
+      Circle3dLayout.points
+      Circle3dLayout.radius
+      Circle3dLayout.top_edge_x
+      Circle3dLayout.top_edge_y
+   
+   

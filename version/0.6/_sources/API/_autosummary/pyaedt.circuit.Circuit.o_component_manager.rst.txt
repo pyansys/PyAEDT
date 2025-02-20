@@ -1,0 +1,6 @@
+o\_component\_manager
+=====================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.o_component_manager

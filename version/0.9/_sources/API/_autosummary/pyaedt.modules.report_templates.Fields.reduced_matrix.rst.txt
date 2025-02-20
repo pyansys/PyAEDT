@@ -1,0 +1,6 @@
+reduced\_matrix
+===============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Fields.reduced_matrix

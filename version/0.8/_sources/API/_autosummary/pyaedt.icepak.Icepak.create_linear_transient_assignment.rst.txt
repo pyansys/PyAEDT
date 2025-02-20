@@ -1,0 +1,6 @@
+create\_linear\_transient\_assignment
+=====================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_linear_transient_assignment

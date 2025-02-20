@@ -1,0 +1,6 @@
+plot\_model\_obj
+================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.plot_model_obj

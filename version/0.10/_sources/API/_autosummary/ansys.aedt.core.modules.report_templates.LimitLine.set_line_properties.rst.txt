@@ -1,0 +1,6 @@
+set\_line\_properties
+=====================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: LimitLine.set_line_properties

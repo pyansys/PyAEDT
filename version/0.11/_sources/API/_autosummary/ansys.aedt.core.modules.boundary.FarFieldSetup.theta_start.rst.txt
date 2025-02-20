@@ -1,0 +1,6 @@
+theta\_start
+============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: FarFieldSetup.theta_start

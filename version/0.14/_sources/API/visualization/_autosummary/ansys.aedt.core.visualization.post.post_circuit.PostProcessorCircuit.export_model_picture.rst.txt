@@ -1,0 +1,6 @@
+export\_model\_picture
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.export_model_picture

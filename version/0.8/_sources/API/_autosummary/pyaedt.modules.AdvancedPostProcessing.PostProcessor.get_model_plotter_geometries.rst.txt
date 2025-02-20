@@ -1,0 +1,6 @@
+get\_model\_plotter\_geometries
+===============================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.get_model_plotter_geometries

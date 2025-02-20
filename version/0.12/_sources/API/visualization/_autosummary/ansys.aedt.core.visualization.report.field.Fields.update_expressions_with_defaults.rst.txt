@@ -1,0 +1,6 @@
+update\_expressions\_with\_defaults
+===================================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: Fields.update_expressions_with_defaults

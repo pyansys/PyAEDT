@@ -1,0 +1,6 @@
+create\_powerlaw\_transient\_assignment
+=======================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_powerlaw_transient_assignment

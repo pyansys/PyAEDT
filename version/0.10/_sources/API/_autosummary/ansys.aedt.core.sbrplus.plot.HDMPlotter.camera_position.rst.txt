@@ -1,0 +1,6 @@
+camera\_position
+================
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.camera_position

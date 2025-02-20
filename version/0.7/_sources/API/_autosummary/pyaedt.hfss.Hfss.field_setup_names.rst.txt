@@ -1,0 +1,6 @@
+field\_setup\_names
+===================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.field_setup_names

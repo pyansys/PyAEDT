@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.change_validation_settings

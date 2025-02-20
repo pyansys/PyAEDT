@@ -1,0 +1,6 @@
+boundaries\_by\_type
+====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.boundaries_by_type

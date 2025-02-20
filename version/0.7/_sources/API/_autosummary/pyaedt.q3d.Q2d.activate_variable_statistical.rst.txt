@@ -1,0 +1,6 @@
+activate\_variable\_statistical
+===============================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.activate_variable_statistical

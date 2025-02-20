@@ -1,0 +1,6 @@
+frames
+======
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.frames

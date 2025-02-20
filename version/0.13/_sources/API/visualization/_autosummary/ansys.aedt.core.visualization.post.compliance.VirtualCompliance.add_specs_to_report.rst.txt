@@ -1,0 +1,6 @@
+add\_specs\_to\_report
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. automethod:: VirtualCompliance.add_specs_to_report

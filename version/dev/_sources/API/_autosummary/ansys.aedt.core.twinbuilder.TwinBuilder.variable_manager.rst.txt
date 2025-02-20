@@ -1,0 +1,6 @@
+variable\_manager
+=================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.variable_manager

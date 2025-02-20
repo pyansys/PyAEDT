@@ -1,0 +1,25 @@
+﻿GraphSetup
+==========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.graph_setup
+
+.. autoclass:: GraphSetup
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      GraphSetup.maximum_frequency
+      GraphSetup.maximum_time
+      GraphSetup.minimum_frequency
+      GraphSetup.minimum_time
+   
+   

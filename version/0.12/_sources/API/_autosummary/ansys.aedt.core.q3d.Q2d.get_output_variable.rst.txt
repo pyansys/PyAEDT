@@ -1,0 +1,6 @@
+get\_output\_variable
+=====================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.get_output_variable

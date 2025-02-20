@@ -1,0 +1,6 @@
+diplexer\_lower\_center\_frequency
+==================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.diplexer_lower_center_frequency

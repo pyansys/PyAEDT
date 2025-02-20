@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.logger

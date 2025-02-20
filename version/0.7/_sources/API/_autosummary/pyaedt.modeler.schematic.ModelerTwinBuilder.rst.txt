@@ -1,0 +1,47 @@
+﻿ModelerTwinBuilder
+==================
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoclass:: ModelerTwinBuilder
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ModelerTwinBuilder.change_text_property
+      
+      
+      ModelerTwinBuilder.connect_schematic_components
+      
+      
+      ModelerTwinBuilder.create_text
+      
+      
+      ModelerTwinBuilder.zoom_to_fit
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ModelerTwinBuilder.logger
+      ModelerTwinBuilder.o_component_manager
+      ModelerTwinBuilder.o_def_manager
+      ModelerTwinBuilder.o_model_manager
+      ModelerTwinBuilder.oeditor
+      ModelerTwinBuilder.projdir
+      ModelerTwinBuilder.schematic
+      ModelerTwinBuilder.schematic_units
+   
+   

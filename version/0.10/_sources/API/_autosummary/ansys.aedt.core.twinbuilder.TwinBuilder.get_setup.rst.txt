@@ -1,0 +1,6 @@
+get\_setup
+==========
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.get_setup

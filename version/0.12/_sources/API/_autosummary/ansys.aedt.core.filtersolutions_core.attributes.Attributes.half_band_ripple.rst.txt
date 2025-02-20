@@ -1,0 +1,6 @@
+half\_band\_ripple
+==================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.half_band_ripple

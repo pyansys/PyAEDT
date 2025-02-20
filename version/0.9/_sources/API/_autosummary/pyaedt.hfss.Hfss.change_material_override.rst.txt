@@ -1,0 +1,6 @@
+change\_material\_override
+==========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.change_material_override

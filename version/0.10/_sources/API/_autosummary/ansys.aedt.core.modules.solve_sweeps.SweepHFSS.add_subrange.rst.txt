@@ -1,0 +1,6 @@
+add\_subrange
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.solve_sweeps
+
+.. automethod:: SweepHFSS.add_subrange

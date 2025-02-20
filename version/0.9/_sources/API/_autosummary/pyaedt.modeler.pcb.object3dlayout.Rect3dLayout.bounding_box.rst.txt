@@ -1,0 +1,6 @@
+bounding\_box
+=============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Rect3dLayout.bounding_box

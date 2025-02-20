@@ -1,0 +1,6 @@
+configurations
+==============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.configurations

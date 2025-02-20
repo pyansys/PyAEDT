@@ -1,0 +1,6 @@
+components3d
+============
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.components3d

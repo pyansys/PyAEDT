@@ -1,0 +1,6 @@
+create\_page\_port
+==================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_page_port

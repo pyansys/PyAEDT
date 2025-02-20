@@ -1,0 +1,60 @@
+﻿SetupCircuit
+============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoclass:: SetupCircuit
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SetupCircuit.add_sweep_count
+      
+      
+      SetupCircuit.add_sweep_points
+      
+      
+      SetupCircuit.add_sweep_step
+      
+      
+      SetupCircuit.analyze
+      
+      
+      SetupCircuit.create
+      
+      
+      SetupCircuit.disable
+      
+      
+      SetupCircuit.enable
+      
+      
+      SetupCircuit.enable_expression_cache
+      
+      
+      SetupCircuit.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SetupCircuit.available_properties
+      SetupCircuit.default_intrinsics
+      SetupCircuit.is_solved
+      SetupCircuit.name
+      SetupCircuit.omodule
+      SetupCircuit.p_app
+   
+   

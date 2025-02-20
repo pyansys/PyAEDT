@@ -1,0 +1,6 @@
+delay\_time
+===========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.delay_time

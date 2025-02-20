@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.valid_design

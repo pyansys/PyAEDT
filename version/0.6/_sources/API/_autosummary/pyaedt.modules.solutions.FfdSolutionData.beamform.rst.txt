@@ -1,0 +1,6 @@
+beamform
+========
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FfdSolutionData.beamform

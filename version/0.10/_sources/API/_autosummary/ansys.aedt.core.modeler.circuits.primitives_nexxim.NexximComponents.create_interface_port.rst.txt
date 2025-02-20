@@ -1,0 +1,6 @@
+create\_interface\_port
+=======================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_nexxim
+
+.. automethod:: NexximComponents.create_interface_port

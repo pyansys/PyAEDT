@@ -1,0 +1,6 @@
+near\_field
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.common
+
+.. automethod:: Reports.near_field

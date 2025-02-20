@@ -1,0 +1,6 @@
+get\_far\_field\_data
+=====================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.get_far_field_data

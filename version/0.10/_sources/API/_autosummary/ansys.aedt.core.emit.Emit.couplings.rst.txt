@@ -1,0 +1,6 @@
+couplings
+=========
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.couplings

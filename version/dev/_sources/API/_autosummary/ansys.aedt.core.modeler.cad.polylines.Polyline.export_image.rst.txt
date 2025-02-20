@@ -1,0 +1,6 @@
+export\_image
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.export_image

@@ -1,0 +1,6 @@
+get\_port\_index
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.farfield_visualization
+
+.. automethod:: FfdSolutionData.get_port_index

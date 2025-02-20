@@ -1,0 +1,6 @@
+create\_setup
+=============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.create_setup

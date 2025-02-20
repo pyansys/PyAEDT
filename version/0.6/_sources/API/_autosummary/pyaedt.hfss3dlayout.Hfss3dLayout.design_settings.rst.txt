@@ -1,0 +1,6 @@
+design\_settings
+================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.design_settings

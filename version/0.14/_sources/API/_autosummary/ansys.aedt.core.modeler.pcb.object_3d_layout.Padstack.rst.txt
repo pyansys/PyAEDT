@@ -1,0 +1,43 @@
+﻿Padstack
+========
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. autoclass:: Padstack
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Padstack.add_hole
+      
+      
+      Padstack.add_layer
+      
+      
+      Padstack.create
+      
+      
+      Padstack.remove
+      
+      
+      Padstack.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Padstack.pads_args
+   
+   

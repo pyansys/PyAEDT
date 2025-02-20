@@ -1,0 +1,6 @@
+create\_source\_blocks\_from\_list
+==================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_source_blocks_from_list

@@ -1,0 +1,6 @@
+append\_row
+===========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.transmission_zeros
+
+.. automethod:: TransmissionZeros.append_row

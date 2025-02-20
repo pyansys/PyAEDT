@@ -1,0 +1,6 @@
+surface\_material\_keys
+=======================
+
+.. currentmodule:: ansys.aedt.core.modules.material_lib
+
+.. autoproperty:: Materials.surface_material_keys

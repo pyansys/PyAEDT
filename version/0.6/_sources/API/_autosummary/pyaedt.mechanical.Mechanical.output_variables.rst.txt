@@ -1,0 +1,6 @@
+output\_variables
+=================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.output_variables

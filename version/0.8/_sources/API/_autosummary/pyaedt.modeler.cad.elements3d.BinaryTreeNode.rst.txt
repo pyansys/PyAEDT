@@ -1,0 +1,33 @@
+﻿BinaryTreeNode
+==============
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoclass:: BinaryTreeNode
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      BinaryTreeNode.jsonalize_tree
+      
+      
+      BinaryTreeNode.suppress_all
+      
+      
+      BinaryTreeNode.unsuppress_all
+      
+      
+      BinaryTreeNode.update_property
+      
+   
+   
+
+   
+   
+   

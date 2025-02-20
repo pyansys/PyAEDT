@@ -1,0 +1,6 @@
+clear\_messages
+===============
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. automethod:: AedtLogger.clear_messages

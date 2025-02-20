@@ -1,0 +1,6 @@
+spatialmodifier
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: MatProperty.spatialmodifier

@@ -1,0 +1,6 @@
+set\_high\_side\_radiation
+==========================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. automethod:: NativeComponentPCB.set_high_side_radiation

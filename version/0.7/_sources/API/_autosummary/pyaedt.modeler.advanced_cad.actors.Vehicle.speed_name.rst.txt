@@ -1,0 +1,6 @@
+speed\_name
+===========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoproperty:: Vehicle.speed_name

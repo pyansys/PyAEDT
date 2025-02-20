@@ -1,0 +1,6 @@
+modeler
+=======
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.modeler

@@ -1,0 +1,6 @@
+import\_nastran
+===============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.import_nastran

@@ -1,0 +1,6 @@
+props
+=====
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: BoundaryObject3dLayout.props

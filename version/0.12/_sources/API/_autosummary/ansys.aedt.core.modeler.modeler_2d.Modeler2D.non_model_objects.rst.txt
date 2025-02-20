@@ -1,0 +1,6 @@
+non\_model\_objects
+===================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. autoproperty:: Modeler2D.non_model_objects

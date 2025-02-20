@@ -1,0 +1,6 @@
+opadstackmanager
+================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.opadstackmanager

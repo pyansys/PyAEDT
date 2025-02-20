@@ -1,0 +1,58 @@
+﻿HDMPlotter
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. autoclass:: HDMPlotter
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      HDMPlotter.add_cad_model
+      
+      
+      HDMPlotter.add_hdm_bundle_from_file
+      
+      
+      HDMPlotter.plot_first_bounce_currents
+      
+      
+      HDMPlotter.plot_rays
+      
+      
+      HDMPlotter.set_orientation
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      HDMPlotter.azimuth_angle
+      HDMPlotter.background_color
+      HDMPlotter.background_image
+      HDMPlotter.camera_position
+      HDMPlotter.convert_fields_in_db
+      HDMPlotter.elevation_angle
+      HDMPlotter.focal_point
+      HDMPlotter.hdm_data
+      HDMPlotter.isometric_view
+      HDMPlotter.log_multiplier
+      HDMPlotter.roll_angle
+      HDMPlotter.view_up
+      HDMPlotter.x_scale
+      HDMPlotter.y_scale
+      HDMPlotter.z_scale
+      HDMPlotter.zoom
+   
+   

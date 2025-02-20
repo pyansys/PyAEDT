@@ -1,0 +1,6 @@
+solve\_in\_batch
+================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.solve_in_batch

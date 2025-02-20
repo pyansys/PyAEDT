@@ -1,0 +1,6 @@
+import\_dataset3d
+=================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.import_dataset3d

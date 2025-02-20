@@ -1,0 +1,6 @@
+mirror
+======
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: Excitations.mirror

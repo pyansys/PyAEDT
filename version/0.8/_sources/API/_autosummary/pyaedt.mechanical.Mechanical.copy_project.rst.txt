@@ -1,0 +1,6 @@
+copy\_project
+=============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.copy_project

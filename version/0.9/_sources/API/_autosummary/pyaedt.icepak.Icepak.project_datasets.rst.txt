@@ -1,0 +1,6 @@
+project\_datasets
+=================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.project_datasets

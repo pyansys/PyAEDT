@@ -1,0 +1,6 @@
+﻿create
+======
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pdf
+
+.. automethod:: AnsysReport.create

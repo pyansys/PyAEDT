@@ -1,0 +1,6 @@
+get\_output\_variable
+=====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.get_output_variable

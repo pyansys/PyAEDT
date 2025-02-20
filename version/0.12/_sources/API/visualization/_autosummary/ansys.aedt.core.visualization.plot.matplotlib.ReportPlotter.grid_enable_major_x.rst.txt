@@ -1,0 +1,6 @@
+grid\_enable\_major\_x
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. autoproperty:: ReportPlotter.grid_enable_major_x

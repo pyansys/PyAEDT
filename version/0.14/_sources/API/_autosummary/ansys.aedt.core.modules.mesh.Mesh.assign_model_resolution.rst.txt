@@ -1,0 +1,6 @@
+assign\_model\_resolution
+=========================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. automethod:: Mesh.assign_model_resolution

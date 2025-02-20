@@ -1,0 +1,6 @@
+interconnect\_inductor\_tolerance\_value
+========================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.interconnect_inductor_tolerance_value

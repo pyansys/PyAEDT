@@ -1,0 +1,6 @@
+get\_obj\_id
+============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesEmit
+
+.. automethod:: EmitComponents.get_obj_id

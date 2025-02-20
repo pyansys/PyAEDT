@@ -1,0 +1,6 @@
+existing\_analysis\_sweeps
+==========================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. autoproperty:: Hfss.existing_analysis_sweeps

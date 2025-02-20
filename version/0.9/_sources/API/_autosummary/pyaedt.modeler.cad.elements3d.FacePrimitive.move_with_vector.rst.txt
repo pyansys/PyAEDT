@@ -1,0 +1,6 @@
+move\_with\_vector
+==================
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. automethod:: FacePrimitive.move_with_vector

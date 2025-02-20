@@ -1,0 +1,6 @@
+project\_file
+=============
+
+.. currentmodule:: pyaedt.siwave
+
+.. autoproperty:: Siwave.project_file

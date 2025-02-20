@@ -1,0 +1,6 @@
+expression\_names
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.fields_calculator
+
+.. autoproperty:: FieldsCalculator.expression_names

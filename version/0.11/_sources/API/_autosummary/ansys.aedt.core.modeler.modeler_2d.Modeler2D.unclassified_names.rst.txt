@@ -1,0 +1,6 @@
+unclassified\_names
+===================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. autoproperty:: Modeler2D.unclassified_names

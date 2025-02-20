@@ -1,0 +1,6 @@
+delete\_frequency\_sweep
+========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. automethod:: SiwaveSYZSimulationSetup.delete_frequency_sweep

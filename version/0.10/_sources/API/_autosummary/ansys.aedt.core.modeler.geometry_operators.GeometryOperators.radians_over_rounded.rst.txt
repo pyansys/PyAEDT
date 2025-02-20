@@ -1,0 +1,6 @@
+radians\_over\_rounded
+======================
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.radians_over_rounded

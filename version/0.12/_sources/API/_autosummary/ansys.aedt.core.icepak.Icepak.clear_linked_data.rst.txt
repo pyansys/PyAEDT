@@ -1,0 +1,6 @@
+clear\_linked\_data
+===================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.clear_linked_data

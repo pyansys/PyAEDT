@@ -1,0 +1,52 @@
+﻿TransmissionZeros
+=================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.transmission_zeros
+
+.. autoclass:: TransmissionZeros
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      TransmissionZeros.append_row
+      
+      
+      TransmissionZeros.clear_table
+      
+      
+      TransmissionZeros.insert_row
+      
+      
+      TransmissionZeros.remove_row
+      
+      
+      TransmissionZeros.restore_default_positions
+      
+      
+      TransmissionZeros.row
+      
+      
+      TransmissionZeros.table_format_to_bool
+      
+      
+      TransmissionZeros.update_row
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      TransmissionZeros.row_count
+   
+   

@@ -1,0 +1,6 @@
+set\_license\_type
+==================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.set_license_type

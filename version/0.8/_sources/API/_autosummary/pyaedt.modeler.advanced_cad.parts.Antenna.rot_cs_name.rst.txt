@@ -1,0 +1,6 @@
+rot\_cs\_name
+=============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.parts
+
+.. autoproperty:: Antenna.rot_cs_name

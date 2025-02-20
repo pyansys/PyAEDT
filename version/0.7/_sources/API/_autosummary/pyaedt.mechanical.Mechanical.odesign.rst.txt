@@ -1,0 +1,6 @@
+odesign
+=======
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.odesign

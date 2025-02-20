@@ -1,0 +1,6 @@
+import\_dataset1d
+=================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.import_dataset1d

@@ -1,0 +1,6 @@
+generate\_extended\_nets
+========================
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. automethod:: EdbNets.generate_extended_nets

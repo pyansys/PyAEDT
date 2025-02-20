@@ -1,0 +1,6 @@
+update\_sweeps
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.solutions
+
+.. automethod:: SolutionData.update_sweeps

@@ -1,0 +1,6 @@
+insert\_near\_field\_sphere
+===========================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.insert_near_field_sphere

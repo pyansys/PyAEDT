@@ -1,0 +1,6 @@
+get\_conformal\_polygon\_from\_netlist
+======================================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.get_conformal_polygon_from_netlist

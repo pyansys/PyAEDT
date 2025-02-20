@@ -1,0 +1,6 @@
+statistical\_eye\_contour
+=========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.common
+
+.. automethod:: Reports.statistical_eye_contour

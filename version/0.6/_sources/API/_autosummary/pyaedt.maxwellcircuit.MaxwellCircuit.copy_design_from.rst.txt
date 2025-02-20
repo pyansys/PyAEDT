@@ -1,0 +1,6 @@
+copy\_design\_from
+==================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.copy_design_from

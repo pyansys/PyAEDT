@@ -1,0 +1,6 @@
+omodelsetup
+===========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.omodelsetup

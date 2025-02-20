@@ -1,0 +1,6 @@
+layer\_names
+============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Stackup3D.layer_names

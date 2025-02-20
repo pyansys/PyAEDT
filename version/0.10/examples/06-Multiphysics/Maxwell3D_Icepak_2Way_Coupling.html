@@ -1,0 +1,1062 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Multiphysics: Maxwell 3D - Icepak electrothermal analysis &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/06-Multiphysics/Maxwell3D_Icepak_2Way_Coupling';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Circuit examples" href="../07-Circuit/index.html" />
+    <link rel="prev" title="Multiphysics: HFSS-Mechanical MRI analysis" href="MRI.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/06-Multiphysics/Maxwell3D_Icepak_2Way_Coupling.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Modeling-Setup/index.html">General model and setup examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-HFSS/index.html">HFSS examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-Maxwell/index.html">Maxwell examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Multiphysics examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Circuit-HFSS-Icepak-coupling.html">Multiphysics: Circuit-HFSS-Icepak coupling workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hfss_Icepak_Coupling.html">Multiphysics: HFSS-Icepak multiphysics analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hfss_Mechanical.html">Multiphysics: HFSS-Mechanical multiphysics analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MRI.html">Multiphysics: HFSS-Mechanical MRI analysis</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Multiphysics: Maxwell 3D - Icepak electrothermal analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-Circuit/index.html">Circuit examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-EMIT/index.html">EMIT examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">Multiphysics examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">Multiphysics: Maxwell 3D - Icepak electrothermal analysis</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-06-multiphysics-maxwell3d-icepak-2way-coupling-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="multiphysics-maxwell-3d-icepak-electrothermal-analysis">
+<span id="sphx-glr-examples-06-multiphysics-maxwell3d-icepak-2way-coupling-py"></span><h1>Multiphysics: Maxwell 3D - Icepak electrothermal analysis<a class="headerlink" href="#multiphysics-maxwell-3d-icepak-electrothermal-analysis" title="Link to this heading">#</a></h1>
+<p>This example uses PyAEDT to set up a simple Maxwell design consisting of a coil and a ferrite core.
+Coil current is set to 100A, and coil resistance and ohmic loss are analyzed.
+Ohmic loss is mapped to Icepak, and a thermal analysis is performed. Icepak calculates a temperature distribution,
+and it is mapped back to Maxwell (2-way coupling). Coil resistance and ohmic loss are analyzed again in Maxwell.
+Results are printed in AEDT Message Manager.</p>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ansys.aedt.core</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core.generic.constants</span> <span class="kn">import</span> <span class="n">AXIS</span>
+</pre></div>
+</div>
+</section>
+<section id="set-aedt-version">
+<h2>Set AEDT version<a class="headerlink" href="#set-aedt-version" title="Link to this heading">#</a></h2>
+<p>Set AEDT version.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedt_version</span> <span class="o">=</span> <span class="s2">&quot;2024.2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="set-non-graphical-mode">
+<h2>Set non-graphical mode<a class="headerlink" href="#set-non-graphical-mode" title="Link to this heading">#</a></h2>
+<p>Set non-graphical mode.
+You can set <code class="docutils literal notranslate"><span class="pre">non_graphical</span></code> either to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">non_graphical</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="launch-aedt-and-maxwell-3d">
+<h2>Launch AEDT and Maxwell 3D<a class="headerlink" href="#launch-aedt-and-maxwell-3d" title="Link to this heading">#</a></h2>
+<p>Launch AEDT and Maxwell 3D. The following code sets up the project and design names, the solver, and
+the version. It also creates an instance of the <code class="docutils literal notranslate"><span class="pre">Maxwell3d</span></code> class named <code class="docutils literal notranslate"><span class="pre">m3d</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">project_name</span> <span class="o">=</span> <span class="s2">&quot;Maxwell-Icepak-2way-Coupling&quot;</span>
+<span class="n">maxwell_design_name</span> <span class="o">=</span> <span class="s2">&quot;1 Maxwell&quot;</span>
+<span class="n">icepak_design_name</span> <span class="o">=</span> <span class="s2">&quot;2 Icepak&quot;</span>
+
+<span class="n">m3d</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Maxwell3d</span><span class="p">(</span>
+    <span class="n">project</span><span class="o">=</span><span class="n">project_name</span><span class="p">,</span>
+    <span class="n">design</span><span class="o">=</span><span class="n">maxwell_design_name</span><span class="p">,</span>
+    <span class="n">solution_type</span><span class="o">=</span><span class="s2">&quot;EddyCurrent&quot;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="n">aedt_version</span><span class="p">,</span>
+    <span class="n">non_graphical</span><span class="o">=</span><span class="n">non_graphical</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\_tool\Python\3.10.9\x64\lib\subprocess.py:1072: ResourceWarning: subprocess 3676 is still running
+  _warn(&quot;subprocess %s is still running&quot; % self.pid,
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\ansys\aedt\core\generic\settings.py:231: ResourceWarning: unclosed file &lt;_io.TextIOWrapper name=&#39;D:\\Temp\\pyaedt_ansys_260622a4-692f-48cc-bef3-b1a76554a3cc.log&#39; mode=&#39;a&#39; encoding=&#39;cp1252&#39;&gt;
+  self.__logger = val
+</pre></div>
+</div>
+</section>
+<section id="create-geometry-in-maxwell">
+<h2>Create geometry in Maxwell<a class="headerlink" href="#create-geometry-in-maxwell" title="Link to this heading">#</a></h2>
+<p>Create the coil, coil terminal, core, and region.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">coil</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;XZ&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">],</span> <span class="n">sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">110</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Coil&quot;</span>
+<span class="p">)</span>
+
+<span class="n">coil</span><span class="o">.</span><span class="n">sweep_around_axis</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">AXIS</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span>
+
+<span class="n">coil_terminal</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;XZ&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">],</span> <span class="n">sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">110</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Coil_terminal&quot;</span>
+<span class="p">)</span>
+
+<span class="n">core</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;XZ&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">18</span><span class="p">],</span> <span class="n">sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">160</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Core&quot;</span>
+<span class="p">)</span>
+<span class="n">core</span><span class="o">.</span><span class="n">sweep_around_axis</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">AXIS</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span>
+
+<span class="c1"># Magnetic flux is not concentrated by the core in +z-direction. Therefore, more padding is needed in that direction.</span>
+<span class="n">region</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_region</span><span class="p">(</span><span class="n">pad_percent</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="assign-materials">
+<h2>Assign materials<a class="headerlink" href="#assign-materials" title="Link to this heading">#</a></h2>
+<p>Create a material: Copper AWG40 Litz wire, strand diameter = 0.08mm, 24 parallel strands.
+Assign materials: Assign Coil to AWG40 copper, core to ferrite, and region to vacuum.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">no_strands</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="n">strand_diameter</span> <span class="o">=</span> <span class="mf">0.08</span>
+
+<span class="n">cu_litz</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">duplicate_material</span><span class="p">(</span><span class="s2">&quot;copper&quot;</span><span class="p">,</span> <span class="s2">&quot;copper_litz&quot;</span><span class="p">)</span>
+<span class="n">cu_litz</span><span class="o">.</span><span class="n">stacking_type</span> <span class="o">=</span> <span class="s2">&quot;Litz Wire&quot;</span>
+<span class="n">cu_litz</span><span class="o">.</span><span class="n">wire_diameter</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">strand_diameter</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;mm&quot;</span>
+<span class="n">cu_litz</span><span class="o">.</span><span class="n">wire_type</span> <span class="o">=</span> <span class="s2">&quot;Round&quot;</span>
+<span class="n">cu_litz</span><span class="o">.</span><span class="n">strand_number</span> <span class="o">=</span> <span class="n">no_strands</span>
+
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_material</span><span class="p">(</span><span class="n">region</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_material</span><span class="p">(</span><span class="n">coil</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;copper_litz&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_material</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;ferrite&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="assign-excitation">
+<h2>Assign excitation<a class="headerlink" href="#assign-excitation" title="Link to this heading">#</a></h2>
+<p>Assign coil current, coil consists of 20 turns, total current 10A.
+Note that each coil turn consists of 24 parallel Litz strands, see above.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">no_turns</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">coil_current</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_coil</span><span class="p">([</span><span class="s2">&quot;Coil_terminal&quot;</span><span class="p">],</span> <span class="n">conductors_number</span><span class="o">=</span><span class="n">no_turns</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Coil_terminal&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">assign_winding</span><span class="p">(</span><span class="n">is_solid</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">current</span><span class="o">=</span><span class="n">coil_current</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Winding1&quot;</span><span class="p">)</span>
+
+<span class="n">m3d</span><span class="o">.</span><span class="n">add_winding_coils</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;Winding1&quot;</span><span class="p">,</span> <span class="n">coils</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Coil_terminal&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="assign-mesh-operations">
+<h2>Assign mesh operations<a class="headerlink" href="#assign-mesh-operations" title="Link to this heading">#</a></h2>
+<p>Mesh operations are not necessary in eddy current solver because of auto-adaptive meshing.
+However, with appropriate mesh operations, less adaptive passes are needed.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">assign_length_mesh</span><span class="p">([</span><span class="s2">&quot;Core&quot;</span><span class="p">],</span> <span class="n">maximum_length</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">maximum_elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Inside_Core&quot;</span><span class="p">)</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">assign_length_mesh</span><span class="p">([</span><span class="s2">&quot;Coil&quot;</span><span class="p">],</span> <span class="n">maximum_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">maximum_elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Inside_Coil&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.mesh.MeshOperation object at 0x000002B32220D510&gt;
+</pre></div>
+</div>
+</section>
+<section id="set-conductivity-temperature-coefficient">
+<h2>Set conductivity temperature coefficient<a class="headerlink" href="#set-conductivity-temperature-coefficient" title="Link to this heading">#</a></h2>
+<p>Set conductivity as a function of temperature. Resistivity increases by 0.393% per K.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">cu_resistivity_temp_coefficient</span> <span class="o">=</span> <span class="mf">0.00393</span>
+<span class="n">cu_litz</span><span class="o">.</span><span class="n">conductivity</span><span class="o">.</span><span class="n">add_thermal_modifier_free_form</span><span class="p">(</span><span class="s2">&quot;1.0/(1.0+</span><span class="si">{}</span><span class="s2">*(Temp-20))&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cu_resistivity_temp_coefficient</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="set-object-temperature-and-enable-feedback">
+<h2>Set object temperature and enable feedback<a class="headerlink" href="#set-object-temperature-and-enable-feedback" title="Link to this heading">#</a></h2>
+<p>Set the temperature of the objects to default temperature (22deg C)
+and enable temperature feedback for two-way coupling.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">set_objects_temperature</span><span class="p">([</span><span class="s2">&quot;Coil&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="assign-matrix">
+<h2>Assign matrix<a class="headerlink" href="#assign-matrix" title="Link to this heading">#</a></h2>
+<p>Resistance and inductance calculation.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">m3d</span><span class="o">.</span><span class="n">assign_matrix</span><span class="p">([</span><span class="s2">&quot;Winding1&quot;</span><span class="p">],</span> <span class="n">matrix_name</span><span class="o">=</span><span class="s2">&quot;Matrix1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.boundary.MaxwellParameters object at 0x000002B32220D4B0&gt;
+</pre></div>
+</div>
+</section>
+<section id="create-and-analyze-simulation-setup">
+<h2>Create and analyze simulation setup<a class="headerlink" href="#create-and-analyze-simulation-setup" title="Link to this heading">#</a></h2>
+<p>Simulation frequency 150kHz.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">create_setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Setup1&quot;</span><span class="p">)</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;150kHz&quot;</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">analyze_setup</span><span class="p">(</span><span class="s2">&quot;Setup1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="postprocessing">
+<h2>Postprocessing<a class="headerlink" href="#postprocessing" title="Link to this heading">#</a></h2>
+<p>Calculate analytical DC resistance and compare it with the simulated coil resistance,
+print them in the message manager, as well as ohmic loss in coil before temperature feedback.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_report</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="s2">&quot;Matrix1.R(Winding1,Winding1)&quot;</span><span class="p">)</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">get_solution_data</span><span class="p">()</span>
+<span class="n">resistance</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">data_magnitude</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">report_loss</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_report</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="s2">&quot;StrandedLossAC&quot;</span><span class="p">)</span>
+<span class="n">solution_loss</span> <span class="o">=</span> <span class="n">report_loss</span><span class="o">.</span><span class="n">get_solution_data</span><span class="p">()</span>
+<span class="n">em_loss</span> <span class="o">=</span> <span class="n">solution_loss</span><span class="o">.</span><span class="n">data_magnitude</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Analytical calculation of the DC resistance of the coil</span>
+<span class="n">cu_cond</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cu_litz</span><span class="o">.</span><span class="n">conductivity</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="c1"># average radius of a coil turn = 0.125m</span>
+<span class="n">l_conductor</span> <span class="o">=</span> <span class="n">no_turns</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mf">0.125</span><span class="o">*</span><span class="mf">3.1415</span>
+<span class="c1"># R = resistivity * length / area / no_strand</span>
+<span class="n">r_analytical_DC</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">cu_cond</span><span class="p">)</span> <span class="o">*</span> <span class="n">l_conductor</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.1415</span> <span class="o">*</span> <span class="p">(</span><span class="n">strand_diameter</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">no_strands</span>
+
+<span class="c1"># Print results in the Message Manager</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;*******Coil analytical DC resistance =  </span><span class="si">{:.2f}</span><span class="s2">Ohm&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r_analytical_DC</span><span class="p">))</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;*******Coil resistance at 150kHz BEFORE temperature feedback =  </span><span class="si">{:.2f}</span><span class="s2">Ohm&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resistance</span><span class="p">))</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;*******Ohmic loss in coil BEFORE temperature feedback =  </span><span class="si">{:.2f}</span><span class="s2">W&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">em_loss</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="icepak-design">
+<h2>Icepak design<a class="headerlink" href="#icepak-design" title="Link to this heading">#</a></h2>
+<p>Insert Icepak design, copy solid objects from Maxwell, and modify region dimensions.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ipk</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Icepak</span><span class="p">(</span><span class="n">design</span><span class="o">=</span><span class="n">icepak_design_name</span><span class="p">)</span>
+<span class="n">ipk</span><span class="o">.</span><span class="n">copy_solid_bodies_from</span><span class="p">(</span><span class="n">m3d</span><span class="p">,</span> <span class="n">no_pec</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Set domain dimensions suitable for natural convection using the diameter of the coil</span>
+<span class="n">ipk</span><span class="o">.</span><span class="n">modeler</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<span class="n">coil_dim</span> <span class="o">=</span> <span class="n">coil</span><span class="o">.</span><span class="n">bounding_dimension</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ipk</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_region</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">ipk</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">edit_region_dimensions</span><span class="p">([</span><span class="n">coil_dim</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">coil_dim</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">coil_dim</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">coil_dim</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">coil_dim</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">coil_dim</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="map-coil-losses">
+<h2>Map coil losses<a class="headerlink" href="#map-coil-losses" title="Link to this heading">#</a></h2>
+<p>Map ohmic losses from Maxwell to the Icepak design.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ipk</span><span class="o">.</span><span class="n">assign_em_losses</span><span class="p">(</span><span class="n">design</span><span class="o">=</span><span class="s2">&quot;1 Maxwell&quot;</span><span class="p">,</span> <span class="n">setup</span><span class="o">=</span><span class="n">m3d</span><span class="o">.</span><span class="n">setups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">sweep</span><span class="o">=</span><span class="s2">&quot;LastAdaptive&quot;</span><span class="p">,</span> <span class="n">assignment</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Coil&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.boundary.BoundaryObject object at 0x000002B321E927A0&gt;
+</pre></div>
+</div>
+</section>
+<section id="boundary-conditions">
+<h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Link to this heading">#</a></h2>
+<p>Assign opening.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">faces</span> <span class="o">=</span> <span class="n">ipk</span><span class="o">.</span><span class="n">modeler</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">faces</span>
+<span class="n">face_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">face</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">]</span>
+<span class="n">ipk</span><span class="o">.</span><span class="n">assign_free_opening</span><span class="p">(</span><span class="n">face_names</span><span class="p">,</span> <span class="n">boundary_name</span><span class="o">=</span><span class="s2">&quot;Opening1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.boundary.BoundaryObject object at 0x000002B321E91A20&gt;
+</pre></div>
+</div>
+</section>
+<section id="assign-monitor">
+<h2>Assign monitor<a class="headerlink" href="#assign-monitor" title="Link to this heading">#</a></h2>
+<p>Temperature monitor on the coil surface</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">temp_monitor</span> <span class="o">=</span> <span class="n">ipk</span><span class="o">.</span><span class="n">assign_point_monitor</span><span class="p">([</span><span class="mi">70</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">monitor_name</span><span class="o">=</span><span class="s2">&quot;PointMonitor1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="icepak-solution-setup">
+<h2>Icepak solution setup<a class="headerlink" href="#icepak-solution-setup" title="Link to this heading">#</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">solution_setup</span> <span class="o">=</span> <span class="n">ipk</span><span class="o">.</span><span class="n">create_setup</span><span class="p">()</span>
+<span class="n">solution_setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Convergence Criteria - Max Iterations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">solution_setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Flow Regime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Turbulent&quot;</span>
+<span class="n">solution_setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Turbulent Model Eqn&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ZeroEquation&quot;</span>
+<span class="n">solution_setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Radiation Model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Discrete Ordinates Model&quot;</span>
+<span class="n">solution_setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Include Flow&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">solution_setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Include Gravity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">solution_setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Solution Initialization - Z Velocity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0.0005m_per_sec&quot;</span>
+<span class="n">solution_setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Convergence Criteria - Flow&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0005</span>
+<span class="n">solution_setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Flow Iteration Per Radiation Iteration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;5&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="add-2-way-coupling-and-solve-the-project">
+<h2>Add 2-way coupling and solve the project<a class="headerlink" href="#add-2-way-coupling-and-solve-the-project" title="Link to this heading">#</a></h2>
+<p>Enable mapping temperature distribution back to Maxwell.
+Default number Maxwell &lt;–&gt; Icepak iterations is 2,
+but for increased accuracy it can be increased (number_of_iterations).</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ipk</span><span class="o">.</span><span class="n">assign_2way_coupling</span><span class="p">()</span>
+<span class="n">ipk</span><span class="o">.</span><span class="n">analyze_setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">solution_setup</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>Postprocessing<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Plot temperature on the object surfaces.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">surface_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Coil&quot;</span><span class="p">,</span> <span class="s2">&quot;Core&quot;</span><span class="p">]:</span>
+    <span class="n">surface_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ipk</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<span class="n">surf_temperature</span> <span class="o">=</span> <span class="n">ipk</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_fieldplot_surface</span><span class="p">(</span><span class="n">surface_list</span><span class="p">,</span> <span class="n">quantity</span><span class="o">=</span><span class="s2">&quot;SurfTemperature&quot;</span><span class="p">,</span>
+                                                     <span class="n">plot_name</span><span class="o">=</span><span class="s2">&quot;Surface Temperature&quot;</span><span class="p">)</span>
+
+<span class="n">velocity_cutplane</span> <span class="o">=</span> <span class="n">ipk</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_fieldplot_cutplane</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Global:XZ&quot;</span><span class="p">],</span> <span class="n">quantity</span><span class="o">=</span><span class="s2">&quot;Velocity Vectors&quot;</span><span class="p">,</span>
+                                                       <span class="n">plot_name</span><span class="o">=</span><span class="s2">&quot;Velocity Vectors&quot;</span><span class="p">)</span>
+
+<span class="n">surf_temperature</span><span class="o">.</span><span class="n">export_image</span><span class="p">()</span>
+<span class="n">velocity_cutplane</span><span class="o">.</span><span class="n">export_image</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+
+<span class="n">report_temp</span> <span class="o">=</span> <span class="n">ipk</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_report</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="s2">&quot;PointMonitor1.Temperature&quot;</span><span class="p">,</span> <span class="n">primary_sweep_variable</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">solution_temp</span> <span class="o">=</span> <span class="n">report_temp</span><span class="o">.</span><span class="n">get_solution_data</span><span class="p">()</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">solution_temp</span><span class="o">.</span><span class="n">data_magnitude</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;*******Coil temperature =  </span><span class="si">{:.2f}</span><span class="s2">deg C&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temp</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="get-new-resistance-from-maxwell">
+<h2>Get new resistance from Maxwell<a class="headerlink" href="#get-new-resistance-from-maxwell" title="Link to this heading">#</a></h2>
+<p>Temperature of the coil increases, and consequently also coil resistance increases.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">report_new</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_report</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="s2">&quot;Matrix1.R(Winding1,Winding1)&quot;</span><span class="p">)</span>
+<span class="n">solution_new</span> <span class="o">=</span> <span class="n">report_new</span><span class="o">.</span><span class="n">get_solution_data</span><span class="p">()</span>
+<span class="n">resistance_new</span> <span class="o">=</span> <span class="n">solution_new</span><span class="o">.</span><span class="n">data_magnitude</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">resistance_increase</span> <span class="o">=</span> <span class="p">(</span><span class="n">resistance_new</span> <span class="o">-</span> <span class="n">resistance</span><span class="p">)</span><span class="o">/</span><span class="n">resistance</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="n">report_loss_new</span> <span class="o">=</span> <span class="n">m3d</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_report</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="s2">&quot;StrandedLossAC&quot;</span><span class="p">)</span>
+<span class="n">solution_loss_new</span> <span class="o">=</span> <span class="n">report_loss_new</span><span class="o">.</span><span class="n">get_solution_data</span><span class="p">()</span>
+<span class="n">em_loss_new</span> <span class="o">=</span> <span class="n">solution_loss_new</span><span class="o">.</span><span class="n">data_magnitude</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">m3d</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;*******Coil resistance at 150kHz AFTER temperature feedback =  </span><span class="si">{:.2f}</span><span class="s2">Ohm&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resistance_new</span><span class="p">))</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;*******Coil resistance increased by </span><span class="si">{:.2f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resistance_increase</span><span class="p">))</span>
+<span class="n">m3d</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;*******Ohmic loss in coil AFTER temperature feedback =  </span><span class="si">{:.2f}</span><span class="s2">W&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">em_loss_new</span><span class="o">/</span><span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="release-desktop">
+<h2>Release desktop<a class="headerlink" href="#release-desktop" title="Link to this heading">#</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ipk</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (6 minutes 36.290 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-06-multiphysics-maxwell3d-icepak-2way-coupling-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/e3eb403b92a8e7dae11967712e9686d2/Maxwell3D_Icepak_2Way_Coupling.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Maxwell3D_Icepak_2Way_Coupling.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8e2f134af8c30350089f64d9db52ad15/Maxwell3D_Icepak_2Way_Coupling.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Maxwell3D_Icepak_2Way_Coupling.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/020e37b508c2245720416bf911565594/Maxwell3D_Icepak_2Way_Coupling.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">Maxwell3D_Icepak_2Way_Coupling.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-aedt-version">Set AEDT version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-non-graphical-mode">Set non-graphical mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-aedt-and-maxwell-3d">Launch AEDT and Maxwell 3D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-geometry-in-maxwell">Create geometry in Maxwell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-materials">Assign materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-excitation">Assign excitation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-mesh-operations">Assign mesh operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-conductivity-temperature-coefficient">Set conductivity temperature coefficient</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-object-temperature-and-enable-feedback">Set object temperature and enable feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-matrix">Assign matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-analyze-simulation-setup">Create and analyze simulation setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postprocessing">Postprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#icepak-design">Icepak design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-coil-losses">Map coil losses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions">Boundary conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-monitor">Assign monitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#icepak-solution-setup">Icepak solution setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-2-way-coupling-and-solve-the-project">Add 2-way coupling and solve the project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Postprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-new-resistance-from-maxwell">Get new resistance from Maxwell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-desktop">Release desktop</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/06-Multiphysics/Maxwell3D_Icepak_2Way_Coupling.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/06-Multiphysics/Maxwell3D_Icepak_2Way_Coupling.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

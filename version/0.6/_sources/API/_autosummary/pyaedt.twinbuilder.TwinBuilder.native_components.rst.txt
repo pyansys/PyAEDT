@@ -1,0 +1,6 @@
+native\_components
+==================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.native_components

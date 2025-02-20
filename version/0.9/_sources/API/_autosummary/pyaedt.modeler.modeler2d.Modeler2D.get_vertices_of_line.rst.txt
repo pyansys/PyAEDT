@@ -1,0 +1,6 @@
+get\_vertices\_of\_line
+=======================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.get_vertices_of_line

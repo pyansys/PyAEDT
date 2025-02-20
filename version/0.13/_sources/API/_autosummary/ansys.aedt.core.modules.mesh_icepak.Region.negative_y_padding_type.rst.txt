@@ -1,0 +1,6 @@
+negative\_y\_padding\_type
+==========================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. autoproperty:: Region.negative_y_padding_type

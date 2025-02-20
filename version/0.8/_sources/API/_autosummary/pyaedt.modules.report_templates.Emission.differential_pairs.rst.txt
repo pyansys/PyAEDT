@@ -1,0 +1,6 @@
+differential\_pairs
+===================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Emission.differential_pairs

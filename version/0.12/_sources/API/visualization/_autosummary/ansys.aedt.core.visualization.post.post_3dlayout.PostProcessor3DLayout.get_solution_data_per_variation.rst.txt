@@ -1,0 +1,6 @@
+get\_solution\_data\_per\_variation
+===================================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.get_solution_data_per_variation

@@ -1,0 +1,6 @@
+add\_note
+=========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Emission.add_note

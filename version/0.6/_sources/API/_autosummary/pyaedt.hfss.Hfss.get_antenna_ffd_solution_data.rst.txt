@@ -1,0 +1,6 @@
+get\_antenna\_ffd\_solution\_data
+=================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_antenna_ffd_solution_data

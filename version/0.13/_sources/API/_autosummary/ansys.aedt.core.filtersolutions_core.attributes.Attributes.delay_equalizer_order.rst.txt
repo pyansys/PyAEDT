@@ -1,0 +1,6 @@
+delay\_equalizer\_order
+=======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.delay_equalizer_order

@@ -1,0 +1,6 @@
+phi\_step
+=========
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: FarFieldSetup.phi_step

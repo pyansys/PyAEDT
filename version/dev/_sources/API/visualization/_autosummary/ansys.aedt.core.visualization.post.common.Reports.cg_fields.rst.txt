@@ -1,0 +1,6 @@
+cg\_fields
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.common
+
+.. automethod:: Reports.cg_fields

@@ -1,0 +1,6 @@
+rename\_design
+==============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.rename_design

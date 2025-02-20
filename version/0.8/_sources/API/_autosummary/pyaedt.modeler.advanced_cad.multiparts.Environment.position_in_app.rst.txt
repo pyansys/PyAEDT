@@ -1,0 +1,6 @@
+position\_in\_app
+=================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.multiparts
+
+.. automethod:: Environment.position_in_app

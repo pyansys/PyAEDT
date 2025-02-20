@@ -1,0 +1,6 @@
+zones
+=====
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layers.zones

@@ -1,0 +1,6 @@
+create\_dataset1d\_project
+==========================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.create_dataset1d_project

@@ -1,0 +1,15 @@
+﻿FilterSolutions
+===============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions
+
+.. autoclass:: FilterSolutions
+
+   
+
+   
+   
+
+   
+   
+   

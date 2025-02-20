@@ -1,0 +1,6 @@
+basis\_frequencies
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_sweeps
+
+.. autoproperty:: SweepMatrix.basis_frequencies

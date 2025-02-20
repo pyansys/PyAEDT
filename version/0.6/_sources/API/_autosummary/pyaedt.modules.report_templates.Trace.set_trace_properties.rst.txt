@@ -1,0 +1,6 @@
+set\_trace\_properties
+======================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Trace.set_trace_properties

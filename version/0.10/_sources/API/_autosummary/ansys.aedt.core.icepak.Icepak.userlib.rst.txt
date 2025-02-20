@@ -1,0 +1,6 @@
+userlib
+=======
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.userlib

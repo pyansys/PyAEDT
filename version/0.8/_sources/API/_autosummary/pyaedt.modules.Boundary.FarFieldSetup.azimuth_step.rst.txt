@@ -1,0 +1,6 @@
+azimuth\_step
+=============
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: FarFieldSetup.azimuth_step

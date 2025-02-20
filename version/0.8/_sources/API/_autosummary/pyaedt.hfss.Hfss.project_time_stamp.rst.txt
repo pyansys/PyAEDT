@@ -1,0 +1,6 @@
+project\_time\_stamp
+====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.project_time_stamp

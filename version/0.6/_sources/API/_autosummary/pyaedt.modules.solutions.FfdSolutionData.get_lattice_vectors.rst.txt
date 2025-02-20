@@ -1,0 +1,6 @@
+get\_lattice\_vectors
+=====================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FfdSolutionData.get_lattice_vectors

@@ -1,0 +1,6 @@
+delete\_traces
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: Fields.delete_traces

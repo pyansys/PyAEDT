@@ -1,0 +1,32 @@
+﻿Points3dLayout
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. autoclass:: Points3dLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Points3dLayout.move
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Points3dLayout.is_arc
+      Points3dLayout.position
+   
+   

@@ -1,0 +1,6 @@
+add\_info\_message
+==================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.add_info_message

@@ -1,0 +1,6 @@
+assign\_hollow\_block
+=====================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_hollow_block

@@ -1,0 +1,6 @@
+submit\_job
+===========
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.submit_job

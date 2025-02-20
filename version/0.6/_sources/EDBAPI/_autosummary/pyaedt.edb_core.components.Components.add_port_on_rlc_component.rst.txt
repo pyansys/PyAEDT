@@ -1,0 +1,6 @@
+add\_port\_on\_rlc\_component
+=============================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.add_port_on_rlc_component

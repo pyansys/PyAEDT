@@ -1,0 +1,6 @@
+default\_solution\_type
+=======================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. autoproperty:: Hfss.default_solution_type

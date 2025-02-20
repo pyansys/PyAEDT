@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.change_property

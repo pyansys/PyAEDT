@@ -1,0 +1,6 @@
+global\_import\_success
+=======================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ImportResults.global_import_success

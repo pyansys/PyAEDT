@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. automethod:: DataSet.create

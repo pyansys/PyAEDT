@@ -1,0 +1,30 @@
+﻿FieldSummary
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_summary
+
+.. autoclass:: FieldSummary
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FieldSummary.add_calculation
+      
+      
+      FieldSummary.export_csv
+      
+      
+      FieldSummary.get_field_summary_data
+      
+   
+   
+
+   
+   
+   

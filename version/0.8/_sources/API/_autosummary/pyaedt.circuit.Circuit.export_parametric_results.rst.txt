@@ -1,0 +1,6 @@
+export\_parametric\_results
+===========================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.export_parametric_results

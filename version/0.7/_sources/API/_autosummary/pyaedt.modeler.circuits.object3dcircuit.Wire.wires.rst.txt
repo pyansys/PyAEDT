@@ -1,0 +1,6 @@
+wires
+=====
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. autoproperty:: Wire.wires

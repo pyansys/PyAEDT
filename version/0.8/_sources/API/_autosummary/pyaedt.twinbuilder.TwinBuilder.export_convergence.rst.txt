@@ -1,0 +1,6 @@
+export\_convergence
+===================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.export_convergence

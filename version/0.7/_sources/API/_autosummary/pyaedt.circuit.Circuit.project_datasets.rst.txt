@@ -1,0 +1,6 @@
+project\_datasets
+=================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.project_datasets

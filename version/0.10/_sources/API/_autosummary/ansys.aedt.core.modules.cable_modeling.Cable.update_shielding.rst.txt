@@ -1,0 +1,6 @@
+update\_shielding
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.cable_modeling
+
+.. automethod:: Cable.update_shielding

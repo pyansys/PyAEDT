@@ -1,0 +1,6 @@
+i\_q\_values
+============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoproperty:: PowerIQSource.i_q_values

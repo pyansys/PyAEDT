@@ -1,0 +1,6 @@
+dc\_export\_thermal\_data
+=========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_export_thermal_data

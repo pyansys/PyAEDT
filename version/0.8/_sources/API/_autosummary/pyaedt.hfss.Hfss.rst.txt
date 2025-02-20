@@ -1,0 +1,690 @@
+﻿Hfss
+====
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoclass:: Hfss
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Hfss.activate_variable_optimization
+      
+      
+      Hfss.activate_variable_sensitivity
+      
+      
+      Hfss.activate_variable_statistical
+      
+      
+      Hfss.activate_variable_tuning
+      
+      
+      Hfss.add_3d_component_array_from_json
+      
+      
+      Hfss.add_error_message
+      
+      
+      Hfss.add_from_toolkit
+      
+      
+      Hfss.add_info_message
+      
+      
+      Hfss.add_stackup_3d
+      
+      
+      Hfss.add_warning_message
+      
+      
+      Hfss.analyze
+      
+      
+      Hfss.analyze_setup
+      
+      
+      Hfss.archive_project
+      
+      
+      Hfss.assign_coating
+      
+      
+      Hfss.assign_current_source_to_sheet
+      
+      
+      Hfss.assign_febi
+      
+      
+      Hfss.assign_hybrid_region
+      
+      
+      Hfss.assign_impedance_to_sheet
+      
+      
+      Hfss.assign_lattice_pair
+      
+      
+      Hfss.assign_lumped_rlc_to_sheet
+      
+      
+      Hfss.assign_material
+      
+      
+      Hfss.assign_perfecte_to_sheets
+      
+      
+      Hfss.assign_perfecth_to_sheets
+      
+      
+      Hfss.assign_primary
+      
+      
+      Hfss.assign_radiation_boundary_to_faces
+      
+      
+      Hfss.assign_radiation_boundary_to_objects
+      
+      
+      Hfss.assign_secondary
+      
+      
+      Hfss.assign_symmetry
+      
+      
+      Hfss.assign_voltage_source_to_sheet
+      
+      
+      Hfss.assignmaterial_from_sherlock_files
+      
+      
+      Hfss.auto_assign_lattice_pairs
+      
+      
+      Hfss.autosave_disable
+      
+      
+      Hfss.autosave_enable
+      
+      
+      Hfss.change_automatically_use_causal_materials
+      
+      
+      Hfss.change_design_settings
+      
+      
+      Hfss.change_material_override
+      
+      
+      Hfss.change_property
+      
+      
+      Hfss.change_validation_settings
+      
+      
+      Hfss.check_beta_option_enabled
+      
+      
+      Hfss.check_if_project_is_loaded
+      
+      
+      Hfss.circuit_port
+      
+      
+      Hfss.clean_proj_folder
+      
+      
+      Hfss.cleanup_solution
+      
+      
+      Hfss.close_desktop
+      
+      
+      Hfss.close_project
+      
+      
+      Hfss.copy_design_from
+      
+      
+      Hfss.copy_project
+      
+      
+      Hfss.copy_solid_bodies_from
+      
+      
+      Hfss.create_boundary
+      
+      
+      Hfss.create_current_source_from_objects
+      
+      
+      Hfss.create_dataset
+      
+      
+      Hfss.create_dataset1d_design
+      
+      
+      Hfss.create_dataset1d_project
+      
+      
+      Hfss.create_dataset3d
+      
+      
+      Hfss.create_floquet_port
+      
+      
+      Hfss.create_impedance_between_objects
+      
+      
+      Hfss.create_linear_count_sweep
+      
+      
+      Hfss.create_linear_step_sweep
+      
+      
+      Hfss.create_lumped_rlc_between_objects
+      
+      
+      Hfss.create_new_project
+      
+      
+      Hfss.create_open_region
+      
+      
+      Hfss.create_output_variable
+      
+      
+      Hfss.create_perfecte_from_objects
+      
+      
+      Hfss.create_perfecth_from_objects
+      
+      
+      Hfss.create_qfactor_report
+      
+      
+      Hfss.create_sbr_antenna
+      
+      
+      Hfss.create_sbr_chirp_i_doppler_setup
+      
+      
+      Hfss.create_sbr_chirp_iq_doppler_setup
+      
+      
+      Hfss.create_sbr_file_based_antenna
+      
+      
+      Hfss.create_sbr_linked_antenna
+      
+      
+      Hfss.create_sbr_pulse_doppler_setup
+      
+      
+      Hfss.create_sbr_radar_from_json
+      
+      
+      Hfss.create_scattering
+      
+      
+      Hfss.create_setup
+      
+      
+      Hfss.create_single_point_sweep
+      
+      
+      Hfss.create_source_excitation
+      
+      
+      Hfss.create_spiral_lumped_port
+      
+      
+      Hfss.create_voltage_source_from_objects
+      
+      
+      Hfss.dataset_exists
+      
+      
+      Hfss.deactivate_variable_optimization
+      
+      
+      Hfss.deactivate_variable_sensitivity
+      
+      
+      Hfss.deactivate_variable_statistical
+      
+      
+      Hfss.deactivate_variable_tuning
+      
+      
+      Hfss.delete_design
+      
+      
+      Hfss.delete_project
+      
+      
+      Hfss.delete_separator
+      
+      
+      Hfss.delete_setup
+      
+      
+      Hfss.delete_unused_variables
+      
+      
+      Hfss.delete_variable
+      
+      
+      Hfss.design_variation
+      
+      
+      Hfss.duplicate_design
+      
+      
+      Hfss.edit_setup
+      
+      
+      Hfss.edit_source
+      
+      
+      Hfss.edit_source_from_file
+      
+      
+      Hfss.edit_sources
+      
+      
+      Hfss.edit_sources_from_file
+      
+      
+      Hfss.evaluate_expression
+      
+      
+      Hfss.export_3d_model
+      
+      
+      Hfss.export_convergence
+      
+      
+      Hfss.export_design_preview_to_jpg
+      
+      
+      Hfss.export_mesh_stats
+      
+      
+      Hfss.export_parametric_results
+      
+      
+      Hfss.export_profile
+      
+      
+      Hfss.export_results
+      
+      
+      Hfss.export_rl_matrix
+      
+      
+      Hfss.export_touchstone
+      
+      
+      Hfss.export_variables_to_csv
+      
+      
+      Hfss.flatten_3d_components
+      
+      
+      Hfss.generate_temp_project_directory
+      
+      
+      Hfss.generate_unique_setup_name
+      
+      
+      Hfss.get_all_conductors_names
+      
+      
+      Hfss.get_all_dielectrics_names
+      
+      
+      Hfss.get_all_insertion_loss_list
+      
+      
+      Hfss.get_all_return_loss_list
+      
+      
+      Hfss.get_all_sources
+      
+      
+      Hfss.get_antenna_ffd_solution_data
+      
+      
+      Hfss.get_components3d_vars
+      
+      
+      Hfss.get_dxf_layers
+      
+      
+      Hfss.get_evaluated_value
+      
+      
+      Hfss.get_fext_xtalk_list
+      
+      
+      Hfss.get_hdm_plotter
+      
+      
+      Hfss.get_module
+      
+      
+      Hfss.get_monitor_data
+      
+      
+      Hfss.get_next_xtalk_list
+      
+      
+      Hfss.get_nominal_variation
+      
+      
+      Hfss.get_object_material_properties
+      
+      
+      Hfss.get_oo_name
+      
+      
+      Hfss.get_oo_object
+      
+      
+      Hfss.get_oo_properties
+      
+      
+      Hfss.get_oo_property_value
+      
+      
+      Hfss.get_output_variable
+      
+      
+      Hfss.get_property_value
+      
+      
+      Hfss.get_registry_key_int
+      
+      
+      Hfss.get_registry_key_string
+      
+      
+      Hfss.get_setup
+      
+      
+      Hfss.get_setups
+      
+      
+      Hfss.get_sweeps
+      
+      
+      Hfss.get_touchstone_data
+      
+      
+      Hfss.get_traces_for_plot
+      
+      
+      Hfss.hidden_variable
+      
+      
+      Hfss.identify_touching_conductors
+      
+      
+      Hfss.import_dataset1d
+      
+      
+      Hfss.import_dataset3d
+      
+      
+      Hfss.import_dxf
+      
+      
+      Hfss.import_gds_3d
+      
+      
+      Hfss.insert_design
+      
+      
+      Hfss.insert_infinite_sphere
+      
+      
+      Hfss.insert_near_field_box
+      
+      
+      Hfss.insert_near_field_line
+      
+      
+      Hfss.insert_near_field_rectangle
+      
+      
+      Hfss.insert_near_field_sphere
+      
+      
+      Hfss.list_of_variations
+      
+      
+      Hfss.load_project
+      
+      
+      Hfss.lumped_port
+      
+      
+      Hfss.number_with_units
+      
+      
+      Hfss.parse_hdm_file
+      
+      
+      Hfss.plot
+      
+      
+      Hfss.read_design_data
+      
+      
+      Hfss.read_only_variable
+      
+      
+      Hfss.release_desktop
+      
+      
+      Hfss.remove_all_unused_definitions
+      
+      
+      Hfss.rename_design
+      
+      
+      Hfss.sar_setup
+      
+      
+      Hfss.save_project
+      
+      
+      Hfss.set_active_design
+      
+      
+      Hfss.set_active_dso_config_name
+      
+      
+      Hfss.set_auto_open
+      
+      
+      Hfss.set_differential_pair
+      
+      
+      Hfss.set_export_touchstone
+      
+      
+      Hfss.set_impedance_multiplier
+      
+      
+      Hfss.set_license_type
+      
+      
+      Hfss.set_material_threshold
+      
+      
+      Hfss.set_mesh_fusion_settings
+      
+      
+      Hfss.set_oo_property_value
+      
+      
+      Hfss.set_phase_center_per_port
+      
+      
+      Hfss.set_radiated_power_calc_method
+      
+      
+      Hfss.set_registry_from_file
+      
+      
+      Hfss.set_registry_key
+      
+      
+      Hfss.set_sbr_current_sources_options
+      
+      
+      Hfss.set_sbr_txrx_settings
+      
+      
+      Hfss.set_source_context
+      
+      
+      Hfss.set_temporary_directory
+      
+      
+      Hfss.solve_in_batch
+      
+      
+      Hfss.stop_simulations
+      
+      
+      Hfss.submit_job
+      
+      
+      Hfss.thicken_port_sheets
+      
+      
+      Hfss.validate_full_design
+      
+      
+      Hfss.validate_simple
+      
+      
+      Hfss.value_with_units
+      
+      
+      Hfss.wave_port
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Hfss.Position
+      Hfss.SimulationSetupTypes
+      Hfss.SolutionTypes
+      Hfss.active_setup
+      Hfss.aedt_version_id
+      Hfss.are_there_simulations_running
+      Hfss.available_variations
+      Hfss.boundaries
+      Hfss.boundaries_by_type
+      Hfss.components3d
+      Hfss.composite
+      Hfss.configurations
+      Hfss.default_solution_type
+      Hfss.design_datasets
+      Hfss.design_list
+      Hfss.design_name
+      Hfss.design_properties
+      Hfss.design_type
+      Hfss.desktop_class
+      Hfss.desktop_install_dir
+      Hfss.excitation_objects
+      Hfss.excitations
+      Hfss.excitations_by_type
+      Hfss.existing_analysis_setups
+      Hfss.existing_analysis_sweeps
+      Hfss.field_setup_names
+      Hfss.field_setups
+      Hfss.get_all_sparameter_list
+      Hfss.hybrid
+      Hfss.info
+      Hfss.layouteditor
+      Hfss.library_list
+      Hfss.lock_file
+      Hfss.logger
+      Hfss.materials
+      Hfss.mesh
+      Hfss.modeler
+      Hfss.native_components
+      Hfss.nominal_adaptive
+      Hfss.nominal_sweep
+      Hfss.o_component_manager
+      Hfss.o_maxwell_parameters
+      Hfss.o_model_manager
+      Hfss.o_symbol_manager
+      Hfss.oanalysis
+      Hfss.oboundary
+      Hfss.odefinition_manager
+      Hfss.odesign
+      Hfss.odesktop
+      Hfss.oeditor
+      Hfss.oexcitation
+      Hfss.ofieldsreporter
+      Hfss.oimport_export
+      Hfss.omaterial_manager
+      Hfss.omatrix
+      Hfss.omeshmodule
+      Hfss.omodelsetup
+      Hfss.omonitor
+      Hfss.ooptimetrics
+      Hfss.ooutput_variable
+      Hfss.opadstackmanager
+      Hfss.oproject
+      Hfss.optimizations
+      Hfss.oradfield
+      Hfss.oreportsetup
+      Hfss.osolution
+      Hfss.output_variables
+      Hfss.parametrics
+      Hfss.personallib
+      Hfss.ports
+      Hfss.post
+      Hfss.project_datasets
+      Hfss.project_file
+      Hfss.project_list
+      Hfss.project_name
+      Hfss.project_path
+      Hfss.project_properties
+      Hfss.project_time_stamp
+      Hfss.project_timestamp_changed
+      Hfss.pyaedt_dir
+      Hfss.results_directory
+      Hfss.settings
+      Hfss.setup_names
+      Hfss.setups
+      Hfss.solution_type
+      Hfss.src_dir
+      Hfss.syslib
+      Hfss.temp_directory
+      Hfss.toolkit_directory
+      Hfss.userlib
+      Hfss.valid_design
+      Hfss.variable_manager
+      Hfss.working_directory
+   
+   

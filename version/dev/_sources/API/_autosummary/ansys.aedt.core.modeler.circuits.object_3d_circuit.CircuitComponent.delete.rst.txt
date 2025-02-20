@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.object_3d_circuit
+
+.. automethod:: CircuitComponent.delete

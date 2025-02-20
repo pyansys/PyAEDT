@@ -1,0 +1,6 @@
+report\_category
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. autoproperty:: Standard.report_category

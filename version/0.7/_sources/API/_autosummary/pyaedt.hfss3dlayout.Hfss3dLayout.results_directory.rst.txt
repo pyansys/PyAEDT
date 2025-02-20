@@ -1,0 +1,6 @@
+results\_directory
+==================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.results_directory

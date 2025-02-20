@@ -1,0 +1,6 @@
+touching\_conductors
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.touching_conductors

@@ -1,0 +1,6 @@
+add\_surface\_material
+======================
+
+.. currentmodule:: pyaedt.modules.MaterialLib
+
+.. automethod:: Materials.add_surface_material

@@ -1,0 +1,6 @@
+create\_frequency\_sweep
+========================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.create_frequency_sweep

@@ -1,0 +1,6 @@
+Position
+========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.Position

@@ -1,0 +1,6 @@
+get\_working\_coordinate\_system
+================================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.get_working_coordinate_system

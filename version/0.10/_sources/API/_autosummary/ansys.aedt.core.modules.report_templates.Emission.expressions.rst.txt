@@ -1,0 +1,6 @@
+expressions
+===========
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Emission.expressions

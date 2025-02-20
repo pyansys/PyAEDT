@@ -1,0 +1,6 @@
+are\_there\_simulations\_running
+================================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.are_there_simulations_running

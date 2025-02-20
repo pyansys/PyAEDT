@@ -1,0 +1,6 @@
+library\_list
+=============
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.library_list

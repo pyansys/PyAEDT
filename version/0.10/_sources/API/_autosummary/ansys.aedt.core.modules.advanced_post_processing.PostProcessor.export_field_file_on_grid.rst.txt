@@ -1,0 +1,6 @@
+export\_field\_file\_on\_grid
+=============================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.export_field_file_on_grid

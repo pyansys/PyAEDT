@@ -1,0 +1,6 @@
+read\_design\_data
+==================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.read_design_data

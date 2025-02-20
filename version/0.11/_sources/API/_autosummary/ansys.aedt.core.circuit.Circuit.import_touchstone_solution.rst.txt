@@ -1,0 +1,6 @@
+import\_touchstone\_solution
+============================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.import_touchstone_solution

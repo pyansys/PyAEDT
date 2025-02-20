@@ -1,0 +1,6 @@
+faces\_on\_bounding\_box
+========================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoproperty:: Object3d.faces_on_bounding_box

@@ -1,0 +1,6 @@
+materials
+=========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.materials

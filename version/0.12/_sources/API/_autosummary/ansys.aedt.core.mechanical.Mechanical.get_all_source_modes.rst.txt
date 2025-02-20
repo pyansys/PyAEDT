@@ -1,0 +1,6 @@
+get\_all\_source\_modes
+=======================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.get_all_source_modes

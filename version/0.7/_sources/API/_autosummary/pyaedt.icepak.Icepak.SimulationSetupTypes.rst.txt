@@ -1,0 +1,6 @@
+SimulationSetupTypes
+====================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.SimulationSetupTypes

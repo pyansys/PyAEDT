@@ -1,0 +1,6 @@
+single\_point\_ripple\_inf\_zeros
+=================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.single_point_ripple_inf_zeros

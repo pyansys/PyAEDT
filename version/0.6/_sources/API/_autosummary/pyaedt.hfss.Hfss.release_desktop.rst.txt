@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.release_desktop

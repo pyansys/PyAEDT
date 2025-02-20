@@ -1,0 +1,6 @@
+info
+====
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.info

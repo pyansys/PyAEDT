@@ -1,0 +1,6 @@
+list\_of\_variations
+====================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.list_of_variations

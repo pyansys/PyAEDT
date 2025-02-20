@@ -1,0 +1,6 @@
+elevation\_angle
+================
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.elevation_angle

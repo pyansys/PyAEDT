@@ -1,0 +1,6 @@
+import\_gds
+===========
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.import_gds

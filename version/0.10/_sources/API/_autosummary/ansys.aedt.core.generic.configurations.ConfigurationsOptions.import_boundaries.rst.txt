@@ -1,0 +1,6 @@
+import\_boundaries
+==================
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_boundaries

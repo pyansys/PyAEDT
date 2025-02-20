@@ -1,0 +1,48 @@
+﻿VirtualCompliance
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. autoclass:: VirtualCompliance
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      VirtualCompliance.add_aedt_report
+      
+      
+      VirtualCompliance.add_specs_to_report
+      
+      
+      VirtualCompliance.create_compliance_report
+      
+      
+      VirtualCompliance.load_project
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      VirtualCompliance.add_project_info
+      VirtualCompliance.add_specs_info
+      VirtualCompliance.parameters
+      VirtualCompliance.project_file
+      VirtualCompliance.project_name
+      VirtualCompliance.reports
+      VirtualCompliance.specs_folder
+      VirtualCompliance.template_name
+      VirtualCompliance.use_portrait
+   
+   

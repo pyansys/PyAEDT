@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.change_validation_settings

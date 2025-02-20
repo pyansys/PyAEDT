@@ -1,0 +1,6 @@
+insert\_segment
+===============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.insert_segment

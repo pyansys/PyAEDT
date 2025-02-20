@@ -1,0 +1,6 @@
+get\_evaluated\_value
+=====================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_evaluated_value

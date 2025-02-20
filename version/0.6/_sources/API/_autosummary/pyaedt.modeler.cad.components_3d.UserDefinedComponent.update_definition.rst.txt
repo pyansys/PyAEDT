@@ -1,0 +1,6 @@
+update\_definition
+==================
+
+.. currentmodule:: pyaedt.modeler.cad.components_3d
+
+.. automethod:: UserDefinedComponent.update_definition

@@ -1,0 +1,6 @@
+theta\_start
+============
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: FarFieldSetup.theta_start

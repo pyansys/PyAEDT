@@ -1,0 +1,6 @@
+update\_property
+================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: Setup3DLayout.update_property

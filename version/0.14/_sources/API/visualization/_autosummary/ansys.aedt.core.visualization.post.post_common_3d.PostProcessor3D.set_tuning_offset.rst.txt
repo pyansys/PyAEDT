@@ -1,0 +1,6 @@
+set\_tuning\_offset
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_common_3d
+
+.. automethod:: PostProcessor3D.set_tuning_offset

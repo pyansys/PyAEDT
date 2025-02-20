@@ -1,0 +1,6 @@
+analyze\_from\_zero
+===================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.analyze_from_zero

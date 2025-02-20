@@ -1,0 +1,6 @@
+project\_datasets
+=================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.project_datasets

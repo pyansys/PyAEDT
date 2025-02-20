@@ -1,0 +1,6 @@
+edit\_x\_axis\_scaling
+======================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: FarField.edit_x_axis_scaling

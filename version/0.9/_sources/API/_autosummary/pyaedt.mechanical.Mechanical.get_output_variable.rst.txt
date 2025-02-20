@@ -1,0 +1,6 @@
+get\_output\_variable
+=====================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.get_output_variable

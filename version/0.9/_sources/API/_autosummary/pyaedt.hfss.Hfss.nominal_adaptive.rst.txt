@@ -1,0 +1,6 @@
+nominal\_adaptive
+=================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.nominal_adaptive

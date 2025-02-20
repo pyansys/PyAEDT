@@ -1,0 +1,6 @@
+update\_property
+================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. automethod:: NativeComponentPCB.update_property

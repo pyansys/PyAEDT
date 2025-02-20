@@ -1,0 +1,6 @@
+change\_symbol\_pin\_locations
+==============================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.object_3d_circuit
+
+.. automethod:: CircuitComponent.change_symbol_pin_locations

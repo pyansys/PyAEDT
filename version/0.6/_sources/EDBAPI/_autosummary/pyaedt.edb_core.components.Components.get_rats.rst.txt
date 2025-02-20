@@ -1,0 +1,6 @@
+get\_rats
+=========
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.get_rats

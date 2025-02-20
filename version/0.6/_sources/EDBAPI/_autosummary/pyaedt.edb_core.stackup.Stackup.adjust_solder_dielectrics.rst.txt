@@ -1,0 +1,6 @@
+adjust\_solder\_dielectrics
+===========================
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. automethod:: Stackup.adjust_solder_dielectrics

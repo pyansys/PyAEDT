@@ -1,0 +1,6 @@
+create\_object
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. automethod:: FacePrimitive.create_object

@@ -1,0 +1,6 @@
+reference\_cs\_to\_global
+=========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.reference_cs_to_global

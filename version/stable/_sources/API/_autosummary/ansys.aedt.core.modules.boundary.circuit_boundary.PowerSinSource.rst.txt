@@ -1,0 +1,47 @@
+﻿PowerSinSource
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoclass:: PowerSinSource
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      PowerSinSource.create
+      
+      
+      PowerSinSource.delete
+      
+      
+      PowerSinSource.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      PowerSinSource.ac_magnitude
+      PowerSinSource.ac_phase
+      PowerSinSource.damping_factor
+      PowerSinSource.dc_magnitude
+      PowerSinSource.delay
+      PowerSinSource.frequency
+      PowerSinSource.name
+      PowerSinSource.phase_delay
+      PowerSinSource.power_magnitude
+      PowerSinSource.power_offset
+      PowerSinSource.tone
+   
+   

@@ -1,0 +1,6 @@
+add\_hdm\_bundle\_from\_file
+============================
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. automethod:: HDMPlotter.add_hdm_bundle_from_file

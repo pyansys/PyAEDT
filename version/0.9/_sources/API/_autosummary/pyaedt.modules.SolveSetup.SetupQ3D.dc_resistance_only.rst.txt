@@ -1,0 +1,6 @@
+dc\_resistance\_only
+====================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoproperty:: SetupQ3D.dc_resistance_only

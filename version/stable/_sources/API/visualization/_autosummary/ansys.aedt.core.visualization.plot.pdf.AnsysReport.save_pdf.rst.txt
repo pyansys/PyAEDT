@@ -1,0 +1,6 @@
+﻿save\_pdf
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pdf
+
+.. automethod:: AnsysReport.save_pdf

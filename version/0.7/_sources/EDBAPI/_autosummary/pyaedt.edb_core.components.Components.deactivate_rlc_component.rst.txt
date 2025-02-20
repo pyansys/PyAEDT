@@ -1,0 +1,6 @@
+deactivate\_rlc\_component
+==========================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.deactivate_rlc_component

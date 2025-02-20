@@ -1,0 +1,6 @@
+rlc
+===
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. autoproperty:: EDBExtendedNetData.rlc

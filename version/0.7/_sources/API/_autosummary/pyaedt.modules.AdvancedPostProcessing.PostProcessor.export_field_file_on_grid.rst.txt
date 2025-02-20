@@ -1,0 +1,6 @@
+export\_field\_file\_on\_grid
+=============================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.export_field_file_on_grid

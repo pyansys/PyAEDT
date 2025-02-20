@@ -1,0 +1,6 @@
+layouteditor
+============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.layouteditor

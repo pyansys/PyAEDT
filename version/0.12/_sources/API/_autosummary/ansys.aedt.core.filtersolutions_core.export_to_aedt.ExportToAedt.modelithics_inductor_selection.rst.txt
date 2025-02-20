@@ -1,0 +1,6 @@
+modelithics\_inductor\_selection
+================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.modelithics_inductor_selection

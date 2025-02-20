@@ -1,0 +1,52 @@
+﻿Environment
+===========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.multiparts
+
+.. autoclass:: Environment
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Environment.insert
+      
+      
+      Environment.position_in_app
+      
+      
+      Environment.start
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Environment.cs_name
+      Environment.index
+      Environment.modeler_units
+      Environment.name
+      Environment.offset
+      Environment.offset_names
+      Environment.offset_x_name
+      Environment.offset_y_name
+      Environment.offset_z_name
+      Environment.pitch
+      Environment.pitch_name
+      Environment.roll
+      Environment.roll_name
+      Environment.use_global_cs
+      Environment.yaw
+      Environment.yaw_name
+   
+   

@@ -1,0 +1,6 @@
+wire\_thickness
+===============
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.wire_thickness

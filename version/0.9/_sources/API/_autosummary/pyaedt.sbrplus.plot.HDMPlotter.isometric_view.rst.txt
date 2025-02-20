@@ -1,0 +1,6 @@
+isometric\_view
+===============
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.isometric_view

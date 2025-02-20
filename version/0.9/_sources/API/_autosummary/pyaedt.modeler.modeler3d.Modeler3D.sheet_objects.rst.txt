@@ -1,0 +1,6 @@
+sheet\_objects
+==============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. autoproperty:: Modeler3D.sheet_objects

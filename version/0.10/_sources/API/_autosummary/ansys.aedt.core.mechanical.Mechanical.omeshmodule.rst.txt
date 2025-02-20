@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.omeshmodule

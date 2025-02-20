@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.design_type

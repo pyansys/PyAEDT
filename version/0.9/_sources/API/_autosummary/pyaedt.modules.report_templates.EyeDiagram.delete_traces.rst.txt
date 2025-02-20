@@ -1,0 +1,6 @@
+delete\_traces
+==============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: EyeDiagram.delete_traces

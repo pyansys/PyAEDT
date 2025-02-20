@@ -1,0 +1,6 @@
+get\_evaluated\_value
+=====================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.get_evaluated_value

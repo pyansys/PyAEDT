@@ -1,0 +1,6 @@
+edit\_hfss\_extents
+===================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.edit_hfss_extents

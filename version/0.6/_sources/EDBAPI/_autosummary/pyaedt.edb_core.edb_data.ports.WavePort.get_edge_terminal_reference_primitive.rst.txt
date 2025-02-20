@@ -1,0 +1,6 @@
+get\_edge\_terminal\_reference\_primitive
+=========================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. automethod:: WavePort.get_edge_terminal_reference_primitive

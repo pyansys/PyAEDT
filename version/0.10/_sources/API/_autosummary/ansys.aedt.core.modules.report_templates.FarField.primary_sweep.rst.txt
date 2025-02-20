@@ -1,0 +1,6 @@
+primary\_sweep
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: FarField.primary_sweep

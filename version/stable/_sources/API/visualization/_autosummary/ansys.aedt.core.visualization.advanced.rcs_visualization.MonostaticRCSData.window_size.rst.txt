@@ -1,0 +1,6 @@
+window\_size
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. autoproperty:: MonostaticRCSData.window_size

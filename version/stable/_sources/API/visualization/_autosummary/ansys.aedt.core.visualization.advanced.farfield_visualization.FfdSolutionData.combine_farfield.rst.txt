@@ -1,0 +1,6 @@
+combine\_farfield
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.farfield_visualization
+
+.. automethod:: FfdSolutionData.combine_farfield

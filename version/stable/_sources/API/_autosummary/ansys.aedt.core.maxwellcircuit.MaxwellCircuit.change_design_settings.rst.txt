@@ -1,0 +1,6 @@
+change\_design\_settings
+========================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.change_design_settings

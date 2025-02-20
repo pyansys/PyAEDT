@@ -1,0 +1,6 @@
+update\_field\_plot\_settings
+=============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. automethod:: FieldPlot.update_field_plot_settings

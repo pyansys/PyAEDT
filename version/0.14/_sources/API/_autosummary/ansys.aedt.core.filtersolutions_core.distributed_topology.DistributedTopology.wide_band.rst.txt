@@ -1,0 +1,6 @@
+wide\_band
+==========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.wide_band

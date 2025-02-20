@@ -1,0 +1,6 @@
+delete\_separator
+=================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.delete_separator

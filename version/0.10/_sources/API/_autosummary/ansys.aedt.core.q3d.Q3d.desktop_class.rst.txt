@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q3d.desktop_class

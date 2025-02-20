@@ -1,0 +1,6 @@
+export\_mesh\_obj
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.export_mesh_obj

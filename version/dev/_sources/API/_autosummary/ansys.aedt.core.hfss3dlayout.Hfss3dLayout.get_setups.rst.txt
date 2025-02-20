@@ -1,0 +1,6 @@
+get\_setups
+===========
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_setups

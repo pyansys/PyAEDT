@@ -1,0 +1,6 @@
+project\_name
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. autoproperty:: VirtualCompliance.project_name

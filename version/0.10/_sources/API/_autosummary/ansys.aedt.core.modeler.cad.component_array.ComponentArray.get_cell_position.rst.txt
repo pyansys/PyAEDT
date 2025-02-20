@@ -1,0 +1,6 @@
+get\_cell\_position
+===================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.component_array
+
+.. automethod:: ComponentArray.get_cell_position

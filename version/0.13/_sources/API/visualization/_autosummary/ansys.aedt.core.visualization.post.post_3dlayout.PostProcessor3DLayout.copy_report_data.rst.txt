@@ -1,0 +1,6 @@
+copy\_report\_data
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.copy_report_data

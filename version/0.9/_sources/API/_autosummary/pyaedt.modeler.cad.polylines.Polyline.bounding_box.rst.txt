@@ -1,0 +1,6 @@
+bounding\_box
+=============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.bounding_box

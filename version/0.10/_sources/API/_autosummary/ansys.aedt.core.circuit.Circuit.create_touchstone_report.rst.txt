@@ -1,0 +1,6 @@
+create\_touchstone\_report
+==========================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.create_touchstone_report

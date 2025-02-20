@@ -1,0 +1,6 @@
+read\_only\_variable
+====================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.read_only_variable

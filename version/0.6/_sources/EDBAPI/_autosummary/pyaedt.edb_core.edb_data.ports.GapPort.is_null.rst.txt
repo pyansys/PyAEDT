@@ -1,0 +1,6 @@
+is\_null
+========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. automethod:: GapPort.is_null

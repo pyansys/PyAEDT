@@ -1,0 +1,6 @@
+aedt\_version\_id
+=================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q3d.aedt_version_id

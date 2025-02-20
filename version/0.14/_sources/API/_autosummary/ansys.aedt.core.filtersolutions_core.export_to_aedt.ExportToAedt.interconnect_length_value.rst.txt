@@ -1,0 +1,6 @@
+interconnect\_length\_value
+===========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.interconnect_length_value

@@ -1,0 +1,6 @@
+mesh\_display\_attributes
+=========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: AdvancedMeshSettings.mesh_display_attributes

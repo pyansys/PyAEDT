@@ -1,0 +1,6 @@
+save\_project
+=============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.save_project

@@ -1,0 +1,6 @@
+edit\_header
+============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: Spectral.edit_header

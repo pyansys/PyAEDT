@@ -1,0 +1,6 @@
+assign\_surface\_monitor
+========================
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. automethod:: Monitor.assign_surface_monitor

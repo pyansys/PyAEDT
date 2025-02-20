@@ -1,0 +1,6 @@
+﻿add\_empty\_line
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pdf
+
+.. automethod:: AnsysReport.add_empty_line

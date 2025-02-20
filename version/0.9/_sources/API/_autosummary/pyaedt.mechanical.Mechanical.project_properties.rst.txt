@@ -1,0 +1,6 @@
+project\_properties
+===================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.project_properties

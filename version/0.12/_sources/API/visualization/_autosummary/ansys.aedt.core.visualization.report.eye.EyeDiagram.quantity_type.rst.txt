@@ -1,0 +1,6 @@
+quantity\_type
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. autoproperty:: EyeDiagram.quantity_type

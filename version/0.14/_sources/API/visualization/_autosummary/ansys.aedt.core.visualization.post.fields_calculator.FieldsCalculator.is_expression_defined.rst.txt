@@ -1,0 +1,6 @@
+is\_expression\_defined
+=======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.fields_calculator
+
+.. automethod:: FieldsCalculator.is_expression_defined

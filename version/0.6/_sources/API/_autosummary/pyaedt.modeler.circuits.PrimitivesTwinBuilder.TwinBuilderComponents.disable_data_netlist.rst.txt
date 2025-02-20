@@ -1,0 +1,6 @@
+disable\_data\_netlist
+======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.disable_data_netlist

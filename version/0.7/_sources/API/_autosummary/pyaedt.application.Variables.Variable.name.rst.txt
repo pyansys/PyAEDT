@@ -1,0 +1,6 @@
+name
+====
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.name

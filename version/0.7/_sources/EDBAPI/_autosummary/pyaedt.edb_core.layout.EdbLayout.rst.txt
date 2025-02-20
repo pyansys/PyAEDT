@@ -1,0 +1,89 @@
+﻿EdbLayout
+=========
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. autoclass:: EdbLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EdbLayout.add_void
+      
+      
+      EdbLayout.create_circle
+      
+      
+      EdbLayout.create_polygon
+      
+      
+      EdbLayout.create_rectangle
+      
+      
+      EdbLayout.create_trace
+      
+      
+      EdbLayout.defeature_polygon
+      
+      
+      EdbLayout.delete_primitives
+      
+      
+      EdbLayout.fix_circle_void_for_clipping
+      
+      
+      EdbLayout.get_layout_statistics
+      
+      
+      EdbLayout.get_polygon_bounding_box
+      
+      
+      EdbLayout.get_polygon_points
+      
+      
+      EdbLayout.get_polygons_by_layer
+      
+      
+      EdbLayout.get_primitives
+      
+      
+      EdbLayout.parametrize_polygon
+      
+      
+      EdbLayout.parametrize_trace_width
+      
+      
+      EdbLayout.shape_to_polygon_data
+      
+      
+      EdbLayout.unite_polygons_on_layer
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EdbLayout.bondwires
+      EdbLayout.circles
+      EdbLayout.db
+      EdbLayout.layers
+      EdbLayout.paths
+      EdbLayout.polygons
+      EdbLayout.polygons_by_layer
+      EdbLayout.primitives
+      EdbLayout.primitives_by_layer
+      EdbLayout.primitives_by_net
+      EdbLayout.rectangles
+   
+   

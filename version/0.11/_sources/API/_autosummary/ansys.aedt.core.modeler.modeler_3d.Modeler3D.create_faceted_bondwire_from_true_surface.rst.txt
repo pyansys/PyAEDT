@@ -1,0 +1,6 @@
+create\_faceted\_bondwire\_from\_true\_surface
+==============================================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.create_faceted_bondwire_from_true_surface

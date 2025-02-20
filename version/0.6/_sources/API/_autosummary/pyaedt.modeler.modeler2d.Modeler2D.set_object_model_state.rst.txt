@@ -1,0 +1,6 @@
+set\_object\_model\_state
+=========================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.set_object_model_state

@@ -1,0 +1,6 @@
+oboundary
+=========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.oboundary

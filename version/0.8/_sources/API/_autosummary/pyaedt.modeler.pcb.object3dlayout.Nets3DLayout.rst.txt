@@ -1,0 +1,22 @@
+﻿Nets3DLayout
+============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoclass:: Nets3DLayout
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Nets3DLayout.components
+   
+   

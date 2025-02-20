@@ -1,0 +1,6 @@
+circles\_voids
+==============
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. autoproperty:: Modeler3DLayout.circles_voids

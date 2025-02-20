@@ -1,0 +1,6 @@
+generate\_mesh
+==============
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.generate_mesh

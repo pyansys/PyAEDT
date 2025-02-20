@@ -1,0 +1,6 @@
+log\_multiplier
+===============
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. autoproperty:: ModelPlotter.log_multiplier

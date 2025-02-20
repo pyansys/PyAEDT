@@ -1,0 +1,6 @@
+enable\_desktop\_log
+====================
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. automethod:: AedtLogger.enable_desktop_log

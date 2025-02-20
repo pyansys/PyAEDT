@@ -1,0 +1,6 @@
+mirror
+======
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: Excitations.mirror

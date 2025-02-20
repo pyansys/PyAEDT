@@ -1,0 +1,6 @@
+add\_info\_message
+==================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.add_info_message

@@ -1,0 +1,6 @@
+assign\_fixed\_support
+======================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.assign_fixed_support

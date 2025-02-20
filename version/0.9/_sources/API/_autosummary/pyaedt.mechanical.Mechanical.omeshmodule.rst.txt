@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.omeshmodule

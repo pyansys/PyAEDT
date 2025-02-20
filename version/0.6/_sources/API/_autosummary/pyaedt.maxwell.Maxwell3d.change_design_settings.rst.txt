@@ -1,0 +1,6 @@
+change\_design\_settings
+========================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.change_design_settings

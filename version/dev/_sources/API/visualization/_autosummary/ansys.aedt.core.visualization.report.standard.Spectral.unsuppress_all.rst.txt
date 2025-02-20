@@ -1,0 +1,6 @@
+unsuppress\_all
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. automethod:: Spectral.unsuppress_all

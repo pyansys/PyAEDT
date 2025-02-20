@@ -1,0 +1,6 @@
+is\_on\_bounding
+================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. automethod:: FacePrimitive.is_on_bounding

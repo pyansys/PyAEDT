@@ -1,0 +1,70 @@
+
+:orphan:
+
+.. _sphx_glr_examples_03-Maxwell_sg_execution_times:
+
+
+Computation times
+=================
+**32:30.756** total execution time for 12 files **from examples\03-Maxwell**:
+
+.. container::
+
+  .. raw:: html
+
+    <style scoped>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+    } );
+    </script>
+
+  .. list-table::
+   :header-rows: 1
+   :class: table table-striped sg-datatable
+
+   * - Example
+     - Time
+     - Mem (MB)
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell3D_Team3_bath_plate.py` (``Maxwell3D_Team3_bath_plate.py``)
+     - 12:31.912
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell3DTeam7.py` (``Maxwell3DTeam7.py``)
+     - 05:55.744
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell2D_PMSynchronousMotor.py` (``Maxwell2D_PMSynchronousMotor.py``)
+     - 02:36.584
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell2D_DCConduction.py` (``Maxwell2D_DCConduction.py``)
+     - 01:48.348
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell2D_Transformer_LL.py` (``Maxwell2D_Transformer_LL.py``)
+     - 01:29.565
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell2D_Transient.py` (``Maxwell2D_Transient.py``)
+     - 01:21.365
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell_Magnet.py` (``Maxwell_Magnet.py``)
+     - 01:16.125
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell2D_Electrostatic.py` (``Maxwell2D_Electrostatic.py``)
+     - 01:12.346
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell3D_Choke.py` (``Maxwell3D_Choke.py``)
+     - 01:11.678
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell3D_Segmentation.py` (``Maxwell3D_Segmentation.py``)
+     - 01:11.044
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell_Control_Program.py` (``Maxwell_Control_Program.py``)
+     - 01:08.430
+     - 0.0
+   * - :ref:`sphx_glr_examples_03-Maxwell_Maxwell_Transformer_Coreloss.py` (``Maxwell_Transformer_Coreloss.py``)
+     - 00:47.615
+     - 0.0

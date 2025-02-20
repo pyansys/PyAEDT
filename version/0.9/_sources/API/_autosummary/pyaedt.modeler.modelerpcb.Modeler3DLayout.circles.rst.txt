@@ -1,0 +1,6 @@
+circles
+=======
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. autoproperty:: Modeler3DLayout.circles

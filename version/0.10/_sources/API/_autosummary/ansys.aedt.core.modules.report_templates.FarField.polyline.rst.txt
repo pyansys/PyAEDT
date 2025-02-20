@@ -1,0 +1,6 @@
+polyline
+========
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: FarField.polyline

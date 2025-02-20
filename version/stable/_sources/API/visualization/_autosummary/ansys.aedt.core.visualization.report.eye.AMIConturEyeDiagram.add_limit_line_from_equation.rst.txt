@@ -1,0 +1,6 @@
+add\_limit\_line\_from\_equation
+================================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: AMIConturEyeDiagram.add_limit_line_from_equation

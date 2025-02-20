@@ -1,0 +1,6 @@
+is\_mesh\_background
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layer.is_mesh_background

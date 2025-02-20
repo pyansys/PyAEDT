@@ -1,0 +1,6 @@
+ref\_cs
+=======
+
+.. currentmodule:: pyaedt.modeler.cad.Modeler
+
+.. autoproperty:: CoordinateSystem.ref_cs

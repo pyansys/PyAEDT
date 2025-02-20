@@ -1,0 +1,6 @@
+remove
+======
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. automethod:: Padstack.remove

@@ -1,0 +1,6 @@
+touching\_objects
+=================
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoproperty:: FacePrimitive.touching_objects

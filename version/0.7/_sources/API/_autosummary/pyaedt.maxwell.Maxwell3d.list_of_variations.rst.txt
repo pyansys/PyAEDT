@@ -1,0 +1,6 @@
+list\_of\_variations
+====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.list_of_variations

@@ -1,0 +1,6 @@
+xy\_plane
+=========
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.xy_plane

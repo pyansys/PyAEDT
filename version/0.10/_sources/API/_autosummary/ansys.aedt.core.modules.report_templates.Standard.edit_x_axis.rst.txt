@@ -1,0 +1,6 @@
+edit\_x\_axis
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: Standard.edit_x_axis

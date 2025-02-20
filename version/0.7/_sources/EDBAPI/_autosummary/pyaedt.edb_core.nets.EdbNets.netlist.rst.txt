@@ -1,0 +1,6 @@
+netlist
+=======
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. autoproperty:: EdbNets.netlist

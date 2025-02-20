@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.change_validation_settings

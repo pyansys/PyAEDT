@@ -1,0 +1,6 @@
+change\_license\_type
+=====================
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.change_license_type

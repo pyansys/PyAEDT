@@ -1,0 +1,6 @@
+elevation\_angle
+================
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.elevation_angle

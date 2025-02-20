@@ -1,0 +1,6 @@
+add\_warning\_message
+=====================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.add_warning_message

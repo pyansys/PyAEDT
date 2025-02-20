@@ -1,0 +1,6 @@
+find\_new\_objects
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.find_new_objects

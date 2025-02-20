@@ -1,0 +1,6 @@
+get\_numeric
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.get_numeric

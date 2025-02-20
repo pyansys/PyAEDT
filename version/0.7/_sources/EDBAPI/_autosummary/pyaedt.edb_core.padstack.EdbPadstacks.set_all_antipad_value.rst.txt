@@ -1,0 +1,6 @@
+set\_all\_antipad\_value
+========================
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.set_all_antipad_value

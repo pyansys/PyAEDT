@@ -1,0 +1,6 @@
+hidden\_variable
+================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.hidden_variable

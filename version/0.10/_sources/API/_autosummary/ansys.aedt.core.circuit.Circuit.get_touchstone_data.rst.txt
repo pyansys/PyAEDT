@@ -1,0 +1,6 @@
+get\_touchstone\_data
+=====================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.get_touchstone_data

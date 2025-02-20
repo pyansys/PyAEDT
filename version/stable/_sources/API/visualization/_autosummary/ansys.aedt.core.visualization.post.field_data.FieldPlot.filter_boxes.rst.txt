@@ -1,0 +1,6 @@
+filter\_boxes
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. autoproperty:: FieldPlot.filter_boxes

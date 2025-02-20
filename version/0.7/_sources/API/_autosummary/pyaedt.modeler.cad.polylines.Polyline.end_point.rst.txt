@@ -1,0 +1,6 @@
+end\_point
+==========
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.end_point

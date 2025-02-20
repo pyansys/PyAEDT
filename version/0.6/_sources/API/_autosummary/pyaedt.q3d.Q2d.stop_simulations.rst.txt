@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.stop_simulations

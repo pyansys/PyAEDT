@@ -1,0 +1,6 @@
+enable\_rigid\_flex
+===================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.enable_rigid_flex

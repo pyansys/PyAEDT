@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>get_bodynames_from_position &#8212; PyAEDT</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys_sphinx_theme.css?v=77703c5e" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+  
+    <link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../_static/documentation_options.js?v=f3b52448"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js/table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'API/_autosummary/ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.13';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="get_boundaries_name" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_boundaries_name.html" />
+    <link rel="prev" title="generate_object_history" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.generate_object_history.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.13.3" />
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/API/_autosummary/ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyAEDT - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Application.html">Application and solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MaterialManagement.html">Material and stackup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3D.html">3D modeler</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Primitives2D.html">2D modeler</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.html">Modeler2D</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_objects.html">add_new_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_points.html">add_new_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_solids.html">add_new_solids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.add_new_user_defined_component.html">add_new_user_defined_component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.automatic_thicken_sheets.html">automatic_thicken_sheets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.break_spaceclaim_connection.html">break_spaceclaim_connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.calculate_radius_2D.html">calculate_radius_2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.chassis_subtraction.html">chassis_subtraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.check_plane.html">check_plane</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.clean_objects_name.html">clean_objects_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_objects.html">cleanup_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_points.html">cleanup_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cleanup_solids.html">cleanup_solids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.clone.html">clone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.connect.html">connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.convert_segments_to_line.html">convert_segments_to_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.convert_to_selections.html">convert_to_selections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.copy.html">copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cover_faces.html">cover_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.cover_lines.html">cover_lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_air_region.html">create_air_region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_airbox.html">create_airbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_circle.html">create_circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_coordinate_system.html">create_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_ellipse.html">create_ellipse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_face_coordinate_system.html">create_face_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_face_list.html">create_face_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_faceted_bondwire_from_true_surface.html">create_faceted_bondwire_from_true_surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_group.html">create_group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_coordinate_system.html">create_object_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_from_edge.html">create_object_from_edge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_from_face.html">create_object_from_face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_object_list.html">create_object_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_outer_facelist.html">create_outer_facelist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_plane.html">create_plane</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_point.html">create_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_polyline.html">create_polyline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_rectangle.html">create_rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_region.html">create_region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_regular_polygon.html">create_regular_polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_sheet_to_ground.html">create_sheet_to_ground</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_spiral_on_face.html">create_spiral_on_face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_subregion.html">create_subregion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.create_udp.html">create_udp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.delete.html">delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.delete_objects_containing.html">delete_objects_containing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.detach_faces.html">detach_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.does_object_exists.html">does_object_exists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_along_line.html">duplicate_along_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_and_mirror.html">duplicate_and_mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_around_axis.html">duplicate_around_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.duplicate_coordinate_system_to_global.html">duplicate_coordinate_system_to_global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.edit_region_dimensions.html">edit_region_dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.explicitly_subtract.html">explicitly_subtract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.export_3d_model.html">export_3d_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_closest_edges.html">find_closest_edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_new_objects.html">find_new_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_point_around.html">find_point_around</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.find_port_faces.html">find_port_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.fit_all.html">fit_all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.flatten_assembly.html">flatten_assembly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.generate_object_history.html">generate_object_history</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">get_bodynames_from_position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_boundaries_name.html">get_boundaries_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bounding_dimension.html">get_bounding_dimension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_closest_edgeid_to_position.html">get_closest_edgeid_to_position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_length.html">get_edge_length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_midpoint.html">get_edge_midpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edge_vertices.html">get_edge_vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edgeid_from_position.html">get_edgeid_from_position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edgeids_from_vertexid.html">get_edgeids_from_vertexid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_for_circuit_port.html">get_edges_for_circuit_port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_for_circuit_port_from_sheet.html">get_edges_for_circuit_port_from_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_edges_on_bounding_box.html">get_edges_on_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_entitylist_id.html">get_entitylist_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_equivalent_parallel_edges.html">get_equivalent_parallel_edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_existing_polyline.html">get_existing_polyline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_area.html">get_face_area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_by_id.html">get_face_by_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_center.html">get_face_center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_edges.html">get_face_edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_face_vertices.html">get_face_vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_faceid_from_position.html">get_faceid_from_position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_faces_from_materials.html">get_faces_from_materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_group_bounding_box.html">get_group_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_line_ids.html">get_line_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_matched_object_name.html">get_matched_object_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_mid_points_on_dir.html">get_mid_points_on_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_model_bounding_box.html">get_model_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_obj_id.html">get_obj_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_edges.html">get_object_edges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_faces.html">get_object_faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_from_name.html">get_object_from_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_name_from_edge_id.html">get_object_name_from_edge_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_object_vertices.html">get_object_vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_by_material.html">get_objects_by_material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_in_group.html">get_objects_in_group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_objects_w_string.html">get_objects_w_string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_solving_volume.html">get_solving_volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_vertex_position.html">get_vertex_position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_vertices_of_line.html">get_vertices_of_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_working_coordinate_system.html">get_working_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.global_to_cs.html">global_to_cs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.heal_objects.html">heal_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_3d_cad.html">import_3d_cad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_discovery_model.html">import_discovery_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_primitives_from_file.html">import_primitives_from_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.import_spaceclaim_document.html">import_spaceclaim_document</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint.html">imprint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint_normal_projection.html">imprint_normal_projection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.imprint_vector_projection.html">imprint_vector_projection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.intersect.html">intersect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.invert_cs.html">invert_cs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.load_scdm_in_hfss.html">load_scdm_in_hfss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.mirror.html">mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.modeler_variable.html">modeler_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move.html">move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move_edge.html">move_edge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.move_face.html">move_face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.objects_in_bounding_box.html">objects_in_bounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.paste.html">paste</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.polyline_segment.html">polyline_segment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.purge_history.html">purge_history</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.radial_split_2D.html">radial_split_2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.reassign_subregion.html">reassign_subregion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.reference_cs_to_global.html">reference_cs_to_global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.refresh.html">refresh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.refresh_all_ids.html">refresh_all_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.rotate.html">rotate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.scale.html">scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.section.html">section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.select_allfaces_fromobjects.html">select_allfaces_fromobjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.separate_bodies.html">separate_bodies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_object_model_state.html">set_object_model_state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_objects_deformation.html">set_objects_deformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_objects_temperature.html">set_objects_temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.set_working_coordinate_system.html">set_working_coordinate_system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.setunassigned_mats.html">setunassigned_mats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.simplify_objects.html">simplify_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.split.html">split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.subtract.html">subtract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_normal.html">sweep_along_normal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_path.html">sweep_along_path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_along_vector.html">sweep_along_vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sweep_around_axis.html">sweep_around_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.thicken_sheet.html">thicken_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.ungroup.html">ungroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unite.html">unite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_geometry_property.html">update_geometry_property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_object.html">update_object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.update_udp.html">update_udp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.value_in_object_units.html">value_in_object_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.vertex_data_of_lines.html">vertex_data_of_lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.wrap_sheet.html">wrap_sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.coordinate_systems.html">coordinate_systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.defaultmaterial.html">defaultmaterial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.design_type.html">design_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.dimension.html">dimension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.geometry_mode.html">geometry_mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.layout_component_names.html">layout_component_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.line_names.html">line_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.line_objects.html">line_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.logger.html">logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.materials.html">materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_consistency_report.html">model_consistency_report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_objects.html">model_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.model_units.html">model_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.non_model_objects.html">non_model_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.object_list.html">object_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.object_names.html">object_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.objects_by_name.html">objects_by_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.obounding_box.html">obounding_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.oeditor.html">oeditor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.plane2d.html">plane2d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.planes.html">planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.point_names.html">point_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.point_objects.html">point_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.projdir.html">projdir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.selections.html">selections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sheet_names.html">sheet_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.sheet_objects.html">sheet_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_bodies.html">solid_bodies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_names.html">solid_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.solid_objects.html">solid_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unclassified_names.html">unclassified_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.unclassified_objects.html">unclassified_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.user_defined_component_names.html">user_defined_component_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.user_lists.html">user_lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.version.html">version</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitive_Objects.html">Primitives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3DLayout.html">Modeler in  HFSS 3D Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesCircuit.html">Modeler and components Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boundaries.html">Boundary objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mesh.html">Mesh operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup.html">Setup</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DesktopMessenger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optimetrics.html">Optimetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Configuration.html">Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SetupTemplates.html">Setup templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CableModeling.html">Cable modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FilterSolutions.html">Filter design</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../Primitives2D.html" class="nav-link">2D modeler</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="ansys.aedt.core.modeler.modeler_2d.Modeler2D.html" class="nav-link">Modeler2D</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">get_bodynames_from_position</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="get-bodynames-from-position">
+<h1>get_bodynames_from_position<a class="headerlink" href="#get-bodynames-from-position" title="Link to this heading">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position">
+<span class="sig-prename descclassname"><span class="pre">Modeler2D.</span></span><span class="sig-name descname"><span class="pre">get_bodynames_from_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_non_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve the names of the objects that are in contact with a given point.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>position</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#list" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></span></dt><dd><p>List of <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code> coordinates for the point.</p>
+</dd>
+<dt><strong>units</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Units, such as <code class="docutils literal notranslate"><span class="pre">&quot;m&quot;</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case the
+model units are used.</p>
+</dd>
+<dt><strong>include_non_model</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Either if include or not non model objects.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#list" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></dt><dd><p>List of object names.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">oEditor</span><span class="o">.</span><span class="n">GetBodyNamesByPosition</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position"><code class="docutils literal notranslate"><span class="pre">get_bodynames_from_position()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/API/_autosummary/ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/API/_autosummary/ansys.aedt.core.modeler.modeler_2d.Modeler2D.get_bodynames_from_position.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+<link rel="stylesheet" href="../../_static/css/fuse-search.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"ignoreLocation": true, "keys": ["title", "text"], "limit": 10, "limite": 10, "minMatchCharLength": 2, "threshold": 0.5}');
+const SEARCH_FILE = "../../_static/search.json";
+</script>
+
+
+<script src="../../_static/js/search.js"></script>
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.2.6. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

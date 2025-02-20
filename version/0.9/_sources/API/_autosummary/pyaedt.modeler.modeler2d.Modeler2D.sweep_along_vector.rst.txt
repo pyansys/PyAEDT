@@ -1,0 +1,6 @@
+sweep\_along\_vector
+====================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.sweep_along_vector

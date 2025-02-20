@@ -1,0 +1,6 @@
+point\_3d
+=========
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.point_3d

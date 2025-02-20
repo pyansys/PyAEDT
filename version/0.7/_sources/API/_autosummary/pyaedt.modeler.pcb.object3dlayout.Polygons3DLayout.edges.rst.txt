@@ -1,0 +1,6 @@
+edges
+=====
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Polygons3DLayout.edges

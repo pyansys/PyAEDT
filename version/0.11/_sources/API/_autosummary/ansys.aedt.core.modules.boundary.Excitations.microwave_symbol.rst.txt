@@ -1,0 +1,6 @@
+microwave\_symbol
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: Excitations.microwave_symbol

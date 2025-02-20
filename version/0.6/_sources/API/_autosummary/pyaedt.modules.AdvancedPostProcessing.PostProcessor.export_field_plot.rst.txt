@@ -1,0 +1,6 @@
+export\_field\_plot
+===================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.export_field_plot

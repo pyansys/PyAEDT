@@ -1,0 +1,6 @@
+faces\_by\_area
+===============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.faces_by_area

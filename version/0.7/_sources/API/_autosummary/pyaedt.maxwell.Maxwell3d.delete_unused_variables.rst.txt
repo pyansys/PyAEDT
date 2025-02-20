@@ -1,0 +1,6 @@
+delete\_unused\_variables
+=========================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.delete_unused_variables

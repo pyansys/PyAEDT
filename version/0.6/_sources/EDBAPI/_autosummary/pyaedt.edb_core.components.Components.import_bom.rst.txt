@@ -1,0 +1,6 @@
+import\_bom
+===========
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.import_bom

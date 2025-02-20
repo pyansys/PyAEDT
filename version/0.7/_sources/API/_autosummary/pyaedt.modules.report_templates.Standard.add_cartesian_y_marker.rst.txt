@@ -1,0 +1,6 @@
+add\_cartesian\_y\_marker
+=========================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Standard.add_cartesian_y_marker

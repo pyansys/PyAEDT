@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.valid_design

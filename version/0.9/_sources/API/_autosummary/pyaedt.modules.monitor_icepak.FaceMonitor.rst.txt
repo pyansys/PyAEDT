@@ -1,0 +1,40 @@
+﻿FaceMonitor
+===========
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. autoclass:: FaceMonitor
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FaceMonitor.delete
+      
+      
+      FaceMonitor.value
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      FaceMonitor.geometry_assignment
+      FaceMonitor.id
+      FaceMonitor.location
+      FaceMonitor.name
+      FaceMonitor.properties
+      FaceMonitor.quantities
+      FaceMonitor.type
+   
+   

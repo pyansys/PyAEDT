@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.modeler.cad.components_3d
+
+.. automethod:: UserDefinedComponent.delete

@@ -1,0 +1,53 @@
+﻿GlobalMeshRegion
+================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. autoclass:: GlobalMeshRegion
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      GlobalMeshRegion.create
+      
+      
+      GlobalMeshRegion.delete
+      
+      
+      GlobalMeshRegion.jsonalize_tree
+      
+      
+      GlobalMeshRegion.suppress_all
+      
+      
+      GlobalMeshRegion.unsuppress_all
+      
+      
+      GlobalMeshRegion.update
+      
+      
+      GlobalMeshRegion.update_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      GlobalMeshRegion.Objects
+      GlobalMeshRegion.children
+      GlobalMeshRegion.command
+      GlobalMeshRegion.name
+      GlobalMeshRegion.properties
+   
+   

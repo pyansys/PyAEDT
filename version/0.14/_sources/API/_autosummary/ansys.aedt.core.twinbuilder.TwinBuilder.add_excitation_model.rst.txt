@@ -1,0 +1,6 @@
+add\_excitation\_model
+======================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.add_excitation_model

@@ -1,0 +1,6 @@
+oeditor
+=======
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. autoproperty:: PostProcessorCircuit.oeditor

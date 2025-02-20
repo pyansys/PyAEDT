@@ -1,0 +1,6 @@
+mag\_offset
+===========
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: FfdSolutionData.mag_offset

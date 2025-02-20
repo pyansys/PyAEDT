@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.omeshmodule

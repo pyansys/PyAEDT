@@ -1,0 +1,6 @@
+aedt\_version\_id
+=================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.aedt_version_id

@@ -1,0 +1,6 @@
+project\_list
+=============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell3d.project_list

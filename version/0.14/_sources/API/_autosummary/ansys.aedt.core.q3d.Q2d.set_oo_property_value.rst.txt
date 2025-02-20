@@ -1,0 +1,6 @@
+set\_oo\_property\_value
+========================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.set_oo_property_value

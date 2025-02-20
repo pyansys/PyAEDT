@@ -1,0 +1,109 @@
+﻿EdbHfss
+=======
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. autoclass:: EdbHfss
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EdbHfss.configure_hfss_analysis_setup
+      
+      
+      EdbHfss.configure_hfss_extents
+      
+      
+      EdbHfss.create_bundle_wave_port
+      
+      
+      EdbHfss.create_circuit_port_on_net
+      
+      
+      EdbHfss.create_circuit_port_on_pin
+      
+      
+      EdbHfss.create_coax_port_on_component
+      
+      
+      EdbHfss.create_current_source_on_net
+      
+      
+      EdbHfss.create_current_source_on_pin
+      
+      
+      EdbHfss.create_differential_wave_port
+      
+      
+      EdbHfss.create_edge_port_horizontal
+      
+      
+      EdbHfss.create_edge_port_on_polygon
+      
+      
+      EdbHfss.create_edge_port_vertical
+      
+      
+      EdbHfss.create_hfss_ports_on_padstack
+      
+      
+      EdbHfss.create_lumped_port_on_net
+      
+      
+      EdbHfss.create_resistor_on_pin
+      
+      
+      EdbHfss.create_rlc_boundary_on_pins
+      
+      
+      EdbHfss.create_vertical_circuit_port_on_clipped_traces
+      
+      
+      EdbHfss.create_voltage_source_on_net
+      
+      
+      EdbHfss.create_voltage_source_on_pin
+      
+      
+      EdbHfss.create_wave_port
+      
+      
+      EdbHfss.get_layout_bounding_box
+      
+      
+      EdbHfss.get_ports_number
+      
+      
+      EdbHfss.get_trace_width_for_traces_with_ports
+      
+      
+      EdbHfss.layout_defeaturing
+      
+      
+      EdbHfss.set_coax_port_attributes
+      
+      
+      EdbHfss.trim_component_reference_size
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EdbHfss.excitations
+      EdbHfss.hfss_extent_info
+      EdbHfss.probes
+      EdbHfss.sources
+   
+   

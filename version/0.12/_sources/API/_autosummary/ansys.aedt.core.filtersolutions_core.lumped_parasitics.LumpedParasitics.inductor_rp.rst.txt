@@ -1,0 +1,6 @@
+inductor\_rp
+============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_parasitics
+
+.. autoproperty:: LumpedParasitics.inductor_rp

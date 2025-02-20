@@ -1,0 +1,6 @@
+version\_keys
+=============
+
+.. currentmodule:: pyaedt.siwave
+
+.. autoproperty:: Siwave.version_keys

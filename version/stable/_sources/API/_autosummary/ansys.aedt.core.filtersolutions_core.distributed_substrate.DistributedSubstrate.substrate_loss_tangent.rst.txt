@@ -1,0 +1,6 @@
+substrate\_loss\_tangent
+========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_substrate
+
+.. autoproperty:: DistributedSubstrate.substrate_loss_tangent

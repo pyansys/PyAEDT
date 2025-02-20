@@ -1,0 +1,6 @@
+simulate\_after\_export\_enabled
+================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.simulate_after_export_enabled

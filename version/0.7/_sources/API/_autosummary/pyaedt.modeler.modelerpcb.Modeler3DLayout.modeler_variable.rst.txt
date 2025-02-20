@@ -1,0 +1,6 @@
+modeler\_variable
+=================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.modeler_variable

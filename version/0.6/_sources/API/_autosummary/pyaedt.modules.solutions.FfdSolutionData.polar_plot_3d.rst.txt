@@ -1,0 +1,6 @@
+polar\_plot\_3d
+===============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FfdSolutionData.polar_plot_3d

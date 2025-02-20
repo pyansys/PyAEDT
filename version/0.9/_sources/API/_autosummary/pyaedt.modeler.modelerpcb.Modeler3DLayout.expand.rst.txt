@@ -1,0 +1,6 @@
+expand
+======
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.expand

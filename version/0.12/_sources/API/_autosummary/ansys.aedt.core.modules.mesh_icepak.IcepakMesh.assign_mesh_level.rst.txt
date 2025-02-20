@@ -1,0 +1,6 @@
+assign\_mesh\_level
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. automethod:: IcepakMesh.assign_mesh_level

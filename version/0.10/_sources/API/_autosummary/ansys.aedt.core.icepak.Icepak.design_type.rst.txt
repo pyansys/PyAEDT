@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.design_type

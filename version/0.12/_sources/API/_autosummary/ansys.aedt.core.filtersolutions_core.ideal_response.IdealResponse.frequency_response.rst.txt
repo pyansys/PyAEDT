@@ -1,0 +1,6 @@
+frequency\_response
+===================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.ideal_response
+
+.. automethod:: IdealResponse.frequency_response

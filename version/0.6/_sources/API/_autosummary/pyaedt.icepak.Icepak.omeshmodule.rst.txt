@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.omeshmodule

@@ -1,0 +1,6 @@
+export\_farfield
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.farfield_exporter
+
+.. automethod:: FfdSolutionDataExporter.export_farfield

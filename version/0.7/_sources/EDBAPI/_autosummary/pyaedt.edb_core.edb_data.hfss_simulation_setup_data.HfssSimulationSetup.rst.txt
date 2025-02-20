@@ -1,0 +1,68 @@
+﻿HfssSimulationSetup
+===================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: HfssSimulationSetup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      HfssSimulationSetup.add_frequency_sweep
+      
+      
+      HfssSimulationSetup.add_length_mesh_operation
+      
+      
+      HfssSimulationSetup.add_skin_depth_mesh_operation
+      
+      
+      HfssSimulationSetup.create
+      
+      
+      HfssSimulationSetup.delete_frequency_sweep
+      
+      
+      HfssSimulationSetup.set_solution_broadband
+      
+      
+      HfssSimulationSetup.set_solution_multi_frequencies
+      
+      
+      HfssSimulationSetup.set_solution_single_frequency
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      HfssSimulationSetup.adaptive_settings
+      HfssSimulationSetup.advanced_mesh_settings
+      HfssSimulationSetup.curve_approx_settings
+      HfssSimulationSetup.dcr_settings
+      HfssSimulationSetup.defeature_settings
+      HfssSimulationSetup.enabled
+      HfssSimulationSetup.frequency_sweeps
+      HfssSimulationSetup.get_sim_setup_info
+      HfssSimulationSetup.hfss_port_settings
+      HfssSimulationSetup.hfss_solver_settings
+      HfssSimulationSetup.is_auto_setup
+      HfssSimulationSetup.mesh_operations
+      HfssSimulationSetup.name
+      HfssSimulationSetup.position
+      HfssSimulationSetup.setup_type
+      HfssSimulationSetup.solver_slider_type
+      HfssSimulationSetup.via_settings
+   
+   

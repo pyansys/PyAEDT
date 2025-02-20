@@ -1,0 +1,6 @@
+create\_point
+=============
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.create_point

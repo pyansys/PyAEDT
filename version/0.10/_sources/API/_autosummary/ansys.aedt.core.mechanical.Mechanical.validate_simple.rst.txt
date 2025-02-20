@@ -1,0 +1,6 @@
+validate\_simple
+================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.validate_simple

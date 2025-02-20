@@ -1,0 +1,6 @@
+create\_fieldplot\_surface
+==========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.create_fieldplot_surface

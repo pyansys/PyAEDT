@@ -1,0 +1,6 @@
+project\_path
+=============
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.project_path

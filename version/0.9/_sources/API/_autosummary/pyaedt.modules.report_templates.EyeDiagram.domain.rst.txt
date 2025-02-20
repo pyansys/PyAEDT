@@ -1,0 +1,6 @@
+domain
+======
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: EyeDiagram.domain

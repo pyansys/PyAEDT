@@ -1,0 +1,6 @@
+roll\_angle
+===========
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. autoproperty:: ModelPlotter.roll_angle

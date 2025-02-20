@@ -1,0 +1,6 @@
+set\_registry\_from\_file
+=========================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.set_registry_from_file

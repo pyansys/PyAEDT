@@ -1,0 +1,6 @@
+generate\_solder\_balls
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.generate_solder_balls

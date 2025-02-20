@@ -1,0 +1,6 @@
+input\_file
+===========
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.input_file

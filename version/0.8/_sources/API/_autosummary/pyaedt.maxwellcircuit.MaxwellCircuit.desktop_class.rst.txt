@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.desktop_class

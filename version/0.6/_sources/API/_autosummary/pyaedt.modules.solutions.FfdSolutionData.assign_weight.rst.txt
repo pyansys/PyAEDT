@@ -1,0 +1,6 @@
+assign\_weight
+==============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FfdSolutionData.assign_weight

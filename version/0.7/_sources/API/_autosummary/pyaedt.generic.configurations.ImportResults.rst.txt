@@ -1,0 +1,22 @@
+﻿ImportResults
+=============
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoclass:: ImportResults
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ImportResults.global_import_success
+   
+   

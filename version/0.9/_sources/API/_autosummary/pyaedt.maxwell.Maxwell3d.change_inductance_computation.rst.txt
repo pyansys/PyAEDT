@@ -1,0 +1,6 @@
+change\_inductance\_computation
+===============================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.change_inductance_computation

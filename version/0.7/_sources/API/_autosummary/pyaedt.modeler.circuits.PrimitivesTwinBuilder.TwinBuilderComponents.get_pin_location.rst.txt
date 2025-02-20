@@ -1,0 +1,6 @@
+get\_pin\_location
+==================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.get_pin_location

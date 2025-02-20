@@ -1,0 +1,6 @@
+add\_warning\_message
+=====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.add_warning_message

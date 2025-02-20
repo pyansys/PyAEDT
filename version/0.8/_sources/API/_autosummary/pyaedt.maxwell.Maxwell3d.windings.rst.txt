@@ -1,0 +1,6 @@
+windings
+========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.windings

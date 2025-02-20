@@ -1,0 +1,6 @@
+is\_null
+========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. automethod:: WavePort.is_null

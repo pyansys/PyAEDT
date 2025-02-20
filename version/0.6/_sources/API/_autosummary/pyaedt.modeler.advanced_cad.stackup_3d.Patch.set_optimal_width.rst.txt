@@ -1,0 +1,6 @@
+set\_optimal\_width
+===================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: Patch.set_optimal_width

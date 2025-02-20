@@ -1,0 +1,29 @@
+﻿LumpedNodesandLeads
+===================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_nodes_and_leads
+
+.. autoclass:: LumpedNodesandLeads
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      LumpedNodesandLeads.c_lead_inductor
+      LumpedNodesandLeads.c_node_capacitor
+      LumpedNodesandLeads.c_node_compensate
+      LumpedNodesandLeads.l_lead_inductor
+      LumpedNodesandLeads.l_node_capacitor
+      LumpedNodesandLeads.l_node_compensate
+      LumpedNodesandLeads.r_lead_inductor
+      LumpedNodesandLeads.r_node_capacitor
+   
+   

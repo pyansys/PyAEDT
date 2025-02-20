@@ -1,0 +1,6 @@
+ifft\_to\_file
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. automethod:: SolutionData.ifft_to_file

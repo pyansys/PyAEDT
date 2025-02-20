@@ -1,0 +1,6 @@
+remove\_stackup\_layer
+======================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. automethod:: Layer.remove_stackup_layer

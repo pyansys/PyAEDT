@@ -1,0 +1,6 @@
+get\_next\_xtalk\_list
+======================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_next_xtalk_list

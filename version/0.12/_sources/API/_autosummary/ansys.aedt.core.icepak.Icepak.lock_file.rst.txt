@@ -1,0 +1,6 @@
+lock\_file
+==========
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.lock_file

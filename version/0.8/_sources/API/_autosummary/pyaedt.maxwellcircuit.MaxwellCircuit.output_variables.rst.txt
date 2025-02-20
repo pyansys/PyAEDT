@@ -1,0 +1,6 @@
+output\_variables
+=================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.output_variables

@@ -1,0 +1,6 @@
+create\_setup
+=============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.create_setup

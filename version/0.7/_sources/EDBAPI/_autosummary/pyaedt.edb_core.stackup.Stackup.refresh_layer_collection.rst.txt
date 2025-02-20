@@ -1,0 +1,6 @@
+refresh\_layer\_collection
+==========================
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. automethod:: Stackup.refresh_layer_collection

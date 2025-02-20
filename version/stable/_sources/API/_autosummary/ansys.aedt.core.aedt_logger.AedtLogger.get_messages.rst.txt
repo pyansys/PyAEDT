@@ -1,0 +1,6 @@
+get\_messages
+=============
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. automethod:: AedtLogger.get_messages

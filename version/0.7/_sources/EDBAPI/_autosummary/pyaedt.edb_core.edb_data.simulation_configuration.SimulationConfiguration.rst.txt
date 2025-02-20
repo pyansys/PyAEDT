@@ -1,0 +1,55 @@
+﻿SimulationConfiguration
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoclass:: SimulationConfiguration
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SimulationConfiguration.add_current_source
+      
+      
+      SimulationConfiguration.add_dc_ground_source_term
+      
+      
+      SimulationConfiguration.add_rlc
+      
+      
+      SimulationConfiguration.add_voltage_source
+      
+      
+      SimulationConfiguration.build_simulation_project
+      
+      
+      SimulationConfiguration.export_json
+      
+      
+      SimulationConfiguration.import_json
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SimulationConfiguration.ac_settings
+      SimulationConfiguration.batch_solve_settings
+      SimulationConfiguration.dc_settings
+      SimulationConfiguration.filename
+      SimulationConfiguration.open_edb_after_build
+      SimulationConfiguration.setup_name
+      SimulationConfiguration.solver_type
+   
+   

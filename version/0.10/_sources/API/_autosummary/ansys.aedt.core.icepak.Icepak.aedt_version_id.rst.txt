@@ -1,0 +1,6 @@
+aedt\_version\_id
+=================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.aedt_version_id

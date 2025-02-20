@@ -1,0 +1,6 @@
+Position
+========
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.Position

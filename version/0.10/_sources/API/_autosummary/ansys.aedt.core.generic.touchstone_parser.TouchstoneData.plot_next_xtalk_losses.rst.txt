@@ -1,0 +1,6 @@
+﻿plot\_next\_xtalk\_losses
+=========================
+
+.. currentmodule:: ansys.aedt.core.generic.touchstone_parser
+
+.. automethod:: TouchstoneData.plot_next_xtalk_losses

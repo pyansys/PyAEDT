@@ -1,0 +1,6 @@
+chassis\_subtraction
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.chassis_subtraction

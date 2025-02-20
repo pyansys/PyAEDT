@@ -1,0 +1,6 @@
+percentage\_error\_z0
+=====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.percentage_error_z0

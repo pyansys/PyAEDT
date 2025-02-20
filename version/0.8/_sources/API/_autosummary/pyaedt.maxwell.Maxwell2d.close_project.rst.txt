@@ -1,0 +1,6 @@
+close\_project
+==============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.close_project

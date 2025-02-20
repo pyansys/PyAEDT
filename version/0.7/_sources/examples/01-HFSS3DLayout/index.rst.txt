@@ -1,0 +1,97 @@
+
+
+.. _sphx_glr_examples_01-HFSS3DLayout:
+
+HFSS 3D Layout examples
+~~~~~~~~~~~~~~~~~~~~~~~
+These examples use PyAEDT to show some end-to-end workflows for HFSS 3D Layout.
+It includes model generation, setup, meshing, and post-processing.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="HFSS 3D Layout: SIwave DCIR analysis in HFSS 3D Layout">
+
+.. only:: html
+
+  .. image:: /examples/01-HFSS3DLayout/images/thumb/sphx_glr_Dcir_in_3DLayout_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_01-HFSS3DLayout_Dcir_in_3DLayout.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS 3D Layout: SIwave DCIR analysis in HFSS 3D Layout</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="HFSS 3D Layout: PCB and EDB in 3D layout">
+
+.. only:: html
+
+  .. image:: /examples/01-HFSS3DLayout/images/thumb/sphx_glr_EDB_in_3DLayout_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_01-HFSS3DLayout_EDB_in_3DLayout.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS 3D Layout: PCB and EDB in 3D layout</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="HFSS 3D Layout: parametric via analysis">
+
+.. only:: html
+
+  .. image:: /examples/01-HFSS3DLayout/images/thumb/sphx_glr_HFSS3DLayout_Via_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_01-HFSS3DLayout_HFSS3DLayout_Via.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS 3D Layout: parametric via analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="HFSS: 3D Components">
+
+.. only:: html
+
+  .. image:: /examples/01-HFSS3DLayout/images/thumb/sphx_glr_Hfss3DComponent_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_01-HFSS3DLayout_Hfss3DComponent.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">HFSS: 3D Components</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/01-HFSS3DLayout/Dcir_in_3DLayout
+   /examples/01-HFSS3DLayout/EDB_in_3DLayout
+   /examples/01-HFSS3DLayout/HFSS3DLayout_Via
+   /examples/01-HFSS3DLayout/Hfss3DComponent
+

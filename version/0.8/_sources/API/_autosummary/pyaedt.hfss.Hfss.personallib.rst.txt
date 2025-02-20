@@ -1,0 +1,6 @@
+personallib
+===========
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.personallib

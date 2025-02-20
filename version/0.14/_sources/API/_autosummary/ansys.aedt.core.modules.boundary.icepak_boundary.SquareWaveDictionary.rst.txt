@@ -1,0 +1,22 @@
+﻿SquareWaveDictionary
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.icepak_boundary
+
+.. autoclass:: SquareWaveDictionary
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SquareWaveDictionary.props
+   
+   

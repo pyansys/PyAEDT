@@ -1,0 +1,6 @@
+edit\_general\_settings
+=======================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: NearField.edit_general_settings

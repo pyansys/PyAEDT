@@ -1,0 +1,6 @@
+validate\_simple
+================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.validate_simple

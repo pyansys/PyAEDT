@@ -1,0 +1,6 @@
+find\_port\_faces
+=================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.find_port_faces

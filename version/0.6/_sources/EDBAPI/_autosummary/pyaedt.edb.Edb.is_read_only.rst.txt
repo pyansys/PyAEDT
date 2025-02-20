@@ -1,0 +1,6 @@
+is\_read\_only
+==============
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.is_read_only

@@ -1,0 +1,6 @@
+sync\_variables
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.design_xploration
+
+.. automethod:: SetupParam.sync_variables

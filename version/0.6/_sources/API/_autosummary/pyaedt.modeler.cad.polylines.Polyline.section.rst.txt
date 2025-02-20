@@ -1,0 +1,6 @@
+section
+=======
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.section

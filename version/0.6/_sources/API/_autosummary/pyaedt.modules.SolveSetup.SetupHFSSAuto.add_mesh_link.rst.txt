@@ -1,0 +1,6 @@
+add\_mesh\_link
+===============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSSAuto.add_mesh_link

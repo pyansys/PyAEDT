@@ -1,0 +1,6 @@
+remove\_layer
+=============
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. automethod:: Stackup.remove_layer

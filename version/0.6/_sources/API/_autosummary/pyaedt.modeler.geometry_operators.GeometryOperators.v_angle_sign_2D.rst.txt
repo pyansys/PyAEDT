@@ -1,0 +1,6 @@
+v\_angle\_sign\_2D
+==================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.v_angle_sign_2D

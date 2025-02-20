@@ -1,0 +1,6 @@
+import\_dxf
+===========
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.import_dxf

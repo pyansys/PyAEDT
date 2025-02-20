@@ -1,0 +1,6 @@
+import\_primitives\_from\_file
+==============================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.import_primitives_from_file

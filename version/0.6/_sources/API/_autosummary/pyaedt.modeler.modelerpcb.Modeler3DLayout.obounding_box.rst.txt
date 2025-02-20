@@ -1,0 +1,6 @@
+obounding\_box
+==============
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.obounding_box

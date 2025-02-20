@@ -1,0 +1,42 @@
+﻿DllInterface
+============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.dll_interface
+
+.. autoclass:: DllInterface
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      DllInterface.api_version
+      
+      
+      DllInterface.enum_to_string
+      
+      
+      DllInterface.get_string
+      
+      
+      DllInterface.raise_error
+      
+      
+      DllInterface.restore_defaults
+      
+      
+      DllInterface.set_string
+      
+      
+      DllInterface.string_to_enum
+      
+   
+   
+
+   
+   
+   

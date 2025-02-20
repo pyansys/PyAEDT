@@ -1,0 +1,6 @@
+unsuppress\_all
+===============
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. automethod:: BinaryTreeNode.unsuppress_all

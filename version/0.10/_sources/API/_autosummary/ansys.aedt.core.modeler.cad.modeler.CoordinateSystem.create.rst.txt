@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.modeler
+
+.. automethod:: CoordinateSystem.create

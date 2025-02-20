@@ -1,0 +1,6 @@
+create\_pwl\_source
+===================
+
+.. currentmodule:: pyaedt.modules.CableModeling
+
+.. automethod:: Cable.create_pwl_source

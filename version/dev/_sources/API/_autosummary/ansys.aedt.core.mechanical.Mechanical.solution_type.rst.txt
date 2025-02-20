@@ -1,0 +1,6 @@
+solution\_type
+==============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.solution_type

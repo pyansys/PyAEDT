@@ -1,0 +1,6 @@
+jsonalize\_tree
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. automethod:: NativeComponentObject.jsonalize_tree

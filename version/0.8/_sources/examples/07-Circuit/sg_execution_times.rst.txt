@@ -1,0 +1,61 @@
+
+:orphan:
+
+.. _sphx_glr_examples_07-Circuit_sg_execution_times:
+
+
+Computation times
+=================
+**13:52.769** total execution time for 9 files **from examples\07-Circuit**:
+
+.. container::
+
+  .. raw:: html
+
+    <style scoped>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+    } );
+    </script>
+
+  .. list-table::
+   :header-rows: 1
+   :class: table table-striped sg-datatable
+
+   * - Example
+     - Time
+     - Mem (MB)
+   * - :ref:`sphx_glr_examples_07-Circuit_Virtual_Compliance.py` (``Virtual_Compliance.py``)
+     - 06:22.169
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-Circuit_Circuit_Siwave_Multizones.py` (``Circuit_Siwave_Multizones.py``)
+     - 01:42.126
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-Circuit_Circuit_Example.py` (``Circuit_Example.py``)
+     - 01:14.387
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-Circuit_Circuit_AMI.py` (``Circuit_AMI.py``)
+     - 01:14.302
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-Circuit_Circuit_Transient.py` (``Circuit_Transient.py``)
+     - 01:03.982
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-Circuit_Reports.py` (``Reports.py``)
+     - 01:02.412
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-Circuit_Circuit_Subcircuit_Example.py` (``Circuit_Subcircuit_Example.py``)
+     - 00:37.941
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-Circuit_Create_Netlist.py` (``Create_Netlist.py``)
+     - 00:33.826
+     - 0.0
+   * - :ref:`sphx_glr_examples_07-Circuit_Touchstone_Management.py` (``Touchstone_Management.py``)
+     - 00:01.625
+     - 0.0

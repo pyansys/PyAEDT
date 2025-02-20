@@ -1,0 +1,6 @@
+use\_radiation\_boundary
+========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.use_radiation_boundary

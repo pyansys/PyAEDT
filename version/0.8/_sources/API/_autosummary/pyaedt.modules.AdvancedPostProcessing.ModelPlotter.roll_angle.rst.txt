@@ -1,0 +1,6 @@
+roll\_angle
+===========
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.roll_angle

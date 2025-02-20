@@ -1,0 +1,6 @@
+get\_3d\_component\_object\_list
+================================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_3d_component_object_list

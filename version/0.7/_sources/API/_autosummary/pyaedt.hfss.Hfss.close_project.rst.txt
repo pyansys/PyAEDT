@@ -1,0 +1,6 @@
+close\_project
+==============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.close_project

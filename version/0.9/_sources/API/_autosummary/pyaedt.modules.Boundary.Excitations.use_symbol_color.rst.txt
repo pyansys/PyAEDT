@@ -1,0 +1,6 @@
+use\_symbol\_color
+==================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: Excitations.use_symbol_color

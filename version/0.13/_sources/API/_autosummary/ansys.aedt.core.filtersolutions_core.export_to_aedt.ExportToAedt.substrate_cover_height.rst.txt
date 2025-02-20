@@ -1,0 +1,6 @@
+substrate\_cover\_height
+========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.substrate_cover_height

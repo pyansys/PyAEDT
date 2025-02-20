@@ -1,0 +1,6 @@
+materials
+=========
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.materials

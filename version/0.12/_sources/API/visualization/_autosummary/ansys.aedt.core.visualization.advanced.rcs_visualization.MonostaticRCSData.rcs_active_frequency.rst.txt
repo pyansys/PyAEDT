@@ -1,0 +1,6 @@
+rcs\_active\_frequency
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. autoproperty:: MonostaticRCSData.rcs_active_frequency

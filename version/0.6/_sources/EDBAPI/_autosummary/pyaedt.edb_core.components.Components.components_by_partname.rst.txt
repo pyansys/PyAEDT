@@ -1,0 +1,6 @@
+components\_by\_partname
+========================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. autoproperty:: Components.components_by_partname

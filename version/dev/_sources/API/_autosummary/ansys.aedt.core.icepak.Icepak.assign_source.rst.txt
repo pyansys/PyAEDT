@@ -1,0 +1,6 @@
+assign\_source
+==============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.assign_source

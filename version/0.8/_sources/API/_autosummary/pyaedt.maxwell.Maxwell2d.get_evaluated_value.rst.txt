@@ -1,0 +1,6 @@
+get\_evaluated\_value
+=====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.get_evaluated_value

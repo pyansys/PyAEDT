@@ -1,0 +1,6 @@
+parametrics
+===========
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.parametrics

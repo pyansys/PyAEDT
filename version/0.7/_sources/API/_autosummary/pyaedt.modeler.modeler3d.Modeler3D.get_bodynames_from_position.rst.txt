@@ -1,0 +1,6 @@
+get\_bodynames\_from\_position
+==============================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_bodynames_from_position

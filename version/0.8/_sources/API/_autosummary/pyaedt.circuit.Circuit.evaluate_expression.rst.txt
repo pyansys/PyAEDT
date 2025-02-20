@@ -1,0 +1,6 @@
+evaluate\_expression
+====================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.evaluate_expression

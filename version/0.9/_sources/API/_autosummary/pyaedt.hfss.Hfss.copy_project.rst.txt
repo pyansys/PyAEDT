@@ -1,0 +1,6 @@
+copy\_project
+=============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.copy_project

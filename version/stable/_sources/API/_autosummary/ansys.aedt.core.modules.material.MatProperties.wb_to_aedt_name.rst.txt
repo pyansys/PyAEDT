@@ -1,0 +1,6 @@
+wb\_to\_aedt\_name
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: MatProperties.wb_to_aedt_name

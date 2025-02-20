@@ -1,0 +1,6 @@
+name
+====
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoproperty:: SetupHFSSAuto.name

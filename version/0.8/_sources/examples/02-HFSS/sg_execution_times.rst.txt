@@ -1,0 +1,64 @@
+
+:orphan:
+
+.. _sphx_glr_examples_02-HFSS_sg_execution_times:
+
+
+Computation times
+=================
+**15:42.128** total execution time for 10 files **from examples\02-HFSS**:
+
+.. container::
+
+  .. raw:: html
+
+    <style scoped>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+    } );
+    </script>
+
+  .. list-table::
+   :header-rows: 1
+   :class: table table-striped sg-datatable
+
+   * - Example
+     - Time
+     - Mem (MB)
+   * - :ref:`sphx_glr_examples_02-HFSS_HFSS_eigenmode.py` (``HFSS_eigenmode.py``)
+     - 02:31.107
+     - 0.0
+   * - :ref:`sphx_glr_examples_02-HFSS_Waveguide_Filter.py` (``Waveguide_Filter.py``)
+     - 02:15.869
+     - 0.0
+   * - :ref:`sphx_glr_examples_02-HFSS_Probe_Fed_Patch.py` (``Probe_Fed_Patch.py``)
+     - 02:02.174
+     - 0.0
+   * - :ref:`sphx_glr_examples_02-HFSS_HFSS_Spiral.py` (``HFSS_Spiral.py``)
+     - 01:48.453
+     - 0.0
+   * - :ref:`sphx_glr_examples_02-HFSS_Array.py` (``Array.py``)
+     - 01:37.600
+     - 0.0
+   * - :ref:`sphx_glr_examples_02-HFSS_HFSS_Dipole.py` (``HFSS_Dipole.py``)
+     - 01:25.284
+     - 0.0
+   * - :ref:`sphx_glr_examples_02-HFSS_HFSS_Choke.py` (``HFSS_Choke.py``)
+     - 01:13.397
+     - 0.0
+   * - :ref:`sphx_glr_examples_02-HFSS_Flex_CPWG.py` (``Flex_CPWG.py``)
+     - 01:03.203
+     - 0.0
+   * - :ref:`sphx_glr_examples_02-HFSS_Create_3d_Component_and_use_it.py` (``Create_3d_Component_and_use_it.py``)
+     - 00:55.124
+     - 0.0
+   * - :ref:`sphx_glr_examples_02-HFSS_HFSS_FSS_unitcell.py` (``HFSS_FSS_unitcell.py``)
+     - 00:49.918
+     - 0.0

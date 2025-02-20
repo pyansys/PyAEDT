@@ -1,0 +1,6 @@
+export\_3d\_model
+=================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.export_3d_model

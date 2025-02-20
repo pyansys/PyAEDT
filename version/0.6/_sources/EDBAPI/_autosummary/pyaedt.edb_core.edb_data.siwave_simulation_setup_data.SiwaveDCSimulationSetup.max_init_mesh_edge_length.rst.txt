@@ -1,0 +1,6 @@
+max\_init\_mesh\_edge\_length
+=============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveDCSimulationSetup.max_init_mesh_edge_length

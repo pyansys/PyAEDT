@@ -1,0 +1,6 @@
+add\_from\_file
+===============
+
+.. currentmodule:: pyaedt.modules.DesignXPloration
+
+.. automethod:: ParametricSetups.add_from_file

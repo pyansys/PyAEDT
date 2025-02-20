@@ -1,0 +1,6 @@
+set\_die\_type
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. automethod:: Components3DLayout.set_die_type

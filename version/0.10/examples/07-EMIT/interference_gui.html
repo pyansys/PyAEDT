@@ -1,0 +1,1347 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EMIT: Classify interference type GUI &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/07-EMIT/interference_gui';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Twin Builder examples" href="../07-TwinBuilder/index.html" />
+    <link rel="prev" title="EMIT: HFSS to EMIT coupling" href="EMIT_HFSS_Example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/07-EMIT/interference_gui.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Modeling-Setup/index.html">General model and setup examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-HFSS/index.html">HFSS examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-Maxwell/index.html">Maxwell examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-Multiphysics/index.html">Multiphysics examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-Circuit/index.html">Circuit examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">EMIT examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ComputeInterferenceType.html">EMIT: Classify interference type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComputeProtectionLevels.html">EMIT: Compute receiver protection levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EMIT_Example.html">EMIT: antenna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EMIT_HFSS_Example.html">EMIT: HFSS to EMIT coupling</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">EMIT: Classify interference type GUI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">EMIT examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">EMIT: Classify interference type GUI</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-07-emit-interference-gui-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="emit-classify-interference-type-gui">
+<span id="sphx-glr-examples-07-emit-interference-gui-py"></span><h1>EMIT: Classify interference type GUI<a class="headerlink" href="#emit-classify-interference-type-gui" title="Link to this heading">#</a></h1>
+<p>This example uses a GUI to open an AEDT project with
+an EMIT design and analyze the results to classify the
+worst-case interference.</p>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core.emit_core.emit_constants</span> <span class="kn">import</span> <span class="n">InterfererType</span><span class="p">,</span> <span class="n">ResultType</span><span class="p">,</span> <span class="n">TxRxMode</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Emit</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">get_pyaedt_app</span>
+<span class="kn">import</span> <span class="nn">ansys.aedt.core</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">ansys.aedt.core.generic.constants</span> <span class="k">as</span> <span class="nn">consts</span>
+
+<span class="c1"># Check that emit is a compatible version</span>
+<span class="n">aedt_version</span> <span class="o">=</span> <span class="s2">&quot;2024.2&quot;</span>
+<span class="k">if</span> <span class="n">aedt_version</span> <span class="o">&lt;</span> <span class="s2">&quot;2023.2&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Must have v2023.2 or later&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="c1"># Check to see which Python libraries have been installed</span>
+<span class="n">reqs</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;pip&#39;</span><span class="p">,</span> <span class="s1">&#39;freeze&#39;</span><span class="p">])</span>
+<span class="n">installed_packages</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;==&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">reqs</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+
+<span class="c1"># Install required packages if they are not installed</span>
+<span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="n">package</span><span class="p">):</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;pip&#39;</span><span class="p">,</span> <span class="s1">&#39;install&#39;</span><span class="p">,</span> <span class="n">package</span><span class="p">])</span>
+
+<span class="c1"># Install required libraries for GUI and Excel exporting (internet connection needed)</span>
+<span class="n">required_packages</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PySide6&#39;</span><span class="p">,</span> <span class="s1">&#39;openpyxl&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">package</span> <span class="ow">in</span> <span class="n">required_packages</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">package</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">installed_packages</span><span class="p">:</span>
+        <span class="n">install</span><span class="p">(</span><span class="n">package</span><span class="p">)</span>
+
+<span class="c1"># Import PySide6 and openpyxl libraries</span>
+<span class="kn">from</span> <span class="nn">PySide6</span> <span class="kn">import</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">QtUiTools</span><span class="p">,</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span>
+<span class="kn">from</span> <span class="nn">openpyxl.styles</span> <span class="kn">import</span> <span class="n">PatternFill</span>
+<span class="kn">import</span> <span class="nn">openpyxl</span>
+
+<span class="c1"># Uncomment if there are Qt plugin errors</span>
+<span class="c1"># import PySide6</span>
+<span class="c1"># dirname = os.path.dirname(PySide6.__file__)</span>
+<span class="c1"># plugin_path = os.path.join(dirname, &#39;plugins&#39;, &#39;platforms&#39;)</span>
+<span class="c1"># os.environ[&#39;QT_QPA_PLATFORM_PLUGIN_PATH&#39;] = plugin_path</span>
+
+<span class="c1"># Launch EMIT</span>
+<span class="n">non_graphical</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">new_thread</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">desktop</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">launch_desktop</span><span class="p">(</span><span class="n">aedt_version</span><span class="p">,</span> <span class="n">non_graphical</span><span class="p">,</span> <span class="n">new_thread</span><span class="p">)</span>
+
+<span class="c1"># Add emitapi to system path</span>
+<span class="n">emit_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">desktop</span><span class="o">.</span><span class="n">install_path</span><span class="p">,</span> <span class="s2">&quot;Delcross&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">emit_path</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">EmitApiPython</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">EmitApiPython</span><span class="o">.</span><span class="n">EmitApi</span><span class="p">()</span>
+
+<span class="c1"># Define .ui file for GUI</span>
+<span class="n">ui_file</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;emit&quot;</span><span class="p">,</span> <span class="s2">&quot;interference_gui.ui&quot;</span><span class="p">)</span>
+<span class="n">Ui_MainWindow</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">QtUiTools</span><span class="o">.</span><span class="n">loadUiType</span><span class="p">(</span><span class="n">ui_file</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">DoubleDelegate</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QStyledItemDelegate</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">max_power</span><span class="p">,</span> <span class="n">min_power</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decimals</span> <span class="o">=</span> <span class="n">decimals</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">values</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_power</span> <span class="o">=</span> <span class="n">max_power</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_power</span> <span class="o">=</span> <span class="n">min_power</span>
+
+    <span class="k">def</span> <span class="nf">createEditor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="n">editor</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">createEditor</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">editor</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLineEdit</span><span class="p">):</span>
+            <span class="n">validator</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QDoubleValidator</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+            <span class="n">num_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+            <span class="n">cur_row</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">row</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">cur_row</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">min_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">max_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_power</span>
+            <span class="k">elif</span> <span class="n">cur_row</span> <span class="o">==</span> <span class="n">num_rows</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">min_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_power</span>
+                <span class="n">max_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">cur_row</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">min_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">cur_row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+                <span class="n">max_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">cur_row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">validator</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">decimals</span><span class="p">)</span>
+            <span class="n">validator</span><span class="o">.</span><span class="n">setNotation</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QDoubleValidator</span><span class="o">.</span><span class="n">Notation</span><span class="o">.</span><span class="n">StandardNotation</span><span class="p">)</span>
+            <span class="n">editor</span><span class="o">.</span><span class="n">setValidator</span><span class="p">(</span><span class="n">validator</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">editor</span>
+
+    <span class="k">def</span> <span class="nf">update_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">values</span>
+
+<span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">,</span> <span class="n">Ui_MainWindow</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">populating_dropdown</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setupUi</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_widgets</span><span class="p">()</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Setup widgets</span>
+    <span class="c1"># ~~~~~~~~~~~~~</span>
+    <span class="c1"># Define all widgets from the UI file, connect the widgets to functions, define</span>
+    <span class="c1"># table colors, and format table settings.</span>
+
+    <span class="k">def</span> <span class="nf">setup_widgets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Widget definitions for file selection/tab management</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_select_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QToolButton</span><span class="p">,</span> <span class="s2">&quot;file_select_btn&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_path_box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLineEdit</span><span class="p">,</span> <span class="s2">&quot;file_path_box&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QComboBox</span><span class="p">,</span> <span class="s2">&quot;design_name_dropdown&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tab_widget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QTabWidget</span><span class="p">,</span> <span class="s2">&quot;tab_widget&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Widget definitions for protection level classification</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_results_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">,</span> <span class="s2">&quot;protection_results_btn&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QTableWidget</span><span class="p">,</span> <span class="s2">&quot;protection_matrix&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QTableWidget</span><span class="p">,</span> <span class="s2">&quot;protection_legend_table&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">damage_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QCheckBox</span><span class="p">,</span> <span class="s2">&quot;damage_check&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overload_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QCheckBox</span><span class="p">,</span> <span class="s2">&quot;overload_check&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">intermodulation_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QCheckBox</span><span class="p">,</span> <span class="s2">&quot;intermodulation_check&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">desensitization_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QCheckBox</span><span class="p">,</span> <span class="s2">&quot;desensitization_check&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_export_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">,</span> <span class="s2">&quot;protection_export_btn&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radio_specific_levels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QCheckBox</span><span class="p">,</span> <span class="s2">&quot;radio_specific_levels&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QComboBox</span><span class="p">,</span> <span class="s2">&quot;radio_dropdown&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_save_img_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">,</span> <span class="s1">&#39;protection_save_img_btn&#39;</span><span class="p">)</span>
+
+        <span class="c1"># warning label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">,</span> <span class="s2">&quot;warnings&quot;</span><span class="p">)</span>
+        <span class="n">myFont</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QFont</span><span class="p">()</span>
+        <span class="n">myFont</span><span class="o">.</span><span class="n">setBold</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">myFont</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setHidden</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentIndexChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">design_dropdown_changed</span><span class="p">)</span>
+
+        <span class="c1"># Setup for protection level buttons and table</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_results_btn</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_export_btn</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_save_img_btn</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_select_btn</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">open_file_dialog</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_export_btn</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_results_excel</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_results_btn</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_results</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">resizeRowsToContents</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">resizeColumnsToContents</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">damage_check</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_results</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overload_check</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_results</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">intermodulation_check</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_results</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">desensitization_check</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_results</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">setEditTriggers</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QTableWidget</span><span class="o">.</span><span class="n">DoubleClicked</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">global_protection_level</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_levels</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">())</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">rowCount</span><span class="p">())]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_levels</span><span class="p">[</span><span class="s1">&#39;Global&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">changing</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">currentIndexChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown_changed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">itemChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table_changed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_save_img_btn</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_image</span><span class="p">)</span>
+
+        <span class="c1"># Widget definitions for interference type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_results_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">,</span> <span class="s2">&quot;interference_results_btn&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QTableWidget</span><span class="p">,</span> <span class="s2">&quot;interference_matrix&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_legend_table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QTableWidget</span><span class="p">,</span> <span class="s2">&quot;interference_legend_table&quot;</span><span class="p">)</span>
+
+        <span class="c1"># set the items read only</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_legend_table</span><span class="o">.</span><span class="n">rowCount</span><span class="p">()):</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_legend_table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">setFlags</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">ItemIsEnabled</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interference_legend_table</span><span class="o">.</span><span class="n">setItem</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">in_in_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QCheckBox</span><span class="p">,</span> <span class="s2">&quot;in_in_check&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">in_out_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QCheckBox</span><span class="p">,</span> <span class="s2">&quot;in_out_check&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_in_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QCheckBox</span><span class="p">,</span> <span class="s2">&quot;out_in_check&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_out_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QCheckBox</span><span class="p">,</span> <span class="s2">&quot;out_out_check&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_export_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">,</span> <span class="s2">&quot;interference_export_btn&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_save_img_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">findChild</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">,</span> <span class="s1">&#39;interference_save_img_btn&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Setup for interference type buttons and table</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_results_btn</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_export_btn</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_save_img_btn</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_export_btn</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_results_excel</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_results_btn</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interference_results</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_legend_table</span><span class="o">.</span><span class="n">resizeRowsToContents</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_legend_table</span><span class="o">.</span><span class="n">resizeColumnsToContents</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">in_in_check</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interference_results</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">in_out_check</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interference_results</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_in_check</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interference_results</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_out_check</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interference_results</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radio_specific_levels</span><span class="o">.</span><span class="n">stateChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radio_specific</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_save_img_btn</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_image</span><span class="p">)</span>
+
+        <span class="c1"># Color definition dictionary and previous project/design names</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;green&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QColor</span><span class="p">(</span><span class="mi">125</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">202</span><span class="p">),</span><span class="s1">&#39;#7d73ca&#39;</span><span class="p">],</span>
+                           <span class="s2">&quot;yellow&quot;</span><span class="p">:[</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QColor</span><span class="p">(</span><span class="mi">211</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">162</span><span class="p">),</span> <span class="s1">&#39;#d359a2&#39;</span><span class="p">],</span>
+                           <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">97</span><span class="p">),</span> <span class="s1">&#39;#ff6361&#39;</span><span class="p">],</span>
+                           <span class="s2">&quot;red&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">166</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;#ffa600&#39;</span><span class="p">],</span>
+                           <span class="s2">&quot;white&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QColor</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">),</span><span class="s1">&#39;#ffffff&#39;</span><span class="p">]}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">previous_design</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">previous_project</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="c1"># Set the legend tables to strech resize mode</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span>
+        <span class="n">v_header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">verticalHeader</span><span class="p">()</span>
+
+        <span class="n">header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeMode</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+        <span class="n">v_header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeMode</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+        <span class="n">v_header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeMode</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+        <span class="n">v_header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeMode</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+        <span class="n">v_header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeMode</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+
+        <span class="n">header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_legend_table</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span>
+        <span class="n">v_header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_legend_table</span><span class="o">.</span><span class="n">verticalHeader</span><span class="p">()</span>
+
+        <span class="n">header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeMode</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+        <span class="n">v_header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeMode</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+        <span class="n">v_header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeMode</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+        <span class="n">v_header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeMode</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+        <span class="n">v_header</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">ResizeMode</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+
+        <span class="c1"># Input validation for protection level legend table</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">DoubleDelegate</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span>
+                                  <span class="n">max_power</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">min_power</span><span class="o">=-</span><span class="mi">200</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">setItemDelegateForColumn</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open_file_dialog</span><span class="p">()</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Open file dialog and select project</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Open the file dialog for project selection and populate the design dropdown</span>
+    <span class="c1"># with all EMIT designs in the project.</span>
+
+    <span class="k">def</span> <span class="nf">open_file_dialog</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">fname</span><span class="p">,</span> <span class="n">_filter</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QFileDialog</span><span class="o">.</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Select EMIT Project&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;Ansys Electronics Desktop Files (*.aedt)&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="k">if</span> <span class="n">fname</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">file_path_box</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+            <span class="c1"># Close previous project and open specified one</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">close_project</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">desktop_proj</span> <span class="o">=</span> <span class="n">desktop</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_path_box</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
+
+            <span class="c1"># check for an empty project (i.e. no designs)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">desktop_proj</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">file_path_box</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Error: Project missing designs.&quot;</span><span class="p">)</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span>
+                    <span class="s2">&quot;The selected project has no designs. Projects must have at least &quot;</span>
+                    <span class="s2">&quot;one EMIT design. See AEDT log for more information.&quot;</span><span class="p">)</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+                <span class="k">return</span>
+
+            <span class="c1"># Check if project is already open</span>
+            <span class="k">if</span> <span class="n">desktop_proj</span><span class="o">.</span><span class="n">lock_file</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Error: Project already open&quot;</span><span class="p">)</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Project is locked. Close or remove the lock before proceeding. See AEDT log for more information.&quot;</span><span class="p">)</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+                <span class="k">return</span>
+
+            <span class="c1"># Populate design dropdown with all design names</span>
+            <span class="n">designs</span> <span class="o">=</span> <span class="n">desktop_proj</span><span class="o">.</span><span class="n">design_list</span>
+            <span class="n">emit_designs</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populating_dropdown</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populating_dropdown</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">designs</span><span class="p">:</span>
+                <span class="n">design_type</span> <span class="o">=</span> <span class="n">desktop</span><span class="o">.</span><span class="n">design_type</span><span class="p">(</span><span class="n">desktop_proj</span><span class="o">.</span><span class="n">project_name</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">design_type</span> <span class="o">==</span> <span class="s2">&quot;EMIT&quot;</span><span class="p">:</span>
+                    <span class="n">emit_designs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+            <span class="c1"># add warning if no EMIT design</span>
+            <span class="c1"># Note: this should never happen since loading a project without an EMIT design</span>
+            <span class="c1"># should add a blank EMIT design</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setHidden</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">emit_designs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Warning: The project must contain at least one EMIT design.&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setHidden</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+                <span class="k">return</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">populating_dropdown</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">addItems</span><span class="p">(</span><span class="n">emit_designs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populating_dropdown</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span> <span class="o">=</span> <span class="n">get_pyaedt_app</span><span class="p">(</span><span class="n">desktop_proj</span><span class="o">.</span><span class="n">project_name</span><span class="p">,</span> <span class="n">emit_designs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">setCurrentIndex</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># check for at least 2 radios</span>
+            <span class="n">radios</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">get_radios</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setHidden</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">radios</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Warning: The selected design must contain at least two radios.&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setHidden</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio_specific_levels</span><span class="o">.</span><span class="n">isEnabled</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">radio_specific_levels</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">protection_levels</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">())</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">rowCount</span><span class="p">())]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">protection_levels</span><span class="p">[</span><span class="s1">&#39;Global&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">radio_specific_levels</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">protection_results_btn</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">interference_results_btn</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Change design selection</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Refresh the warning messages when the selected design changes</span>
+
+    <span class="k">def</span> <span class="nf">design_dropdown_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">populating_dropdown</span><span class="p">:</span>
+            <span class="c1"># don&#39;t load design&#39;s on initial project load</span>
+            <span class="k">return</span>
+        <span class="n">design_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span> <span class="o">=</span> <span class="n">get_pyaedt_app</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">project_name</span><span class="p">,</span> <span class="n">design_name</span><span class="p">)</span>
+        <span class="c1"># check for at least 2 radios</span>
+        <span class="n">radios</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">get_radios</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setHidden</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">radios</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Warning: The selected design must contain at least two radios.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">warning_label</span><span class="o">.</span><span class="n">setHidden</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># clear the table if the design is changed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_table</span><span class="p">()</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Enable radio specific protection levels</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Activate radio selection dropdown and initialize dictionary to store protection levels</span>
+    <span class="c1"># when the radio-specific level dropdown is checked.</span>
+
+    <span class="k">def</span> <span class="nf">radio_specific</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radio_specific_levels</span><span class="o">.</span><span class="n">isChecked</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">isEnabled</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">set_active_design</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">())</span>
+            <span class="n">radios</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">get_radios</span><span class="p">()</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">())</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">rowCount</span><span class="p">())]</span>
+            <span class="k">for</span> <span class="n">radio</span> <span class="ow">in</span> <span class="n">radios</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">radios</span><span class="p">[</span><span class="n">radio</span><span class="p">]</span><span class="o">.</span><span class="n">has_rx_channels</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">protection_levels</span><span class="p">[</span><span class="n">radio</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">radio</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">())</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">rowCount</span><span class="p">())]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">protection_levels</span><span class="p">[</span><span class="s1">&#39;Global&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">global_protection_level</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio_specific_levels</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Update legend table</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Update shown legend table values when the radio dropdown value changes.</span>
+
+    <span class="k">def</span> <span class="nf">radio_dropdown_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">isEnabled</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">changing</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">rowCount</span><span class="p">()):</span>
+                <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">item</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_levels</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">()][</span><span class="n">row</span><span class="p">]))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">changing</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="c1"># update the validator so min/max for each row is properly set</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">())</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span>
+                      <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">rowCount</span><span class="p">())]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">update_values</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Save legend table values</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Save inputted radio protection level threshold values every time one is changed</span>
+    <span class="c1"># in the legend table.</span>
+
+    <span class="k">def</span> <span class="nf">table_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">changing</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">())</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span>
+                      <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_legend_table</span><span class="o">.</span><span class="n">rowCount</span><span class="p">())]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="s1">&#39;Global&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">protection_levels</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">delegate</span><span class="o">.</span><span class="n">update_values</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Save scenario matrix to as PNG file</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Save the scenario matrix table as a PNG file.</span>
+
+    <span class="k">def</span> <span class="nf">save_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab_widget</span><span class="o">.</span><span class="n">currentIndex</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_matrix</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_matrix</span>
+
+        <span class="n">fname</span><span class="p">,</span> <span class="n">_filter</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QFileDialog</span><span class="o">.</span><span class="n">getSaveFileName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Save Scenario Matrix&quot;</span><span class="p">,</span> <span class="s2">&quot;Scenario Matrix&quot;</span><span class="p">,</span> <span class="s2">&quot;png (*.png)&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">fname</span><span class="p">:</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QImage</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QImage</span><span class="o">.</span><span class="n">Format_ARGB32</span><span class="p">)</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+            <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Save scenario matrix to Excel file</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Write the scenario matrix results to an Excel file with color coding.</span>
+
+    <span class="k">def</span> <span class="nf">save_results_excel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">defaultName</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab_widget</span><span class="o">.</span><span class="n">currentIndex</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_matrix</span>
+            <span class="n">defaultName</span> <span class="o">=</span> <span class="s2">&quot;Protection Level Classification&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_matrix</span>
+            <span class="n">defaultName</span> <span class="o">=</span> <span class="s2">&quot;Interference Type Classification&quot;</span>
+
+        <span class="n">fname</span><span class="p">,</span> <span class="n">_filter</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QFileDialog</span><span class="o">.</span><span class="n">getSaveFileName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Save Scenario Matrix&quot;</span><span class="p">,</span> <span class="n">defaultName</span><span class="p">,</span> <span class="s2">&quot;xlsx (*.xlsx)&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">fname</span><span class="p">:</span>
+            <span class="n">workbook</span> <span class="o">=</span> <span class="n">openpyxl</span><span class="o">.</span><span class="n">Workbook</span><span class="p">()</span>
+            <span class="n">worksheet</span> <span class="o">=</span> <span class="n">workbook</span><span class="o">.</span><span class="n">active</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tx_radios</span><span class="p">[:]</span>
+            <span class="n">header</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Tx/Rx&quot;</span><span class="p">)</span>
+            <span class="n">worksheet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">table</span><span class="o">.</span><span class="n">rowCount</span><span class="p">()</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+                <span class="n">worksheet</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rx_radios</span><span class="p">[</span><span class="n">row</span><span class="o">-</span><span class="mi">2</span><span class="p">]))</span>
+                <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">table</span><span class="o">.</span><span class="n">columnCount</span><span class="p">()</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+                    <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">row</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
+                    <span class="n">worksheet</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="n">col</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">text</span><span class="p">)</span>
+                    <span class="n">cell</span> <span class="o">=</span> <span class="n">worksheet</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+                    <span class="n">cell</span><span class="o">.</span><span class="n">fill</span> <span class="o">=</span> <span class="n">PatternFill</span><span class="p">(</span><span class="n">start_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">color_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">all_colors</span><span class="p">[</span><span class="n">col</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="n">row</span><span class="o">-</span><span class="mi">2</span><span class="p">]][</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:],</span>
+                                            <span class="n">end_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">color_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">all_colors</span><span class="p">[</span><span class="n">col</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="n">row</span><span class="o">-</span><span class="mi">2</span><span class="p">]][</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:],</span>
+                                            <span class="n">fill_type</span> <span class="o">=</span> <span class="s2">&quot;solid&quot;</span><span class="p">)</span>
+            <span class="n">workbook</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Run interference type simulation</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Run interference type simulation and classify results.</span>
+
+    <span class="k">def</span> <span class="nf">interference_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Initialize filter check marks and expected filter results</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_checks</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">in_in_check</span><span class="o">.</span><span class="n">isChecked</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_in_check</span><span class="o">.</span><span class="n">isChecked</span><span class="p">(),</span>
+                                  <span class="bp">self</span><span class="o">.</span><span class="n">in_out_check</span><span class="o">.</span><span class="n">isChecked</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_out_check</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">interference_filters</span> <span class="o">=</span><span class="p">[</span><span class="s2">&quot;TxFundamental:In-band&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;TxHarmonic/Spurious:In-band&quot;</span><span class="p">,</span><span class="s2">&quot;Intermod:In-band&quot;</span><span class="p">,</span> <span class="s2">&quot;Broadband:In-band&quot;</span><span class="p">],</span>
+                                    <span class="s2">&quot;TxFundamental:Out-of-band&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;TxHarmonic/Spurious:Out-of-band&quot;</span><span class="p">,</span><span class="s2">&quot;Intermod:Out-of-band&quot;</span><span class="p">,</span> <span class="s2">&quot;Broadband:Out-of-band&quot;</span><span class="p">]]</span>
+
+        <span class="c1"># Create list of problem types to analyze according to inputted filters</span>
+        <span class="nb">filter</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interference_filters</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_checks</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_path_box</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">previous_design</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">previous_project</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_path_box</span><span class="o">.</span><span class="n">text</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">previous_design</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">previous_project</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_path_box</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">set_active_design</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">())</span>
+
+                <span class="c1"># Check if file is read-only</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
+                    <span class="n">msg</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Writing Error&quot;</span><span class="p">)</span>
+                    <span class="n">msg</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;An error occurred while writing to the file. Is it readonly? Disk full? See AEDT log for more information.&quot;</span><span class="p">)</span>
+                    <span class="n">x</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+                    <span class="k">return</span>
+
+                <span class="c1"># Get results and radios</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tx_interferer</span> <span class="o">=</span> <span class="n">InterfererType</span><span class="p">()</span><span class="o">.</span><span class="n">TRANSMITTERS</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rx_radios</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rev</span><span class="o">.</span><span class="n">get_receiver_names</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tx_radios</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rev</span><span class="o">.</span><span class="n">get_interferer_names</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tx_interferer</span><span class="p">)</span>
+
+                <span class="c1"># Check if design is valid</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tx_radios</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">rx_radios</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">return</span>
+
+            <span class="c1"># Classify the interference</span>
+            <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+            <span class="c1"># Iterate over all the transmitters and receivers and compute the power</span>
+            <span class="c1"># at the input to each receiver due to each of the transmitters. Compute</span>
+            <span class="c1"># which, if any, type of interference occurred.</span>
+            <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">interaction_domain</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">all_colors</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">power_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rev</span><span class="o">.</span><span class="n">interference_type_classification</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">use_filter</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">filter_list</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">)</span>
+
+            <span class="c1"># Save project and plot results on table widget</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">populate_table</span><span class="p">()</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Run protection level simulation</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Run protection level simulation and classify results accroding to inputted</span>
+    <span class="c1"># threshold levels.</span>
+
+    <span class="k">def</span> <span class="nf">protection_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Initialize filter check marks and expected filter results</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_checks</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">damage_check</span><span class="o">.</span><span class="n">isChecked</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">overload_check</span><span class="o">.</span><span class="n">isChecked</span><span class="p">(),</span>
+                                  <span class="bp">self</span><span class="o">.</span><span class="n">intermodulation_check</span><span class="o">.</span><span class="n">isChecked</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">desensitization_check</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">protection_filters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;damage&#39;</span><span class="p">,</span> <span class="s1">&#39;overload&#39;</span><span class="p">,</span> <span class="s1">&#39;intermodulation&#39;</span><span class="p">,</span> <span class="s1">&#39;desensitization&#39;</span><span class="p">]</span>
+
+        <span class="nb">filter</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">protection_filters</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_checks</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_path_box</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">previous_design</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">previous_project</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_path_box</span><span class="o">.</span><span class="n">text</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">previous_design</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">previous_project</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_path_box</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">set_active_design</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">design_name_dropdown</span><span class="o">.</span><span class="n">currentText</span><span class="p">())</span>
+
+                <span class="c1"># Check if file is read-only</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
+                    <span class="n">msg</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Writing Error&quot;</span><span class="p">)</span>
+                    <span class="n">msg</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;An error occurred while writing to the file. Is it readonly? Disk full? See AEDT log for more information.&quot;</span><span class="p">)</span>
+                    <span class="n">x</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+                    <span class="k">return</span>
+
+                <span class="c1"># Get results and design radios</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tx_interferer</span> <span class="o">=</span> <span class="n">InterfererType</span><span class="p">()</span><span class="o">.</span><span class="n">TRANSMITTERS</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rx_radios</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rev</span><span class="o">.</span><span class="n">get_receiver_names</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tx_radios</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rev</span><span class="o">.</span><span class="n">get_interferer_names</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tx_interferer</span><span class="p">)</span>
+
+            <span class="c1"># Check if there are radios in the design</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tx_radios</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">rx_radios</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span>
+
+            <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">interaction_domain</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">all_colors</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">power_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rev</span><span class="o">.</span><span class="n">protection_level_classification</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span>
+                                                                                 <span class="bp">self</span><span class="o">.</span><span class="n">global_protection_level</span><span class="p">,</span>
+                                                                                 <span class="bp">self</span><span class="o">.</span><span class="n">protection_levels</span><span class="p">[</span><span class="s1">&#39;Global&#39;</span><span class="p">],</span>
+                                                                                 <span class="bp">self</span><span class="o">.</span><span class="n">protection_levels</span><span class="p">,</span> <span class="n">use_filter</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                                                                                 <span class="n">filter_list</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">populate_table</span><span class="p">()</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Populate the scenario matrix</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Create a scenario matrix view with the transmitters defined across the top</span>
+    <span class="c1"># and receivers down the left-most column.</span>
+
+    <span class="k">def</span> <span class="nf">populate_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab_widget</span><span class="o">.</span><span class="n">currentIndex</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_matrix</span>
+            <span class="n">button</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_export_btn</span>
+            <span class="n">img_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_save_img_btn</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_matrix</span>
+            <span class="n">button</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_export_btn</span>
+            <span class="n">img_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_save_img_btn</span>
+
+        <span class="n">num_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">all_colors</span><span class="p">)</span>
+        <span class="n">num_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">all_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">setColumnCount</span><span class="p">(</span><span class="n">num_cols</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">setRowCount</span><span class="p">(</span><span class="n">num_rows</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">setVerticalHeaderLabels</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rx_radios</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">setHorizontalHeaderLabels</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tx_radios</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_cols</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span><span class="p">):</span>
+                <span class="n">item</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QTableWidgetItem</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">power_matrix</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]))</span>
+                <span class="n">table</span><span class="o">.</span><span class="n">setItem</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+                <span class="n">cell</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+                <span class="n">cell</span><span class="o">.</span><span class="n">setBackground</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">color_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">all_colors</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]][</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">button</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">img_btn</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">clear_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># get the table/buttons based on current tab</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tab_widget</span><span class="o">.</span><span class="n">currentIndex</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_matrix</span>
+            <span class="n">button</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_export_btn</span>
+            <span class="n">img_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">protection_save_img_btn</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_matrix</span>
+            <span class="n">button</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_export_btn</span>
+            <span class="n">img_btn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interference_save_img_btn</span>
+
+        <span class="c1"># disable export options</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">img_btn</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># clear the table</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">setColumnCount</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">setRowCount</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># GUI closing event</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Close AEDT if the GUI is closed.</span>
+    <span class="k">def</span> <span class="nf">closeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Closing GUI&quot;</span><span class="p">)</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Closing AEDT. Wait for the GUI to close on its own.&quot;</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">close_project</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">emitapp</span><span class="o">.</span><span class="n">close_desktop</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">desktop</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\_tool\Python\3.10.9\x64\lib\subprocess.py:1072: ResourceWarning: subprocess 8136 is still running
+  _warn(&quot;subprocess %s is still running&quot; % self.pid,
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\ansys\aedt\core\generic\settings.py:231: ResourceWarning: unclosed file &lt;_io.TextIOWrapper name=&#39;D:\\Temp\\pyaedt_ansys_260622a4-692f-48cc-bef3-b1a76554a3cc.log&#39; mode=&#39;a&#39; encoding=&#39;cp1252&#39;&gt;
+  self.__logger = val
+</pre></div>
+</div>
+</section>
+<section id="run-gui">
+<h2>Run GUI<a class="headerlink" href="#run-gui" title="Link to this heading">#</a></h2>
+<p>Launch the GUI. If you want to run the GUI, uncomment the <code class="docutils literal notranslate"><span class="pre">window.show()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">app.exec_()</span></code> method calls.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PYAEDT_DOC_GENERATION&quot;</span><span class="p">,</span> <span class="s2">&quot;False&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">([])</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">desktop</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 24.758 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-07-emit-interference-gui-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/fab3586383761854b50dcc191e954a7c/interference_gui.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">interference_gui.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/1f290d88bb35aa1b706c570e8e4d51d8/interference_gui.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">interference_gui.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/676b91ffbd2cdf79f14b00d497f47d60/interference_gui.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">interference_gui.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-gui">Run GUI</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/07-EMIT/interference_gui.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/07-EMIT/interference_gui.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

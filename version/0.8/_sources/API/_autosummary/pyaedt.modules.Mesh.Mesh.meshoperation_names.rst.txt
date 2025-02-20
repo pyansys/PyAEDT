@@ -1,0 +1,6 @@
+meshoperation\_names
+====================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. autoproperty:: Mesh.meshoperation_names

@@ -1,0 +1,6 @@
+coordinate\_system
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. autoproperty:: Point.coordinate_system

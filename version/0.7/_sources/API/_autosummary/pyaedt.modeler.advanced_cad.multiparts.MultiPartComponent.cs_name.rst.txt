@@ -1,0 +1,6 @@
+cs\_name
+========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.multiparts
+
+.. autoproperty:: MultiPartComponent.cs_name

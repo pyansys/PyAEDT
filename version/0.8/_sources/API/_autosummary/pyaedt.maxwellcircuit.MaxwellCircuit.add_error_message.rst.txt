@@ -1,0 +1,6 @@
+add\_error\_message
+===================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.add_error_message

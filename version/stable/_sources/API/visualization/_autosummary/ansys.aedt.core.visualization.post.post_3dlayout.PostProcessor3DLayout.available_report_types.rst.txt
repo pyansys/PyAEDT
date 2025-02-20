@@ -1,0 +1,6 @@
+available\_report\_types
+========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. autoproperty:: PostProcessor3DLayout.available_report_types

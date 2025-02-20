@@ -1,0 +1,6 @@
+open\_project
+=============
+
+.. currentmodule:: pyaedt.siwave
+
+.. automethod:: Siwave.open_project

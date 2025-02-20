@@ -1,0 +1,6 @@
+add\_trace\_to\_report
+======================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: FarField.add_trace_to_report

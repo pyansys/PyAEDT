@@ -1,0 +1,6 @@
+generate\_unique\_setup\_name
+=============================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.generate_unique_setup_name

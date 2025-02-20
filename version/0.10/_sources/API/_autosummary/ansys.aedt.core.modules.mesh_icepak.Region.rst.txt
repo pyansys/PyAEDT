@@ -1,0 +1,37 @@
+﻿Region
+======
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. autoclass:: Region
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Region.name
+      Region.negative_x_padding
+      Region.negative_x_padding_type
+      Region.negative_y_padding
+      Region.negative_y_padding_type
+      Region.negative_z_padding
+      Region.negative_z_padding_type
+      Region.object
+      Region.padding_types
+      Region.padding_values
+      Region.positive_x_padding
+      Region.positive_x_padding_type
+      Region.positive_y_padding
+      Region.positive_y_padding_type
+      Region.positive_z_padding
+      Region.positive_z_padding_type
+   
+   

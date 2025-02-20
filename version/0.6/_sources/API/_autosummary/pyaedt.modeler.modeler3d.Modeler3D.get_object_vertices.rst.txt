@@ -1,0 +1,6 @@
+get\_object\_vertices
+=====================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_object_vertices

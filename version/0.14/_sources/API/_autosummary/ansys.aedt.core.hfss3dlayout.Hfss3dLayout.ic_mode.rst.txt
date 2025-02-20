@@ -1,0 +1,6 @@
+ic\_mode
+========
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.ic_mode

@@ -1,0 +1,6 @@
+reference\_net\_name
+====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoproperty:: GapPort.reference_net_name

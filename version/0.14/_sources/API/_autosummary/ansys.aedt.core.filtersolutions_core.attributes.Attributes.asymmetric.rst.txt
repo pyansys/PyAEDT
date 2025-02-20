@@ -1,0 +1,6 @@
+asymmetric
+==========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.asymmetric

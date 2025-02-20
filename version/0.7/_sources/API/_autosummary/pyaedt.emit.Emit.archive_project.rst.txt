@@ -1,0 +1,6 @@
+archive\_project
+================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.archive_project

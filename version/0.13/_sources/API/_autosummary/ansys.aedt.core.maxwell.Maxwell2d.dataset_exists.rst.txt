@@ -1,0 +1,6 @@
+dataset\_exists
+===============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.dataset_exists

@@ -1,0 +1,6 @@
+face\_monitors
+==============
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. autoproperty:: Monitor.face_monitors

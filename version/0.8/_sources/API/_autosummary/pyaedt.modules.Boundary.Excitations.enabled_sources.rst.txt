@@ -1,0 +1,6 @@
+enabled\_sources
+================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: Excitations.enabled_sources

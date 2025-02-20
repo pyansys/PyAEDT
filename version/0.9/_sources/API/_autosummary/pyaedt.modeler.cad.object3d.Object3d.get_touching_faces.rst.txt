@@ -1,0 +1,6 @@
+get\_touching\_faces
+====================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.get_touching_faces

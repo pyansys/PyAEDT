@@ -1,0 +1,6 @@
+create\_probe\_port
+===================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: Patch.create_probe_port

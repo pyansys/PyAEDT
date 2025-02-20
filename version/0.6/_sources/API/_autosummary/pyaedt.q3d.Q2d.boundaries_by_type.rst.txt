@@ -1,0 +1,6 @@
+boundaries\_by\_type
+====================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.boundaries_by_type

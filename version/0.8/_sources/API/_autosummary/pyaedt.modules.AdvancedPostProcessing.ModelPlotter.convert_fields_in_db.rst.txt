@@ -1,0 +1,6 @@
+convert\_fields\_in\_db
+=======================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.convert_fields_in_db

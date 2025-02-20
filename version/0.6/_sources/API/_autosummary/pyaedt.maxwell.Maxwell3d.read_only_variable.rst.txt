@@ -1,0 +1,6 @@
+read\_only\_variable
+====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.read_only_variable

@@ -1,0 +1,6 @@
+format\_type
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. autoproperty:: NumberFormat.format_type

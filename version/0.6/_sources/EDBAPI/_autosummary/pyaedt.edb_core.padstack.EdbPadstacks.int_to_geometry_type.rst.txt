@@ -1,0 +1,6 @@
+int\_to\_geometry\_type
+=======================
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.int_to_geometry_type

@@ -1,0 +1,6 @@
+shape
+=====
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadProperties.shape

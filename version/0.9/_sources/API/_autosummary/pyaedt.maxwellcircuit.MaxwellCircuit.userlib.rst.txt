@@ -1,0 +1,6 @@
+userlib
+=======
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.userlib

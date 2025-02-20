@@ -1,0 +1,6 @@
+s\_parameters
+=============
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.s_parameters

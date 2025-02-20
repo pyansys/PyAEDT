@@ -1,0 +1,6 @@
+design\_libray
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_twin_builder
+
+.. autoproperty:: TwinBuilderComponents.design_libray

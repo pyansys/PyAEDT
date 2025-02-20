@@ -1,0 +1,6 @@
+set\_oo\_property\_value
+========================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.set_oo_property_value

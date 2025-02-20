@@ -1,0 +1,6 @@
+fill\_material
+==============
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.fill_material

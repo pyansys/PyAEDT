@@ -1,0 +1,6 @@
+hairpin\_extension\_length
+==========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.hairpin_extension_length

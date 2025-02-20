@@ -1,0 +1,6 @@
+oradfield
+=========
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.oradfield

@@ -1,0 +1,6 @@
+paste\_report\_data
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.paste_report_data

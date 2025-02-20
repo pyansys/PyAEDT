@@ -1,0 +1,6 @@
+get\_fans\_operating\_point
+===========================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_fans_operating_point

@@ -1,0 +1,6 @@
+edit\_notes
+===========
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.edit_notes

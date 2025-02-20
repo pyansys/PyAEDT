@@ -1,0 +1,6 @@
+components3d
+============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell3d.components3d

@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: PostProcessor.logger

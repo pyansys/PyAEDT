@@ -1,0 +1,6 @@
+import\_configuration
+=====================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.import_configuration

@@ -1,0 +1,6 @@
+omaterial\_manager
+==================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.omaterial_manager

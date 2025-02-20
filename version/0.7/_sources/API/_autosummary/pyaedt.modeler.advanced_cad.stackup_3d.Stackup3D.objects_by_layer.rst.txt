@@ -1,0 +1,6 @@
+objects\_by\_layer
+==================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Stackup3D.objects_by_layer

@@ -1,0 +1,6 @@
+dy\_dx\_tolerance
+=================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: EyeDiagram.dy_dx_tolerance

@@ -1,0 +1,6 @@
+edit\_grid
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. automethod:: Spectral.edit_grid

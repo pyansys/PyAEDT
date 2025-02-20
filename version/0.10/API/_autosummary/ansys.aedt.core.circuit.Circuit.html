@@ -1,0 +1,1729 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Circuit &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'API/_autosummary/ansys.aedt.core.circuit.Circuit';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="activate_variable_optimization" href="ansys.aedt.core.circuit.Circuit.activate_variable_optimization.html" />
+    <link rel="prev" title="working_directory" href="ansys.aedt.core.rmxprt.Rmxprt.working_directory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/API/_autosummary/ansys.aedt.core.circuit.Circuit.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Application.html">Application and solvers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.desktop.Desktop.html">Desktop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.html">Hfss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.q3d.Q3d.html">Q3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.q3d.Q2d.html">Q2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.maxwell.Maxwell2d.html">Maxwell2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.maxwell.Maxwell3d.html">Maxwell3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.html">Icepak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.hfss3dlayout.Hfss3dLayout.html">Hfss3dLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.mechanical.Mechanical.html">Mechanical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.rmxprt.Rmxprt.html">Rmxprt</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Circuit</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.activate_variable_optimization.html">activate_variable_optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.activate_variable_sensitivity.html">activate_variable_sensitivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.activate_variable_statistical.html">activate_variable_statistical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.activate_variable_tuning.html">activate_variable_tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.add_error_message.html">add_error_message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.add_from_toolkit.html">add_from_toolkit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.add_info_message.html">add_info_message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.add_netlist_datablock.html">add_netlist_datablock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.add_warning_message.html">add_warning_message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.analyze.html">analyze</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.analyze_setup.html">analyze_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.archive_project.html">archive_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.assign_current_sinusoidal_excitation_to_ports.html">assign_current_sinusoidal_excitation_to_ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.assign_power_sinusoidal_excitation_to_ports.html">assign_power_sinusoidal_excitation_to_ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.assign_voltage_frequency_dependent_excitation_to_ports.html">assign_voltage_frequency_dependent_excitation_to_ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.assign_voltage_sinusoidal_excitation_to_ports.html">assign_voltage_sinusoidal_excitation_to_ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.autosave_disable.html">autosave_disable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.autosave_enable.html">autosave_enable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.browse_log_file.html">browse_log_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.change_automatically_use_causal_materials.html">change_automatically_use_causal_materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.change_design_settings.html">change_design_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.change_material_override.html">change_material_override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.change_property.html">change_property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.change_validation_settings.html">change_validation_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.check_beta_option_enabled.html">check_beta_option_enabled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.check_if_project_is_loaded.html">check_if_project_is_loaded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.clean_proj_folder.html">clean_proj_folder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.close_desktop.html">close_desktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.close_project.html">close_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.connect_circuit_models_from_multi_zone_cutout.html">connect_circuit_models_from_multi_zone_cutout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.copy_design_from.html">copy_design_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.copy_project.html">copy_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_ami_schematic_from_snp.html">create_ami_schematic_from_snp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_dataset.html">create_dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_dataset1d_design.html">create_dataset1d_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_dataset1d_project.html">create_dataset1d_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_dataset3d.html">create_dataset3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_ibis_schematic_from_pins.html">create_ibis_schematic_from_pins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_ibis_schematic_from_snp.html">create_ibis_schematic_from_snp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_lna_schematic_from_snp.html">create_lna_schematic_from_snp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_new_project.html">create_new_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_output_variable.html">create_output_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_schematic_from_asc_file.html">create_schematic_from_asc_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_schematic_from_mentor_netlist.html">create_schematic_from_mentor_netlist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_schematic_from_netlist.html">create_schematic_from_netlist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_setup.html">create_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_source.html">create_source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_tdr_schematic_from_snp.html">create_tdr_schematic_from_snp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_touchstone_report.html">create_touchstone_report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.dataset_exists.html">dataset_exists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.deactivate_variable_optimization.html">deactivate_variable_optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.deactivate_variable_sensitivity.html">deactivate_variable_sensitivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.deactivate_variable_statistical.html">deactivate_variable_statistical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.deactivate_variable_tuning.html">deactivate_variable_tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_design.html">delete_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_project.html">delete_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_separator.html">delete_separator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_setup.html">delete_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_unused_variables.html">delete_unused_variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_variable.html">delete_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_variation.html">design_variation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.duplicate_design.html">duplicate_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.edit_setup.html">edit_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.evaluate_expression.html">evaluate_expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_convergence.html">export_convergence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_design_preview_to_jpg.html">export_design_preview_to_jpg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_fullwave_spice.html">export_fullwave_spice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_parametric_results.html">export_parametric_results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_profile.html">export_profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_results.html">export_results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_rl_matrix.html">export_rl_matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_touchstone.html">export_touchstone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_variables_to_csv.html">export_variables_to_csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.generate_temp_project_directory.html">generate_temp_project_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.generate_unique_setup_name.html">generate_unique_setup_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_all_insertion_loss_list.html">get_all_insertion_loss_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_all_return_loss_list.html">get_all_return_loss_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_evaluated_value.html">get_evaluated_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_fext_xtalk_list.html">get_fext_xtalk_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_ibis_model_from_file.html">get_ibis_model_from_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_module.html">get_module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_monitor_data.html">get_monitor_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_next_xtalk_list.html">get_next_xtalk_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_nominal_variation.html">get_nominal_variation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_object_material_properties.html">get_object_material_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_oo_name.html">get_oo_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_oo_object.html">get_oo_object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_oo_properties.html">get_oo_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_oo_property_value.html">get_oo_property_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_output_variable.html">get_output_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_profile.html">get_profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_registry_key_int.html">get_registry_key_int</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_registry_key_string.html">get_registry_key_string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_setup.html">get_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_setups.html">get_setups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_source_pin_names.html">get_source_pin_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_sweeps.html">get_sweeps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_touchstone_data.html">get_touchstone_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_traces_for_plot.html">get_traces_for_plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.hidden_variable.html">hidden_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.import_dataset1d.html">import_dataset1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.import_dataset3d.html">import_dataset3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.import_edb_in_circuit.html">import_edb_in_circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.import_touchstone_solution.html">import_touchstone_solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.insert_design.html">insert_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.list_of_variations.html">list_of_variations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.load_diff_pairs_from_file.html">load_diff_pairs_from_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.load_project.html">load_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.number_with_units.html">number_with_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.pop_up.html">pop_up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.push_down.html">push_down</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.push_excitations.html">push_excitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.push_time_excitations.html">push_time_excitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.read_design_data.html">read_design_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.read_only_variable.html">read_only_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.release_desktop.html">release_desktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.remove_all_unused_definitions.html">remove_all_unused_definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.rename_design.html">rename_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.retrieve_mentor_comp.html">retrieve_mentor_comp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.save_diff_pairs_to_file.html">save_diff_pairs_to_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.save_project.html">save_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_active_design.html">set_active_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_active_dso_config_name.html">set_active_dso_config_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_differential_pair.html">set_differential_pair</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_license_type.html">set_license_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_oo_property_value.html">set_oo_property_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_registry_from_file.html">set_registry_from_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_registry_key.html">set_registry_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_temporary_directory.html">set_temporary_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.solve_in_batch.html">solve_in_batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.stop_simulations.html">stop_simulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.submit_job.html">submit_job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.validate_simple.html">validate_simple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.value_with_units.html">value_with_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.Position.html">Position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.SimulationSetupTypes.html">SimulationSetupTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.SolutionTypes.html">SolutionTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.active_setup.html">active_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.aedt_version_id.html">aedt_version_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.are_there_simulations_running.html">are_there_simulations_running</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.available_variations.html">available_variations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.boundaries.html">boundaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.boundaries_by_type.html">boundaries_by_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.default_solution_type.html">default_solution_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_datasets.html">design_datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_list.html">design_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_name.html">design_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_properties.html">design_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_type.html">design_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.desktop_class.html">desktop_class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.desktop_install_dir.html">desktop_install_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.excitation_objects.html">excitation_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.excitations.html">excitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.excitations_by_type.html">excitations_by_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.existing_analysis_setups.html">existing_analysis_setups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.existing_analysis_sweeps.html">existing_analysis_sweeps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_all_sparameter_list.html">get_all_sparameter_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.info.html">info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.layouteditor.html">layouteditor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.library_list.html">library_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.lock_file.html">lock_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.logger.html">logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.materials.html">materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.modeler.html">modeler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.native_component_names.html">native_component_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.native_components.html">native_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.nominal_adaptive.html">nominal_adaptive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.nominal_sweep.html">nominal_sweep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.o_component_manager.html">o_component_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.o_maxwell_parameters.html">o_maxwell_parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.o_model_manager.html">o_model_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.o_symbol_manager.html">o_symbol_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oanalysis.html">oanalysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oboundary.html">oboundary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.odefinition_manager.html">odefinition_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.odesign.html">odesign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.odesktop.html">odesktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oeditor.html">oeditor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oexcitation.html">oexcitation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.ofieldsreporter.html">ofieldsreporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oimport_export.html">oimport_export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.omaterial_manager.html">omaterial_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.omatrix.html">omatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.omeshmodule.html">omeshmodule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.omodelsetup.html">omodelsetup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.omonitor.html">omonitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.ooptimetrics.html">ooptimetrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.ooutput_variable.html">ooutput_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.opadstackmanager.html">opadstackmanager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oproject.html">oproject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.optimizations.html">optimizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oradfield.html">oradfield</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oreportsetup.html">oreportsetup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.osolution.html">osolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.output_variables.html">output_variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.parametrics.html">parametrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.personallib.html">personallib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.ports.html">ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.post.html">post</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_datasets.html">project_datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_file.html">project_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_list.html">project_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_name.html">project_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_path.html">project_path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_properties.html">project_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_time_stamp.html">project_time_stamp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_timestamp_changed.html">project_timestamp_changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.pyaedt_dir.html">pyaedt_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.results_directory.html">results_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.settings.html">settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.setup_names.html">setup_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.setups.html">setups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.solution_type.html">solution_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.source_names.html">source_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.source_objects.html">source_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.sources.html">sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.src_dir.html">src_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.syslib.html">syslib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.temp_directory.html">temp_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.toolkit_directory.html">toolkit_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.userlib.html">userlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.valid_design.html">valid_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.variable_manager.html">variable_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.working_directory.html">working_directory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.maxwellcircuit.MaxwellCircuit.html">MaxwellCircuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.emit.Emit.html">Emit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.twinbuilder.TwinBuilder.html">TwinBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.filtersolutions.FilterSolutions.html">FilterSolutions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../MaterialManagement.html">Material and stackup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3D.html">3D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives2D.html">2D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitive_Objects.html">Primitives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3DLayout.html">Modeler in  HFSS 3D Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesCircuit.html">Modeler and components Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boundaries.html">Boundary objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mesh.html">Mesh operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup.html">Setup</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Post.html">Post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DesktopMessenger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optimetrics.html">Optimetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Configuration.html">Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SetupTemplates.html">Setup templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CableModeling.html">Cable modeling</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../Application.html" class="nav-link">Application and solvers</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">Circuit</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="circuit">
+<h1>Circuit<a class="headerlink" href="#circuit" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.aedt.core.circuit.Circuit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.aedt.core.circuit.</span></span><span class="sig-name descname"><span class="pre">Circuit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">design</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_graphical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_desktop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">close_on_exit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">student_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">machine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aedt_process_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_lock</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/ansys/pyaedt/blob/main/ansys/aedt/core/circuit.py#L59-L2617"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ansys.aedt.core.circuit.Circuit" title="Link to this definition">#</a></dt>
+<dd><p>Provides the Circuit application interface.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>project</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Name of the project to select or the full path to the project
+or AEDTZ archive to open.  The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which
+case an attempt is made to get an active project. If no
+projects are present, an empty project is created.</p>
+</dd>
+<dt><strong>design</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Name of the design to select. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in
+which case an attempt is made to get an active design. If no
+designs are present, an empty design is created.</p>
+</dd>
+<dt><strong>solution_type</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Solution type to apply to the design. The default is
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case the default type is applied.</p>
+</dd>
+<dt><strong>setup</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Name of the setup to use as the nominal. The default is
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case the active setup is used or
+nothing is used.</p>
+</dd>
+<dt><strong>version</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3.11/library/functions.html#int" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3.11/library/functions.html#float" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Version of AEDT to use. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case
+the active version or latest installed version is  used.
+This parameter is ignored when Script is launched within AEDT.
+Examples of input values are <code class="docutils literal notranslate"><span class="pre">232</span></code>, <code class="docutils literal notranslate"><span class="pre">23.2</span></code>,``2023.2``,``”2023.2”<a href="#id1"><span class="problematic" id="id2">``</span></a>.</p>
+</dd>
+<dt><strong>non_graphical</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to run AEDT in non-graphical mode. The default
+is <code class="docutils literal notranslate"><span class="pre">False</span></code>, in which case AEDT is launched in graphical mode.
+This parameter is ignored when a script is launched within AEDT.</p>
+</dd>
+<dt><strong>new_desktop</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to launch an instance of AEDT in a new thread, even if
+another instance of the <code class="docutils literal notranslate"><span class="pre">specified_version</span></code> is active on the
+machine.  The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. This parameter is ignored when
+a script is launched within AEDT.</p>
+</dd>
+<dt><strong>close_on_exit</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to release AEDT on exit. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+<dt><strong>student_version</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to open the AEDT student version. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+This parameter is ignored when Script is launched within AEDT.</p>
+</dd>
+<dt><strong>machine</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Machine name to which connect the oDesktop Session. Works only in 2022 R2
+or later. The remote server must be up and running with the command
+<cite>“ansysedt.exe -grpcsrv portnum”</cite>. If a machine is <cite>“localhost”</cite>, the
+server also starts if not present.</p>
+</dd>
+<dt><strong>port</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/functions.html#int" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Port number on which to start the oDesktop communication on an already existing server.
+This parameter is ignored when creating a new server. It works only in 2022 R2 or
+later. The remote server must be up and running with the command
+<cite>“ansysedt.exe -grpcsrv portnum”</cite>.</p>
+</dd>
+<dt><strong>aedt_process_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/functions.html#int" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Process ID for the instance of AEDT to point PyAEDT at. The default is
+<code class="docutils literal notranslate"><span class="pre">None</span></code>. This parameter is only used when <code class="docutils literal notranslate"><span class="pre">new_desktop</span> <span class="pre">=</span> <span class="pre">False</span></code>.</p>
+</dd>
+<dt><strong>remove_lock</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.11)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to remove lock to project before opening it or not.
+The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>, which means to not unlock
+the existing project if needed and raise an exception.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create an instance of Circuit and connect to an existing Circuit
+design or create a new Circuit design if one does not exist.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">aedtapp</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Create an instance of Circuit and link to a project named
+<code class="docutils literal notranslate"><span class="pre">&quot;projectname&quot;</span></code>. If this project does not exist, create one with
+this name.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aedtapp</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="n">projectname</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create an instance of Circuit and link to a design named
+<code class="docutils literal notranslate"><span class="pre">&quot;designname&quot;</span></code> in a project named <code class="docutils literal notranslate"><span class="pre">&quot;projectname&quot;</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aedtapp</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="n">projectname</span><span class="p">,</span><span class="n">designame</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create an instance of Circuit and open the specified project,
+which is <code class="docutils literal notranslate"><span class="pre">&quot;myfie.aedt&quot;</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aedtapp</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s2">&quot;myfile.aedt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create an instance of Circuit using the 2023 R2 version and
+open the specified project, which is <code class="docutils literal notranslate"><span class="pre">&quot;myfile.aedt&quot;</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">aedtapp</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="mf">2023.2</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="s2">&quot;myfile.aedt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create an instance of Circuit using the 2023 R2 student version and open
+the specified project, which is named <code class="docutils literal notranslate"><span class="pre">&quot;myfile.aedt&quot;</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hfss</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;2023.2&quot;</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="s2">&quot;myfile.aedt&quot;</span><span class="p">,</span> <span class="n">student_version</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.activate_variable_optimization.html#ansys.aedt.core.circuit.Circuit.activate_variable_optimization" title="ansys.aedt.core.circuit.Circuit.activate_variable_optimization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.activate_variable_optimization</span></code></a>(name)</p></td>
+<td><p>Activate optimization analysis for a variable and optionally set up ranges.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.activate_variable_sensitivity.html#ansys.aedt.core.circuit.Circuit.activate_variable_sensitivity" title="ansys.aedt.core.circuit.Circuit.activate_variable_sensitivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.activate_variable_sensitivity</span></code></a>(name)</p></td>
+<td><p>Activate sensitivity analysis for a variable and optionally set up ranges.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.activate_variable_statistical.html#ansys.aedt.core.circuit.Circuit.activate_variable_statistical" title="ansys.aedt.core.circuit.Circuit.activate_variable_statistical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.activate_variable_statistical</span></code></a>(name)</p></td>
+<td><p>Activate statitistical analysis for a variable and optionally set up ranges.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.activate_variable_tuning.html#ansys.aedt.core.circuit.Circuit.activate_variable_tuning" title="ansys.aedt.core.circuit.Circuit.activate_variable_tuning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.activate_variable_tuning</span></code></a>(name[, ...])</p></td>
+<td><p>Activate tuning analysis for a variable and optionally set up ranges.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.add_error_message.html#ansys.aedt.core.circuit.Circuit.add_error_message" title="ansys.aedt.core.circuit.Circuit.add_error_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.add_error_message</span></code></a>(text[, level])</p></td>
+<td><p>Add a type 0 &quot;Error&quot; message to either the global, active project, or active design level of the message mmanager tree.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.add_from_toolkit.html#ansys.aedt.core.circuit.Circuit.add_from_toolkit" title="ansys.aedt.core.circuit.Circuit.add_from_toolkit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.add_from_toolkit</span></code></a>(toolkit[, draw])</p></td>
+<td><p>Add a new toolkit to the current application.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.add_info_message.html#ansys.aedt.core.circuit.Circuit.add_info_message" title="ansys.aedt.core.circuit.Circuit.add_info_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.add_info_message</span></code></a>(text[, level])</p></td>
+<td><p>Add a type 0 &quot;Info&quot; message to either the global, active project, or active design level of the message manager tree.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.add_netlist_datablock.html#ansys.aedt.core.circuit.Circuit.add_netlist_datablock" title="ansys.aedt.core.circuit.Circuit.add_netlist_datablock"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.add_netlist_datablock</span></code></a>(input_file[, name])</p></td>
+<td><p>Add a new netlist data block to the circuit schematic.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.add_warning_message.html#ansys.aedt.core.circuit.Circuit.add_warning_message" title="ansys.aedt.core.circuit.Circuit.add_warning_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.add_warning_message</span></code></a>(text[, level])</p></td>
+<td><p>Add a type 0 &quot;Warning&quot; message to either the global, active project, or active design level of the message manager tree.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.analyze.html#ansys.aedt.core.circuit.Circuit.analyze" title="ansys.aedt.core.circuit.Circuit.analyze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.analyze</span></code></a>([setup, cores, tasks, gpus, ...])</p></td>
+<td><p>Solve the active design.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.analyze_setup.html#ansys.aedt.core.circuit.Circuit.analyze_setup" title="ansys.aedt.core.circuit.Circuit.analyze_setup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.analyze_setup</span></code></a>([name, cores, tasks, ...])</p></td>
+<td><p>Analyze a design setup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.archive_project.html#ansys.aedt.core.circuit.Circuit.archive_project" title="ansys.aedt.core.circuit.Circuit.archive_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.archive_project</span></code></a>([project_path, ...])</p></td>
+<td><p>Archive the AEDT project and add a message.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.assign_current_sinusoidal_excitation_to_ports.html#ansys.aedt.core.circuit.Circuit.assign_current_sinusoidal_excitation_to_ports" title="ansys.aedt.core.circuit.Circuit.assign_current_sinusoidal_excitation_to_ports"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.assign_current_sinusoidal_excitation_to_ports</span></code></a>(ports)</p></td>
+<td><p>Assign a current sinusoidal excitation to circuit ports.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.assign_power_sinusoidal_excitation_to_ports.html#ansys.aedt.core.circuit.Circuit.assign_power_sinusoidal_excitation_to_ports" title="ansys.aedt.core.circuit.Circuit.assign_power_sinusoidal_excitation_to_ports"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.assign_power_sinusoidal_excitation_to_ports</span></code></a>(ports)</p></td>
+<td><p>Assign a power sinusoidal excitation to circuit ports.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.assign_voltage_frequency_dependent_excitation_to_ports.html#ansys.aedt.core.circuit.Circuit.assign_voltage_frequency_dependent_excitation_to_ports" title="ansys.aedt.core.circuit.Circuit.assign_voltage_frequency_dependent_excitation_to_ports"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.assign_voltage_frequency_dependent_excitation_to_ports</span></code></a>(...)</p></td>
+<td><p>Assign a frequency dependent excitation to circuit ports from a frequency dependent source (FDS format).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.assign_voltage_sinusoidal_excitation_to_ports.html#ansys.aedt.core.circuit.Circuit.assign_voltage_sinusoidal_excitation_to_ports" title="ansys.aedt.core.circuit.Circuit.assign_voltage_sinusoidal_excitation_to_ports"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.assign_voltage_sinusoidal_excitation_to_ports</span></code></a>(ports)</p></td>
+<td><p>Assign a voltage sinusoidal excitation to circuit ports.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.autosave_disable.html#ansys.aedt.core.circuit.Circuit.autosave_disable" title="ansys.aedt.core.circuit.Circuit.autosave_disable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.autosave_disable</span></code></a>()</p></td>
+<td><p>Disable autosave in AEDT.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.autosave_enable.html#ansys.aedt.core.circuit.Circuit.autosave_enable" title="ansys.aedt.core.circuit.Circuit.autosave_enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.autosave_enable</span></code></a>()</p></td>
+<td><p>Enable autosave in AEDT.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.browse_log_file.html#ansys.aedt.core.circuit.Circuit.browse_log_file" title="ansys.aedt.core.circuit.Circuit.browse_log_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.browse_log_file</span></code></a>([input_file])</p></td>
+<td><p>Save the most recent log file in a new directory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.change_automatically_use_causal_materials.html#ansys.aedt.core.circuit.Circuit.change_automatically_use_causal_materials" title="ansys.aedt.core.circuit.Circuit.change_automatically_use_causal_materials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.change_automatically_use_causal_materials</span></code></a>([...])</p></td>
+<td><p>Enable or disable the automatic use of causal materials for lossy dielectrics.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.change_design_settings.html#ansys.aedt.core.circuit.Circuit.change_design_settings" title="ansys.aedt.core.circuit.Circuit.change_design_settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.change_design_settings</span></code></a>(settings)</p></td>
+<td><p>Set Design Settings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.change_material_override.html#ansys.aedt.core.circuit.Circuit.change_material_override" title="ansys.aedt.core.circuit.Circuit.change_material_override"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.change_material_override</span></code></a>([...])</p></td>
+<td><p>Enable or disable the material override in the project.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.change_property.html#ansys.aedt.core.circuit.Circuit.change_property" title="ansys.aedt.core.circuit.Circuit.change_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.change_property</span></code></a>(aedt_object, ...)</p></td>
+<td><p>Change a property.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.change_validation_settings.html#ansys.aedt.core.circuit.Circuit.change_validation_settings" title="ansys.aedt.core.circuit.Circuit.change_validation_settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.change_validation_settings</span></code></a>([...])</p></td>
+<td><p>Update the validation design settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.check_beta_option_enabled.html#ansys.aedt.core.circuit.Circuit.check_beta_option_enabled" title="ansys.aedt.core.circuit.Circuit.check_beta_option_enabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.check_beta_option_enabled</span></code></a>(beta_option)</p></td>
+<td><p>Check if a beta option is enabled.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.check_if_project_is_loaded.html#ansys.aedt.core.circuit.Circuit.check_if_project_is_loaded" title="ansys.aedt.core.circuit.Circuit.check_if_project_is_loaded"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.check_if_project_is_loaded</span></code></a>(input_file)</p></td>
+<td><p>Check if a project path is already loaded in active Desktop.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.clean_proj_folder.html#ansys.aedt.core.circuit.Circuit.clean_proj_folder" title="ansys.aedt.core.circuit.Circuit.clean_proj_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.clean_proj_folder</span></code></a>([directory, name])</p></td>
+<td><p>Delete a project folder.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.close_desktop.html#ansys.aedt.core.circuit.Circuit.close_desktop" title="ansys.aedt.core.circuit.Circuit.close_desktop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.close_desktop</span></code></a>()</p></td>
+<td><p>Close AEDT and release it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.close_project.html#ansys.aedt.core.circuit.Circuit.close_project" title="ansys.aedt.core.circuit.Circuit.close_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.close_project</span></code></a>([name, save])</p></td>
+<td><p>Close an AEDT project.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.connect_circuit_models_from_multi_zone_cutout.html#ansys.aedt.core.circuit.Circuit.connect_circuit_models_from_multi_zone_cutout" title="ansys.aedt.core.circuit.Circuit.connect_circuit_models_from_multi_zone_cutout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.connect_circuit_models_from_multi_zone_cutout</span></code></a>(...)</p></td>
+<td><p>Connect circuit model from a multizone clipped project.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.copy_design_from.html#ansys.aedt.core.circuit.Circuit.copy_design_from" title="ansys.aedt.core.circuit.Circuit.copy_design_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.copy_design_from</span></code></a>(project, design[, ...])</p></td>
+<td><p>Copy a design from a project into the active project.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.copy_project.html#ansys.aedt.core.circuit.Circuit.copy_project" title="ansys.aedt.core.circuit.Circuit.copy_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.copy_project</span></code></a>(destination, name)</p></td>
+<td><p>Copy the project to another destination.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_ami_schematic_from_snp.html#ansys.aedt.core.circuit.Circuit.create_ami_schematic_from_snp" title="ansys.aedt.core.circuit.Circuit.create_ami_schematic_from_snp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_ami_schematic_from_snp</span></code></a>(...[, ...])</p></td>
+<td><p>Create a schematic from a Touchstone file and automatically set up an IBIS-AMI analysis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_dataset.html#ansys.aedt.core.circuit.Circuit.create_dataset" title="ansys.aedt.core.circuit.Circuit.create_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_dataset</span></code></a>(name, x, y[, z, v, ...])</p></td>
+<td><p>Create a dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_dataset1d_design.html#ansys.aedt.core.circuit.Circuit.create_dataset1d_design" title="ansys.aedt.core.circuit.Circuit.create_dataset1d_design"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_dataset1d_design</span></code></a>(name, x, y)</p></td>
+<td><p>Create a design dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_dataset1d_project.html#ansys.aedt.core.circuit.Circuit.create_dataset1d_project" title="ansys.aedt.core.circuit.Circuit.create_dataset1d_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_dataset1d_project</span></code></a>(name, x, y)</p></td>
+<td><p>Create a project dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_dataset3d.html#ansys.aedt.core.circuit.Circuit.create_dataset3d" title="ansys.aedt.core.circuit.Circuit.create_dataset3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_dataset3d</span></code></a>(name, x, y[, z, v, ...])</p></td>
+<td><p>Create a 3D dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_ibis_schematic_from_pins.html#ansys.aedt.core.circuit.Circuit.create_ibis_schematic_from_pins" title="ansys.aedt.core.circuit.Circuit.create_ibis_schematic_from_pins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_ibis_schematic_from_pins</span></code></a>(...)</p></td>
+<td><p>Create a schematic from a list of pins and automatically set up an IBIS-AMI analysis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_ibis_schematic_from_snp.html#ansys.aedt.core.circuit.Circuit.create_ibis_schematic_from_snp" title="ansys.aedt.core.circuit.Circuit.create_ibis_schematic_from_snp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_ibis_schematic_from_snp</span></code></a>(...)</p></td>
+<td><p>Create a schematic from a Touchstone file and automatically set up an IBIS-AMI analysis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_lna_schematic_from_snp.html#ansys.aedt.core.circuit.Circuit.create_lna_schematic_from_snp" title="ansys.aedt.core.circuit.Circuit.create_lna_schematic_from_snp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_lna_schematic_from_snp</span></code></a>(input_file)</p></td>
+<td><p>Create a schematic from a Touchstone file and automatically set up an LNA analysis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_new_project.html#ansys.aedt.core.circuit.Circuit.create_new_project" title="ansys.aedt.core.circuit.Circuit.create_new_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_new_project</span></code></a>(name)</p></td>
+<td><p>Create a project within AEDT.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_output_variable.html#ansys.aedt.core.circuit.Circuit.create_output_variable" title="ansys.aedt.core.circuit.Circuit.create_output_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_output_variable</span></code></a>(variable, ...)</p></td>
+<td><p>Create or modify an output variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_schematic_from_asc_file.html#ansys.aedt.core.circuit.Circuit.create_schematic_from_asc_file" title="ansys.aedt.core.circuit.Circuit.create_schematic_from_asc_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_schematic_from_asc_file</span></code></a>(...)</p></td>
+<td><p>Import an asc schematic and convert to Circuit Schematic.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_schematic_from_mentor_netlist.html#ansys.aedt.core.circuit.Circuit.create_schematic_from_mentor_netlist" title="ansys.aedt.core.circuit.Circuit.create_schematic_from_mentor_netlist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_schematic_from_mentor_netlist</span></code></a>(...)</p></td>
+<td><p>Create a circuit schematic from a Mentor netlist.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_schematic_from_netlist.html#ansys.aedt.core.circuit.Circuit.create_schematic_from_netlist" title="ansys.aedt.core.circuit.Circuit.create_schematic_from_netlist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_schematic_from_netlist</span></code></a>(input_file)</p></td>
+<td><p>Create a circuit schematic from an HSpice netlist.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_setup.html#ansys.aedt.core.circuit.Circuit.create_setup" title="ansys.aedt.core.circuit.Circuit.create_setup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_setup</span></code></a>([name, setup_type])</p></td>
+<td><p>Create a setup.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_source.html#ansys.aedt.core.circuit.Circuit.create_source" title="ansys.aedt.core.circuit.Circuit.create_source"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_source</span></code></a>(source_type[, name])</p></td>
+<td><p>Create a source in Circuit.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_tdr_schematic_from_snp.html#ansys.aedt.core.circuit.Circuit.create_tdr_schematic_from_snp" title="ansys.aedt.core.circuit.Circuit.create_tdr_schematic_from_snp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_tdr_schematic_from_snp</span></code></a>(...[, ...])</p></td>
+<td><p>Create a schematic from a Touchstone file and automatically setup a TDR transient analysis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.create_touchstone_report.html#ansys.aedt.core.circuit.Circuit.create_touchstone_report" title="ansys.aedt.core.circuit.Circuit.create_touchstone_report"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.create_touchstone_report</span></code></a>(name, curves)</p></td>
+<td><p>Create a Touchstone plot.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.dataset_exists.html#ansys.aedt.core.circuit.Circuit.dataset_exists" title="ansys.aedt.core.circuit.Circuit.dataset_exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.dataset_exists</span></code></a>(name[, ...])</p></td>
+<td><p>Check if a dataset exists.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.deactivate_variable_optimization.html#ansys.aedt.core.circuit.Circuit.deactivate_variable_optimization" title="ansys.aedt.core.circuit.Circuit.deactivate_variable_optimization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.deactivate_variable_optimization</span></code></a>(name)</p></td>
+<td><p>Deactivate the optimization analysis for a variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.deactivate_variable_sensitivity.html#ansys.aedt.core.circuit.Circuit.deactivate_variable_sensitivity" title="ansys.aedt.core.circuit.Circuit.deactivate_variable_sensitivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.deactivate_variable_sensitivity</span></code></a>(name)</p></td>
+<td><p>Deactivate the sensitivity analysis for a variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.deactivate_variable_statistical.html#ansys.aedt.core.circuit.Circuit.deactivate_variable_statistical" title="ansys.aedt.core.circuit.Circuit.deactivate_variable_statistical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.deactivate_variable_statistical</span></code></a>(name)</p></td>
+<td><p>Deactivate the statistical analysis for a variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.deactivate_variable_tuning.html#ansys.aedt.core.circuit.Circuit.deactivate_variable_tuning" title="ansys.aedt.core.circuit.Circuit.deactivate_variable_tuning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.deactivate_variable_tuning</span></code></a>(name)</p></td>
+<td><p>Deactivate the tuning analysis for a variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_design.html#ansys.aedt.core.circuit.Circuit.delete_design" title="ansys.aedt.core.circuit.Circuit.delete_design"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.delete_design</span></code></a>([name, fallback_design])</p></td>
+<td><p>Delete a design from the current project.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_project.html#ansys.aedt.core.circuit.Circuit.delete_project" title="ansys.aedt.core.circuit.Circuit.delete_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.delete_project</span></code></a>(name)</p></td>
+<td><p>Delete a project.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_separator.html#ansys.aedt.core.circuit.Circuit.delete_separator" title="ansys.aedt.core.circuit.Circuit.delete_separator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.delete_separator</span></code></a>(name)</p></td>
+<td><p>Delete a separator from either the active project or a design.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_setup.html#ansys.aedt.core.circuit.Circuit.delete_setup" title="ansys.aedt.core.circuit.Circuit.delete_setup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.delete_setup</span></code></a>(name)</p></td>
+<td><p>Delete a setup.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_unused_variables.html#ansys.aedt.core.circuit.Circuit.delete_unused_variables" title="ansys.aedt.core.circuit.Circuit.delete_unused_variables"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.delete_unused_variables</span></code></a>()</p></td>
+<td><p>Delete design and project unused variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.delete_variable.html#ansys.aedt.core.circuit.Circuit.delete_variable" title="ansys.aedt.core.circuit.Circuit.delete_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.delete_variable</span></code></a>(name)</p></td>
+<td><p>Delete a variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_variation.html#ansys.aedt.core.circuit.Circuit.design_variation" title="ansys.aedt.core.circuit.Circuit.design_variation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.design_variation</span></code></a>([variation])</p></td>
+<td><p>Generate a string to specify a desired variation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.duplicate_design.html#ansys.aedt.core.circuit.Circuit.duplicate_design" title="ansys.aedt.core.circuit.Circuit.duplicate_design"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.duplicate_design</span></code></a>(name[, ...])</p></td>
+<td><p>Copy a design to a new name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.edit_setup.html#ansys.aedt.core.circuit.Circuit.edit_setup" title="ansys.aedt.core.circuit.Circuit.edit_setup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.edit_setup</span></code></a>(name, properties)</p></td>
+<td><p>Modify a setup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.evaluate_expression.html#ansys.aedt.core.circuit.Circuit.evaluate_expression" title="ansys.aedt.core.circuit.Circuit.evaluate_expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.evaluate_expression</span></code></a>(expression)</p></td>
+<td><p>Evaluate a valid string expression and return the numerical value in SI units.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_convergence.html#ansys.aedt.core.circuit.Circuit.export_convergence" title="ansys.aedt.core.circuit.Circuit.export_convergence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.export_convergence</span></code></a>(setup[, ...])</p></td>
+<td><p>Export a solution convergence to a file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_design_preview_to_jpg.html#ansys.aedt.core.circuit.Circuit.export_design_preview_to_jpg" title="ansys.aedt.core.circuit.Circuit.export_design_preview_to_jpg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.export_design_preview_to_jpg</span></code></a>(output_file)</p></td>
+<td><p>Export design preview image to a JPG file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_fullwave_spice.html#ansys.aedt.core.circuit.Circuit.export_fullwave_spice" title="ansys.aedt.core.circuit.Circuit.export_fullwave_spice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.export_fullwave_spice</span></code></a>([design, ...])</p></td>
+<td><p>Export a full wave HSpice file using NDE.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_parametric_results.html#ansys.aedt.core.circuit.Circuit.export_parametric_results" title="ansys.aedt.core.circuit.Circuit.export_parametric_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.export_parametric_results</span></code></a>(sweep, ...)</p></td>
+<td><p>Export a list of all parametric variations solved for a sweep to a CSV file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_profile.html#ansys.aedt.core.circuit.Circuit.export_profile" title="ansys.aedt.core.circuit.Circuit.export_profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.export_profile</span></code></a>(setup[, variation, ...])</p></td>
+<td><p>Export a solution profile to a PROF file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_results.html#ansys.aedt.core.circuit.Circuit.export_results" title="ansys.aedt.core.circuit.Circuit.export_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.export_results</span></code></a>([analyze, ...])</p></td>
+<td><p>Export all available reports to a file, including profile, and convergence and sNp when applicable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_rl_matrix.html#ansys.aedt.core.circuit.Circuit.export_rl_matrix" title="ansys.aedt.core.circuit.Circuit.export_rl_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.export_rl_matrix</span></code></a>(matrix_name, ...[, ...])</p></td>
+<td><p>Export R/L matrix after solving.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_touchstone.html#ansys.aedt.core.circuit.Circuit.export_touchstone" title="ansys.aedt.core.circuit.Circuit.export_touchstone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.export_touchstone</span></code></a>([setup, sweep, ...])</p></td>
+<td><p>Export a Touchstone file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.export_variables_to_csv.html#ansys.aedt.core.circuit.Circuit.export_variables_to_csv" title="ansys.aedt.core.circuit.Circuit.export_variables_to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.export_variables_to_csv</span></code></a>(output_file)</p></td>
+<td><p>Export design properties, project variables, or both to a CSV file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.generate_temp_project_directory.html#ansys.aedt.core.circuit.Circuit.generate_temp_project_directory" title="ansys.aedt.core.circuit.Circuit.generate_temp_project_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.generate_temp_project_directory</span></code></a>(name)</p></td>
+<td><p>Generate a unique directory string to save a project to.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.generate_unique_setup_name.html#ansys.aedt.core.circuit.Circuit.generate_unique_setup_name" title="ansys.aedt.core.circuit.Circuit.generate_unique_setup_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.generate_unique_setup_name</span></code></a>([name])</p></td>
+<td><p>Generate a new setup with a unique name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_all_insertion_loss_list.html#ansys.aedt.core.circuit.Circuit.get_all_insertion_loss_list" title="ansys.aedt.core.circuit.Circuit.get_all_insertion_loss_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_all_insertion_loss_list</span></code></a>([...])</p></td>
+<td><p>Get a list of all insertion losses from two lists of excitations (driver and receiver).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_all_return_loss_list.html#ansys.aedt.core.circuit.Circuit.get_all_return_loss_list" title="ansys.aedt.core.circuit.Circuit.get_all_return_loss_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_all_return_loss_list</span></code></a>([...])</p></td>
+<td><p>Get a list of all return losses for a list of excitations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_evaluated_value.html#ansys.aedt.core.circuit.Circuit.get_evaluated_value" title="ansys.aedt.core.circuit.Circuit.get_evaluated_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_evaluated_value</span></code></a>(name[, units])</p></td>
+<td><p>Retrieve the evaluated value of a design property or project variable in SI units if no unit is provided.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_fext_xtalk_list.html#ansys.aedt.core.circuit.Circuit.get_fext_xtalk_list" title="ansys.aedt.core.circuit.Circuit.get_fext_xtalk_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_fext_xtalk_list</span></code></a>([drivers, ...])</p></td>
+<td><p>Geta list of all the far end XTalks from two lists of excitations (driver and receiver).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_ibis_model_from_file.html#ansys.aedt.core.circuit.Circuit.get_ibis_model_from_file" title="ansys.aedt.core.circuit.Circuit.get_ibis_model_from_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_ibis_model_from_file</span></code></a>(input_file)</p></td>
+<td><p>Create an IBIS model based on the data contained in an IBIS file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_module.html#ansys.aedt.core.circuit.Circuit.get_module" title="ansys.aedt.core.circuit.Circuit.get_module"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_module</span></code></a>(module_name)</p></td>
+<td><p>Aedt Module object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_monitor_data.html#ansys.aedt.core.circuit.Circuit.get_monitor_data" title="ansys.aedt.core.circuit.Circuit.get_monitor_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_monitor_data</span></code></a>()</p></td>
+<td><p>Check and get monitor data of an existing analysis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_next_xtalk_list.html#ansys.aedt.core.circuit.Circuit.get_next_xtalk_list" title="ansys.aedt.core.circuit.Circuit.get_next_xtalk_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_next_xtalk_list</span></code></a>([drivers, ...])</p></td>
+<td><p>Get a list of all the near end XTalks from a list of excitations (driver and receiver).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_nominal_variation.html#ansys.aedt.core.circuit.Circuit.get_nominal_variation" title="ansys.aedt.core.circuit.Circuit.get_nominal_variation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_nominal_variation</span></code></a>([with_values])</p></td>
+<td><p>Retrieve the nominal variation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_object_material_properties.html#ansys.aedt.core.circuit.Circuit.get_object_material_properties" title="ansys.aedt.core.circuit.Circuit.get_object_material_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_object_material_properties</span></code></a>([...])</p></td>
+<td><p>Retrieve the material properties for a list of objects and return them in a dictionary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_oo_name.html#ansys.aedt.core.circuit.Circuit.get_oo_name" title="ansys.aedt.core.circuit.Circuit.get_oo_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_oo_name</span></code></a>(aedt_object[, object_name])</p></td>
+<td><p>Return the object-oriented AEDT property names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_oo_object.html#ansys.aedt.core.circuit.Circuit.get_oo_object" title="ansys.aedt.core.circuit.Circuit.get_oo_object"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_oo_object</span></code></a>(aedt_object, object_name)</p></td>
+<td><p>Return the Object Oriented AEDT Object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_oo_properties.html#ansys.aedt.core.circuit.Circuit.get_oo_properties" title="ansys.aedt.core.circuit.Circuit.get_oo_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_oo_properties</span></code></a>(aedt_object, ...)</p></td>
+<td><p>Return the Object Oriented AEDT Object Properties.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_oo_property_value.html#ansys.aedt.core.circuit.Circuit.get_oo_property_value" title="ansys.aedt.core.circuit.Circuit.get_oo_property_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_oo_property_value</span></code></a>(aedt_object, ...)</p></td>
+<td><p>Return the Object Oriented AEDT Object Properties.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_output_variable.html#ansys.aedt.core.circuit.Circuit.get_output_variable" title="ansys.aedt.core.circuit.Circuit.get_output_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_output_variable</span></code></a>(variable[, solution])</p></td>
+<td><p>Retrieve the value of the output variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_profile.html#ansys.aedt.core.circuit.Circuit.get_profile" title="ansys.aedt.core.circuit.Circuit.get_profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_profile</span></code></a>([name])</p></td>
+<td><p>Get profile information.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_registry_key_int.html#ansys.aedt.core.circuit.Circuit.get_registry_key_int" title="ansys.aedt.core.circuit.Circuit.get_registry_key_int"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_registry_key_int</span></code></a>(name)</p></td>
+<td><p>Get the value for the AEDT registry key if one exists.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_registry_key_string.html#ansys.aedt.core.circuit.Circuit.get_registry_key_string" title="ansys.aedt.core.circuit.Circuit.get_registry_key_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_registry_key_string</span></code></a>(name)</p></td>
+<td><p>Get the value for the AEDT registry key if one exists.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_setup.html#ansys.aedt.core.circuit.Circuit.get_setup" title="ansys.aedt.core.circuit.Circuit.get_setup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_setup</span></code></a>(name)</p></td>
+<td><p>Retrieve the setup from the current design.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_setups.html#ansys.aedt.core.circuit.Circuit.get_setups" title="ansys.aedt.core.circuit.Circuit.get_setups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_setups</span></code></a>()</p></td>
+<td><p>Retrieve setups.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_source_pin_names.html#ansys.aedt.core.circuit.Circuit.get_source_pin_names" title="ansys.aedt.core.circuit.Circuit.get_source_pin_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_source_pin_names</span></code></a>(source_design_name)</p></td>
+<td><p>Retrieve pin names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_sweeps.html#ansys.aedt.core.circuit.Circuit.get_sweeps" title="ansys.aedt.core.circuit.Circuit.get_sweeps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_sweeps</span></code></a>(name)</p></td>
+<td><p>Retrieve all sweeps for a setup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_touchstone_data.html#ansys.aedt.core.circuit.Circuit.get_touchstone_data" title="ansys.aedt.core.circuit.Circuit.get_touchstone_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_touchstone_data</span></code></a>([setup, sweep, ...])</p></td>
+<td><p>Return a Touchstone data plot.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_traces_for_plot.html#ansys.aedt.core.circuit.Circuit.get_traces_for_plot" title="ansys.aedt.core.circuit.Circuit.get_traces_for_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_traces_for_plot</span></code></a>([...])</p></td>
+<td><p>Retrieve a list of traces of specified designs ready to use in plot reports.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.hidden_variable.html#ansys.aedt.core.circuit.Circuit.hidden_variable" title="ansys.aedt.core.circuit.Circuit.hidden_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.hidden_variable</span></code></a>(name[, value])</p></td>
+<td><p>Set the variable to a hidden or unhidden variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.import_dataset1d.html#ansys.aedt.core.circuit.Circuit.import_dataset1d" title="ansys.aedt.core.circuit.Circuit.import_dataset1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.import_dataset1d</span></code></a>(input_file[, name, ...])</p></td>
+<td><p>Import a 1D dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.import_dataset3d.html#ansys.aedt.core.circuit.Circuit.import_dataset3d" title="ansys.aedt.core.circuit.Circuit.import_dataset3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.import_dataset3d</span></code></a>(input_file[, name, ...])</p></td>
+<td><p>Import a 3D dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.import_edb_in_circuit.html#ansys.aedt.core.circuit.Circuit.import_edb_in_circuit" title="ansys.aedt.core.circuit.Circuit.import_edb_in_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.import_edb_in_circuit</span></code></a>(input_dir)</p></td>
+<td><p>Import an EDB design inside a Circuit project.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.import_touchstone_solution.html#ansys.aedt.core.circuit.Circuit.import_touchstone_solution" title="ansys.aedt.core.circuit.Circuit.import_touchstone_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.import_touchstone_solution</span></code></a>(input_file)</p></td>
+<td><p>Import a Touchstone file as the solution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.insert_design.html#ansys.aedt.core.circuit.Circuit.insert_design" title="ansys.aedt.core.circuit.Circuit.insert_design"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.insert_design</span></code></a>([name, solution_type])</p></td>
+<td><p>Add a design of a specified type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.list_of_variations.html#ansys.aedt.core.circuit.Circuit.list_of_variations" title="ansys.aedt.core.circuit.Circuit.list_of_variations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.list_of_variations</span></code></a>([setup, sweep])</p></td>
+<td><p>Retrieve a list of active variations for input setup.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.load_diff_pairs_from_file.html#ansys.aedt.core.circuit.Circuit.load_diff_pairs_from_file" title="ansys.aedt.core.circuit.Circuit.load_diff_pairs_from_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.load_diff_pairs_from_file</span></code></a>(input_file)</p></td>
+<td><p>Load differtential pairs definition from a file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.load_project.html#ansys.aedt.core.circuit.Circuit.load_project" title="ansys.aedt.core.circuit.Circuit.load_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.load_project</span></code></a>(file_name[, design, ...])</p></td>
+<td><p>Open an AEDT project based on a project and optional design.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.number_with_units.html#ansys.aedt.core.circuit.Circuit.number_with_units" title="ansys.aedt.core.circuit.Circuit.number_with_units"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.number_with_units</span></code></a>(value[, units])</p></td>
+<td><p>Convert a number to a string with units.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.pop_up.html#ansys.aedt.core.circuit.Circuit.pop_up" title="ansys.aedt.core.circuit.Circuit.pop_up"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.pop_up</span></code></a>()</p></td>
+<td><p>Pop-up to parent Circuit design and reinitialize Circuit object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.push_down.html#ansys.aedt.core.circuit.Circuit.push_down" title="ansys.aedt.core.circuit.Circuit.push_down"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.push_down</span></code></a>(component)</p></td>
+<td><p>Push-down to the child component and reinitialize the Circuit object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.push_excitations.html#ansys.aedt.core.circuit.Circuit.push_excitations" title="ansys.aedt.core.circuit.Circuit.push_excitations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.push_excitations</span></code></a>(instance[, ...])</p></td>
+<td><p>Push excitations for a linear frequency setup.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.push_time_excitations.html#ansys.aedt.core.circuit.Circuit.push_time_excitations" title="ansys.aedt.core.circuit.Circuit.push_time_excitations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.push_time_excitations</span></code></a>(instance[, ...])</p></td>
+<td><p>Push excitations for a transient setup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.read_design_data.html#ansys.aedt.core.circuit.Circuit.read_design_data" title="ansys.aedt.core.circuit.Circuit.read_design_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.read_design_data</span></code></a>()</p></td>
+<td><p>Read back the design data as a dictionary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.read_only_variable.html#ansys.aedt.core.circuit.Circuit.read_only_variable" title="ansys.aedt.core.circuit.Circuit.read_only_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.read_only_variable</span></code></a>(name[, value])</p></td>
+<td><p>Set the variable to a read-only or not read-only variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.release_desktop.html#ansys.aedt.core.circuit.Circuit.release_desktop" title="ansys.aedt.core.circuit.Circuit.release_desktop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.release_desktop</span></code></a>([close_projects, ...])</p></td>
+<td><p>Release AEDT.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.remove_all_unused_definitions.html#ansys.aedt.core.circuit.Circuit.remove_all_unused_definitions" title="ansys.aedt.core.circuit.Circuit.remove_all_unused_definitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.remove_all_unused_definitions</span></code></a>()</p></td>
+<td><p>Remove all unused definitions in the project.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.rename_design.html#ansys.aedt.core.circuit.Circuit.rename_design" title="ansys.aedt.core.circuit.Circuit.rename_design"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.rename_design</span></code></a>(name[, save])</p></td>
+<td><p>Rename the active design.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.retrieve_mentor_comp.html#ansys.aedt.core.circuit.Circuit.retrieve_mentor_comp" title="ansys.aedt.core.circuit.Circuit.retrieve_mentor_comp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.retrieve_mentor_comp</span></code></a>(reference_id)</p></td>
+<td><p>Retrieve the type of the Mentor netlist component for a given reference ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.save_diff_pairs_to_file.html#ansys.aedt.core.circuit.Circuit.save_diff_pairs_to_file" title="ansys.aedt.core.circuit.Circuit.save_diff_pairs_to_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.save_diff_pairs_to_file</span></code></a>(output_file)</p></td>
+<td><p>Save differential pairs definition to a file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.save_project.html#ansys.aedt.core.circuit.Circuit.save_project" title="ansys.aedt.core.circuit.Circuit.save_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.save_project</span></code></a>([file_name, overwrite, ...])</p></td>
+<td><p>Save the project and add a message.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_active_design.html#ansys.aedt.core.circuit.Circuit.set_active_design" title="ansys.aedt.core.circuit.Circuit.set_active_design"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.set_active_design</span></code></a>(name)</p></td>
+<td><p>Change the active design to another design.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_active_dso_config_name.html#ansys.aedt.core.circuit.Circuit.set_active_dso_config_name" title="ansys.aedt.core.circuit.Circuit.set_active_dso_config_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.set_active_dso_config_name</span></code></a>([...])</p></td>
+<td><p>Change a specific registry key to a new value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_differential_pair.html#ansys.aedt.core.circuit.Circuit.set_differential_pair" title="ansys.aedt.core.circuit.Circuit.set_differential_pair"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.set_differential_pair</span></code></a>(assignment, ...)</p></td>
+<td><p>Add a differential pair definition.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_license_type.html#ansys.aedt.core.circuit.Circuit.set_license_type" title="ansys.aedt.core.circuit.Circuit.set_license_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.set_license_type</span></code></a>([license_type])</p></td>
+<td><p>Change the license type between <code class="docutils literal notranslate"><span class="pre">&quot;Pack&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Pool&quot;</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_oo_property_value.html#ansys.aedt.core.circuit.Circuit.set_oo_property_value" title="ansys.aedt.core.circuit.Circuit.set_oo_property_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.set_oo_property_value</span></code></a>(aedt_object, ...)</p></td>
+<td><p>Change the property value of the object-oriented AEDT object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_registry_from_file.html#ansys.aedt.core.circuit.Circuit.set_registry_from_file" title="ansys.aedt.core.circuit.Circuit.set_registry_from_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.set_registry_from_file</span></code></a>(registry_file)</p></td>
+<td><p>Apply desktop registry settings from an ACT file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_registry_key.html#ansys.aedt.core.circuit.Circuit.set_registry_key" title="ansys.aedt.core.circuit.Circuit.set_registry_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.set_registry_key</span></code></a>(name, value)</p></td>
+<td><p>Change a specific registry key to a new value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.set_temporary_directory.html#ansys.aedt.core.circuit.Circuit.set_temporary_directory" title="ansys.aedt.core.circuit.Circuit.set_temporary_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.set_temporary_directory</span></code></a>(path)</p></td>
+<td><p>Set temporary directory path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.solve_in_batch.html#ansys.aedt.core.circuit.Circuit.solve_in_batch" title="ansys.aedt.core.circuit.Circuit.solve_in_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.solve_in_batch</span></code></a>([file_name, machine, ...])</p></td>
+<td><p>Analyze a design setup in batch mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.stop_simulations.html#ansys.aedt.core.circuit.Circuit.stop_simulations" title="ansys.aedt.core.circuit.Circuit.stop_simulations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.stop_simulations</span></code></a>([clean_stop])</p></td>
+<td><p>Check if there are simulation running and stops them.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.submit_job.html#ansys.aedt.core.circuit.Circuit.submit_job" title="ansys.aedt.core.circuit.Circuit.submit_job"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.submit_job</span></code></a>(cluster_name[, ...])</p></td>
+<td><p>Submit a job to be solved on a cluster.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.validate_simple.html#ansys.aedt.core.circuit.Circuit.validate_simple" title="ansys.aedt.core.circuit.Circuit.validate_simple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.validate_simple</span></code></a>([log_file])</p></td>
+<td><p>Validate a design.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.value_with_units.html#ansys.aedt.core.circuit.Circuit.value_with_units" title="ansys.aedt.core.circuit.Circuit.value_with_units"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.value_with_units</span></code></a>(value[, units, ...])</p></td>
+<td><p>Combine a number and a string containing the modeler length unit in a single string e.g. &quot;1.2mm&quot;.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.Position.html#ansys.aedt.core.circuit.Circuit.Position" title="ansys.aedt.core.circuit.Circuit.Position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.Position</span></code></a></p></td>
+<td><p>Position of the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.SimulationSetupTypes.html#ansys.aedt.core.circuit.Circuit.SimulationSetupTypes" title="ansys.aedt.core.circuit.Circuit.SimulationSetupTypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.SimulationSetupTypes</span></code></a></p></td>
+<td><p>Simulation setup types.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.SolutionTypes.html#ansys.aedt.core.circuit.Circuit.SolutionTypes" title="ansys.aedt.core.circuit.Circuit.SolutionTypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.SolutionTypes</span></code></a></p></td>
+<td><p>Solution types.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.active_setup.html#ansys.aedt.core.circuit.Circuit.active_setup" title="ansys.aedt.core.circuit.Circuit.active_setup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.active_setup</span></code></a></p></td>
+<td><p>Get or Set the name of the active setup.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.aedt_version_id.html#ansys.aedt.core.circuit.Circuit.aedt_version_id" title="ansys.aedt.core.circuit.Circuit.aedt_version_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.aedt_version_id</span></code></a></p></td>
+<td><p>AEDT version.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.are_there_simulations_running.html#ansys.aedt.core.circuit.Circuit.are_there_simulations_running" title="ansys.aedt.core.circuit.Circuit.are_there_simulations_running"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.are_there_simulations_running</span></code></a></p></td>
+<td><p>Check if there are simulation running.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.available_variations.html#ansys.aedt.core.circuit.Circuit.available_variations" title="ansys.aedt.core.circuit.Circuit.available_variations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.available_variations</span></code></a></p></td>
+<td><p>Available variation object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.boundaries.html#ansys.aedt.core.circuit.Circuit.boundaries" title="ansys.aedt.core.circuit.Circuit.boundaries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.boundaries</span></code></a></p></td>
+<td><p>Design boundaries and excitations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.boundaries_by_type.html#ansys.aedt.core.circuit.Circuit.boundaries_by_type" title="ansys.aedt.core.circuit.Circuit.boundaries_by_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.boundaries_by_type</span></code></a></p></td>
+<td><p>Design boundaries by type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.default_solution_type.html#ansys.aedt.core.circuit.Circuit.default_solution_type" title="ansys.aedt.core.circuit.Circuit.default_solution_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.default_solution_type</span></code></a></p></td>
+<td><p>Default solution type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_datasets.html#ansys.aedt.core.circuit.Circuit.design_datasets" title="ansys.aedt.core.circuit.Circuit.design_datasets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.design_datasets</span></code></a></p></td>
+<td><p>Dictionary of Design Datasets.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_list.html#ansys.aedt.core.circuit.Circuit.design_list" title="ansys.aedt.core.circuit.Circuit.design_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.design_list</span></code></a></p></td>
+<td><p>Design list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_name.html#ansys.aedt.core.circuit.Circuit.design_name" title="ansys.aedt.core.circuit.Circuit.design_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.design_name</span></code></a></p></td>
+<td><p>Design name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_properties.html#ansys.aedt.core.circuit.Circuit.design_properties" title="ansys.aedt.core.circuit.Circuit.design_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.design_properties</span></code></a></p></td>
+<td><p>Design properties.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.design_type.html#ansys.aedt.core.circuit.Circuit.design_type" title="ansys.aedt.core.circuit.Circuit.design_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.design_type</span></code></a></p></td>
+<td><p>Design type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.desktop_class.html#ansys.aedt.core.circuit.Circuit.desktop_class" title="ansys.aedt.core.circuit.Circuit.desktop_class"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.desktop_class</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Desktop</span></code> class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.desktop_install_dir.html#ansys.aedt.core.circuit.Circuit.desktop_install_dir" title="ansys.aedt.core.circuit.Circuit.desktop_install_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.desktop_install_dir</span></code></a></p></td>
+<td><p>AEDT installation directory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.excitation_objects.html#ansys.aedt.core.circuit.Circuit.excitation_objects" title="ansys.aedt.core.circuit.Circuit.excitation_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.excitation_objects</span></code></a></p></td>
+<td><p>List of port objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.excitations.html#ansys.aedt.core.circuit.Circuit.excitations" title="ansys.aedt.core.circuit.Circuit.excitations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.excitations</span></code></a></p></td>
+<td><p>List of port names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.excitations_by_type.html#ansys.aedt.core.circuit.Circuit.excitations_by_type" title="ansys.aedt.core.circuit.Circuit.excitations_by_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.excitations_by_type</span></code></a></p></td>
+<td><p>Design excitations by type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.existing_analysis_setups.html#ansys.aedt.core.circuit.Circuit.existing_analysis_setups" title="ansys.aedt.core.circuit.Circuit.existing_analysis_setups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.existing_analysis_setups</span></code></a></p></td>
+<td><p>Analysis setups.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.existing_analysis_sweeps.html#ansys.aedt.core.circuit.Circuit.existing_analysis_sweeps" title="ansys.aedt.core.circuit.Circuit.existing_analysis_sweeps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.existing_analysis_sweeps</span></code></a></p></td>
+<td><p>Analysis setups.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.get_all_sparameter_list.html#ansys.aedt.core.circuit.Circuit.get_all_sparameter_list" title="ansys.aedt.core.circuit.Circuit.get_all_sparameter_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.get_all_sparameter_list</span></code></a></p></td>
+<td><p>List of all S parameters for a list of excitations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.info.html#ansys.aedt.core.circuit.Circuit.info" title="ansys.aedt.core.circuit.Circuit.info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.info</span></code></a></p></td>
+<td><p>Dictionary of the PyAEDT session information.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.layouteditor.html#ansys.aedt.core.circuit.Circuit.layouteditor" title="ansys.aedt.core.circuit.Circuit.layouteditor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.layouteditor</span></code></a></p></td>
+<td><p>Return the Circuit Layout Editor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.library_list.html#ansys.aedt.core.circuit.Circuit.library_list" title="ansys.aedt.core.circuit.Circuit.library_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.library_list</span></code></a></p></td>
+<td><p>Library list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.lock_file.html#ansys.aedt.core.circuit.Circuit.lock_file" title="ansys.aedt.core.circuit.Circuit.lock_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.lock_file</span></code></a></p></td>
+<td><p>Lock file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.logger.html#ansys.aedt.core.circuit.Circuit.logger" title="ansys.aedt.core.circuit.Circuit.logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.logger</span></code></a></p></td>
+<td><p>Logger for the design.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.materials.html#ansys.aedt.core.circuit.Circuit.materials" title="ansys.aedt.core.circuit.Circuit.materials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.materials</span></code></a></p></td>
+<td><p>Materials in the project.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.modeler.html#ansys.aedt.core.circuit.Circuit.modeler" title="ansys.aedt.core.circuit.Circuit.modeler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.modeler</span></code></a></p></td>
+<td><p>Modeler object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.native_component_names.html#ansys.aedt.core.circuit.Circuit.native_component_names" title="ansys.aedt.core.circuit.Circuit.native_component_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.native_component_names</span></code></a></p></td>
+<td><p>Native component names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.native_components.html#ansys.aedt.core.circuit.Circuit.native_components" title="ansys.aedt.core.circuit.Circuit.native_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.native_components</span></code></a></p></td>
+<td><p>Native Component dictionary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.nominal_adaptive.html#ansys.aedt.core.circuit.Circuit.nominal_adaptive" title="ansys.aedt.core.circuit.Circuit.nominal_adaptive"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.nominal_adaptive</span></code></a></p></td>
+<td><p>Nominal adaptive sweep.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.nominal_sweep.html#ansys.aedt.core.circuit.Circuit.nominal_sweep" title="ansys.aedt.core.circuit.Circuit.nominal_sweep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.nominal_sweep</span></code></a></p></td>
+<td><p>Nominal sweep.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.o_component_manager.html#ansys.aedt.core.circuit.Circuit.o_component_manager" title="ansys.aedt.core.circuit.Circuit.o_component_manager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.o_component_manager</span></code></a></p></td>
+<td><p>Component manager object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.o_maxwell_parameters.html#ansys.aedt.core.circuit.Circuit.o_maxwell_parameters" title="ansys.aedt.core.circuit.Circuit.o_maxwell_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.o_maxwell_parameters</span></code></a></p></td>
+<td><p>AEDT Maxwell Parameter Setup Object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.o_model_manager.html#ansys.aedt.core.circuit.Circuit.o_model_manager" title="ansys.aedt.core.circuit.Circuit.o_model_manager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.o_model_manager</span></code></a></p></td>
+<td><p>Model manager object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.o_symbol_manager.html#ansys.aedt.core.circuit.Circuit.o_symbol_manager" title="ansys.aedt.core.circuit.Circuit.o_symbol_manager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.o_symbol_manager</span></code></a></p></td>
+<td><p>Aedt Symbol Manager.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oanalysis.html#ansys.aedt.core.circuit.Circuit.oanalysis" title="ansys.aedt.core.circuit.Circuit.oanalysis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.oanalysis</span></code></a></p></td>
+<td><p>Analysis AEDT Module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oboundary.html#ansys.aedt.core.circuit.Circuit.oboundary" title="ansys.aedt.core.circuit.Circuit.oboundary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.oboundary</span></code></a></p></td>
+<td><p>Boundary Object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.odefinition_manager.html#ansys.aedt.core.circuit.Circuit.odefinition_manager" title="ansys.aedt.core.circuit.Circuit.odefinition_manager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.odefinition_manager</span></code></a></p></td>
+<td><p>Definition Manager Module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.odesign.html#ansys.aedt.core.circuit.Circuit.odesign" title="ansys.aedt.core.circuit.Circuit.odesign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.odesign</span></code></a></p></td>
+<td><p>Design.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.odesktop.html#ansys.aedt.core.circuit.Circuit.odesktop" title="ansys.aedt.core.circuit.Circuit.odesktop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.odesktop</span></code></a></p></td>
+<td><p>AEDT instance containing all projects and designs.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oeditor.html#ansys.aedt.core.circuit.Circuit.oeditor" title="ansys.aedt.core.circuit.Circuit.oeditor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.oeditor</span></code></a></p></td>
+<td><p>Oeditor Module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oexcitation.html#ansys.aedt.core.circuit.Circuit.oexcitation" title="ansys.aedt.core.circuit.Circuit.oexcitation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.oexcitation</span></code></a></p></td>
+<td><p>Solution Module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.ofieldsreporter.html#ansys.aedt.core.circuit.Circuit.ofieldsreporter" title="ansys.aedt.core.circuit.Circuit.ofieldsreporter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.ofieldsreporter</span></code></a></p></td>
+<td><p>Fields reporter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oimport_export.html#ansys.aedt.core.circuit.Circuit.oimport_export" title="ansys.aedt.core.circuit.Circuit.oimport_export"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.oimport_export</span></code></a></p></td>
+<td><p>Import/Export Manager Module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.omaterial_manager.html#ansys.aedt.core.circuit.Circuit.omaterial_manager" title="ansys.aedt.core.circuit.Circuit.omaterial_manager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.omaterial_manager</span></code></a></p></td>
+<td><p>Material Manager Module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.omatrix.html#ansys.aedt.core.circuit.Circuit.omatrix" title="ansys.aedt.core.circuit.Circuit.omatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.omatrix</span></code></a></p></td>
+<td><p>Matrix Object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.omeshmodule.html#ansys.aedt.core.circuit.Circuit.omeshmodule" title="ansys.aedt.core.circuit.Circuit.omeshmodule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.omeshmodule</span></code></a></p></td>
+<td><p>Icepak Mesh Module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.omodelsetup.html#ansys.aedt.core.circuit.Circuit.omodelsetup" title="ansys.aedt.core.circuit.Circuit.omodelsetup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.omodelsetup</span></code></a></p></td>
+<td><p>AEDT Model Setup Object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.omonitor.html#ansys.aedt.core.circuit.Circuit.omonitor" title="ansys.aedt.core.circuit.Circuit.omonitor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.omonitor</span></code></a></p></td>
+<td><p>AEDT Monitor Object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.ooptimetrics.html#ansys.aedt.core.circuit.Circuit.ooptimetrics" title="ansys.aedt.core.circuit.Circuit.ooptimetrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.ooptimetrics</span></code></a></p></td>
+<td><p>AEDT Optimetrics Module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.ooutput_variable.html#ansys.aedt.core.circuit.Circuit.ooutput_variable" title="ansys.aedt.core.circuit.Circuit.ooutput_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.ooutput_variable</span></code></a></p></td>
+<td><p>AEDT Output Variable Module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.opadstackmanager.html#ansys.aedt.core.circuit.Circuit.opadstackmanager" title="ansys.aedt.core.circuit.Circuit.opadstackmanager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.opadstackmanager</span></code></a></p></td>
+<td><p>AEDT oPadstackManager.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oproject.html#ansys.aedt.core.circuit.Circuit.oproject" title="ansys.aedt.core.circuit.Circuit.oproject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.oproject</span></code></a></p></td>
+<td><p>Project property.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.optimizations.html#ansys.aedt.core.circuit.Circuit.optimizations" title="ansys.aedt.core.circuit.Circuit.optimizations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.optimizations</span></code></a></p></td>
+<td><p>Optimizations in the project.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oradfield.html#ansys.aedt.core.circuit.Circuit.oradfield" title="ansys.aedt.core.circuit.Circuit.oradfield"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.oradfield</span></code></a></p></td>
+<td><p>AEDT Radiation Field Object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.oreportsetup.html#ansys.aedt.core.circuit.Circuit.oreportsetup" title="ansys.aedt.core.circuit.Circuit.oreportsetup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.oreportsetup</span></code></a></p></td>
+<td><p>Report setup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.osolution.html#ansys.aedt.core.circuit.Circuit.osolution" title="ansys.aedt.core.circuit.Circuit.osolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.osolution</span></code></a></p></td>
+<td><p>Solution Module.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.output_variables.html#ansys.aedt.core.circuit.Circuit.output_variables" title="ansys.aedt.core.circuit.Circuit.output_variables"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.output_variables</span></code></a></p></td>
+<td><p>List of output variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.parametrics.html#ansys.aedt.core.circuit.Circuit.parametrics" title="ansys.aedt.core.circuit.Circuit.parametrics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.parametrics</span></code></a></p></td>
+<td><p>Setups in the project.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.personallib.html#ansys.aedt.core.circuit.Circuit.personallib" title="ansys.aedt.core.circuit.Circuit.personallib"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.personallib</span></code></a></p></td>
+<td><p>PersonalLib directory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.ports.html#ansys.aedt.core.circuit.Circuit.ports" title="ansys.aedt.core.circuit.Circuit.ports"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.ports</span></code></a></p></td>
+<td><p>Design excitations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.post.html#ansys.aedt.core.circuit.Circuit.post" title="ansys.aedt.core.circuit.Circuit.post"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.post</span></code></a></p></td>
+<td><p>PostProcessor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_datasets.html#ansys.aedt.core.circuit.Circuit.project_datasets" title="ansys.aedt.core.circuit.Circuit.project_datasets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.project_datasets</span></code></a></p></td>
+<td><p>Dictionary of project datasets.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_file.html#ansys.aedt.core.circuit.Circuit.project_file" title="ansys.aedt.core.circuit.Circuit.project_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.project_file</span></code></a></p></td>
+<td><p>Project name and path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_list.html#ansys.aedt.core.circuit.Circuit.project_list" title="ansys.aedt.core.circuit.Circuit.project_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.project_list</span></code></a></p></td>
+<td><p>Project list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_name.html#ansys.aedt.core.circuit.Circuit.project_name" title="ansys.aedt.core.circuit.Circuit.project_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.project_name</span></code></a></p></td>
+<td><p>Project name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_path.html#ansys.aedt.core.circuit.Circuit.project_path" title="ansys.aedt.core.circuit.Circuit.project_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.project_path</span></code></a></p></td>
+<td><p>Project path.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_properties.html#ansys.aedt.core.circuit.Circuit.project_properties" title="ansys.aedt.core.circuit.Circuit.project_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.project_properties</span></code></a></p></td>
+<td><p>Project properties.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_time_stamp.html#ansys.aedt.core.circuit.Circuit.project_time_stamp" title="ansys.aedt.core.circuit.Circuit.project_time_stamp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.project_time_stamp</span></code></a></p></td>
+<td><p>Return Project time stamp.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.project_timestamp_changed.html#ansys.aedt.core.circuit.Circuit.project_timestamp_changed" title="ansys.aedt.core.circuit.Circuit.project_timestamp_changed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.project_timestamp_changed</span></code></a></p></td>
+<td><p>Return a bool if time stamp changed or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.pyaedt_dir.html#ansys.aedt.core.circuit.Circuit.pyaedt_dir" title="ansys.aedt.core.circuit.Circuit.pyaedt_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.pyaedt_dir</span></code></a></p></td>
+<td><p>PyAEDT directory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.results_directory.html#ansys.aedt.core.circuit.Circuit.results_directory" title="ansys.aedt.core.circuit.Circuit.results_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.results_directory</span></code></a></p></td>
+<td><p>Results directory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.settings.html#ansys.aedt.core.circuit.Circuit.settings" title="ansys.aedt.core.circuit.Circuit.settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.settings</span></code></a></p></td>
+<td><p>Settings of the current Python/Pyaedt session.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.setup_names.html#ansys.aedt.core.circuit.Circuit.setup_names" title="ansys.aedt.core.circuit.Circuit.setup_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.setup_names</span></code></a></p></td>
+<td><p>Setup names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.setups.html#ansys.aedt.core.circuit.Circuit.setups" title="ansys.aedt.core.circuit.Circuit.setups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.setups</span></code></a></p></td>
+<td><p>Setups in the project.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.solution_type.html#ansys.aedt.core.circuit.Circuit.solution_type" title="ansys.aedt.core.circuit.Circuit.solution_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.solution_type</span></code></a></p></td>
+<td><p>Solution type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.source_names.html#ansys.aedt.core.circuit.Circuit.source_names" title="ansys.aedt.core.circuit.Circuit.source_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.source_names</span></code></a></p></td>
+<td><p>Get all source names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.source_objects.html#ansys.aedt.core.circuit.Circuit.source_objects" title="ansys.aedt.core.circuit.Circuit.source_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.source_objects</span></code></a></p></td>
+<td><p>Get all source objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.sources.html#ansys.aedt.core.circuit.Circuit.sources" title="ansys.aedt.core.circuit.Circuit.sources"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.sources</span></code></a></p></td>
+<td><p>Get all sources.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.src_dir.html#ansys.aedt.core.circuit.Circuit.src_dir" title="ansys.aedt.core.circuit.Circuit.src_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.src_dir</span></code></a></p></td>
+<td><p>Source directory for Python.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.syslib.html#ansys.aedt.core.circuit.Circuit.syslib" title="ansys.aedt.core.circuit.Circuit.syslib"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.syslib</span></code></a></p></td>
+<td><p>SysLib directory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.temp_directory.html#ansys.aedt.core.circuit.Circuit.temp_directory" title="ansys.aedt.core.circuit.Circuit.temp_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.temp_directory</span></code></a></p></td>
+<td><p>Path to the temporary directory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.toolkit_directory.html#ansys.aedt.core.circuit.Circuit.toolkit_directory" title="ansys.aedt.core.circuit.Circuit.toolkit_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.toolkit_directory</span></code></a></p></td>
+<td><p>Path to the toolkit directory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.userlib.html#ansys.aedt.core.circuit.Circuit.userlib" title="ansys.aedt.core.circuit.Circuit.userlib"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.userlib</span></code></a></p></td>
+<td><p>UserLib directory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.valid_design.html#ansys.aedt.core.circuit.Circuit.valid_design" title="ansys.aedt.core.circuit.Circuit.valid_design"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.valid_design</span></code></a></p></td>
+<td><p>Valid design.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.variable_manager.html#ansys.aedt.core.circuit.Circuit.variable_manager" title="ansys.aedt.core.circuit.Circuit.variable_manager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.variable_manager</span></code></a></p></td>
+<td><p>Variable manager for creating and managing project design and postprocessing variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.working_directory.html#ansys.aedt.core.circuit.Circuit.working_directory" title="ansys.aedt.core.circuit.Circuit.working_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Circuit.working_directory</span></code></a></p></td>
+<td><p>Path to the working directory.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.aedt.core.circuit.Circuit"><code class="docutils literal notranslate"><span class="pre">Circuit</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="http://github.com/ansys/pyaedt/edit/main/ansys/aedt/core/circuit.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/API/_autosummary/ansys.aedt.core.circuit.Circuit.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

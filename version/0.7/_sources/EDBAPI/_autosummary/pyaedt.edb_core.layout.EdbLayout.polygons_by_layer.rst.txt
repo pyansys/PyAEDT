@@ -1,0 +1,6 @@
+polygons\_by\_layer
+===================
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. autoproperty:: EdbLayout.polygons_by_layer

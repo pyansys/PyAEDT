@@ -1,0 +1,6 @@
+top\_edge\_y
+============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Rect3dLayout.top_edge_y

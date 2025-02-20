@@ -1,0 +1,6 @@
+convert\_to\_selections
+=======================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.convert_to_selections

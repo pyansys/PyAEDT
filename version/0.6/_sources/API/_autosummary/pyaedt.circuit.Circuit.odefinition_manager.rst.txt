@@ -1,0 +1,6 @@
+odefinition\_manager
+====================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.odefinition_manager

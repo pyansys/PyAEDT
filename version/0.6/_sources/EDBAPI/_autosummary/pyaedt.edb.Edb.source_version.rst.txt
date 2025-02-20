@@ -1,0 +1,6 @@
+source\_version
+===============
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.source_version

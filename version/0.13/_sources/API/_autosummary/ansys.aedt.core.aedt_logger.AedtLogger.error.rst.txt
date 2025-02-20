@@ -1,0 +1,6 @@
+error
+=====
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. automethod:: AedtLogger.error

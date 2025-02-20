@@ -1,0 +1,6 @@
+wrap\_sheet
+===========
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.wrap_sheet

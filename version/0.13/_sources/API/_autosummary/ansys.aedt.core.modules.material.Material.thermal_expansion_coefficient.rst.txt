@@ -1,0 +1,6 @@
+thermal\_expansion\_coefficient
+===============================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.thermal_expansion_coefficient

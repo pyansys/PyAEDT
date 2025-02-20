@@ -1,0 +1,6 @@
+schematic
+=========
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoproperty:: ModelerMaxwellCircuit.schematic

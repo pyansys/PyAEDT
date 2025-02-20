@@ -1,0 +1,6 @@
+assign\_length\_mesh
+====================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.assign_length_mesh

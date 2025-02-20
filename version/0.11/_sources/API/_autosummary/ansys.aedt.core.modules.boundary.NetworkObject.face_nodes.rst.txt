@@ -1,0 +1,6 @@
+face\_nodes
+===========
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: NetworkObject.face_nodes

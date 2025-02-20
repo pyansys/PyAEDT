@@ -1,0 +1,6 @@
+azimuth\_angle
+==============
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.azimuth_angle

@@ -1,0 +1,6 @@
+jsonalize\_tree
+===============
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. automethod:: BinaryTreeNode.jsonalize_tree

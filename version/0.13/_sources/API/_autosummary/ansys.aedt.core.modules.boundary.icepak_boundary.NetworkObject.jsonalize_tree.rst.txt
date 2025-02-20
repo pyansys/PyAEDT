@@ -1,0 +1,6 @@
+jsonalize\_tree
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.icepak_boundary
+
+.. automethod:: NetworkObject.jsonalize_tree

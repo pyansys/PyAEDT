@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.omeshmodule

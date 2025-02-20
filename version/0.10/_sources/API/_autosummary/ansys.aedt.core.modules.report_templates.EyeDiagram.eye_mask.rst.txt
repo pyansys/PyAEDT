@@ -1,0 +1,6 @@
+eye\_mask
+=========
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: EyeDiagram.eye_mask

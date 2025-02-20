@@ -1,0 +1,6 @@
+cleanup\_solution
+=================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.cleanup_solution

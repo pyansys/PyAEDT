@@ -1,0 +1,6 @@
+rename\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.rename_design

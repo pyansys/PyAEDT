@@ -1,0 +1,6 @@
+jsonalize\_tree
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. automethod:: Standard.jsonalize_tree

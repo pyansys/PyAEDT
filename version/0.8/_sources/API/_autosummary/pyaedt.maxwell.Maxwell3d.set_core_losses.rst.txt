@@ -1,0 +1,6 @@
+set\_core\_losses
+=================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.set_core_losses

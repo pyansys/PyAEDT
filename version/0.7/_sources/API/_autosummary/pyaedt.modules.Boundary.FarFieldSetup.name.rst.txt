@@ -1,0 +1,6 @@
+name
+====
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: FarFieldSetup.name

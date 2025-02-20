@@ -1,0 +1,6 @@
+create\_cable\_harness
+======================
+
+.. currentmodule:: pyaedt.modules.CableModeling
+
+.. automethod:: Cable.create_cable_harness

@@ -1,0 +1,6 @@
+get\_output\_variable
+=====================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_output_variable

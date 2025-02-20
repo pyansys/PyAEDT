@@ -1,0 +1,6 @@
+ofieldsreporter
+===============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.ofieldsreporter

@@ -1,0 +1,6 @@
+differential\_pairs
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. autoproperty:: Standard.differential_pairs

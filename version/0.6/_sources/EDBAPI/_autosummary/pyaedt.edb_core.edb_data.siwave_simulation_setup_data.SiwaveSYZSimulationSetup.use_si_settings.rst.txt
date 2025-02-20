@@ -1,0 +1,6 @@
+use\_si\_settings
+=================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveSYZSimulationSetup.use_si_settings

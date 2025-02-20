@@ -1,0 +1,6 @@
+rotate
+======
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.rotate

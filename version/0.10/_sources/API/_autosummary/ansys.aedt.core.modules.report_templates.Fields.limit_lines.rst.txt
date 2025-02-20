@@ -1,0 +1,6 @@
+limit\_lines
+============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Fields.limit_lines

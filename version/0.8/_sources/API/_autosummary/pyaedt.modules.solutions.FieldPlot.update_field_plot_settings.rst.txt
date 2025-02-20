@@ -1,0 +1,6 @@
+update\_field\_plot\_settings
+=============================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FieldPlot.update_field_plot_settings

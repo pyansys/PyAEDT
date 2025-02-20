@@ -1,0 +1,6 @@
+﻿add\_text
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pdf
+
+.. automethod:: AnsysReport.add_text

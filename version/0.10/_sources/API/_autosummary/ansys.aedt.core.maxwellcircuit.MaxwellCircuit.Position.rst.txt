@@ -1,0 +1,6 @@
+Position
+========
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.Position

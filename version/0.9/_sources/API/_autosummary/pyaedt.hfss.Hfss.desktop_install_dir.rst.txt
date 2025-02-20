@@ -1,0 +1,6 @@
+desktop\_install\_dir
+=====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.desktop_install_dir

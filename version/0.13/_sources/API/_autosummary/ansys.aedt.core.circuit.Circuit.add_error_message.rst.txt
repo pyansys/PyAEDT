@@ -1,0 +1,6 @@
+add\_error\_message
+===================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.add_error_message

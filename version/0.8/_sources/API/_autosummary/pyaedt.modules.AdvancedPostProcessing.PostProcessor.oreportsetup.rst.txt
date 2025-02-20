@@ -1,0 +1,6 @@
+oreportsetup
+============
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: PostProcessor.oreportsetup

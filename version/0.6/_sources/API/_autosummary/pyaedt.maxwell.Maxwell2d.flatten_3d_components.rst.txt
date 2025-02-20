@@ -1,0 +1,6 @@
+flatten\_3d\_components
+=======================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.flatten_3d_components

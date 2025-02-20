@@ -1,0 +1,6 @@
+imprint\_normal\_projection
+===========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.imprint_normal_projection

@@ -1,0 +1,6 @@
+assign\_lumped\_rlc\_to\_sheet
+==============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.assign_lumped_rlc_to_sheet

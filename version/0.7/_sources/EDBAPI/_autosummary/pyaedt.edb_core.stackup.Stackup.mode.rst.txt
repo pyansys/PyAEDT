@@ -1,0 +1,6 @@
+mode
+====
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. autoproperty:: Stackup.mode

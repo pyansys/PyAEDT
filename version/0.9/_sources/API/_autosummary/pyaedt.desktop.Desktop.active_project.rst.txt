@@ -1,0 +1,6 @@
+active\_project
+===============
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.active_project

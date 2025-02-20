@@ -1,0 +1,6 @@
+create\_coupling\_inductors
+===========================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_coupling_inductors

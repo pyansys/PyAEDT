@@ -1,0 +1,6 @@
+close\_project
+==============
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.close_project

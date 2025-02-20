@@ -1,0 +1,6 @@
+copy\_report\_data
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.copy_report_data

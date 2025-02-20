@@ -1,0 +1,6 @@
+notes
+=====
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: NearField.notes

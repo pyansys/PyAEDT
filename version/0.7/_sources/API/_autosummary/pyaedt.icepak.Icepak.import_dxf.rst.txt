@@ -1,0 +1,6 @@
+import\_dxf
+===========
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.import_dxf

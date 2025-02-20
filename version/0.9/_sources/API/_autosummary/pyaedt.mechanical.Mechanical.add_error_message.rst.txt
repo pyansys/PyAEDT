@@ -1,0 +1,6 @@
+add\_error\_message
+===================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.add_error_message

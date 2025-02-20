@@ -1,0 +1,6 @@
+add
+===
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. automethod:: Line3dLayout.add

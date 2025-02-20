@@ -1,0 +1,6 @@
+plot\_name
+==========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: FarField.plot_name

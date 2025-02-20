@@ -1,0 +1,6 @@
+nominal\_adaptive
+=================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.nominal_adaptive

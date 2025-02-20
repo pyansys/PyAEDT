@@ -1,0 +1,6 @@
+assign\_end\_connection
+=======================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.assign_end_connection

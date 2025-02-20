@@ -1,0 +1,6 @@
+﻿get\_mixed\_mode\_touchstone\_data
+==================================
+
+.. currentmodule:: ansys.aedt.core.generic.touchstone_parser
+
+.. automethod:: TouchstoneData.get_mixed_mode_touchstone_data

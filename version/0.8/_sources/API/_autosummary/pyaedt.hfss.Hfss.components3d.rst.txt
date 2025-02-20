@@ -1,0 +1,6 @@
+components3d
+============
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.components3d

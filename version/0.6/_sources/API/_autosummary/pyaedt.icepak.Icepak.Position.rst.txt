@@ -1,0 +1,6 @@
+Position
+========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.Position

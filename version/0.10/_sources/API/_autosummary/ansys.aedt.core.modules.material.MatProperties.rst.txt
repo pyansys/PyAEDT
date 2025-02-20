@@ -1,0 +1,42 @@
+﻿MatProperties
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoclass:: MatProperties
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MatProperties.get_defaultunit
+      
+      
+      MatProperties.get_defaultvalue
+      
+      
+      MatProperties.wb_to_aedt_name
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MatProperties.aedtname
+      MatProperties.cond_order
+      MatProperties.defaultunit
+      MatProperties.defaultvalue
+      MatProperties.diel_order
+      MatProperties.workbench_name
+   
+   

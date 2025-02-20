@@ -1,0 +1,6 @@
+syslib
+======
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.syslib

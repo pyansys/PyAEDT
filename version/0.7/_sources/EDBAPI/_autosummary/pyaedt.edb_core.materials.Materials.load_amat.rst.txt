@@ -1,0 +1,6 @@
+load\_amat
+==========
+
+.. currentmodule:: pyaedt.edb_core.materials
+
+.. automethod:: Materials.load_amat

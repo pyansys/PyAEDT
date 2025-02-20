@@ -1,0 +1,6 @@
+source\_names
+=============
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.source_names

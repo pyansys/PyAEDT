@@ -1,0 +1,6 @@
+update\_report\_dynamically
+===========================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: PostProcessor.update_report_dynamically

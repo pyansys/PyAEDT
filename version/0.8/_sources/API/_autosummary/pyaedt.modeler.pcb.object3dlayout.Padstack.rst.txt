@@ -1,0 +1,43 @@
+﻿Padstack
+========
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoclass:: Padstack
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Padstack.add_hole
+      
+      
+      Padstack.add_layer
+      
+      
+      Padstack.create
+      
+      
+      Padstack.remove
+      
+      
+      Padstack.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Padstack.pads_args
+   
+   

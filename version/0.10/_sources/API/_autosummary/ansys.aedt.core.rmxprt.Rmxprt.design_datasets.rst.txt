@@ -1,0 +1,6 @@
+design\_datasets
+================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.design_datasets

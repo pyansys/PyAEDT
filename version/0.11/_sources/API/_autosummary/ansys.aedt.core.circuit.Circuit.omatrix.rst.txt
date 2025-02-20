@@ -1,0 +1,6 @@
+omatrix
+=======
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.omatrix

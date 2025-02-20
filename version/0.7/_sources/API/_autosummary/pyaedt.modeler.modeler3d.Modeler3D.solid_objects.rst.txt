@@ -1,0 +1,6 @@
+solid\_objects
+==============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. autoproperty:: Modeler3D.solid_objects

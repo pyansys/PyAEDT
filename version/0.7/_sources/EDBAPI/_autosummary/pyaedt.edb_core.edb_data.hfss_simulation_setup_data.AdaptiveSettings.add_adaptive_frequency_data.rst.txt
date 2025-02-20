@@ -1,0 +1,6 @@
+add\_adaptive\_frequency\_data
+==============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. automethod:: AdaptiveSettings.add_adaptive_frequency_data

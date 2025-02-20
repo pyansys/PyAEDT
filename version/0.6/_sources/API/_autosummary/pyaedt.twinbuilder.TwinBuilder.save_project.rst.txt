@@ -1,0 +1,6 @@
+save\_project
+=============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.save_project

@@ -1,0 +1,6 @@
+enable\_expression\_cache
+=========================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupCircuit.enable_expression_cache

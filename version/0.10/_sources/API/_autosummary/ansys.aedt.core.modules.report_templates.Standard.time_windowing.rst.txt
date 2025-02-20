@@ -1,0 +1,6 @@
+time\_windowing
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Standard.time_windowing

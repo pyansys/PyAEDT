@@ -1,0 +1,6 @@
+create\_source\_excitation
+==========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_source_excitation

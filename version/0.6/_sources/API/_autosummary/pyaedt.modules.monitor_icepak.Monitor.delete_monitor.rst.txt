@@ -1,0 +1,6 @@
+delete\_monitor
+===============
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. automethod:: Monitor.delete_monitor

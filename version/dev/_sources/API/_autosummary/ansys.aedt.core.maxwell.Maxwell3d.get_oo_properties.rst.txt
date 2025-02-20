@@ -1,0 +1,6 @@
+get\_oo\_properties
+===================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.get_oo_properties

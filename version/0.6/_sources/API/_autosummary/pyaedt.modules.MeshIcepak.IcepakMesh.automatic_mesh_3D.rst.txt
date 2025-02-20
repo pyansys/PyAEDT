@@ -1,0 +1,6 @@
+automatic\_mesh\_3D
+===================
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. automethod:: IcepakMesh.automatic_mesh_3D

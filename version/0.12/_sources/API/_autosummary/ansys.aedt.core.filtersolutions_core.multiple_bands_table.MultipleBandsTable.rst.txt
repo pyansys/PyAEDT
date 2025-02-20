@@ -1,0 +1,46 @@
+﻿MultipleBandsTable
+==================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.multiple_bands_table
+
+.. autoclass:: MultipleBandsTable
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MultipleBandsTable.append_row
+      
+      
+      MultipleBandsTable.clear_table
+      
+      
+      MultipleBandsTable.insert_row
+      
+      
+      MultipleBandsTable.remove_row
+      
+      
+      MultipleBandsTable.row
+      
+      
+      MultipleBandsTable.update_row
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MultipleBandsTable.row_count
+   
+   

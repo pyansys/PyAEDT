@@ -1,0 +1,6 @@
+auto\_compute\_eye\_meas
+========================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. autoproperty:: AMIEyeDiagram.auto_compute_eye_meas

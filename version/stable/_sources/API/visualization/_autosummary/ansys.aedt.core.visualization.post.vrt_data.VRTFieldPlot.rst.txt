@@ -1,0 +1,40 @@
+﻿VRTFieldPlot
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.vrt_data
+
+.. autoclass:: VRTFieldPlot
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      VRTFieldPlot.create
+      
+      
+      VRTFieldPlot.delete
+      
+      
+      VRTFieldPlot.export
+      
+      
+      VRTFieldPlot.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      VRTFieldPlot.intrinsicVar
+   
+   

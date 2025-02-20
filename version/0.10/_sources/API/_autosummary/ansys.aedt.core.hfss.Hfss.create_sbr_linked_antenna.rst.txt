@@ -1,0 +1,6 @@
+create\_sbr\_linked\_antenna
+============================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.create_sbr_linked_antenna

@@ -1,0 +1,6 @@
+import\_dxf
+===========
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.import_dxf

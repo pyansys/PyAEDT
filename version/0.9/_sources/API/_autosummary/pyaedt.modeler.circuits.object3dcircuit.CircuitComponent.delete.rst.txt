@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. automethod:: CircuitComponent.delete

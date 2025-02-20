@@ -1,0 +1,6 @@
+get\_oo\_properties
+===================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.get_oo_properties

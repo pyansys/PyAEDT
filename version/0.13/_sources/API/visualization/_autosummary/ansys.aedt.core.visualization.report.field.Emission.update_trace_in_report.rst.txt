@@ -1,0 +1,6 @@
+update\_trace\_in\_report
+=========================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: Emission.update_trace_in_report

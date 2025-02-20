@@ -1,0 +1,6 @@
+﻿convert\_nearfield\_data
+========================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.misc
+
+.. autofunction:: convert_nearfield_data

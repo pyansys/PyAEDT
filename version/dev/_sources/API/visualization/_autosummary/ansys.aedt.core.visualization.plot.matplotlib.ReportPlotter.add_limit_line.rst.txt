@@ -1,0 +1,6 @@
+add\_limit\_line
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. automethod:: ReportPlotter.add_limit_line

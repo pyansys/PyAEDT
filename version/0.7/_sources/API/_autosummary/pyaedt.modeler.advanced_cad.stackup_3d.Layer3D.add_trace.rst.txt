@@ -1,0 +1,6 @@
+add\_trace
+==========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: Layer3D.add_trace

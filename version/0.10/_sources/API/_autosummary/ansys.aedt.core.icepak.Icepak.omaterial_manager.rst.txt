@@ -1,0 +1,6 @@
+omaterial\_manager
+==================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.omaterial_manager

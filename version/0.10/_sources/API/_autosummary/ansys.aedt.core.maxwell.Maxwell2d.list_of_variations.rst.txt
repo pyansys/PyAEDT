@@ -1,0 +1,6 @@
+list\_of\_variations
+====================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.list_of_variations

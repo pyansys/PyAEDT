@@ -1,0 +1,6 @@
+line\_objects
+=============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. autoproperty:: Modeler3D.line_objects

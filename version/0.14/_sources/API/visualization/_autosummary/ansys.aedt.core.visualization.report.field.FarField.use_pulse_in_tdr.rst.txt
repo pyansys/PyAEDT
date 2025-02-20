@@ -1,0 +1,6 @@
+use\_pulse\_in\_tdr
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. autoproperty:: FarField.use_pulse_in_tdr

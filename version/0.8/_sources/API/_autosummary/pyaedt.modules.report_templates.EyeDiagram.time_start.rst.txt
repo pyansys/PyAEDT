@@ -1,0 +1,6 @@
+time\_start
+===========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: EyeDiagram.time_start

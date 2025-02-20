@@ -1,0 +1,6 @@
+validate\_simple
+================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.validate_simple

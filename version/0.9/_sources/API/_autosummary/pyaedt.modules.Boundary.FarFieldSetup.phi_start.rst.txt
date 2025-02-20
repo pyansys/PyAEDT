@@ -1,0 +1,6 @@
+phi\_start
+==========
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: FarFieldSetup.phi_start

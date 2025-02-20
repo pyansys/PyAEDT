@@ -1,0 +1,6 @@
+insert
+======
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.multiparts
+
+.. automethod:: Environment.insert

@@ -1,0 +1,6 @@
+create\_sbr\_linked\_antenna
+============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_sbr_linked_antenna

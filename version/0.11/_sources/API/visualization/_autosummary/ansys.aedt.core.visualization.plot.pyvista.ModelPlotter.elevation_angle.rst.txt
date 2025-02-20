@@ -1,0 +1,6 @@
+elevation\_angle
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. autoproperty:: ModelPlotter.elevation_angle

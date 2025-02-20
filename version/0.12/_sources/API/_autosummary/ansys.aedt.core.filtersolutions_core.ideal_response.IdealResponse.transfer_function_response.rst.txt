@@ -1,0 +1,6 @@
+transfer\_function\_response
+============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.ideal_response
+
+.. automethod:: IdealResponse.transfer_function_response

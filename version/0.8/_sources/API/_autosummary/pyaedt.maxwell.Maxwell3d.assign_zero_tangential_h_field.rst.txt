@@ -1,0 +1,6 @@
+assign\_zero\_tangential\_h\_field
+==================================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_zero_tangential_h_field

@@ -1,0 +1,187 @@
+﻿NexximComponents
+================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. autoclass:: NexximComponents
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      NexximComponents.add_id_to_component
+      
+      
+      NexximComponents.add_pin_iports
+      
+      
+      NexximComponents.add_siwave_dynamic_link
+      
+      
+      NexximComponents.add_subcircuit_3dlayout
+      
+      
+      NexximComponents.add_subcircuit_dynamic_link
+      
+      
+      NexximComponents.connect_components_in_parallel
+      
+      
+      NexximComponents.connect_components_in_series
+      
+      
+      NexximComponents.create_capacitor
+      
+      
+      NexximComponents.create_component
+      
+      
+      NexximComponents.create_component_from_spicemodel
+      
+      
+      NexximComponents.create_coupling_inductors
+      
+      
+      NexximComponents.create_current_dc
+      
+      
+      NexximComponents.create_current_pulse
+      
+      
+      NexximComponents.create_diode
+      
+      
+      NexximComponents.create_field_model
+      
+      
+      NexximComponents.create_gnd
+      
+      
+      NexximComponents.create_inductor
+      
+      
+      NexximComponents.create_interface_port
+      
+      
+      NexximComponents.create_line
+      
+      
+      NexximComponents.create_model_from_touchstone
+      
+      
+      NexximComponents.create_new_component_from_symbol
+      
+      
+      NexximComponents.create_npn
+      
+      
+      NexximComponents.create_page_port
+      
+      
+      NexximComponents.create_pnp
+      
+      
+      NexximComponents.create_resistor
+      
+      
+      NexximComponents.create_subcircuit
+      
+      
+      NexximComponents.create_symbol
+      
+      
+      NexximComponents.create_touchstone_component
+      
+      
+      NexximComponents.create_unique_id
+      
+      
+      NexximComponents.create_voltage_dc
+      
+      
+      NexximComponents.create_voltage_probe
+      
+      
+      NexximComponents.create_voltage_pulse
+      
+      
+      NexximComponents.create_voltage_pwl
+      
+      
+      NexximComponents.create_wire
+      
+      
+      NexximComponents.delete_component
+      
+      
+      NexximComponents.disable_data_netlist
+      
+      
+      NexximComponents.duplicate
+      
+      
+      NexximComponents.enable_global_netlist
+      
+      
+      NexximComponents.enable_use_instance_name
+      
+      
+      NexximComponents.get_component
+      
+      
+      NexximComponents.get_obj_id
+      
+      
+      NexximComponents.get_pin_location
+      
+      
+      NexximComponents.get_pins
+      
+      
+      NexximComponents.get_wire_by_name
+      
+      
+      NexximComponents.number_with_units
+      
+      
+      NexximComponents.refresh_all_ids
+      
+      
+      NexximComponents.refresh_dynamic_link
+      
+      
+      NexximComponents.set_sim_option_on_hfss_subcircuit
+      
+      
+      NexximComponents.set_sim_solution_on_hfss_subcircuit
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      NexximComponents.components_catalog
+      NexximComponents.design_libray
+      NexximComponents.design_type
+      NexximComponents.design_types
+      NexximComponents.model_units
+      NexximComponents.nets
+      NexximComponents.o_component_manager
+      NexximComponents.o_definition_manager
+      NexximComponents.o_symbol_manager
+      NexximComponents.schematic_units
+      NexximComponents.tab_name
+      NexximComponents.version
+      NexximComponents.wires
+   
+   

@@ -1,0 +1,6 @@
+default\_solution\_type
+=======================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q3d.default_solution_type

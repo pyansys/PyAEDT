@@ -1,0 +1,6 @@
+export\_results
+===============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.export_results

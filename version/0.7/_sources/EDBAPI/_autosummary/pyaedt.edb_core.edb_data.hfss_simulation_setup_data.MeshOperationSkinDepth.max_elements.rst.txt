@@ -1,0 +1,6 @@
+max\_elements
+=============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: MeshOperationSkinDepth.max_elements

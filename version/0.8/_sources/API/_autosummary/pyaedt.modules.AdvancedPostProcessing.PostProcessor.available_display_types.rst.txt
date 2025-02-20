@@ -1,0 +1,6 @@
+available\_display\_types
+=========================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.available_display_types

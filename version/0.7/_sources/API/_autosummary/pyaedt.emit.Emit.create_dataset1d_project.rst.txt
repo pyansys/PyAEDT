@@ -1,0 +1,6 @@
+create\_dataset1d\_project
+==========================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.create_dataset1d_project

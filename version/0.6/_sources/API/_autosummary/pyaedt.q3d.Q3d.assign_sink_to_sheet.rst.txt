@@ -1,0 +1,6 @@
+assign\_sink\_to\_sheet
+=======================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.assign_sink_to_sheet

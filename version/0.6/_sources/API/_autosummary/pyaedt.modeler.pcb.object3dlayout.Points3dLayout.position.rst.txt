@@ -1,0 +1,6 @@
+position
+========
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Points3dLayout.position

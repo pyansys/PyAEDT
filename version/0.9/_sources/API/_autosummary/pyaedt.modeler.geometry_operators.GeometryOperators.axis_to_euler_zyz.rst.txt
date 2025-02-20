@@ -1,0 +1,6 @@
+axis\_to\_euler\_zyz
+====================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.axis_to_euler_zyz

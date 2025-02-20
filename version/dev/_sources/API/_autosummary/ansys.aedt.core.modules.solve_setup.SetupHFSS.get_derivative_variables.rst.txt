@@ -1,0 +1,6 @@
+get\_derivative\_variables
+==========================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupHFSS.get_derivative_variables

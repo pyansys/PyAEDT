@@ -1,0 +1,6 @@
+ofieldsreporter
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. autoproperty:: PostProcessor3DLayout.ofieldsreporter

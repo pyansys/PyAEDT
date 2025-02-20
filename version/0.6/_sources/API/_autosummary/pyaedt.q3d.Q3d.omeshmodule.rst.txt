@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q3d.omeshmodule

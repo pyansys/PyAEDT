@@ -1,0 +1,6 @@
+change\_design\_settings
+========================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.change_design_settings

@@ -1,0 +1,6 @@
+get\_oo\_object
+===============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.get_oo_object

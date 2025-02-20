@@ -1,0 +1,6 @@
+sweep\_along\_path
+==================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.sweep_along_path

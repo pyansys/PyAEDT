@@ -1,0 +1,6 @@
+opadstackmanager
+================
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.opadstackmanager

@@ -1,0 +1,6 @@
+create\_setup
+=============
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.create_setup

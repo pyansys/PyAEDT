@@ -1,0 +1,6 @@
+hybrid
+======
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.hybrid

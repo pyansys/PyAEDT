@@ -1,0 +1,24 @@
+﻿AppFilter
+=========
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. autoclass:: AppFilter
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      AppFilter.filter
+      
+   
+   
+
+   
+   
+   

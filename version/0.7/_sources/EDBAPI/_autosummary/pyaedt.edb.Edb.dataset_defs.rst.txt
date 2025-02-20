@@ -1,0 +1,6 @@
+dataset\_defs
+=============
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.dataset_defs

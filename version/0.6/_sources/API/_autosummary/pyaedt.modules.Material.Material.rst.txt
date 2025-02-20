@@ -1,0 +1,85 @@
+﻿Material
+========
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoclass:: Material
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Material.get_curve_coreloss_type
+      
+      
+      Material.get_curve_coreloss_values
+      
+      
+      Material.get_magnetic_coercitivity
+      
+      
+      Material.is_conductor
+      
+      
+      Material.is_dielectric
+      
+      
+      Material.set_bp_curve_coreloss
+      
+      
+      Material.set_electrical_steel_coreloss
+      
+      
+      Material.set_hysteresis_coreloss
+      
+      
+      Material.set_magnetic_coercitivity
+      
+      
+      Material.set_power_ferrite_coreloss
+      
+      
+      Material.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Material.conductivity
+      Material.dielectric_loss_tangent
+      Material.diffusivity
+      Material.magnetic_loss_tangent
+      Material.mass_density
+      Material.material_appearance
+      Material.molecular_mass
+      Material.permeability
+      Material.permittivity
+      Material.poissons_ratio
+      Material.specific_heat
+      Material.stacking_direction
+      Material.stacking_factor
+      Material.stacking_type
+      Material.strand_number
+      Material.thermal_conductivity
+      Material.thermal_expansion_coefficient
+      Material.viscosity
+      Material.wire_diameter
+      Material.wire_thickness
+      Material.wire_thickness_direction
+      Material.wire_type
+      Material.wire_width
+      Material.wire_width_direction
+      Material.youngs_modulus
+   
+   

@@ -1,0 +1,6 @@
+add\_warning\_message
+=====================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.add_warning_message

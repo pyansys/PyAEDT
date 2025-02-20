@@ -1,0 +1,6 @@
+eligible\_power\_nets
+=====================
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. automethod:: EdbNets.eligible_power_nets

@@ -1,0 +1,6 @@
+project\_timestamp\_changed
+===========================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.project_timestamp_changed

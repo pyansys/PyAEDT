@@ -1,0 +1,6 @@
+zoom
+====
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. autoproperty:: HDMPlotter.zoom

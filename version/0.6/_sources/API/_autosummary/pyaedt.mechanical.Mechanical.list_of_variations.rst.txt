@@ -1,0 +1,6 @@
+list\_of\_variations
+====================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.list_of_variations

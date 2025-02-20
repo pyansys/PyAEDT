@@ -1,0 +1,6 @@
+metadata\_file
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.rcs_exporter
+
+.. autoproperty:: MonostaticRCSExporter.metadata_file

@@ -1,0 +1,6 @@
+command
+=======
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoproperty:: BoundaryObject3dLayout.command

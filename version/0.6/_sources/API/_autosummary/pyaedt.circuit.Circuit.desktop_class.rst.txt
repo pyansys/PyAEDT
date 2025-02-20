@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.desktop_class

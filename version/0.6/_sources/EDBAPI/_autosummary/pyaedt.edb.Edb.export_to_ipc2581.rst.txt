@@ -1,0 +1,6 @@
+export\_to\_ipc2581
+===================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.export_to_ipc2581

@@ -1,0 +1,6 @@
+color\_string
+=============
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoproperty:: Object3d.color_string

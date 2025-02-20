@@ -1,0 +1,6 @@
+Position
+========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.Position

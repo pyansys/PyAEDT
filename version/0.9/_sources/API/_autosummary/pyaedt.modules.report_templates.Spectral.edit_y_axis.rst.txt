@@ -1,0 +1,6 @@
+edit\_y\_axis
+=============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Spectral.edit_y_axis

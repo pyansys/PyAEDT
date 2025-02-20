@@ -1,0 +1,6 @@
+top\_roughness\_model
+=====================
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.top_roughness_model

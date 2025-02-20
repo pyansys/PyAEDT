@@ -1,0 +1,6 @@
+add\_links\_from\_dictionaries
+==============================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.icepak_boundary
+
+.. automethod:: NetworkObject.add_links_from_dictionaries

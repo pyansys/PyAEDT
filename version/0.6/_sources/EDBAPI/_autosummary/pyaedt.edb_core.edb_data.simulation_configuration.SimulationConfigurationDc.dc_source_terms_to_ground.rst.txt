@@ -1,0 +1,6 @@
+dc\_source\_terms\_to\_ground
+=============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_source_terms_to_ground

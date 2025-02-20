@@ -1,0 +1,6 @@
+rename\_design
+==============
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.rename_design

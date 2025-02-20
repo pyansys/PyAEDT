@@ -1,0 +1,6 @@
+v\_norm
+=======
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.v_norm

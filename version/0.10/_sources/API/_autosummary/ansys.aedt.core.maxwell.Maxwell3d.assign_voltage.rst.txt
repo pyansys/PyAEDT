@@ -1,0 +1,6 @@
+assign\_voltage
+===============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.assign_voltage

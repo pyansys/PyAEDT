@@ -1,0 +1,6 @@
+edges\_by\_length
+=================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.edges_by_length

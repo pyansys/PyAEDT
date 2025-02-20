@@ -1,0 +1,6 @@
+library\_list
+=============
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.library_list

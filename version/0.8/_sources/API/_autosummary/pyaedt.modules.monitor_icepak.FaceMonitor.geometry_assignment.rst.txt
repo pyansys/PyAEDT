@@ -1,0 +1,6 @@
+geometry\_assignment
+====================
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. autoproperty:: FaceMonitor.geometry_assignment

@@ -1,0 +1,394 @@
+﻿MaxwellCircuit
+==============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoclass:: MaxwellCircuit
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MaxwellCircuit.activate_variable_optimization
+      
+      
+      MaxwellCircuit.activate_variable_sensitivity
+      
+      
+      MaxwellCircuit.activate_variable_statistical
+      
+      
+      MaxwellCircuit.activate_variable_tuning
+      
+      
+      MaxwellCircuit.add_error_message
+      
+      
+      MaxwellCircuit.add_from_toolkit
+      
+      
+      MaxwellCircuit.add_info_message
+      
+      
+      MaxwellCircuit.add_warning_message
+      
+      
+      MaxwellCircuit.analyze
+      
+      
+      MaxwellCircuit.analyze_setup
+      
+      
+      MaxwellCircuit.archive_project
+      
+      
+      MaxwellCircuit.autosave_disable
+      
+      
+      MaxwellCircuit.autosave_enable
+      
+      
+      MaxwellCircuit.change_automatically_use_causal_materials
+      
+      
+      MaxwellCircuit.change_design_settings
+      
+      
+      MaxwellCircuit.change_material_override
+      
+      
+      MaxwellCircuit.change_property
+      
+      
+      MaxwellCircuit.change_validation_settings
+      
+      
+      MaxwellCircuit.check_beta_option_enabled
+      
+      
+      MaxwellCircuit.check_if_project_is_loaded
+      
+      
+      MaxwellCircuit.clean_proj_folder
+      
+      
+      MaxwellCircuit.close_desktop
+      
+      
+      MaxwellCircuit.close_project
+      
+      
+      MaxwellCircuit.copy_design_from
+      
+      
+      MaxwellCircuit.copy_project
+      
+      
+      MaxwellCircuit.create_dataset
+      
+      
+      MaxwellCircuit.create_dataset1d_design
+      
+      
+      MaxwellCircuit.create_dataset1d_project
+      
+      
+      MaxwellCircuit.create_dataset3d
+      
+      
+      MaxwellCircuit.create_new_project
+      
+      
+      MaxwellCircuit.create_output_variable
+      
+      
+      MaxwellCircuit.create_schematic_from_netlist
+      
+      
+      MaxwellCircuit.dataset_exists
+      
+      
+      MaxwellCircuit.deactivate_variable_optimization
+      
+      
+      MaxwellCircuit.deactivate_variable_sensitivity
+      
+      
+      MaxwellCircuit.deactivate_variable_statistical
+      
+      
+      MaxwellCircuit.deactivate_variable_tuning
+      
+      
+      MaxwellCircuit.delete_design
+      
+      
+      MaxwellCircuit.delete_project
+      
+      
+      MaxwellCircuit.delete_separator
+      
+      
+      MaxwellCircuit.delete_setup
+      
+      
+      MaxwellCircuit.delete_variable
+      
+      
+      MaxwellCircuit.design_settings
+      
+      
+      MaxwellCircuit.design_variation
+      
+      
+      MaxwellCircuit.duplicate_design
+      
+      
+      MaxwellCircuit.edit_setup
+      
+      
+      MaxwellCircuit.evaluate_expression
+      
+      
+      MaxwellCircuit.export_convergence
+      
+      
+      MaxwellCircuit.export_design_preview_to_jpg
+      
+      
+      MaxwellCircuit.export_netlist_from_schematic
+      
+      
+      MaxwellCircuit.export_parametric_results
+      
+      
+      MaxwellCircuit.export_profile
+      
+      
+      MaxwellCircuit.export_results
+      
+      
+      MaxwellCircuit.export_rl_matrix
+      
+      
+      MaxwellCircuit.export_variables_to_csv
+      
+      
+      MaxwellCircuit.generate_temp_project_directory
+      
+      
+      MaxwellCircuit.generate_unique_setup_name
+      
+      
+      MaxwellCircuit.get_evaluated_value
+      
+      
+      MaxwellCircuit.get_module
+      
+      
+      MaxwellCircuit.get_monitor_data
+      
+      
+      MaxwellCircuit.get_nominal_variation
+      
+      
+      MaxwellCircuit.get_object_material_properties
+      
+      
+      MaxwellCircuit.get_oo_name
+      
+      
+      MaxwellCircuit.get_oo_object
+      
+      
+      MaxwellCircuit.get_oo_properties
+      
+      
+      MaxwellCircuit.get_oo_property_value
+      
+      
+      MaxwellCircuit.get_output_variable
+      
+      
+      MaxwellCircuit.get_registry_key_int
+      
+      
+      MaxwellCircuit.get_registry_key_string
+      
+      
+      MaxwellCircuit.get_setup
+      
+      
+      MaxwellCircuit.get_setups
+      
+      
+      MaxwellCircuit.get_sweeps
+      
+      
+      MaxwellCircuit.get_traces_for_plot
+      
+      
+      MaxwellCircuit.hidden_variable
+      
+      
+      MaxwellCircuit.import_dataset1d
+      
+      
+      MaxwellCircuit.import_dataset3d
+      
+      
+      MaxwellCircuit.insert_design
+      
+      
+      MaxwellCircuit.list_of_variations
+      
+      
+      MaxwellCircuit.load_project
+      
+      
+      MaxwellCircuit.number_with_units
+      
+      
+      MaxwellCircuit.read_design_data
+      
+      
+      MaxwellCircuit.read_only_variable
+      
+      
+      MaxwellCircuit.release_desktop
+      
+      
+      MaxwellCircuit.rename_design
+      
+      
+      MaxwellCircuit.save_project
+      
+      
+      MaxwellCircuit.set_active_design
+      
+      
+      MaxwellCircuit.set_active_dso_config_name
+      
+      
+      MaxwellCircuit.set_license_type
+      
+      
+      MaxwellCircuit.set_registry_from_file
+      
+      
+      MaxwellCircuit.set_registry_key
+      
+      
+      MaxwellCircuit.set_temporary_directory
+      
+      
+      MaxwellCircuit.solve_in_batch
+      
+      
+      MaxwellCircuit.stop_simulations
+      
+      
+      MaxwellCircuit.submit_job
+      
+      
+      MaxwellCircuit.validate_simple
+      
+      
+      MaxwellCircuit.value_with_units
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MaxwellCircuit.Position
+      MaxwellCircuit.SimulationSetupTypes
+      MaxwellCircuit.SolutionTypes
+      MaxwellCircuit.active_setup
+      MaxwellCircuit.aedt_version_id
+      MaxwellCircuit.are_there_simulations_running
+      MaxwellCircuit.available_variations
+      MaxwellCircuit.boundaries
+      MaxwellCircuit.boundaries_by_type
+      MaxwellCircuit.default_solution_type
+      MaxwellCircuit.design_datasets
+      MaxwellCircuit.design_excitations
+      MaxwellCircuit.design_list
+      MaxwellCircuit.design_name
+      MaxwellCircuit.design_properties
+      MaxwellCircuit.design_type
+      MaxwellCircuit.desktop_class
+      MaxwellCircuit.desktop_install_dir
+      MaxwellCircuit.excitations
+      MaxwellCircuit.excitations_by_type
+      MaxwellCircuit.existing_analysis_setups
+      MaxwellCircuit.existing_analysis_sweeps
+      MaxwellCircuit.layouteditor
+      MaxwellCircuit.library_list
+      MaxwellCircuit.lock_file
+      MaxwellCircuit.logger
+      MaxwellCircuit.materials
+      MaxwellCircuit.modeler
+      MaxwellCircuit.native_components
+      MaxwellCircuit.nominal_adaptive
+      MaxwellCircuit.nominal_sweep
+      MaxwellCircuit.o_component_manager
+      MaxwellCircuit.o_maxwell_parameters
+      MaxwellCircuit.o_model_manager
+      MaxwellCircuit.o_symbol_manager
+      MaxwellCircuit.oanalysis
+      MaxwellCircuit.oboundary
+      MaxwellCircuit.odefinition_manager
+      MaxwellCircuit.odesign
+      MaxwellCircuit.odesktop
+      MaxwellCircuit.oeditor
+      MaxwellCircuit.oexcitation
+      MaxwellCircuit.ofieldsreporter
+      MaxwellCircuit.oimport_export
+      MaxwellCircuit.omaterial_manager
+      MaxwellCircuit.omatrix
+      MaxwellCircuit.omeshmodule
+      MaxwellCircuit.omodelsetup
+      MaxwellCircuit.omonitor
+      MaxwellCircuit.ooptimetrics
+      MaxwellCircuit.ooutput_variable
+      MaxwellCircuit.opadstackmanager
+      MaxwellCircuit.oproject
+      MaxwellCircuit.oradfield
+      MaxwellCircuit.oreportsetup
+      MaxwellCircuit.osolution
+      MaxwellCircuit.output_variables
+      MaxwellCircuit.personallib
+      MaxwellCircuit.project_datasets
+      MaxwellCircuit.project_file
+      MaxwellCircuit.project_list
+      MaxwellCircuit.project_name
+      MaxwellCircuit.project_path
+      MaxwellCircuit.project_properties
+      MaxwellCircuit.project_time_stamp
+      MaxwellCircuit.project_timestamp_changed
+      MaxwellCircuit.pyaedt_dir
+      MaxwellCircuit.results_directory
+      MaxwellCircuit.settings
+      MaxwellCircuit.setup_names
+      MaxwellCircuit.solution_type
+      MaxwellCircuit.src_dir
+      MaxwellCircuit.syslib
+      MaxwellCircuit.temp_directory
+      MaxwellCircuit.toolkit_directory
+      MaxwellCircuit.userlib
+      MaxwellCircuit.valid_design
+      MaxwellCircuit.variable_manager
+      MaxwellCircuit.working_directory
+   
+   

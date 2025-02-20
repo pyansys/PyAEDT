@@ -1,0 +1,6 @@
+export\_convergence
+===================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.export_convergence

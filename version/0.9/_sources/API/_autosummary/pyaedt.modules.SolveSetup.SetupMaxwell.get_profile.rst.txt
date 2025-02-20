@@ -1,0 +1,6 @@
+get\_profile
+============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupMaxwell.get_profile

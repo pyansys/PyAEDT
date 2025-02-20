@@ -1,0 +1,6 @@
+available\_properties
+=====================
+
+.. currentmodule:: pyaedt.modeler.cad.Modeler
+
+.. autoproperty:: CoordinateSystem.available_properties

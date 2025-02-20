@@ -1,0 +1,6 @@
+break\_spaceclaim\_connection
+=============================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.break_spaceclaim_connection

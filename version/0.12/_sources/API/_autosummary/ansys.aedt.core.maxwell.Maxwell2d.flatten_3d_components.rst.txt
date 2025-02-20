@@ -1,0 +1,6 @@
+flatten\_3d\_components
+=======================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.flatten_3d_components

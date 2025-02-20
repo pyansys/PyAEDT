@@ -1,0 +1,6 @@
+volumetric\_loss
+================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.volumetric_loss

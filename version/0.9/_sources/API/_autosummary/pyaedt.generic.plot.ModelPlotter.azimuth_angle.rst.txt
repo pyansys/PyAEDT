@@ -1,0 +1,6 @@
+azimuth\_angle
+==============
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. autoproperty:: ModelPlotter.azimuth_angle

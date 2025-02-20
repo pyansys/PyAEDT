@@ -1,0 +1,6 @@
+get\_touchstone\_data
+=====================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_touchstone_data

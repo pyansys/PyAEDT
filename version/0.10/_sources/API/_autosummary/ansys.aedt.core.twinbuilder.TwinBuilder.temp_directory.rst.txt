@@ -1,0 +1,6 @@
+temp\_directory
+===============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.temp_directory

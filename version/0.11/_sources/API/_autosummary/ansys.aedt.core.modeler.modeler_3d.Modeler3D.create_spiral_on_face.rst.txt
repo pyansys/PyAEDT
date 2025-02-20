@@ -1,0 +1,6 @@
+create\_spiral\_on\_face
+========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.create_spiral_on_face

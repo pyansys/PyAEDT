@@ -1,0 +1,6 @@
+use\_portrait
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. autoproperty:: VirtualCompliance.use_portrait

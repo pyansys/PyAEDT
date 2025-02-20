@@ -1,0 +1,6 @@
+antenna\_metadata
+=================
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. automethod:: FfdSolutionDataExporter.antenna_metadata

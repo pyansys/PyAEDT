@@ -1,0 +1,6 @@
+update\_properties
+==================
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. automethod:: ComponentArray.update_properties

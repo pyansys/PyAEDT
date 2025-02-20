@@ -1,0 +1,6 @@
+get\_defaultvalue
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: SurfMatProperties.get_defaultvalue

@@ -1,0 +1,6 @@
+line\_objects
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. autoproperty:: Modeler2D.line_objects

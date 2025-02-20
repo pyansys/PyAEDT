@@ -1,0 +1,6 @@
+history
+=======
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.history

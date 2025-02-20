@@ -1,0 +1,60 @@
+﻿CircuitComponent
+================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.object_3d_circuit
+
+.. autoclass:: CircuitComponent
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      CircuitComponent.change_property
+      
+      
+      CircuitComponent.change_symbol_pin_locations
+      
+      
+      CircuitComponent.delete
+      
+      
+      CircuitComponent.enforce_touchstone_model_passive
+      
+      
+      CircuitComponent.set_color
+      
+      
+      CircuitComponent.set_property
+      
+      
+      CircuitComponent.set_use_symbol_color
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      CircuitComponent.angle
+      CircuitComponent.bounding_box
+      CircuitComponent.component_info
+      CircuitComponent.composed_name
+      CircuitComponent.location
+      CircuitComponent.mirror
+      CircuitComponent.model_data
+      CircuitComponent.model_name
+      CircuitComponent.parameters
+      CircuitComponent.pins
+      CircuitComponent.refdes
+      CircuitComponent.units
+   
+   

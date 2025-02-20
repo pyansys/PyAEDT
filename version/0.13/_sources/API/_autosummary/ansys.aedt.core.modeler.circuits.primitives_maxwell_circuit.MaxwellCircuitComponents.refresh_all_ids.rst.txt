@@ -1,0 +1,6 @@
+refresh\_all\_ids
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_maxwell_circuit
+
+.. automethod:: MaxwellCircuitComponents.refresh_all_ids

@@ -1,0 +1,6 @@
+polyline\_segment
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.polyline_segment

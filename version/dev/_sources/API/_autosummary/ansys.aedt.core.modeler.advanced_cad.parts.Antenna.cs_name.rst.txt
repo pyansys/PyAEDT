@@ -1,0 +1,6 @@
+cs\_name
+========
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.parts
+
+.. autoproperty:: Antenna.cs_name

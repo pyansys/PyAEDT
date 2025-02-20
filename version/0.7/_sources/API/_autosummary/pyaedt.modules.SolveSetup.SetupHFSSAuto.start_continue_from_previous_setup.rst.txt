@@ -1,0 +1,6 @@
+start\_continue\_from\_previous\_setup
+======================================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSSAuto.start_continue_from_previous_setup

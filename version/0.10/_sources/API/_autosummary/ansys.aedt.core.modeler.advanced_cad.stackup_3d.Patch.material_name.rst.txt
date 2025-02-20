@@ -1,0 +1,6 @@
+material\_name
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Patch.material_name

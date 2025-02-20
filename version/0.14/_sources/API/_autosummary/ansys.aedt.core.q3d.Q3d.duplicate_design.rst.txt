@@ -1,0 +1,6 @@
+duplicate\_design
+=================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.duplicate_design

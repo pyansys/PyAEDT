@@ -1,0 +1,6 @@
+enable\_modelcreation
+=====================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.enable_modelcreation

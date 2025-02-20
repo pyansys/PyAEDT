@@ -1,0 +1,6 @@
+percent\_local\_refinement
+==========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveDCSimulationSetup.percent_local_refinement

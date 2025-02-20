@@ -1,0 +1,6 @@
+o\_component\_manager
+=====================
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoproperty:: ModelerMaxwellCircuit.o_component_manager

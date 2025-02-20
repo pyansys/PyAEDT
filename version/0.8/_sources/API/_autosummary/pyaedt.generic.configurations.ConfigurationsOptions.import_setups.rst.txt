@@ -1,0 +1,6 @@
+import\_setups
+==============
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_setups

@@ -1,0 +1,6 @@
+dimension
+=========
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. autoproperty:: Modeler2D.dimension

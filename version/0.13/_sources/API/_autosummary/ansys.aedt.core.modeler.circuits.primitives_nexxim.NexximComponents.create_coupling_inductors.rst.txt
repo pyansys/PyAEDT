@@ -1,0 +1,6 @@
+create\_coupling\_inductors
+===========================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_nexxim
+
+.. automethod:: NexximComponents.create_coupling_inductors

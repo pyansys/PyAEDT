@@ -1,0 +1,6 @@
+clear\_table
+============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.transmission_zeros
+
+.. automethod:: TransmissionZeros.clear_table

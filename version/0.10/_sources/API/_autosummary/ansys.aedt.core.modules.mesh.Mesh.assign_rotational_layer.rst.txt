@@ -1,0 +1,6 @@
+assign\_rotational\_layer
+=========================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. automethod:: Mesh.assign_rotational_layer

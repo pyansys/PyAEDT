@@ -1,0 +1,6 @@
+generate\_temp\_project\_directory
+==================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.generate_temp_project_directory

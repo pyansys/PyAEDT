@@ -1,0 +1,6 @@
+variable\_manager
+=================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q3d.variable_manager

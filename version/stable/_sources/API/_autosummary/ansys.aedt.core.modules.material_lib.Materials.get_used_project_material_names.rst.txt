@@ -1,0 +1,6 @@
+get\_used\_project\_material\_names
+===================================
+
+.. currentmodule:: ansys.aedt.core.modules.material_lib
+
+.. automethod:: Materials.get_used_project_material_names

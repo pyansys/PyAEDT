@@ -1,0 +1,6 @@
+place\_in\_layout
+=================
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. automethod:: Stackup.place_in_layout

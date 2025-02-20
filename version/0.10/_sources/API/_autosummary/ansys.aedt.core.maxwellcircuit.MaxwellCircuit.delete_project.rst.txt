@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.delete_project

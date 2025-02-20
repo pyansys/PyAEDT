@@ -1,0 +1,6 @@
+interp\_use\_port\_impedance
+============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: EdbFrequencySweep.interp_use_port_impedance

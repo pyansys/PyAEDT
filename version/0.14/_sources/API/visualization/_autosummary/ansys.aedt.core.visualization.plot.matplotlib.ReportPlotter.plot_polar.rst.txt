@@ -1,0 +1,6 @@
+plot\_polar
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. automethod:: ReportPlotter.plot_polar

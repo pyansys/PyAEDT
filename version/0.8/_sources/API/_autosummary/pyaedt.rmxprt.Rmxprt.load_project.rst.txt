@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.load_project

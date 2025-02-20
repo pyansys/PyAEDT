@@ -1,0 +1,6 @@
+add\_new\_objects
+=================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.add_new_objects

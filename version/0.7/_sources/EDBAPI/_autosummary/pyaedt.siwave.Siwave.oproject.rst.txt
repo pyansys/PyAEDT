@@ -1,0 +1,6 @@
+oproject
+========
+
+.. currentmodule:: pyaedt.siwave
+
+.. autoproperty:: Siwave.oproject

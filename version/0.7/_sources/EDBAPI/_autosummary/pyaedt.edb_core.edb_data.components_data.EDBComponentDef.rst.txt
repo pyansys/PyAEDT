@@ -1,0 +1,39 @@
+﻿EDBComponentDef
+===============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.components_data
+
+.. autoclass:: EDBComponentDef
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EDBComponentDef.assign_rlc_model
+      
+      
+      EDBComponentDef.assign_s_param_model
+      
+      
+      EDBComponentDef.assign_spice_model
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EDBComponentDef.components
+      EDBComponentDef.part_name
+      EDBComponentDef.type
+   
+   

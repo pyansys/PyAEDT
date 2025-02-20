@@ -1,0 +1,6 @@
+far\_field\_sphere
+==================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: FarField.far_field_sphere

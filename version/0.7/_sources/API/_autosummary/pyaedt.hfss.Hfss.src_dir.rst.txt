@@ -1,0 +1,6 @@
+src\_dir
+========
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.src_dir

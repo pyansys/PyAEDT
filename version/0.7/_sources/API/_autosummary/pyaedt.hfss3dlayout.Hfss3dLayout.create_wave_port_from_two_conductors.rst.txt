@@ -1,0 +1,6 @@
+create\_wave\_port\_from\_two\_conductors
+=========================================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.create_wave_port_from_two_conductors

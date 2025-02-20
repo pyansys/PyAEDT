@@ -1,0 +1,6 @@
+assign\_current
+===============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.assign_current

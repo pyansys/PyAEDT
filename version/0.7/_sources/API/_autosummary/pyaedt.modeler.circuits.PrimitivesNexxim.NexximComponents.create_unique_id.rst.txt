@@ -1,0 +1,6 @@
+create\_unique\_id
+==================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_unique_id

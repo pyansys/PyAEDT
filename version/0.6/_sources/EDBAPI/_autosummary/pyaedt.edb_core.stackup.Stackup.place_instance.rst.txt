@@ -1,0 +1,6 @@
+place\_instance
+===============
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. automethod:: Stackup.place_instance

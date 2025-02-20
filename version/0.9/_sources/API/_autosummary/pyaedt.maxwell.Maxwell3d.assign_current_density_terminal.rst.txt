@@ -1,0 +1,6 @@
+assign\_current\_density\_terminal
+==================================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_current_density_terminal

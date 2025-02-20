@@ -1,0 +1,6 @@
+export\_config
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: AMIConturEyeDiagram.export_config

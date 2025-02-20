@@ -1,0 +1,6 @@
+assign\_curvature\_extraction
+=============================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.assign_curvature_extraction

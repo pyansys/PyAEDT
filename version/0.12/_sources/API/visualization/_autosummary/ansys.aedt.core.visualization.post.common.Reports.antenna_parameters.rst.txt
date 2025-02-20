@@ -1,0 +1,6 @@
+antenna\_parameters
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.common
+
+.. automethod:: Reports.antenna_parameters

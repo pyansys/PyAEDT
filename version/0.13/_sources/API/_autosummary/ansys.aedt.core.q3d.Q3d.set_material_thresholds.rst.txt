@@ -1,0 +1,6 @@
+set\_material\_thresholds
+=========================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.set_material_thresholds

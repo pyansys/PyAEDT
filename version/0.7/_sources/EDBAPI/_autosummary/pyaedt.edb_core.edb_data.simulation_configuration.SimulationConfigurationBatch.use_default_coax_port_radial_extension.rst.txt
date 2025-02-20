@@ -1,0 +1,6 @@
+use\_default\_coax\_port\_radial\_extension
+===========================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.use_default_coax_port_radial_extension

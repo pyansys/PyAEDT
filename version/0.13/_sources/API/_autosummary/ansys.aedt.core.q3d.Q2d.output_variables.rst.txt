@@ -1,0 +1,6 @@
+output\_variables
+=================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q2d.output_variables

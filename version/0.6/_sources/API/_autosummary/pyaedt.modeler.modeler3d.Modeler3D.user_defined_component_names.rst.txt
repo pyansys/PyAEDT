@@ -1,0 +1,6 @@
+user\_defined\_component\_names
+===============================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. autoproperty:: Modeler3D.user_defined_component_names

@@ -1,0 +1,6 @@
+hidden\_variable
+================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.hidden_variable

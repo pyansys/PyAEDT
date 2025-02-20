@@ -1,0 +1,6 @@
+working\_directory
+==================
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.working_directory

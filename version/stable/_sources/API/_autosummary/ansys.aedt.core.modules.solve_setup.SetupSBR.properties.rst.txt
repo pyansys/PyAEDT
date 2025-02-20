@@ -1,0 +1,6 @@
+properties
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. autoproperty:: SetupSBR.properties

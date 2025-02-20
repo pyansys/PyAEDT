@@ -1,0 +1,6 @@
+center
+======
+
+.. currentmodule:: pyaedt.modeler.cad.components_3d
+
+.. autoproperty:: UserDefinedComponent.center

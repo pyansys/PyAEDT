@@ -1,0 +1,6 @@
+get\_all\_conductors\_names
+===========================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_all_conductors_names

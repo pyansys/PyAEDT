@@ -1,0 +1,6 @@
+deactivate\_variable\_optimization
+==================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.deactivate_variable_optimization

@@ -1,0 +1,6 @@
+dataset\_exists
+===============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.dataset_exists

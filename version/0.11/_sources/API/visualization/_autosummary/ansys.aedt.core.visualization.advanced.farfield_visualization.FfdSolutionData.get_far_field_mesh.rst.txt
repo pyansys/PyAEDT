@@ -1,0 +1,6 @@
+get\_far\_field\_mesh
+=====================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.farfield_visualization
+
+.. automethod:: FfdSolutionData.get_far_field_mesh

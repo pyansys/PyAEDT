@@ -1,0 +1,6 @@
+meshregions\_dict
+=================
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. autoproperty:: IcepakMesh.meshregions_dict

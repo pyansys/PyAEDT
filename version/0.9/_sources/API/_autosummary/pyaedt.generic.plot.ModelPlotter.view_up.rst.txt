@@ -1,0 +1,6 @@
+view\_up
+========
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. autoproperty:: ModelPlotter.view_up

@@ -1,0 +1,6 @@
+roll\_angle
+===========
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.roll_angle

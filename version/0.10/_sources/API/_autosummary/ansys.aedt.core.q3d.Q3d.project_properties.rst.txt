@@ -1,0 +1,6 @@
+project\_properties
+===================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q3d.project_properties

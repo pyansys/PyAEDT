@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.change_property

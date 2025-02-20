@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.stop_simulations

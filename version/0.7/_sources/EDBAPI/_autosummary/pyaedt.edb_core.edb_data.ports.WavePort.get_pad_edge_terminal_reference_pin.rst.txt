@@ -1,0 +1,6 @@
+get\_pad\_edge\_terminal\_reference\_pin
+========================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. automethod:: WavePort.get_pad_edge_terminal_reference_pin

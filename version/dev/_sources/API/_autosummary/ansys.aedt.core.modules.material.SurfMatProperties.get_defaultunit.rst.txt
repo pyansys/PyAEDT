@@ -1,0 +1,6 @@
+get\_defaultunit
+================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: SurfMatProperties.get_defaultunit

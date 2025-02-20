@@ -1,0 +1,6 @@
+clear\_messages
+===============
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.clear_messages

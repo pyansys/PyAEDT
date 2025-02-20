@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.desktop_class

@@ -1,0 +1,6 @@
+create\_resistor\_on\_pin
+=========================
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. automethod:: EdbSiwave.create_resistor_on_pin

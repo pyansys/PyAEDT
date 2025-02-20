@@ -1,0 +1,6 @@
+set\_tuning\_offset
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupHFSSAuto.set_tuning_offset

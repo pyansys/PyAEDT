@@ -1,0 +1,6 @@
+create\_frequency\_sweep
+========================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupHFSS.create_frequency_sweep

@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_emit
+
+.. autoproperty:: EmitComponents.design_type

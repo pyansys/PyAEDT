@@ -1,0 +1,6 @@
+add
+===
+
+.. currentmodule:: pyaedt.modules.DesignXPloration
+
+.. automethod:: OptimizationSetups.add

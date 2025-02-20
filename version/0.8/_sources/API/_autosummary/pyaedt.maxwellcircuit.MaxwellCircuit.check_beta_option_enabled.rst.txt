@@ -1,0 +1,6 @@
+check\_beta\_option\_enabled
+============================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.check_beta_option_enabled

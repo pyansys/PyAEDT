@@ -1,0 +1,6 @@
+dc\_per\_pin\_res\_path
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_per_pin_res_path

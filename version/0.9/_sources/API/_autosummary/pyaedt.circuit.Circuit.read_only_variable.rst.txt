@@ -1,0 +1,6 @@
+read\_only\_variable
+====================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.read_only_variable

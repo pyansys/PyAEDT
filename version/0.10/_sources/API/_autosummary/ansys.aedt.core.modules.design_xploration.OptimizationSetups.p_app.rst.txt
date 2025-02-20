@@ -1,0 +1,6 @@
+p\_app
+======
+
+.. currentmodule:: ansys.aedt.core.modules.design_xploration
+
+.. autoproperty:: OptimizationSetups.p_app

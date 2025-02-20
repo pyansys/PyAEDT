@@ -1,0 +1,6 @@
+get\_model\_from\_mesh\_results
+===============================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_model_from_mesh_results

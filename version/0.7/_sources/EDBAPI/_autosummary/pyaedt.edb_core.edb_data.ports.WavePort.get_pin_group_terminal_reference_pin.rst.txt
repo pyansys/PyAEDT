@@ -1,0 +1,6 @@
+get\_pin\_group\_terminal\_reference\_pin
+=========================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. automethod:: WavePort.get_pin_group_terminal_reference_pin

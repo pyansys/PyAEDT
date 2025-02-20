@@ -1,0 +1,6 @@
+omonitor
+========
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.omonitor

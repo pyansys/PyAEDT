@@ -1,0 +1,6 @@
+change\_cs\_mode
+================
+
+.. currentmodule:: pyaedt.modeler.cad.Modeler
+
+.. automethod:: CoordinateSystem.change_cs_mode

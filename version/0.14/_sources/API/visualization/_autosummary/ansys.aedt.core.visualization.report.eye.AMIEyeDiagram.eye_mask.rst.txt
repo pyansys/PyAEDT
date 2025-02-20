@@ -1,0 +1,6 @@
+eye\_mask
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: AMIEyeDiagram.eye_mask

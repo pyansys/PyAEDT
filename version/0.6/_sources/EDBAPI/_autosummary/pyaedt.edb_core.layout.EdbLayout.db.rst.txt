@@ -1,0 +1,6 @@
+db
+==
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. autoproperty:: EdbLayout.db

@@ -1,0 +1,6 @@
+new\_padstack
+=============
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.new_padstack

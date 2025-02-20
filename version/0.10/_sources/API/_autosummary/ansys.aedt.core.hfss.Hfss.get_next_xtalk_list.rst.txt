@@ -1,0 +1,6 @@
+get\_next\_xtalk\_list
+======================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.get_next_xtalk_list

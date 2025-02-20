@@ -1,0 +1,6 @@
+object\_names
+=============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. autoproperty:: Modeler3D.object_names

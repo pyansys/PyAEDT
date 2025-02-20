@@ -1,0 +1,6 @@
+add\_from\_toolkit
+==================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.add_from_toolkit

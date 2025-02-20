@@ -1,0 +1,6 @@
+decompose
+=========
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. automethod:: Variable.decompose

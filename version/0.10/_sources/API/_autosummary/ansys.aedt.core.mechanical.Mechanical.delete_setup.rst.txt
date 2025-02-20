@@ -1,0 +1,6 @@
+delete\_setup
+=============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.delete_setup

@@ -1,0 +1,6 @@
+filter
+======
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. automethod:: AppFilter.filter

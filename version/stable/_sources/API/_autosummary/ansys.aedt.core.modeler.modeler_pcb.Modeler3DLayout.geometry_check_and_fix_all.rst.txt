@@ -1,0 +1,6 @@
+geometry\_check\_and\_fix\_all
+==============================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. automethod:: Modeler3DLayout.geometry_check_and_fix_all

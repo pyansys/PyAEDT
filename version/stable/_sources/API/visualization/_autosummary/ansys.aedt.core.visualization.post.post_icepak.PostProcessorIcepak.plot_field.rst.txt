@@ -1,0 +1,6 @@
+plot\_field
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.plot_field

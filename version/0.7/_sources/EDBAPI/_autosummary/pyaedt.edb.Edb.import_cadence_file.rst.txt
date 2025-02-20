@@ -1,0 +1,6 @@
+import\_cadence\_file
+=====================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.import_cadence_file

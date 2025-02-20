@@ -1,0 +1,6 @@
+enabled\_analyses
+=================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: Excitations.enabled_analyses

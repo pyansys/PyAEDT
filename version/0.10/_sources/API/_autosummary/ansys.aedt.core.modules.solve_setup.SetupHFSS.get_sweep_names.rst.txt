@@ -1,0 +1,6 @@
+get\_sweep\_names
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupHFSS.get_sweep_names

@@ -1,0 +1,6 @@
+add\_mesh\_link
+===============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupMaxwell.add_mesh_link

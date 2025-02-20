@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.delete_project

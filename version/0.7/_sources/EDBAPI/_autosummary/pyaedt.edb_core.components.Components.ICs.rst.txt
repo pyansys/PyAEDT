@@ -1,0 +1,6 @@
+ICs
+===
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. autoproperty:: Components.ICs

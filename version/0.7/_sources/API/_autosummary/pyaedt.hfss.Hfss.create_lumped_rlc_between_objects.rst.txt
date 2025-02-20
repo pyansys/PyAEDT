@@ -1,0 +1,6 @@
+create\_lumped\_rlc\_between\_objects
+=====================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_lumped_rlc_between_objects

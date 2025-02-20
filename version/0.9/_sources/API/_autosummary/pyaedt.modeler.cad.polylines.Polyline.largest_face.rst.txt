@@ -1,0 +1,6 @@
+largest\_face
+=============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.largest_face

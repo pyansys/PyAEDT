@@ -1,0 +1,6 @@
+objects\_from\_nets
+===================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.objects_from_nets

@@ -1,0 +1,6 @@
+change\_material\_override
+==========================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.change_material_override

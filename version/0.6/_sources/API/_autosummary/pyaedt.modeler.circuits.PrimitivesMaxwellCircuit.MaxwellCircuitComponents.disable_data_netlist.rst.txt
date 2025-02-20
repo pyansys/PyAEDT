@@ -1,0 +1,6 @@
+disable\_data\_netlist
+======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.disable_data_netlist

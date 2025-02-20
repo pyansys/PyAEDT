@@ -1,0 +1,6 @@
+edit\_y\_axis\_scaling
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. automethod:: Spectral.edit_y_axis_scaling

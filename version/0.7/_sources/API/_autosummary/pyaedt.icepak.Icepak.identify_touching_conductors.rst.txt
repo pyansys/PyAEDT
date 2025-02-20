@@ -1,0 +1,6 @@
+identify\_touching\_conductors
+==============================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.identify_touching_conductors

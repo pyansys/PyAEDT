@@ -1,0 +1,6 @@
+create\_schematic\_from\_mentor\_netlist
+========================================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.create_schematic_from_mentor_netlist

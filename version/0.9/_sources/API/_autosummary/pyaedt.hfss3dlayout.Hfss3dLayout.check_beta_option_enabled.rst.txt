@@ -1,0 +1,6 @@
+check\_beta\_option\_enabled
+============================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.check_beta_option_enabled

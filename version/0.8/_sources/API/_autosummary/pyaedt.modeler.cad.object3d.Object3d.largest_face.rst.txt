@@ -1,0 +1,6 @@
+largest\_face
+=============
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.largest_face

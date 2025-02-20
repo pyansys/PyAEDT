@@ -1,0 +1,12 @@
+[
+  {
+    "name": "dev",
+    "version": "dev",
+    "url": "https://aedt.docs.pyansys.com/version/dev/"
+  },
+  {
+    "name": "0.6 (stable)",
+    "version": "0.6",
+    "url": "https://aedt.docs.pyansys.com/version/stable/"
+  }
+]

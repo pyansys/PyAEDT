@@ -1,0 +1,36 @@
+﻿Variable
+========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.variables
+
+.. autoclass:: Variable
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Variable.delete
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Variable.description
+      Variable.is_parameter
+      Variable.name
+      Variable.value
+      Variable.value_object
+      Variable.value_string
+   
+   

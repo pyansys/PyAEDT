@@ -1,0 +1,6 @@
+evaluate\_expression
+====================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.evaluate_expression

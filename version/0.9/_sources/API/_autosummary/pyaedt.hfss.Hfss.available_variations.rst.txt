@@ -1,0 +1,6 @@
+available\_variations
+=====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.available_variations

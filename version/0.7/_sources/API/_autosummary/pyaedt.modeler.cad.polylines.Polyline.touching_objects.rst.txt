@@ -1,0 +1,6 @@
+touching\_objects
+=================
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.touching_objects

@@ -1,0 +1,6 @@
+create\_impedance\_between\_objects
+===================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_impedance_between_objects

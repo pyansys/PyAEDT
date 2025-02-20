@@ -1,0 +1,6 @@
+magnetic\_loss\_tangent
+=======================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.magnetic_loss_tangent

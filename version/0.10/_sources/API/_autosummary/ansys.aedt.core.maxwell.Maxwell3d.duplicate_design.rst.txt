@@ -1,0 +1,6 @@
+duplicate\_design
+=================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.duplicate_design

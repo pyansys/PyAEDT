@@ -1,0 +1,6 @@
+add\_cartesian\_x\_marker
+=========================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. automethod:: Standard.add_cartesian_x_marker

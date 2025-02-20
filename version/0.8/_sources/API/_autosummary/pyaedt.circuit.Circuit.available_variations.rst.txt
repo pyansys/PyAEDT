@@ -1,0 +1,6 @@
+available\_variations
+=====================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.available_variations

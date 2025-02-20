@@ -1,0 +1,6 @@
+insert\_near\_field\_line
+=========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.insert_near_field_line

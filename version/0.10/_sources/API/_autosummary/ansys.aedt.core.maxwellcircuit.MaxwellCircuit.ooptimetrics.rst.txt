@@ -1,0 +1,6 @@
+ooptimetrics
+============
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.ooptimetrics

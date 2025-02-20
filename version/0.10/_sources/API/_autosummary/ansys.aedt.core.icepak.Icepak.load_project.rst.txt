@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.load_project

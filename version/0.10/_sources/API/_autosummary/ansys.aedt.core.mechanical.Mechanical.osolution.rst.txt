@@ -1,0 +1,6 @@
+osolution
+=========
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.osolution

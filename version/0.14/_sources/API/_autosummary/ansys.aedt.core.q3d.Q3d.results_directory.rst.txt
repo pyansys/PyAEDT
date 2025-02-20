@@ -1,0 +1,6 @@
+results\_directory
+==================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q3d.results_directory

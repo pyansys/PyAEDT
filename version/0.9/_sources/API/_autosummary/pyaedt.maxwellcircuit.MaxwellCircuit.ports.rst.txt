@@ -1,0 +1,6 @@
+ports
+=====
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.ports

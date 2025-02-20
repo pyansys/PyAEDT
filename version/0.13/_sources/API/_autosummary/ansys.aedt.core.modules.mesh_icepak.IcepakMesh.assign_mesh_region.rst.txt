@@ -1,0 +1,6 @@
+assign\_mesh\_region
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. automethod:: IcepakMesh.assign_mesh_region

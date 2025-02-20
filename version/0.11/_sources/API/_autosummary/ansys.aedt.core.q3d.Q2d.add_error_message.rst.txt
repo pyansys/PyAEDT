@@ -1,0 +1,6 @@
+add\_error\_message
+===================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.add_error_message

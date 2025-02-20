@@ -1,0 +1,6 @@
+plot\_range\_profile
+====================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. automethod:: MonostaticRCSPlotter.plot_range_profile

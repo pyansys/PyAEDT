@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.change_property

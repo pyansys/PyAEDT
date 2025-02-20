@@ -1,0 +1,6 @@
+youngs\_modulus
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.youngs_modulus

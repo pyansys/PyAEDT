@@ -1,0 +1,6 @@
+create\_polygon
+===============
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. automethod:: EdbLayout.create_polygon

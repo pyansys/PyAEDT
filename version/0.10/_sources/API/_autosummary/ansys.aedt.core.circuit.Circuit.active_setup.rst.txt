@@ -1,0 +1,6 @@
+active\_setup
+=============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.active_setup

@@ -1,0 +1,6 @@
+optimitrics\_enabled
+====================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.optimitrics_enabled

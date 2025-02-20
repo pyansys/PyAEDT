@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.logger

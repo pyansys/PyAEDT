@@ -1,0 +1,6 @@
+create\_statistical\_eye\_plot
+==============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.create_statistical_eye_plot

@@ -1,0 +1,6 @@
+rot\_cs\_name
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.parts
+
+.. autoproperty:: Part.rot_cs_name

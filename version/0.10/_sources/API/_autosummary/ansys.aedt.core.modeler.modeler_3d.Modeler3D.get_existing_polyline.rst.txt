@@ -1,0 +1,6 @@
+get\_existing\_polyline
+=======================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.get_existing_polyline

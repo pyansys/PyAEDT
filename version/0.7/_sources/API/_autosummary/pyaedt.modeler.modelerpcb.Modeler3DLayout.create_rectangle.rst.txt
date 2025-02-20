@@ -1,0 +1,6 @@
+create\_rectangle
+=================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.create_rectangle

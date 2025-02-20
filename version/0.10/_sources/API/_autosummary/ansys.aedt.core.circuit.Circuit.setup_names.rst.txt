@@ -1,0 +1,6 @@
+setup\_names
+============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.setup_names

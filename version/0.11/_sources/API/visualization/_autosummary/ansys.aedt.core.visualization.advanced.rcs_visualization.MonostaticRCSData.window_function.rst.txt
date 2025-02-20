@@ -1,0 +1,6 @@
+window\_function
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. automethod:: MonostaticRCSData.window_function

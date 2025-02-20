@@ -1,0 +1,6 @@
+dc\_use\_loop\_res\_for\_per\_pin
+=================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_use_loop_res_for_per_pin

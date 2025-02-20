@@ -1,0 +1,6 @@
+model\_depth
+============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.model_depth

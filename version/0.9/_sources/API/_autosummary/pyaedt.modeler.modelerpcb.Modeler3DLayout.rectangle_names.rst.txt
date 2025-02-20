@@ -1,0 +1,6 @@
+rectangle\_names
+================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. autoproperty:: Modeler3DLayout.rectangle_names

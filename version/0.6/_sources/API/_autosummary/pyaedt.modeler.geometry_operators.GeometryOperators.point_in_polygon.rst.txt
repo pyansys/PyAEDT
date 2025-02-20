@@ -1,0 +1,6 @@
+point\_in\_polygon
+==================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.point_in_polygon

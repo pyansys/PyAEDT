@@ -1,0 +1,6 @@
+deactivate\_variable\_sensitivity
+=================================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.deactivate_variable_sensitivity

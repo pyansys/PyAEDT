@@ -1,0 +1,6 @@
+number\_with\_units
+===================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_maxwell_circuit
+
+.. automethod:: MaxwellCircuitComponents.number_with_units

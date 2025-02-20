@@ -1,0 +1,123 @@
+﻿TwinBuilderComponents
+=====================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. autoclass:: TwinBuilderComponents
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      TwinBuilderComponents.add_id_to_component
+      
+      
+      TwinBuilderComponents.add_pin_iports
+      
+      
+      TwinBuilderComponents.create_capacitor
+      
+      
+      TwinBuilderComponents.create_component
+      
+      
+      TwinBuilderComponents.create_diode
+      
+      
+      TwinBuilderComponents.create_gnd
+      
+      
+      TwinBuilderComponents.create_inductor
+      
+      
+      TwinBuilderComponents.create_interface_port
+      
+      
+      TwinBuilderComponents.create_line
+      
+      
+      TwinBuilderComponents.create_model_from_touchstone
+      
+      
+      TwinBuilderComponents.create_npn
+      
+      
+      TwinBuilderComponents.create_page_port
+      
+      
+      TwinBuilderComponents.create_periodic_waveform_source
+      
+      
+      TwinBuilderComponents.create_pnp
+      
+      
+      TwinBuilderComponents.create_resistor
+      
+      
+      TwinBuilderComponents.create_symbol
+      
+      
+      TwinBuilderComponents.create_touchstone_component
+      
+      
+      TwinBuilderComponents.create_unique_id
+      
+      
+      TwinBuilderComponents.create_voltage_source
+      
+      
+      TwinBuilderComponents.create_wire
+      
+      
+      TwinBuilderComponents.disable_data_netlist
+      
+      
+      TwinBuilderComponents.enable_global_netlist
+      
+      
+      TwinBuilderComponents.enable_use_instance_name
+      
+      
+      TwinBuilderComponents.get_obj_id
+      
+      
+      TwinBuilderComponents.get_pin_location
+      
+      
+      TwinBuilderComponents.get_pins
+      
+      
+      TwinBuilderComponents.number_with_units
+      
+      
+      TwinBuilderComponents.refresh_all_ids
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      TwinBuilderComponents.components_catalog
+      TwinBuilderComponents.design_libray
+      TwinBuilderComponents.design_type
+      TwinBuilderComponents.design_types
+      TwinBuilderComponents.model_units
+      TwinBuilderComponents.nets
+      TwinBuilderComponents.o_component_manager
+      TwinBuilderComponents.o_definition_manager
+      TwinBuilderComponents.o_symbol_manager
+      TwinBuilderComponents.schematic_units
+      TwinBuilderComponents.tab_name
+      TwinBuilderComponents.version
+   
+   

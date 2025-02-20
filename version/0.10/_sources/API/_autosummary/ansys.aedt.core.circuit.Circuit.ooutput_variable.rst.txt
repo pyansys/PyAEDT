@@ -1,0 +1,6 @@
+ooutput\_variable
+=================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.ooutput_variable

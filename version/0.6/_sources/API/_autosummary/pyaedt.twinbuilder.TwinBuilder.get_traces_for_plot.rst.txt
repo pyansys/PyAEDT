@@ -1,0 +1,6 @@
+get\_traces\_for\_plot
+======================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.get_traces_for_plot

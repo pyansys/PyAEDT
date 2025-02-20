@@ -1,0 +1,6 @@
+ripple\_constriction\_band
+==========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.ripple_constriction_band

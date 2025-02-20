@@ -1,0 +1,6 @@
+submit\_job
+===========
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.submit_job

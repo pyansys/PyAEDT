@@ -1,0 +1,6 @@
+set\_crosssection\_properties
+=============================
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.set_crosssection_properties

@@ -1,0 +1,6 @@
+update
+======
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.maxwell_boundary
+
+.. automethod:: MaxwellMatrix.update

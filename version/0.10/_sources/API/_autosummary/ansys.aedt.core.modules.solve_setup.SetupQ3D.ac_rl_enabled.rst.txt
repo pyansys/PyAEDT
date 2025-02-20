@@ -1,0 +1,6 @@
+ac\_rl\_enabled
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. autoproperty:: SetupQ3D.ac_rl_enabled

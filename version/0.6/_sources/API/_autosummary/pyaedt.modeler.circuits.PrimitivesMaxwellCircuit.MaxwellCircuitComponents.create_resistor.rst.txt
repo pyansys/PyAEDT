@@ -1,0 +1,6 @@
+create\_resistor
+================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.create_resistor

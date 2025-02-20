@@ -1,0 +1,6 @@
+validate\_expression
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.fields_calculator
+
+.. automethod:: FieldsCalculator.validate_expression

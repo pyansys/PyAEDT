@@ -1,0 +1,6 @@
+o\_symbol\_manager
+==================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q3d.o_symbol_manager

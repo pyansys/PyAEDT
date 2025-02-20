@@ -1,0 +1,6 @@
+add\_dielectric\_layer
+======================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: Stackup3D.add_dielectric_layer

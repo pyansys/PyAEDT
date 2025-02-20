@@ -1,0 +1,6 @@
+zoom
+====
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. autoproperty:: ModelPlotter.zoom

@@ -1,0 +1,6 @@
+get\_object\_material\_properties
+=================================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_object_material_properties

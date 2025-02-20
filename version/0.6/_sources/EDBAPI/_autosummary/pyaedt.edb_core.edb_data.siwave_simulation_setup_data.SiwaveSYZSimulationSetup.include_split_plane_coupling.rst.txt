@@ -1,0 +1,6 @@
+include\_split\_plane\_coupling
+===============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveSYZSimulationSetup.include_split_plane_coupling

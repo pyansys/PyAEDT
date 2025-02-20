@@ -1,0 +1,6 @@
+delete\_separator
+=================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.delete_separator

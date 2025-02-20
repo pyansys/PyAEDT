@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: NearField.create

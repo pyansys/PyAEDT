@@ -1,0 +1,6 @@
+project\_file
+=============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.project_file

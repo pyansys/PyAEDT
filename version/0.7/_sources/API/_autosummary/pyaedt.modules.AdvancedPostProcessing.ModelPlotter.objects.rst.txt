@@ -1,0 +1,6 @@
+objects
+=======
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.objects

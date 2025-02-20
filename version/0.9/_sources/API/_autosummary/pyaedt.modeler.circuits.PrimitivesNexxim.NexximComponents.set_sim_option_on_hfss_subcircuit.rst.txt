@@ -1,0 +1,6 @@
+set\_sim\_option\_on\_hfss\_subcircuit
+======================================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.set_sim_option_on_hfss_subcircuit

@@ -1,0 +1,6 @@
+z\_scale
+========
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.z_scale

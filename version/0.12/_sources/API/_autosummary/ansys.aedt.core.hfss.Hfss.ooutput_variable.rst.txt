@@ -1,0 +1,6 @@
+ooutput\_variable
+=================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. autoproperty:: Hfss.ooutput_variable

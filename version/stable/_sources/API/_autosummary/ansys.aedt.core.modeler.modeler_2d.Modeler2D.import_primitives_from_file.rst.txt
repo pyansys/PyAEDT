@@ -1,0 +1,6 @@
+import\_primitives\_from\_file
+==============================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.import_primitives_from_file

@@ -1,0 +1,6 @@
+interpolation\_use\_full\_basis
+===============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: EdbFrequencySweep.interpolation_use_full_basis

@@ -1,0 +1,6 @@
+top\_edge\_x
+============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.top_edge_x

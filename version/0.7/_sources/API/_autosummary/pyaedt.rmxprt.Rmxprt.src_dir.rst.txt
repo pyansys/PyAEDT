@@ -1,0 +1,6 @@
+src\_dir
+========
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.src_dir

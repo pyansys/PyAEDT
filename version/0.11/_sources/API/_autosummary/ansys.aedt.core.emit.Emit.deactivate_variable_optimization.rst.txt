@@ -1,0 +1,6 @@
+deactivate\_variable\_optimization
+==================================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.deactivate_variable_optimization

@@ -1,0 +1,6 @@
+assign\_adiabatic\_plate
+========================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_adiabatic_plate

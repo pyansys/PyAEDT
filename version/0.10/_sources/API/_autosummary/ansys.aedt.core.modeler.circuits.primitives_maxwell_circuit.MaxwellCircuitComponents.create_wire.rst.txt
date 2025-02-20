@@ -1,0 +1,6 @@
+create\_wire
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_maxwell_circuit
+
+.. automethod:: MaxwellCircuitComponents.create_wire

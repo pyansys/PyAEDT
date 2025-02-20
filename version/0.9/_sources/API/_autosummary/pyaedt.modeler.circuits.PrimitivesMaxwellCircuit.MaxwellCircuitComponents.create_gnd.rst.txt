@@ -1,0 +1,6 @@
+create\_gnd
+===========
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.create_gnd

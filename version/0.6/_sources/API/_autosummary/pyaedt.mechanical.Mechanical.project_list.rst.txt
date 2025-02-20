@@ -1,0 +1,6 @@
+project\_list
+=============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.project_list

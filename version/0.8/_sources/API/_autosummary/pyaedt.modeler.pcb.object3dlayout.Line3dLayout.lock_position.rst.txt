@@ -1,0 +1,6 @@
+lock\_position
+==============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Line3dLayout.lock_position

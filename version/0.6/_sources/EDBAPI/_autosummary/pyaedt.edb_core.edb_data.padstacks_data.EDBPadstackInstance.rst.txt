@@ -1,0 +1,79 @@
+﻿EDBPadstackInstance
+===================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoclass:: EDBPadstackInstance
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EDBPadstackInstance.create_rectangle_in_pad
+      
+      
+      EDBPadstackInstance.delete
+      
+      
+      EDBPadstackInstance.get_connected_object_id_set
+      
+      
+      EDBPadstackInstance.get_reference_pins
+      
+      
+      EDBPadstackInstance.in_polygon
+      
+      
+      EDBPadstackInstance.in_voids
+      
+      
+      EDBPadstackInstance.parametrize_position
+      
+      
+      EDBPadstackInstance.set_backdrill_bottom
+      
+      
+      EDBPadstackInstance.set_backdrill_top
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EDBPadstackInstance.aedt_name
+      EDBPadstackInstance.backdrill_bottom
+      EDBPadstackInstance.backdrill_top
+      EDBPadstackInstance.bounding_box
+      EDBPadstackInstance.component
+      EDBPadstackInstance.dcir_equipotential_region
+      EDBPadstackInstance.id
+      EDBPadstackInstance.is_pin
+      EDBPadstackInstance.layer_range_names
+      EDBPadstackInstance.lower_elevation
+      EDBPadstackInstance.metal_volume
+      EDBPadstackInstance.name
+      EDBPadstackInstance.net_name
+      EDBPadstackInstance.object_instance
+      EDBPadstackInstance.padstack_definition
+      EDBPadstackInstance.pin
+      EDBPadstackInstance.pin_number
+      EDBPadstackInstance.pingroups
+      EDBPadstackInstance.placement_layer
+      EDBPadstackInstance.position
+      EDBPadstackInstance.rotation
+      EDBPadstackInstance.start_layer
+      EDBPadstackInstance.stop_layer
+      EDBPadstackInstance.top_bottom_association
+      EDBPadstackInstance.upper_elevation
+   
+   

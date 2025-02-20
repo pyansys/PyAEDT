@@ -1,0 +1,6 @@
+get\_variable
+=============
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.get_variable

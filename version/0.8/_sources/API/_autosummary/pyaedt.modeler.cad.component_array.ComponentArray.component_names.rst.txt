@@ -1,0 +1,6 @@
+component\_names
+================
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.component_names

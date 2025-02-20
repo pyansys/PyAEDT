@@ -1,0 +1,6 @@
+create\_rlc\_boundary\_on\_pins
+===============================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.create_rlc_boundary_on_pins

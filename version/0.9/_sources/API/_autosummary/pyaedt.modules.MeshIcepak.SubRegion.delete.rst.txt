@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. automethod:: SubRegion.delete

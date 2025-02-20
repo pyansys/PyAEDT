@@ -1,0 +1,6 @@
+get\_all\_source\_modes
+=======================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.get_all_source_modes

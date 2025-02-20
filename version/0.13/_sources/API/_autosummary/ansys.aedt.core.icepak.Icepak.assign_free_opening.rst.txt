@@ -1,0 +1,6 @@
+assign\_free\_opening
+=====================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.assign_free_opening

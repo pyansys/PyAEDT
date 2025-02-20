@@ -1,0 +1,6 @@
+join\_series
+============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.maxwell_boundary
+
+.. automethod:: MaxwellParameters.join_series

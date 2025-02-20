@@ -1,0 +1,6 @@
+warning\_messages
+=================
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. autoproperty:: AedtLogger.warning_messages

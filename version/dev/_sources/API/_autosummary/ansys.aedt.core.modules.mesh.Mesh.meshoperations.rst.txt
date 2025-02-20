@@ -1,0 +1,6 @@
+meshoperations
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. autoproperty:: Mesh.meshoperations

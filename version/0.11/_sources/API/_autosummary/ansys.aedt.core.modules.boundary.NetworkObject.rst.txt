@@ -1,0 +1,72 @@
+﻿NetworkObject
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoclass:: NetworkObject
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      NetworkObject.add_boundary_node
+      
+      
+      NetworkObject.add_face_node
+      
+      
+      NetworkObject.add_internal_node
+      
+      
+      NetworkObject.add_link
+      
+      
+      NetworkObject.add_links_from_dictionaries
+      
+      
+      NetworkObject.add_nodes_from_dictionaries
+      
+      
+      NetworkObject.create
+      
+      
+      NetworkObject.delete
+      
+      
+      NetworkObject.update
+      
+      
+      NetworkObject.update_assignment
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      NetworkObject.auto_update
+      NetworkObject.available_properties
+      NetworkObject.boundary_nodes
+      NetworkObject.c_links
+      NetworkObject.face_nodes
+      NetworkObject.faces_ids_in_network
+      NetworkObject.internal_nodes
+      NetworkObject.links
+      NetworkObject.name
+      NetworkObject.nodes
+      NetworkObject.object_properties
+      NetworkObject.objects_in_network
+      NetworkObject.props
+      NetworkObject.r_links
+      NetworkObject.type
+   
+   

@@ -1,0 +1,6 @@
+placement\_layer
+================
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Rect3dLayout.placement_layer

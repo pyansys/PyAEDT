@@ -1,0 +1,6 @@
+create\_clearance\_on\_component
+================================
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. automethod:: Components3DLayout.create_clearance_on_component

@@ -1,0 +1,6 @@
+add\_subrange
+=============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSSAuto.add_subrange

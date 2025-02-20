@@ -1,0 +1,6 @@
+interpolation\_use\_prop\_const
+===============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: EdbFrequencySweep.interpolation_use_prop_const

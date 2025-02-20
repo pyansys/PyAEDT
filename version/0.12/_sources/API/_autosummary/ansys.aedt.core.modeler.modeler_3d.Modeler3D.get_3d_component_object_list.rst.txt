@@ -1,0 +1,6 @@
+get\_3d\_component\_object\_list
+================================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.get_3d_component_object_list

@@ -1,0 +1,6 @@
+clean\_proj\_folder
+===================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.clean_proj_folder

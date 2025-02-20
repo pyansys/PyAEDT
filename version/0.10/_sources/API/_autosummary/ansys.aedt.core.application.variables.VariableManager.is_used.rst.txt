@@ -1,0 +1,6 @@
+is\_used
+========
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. automethod:: VariableManager.is_used

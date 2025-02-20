@@ -1,0 +1,6 @@
+save\_diff\_pairs\_to\_file
+===========================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.save_diff_pairs_to_file

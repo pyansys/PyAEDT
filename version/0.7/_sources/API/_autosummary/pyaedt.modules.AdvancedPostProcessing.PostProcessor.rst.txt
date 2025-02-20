@@ -1,0 +1,184 @@
+﻿PostProcessor
+=============
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoclass:: PostProcessor
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      PostProcessor.animate_fields_from_aedtplt
+      
+      
+      PostProcessor.available_display_types
+      
+      
+      PostProcessor.available_quantities_categories
+      
+      
+      PostProcessor.available_report_quantities
+      
+      
+      PostProcessor.available_report_solutions
+      
+      
+      PostProcessor.change_field_plot_scale
+      
+      
+      PostProcessor.change_field_property
+      
+      
+      PostProcessor.copy_report_data
+      
+      
+      PostProcessor.create_3d_plot
+      
+      
+      PostProcessor.create_creeping_plane_visual_ray_tracing
+      
+      
+      PostProcessor.create_creeping_point_visual_ray_tracing
+      
+      
+      PostProcessor.create_fieldplot_cutplane
+      
+      
+      PostProcessor.create_fieldplot_layers_nets
+      
+      
+      PostProcessor.create_fieldplot_line
+      
+      
+      PostProcessor.create_fieldplot_line_traces
+      
+      
+      PostProcessor.create_fieldplot_surface
+      
+      
+      PostProcessor.create_fieldplot_volume
+      
+      
+      PostProcessor.create_report
+      
+      
+      PostProcessor.create_report_from_configuration
+      
+      
+      PostProcessor.create_sbr_plane_visual_ray_tracing
+      
+      
+      PostProcessor.create_sbr_point_visual_ray_tracing
+      
+      
+      PostProcessor.delete_field_plot
+      
+      
+      PostProcessor.delete_report
+      
+      
+      PostProcessor.export_field_file
+      
+      
+      PostProcessor.export_field_file_on_grid
+      
+      
+      PostProcessor.export_field_jpg
+      
+      
+      PostProcessor.export_field_plot
+      
+      
+      PostProcessor.export_mesh_obj
+      
+      
+      PostProcessor.export_model_obj
+      
+      
+      PostProcessor.export_model_picture
+      
+      
+      PostProcessor.export_report_to_csv
+      
+      
+      PostProcessor.export_report_to_file
+      
+      
+      PostProcessor.export_report_to_jpg
+      
+      
+      PostProcessor.get_efields_data
+      
+      
+      PostProcessor.get_far_field_data
+      
+      
+      PostProcessor.get_model_plotter_geometries
+      
+      
+      PostProcessor.get_scalar_field_value
+      
+      
+      PostProcessor.get_solution_data
+      
+      
+      PostProcessor.get_solution_data_per_variation
+      
+      
+      PostProcessor.nb_display
+      
+      
+      PostProcessor.plot_animated_field
+      
+      
+      PostProcessor.plot_field
+      
+      
+      PostProcessor.plot_field_from_fieldplot
+      
+      
+      PostProcessor.plot_model_obj
+      
+      
+      PostProcessor.plot_scene
+      
+      
+      PostProcessor.power_budget
+      
+      
+      PostProcessor.rename_report
+      
+      
+      PostProcessor.steal_focus_oneditor
+      
+      
+      PostProcessor.volumetric_loss
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      PostProcessor.all_report_names
+      PostProcessor.available_report_types
+      PostProcessor.logger
+      PostProcessor.model_units
+      PostProcessor.modeler
+      PostProcessor.ofieldsreporter
+      PostProcessor.oreportsetup
+      PostProcessor.post_osolution
+      PostProcessor.post_solution_type
+      PostProcessor.update_report_dynamically
+   
+   

@@ -1,0 +1,6 @@
+available\_report\_types
+========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. autoproperty:: PostProcessorIcepak.available_report_types

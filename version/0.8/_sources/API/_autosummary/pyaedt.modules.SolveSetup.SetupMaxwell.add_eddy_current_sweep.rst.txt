@@ -1,0 +1,6 @@
+add\_eddy\_current\_sweep
+=========================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupMaxwell.add_eddy_current_sweep

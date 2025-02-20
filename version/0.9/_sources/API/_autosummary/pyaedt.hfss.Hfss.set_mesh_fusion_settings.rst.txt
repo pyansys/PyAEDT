@@ -1,0 +1,6 @@
+set\_mesh\_fusion\_settings
+===========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.set_mesh_fusion_settings

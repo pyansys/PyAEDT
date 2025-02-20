@@ -1,0 +1,6 @@
+delete\_single\_pin\_rlc
+========================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.delete_single_pin_rlc

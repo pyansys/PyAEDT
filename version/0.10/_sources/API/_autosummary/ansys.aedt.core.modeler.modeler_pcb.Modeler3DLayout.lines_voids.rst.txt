@@ -1,0 +1,6 @@
+lines\_voids
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. autoproperty:: Modeler3DLayout.lines_voids

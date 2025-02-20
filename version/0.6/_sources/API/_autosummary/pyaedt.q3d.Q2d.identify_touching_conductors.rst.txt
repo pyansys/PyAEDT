@@ -1,0 +1,6 @@
+identify\_touching\_conductors
+==============================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.identify_touching_conductors

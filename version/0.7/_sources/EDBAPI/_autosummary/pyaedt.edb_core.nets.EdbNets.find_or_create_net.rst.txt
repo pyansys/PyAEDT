@@ -1,0 +1,6 @@
+find\_or\_create\_net
+=====================
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. automethod:: EdbNets.find_or_create_net

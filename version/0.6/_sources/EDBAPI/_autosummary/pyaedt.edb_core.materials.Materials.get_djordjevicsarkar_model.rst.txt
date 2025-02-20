@@ -1,0 +1,6 @@
+get\_djordjevicsarkar\_model
+============================
+
+.. currentmodule:: pyaedt.edb_core.materials
+
+.. automethod:: Materials.get_djordjevicsarkar_model

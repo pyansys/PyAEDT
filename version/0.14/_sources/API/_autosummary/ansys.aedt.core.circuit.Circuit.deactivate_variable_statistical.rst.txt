@@ -1,0 +1,6 @@
+deactivate\_variable\_statistical
+=================================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.deactivate_variable_statistical

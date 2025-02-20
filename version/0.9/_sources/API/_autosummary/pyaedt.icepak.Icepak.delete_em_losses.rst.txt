@@ -1,0 +1,6 @@
+delete\_em\_losses
+==================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.delete_em_losses

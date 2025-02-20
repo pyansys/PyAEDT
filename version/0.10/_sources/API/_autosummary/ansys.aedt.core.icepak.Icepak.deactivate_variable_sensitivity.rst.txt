@@ -1,0 +1,6 @@
+deactivate\_variable\_sensitivity
+=================================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.deactivate_variable_sensitivity

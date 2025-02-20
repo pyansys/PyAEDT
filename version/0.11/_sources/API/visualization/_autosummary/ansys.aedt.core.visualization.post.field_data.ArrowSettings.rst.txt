@@ -1,0 +1,34 @@
+﻿ArrowSettings
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. autoclass:: ArrowSettings
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ArrowSettings.from_dict
+      
+      
+      ArrowSettings.to_dict
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ArrowSettings.arrow_type
+   
+   

@@ -1,0 +1,6 @@
+layers
+======
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. autoproperty:: EdbLayout.layers

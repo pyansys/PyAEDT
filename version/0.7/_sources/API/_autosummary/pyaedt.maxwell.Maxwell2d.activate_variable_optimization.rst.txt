@@ -1,0 +1,6 @@
+activate\_variable\_optimization
+================================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.activate_variable_optimization

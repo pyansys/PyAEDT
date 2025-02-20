@@ -1,0 +1,6 @@
+change\_text\_property
+======================
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. automethod:: ModelerMaxwellCircuit.change_text_property

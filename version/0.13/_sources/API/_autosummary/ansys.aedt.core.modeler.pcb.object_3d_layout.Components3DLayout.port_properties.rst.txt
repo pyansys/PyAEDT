@@ -1,0 +1,6 @@
+port\_properties
+================
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. autoproperty:: Components3DLayout.port_properties

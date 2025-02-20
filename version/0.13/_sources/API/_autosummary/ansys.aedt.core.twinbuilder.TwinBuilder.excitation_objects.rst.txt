@@ -1,0 +1,6 @@
+excitation\_objects
+===================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.excitation_objects

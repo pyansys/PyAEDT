@@ -1,0 +1,6 @@
+save\_edb\_as
+=============
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.save_edb_as

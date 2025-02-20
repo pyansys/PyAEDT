@@ -1,0 +1,6 @@
+setup\_names
+============
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.setup_names

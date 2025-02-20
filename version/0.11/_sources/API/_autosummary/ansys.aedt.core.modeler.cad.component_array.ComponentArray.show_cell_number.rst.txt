@@ -1,0 +1,6 @@
+show\_cell\_number
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.show_cell_number

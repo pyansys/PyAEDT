@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.logger

@@ -1,0 +1,6 @@
+library\_list
+=============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.library_list

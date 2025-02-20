@@ -1,0 +1,6 @@
+get\_profile
+============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_profile

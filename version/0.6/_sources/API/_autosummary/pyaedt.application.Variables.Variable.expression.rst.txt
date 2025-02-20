@@ -1,0 +1,6 @@
+expression
+==========
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.expression

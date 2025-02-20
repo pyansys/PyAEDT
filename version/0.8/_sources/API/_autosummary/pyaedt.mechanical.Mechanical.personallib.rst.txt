@@ -1,0 +1,6 @@
+personallib
+===========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.personallib

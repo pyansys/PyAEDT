@@ -1,0 +1,6 @@
+auto\_compute\_eye\_meas
+========================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: EyeDiagram.auto_compute_eye_meas

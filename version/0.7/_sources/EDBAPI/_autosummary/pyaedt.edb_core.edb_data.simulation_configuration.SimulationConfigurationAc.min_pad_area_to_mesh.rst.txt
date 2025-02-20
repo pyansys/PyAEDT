@@ -1,0 +1,6 @@
+min\_pad\_area\_to\_mesh
+========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.min_pad_area_to_mesh

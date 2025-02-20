@@ -1,0 +1,6 @@
+get\_pin\_location
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_nexxim
+
+.. automethod:: NexximComponents.get_pin_location

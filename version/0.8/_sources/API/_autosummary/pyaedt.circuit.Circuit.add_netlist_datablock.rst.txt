@@ -1,0 +1,6 @@
+add\_netlist\_datablock
+=======================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.add_netlist_datablock

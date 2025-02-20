@@ -1,0 +1,6 @@
+assign\_recirculation\_opening
+==============================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_recirculation_opening

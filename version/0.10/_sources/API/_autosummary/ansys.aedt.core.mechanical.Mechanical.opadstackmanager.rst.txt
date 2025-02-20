@@ -1,0 +1,6 @@
+opadstackmanager
+================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.opadstackmanager

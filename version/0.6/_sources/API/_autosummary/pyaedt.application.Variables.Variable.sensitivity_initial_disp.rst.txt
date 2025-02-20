@@ -1,0 +1,6 @@
+sensitivity\_initial\_disp
+==========================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.sensitivity_initial_disp

@@ -1,0 +1,6 @@
+variable\_manager
+=================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.variable_manager

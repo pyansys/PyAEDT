@@ -1,0 +1,6 @@
+export\_image\_from\_aedtplt
+============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. automethod:: FieldPlot.export_image_from_aedtplt

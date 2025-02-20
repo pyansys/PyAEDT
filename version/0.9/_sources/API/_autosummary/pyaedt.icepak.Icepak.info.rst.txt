@@ -1,0 +1,6 @@
+info
+====
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.info

@@ -1,0 +1,6 @@
+get\_curve\_coreloss\_values
+============================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: Material.get_curve_coreloss_values

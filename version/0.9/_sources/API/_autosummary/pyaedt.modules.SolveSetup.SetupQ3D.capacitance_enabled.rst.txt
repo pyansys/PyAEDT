@@ -1,0 +1,6 @@
+capacitance\_enabled
+====================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoproperty:: SetupQ3D.capacitance_enabled

@@ -1,0 +1,72 @@
+﻿ModelPlotter
+============
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoclass:: ModelPlotter
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ModelPlotter.add_field_from_data
+      
+      
+      ModelPlotter.add_field_from_file
+      
+      
+      ModelPlotter.add_frames_from_file
+      
+      
+      ModelPlotter.add_object
+      
+      
+      ModelPlotter.animate
+      
+      
+      ModelPlotter.clean_cache_and_files
+      
+      
+      ModelPlotter.generate_geometry_mesh
+      
+      
+      ModelPlotter.plot
+      
+      
+      ModelPlotter.set_orientation
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ModelPlotter.azimuth_angle
+      ModelPlotter.background_color
+      ModelPlotter.background_image
+      ModelPlotter.camera_position
+      ModelPlotter.convert_fields_in_db
+      ModelPlotter.elevation_angle
+      ModelPlotter.fields
+      ModelPlotter.focal_point
+      ModelPlotter.frames
+      ModelPlotter.isometric_view
+      ModelPlotter.log_multiplier
+      ModelPlotter.objects
+      ModelPlotter.roll_angle
+      ModelPlotter.view_up
+      ModelPlotter.x_scale
+      ModelPlotter.y_scale
+      ModelPlotter.z_scale
+      ModelPlotter.zoom
+   
+   

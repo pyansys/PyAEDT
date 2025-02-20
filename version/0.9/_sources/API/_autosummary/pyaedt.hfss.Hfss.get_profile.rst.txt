@@ -1,0 +1,6 @@
+get\_profile
+============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_profile

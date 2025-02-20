@@ -1,0 +1,6 @@
+set\_all\_import
+================
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. automethod:: ConfigurationsOptions.set_all_import

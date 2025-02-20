@@ -1,0 +1,6 @@
+available\_report\_types
+========================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: PostProcessor.available_report_types

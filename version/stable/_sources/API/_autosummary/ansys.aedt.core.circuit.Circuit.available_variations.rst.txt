@@ -1,0 +1,6 @@
+available\_variations
+=====================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.available_variations

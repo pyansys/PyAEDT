@@ -1,0 +1,6 @@
+read\_design\_data
+==================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.read_design_data

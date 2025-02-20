@@ -1,0 +1,6 @@
+far\_field\_sphere
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: FarField.far_field_sphere

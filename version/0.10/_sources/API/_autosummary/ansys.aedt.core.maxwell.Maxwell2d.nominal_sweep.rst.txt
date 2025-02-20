@@ -1,0 +1,6 @@
+nominal\_sweep
+==============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.nominal_sweep

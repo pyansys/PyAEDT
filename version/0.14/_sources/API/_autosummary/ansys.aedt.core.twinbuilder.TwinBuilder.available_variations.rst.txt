@@ -1,0 +1,6 @@
+available\_variations
+=====================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.available_variations

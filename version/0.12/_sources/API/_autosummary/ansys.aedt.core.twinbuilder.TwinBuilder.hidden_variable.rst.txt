@@ -1,0 +1,6 @@
+hidden\_variable
+================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.hidden_variable

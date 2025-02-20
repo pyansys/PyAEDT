@@ -1,0 +1,6 @@
+get\_evaluated\_value
+=====================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.get_evaluated_value

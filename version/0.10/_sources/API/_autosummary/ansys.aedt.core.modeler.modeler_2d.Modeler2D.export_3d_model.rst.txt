@@ -1,0 +1,6 @@
+export\_3d\_model
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.export_3d_model

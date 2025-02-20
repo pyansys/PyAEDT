@@ -1,0 +1,6 @@
+oproject
+========
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.oproject

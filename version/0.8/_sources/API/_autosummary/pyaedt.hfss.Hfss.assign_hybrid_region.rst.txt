@@ -1,0 +1,6 @@
+assign\_hybrid\_region
+======================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.assign_hybrid_region

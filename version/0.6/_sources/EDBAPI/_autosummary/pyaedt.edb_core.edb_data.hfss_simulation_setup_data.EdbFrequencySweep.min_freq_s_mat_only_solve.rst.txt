@@ -1,0 +1,6 @@
+min\_freq\_s\_mat\_only\_solve
+==============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: EdbFrequencySweep.min_freq_s_mat_only_solve

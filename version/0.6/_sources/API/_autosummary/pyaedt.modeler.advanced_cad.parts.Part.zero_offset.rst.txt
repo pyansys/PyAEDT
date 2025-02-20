@@ -1,0 +1,6 @@
+zero\_offset
+============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.parts
+
+.. automethod:: Part.zero_offset

@@ -1,0 +1,6 @@
+delete\_setup
+=============
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.delete_setup

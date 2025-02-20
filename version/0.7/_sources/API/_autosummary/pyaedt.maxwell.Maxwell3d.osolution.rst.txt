@@ -1,0 +1,6 @@
+osolution
+=========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.osolution

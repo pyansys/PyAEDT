@@ -1,0 +1,6 @@
+nominal\_sweep
+==============
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.nominal_sweep

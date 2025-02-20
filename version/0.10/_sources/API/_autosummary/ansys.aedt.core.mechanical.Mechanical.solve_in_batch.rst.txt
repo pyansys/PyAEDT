@@ -1,0 +1,6 @@
+solve\_in\_batch
+================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.solve_in_batch

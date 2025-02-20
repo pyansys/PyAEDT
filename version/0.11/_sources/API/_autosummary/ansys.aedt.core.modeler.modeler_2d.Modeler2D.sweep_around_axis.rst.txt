@@ -1,0 +1,6 @@
+sweep\_around\_axis
+===================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.sweep_around_axis

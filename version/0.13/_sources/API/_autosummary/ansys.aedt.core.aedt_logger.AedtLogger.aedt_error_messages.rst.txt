@@ -1,0 +1,6 @@
+aedt\_error\_messages
+=====================
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. autoproperty:: AedtLogger.aedt_error_messages

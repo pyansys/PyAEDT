@@ -1,0 +1,111 @@
+﻿NearField
+=========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoclass:: NearField
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      NearField.add_cartesian_x_marker
+      
+      
+      NearField.add_cartesian_y_marker
+      
+      
+      NearField.add_limit_line_from_equation
+      
+      
+      NearField.add_limit_line_from_points
+      
+      
+      NearField.add_note
+      
+      
+      NearField.add_trace_to_report
+      
+      
+      NearField.create
+      
+      
+      NearField.delete
+      
+      
+      NearField.delete_traces
+      
+      
+      NearField.edit_general_settings
+      
+      
+      NearField.edit_grid
+      
+      
+      NearField.edit_header
+      
+      
+      NearField.edit_legend
+      
+      
+      NearField.edit_x_axis
+      
+      
+      NearField.edit_x_axis_scaling
+      
+      
+      NearField.edit_y_axis
+      
+      
+      NearField.edit_y_axis_scaling
+      
+      
+      NearField.get_solution_data
+      
+      
+      NearField.hide_legend
+      
+      
+      NearField.import_traces
+      
+      
+      NearField.update_expressions_with_defaults
+      
+      
+      NearField.update_trace_in_report
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      NearField.differential_pairs
+      NearField.domain
+      NearField.expressions
+      NearField.limit_lines
+      NearField.matrix
+      NearField.near_field
+      NearField.notes
+      NearField.plot_name
+      NearField.polyline
+      NearField.primary_sweep
+      NearField.primary_sweep_range
+      NearField.report_category
+      NearField.report_type
+      NearField.secondary_sweep
+      NearField.secondary_sweep_range
+      NearField.traces
+      NearField.use_pulse_in_tdr
+      NearField.variations
+   
+   

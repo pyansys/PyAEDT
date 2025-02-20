@@ -1,0 +1,6 @@
+min\_radial\_delta\_angle
+=========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_radial
+
+.. autoproperty:: DistributedRadial.min_radial_delta_angle

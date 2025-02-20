@@ -1,0 +1,6 @@
+ooptimetrics
+============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.ooptimetrics

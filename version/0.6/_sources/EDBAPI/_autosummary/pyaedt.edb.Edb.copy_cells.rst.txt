@@ -1,0 +1,6 @@
+copy\_cells
+===========
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.copy_cells

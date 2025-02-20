@@ -1,0 +1,6 @@
+create\_face\_list
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.create_face_list

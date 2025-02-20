@@ -1,0 +1,6 @@
+power\_nets
+===========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.power_nets

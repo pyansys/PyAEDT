@@ -1,0 +1,6 @@
+primary\_sweep\_values
+======================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: SolutionData.primary_sweep_values

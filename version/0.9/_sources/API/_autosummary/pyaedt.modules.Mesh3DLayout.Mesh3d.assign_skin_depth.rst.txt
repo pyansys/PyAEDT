@@ -1,0 +1,6 @@
+assign\_skin\_depth
+===================
+
+.. currentmodule:: pyaedt.modules.Mesh3DLayout
+
+.. automethod:: Mesh3d.assign_skin_depth

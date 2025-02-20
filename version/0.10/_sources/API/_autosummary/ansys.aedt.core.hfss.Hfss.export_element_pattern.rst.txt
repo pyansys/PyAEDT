@@ -1,0 +1,6 @@
+export\_element\_pattern
+========================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.export_element_pattern

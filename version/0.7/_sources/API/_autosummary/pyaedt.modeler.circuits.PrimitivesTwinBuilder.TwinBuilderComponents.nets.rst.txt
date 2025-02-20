@@ -1,0 +1,6 @@
+nets
+====
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. autoproperty:: TwinBuilderComponents.nets

@@ -1,0 +1,6 @@
+get\_obj\_id
+============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_obj_id

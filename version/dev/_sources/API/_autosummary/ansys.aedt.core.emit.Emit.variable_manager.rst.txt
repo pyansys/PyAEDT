@@ -1,0 +1,6 @@
+variable\_manager
+=================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.variable_manager

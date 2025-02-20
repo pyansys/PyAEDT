@@ -1,0 +1,6 @@
+project\_time\_stamp
+====================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.project_time_stamp

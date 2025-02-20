@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.logger

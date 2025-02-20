@@ -1,0 +1,6 @@
+set\_active\_design
+===================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.set_active_design

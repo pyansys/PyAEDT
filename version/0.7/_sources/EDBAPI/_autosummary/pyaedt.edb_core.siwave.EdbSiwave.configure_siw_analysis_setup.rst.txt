@@ -1,0 +1,6 @@
+configure\_siw\_analysis\_setup
+===============================
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. automethod:: EdbSiwave.configure_siw_analysis_setup

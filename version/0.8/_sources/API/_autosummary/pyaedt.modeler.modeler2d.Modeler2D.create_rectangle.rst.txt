@@ -1,0 +1,6 @@
+create\_rectangle
+=================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.create_rectangle

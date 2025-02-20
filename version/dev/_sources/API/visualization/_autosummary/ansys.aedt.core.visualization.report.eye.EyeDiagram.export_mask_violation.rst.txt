@@ -1,0 +1,6 @@
+export\_mask\_violation
+=======================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: EyeDiagram.export_mask_violation

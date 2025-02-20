@@ -1,0 +1,6 @@
+primary\_sweep
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.emi
+
+.. autoproperty:: EMIReceiver.primary_sweep

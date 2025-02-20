@@ -1,0 +1,6 @@
+toolkit\_directory
+==================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.toolkit_directory

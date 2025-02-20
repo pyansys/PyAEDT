@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.stop_simulations

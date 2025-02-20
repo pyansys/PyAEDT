@@ -1,0 +1,6 @@
+start
+=====
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.multiparts
+
+.. automethod:: Environment.start

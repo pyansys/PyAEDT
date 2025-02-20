@@ -1,0 +1,6 @@
+add\_goal
+=========
+
+.. currentmodule:: pyaedt.modules.DesignXPloration
+
+.. automethod:: SetupOpti.add_goal

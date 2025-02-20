@@ -1,0 +1,6 @@
+export\_report\_to\_jpg
+=======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.export_report_to_jpg

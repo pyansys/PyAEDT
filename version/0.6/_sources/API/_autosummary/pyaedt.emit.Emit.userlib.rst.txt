@@ -1,0 +1,6 @@
+userlib
+=======
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.userlib

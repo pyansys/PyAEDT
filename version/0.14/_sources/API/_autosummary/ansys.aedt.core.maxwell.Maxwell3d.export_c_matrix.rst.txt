@@ -1,0 +1,6 @@
+export\_c\_matrix
+=================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.export_c_matrix

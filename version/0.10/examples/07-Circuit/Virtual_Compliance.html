@@ -1,0 +1,951 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Circuit: PCIE virtual compliance &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/07-Circuit/Virtual_Compliance';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EMIT examples" href="../07-EMIT/index.html" />
+    <link rel="prev" title="Circuit: Touchstone file management" href="Touchstone_Management.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/07-Circuit/Virtual_Compliance.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Modeling-Setup/index.html">General model and setup examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-HFSS/index.html">HFSS examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-Maxwell/index.html">Maxwell examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-Multiphysics/index.html">Multiphysics examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Circuit examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Circuit_AMI.html">Circuit: AMI PostProcessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit_Example.html">Circuit: schematic creation and analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit_Siwave_Multizones.html">Circuit: Simulate multi-zones layout with Siwave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit_Subcircuit_Example.html">Circuit: schematic subcircuit management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Circuit_Transient.html">Circuit: transient analysis and eye plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Create_Netlist.html">Circuit: netlist to schematic import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reports.html">Circuit: automatic report creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Touchstone_Management.html">Circuit: Touchstone file management</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Circuit: PCIE virtual compliance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-EMIT/index.html">EMIT examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">Circuit examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">Circuit: PCIE virtual compliance</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-07-circuit-virtual-compliance-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="circuit-pcie-virtual-compliance">
+<span id="sphx-glr-examples-07-circuit-virtual-compliance-py"></span><h1>Circuit: PCIE virtual compliance<a class="headerlink" href="#circuit-pcie-virtual-compliance" title="Link to this heading">#</a></h1>
+<p>This example shows how to generate a compliance report in PyAEDT using
+the <code class="docutils literal notranslate"><span class="pre">VirtualCompliance</span></code> class.</p>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports and set paths.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">ansys.aedt.core</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core.generic.compliance</span> <span class="kn">import</span> <span class="n">VirtualCompliance</span>
+</pre></div>
+</div>
+</section>
+<section id="set-aedt-version">
+<h2>Set AEDT version<a class="headerlink" href="#set-aedt-version" title="Link to this heading">#</a></h2>
+<p>Set AEDT version.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedt_version</span> <span class="o">=</span> <span class="s2">&quot;2024.2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="set-non-graphical-mode">
+<h2>Set non-graphical mode<a class="headerlink" href="#set-non-graphical-mode" title="Link to this heading">#</a></h2>
+<p>Set non-graphical mode.
+You can set <code class="docutils literal notranslate"><span class="pre">non_graphical</span></code> either to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+The Boolean parameter <code class="docutils literal notranslate"><span class="pre">new_thread</span></code> defines whether to create a new instance
+of AEDT or try to connect to an existing instance of it.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">non_graphical</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">new_thread</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="download-example-files">
+<h2>Download example files<a class="headerlink" href="#download-example-files" title="Link to this heading">#</a></h2>
+<p>Download the project and files needed to run the example.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">workdir</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s1">&#39;pcie_compliance&#39;</span><span class="p">)</span>
+
+<span class="n">projectdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">workdir</span><span class="p">,</span> <span class="s2">&quot;project&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="launch-aedt">
+<h2>Launch AEDT<a class="headerlink" href="#launch-aedt" title="Link to this heading">#</a></h2>
+<p>Launch AEDT.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Desktop</span><span class="p">(</span><span class="n">aedt_version</span><span class="p">,</span> <span class="n">new_desktop</span><span class="o">=</span><span class="n">new_thread</span><span class="p">,</span> <span class="n">non_graphical</span><span class="o">=</span><span class="n">non_graphical</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\_tool\Python\3.10.9\x64\lib\subprocess.py:1072: ResourceWarning: subprocess 8724 is still running
+  _warn(&quot;subprocess %s is still running&quot; % self.pid,
+</pre></div>
+</div>
+</section>
+<section id="open-and-solve-layout">
+<h2>Open and solve layout<a class="headerlink" href="#open-and-solve-layout" title="Link to this heading">#</a></h2>
+<p>Open the HFSS 3D Layout project and analyze it using the SIwave solver.
+Before solving, this code ensures that the model is solved from DC to 70GHz and that
+causality and passivity are enforced.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">h3d</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Hfss3dLayout</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">projectdir</span><span class="p">,</span> <span class="s2">&quot;PCIE_GEN5_only_layout.aedtz&quot;</span><span class="p">),</span> <span class="n">version</span><span class="o">=</span><span class="mi">242</span><span class="p">)</span>
+<span class="n">h3d</span><span class="o">.</span><span class="n">remove_all_unused_definitions</span><span class="p">()</span>
+<span class="n">h3d</span><span class="o">.</span><span class="n">edit_cosim_options</span><span class="p">(</span><span class="n">simulate_missing_solution</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">h3d</span><span class="o">.</span><span class="n">setups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sweeps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;EnforcePassivity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">h3d</span><span class="o">.</span><span class="n">setups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sweeps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Sweeps&quot;</span><span class="p">][</span><span class="s2">&quot;Data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;LIN 0MHz 70GHz 0.1GHz&#39;</span>
+<span class="n">h3d</span><span class="o">.</span><span class="n">setups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sweeps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;EnforceCausality&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">h3d</span><span class="o">.</span><span class="n">setups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sweeps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">h3d</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+<span class="n">h3d</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Hfss3dLayout</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="mi">242</span><span class="p">)</span>
+<span class="n">touchstone_path</span> <span class="o">=</span> <span class="n">h3d</span><span class="o">.</span><span class="n">export_touchstone</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="create-lna-project">
+<h2>Create LNA project<a class="headerlink" href="#create-lna-project" title="Link to this heading">#</a></h2>
+<p>Use the LNA setup to retrieve Touchstone files
+and generate frequency domain reports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">cir</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Circuit</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="n">h3d</span><span class="o">.</span><span class="n">project_name</span><span class="p">,</span> <span class="n">design</span><span class="o">=</span><span class="s2">&quot;Touchstone&quot;</span><span class="p">)</span>
+<span class="n">status</span><span class="p">,</span> <span class="n">diff_pairs</span><span class="p">,</span> <span class="n">comm_pairs</span> <span class="o">=</span> <span class="n">cir</span><span class="o">.</span><span class="n">create_lna_schematic_from_snp</span><span class="p">(</span><span class="n">input_file</span><span class="o">=</span><span class="n">touchstone_path</span><span class="p">,</span> <span class="n">start_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                                                                   <span class="n">stop_frequency</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">auto_assign_diff_pairs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                                                   <span class="n">separation</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;component&quot;</span><span class="p">,</span> <span class="s2">&quot;pin&quot;</span><span class="p">,</span> <span class="s2">&quot;net&quot;</span><span class="p">],</span>
+                                                                   <span class="n">analyze</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">insertion</span> <span class="o">=</span> <span class="n">cir</span><span class="o">.</span><span class="n">get_all_insertion_loss_list</span><span class="p">(</span><span class="n">drivers</span><span class="o">=</span><span class="n">diff_pairs</span><span class="p">,</span> <span class="n">receivers</span><span class="o">=</span><span class="n">diff_pairs</span><span class="p">,</span> <span class="n">drivers_prefix_name</span><span class="o">=</span><span class="s2">&quot;X1&quot;</span><span class="p">,</span>
+                                            <span class="n">receivers_prefix_name</span><span class="o">=</span><span class="s2">&quot;U1&quot;</span><span class="p">,</span> <span class="n">math_formula</span><span class="o">=</span><span class="s2">&quot;dB&quot;</span><span class="p">,</span>
+                                            <span class="n">nets</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RX0&quot;</span><span class="p">,</span> <span class="s2">&quot;RX1&quot;</span><span class="p">,</span> <span class="s2">&quot;RX2&quot;</span><span class="p">,</span> <span class="s2">&quot;RX3&quot;</span><span class="p">])</span>
+<span class="n">return_diff</span> <span class="o">=</span> <span class="n">cir</span><span class="o">.</span><span class="n">get_all_return_loss_list</span><span class="p">(</span><span class="n">excitations</span><span class="o">=</span><span class="n">diff_pairs</span><span class="p">,</span> <span class="n">excitation_name_prefix</span><span class="o">=</span><span class="s2">&quot;X1&quot;</span><span class="p">,</span> <span class="n">math_formula</span><span class="o">=</span><span class="s2">&quot;dB&quot;</span><span class="p">,</span>
+                                           <span class="n">nets</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RX0&quot;</span><span class="p">,</span> <span class="s2">&quot;RX1&quot;</span><span class="p">,</span> <span class="s2">&quot;RX2&quot;</span><span class="p">,</span> <span class="s2">&quot;RX3&quot;</span><span class="p">])</span>
+<span class="n">return_comm</span> <span class="o">=</span> <span class="n">cir</span><span class="o">.</span><span class="n">get_all_return_loss_list</span><span class="p">(</span><span class="n">excitations</span><span class="o">=</span><span class="n">comm_pairs</span><span class="p">,</span> <span class="n">excitation_name_prefix</span><span class="o">=</span><span class="s2">&quot;COMMON_X1&quot;</span><span class="p">,</span>
+                                           <span class="n">math_formula</span><span class="o">=</span><span class="s2">&quot;dB&quot;</span><span class="p">,</span> <span class="n">nets</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RX0&quot;</span><span class="p">,</span> <span class="s2">&quot;RX1&quot;</span><span class="p">,</span> <span class="s2">&quot;RX2&quot;</span><span class="p">,</span> <span class="s2">&quot;RX3&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="create-tdr-project">
+<h2>Create TDR project<a class="headerlink" href="#create-tdr-project" title="Link to this heading">#</a></h2>
+<p>Create a TDR project to compute transient simulation and retrieve
+the TDR measurement on a differential pair.
+The original circuit schematic is duplicated and modified to achieve this target.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="p">,</span> <span class="n">tdr_probe_name</span> <span class="o">=</span> <span class="n">cir</span><span class="o">.</span><span class="n">create_tdr_schematic_from_snp</span><span class="p">(</span><span class="n">input_file</span><span class="o">=</span><span class="n">touchstone_path</span><span class="p">,</span>
+                                                           <span class="n">tx_schematic_pins</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X1.A2.PCIe_Gen4_RX0_P&quot;</span><span class="p">],</span>
+                                                           <span class="n">tx_schematic_differential_pins</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X1.A3.PCIe_Gen4_RX0_N&quot;</span><span class="p">],</span>
+                                                           <span class="n">termination_pins</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;U1.AP26.PCIe_Gen4_RX0_P&quot;</span><span class="p">,</span>
+                                                                             <span class="s2">&quot;U1.AN26.PCIe_Gen4_RX0_N&quot;</span><span class="p">],</span>
+                                                           <span class="n">differential</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rise_time</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">use_convolution</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                                           <span class="n">analyze</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">design_name</span><span class="o">=</span><span class="s2">&quot;TDR&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-ami-project">
+<h2>Create AMI project<a class="headerlink" href="#create-ami-project" title="Link to this heading">#</a></h2>
+<p>Create an Ibis AMI project to compute an eye diagram simulation and retrieve
+eye mask violations.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="p">,</span> <span class="n">eye_curve_tx</span><span class="p">,</span> <span class="n">eye_curve_rx</span> <span class="o">=</span> <span class="n">cir</span><span class="o">.</span><span class="n">create_ami_schematic_from_snp</span><span class="p">(</span><span class="n">input_file</span><span class="o">=</span><span class="n">touchstone_path</span><span class="p">,</span>
+                                                                       <span class="n">ibis_tx_file</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">projectdir</span><span class="p">,</span> <span class="s2">&quot;models&quot;</span><span class="p">,</span>
+                                                                                                 <span class="s2">&quot;pcieg5_32gt.ibs&quot;</span><span class="p">),</span>
+                                                                       <span class="n">tx_buffer_name</span><span class="o">=</span><span class="s2">&quot;1p&quot;</span><span class="p">,</span> <span class="n">rx_buffer_name</span><span class="o">=</span><span class="s2">&quot;2p&quot;</span><span class="p">,</span>
+                                                                       <span class="n">tx_schematic_pins</span><span class="o">=</span><span class="p">[</span>
+                                                                           <span class="s2">&quot;U1.AM25.PCIe_Gen4_TX0_CAP_P&quot;</span><span class="p">],</span>
+                                                                       <span class="n">rx_schematic_pins</span><span class="o">=</span><span class="p">[</span>
+                                                                           <span class="s2">&quot;X1.B2.PCIe_Gen4_TX0_P&quot;</span><span class="p">],</span>
+                                                                       <span class="n">tx_schematic_differential_pins</span><span class="o">=</span><span class="p">[</span>
+                                                                           <span class="s2">&quot;U1.AL25.PCIe_Gen4_TX0_CAP_N&quot;</span><span class="p">],</span>
+                                                                       <span class="n">rx_schematic_differentialial_pins</span><span class="o">=</span><span class="p">[</span>
+                                                                           <span class="s2">&quot;X1.B3.PCIe_Gen4_TX0_N&quot;</span><span class="p">],</span>
+                                                                       <span class="n">ibis_tx_component_name</span><span class="o">=</span><span class="s2">&quot;Spec_Model&quot;</span><span class="p">,</span>
+                                                                       <span class="n">use_ibis_buffer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">differential</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                                                       <span class="n">bit_pattern</span><span class="o">=</span><span class="s2">&quot;random_bit_count=2.5e3 random_seed=1&quot;</span><span class="p">,</span>
+                                                                       <span class="n">unit_interval</span><span class="o">=</span><span class="s2">&quot;31.25ps&quot;</span><span class="p">,</span> <span class="n">use_convolution</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                                                       <span class="n">analyze</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">design_name</span><span class="o">=</span><span class="s2">&quot;AMI&quot;</span><span class="p">)</span>
+
+<span class="n">cir</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="create-virtual-compliance-report">
+<h2>Create virtual compliance report<a class="headerlink" href="#create-virtual-compliance-report" title="Link to this heading">#</a></h2>
+<p>Initialize the <code class="docutils literal notranslate"><span class="pre">VirtualCompliance</span></code> class
+and set up the main project information needed to generate the report.</p>
+<a class="reference internal image-reference" href="../../_images/virtual_compliance_class.png"><img alt="Virtual compliance class description." src="../../_images/virtual_compliance_class.png" style="width: 400px;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/virtual_compliance_configs.png"><img alt="Virtual compliance configuration files hierarchy." src="../../_images/virtual_compliance_configs.png" style="width: 400px;" />
+</a>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">workdir</span><span class="p">,</span> <span class="s2">&quot;pcie_gen5_templates&quot;</span><span class="p">,</span> <span class="s2">&quot;main.json&quot;</span><span class="p">)</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">VirtualCompliance</span><span class="p">(</span><span class="n">cir</span><span class="o">.</span><span class="n">desktop_class</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">template</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="customize-project-and-design">
+<h2>Customize project and design<a class="headerlink" href="#customize-project-and-design" title="Link to this heading">#</a></h2>
+<p>Define the path to the project file and the
+design names to be used in each report generation.</p>
+<a class="reference internal image-reference" href="../../_images/virtual_compliance_usage.png"><img alt="Virtual compliance configuration usage example." src="../../_images/virtual_compliance_usage.png" style="width: 400px;" />
+</a>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">.</span><span class="n">project_file</span> <span class="o">=</span> <span class="n">cir</span><span class="o">.</span><span class="n">project_file</span>
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;insertion losses&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">design_name</span> <span class="o">=</span> <span class="s2">&quot;LNA&quot;</span>
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;return losses&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">design_name</span> <span class="o">=</span> <span class="s2">&quot;LNA&quot;</span>
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;common mode return losses&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">design_name</span> <span class="o">=</span> <span class="s2">&quot;LNA&quot;</span>
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;tdr from circuit&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">design_name</span> <span class="o">=</span> <span class="s2">&quot;TDR&quot;</span>
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;eye1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">design_name</span> <span class="o">=</span> <span class="s2">&quot;AMI&quot;</span>
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;eye3&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">design_name</span> <span class="o">=</span> <span class="s2">&quot;AMI&quot;</span>
+<span class="n">v</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;erl&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">design_name</span> <span class="o">=</span> <span class="s2">&quot;LNA&quot;</span>
+<span class="n">v</span><span class="o">.</span><span class="n">specs_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">workdir</span><span class="p">,</span> <span class="s1">&#39;readme_pictures&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="define-trace-names">
+<h2>Define trace names<a class="headerlink" href="#define-trace-names" title="Link to this heading">#</a></h2>
+<p>Change the trace name with projects and users.
+Reuse the compliance template and update traces accordingly.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;insertion losses&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span> <span class="o">=</span> <span class="n">insertion</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;return losses&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span> <span class="o">=</span> <span class="n">return_diff</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;common mode return losses&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span> <span class="o">=</span> <span class="n">return_comm</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;eye1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span> <span class="o">=</span> <span class="n">eye_curve_tx</span>
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;eye3&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span> <span class="o">=</span> <span class="n">eye_curve_tx</span>
+<span class="n">v</span><span class="o">.</span><span class="n">reports</span><span class="p">[</span><span class="s2">&quot;tdr from circuit&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span> <span class="o">=</span> <span class="n">tdr_probe_name</span>
+<span class="n">v</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s2">&quot;erl&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">trace_pins</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;X1.A5.PCIe_Gen4_RX1_P&quot;</span><span class="p">,</span> <span class="s2">&quot;X1.A6.PCIe_Gen4_RX1_N&quot;</span><span class="p">,</span> <span class="s2">&quot;U1.AR25.PCIe_Gen4_RX1_P&quot;</span><span class="p">,</span> <span class="s2">&quot;U1.AP25.PCIe_Gen4_RX1_N&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">]]</span>
+</pre></div>
+</div>
+</section>
+<section id="generate-pdf-report">
+<h2>Generate PDF report<a class="headerlink" href="#generate-pdf-report" title="Link to this heading">#</a></h2>
+<p>Generate the reports and produce a PDF report.</p>
+<a class="reference internal image-reference" href="../../_images/virtual_compliance_scattering1.png"><img alt="Insertion loss output." src="../../_images/virtual_compliance_scattering1.png" style="width: 400px;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/virtual_compliance_scattering2.png"><img alt="Return loss output." src="../../_images/virtual_compliance_scattering2.png" style="width: 400px;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/virtual_compliance_eye.png"><img alt="Eye diagram example." src="../../_images/virtual_compliance_eye.png" style="width: 400px;" />
+</a>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">.</span><span class="n">create_compliance_report</span><span class="p">()</span>
+
+<span class="n">d</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\pandas\core\arraylike.py:399: RuntimeWarning: invalid value encountered in sqrt
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\pandas\core\arraylike.py:399: RuntimeWarning: invalid value encountered in sqrt
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\pandas\core\arraylike.py:399: RuntimeWarning: invalid value encountered in sqrt
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\pandas\core\arraylike.py:399: RuntimeWarning: invalid value encountered in sqrt
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\pandas\core\arraylike.py:399: RuntimeWarning: invalid value encountered in sqrt
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\pandas\core\arraylike.py:399: RuntimeWarning: invalid value encountered in sqrt
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+
+True
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (7 minutes 26.244 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-07-circuit-virtual-compliance-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/ae52c4ac13662fa95404dc4e615b41b2/Virtual_Compliance.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Virtual_Compliance.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/cb1b6eb074b1c6282d43f3d0438273f6/Virtual_Compliance.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Virtual_Compliance.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/a1f2d1da7ba9c5686d7687428bd74c3f/Virtual_Compliance.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">Virtual_Compliance.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-aedt-version">Set AEDT version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-non-graphical-mode">Set non-graphical mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-example-files">Download example files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-aedt">Launch AEDT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-and-solve-layout">Open and solve layout</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-lna-project">Create LNA project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-tdr-project">Create TDR project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-ami-project">Create AMI project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-virtual-compliance-report">Create virtual compliance report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-project-and-design">Customize project and design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-trace-names">Define trace names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-pdf-report">Generate PDF report</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/07-Circuit/Virtual_Compliance.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/07-Circuit/Virtual_Compliance.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

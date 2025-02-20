@@ -1,0 +1,6 @@
+adjust\_width\_max
+==================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_radial
+
+.. autoproperty:: DistributedRadial.adjust_width_max

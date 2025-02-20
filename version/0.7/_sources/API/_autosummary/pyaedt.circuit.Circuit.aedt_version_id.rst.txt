@@ -1,0 +1,6 @@
+aedt\_version\_id
+=================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.aedt_version_id

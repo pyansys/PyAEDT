@@ -1,0 +1,34 @@
+﻿MarkerSettings
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. autoclass:: MarkerSettings
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MarkerSettings.from_dict
+      
+      
+      MarkerSettings.to_dict
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MarkerSettings.marker_type
+   
+   

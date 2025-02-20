@@ -1,0 +1,6 @@
+available\_variations
+=====================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.available_variations

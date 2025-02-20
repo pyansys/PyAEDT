@@ -1,0 +1,6 @@
+tab\_name
+=========
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. autoproperty:: TwinBuilderComponents.tab_name

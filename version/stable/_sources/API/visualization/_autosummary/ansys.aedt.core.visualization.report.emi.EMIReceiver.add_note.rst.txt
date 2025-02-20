@@ -1,0 +1,6 @@
+add\_note
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.emi
+
+.. automethod:: EMIReceiver.add_note

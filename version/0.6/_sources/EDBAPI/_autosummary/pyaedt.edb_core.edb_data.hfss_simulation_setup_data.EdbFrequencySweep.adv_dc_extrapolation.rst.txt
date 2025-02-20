@@ -1,0 +1,6 @@
+adv\_dc\_extrapolation
+======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: EdbFrequencySweep.adv_dc_extrapolation

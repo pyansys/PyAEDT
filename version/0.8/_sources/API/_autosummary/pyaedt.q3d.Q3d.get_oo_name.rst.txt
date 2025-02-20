@@ -1,0 +1,6 @@
+get\_oo\_name
+=============
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.get_oo_name

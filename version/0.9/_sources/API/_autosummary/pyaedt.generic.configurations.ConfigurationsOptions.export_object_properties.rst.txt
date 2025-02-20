@@ -1,0 +1,6 @@
+export\_object\_properties
+==========================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.export_object_properties

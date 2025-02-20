@@ -1,0 +1,6 @@
+mode
+====
+
+.. currentmodule:: pyaedt.modeler.cad.Modeler
+
+.. autoproperty:: CoordinateSystem.mode

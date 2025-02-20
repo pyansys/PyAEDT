@@ -1,0 +1,6 @@
+power\_nets
+===========
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. autoproperty:: Modeler3DLayout.power_nets

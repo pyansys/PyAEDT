@@ -1,0 +1,6 @@
+deg2rad
+=======
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.deg2rad

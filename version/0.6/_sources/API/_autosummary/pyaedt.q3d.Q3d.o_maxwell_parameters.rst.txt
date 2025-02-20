@@ -1,0 +1,6 @@
+o\_maxwell\_parameters
+======================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q3d.o_maxwell_parameters

@@ -1,0 +1,6 @@
+output\_variables
+=================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.output_variables

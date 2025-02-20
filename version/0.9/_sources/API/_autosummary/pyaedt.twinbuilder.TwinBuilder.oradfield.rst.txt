@@ -1,0 +1,6 @@
+oradfield
+=========
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.oradfield

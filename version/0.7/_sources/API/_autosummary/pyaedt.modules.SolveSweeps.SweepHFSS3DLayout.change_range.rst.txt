@@ -1,0 +1,6 @@
+change\_range
+=============
+
+.. currentmodule:: pyaedt.modules.SolveSweeps
+
+.. automethod:: SweepHFSS3DLayout.change_range

@@ -1,0 +1,6 @@
+cleanup\_solution
+=================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.cleanup_solution

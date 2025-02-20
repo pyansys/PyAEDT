@@ -1,0 +1,6 @@
+remove\_point
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.remove_point

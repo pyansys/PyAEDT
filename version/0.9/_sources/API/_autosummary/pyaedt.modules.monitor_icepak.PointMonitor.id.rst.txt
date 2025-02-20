@@ -1,0 +1,6 @@
+id
+==
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. autoproperty:: PointMonitor.id

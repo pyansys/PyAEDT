@@ -1,0 +1,6 @@
+are\_there\_simulations\_running
+================================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.are_there_simulations_running

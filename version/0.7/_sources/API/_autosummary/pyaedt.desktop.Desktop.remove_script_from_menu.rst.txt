@@ -1,0 +1,6 @@
+remove\_script\_from\_menu
+==========================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.remove_script_from_menu

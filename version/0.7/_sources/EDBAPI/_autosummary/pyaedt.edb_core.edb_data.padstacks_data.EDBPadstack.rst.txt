@@ -1,0 +1,51 @@
+﻿EDBPadstack
+===========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoclass:: EDBPadstack
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EDBPadstack.convert_to_3d_microvias
+      
+      
+      EDBPadstack.split_to_microvias
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EDBPadstack.hole_finished_size
+      EDBPadstack.hole_offset_x
+      EDBPadstack.hole_offset_y
+      EDBPadstack.hole_parameters
+      EDBPadstack.hole_params
+      EDBPadstack.hole_plating_ratio
+      EDBPadstack.hole_plating_thickness
+      EDBPadstack.hole_properties
+      EDBPadstack.hole_range
+      EDBPadstack.hole_rotation
+      EDBPadstack.hole_type
+      EDBPadstack.instances
+      EDBPadstack.material
+      EDBPadstack.name
+      EDBPadstack.padstack_instances
+      EDBPadstack.via_layers
+      EDBPadstack.via_start_layer
+      EDBPadstack.via_stop_layer
+   
+   

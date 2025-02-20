@@ -1,0 +1,6 @@
+generate\_mesh
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. automethod:: Mesh.generate_mesh

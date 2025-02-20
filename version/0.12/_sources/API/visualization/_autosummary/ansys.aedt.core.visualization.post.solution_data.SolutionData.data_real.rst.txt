@@ -1,0 +1,6 @@
+data\_real
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. automethod:: SolutionData.data_real

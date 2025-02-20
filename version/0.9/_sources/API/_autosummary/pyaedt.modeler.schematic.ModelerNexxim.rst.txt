@@ -1,0 +1,57 @@
+﻿ModelerNexxim
+=============
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoclass:: ModelerNexxim
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ModelerNexxim.change_text_property
+      
+      
+      ModelerNexxim.connect_schematic_components
+      
+      
+      ModelerNexxim.create_text
+      
+      
+      ModelerNexxim.move
+      
+      
+      ModelerNexxim.rotate
+      
+      
+      ModelerNexxim.zoom_to_fit
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ModelerNexxim.edb
+      ModelerNexxim.layout
+      ModelerNexxim.layouteditor
+      ModelerNexxim.logger
+      ModelerNexxim.model_units
+      ModelerNexxim.o_component_manager
+      ModelerNexxim.o_def_manager
+      ModelerNexxim.o_model_manager
+      ModelerNexxim.oeditor
+      ModelerNexxim.projdir
+      ModelerNexxim.schematic
+      ModelerNexxim.schematic_units
+   
+   

@@ -1,0 +1,6 @@
+symmetry\_multiplier
+====================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell3d.symmetry_multiplier

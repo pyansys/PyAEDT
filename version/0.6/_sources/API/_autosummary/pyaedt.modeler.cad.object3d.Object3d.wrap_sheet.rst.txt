@@ -1,0 +1,6 @@
+wrap\_sheet
+===========
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.wrap_sheet

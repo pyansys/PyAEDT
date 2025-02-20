@@ -1,0 +1,6 @@
+add\_source
+===========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. automethod:: SimulationConfigurationBatch.add_source

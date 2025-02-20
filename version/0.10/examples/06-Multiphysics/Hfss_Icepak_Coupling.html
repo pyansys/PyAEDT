@@ -1,0 +1,1126 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Multiphysics: HFSS-Icepak multiphysics analysis &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/06-Multiphysics/Hfss_Icepak_Coupling';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Multiphysics: HFSS-Mechanical multiphysics analysis" href="Hfss_Mechanical.html" />
+    <link rel="prev" title="Multiphysics: Circuit-HFSS-Icepak coupling workflow" href="Circuit-HFSS-Icepak-coupling.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/06-Multiphysics/Hfss_Icepak_Coupling.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Modeling-Setup/index.html">General model and setup examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-HFSS/index.html">HFSS examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-Maxwell/index.html">Maxwell examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Multiphysics examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Circuit-HFSS-Icepak-coupling.html">Multiphysics: Circuit-HFSS-Icepak coupling workflow</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Multiphysics: HFSS-Icepak multiphysics analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hfss_Mechanical.html">Multiphysics: HFSS-Mechanical multiphysics analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MRI.html">Multiphysics: HFSS-Mechanical MRI analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3D_Icepak_2Way_Coupling.html">Multiphysics: Maxwell 3D - Icepak electrothermal analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-Circuit/index.html">Circuit examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-EMIT/index.html">EMIT examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">Multiphysics examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">Multiphysics: HFSS-Icepak multiphysics analysis</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-06-multiphysics-hfss-icepak-coupling-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="multiphysics-hfss-icepak-multiphysics-analysis">
+<span id="sphx-glr-examples-06-multiphysics-hfss-icepak-coupling-py"></span><h1>Multiphysics: HFSS-Icepak multiphysics analysis<a class="headerlink" href="#multiphysics-hfss-icepak-multiphysics-analysis" title="Link to this heading">#</a></h1>
+<p>This example shows how you can create a project from scratch in HFSS and Icepak (linked to HFSS).
+This includes creating a setup, solving it, and creating postprocessing outputs.</p>
+<p>To provide the advanced postprocessing features needed for this example, the <code class="docutils literal notranslate"><span class="pre">numpy</span></code>,
+<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, and <code class="docutils literal notranslate"><span class="pre">pyvista</span></code> packages must be installed on the machine.</p>
+<p>This examples runs only on Windows using CPython.</p>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">ansys.aedt.core</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core.generic.pdf</span> <span class="kn">import</span> <span class="n">AnsysReport</span>
+</pre></div>
+</div>
+</section>
+<section id="set-aedt-version">
+<h2>Set AEDT version<a class="headerlink" href="#set-aedt-version" title="Link to this heading">#</a></h2>
+<p>Set AEDT version.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedt_version</span> <span class="o">=</span> <span class="s2">&quot;2024.2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="set-non-graphical-mode">
+<h2>Set non-graphical mode<a class="headerlink" href="#set-non-graphical-mode" title="Link to this heading">#</a></h2>
+<p>Set non-graphical mode.
+You can set <code class="docutils literal notranslate"><span class="pre">non_graphical</span></code> either to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">non_graphical</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="open-project">
+<h2>Open project<a class="headerlink" href="#open-project" title="Link to this heading">#</a></h2>
+<p>Open the project.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">NewThread</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">project_file</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">generate_unique_project_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="launch-aedt-and-initialize-hfss">
+<h2>Launch AEDT and initialize HFSS<a class="headerlink" href="#launch-aedt-and-initialize-hfss" title="Link to this heading">#</a></h2>
+<p>Launch AEDT and initialize HFSS. If there is an active HFSS design, the <code class="docutils literal notranslate"><span class="pre">aedtapp</span></code>
+object is linked to it. Otherwise, a new design is created.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedtapp</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Hfss</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="n">project_file</span><span class="p">,</span>
+                      <span class="n">version</span><span class="o">=</span><span class="n">aedt_version</span><span class="p">,</span>
+                      <span class="n">non_graphical</span><span class="o">=</span><span class="n">non_graphical</span><span class="p">,</span>
+                      <span class="n">new_desktop</span><span class="o">=</span><span class="n">NewThread</span>
+                      <span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\_tool\Python\3.10.9\x64\lib\subprocess.py:1072: ResourceWarning: subprocess 8116 is still running
+  _warn(&quot;subprocess %s is still running&quot; % self.pid,
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\ansys\aedt\core\generic\settings.py:231: ResourceWarning: unclosed file &lt;_io.TextIOWrapper name=&#39;D:\\Temp\\pyaedt_ansys_260622a4-692f-48cc-bef3-b1a76554a3cc.log&#39; mode=&#39;a&#39; encoding=&#39;cp1252&#39;&gt;
+  self.__logger = val
+</pre></div>
+</div>
+</section>
+<section id="initialize-variable-settings">
+<h2>Initialize variable settings<a class="headerlink" href="#initialize-variable-settings" title="Link to this heading">#</a></h2>
+<p>Initialize variable settings. You can initialize a variable simply by creating
+it as a list object. If you enter the prefix <code class="docutils literal notranslate"><span class="pre">$</span></code>, the variable is created for
+the project. Otherwise, the variable is created for the design.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedtapp</span><span class="p">[</span><span class="s2">&quot;$coax_dimension&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;100mm&quot;</span>
+<span class="n">udp</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">aedtapp</span><span class="p">[</span><span class="s2">&quot;inner&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3mm&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="create-coaxial-and-cylinders">
+<h2>Create coaxial and cylinders<a class="headerlink" href="#create-coaxial-and-cylinders" title="Link to this heading">#</a></h2>
+<p>Create a coaxial and three cylinders. You can apply parameters
+directly using the <code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.aedt.core.modeler.cad.primitives_3d.Primitives3D.create_cylinder()</span></code>
+method. You can assign a material directly to the object creation action.
+Optionally, you can assign a material using the <code class="xref py py-func docutils literal notranslate"><span class="pre">assign_material()</span></code> method.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: How does this work when two truesurfaces are defined?</span>
+<span class="n">o1</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_cylinder</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">PLANE</span><span class="o">.</span><span class="n">ZX</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">udp</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;$coax_dimension&quot;</span><span class="p">,</span>
+                                     <span class="n">num_sides</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
+<span class="n">o2</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_cylinder</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">PLANE</span><span class="o">.</span><span class="n">ZX</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">udp</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;$coax_dimension&quot;</span><span class="p">,</span>
+                                     <span class="n">num_sides</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;teflon_based&quot;</span><span class="p">)</span>
+<span class="n">o3</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_cylinder</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">PLANE</span><span class="o">.</span><span class="n">ZX</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">udp</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;$coax_dimension&quot;</span><span class="p">,</span>
+                                     <span class="n">num_sides</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="assign-colors">
+<h2>Assign colors<a class="headerlink" href="#assign-colors" title="Link to this heading">#</a></h2>
+<p>Assign colors to each primitive.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">o1</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">o2</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">o3</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">o3</span><span class="o">.</span><span class="n">transparency</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">fit_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="assign-materials">
+<h2>Assign materials<a class="headerlink" href="#assign-materials" title="Link to this heading">#</a></h2>
+<p>Assign materials. You can assign materials either directly when creating the primitive,
+which was done for <code class="docutils literal notranslate"><span class="pre">id2</span></code>, or after the object is created.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">o1</span><span class="o">.</span><span class="n">material_name</span> <span class="o">=</span> <span class="s2">&quot;Copper&quot;</span>
+<span class="n">o3</span><span class="o">.</span><span class="n">material_name</span> <span class="o">=</span> <span class="s2">&quot;Copper&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="perform-modeler-operations">
+<h2>Perform modeler operations<a class="headerlink" href="#perform-modeler-operations" title="Link to this heading">#</a></h2>
+<p>Perform modeler operations. You can subtract, add, and perform other operations
+using either the object ID or object name.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedtapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">o3</span><span class="p">,</span> <span class="n">o2</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">o2</span><span class="p">,</span> <span class="n">o1</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="perform-mesh-operations">
+<h2>Perform mesh operations<a class="headerlink" href="#perform-mesh-operations" title="Link to this heading">#</a></h2>
+<p>Perform mesh operations. Most mesh operations are available.
+After a mesh is created, you can access a mesh operation to
+edit or review parameter values.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedtapp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">assign_initial_mesh_from_slider</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">assign_model_resolution</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="p">[</span><span class="n">o1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">o3</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">defeature_length</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">assign_length_mesh</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="n">o2</span><span class="o">.</span><span class="n">faces</span><span class="p">,</span> <span class="n">inside_selection</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">maximum_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">maximum_elements</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.mesh.MeshOperation object at 0x000002B31CB522C0&gt;
+</pre></div>
+</div>
+</section>
+<section id="create-excitations">
+<h2>Create excitations<a class="headerlink" href="#create-excitations" title="Link to this heading">#</a></h2>
+<p>Create excitations. The <code class="docutils literal notranslate"><span class="pre">create_wave_port_between_objects</span></code> method automatically
+identifies the closest faces on a predefined direction and creates a sheet to cover
+the faces. It also assigns a port to this face. If <code class="docutils literal notranslate"><span class="pre">add_pec_cap=True</span></code>, the method
+creates a PEC cap.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedtapp</span><span class="o">.</span><span class="n">wave_port</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span> <span class="n">create_port_sheet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">create_pec_cap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">integration_line</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;P1&quot;</span><span class="p">)</span>
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">wave_port</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span> <span class="n">create_port_sheet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">create_pec_cap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">integration_line</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;P2&quot;</span><span class="p">)</span>
+
+<span class="n">port_names</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">get_all_sources</span><span class="p">()</span>
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">fit_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="create-setup">
+<h2>Create setup<a class="headerlink" href="#create-setup" title="Link to this heading">#</a></h2>
+<p>Create a setup. A setup is created with default values. After its creation,
+you can change values and update the setup. The <code class="docutils literal notranslate"><span class="pre">update</span></code> method returns a Boolean
+value.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedtapp</span><span class="o">.</span><span class="n">set_active_design</span><span class="p">(</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">design_name</span><span class="p">)</span>
+<span class="n">setup</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">create_setup</span><span class="p">(</span><span class="s2">&quot;MySetup&quot;</span><span class="p">)</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;1GHz&quot;</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;BasisOrder&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;MaximumPasses&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="create-sweep">
+<h2>Create sweep<a class="headerlink" href="#create-sweep" title="Link to this heading">#</a></h2>
+<p>Create a sweep. A sweep is created with default values.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">sweepname</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">create_linear_count_sweep</span><span class="p">(</span><span class="n">setup</span><span class="o">=</span><span class="s2">&quot;MySetup&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;GHz&quot;</span><span class="p">,</span> <span class="n">start_frequency</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">stop_frequency</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span>
+                                              <span class="n">num_of_freq_points</span><span class="o">=</span><span class="mi">401</span><span class="p">,</span> <span class="n">sweep_type</span><span class="o">=</span><span class="s2">&quot;Interpolating&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-icepak-model">
+<h2>Create Icepak model<a class="headerlink" href="#create-icepak-model" title="Link to this heading">#</a></h2>
+<p>Create an Icepak model. After an HFSS setup is ready, link this model to an Icepak
+project and run a coupled physics analysis. The <code class="xref py py-func docutils literal notranslate"><span class="pre">FieldAnalysis3D.copy_solid_bodies_from()</span></code>
+method imports a model from HFSS with all material settings.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ipkapp</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Icepak</span><span class="p">()</span>
+<span class="n">ipkapp</span><span class="o">.</span><span class="n">copy_solid_bodies_from</span><span class="p">(</span><span class="n">aedtapp</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="link-sources-to-em-losses">
+<h2>Link sources to EM losses<a class="headerlink" href="#link-sources-to-em-losses" title="Link to this heading">#</a></h2>
+<p>Link sources to the EM losses.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">surfaceobj</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="s2">&quot;outer&quot;</span><span class="p">]</span>
+<span class="n">ipkapp</span><span class="o">.</span><span class="n">assign_em_losses</span><span class="p">(</span><span class="n">design</span><span class="o">=</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">design_name</span><span class="p">,</span> <span class="n">setup</span><span class="o">=</span><span class="s2">&quot;MySetup&quot;</span><span class="p">,</span> <span class="n">sweep</span><span class="o">=</span><span class="s2">&quot;LastAdaptive&quot;</span><span class="p">,</span> <span class="n">map_frequency</span><span class="o">=</span><span class="s2">&quot;1GHz&quot;</span><span class="p">,</span>
+                        <span class="n">surface_objects</span><span class="o">=</span><span class="n">surfaceobj</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;$coax_dimension&quot;</span><span class="p">,</span> <span class="s2">&quot;inner&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.boundary.BoundaryObject object at 0x000002B31CB52E30&gt;
+</pre></div>
+</div>
+</section>
+<section id="edit-gravity-setting">
+<h2>Edit gravity setting<a class="headerlink" href="#edit-gravity-setting" title="Link to this heading">#</a></h2>
+<p>Edit the gravity setting if necessary because it is important for a fluid analysis.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">ipkapp</span><span class="o">.</span><span class="n">edit_design_settings</span><span class="p">(</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">GRAVITY</span><span class="o">.</span><span class="n">ZNeg</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="set-up-icepak-project">
+<h2>Set up Icepak project<a class="headerlink" href="#set-up-icepak-project" title="Link to this heading">#</a></h2>
+<p>Set up the Icepak project. When you create a setup, default settings are applied.
+When you need to change a property of the setup, you can use the <code class="docutils literal notranslate"><span class="pre">props</span></code>
+command to pass the correct value to the property. The <code class="docutils literal notranslate"><span class="pre">update</span></code> function
+applies the settings to the setup. The setup creation process is identical
+for all tools.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">setup_ipk</span> <span class="o">=</span> <span class="n">ipkapp</span><span class="o">.</span><span class="n">create_setup</span><span class="p">(</span><span class="s2">&quot;SetupIPK&quot;</span><span class="p">)</span>
+<span class="n">setup_ipk</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Convergence Criteria - Max Iterations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</section>
+<section id="edit-or-review-mesh-parameters">
+<h2>Edit or review mesh parameters<a class="headerlink" href="#edit-or-review-mesh-parameters" title="Link to this heading">#</a></h2>
+<p>Edit or review the mesh parameters. After a mesh is created, you can access
+a mesh operation to edit or review parameter values.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">airbox</span> <span class="o">=</span> <span class="n">ipkapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">get_obj_id</span><span class="p">(</span><span class="s2">&quot;Region&quot;</span><span class="p">)</span>
+<span class="n">ipkapp</span><span class="o">.</span><span class="n">modeler</span><span class="p">[</span><span class="n">airbox</span><span class="p">]</span><span class="o">.</span><span class="n">display_wireframe</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">airfaces</span> <span class="o">=</span> <span class="n">ipkapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="n">airbox</span><span class="p">)</span>
+<span class="n">ipkapp</span><span class="o">.</span><span class="n">assign_openings</span><span class="p">(</span><span class="n">airfaces</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.boundary.BoundaryObject object at 0x000002B325C21540&gt;
+</pre></div>
+</div>
+</section>
+<section id="close-and-open-projects">
+<h2>Close and open projects<a class="headerlink" href="#close-and-open-projects" title="Link to this heading">#</a></h2>
+<p>Close and open the projects to ensure that the HFSS - Icepak coupling works
+correctly in AEDT versions 2019 R3 through 2021 R1. Closing and opening projects
+can be helpful when performing operations on multiple projects.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedtapp</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span>
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">close_project</span><span class="p">(</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">project_name</span><span class="p">)</span>
+<span class="n">aedtapp</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Hfss</span><span class="p">(</span><span class="n">project_file</span><span class="p">)</span>
+<span class="n">ipkapp</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Icepak</span><span class="p">()</span>
+<span class="n">ipkapp</span><span class="o">.</span><span class="n">solution_type</span> <span class="o">=</span> <span class="n">ipkapp</span><span class="o">.</span><span class="n">SOLUTIONS</span><span class="o">.</span><span class="n">Icepak</span><span class="o">.</span><span class="n">SteadyTemperatureAndFlow</span>
+<span class="n">ipkapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">fit_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="solve-icepak-project">
+<h2>Solve Icepak project<a class="headerlink" href="#solve-icepak-project" title="Link to this heading">#</a></h2>
+<p>Solve the Icepak project and the HFSS sweep.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">setup1</span> <span class="o">=</span> <span class="n">ipkapp</span><span class="o">.</span><span class="n">analyze_setup</span><span class="p">(</span><span class="s2">&quot;SetupIPK&quot;</span><span class="p">)</span>
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span>
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">fit_all</span><span class="p">()</span>
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">analyze_setup</span><span class="p">(</span><span class="s2">&quot;MySetup&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="generate-field-plots-and-export">
+<h2>Generate field plots and export<a class="headerlink" href="#generate-field-plots-and-export" title="Link to this heading">#</a></h2>
+<p>Generate field plots on the HFSS project and export them as images.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">cutlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">GLOBALCS</span><span class="o">.</span><span class="n">XY</span><span class="p">,</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">GLOBALCS</span><span class="o">.</span><span class="n">ZX</span><span class="p">,</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">GLOBALCS</span><span class="o">.</span><span class="n">YZ</span><span class="p">]</span>
+<span class="n">vollist</span> <span class="o">=</span> <span class="p">[</span><span class="n">o2</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+<span class="n">setup_name</span> <span class="o">=</span> <span class="s2">&quot;MySetup : LastAdaptive&quot;</span>
+<span class="n">quantity_name</span> <span class="o">=</span> <span class="s2">&quot;ComplexMag_E&quot;</span>
+<span class="n">quantity_name2</span> <span class="o">=</span> <span class="s2">&quot;ComplexMag_H&quot;</span>
+<span class="n">intrinsic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Freq&quot;</span><span class="p">:</span> <span class="s2">&quot;1GHz&quot;</span><span class="p">,</span> <span class="s2">&quot;Phase&quot;</span><span class="p">:</span> <span class="s2">&quot;0deg&quot;</span><span class="p">}</span>
+<span class="n">surflist</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+<span class="n">plot1</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_fieldplot_surface</span><span class="p">(</span><span class="n">surflist</span><span class="p">,</span> <span class="n">quantity_name2</span><span class="p">,</span> <span class="n">setup_name</span><span class="p">,</span> <span class="n">intrinsic</span><span class="p">)</span>
+
+<span class="n">results_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;Coaxial_Results_NG&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">results_folder</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">results_folder</span><span class="p">)</span>
+
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">plot_field_from_fieldplot</span><span class="p">(</span><span class="n">plot1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">project_path</span><span class="o">=</span><span class="n">results_folder</span><span class="p">,</span> <span class="n">mesh_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">image_format</span><span class="o">=</span><span class="s2">&quot;jpg&quot;</span><span class="p">,</span>
+                                       <span class="n">view</span><span class="o">=</span><span class="s2">&quot;isometric&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plot_cad_objs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_Hfss_Icepak_Coupling_001.png" srcset="../../_images/sphx_glr_Hfss_Icepak_Coupling_001.png" alt="Hfss Icepak Coupling" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.generic.plot.ModelPlotter object at 0x000002B325C23DF0&gt;
+</pre></div>
+</div>
+</section>
+<section id="generate-animation-from-field-plots">
+<h2>Generate animation from field plots<a class="headerlink" href="#generate-animation-from-field-plots" title="Link to this heading">#</a></h2>
+<p>Generate an animation from field plots using PyVista.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">cutlist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Global:XY&quot;</span><span class="p">]</span>
+<span class="n">phases</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;deg&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">)]</span>
+
+<span class="n">animated</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">plot_animated_field</span><span class="p">(</span><span class="n">quantity</span><span class="o">=</span><span class="s2">&quot;Mag_E&quot;</span><span class="p">,</span> <span class="n">assignment</span><span class="o">=</span><span class="n">cutlist</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;CutPlane&quot;</span><span class="p">,</span>
+                                            <span class="n">setup</span><span class="o">=</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">nominal_adaptive</span><span class="p">,</span>
+                                            <span class="n">intrinsics</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Freq&quot;</span><span class="p">:</span> <span class="s2">&quot;1GHz&quot;</span><span class="p">,</span> <span class="s2">&quot;Phase&quot;</span><span class="p">:</span> <span class="s2">&quot;0deg&quot;</span><span class="p">},</span> <span class="n">variation_variable</span><span class="o">=</span><span class="s2">&quot;Phase&quot;</span><span class="p">,</span>
+                                            <span class="n">variations</span><span class="o">=</span><span class="n">phases</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">export_gif</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                            <span class="n">export_path</span><span class="o">=</span><span class="n">results_folder</span><span class="p">)</span>
+<span class="n">animated</span><span class="o">.</span><span class="n">gif_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;animate.gif&quot;</span><span class="p">)</span>
+<span class="c1"># animated.camera_position = [0, 0, 300]</span>
+<span class="c1"># animated.focal_point = [0, 0, 0]</span>
+<span class="c1"># Set off_screen to False to visualize the animation.</span>
+<span class="c1"># animated.off_screen = False</span>
+<span class="n">animated</span><span class="o">.</span><span class="n">animate</span><span class="p">()</span>
+
+<span class="n">endtime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total Time&quot;</span><span class="p">,</span> <span class="n">endtime</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_Hfss_Icepak_Coupling_002.gif" srcset="../../_images/sphx_glr_Hfss_Icepak_Coupling_002.gif" alt="Hfss Icepak Coupling" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\pyvista\plotting\plotter.py:4796: PyVistaDeprecationWarning: This method is deprecated and will be removed in a future version of PyVista. Directly modify the scalars of a mesh in-place instead.
+  warnings.warn(
+Total Time 16.95883870124817
+</pre></div>
+</div>
+</section>
+<section id="create-icepak-plots-and-export">
+<h2>Create Icepak plots and export<a class="headerlink" href="#create-icepak-plots-and-export" title="Link to this heading">#</a></h2>
+<p>Create Icepak plots and export them as images using the same functions that
+were used early. Only the quantity is different.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">quantity_name</span> <span class="o">=</span> <span class="s2">&quot;Temperature&quot;</span>
+<span class="n">setup_name</span> <span class="o">=</span> <span class="n">ipkapp</span><span class="o">.</span><span class="n">existing_analysis_sweeps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">intrinsic</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">surflist</span> <span class="o">=</span> <span class="n">ipkapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">ipkapp</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+<span class="n">plot5</span> <span class="o">=</span> <span class="n">ipkapp</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_fieldplot_surface</span><span class="p">(</span><span class="n">surflist</span><span class="p">,</span> <span class="s2">&quot;SurfTemperature&quot;</span><span class="p">)</span>
+
+<span class="n">aedtapp</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="generate-plots-outside-of-aedt">
+<h2>Generate plots outside of AEDT<a class="headerlink" href="#generate-plots-outside-of-aedt" title="Link to this heading">#</a></h2>
+<p>Generate plots outside of AEDT using Matplotlib and NumPy.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_names</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">get_traces_for_plot</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+<span class="n">cxt</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Domain:=&quot;</span><span class="p">,</span> <span class="s2">&quot;Sweep&quot;</span><span class="p">]</span>
+<span class="n">families</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Freq:=&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;All&quot;</span><span class="p">]]</span>
+<span class="n">my_data</span> <span class="o">=</span> <span class="n">aedtapp</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">get_solution_data</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="n">trace_names</span><span class="p">)</span>
+<span class="n">my_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">trace_names</span><span class="p">,</span> <span class="s2">&quot;db20&quot;</span><span class="p">,</span> <span class="n">x_label</span><span class="o">=</span><span class="s2">&quot;Frequency (Ghz)&quot;</span><span class="p">,</span> <span class="n">y_label</span><span class="o">=</span><span class="s2">&quot;SParameters(dB)&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scattering Chart&quot;</span><span class="p">,</span>
+             <span class="n">snapshot_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_folder</span><span class="p">,</span> <span class="s2">&quot;Touchstone_from_matplotlib.jpg&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_Hfss_Icepak_Coupling_003.png" srcset="../../_images/sphx_glr_Hfss_Icepak_Coupling_003.png" alt="Scattering Chart" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 2000x1000 with 1 Axes&gt;
+</pre></div>
+</div>
+</section>
+<section id="generate-pdf-report">
+<h2>Generate pdf report<a class="headerlink" href="#generate-pdf-report" title="Link to this heading">#</a></h2>
+<p>Generate a pdf report with output of simultion.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="n">AnsysReport</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">aedt_version</span><span class="p">,</span> <span class="n">design_name</span><span class="o">=</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">design_name</span><span class="p">,</span> <span class="n">project_name</span><span class="o">=</span><span class="n">aedtapp</span><span class="o">.</span><span class="n">project_name</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_section</span><span class="p">()</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_chapter</span><span class="p">(</span><span class="s2">&quot;Hfss Results&quot;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_sub_chapter</span><span class="p">(</span><span class="s2">&quot;Field Plot&quot;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;This section contains Field plots of Hfss Coaxial.&quot;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_folder</span><span class="p">,</span> <span class="n">plot1</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.jpg&quot;</span><span class="p">),</span> <span class="s2">&quot;Coaxial Cable&quot;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_page_break</span><span class="p">()</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_sub_chapter</span><span class="p">(</span><span class="s2">&quot;S Parameters&quot;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_chart</span><span class="p">(</span><span class="n">my_data</span><span class="o">.</span><span class="n">intrinsics</span><span class="p">[</span><span class="s2">&quot;Freq&quot;</span><span class="p">],</span> <span class="n">my_data</span><span class="o">.</span><span class="n">data_db20</span><span class="p">(),</span> <span class="s2">&quot;Freq&quot;</span><span class="p">,</span> <span class="n">trace_names</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;S-Parameters&quot;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_folder</span><span class="p">,</span> <span class="s2">&quot;Touchstone_from_matplotlib.jpg&quot;</span><span class="p">),</span> <span class="s2">&quot;Touchstone from Matplotlib&quot;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_section</span><span class="p">()</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_chapter</span><span class="p">(</span><span class="s2">&quot;Icepak Results&quot;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_sub_chapter</span><span class="p">(</span><span class="s2">&quot;Temperature Plot&quot;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;This section contains Multiphysics temperature plot.&quot;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">add_toc</span><span class="p">()</span>
+<span class="c1"># report.add_image(os.path.join(results_folder, plot5.name+&quot;.jpg&quot;), &quot;Coaxial Cable Temperatures&quot;)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">save_pdf</span><span class="p">(</span><span class="n">results_folder</span><span class="p">,</span> <span class="s2">&quot;AEDT_Results.pdf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;D:\\Temp\\pyaedt_prj_T83\\Project_RZC.pyaedt\\HFSS_HN9\\Coaxial_Results_NG\\AEDT_Results.pdf&#39;
+</pre></div>
+</div>
+</section>
+<section id="close-project-and-release-aedt">
+<h2>Close project and release AEDT<a class="headerlink" href="#close-project-and-release-aedt" title="Link to this heading">#</a></h2>
+<p>Close the project and release AEDT.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedtapp</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (3 minutes 34.247 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-06-multiphysics-hfss-icepak-coupling-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/38315d56f62dd567d1e7b526707ea603/Hfss_Icepak_Coupling.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Hfss_Icepak_Coupling.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/fa55c6e8c43f01f1040d789e3a1de422/Hfss_Icepak_Coupling.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Hfss_Icepak_Coupling.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/47da935c9bc7a3c60af67316ccf58ad5/Hfss_Icepak_Coupling.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">Hfss_Icepak_Coupling.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-aedt-version">Set AEDT version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-non-graphical-mode">Set non-graphical mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-project">Open project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-aedt-and-initialize-hfss">Launch AEDT and initialize HFSS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-variable-settings">Initialize variable settings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-coaxial-and-cylinders">Create coaxial and cylinders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-colors">Assign colors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-materials">Assign materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-modeler-operations">Perform modeler operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-mesh-operations">Perform mesh operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-excitations">Create excitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-setup">Create setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-sweep">Create sweep</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-icepak-model">Create Icepak model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-sources-to-em-losses">Link sources to EM losses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-gravity-setting">Edit gravity setting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-icepak-project">Set up Icepak project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-or-review-mesh-parameters">Edit or review mesh parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-and-open-projects">Close and open projects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-icepak-project">Solve Icepak project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-field-plots-and-export">Generate field plots and export</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-animation-from-field-plots">Generate animation from field plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-icepak-plots-and-export">Create Icepak plots and export</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-plots-outside-of-aedt">Generate plots outside of AEDT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-pdf-report">Generate pdf report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-project-and-release-aedt">Close project and release AEDT</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/06-Multiphysics/Hfss_Icepak_Coupling.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/06-Multiphysics/Hfss_Icepak_Coupling.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

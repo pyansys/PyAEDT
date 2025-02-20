@@ -1,0 +1,6 @@
+assign\_radiation\_boundary\_to\_faces
+======================================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.assign_radiation_boundary_to_faces

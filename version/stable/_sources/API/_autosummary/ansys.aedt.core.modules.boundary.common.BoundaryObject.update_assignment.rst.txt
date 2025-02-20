@@ -1,0 +1,6 @@
+update\_assignment
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.common
+
+.. automethod:: BoundaryObject.update_assignment

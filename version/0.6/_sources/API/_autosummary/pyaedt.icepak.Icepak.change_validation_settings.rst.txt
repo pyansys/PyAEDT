@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.change_validation_settings

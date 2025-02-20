@@ -1,0 +1,314 @@
+
+
+.. _sphx_glr_examples_00-EDB:
+
+EDB examples
+~~~~~~~~~~~~
+These examples use EDB (Electronics Database) with PyAEDT.
+EDB is a powerful API that allows to control PCB data efficently.
+You can either use EDB standalone or embedded in HFSS 3D Layout in AEDT.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: geometry creation">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_00_EDB_Create_VIA_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_00_EDB_Create_VIA.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: geometry creation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: Siwave analysis from EDB setup">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_01_edb_example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_01_edb_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: Siwave analysis from EDB setup</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: IPC2581 export">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_02_edb_to_ipc2581_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_02_edb_to_ipc2581.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: IPC2581 export</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: 5G linear array antenna">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_03_5G_antenna_example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_03_5G_antenna_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: 5G linear array antenna</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: Layout Components">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_03_5G_antenna_example_parametrics_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_03_5G_antenna_example_parametrics.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: Layout Components</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: fully parametrized design">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_04_edb_parametrized_design_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_04_edb_parametrized_design.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: fully parametrized design</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: plot nets with Matplotlib">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_05_Plot_nets_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_05_Plot_nets.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: plot nets with Matplotlib</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: parametric via creation">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_06_Advanced_EDB_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_06_Advanced_EDB.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: parametric via creation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: fully parametrized CPWG design">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_08_CPWG_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_08_CPWG.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: fully parametrized CPWG design</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: Pin to Pin project">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_09_Configuration_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_09_Configuration.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: Pin to Pin project</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: Edit Control File and import gds">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_10_GDS_workflow_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_10_GDS_workflow.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: Edit Control File and import gds</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: post-layout parameterization">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_11_post_layout_parameterization_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_11_post_layout_parameterization.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: post-layout parameterization</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: geometry creation">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_12_edb_sma_connector_on_board_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_12_edb_sma_connector_on_board.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: geometry creation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: geometry creation">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_13_edb_create_component_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_13_edb_create_component.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: geometry creation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: parameterized design">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_14_edb_create_parametrized_design_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_14_edb_create_parametrized_design.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: parameterized design</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EDB: SYZ analysis">
+
+.. only:: html
+
+  .. image:: /examples/00-EDB/images/thumb/sphx_glr_15_ac_analysis_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_00-EDB_15_ac_analysis.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EDB: SYZ analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/00-EDB/00_EDB_Create_VIA
+   /examples/00-EDB/01_edb_example
+   /examples/00-EDB/02_edb_to_ipc2581
+   /examples/00-EDB/03_5G_antenna_example
+   /examples/00-EDB/03_5G_antenna_example_parametrics
+   /examples/00-EDB/04_edb_parametrized_design
+   /examples/00-EDB/05_Plot_nets
+   /examples/00-EDB/06_Advanced_EDB
+   /examples/00-EDB/08_CPWG
+   /examples/00-EDB/09_Configuration
+   /examples/00-EDB/10_GDS_workflow
+   /examples/00-EDB/11_post_layout_parameterization
+   /examples/00-EDB/12_edb_sma_connector_on_board
+   /examples/00-EDB/13_edb_create_component
+   /examples/00-EDB/14_edb_create_parametrized_design
+   /examples/00-EDB/15_ac_analysis
+

@@ -1,0 +1,6 @@
+delete\_mesh\_operations
+========================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.delete_mesh_operations

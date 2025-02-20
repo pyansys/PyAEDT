@@ -1,0 +1,6 @@
+deactivate\_variable\_statistical
+=================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.deactivate_variable_statistical

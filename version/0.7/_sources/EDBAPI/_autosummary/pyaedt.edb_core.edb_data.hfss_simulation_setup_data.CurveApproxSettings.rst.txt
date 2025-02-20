@@ -1,0 +1,26 @@
+﻿CurveApproxSettings
+===================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: CurveApproxSettings
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      CurveApproxSettings.arc_angle
+      CurveApproxSettings.arc_to_chord_error
+      CurveApproxSettings.max_arc_points
+      CurveApproxSettings.start_azimuth
+      CurveApproxSettings.use_arc_to_chord_error
+   
+   

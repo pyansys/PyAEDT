@@ -1,0 +1,6 @@
+assign\_voltage\_drop
+=====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_voltage_drop

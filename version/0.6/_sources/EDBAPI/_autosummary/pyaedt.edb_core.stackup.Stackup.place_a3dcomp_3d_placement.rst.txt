@@ -1,0 +1,6 @@
+place\_a3dcomp\_3d\_placement
+=============================
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. automethod:: Stackup.place_a3dcomp_3d_placement

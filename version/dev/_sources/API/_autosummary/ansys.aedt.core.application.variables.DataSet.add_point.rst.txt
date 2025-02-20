@@ -1,0 +1,6 @@
+add\_point
+==========
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. automethod:: DataSet.add_point

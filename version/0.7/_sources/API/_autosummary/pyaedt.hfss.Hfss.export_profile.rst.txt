@@ -1,0 +1,6 @@
+export\_profile
+===============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.export_profile

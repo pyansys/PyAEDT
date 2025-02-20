@@ -1,0 +1,6 @@
+get\_evaluated\_value
+=====================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.get_evaluated_value

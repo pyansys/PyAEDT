@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.valid_design

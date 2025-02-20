@@ -1,0 +1,64 @@
+﻿SimulationConfigurationBatch
+============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoclass:: SimulationConfigurationBatch
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SimulationConfigurationBatch.add_source
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SimulationConfigurationBatch.add_frequency_sweep
+      SimulationConfigurationBatch.airbox_horizontal_extent
+      SimulationConfigurationBatch.airbox_negative_vertical_extent
+      SimulationConfigurationBatch.airbox_positive_vertical_extent
+      SimulationConfigurationBatch.coax_solder_ball_diameter
+      SimulationConfigurationBatch.components
+      SimulationConfigurationBatch.coplanar_instances
+      SimulationConfigurationBatch.cutout_subdesign_expansion
+      SimulationConfigurationBatch.cutout_subdesign_round_corner
+      SimulationConfigurationBatch.cutout_subdesign_type
+      SimulationConfigurationBatch.dielectric_extent
+      SimulationConfigurationBatch.do_cutout_subdesign
+      SimulationConfigurationBatch.do_pingroup
+      SimulationConfigurationBatch.etching_factor_instances
+      SimulationConfigurationBatch.generate_excitations
+      SimulationConfigurationBatch.generate_solder_balls
+      SimulationConfigurationBatch.honor_user_dielectric
+      SimulationConfigurationBatch.include_only_selected_nets
+      SimulationConfigurationBatch.output_aedb
+      SimulationConfigurationBatch.power_nets
+      SimulationConfigurationBatch.signal_layer_etching_instances
+      SimulationConfigurationBatch.signal_layers_properties
+      SimulationConfigurationBatch.signal_nets
+      SimulationConfigurationBatch.sources
+      SimulationConfigurationBatch.trim_reference_size
+      SimulationConfigurationBatch.truncate_airbox_at_ground
+      SimulationConfigurationBatch.use_airbox_horizontal_extent_multiple
+      SimulationConfigurationBatch.use_airbox_negative_vertical_extent_multiple
+      SimulationConfigurationBatch.use_airbox_positive_vertical_extent_multiple
+      SimulationConfigurationBatch.use_default_coax_port_radial_extension
+      SimulationConfigurationBatch.use_default_cutout
+      SimulationConfigurationBatch.use_dielectric_extent_multiple
+      SimulationConfigurationBatch.use_pyaedt_cutout
+      SimulationConfigurationBatch.use_radiation_boundary
+   
+   

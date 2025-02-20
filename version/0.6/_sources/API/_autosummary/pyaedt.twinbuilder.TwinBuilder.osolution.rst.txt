@@ -1,0 +1,6 @@
+osolution
+=========
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.osolution

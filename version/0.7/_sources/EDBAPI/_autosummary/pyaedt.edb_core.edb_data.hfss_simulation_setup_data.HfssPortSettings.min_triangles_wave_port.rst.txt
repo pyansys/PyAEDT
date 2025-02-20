@@ -1,0 +1,6 @@
+min\_triangles\_wave\_port
+==========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: HfssPortSettings.min_triangles_wave_port

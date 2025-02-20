@@ -1,0 +1,6 @@
+library\_list
+=============
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q3d.library_list

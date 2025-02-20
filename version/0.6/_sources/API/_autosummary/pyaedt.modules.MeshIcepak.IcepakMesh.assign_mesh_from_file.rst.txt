@@ -1,0 +1,6 @@
+assign\_mesh\_from\_file
+========================
+
+.. currentmodule:: pyaedt.modules.MeshIcepak
+
+.. automethod:: IcepakMesh.assign_mesh_from_file

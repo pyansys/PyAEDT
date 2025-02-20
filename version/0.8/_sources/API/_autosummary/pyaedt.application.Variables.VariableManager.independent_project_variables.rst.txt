@@ -1,0 +1,6 @@
+independent\_project\_variables
+===============================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: VariableManager.independent_project_variables

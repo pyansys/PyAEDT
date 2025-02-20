@@ -1,0 +1,6 @@
+filter\_multiple\_bands\_enabled
+================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.filter_multiple_bands_enabled

@@ -1,0 +1,6 @@
+create\_square\_wave\_transient\_assignment
+===========================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_square_wave_transient_assignment

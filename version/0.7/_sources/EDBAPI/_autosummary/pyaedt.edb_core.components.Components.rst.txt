@@ -1,0 +1,142 @@
+﻿Components
+==========
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. autoclass:: Components
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Components.add_port_on_rlc_component
+      
+      
+      Components.add_rlc_boundary
+      
+      
+      Components.create
+      
+      
+      Components.create_pingroup_from_pins
+      
+      
+      Components.create_port_on_component
+      
+      
+      Components.create_port_on_pins
+      
+      
+      Components.create_rlc_component
+      
+      
+      Components.create_source_on_component
+      
+      
+      Components.deactivate_rlc_component
+      
+      
+      Components.delete
+      
+      
+      Components.delete_single_pin_rlc
+      
+      
+      Components.disable_rlc_component
+      
+      
+      Components.export_bom
+      
+      
+      Components.export_definition
+      
+      
+      Components.get_aedt_pin_name
+      
+      
+      Components.get_component_by_name
+      
+      
+      Components.get_component_net_connection_info
+      
+      
+      Components.get_component_placement_vector
+      
+      
+      Components.get_components_from_nets
+      
+      
+      Components.get_nets_from_pin_list
+      
+      
+      Components.get_pin_from_component
+      
+      
+      Components.get_pin_position
+      
+      
+      Components.get_pins_name_from_net
+      
+      
+      Components.get_rats
+      
+      
+      Components.get_solder_ball_height
+      
+      
+      Components.get_through_resistor_list
+      
+      
+      Components.import_bom
+      
+      
+      Components.import_definition
+      
+      
+      Components.refresh_components
+      
+      
+      Components.replace_rlc_by_gap_boundaries
+      
+      
+      Components.set_component_model
+      
+      
+      Components.set_component_rlc
+      
+      
+      Components.set_solder_ball
+      
+      
+      Components.short_component_pins
+      
+      
+      Components.update_rlc_from_bom
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Components.ICs
+      Components.IOs
+      Components.Others
+      Components.capacitors
+      Components.components_by_partname
+      Components.definitions
+      Components.inductors
+      Components.instances
+      Components.nport_comp_definition
+      Components.resistors
+   
+   

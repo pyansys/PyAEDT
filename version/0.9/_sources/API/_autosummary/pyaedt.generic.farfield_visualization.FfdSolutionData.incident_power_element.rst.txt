@@ -1,0 +1,6 @@
+incident\_power\_element
+========================
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.incident_power_element

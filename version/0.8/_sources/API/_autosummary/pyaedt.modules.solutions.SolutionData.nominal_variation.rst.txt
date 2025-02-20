@@ -1,0 +1,6 @@
+nominal\_variation
+==================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: SolutionData.nominal_variation

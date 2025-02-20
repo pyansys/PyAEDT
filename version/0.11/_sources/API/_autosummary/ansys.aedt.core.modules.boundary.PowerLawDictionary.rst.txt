@@ -1,0 +1,22 @@
+﻿PowerLawDictionary
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoclass:: PowerLawDictionary
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      PowerLawDictionary.props
+   
+   

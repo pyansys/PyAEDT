@@ -1,0 +1,6 @@
+add\_field\_from\_data
+======================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: ModelPlotter.add_field_from_data

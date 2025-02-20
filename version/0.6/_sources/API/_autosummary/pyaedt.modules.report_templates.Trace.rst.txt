@@ -1,0 +1,34 @@
+﻿Trace
+=====
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoclass:: Trace
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Trace.set_symbol_properties
+      
+      
+      Trace.set_trace_properties
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Trace.name
+   
+   

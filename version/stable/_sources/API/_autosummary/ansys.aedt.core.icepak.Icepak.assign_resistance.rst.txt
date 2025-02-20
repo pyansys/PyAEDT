@@ -1,0 +1,6 @@
+assign\_resistance
+==================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.assign_resistance

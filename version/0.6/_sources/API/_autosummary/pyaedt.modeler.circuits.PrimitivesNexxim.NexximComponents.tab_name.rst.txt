@@ -1,0 +1,6 @@
+tab\_name
+=========
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. autoproperty:: NexximComponents.tab_name

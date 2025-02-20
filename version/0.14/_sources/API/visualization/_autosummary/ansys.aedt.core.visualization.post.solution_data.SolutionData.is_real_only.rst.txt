@@ -1,0 +1,6 @@
+is\_real\_only
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. automethod:: SolutionData.is_real_only

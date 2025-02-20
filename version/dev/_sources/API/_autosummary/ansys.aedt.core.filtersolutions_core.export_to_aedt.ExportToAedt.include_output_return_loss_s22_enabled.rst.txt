@@ -1,0 +1,6 @@
+include\_output\_return\_loss\_s22\_enabled
+===========================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.include_output_return_loss_s22_enabled

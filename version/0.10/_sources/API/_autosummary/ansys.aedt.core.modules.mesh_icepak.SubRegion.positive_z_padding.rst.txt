@@ -1,0 +1,6 @@
+positive\_z\_padding
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. autoproperty:: SubRegion.positive_z_padding

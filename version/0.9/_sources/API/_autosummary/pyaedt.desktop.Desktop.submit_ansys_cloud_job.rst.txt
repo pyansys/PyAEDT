@@ -1,0 +1,6 @@
+submit\_ansys\_cloud\_job
+=========================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.submit_ansys_cloud_job

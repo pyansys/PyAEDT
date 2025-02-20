@@ -1,0 +1,6 @@
+components3d
+============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.components3d

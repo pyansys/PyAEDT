@@ -1,0 +1,24 @@
+﻿AdvancedMeshSettings
+====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: AdvancedMeshSettings
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      AdvancedMeshSettings.layer_snap_tol
+      AdvancedMeshSettings.mesh_display_attributes
+      AdvancedMeshSettings.replace_3d_triangles
+   
+   

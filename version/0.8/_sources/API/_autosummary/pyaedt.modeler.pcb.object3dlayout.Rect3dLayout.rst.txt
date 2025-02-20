@@ -1,0 +1,67 @@
+﻿Rect3dLayout
+============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoclass:: Rect3dLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Rect3dLayout.change_property
+      
+      
+      Rect3dLayout.create_clearance_on_component
+      
+      
+      Rect3dLayout.edge_by_point
+      
+      
+      Rect3dLayout.get_property_value
+      
+      
+      Rect3dLayout.set_property_value
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Rect3dLayout.absolute_angle
+      Rect3dLayout.angle
+      Rect3dLayout.bottom_edge_x
+      Rect3dLayout.bottom_edge_y
+      Rect3dLayout.bounding_box
+      Rect3dLayout.center
+      Rect3dLayout.corner_radius
+      Rect3dLayout.edges
+      Rect3dLayout.height
+      Rect3dLayout.is_closed
+      Rect3dLayout.location
+      Rect3dLayout.lock_position
+      Rect3dLayout.name
+      Rect3dLayout.negative
+      Rect3dLayout.net_name
+      Rect3dLayout.object_units
+      Rect3dLayout.obounding_box
+      Rect3dLayout.placement_layer
+      Rect3dLayout.point_a
+      Rect3dLayout.point_b
+      Rect3dLayout.points
+      Rect3dLayout.top_edge_x
+      Rect3dLayout.top_edge_y
+      Rect3dLayout.two_point_description
+      Rect3dLayout.width
+   
+   

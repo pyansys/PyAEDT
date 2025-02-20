@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.change_property

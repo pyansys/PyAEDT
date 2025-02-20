@@ -1,0 +1,6 @@
+post\_processing\_variables
+===========================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: VariableManager.post_processing_variables

@@ -1,0 +1,6 @@
+layouteditor
+============
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoproperty:: ModelerNexxim.layouteditor

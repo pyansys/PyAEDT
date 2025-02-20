@@ -1,0 +1,57 @@
+﻿FieldPlot
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. autoclass:: FieldPlot
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FieldPlot.create
+      
+      
+      FieldPlot.delete
+      
+      
+      FieldPlot.export_image
+      
+      
+      FieldPlot.export_image_from_aedtplt
+      
+      
+      FieldPlot.get_points_value
+      
+      
+      FieldPlot.update
+      
+      
+      FieldPlot.update_field_plot_settings
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      FieldPlot.field_line_trace_plot_settings
+      FieldPlot.field_plot_settings
+      FieldPlot.filter_boxes
+      FieldPlot.folder_settings
+      FieldPlot.intrinsicVar
+      FieldPlot.plotGeomInfo
+      FieldPlot.plotsettings
+      FieldPlot.surfacePlotInstruction
+      FieldPlot.surfacePlotInstructionLineTraces
+   
+   

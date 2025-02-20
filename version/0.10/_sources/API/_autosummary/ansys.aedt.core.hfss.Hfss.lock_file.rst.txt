@@ -1,0 +1,6 @@
+lock\_file
+==========
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. autoproperty:: Hfss.lock_file

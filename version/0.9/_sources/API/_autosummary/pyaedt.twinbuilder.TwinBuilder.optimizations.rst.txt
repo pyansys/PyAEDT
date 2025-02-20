@@ -1,0 +1,6 @@
+optimizations
+=============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.optimizations

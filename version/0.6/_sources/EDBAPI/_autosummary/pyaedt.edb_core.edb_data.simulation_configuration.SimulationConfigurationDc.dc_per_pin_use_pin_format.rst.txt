@@ -1,0 +1,6 @@
+dc\_per\_pin\_use\_pin\_format
+==============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_per_pin_use_pin_format

@@ -1,0 +1,6 @@
+excitations
+===========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.excitations

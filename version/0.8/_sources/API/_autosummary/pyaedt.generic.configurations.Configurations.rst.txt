@@ -1,0 +1,30 @@
+﻿Configurations
+==============
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoclass:: Configurations
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Configurations.export_config
+      
+      
+      Configurations.import_config
+      
+      
+      Configurations.validate
+      
+   
+   
+
+   
+   
+   

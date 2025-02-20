@@ -1,0 +1,6 @@
+pop\_up
+=======
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.pop_up

@@ -1,0 +1,6 @@
+detach\_faces
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.detach_faces

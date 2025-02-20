@@ -1,0 +1,6 @@
+permeability
+============
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.permeability

@@ -1,0 +1,6 @@
+o\_model\_manager
+=================
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoproperty:: ModelerTwinBuilder.o_model_manager

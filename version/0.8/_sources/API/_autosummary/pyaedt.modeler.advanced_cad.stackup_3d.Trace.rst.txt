@@ -1,0 +1,56 @@
+﻿Trace
+=====
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoclass:: Trace
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Trace.create_lumped_port
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Trace.added_length
+      Trace.aedt_object
+      Trace.application
+      Trace.charac_impedance
+      Trace.dielectric_layer
+      Trace.effective_permittivity
+      Trace.effective_permittivity_h_w
+      Trace.effective_permittivity_w_h
+      Trace.electrical_length
+      Trace.frequency
+      Trace.layer_name
+      Trace.layer_number
+      Trace.length
+      Trace.material_name
+      Trace.name
+      Trace.permittivity
+      Trace.points_on_layer
+      Trace.position_x
+      Trace.position_y
+      Trace.reference_system
+      Trace.signal_layer
+      Trace.substrate_thickness
+      Trace.wave_length
+      Trace.width
+      Trace.width_h_w
+      Trace.width_w_h
+   
+   

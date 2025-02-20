@@ -1,0 +1,6 @@
+delete\_mesh\_operations
+========================
+
+.. currentmodule:: pyaedt.modules.Mesh3DLayout
+
+.. automethod:: Mesh3d.delete_mesh_operations

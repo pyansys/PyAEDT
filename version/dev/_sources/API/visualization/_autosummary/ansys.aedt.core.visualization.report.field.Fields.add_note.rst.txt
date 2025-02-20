@@ -1,0 +1,6 @@
+add\_note
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: Fields.add_note

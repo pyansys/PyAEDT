@@ -1,0 +1,72 @@
+﻿SetupMaxwell
+============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoclass:: SetupMaxwell
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SetupMaxwell.add_eddy_current_sweep
+      
+      
+      SetupMaxwell.add_mesh_link
+      
+      
+      SetupMaxwell.analyze
+      
+      
+      SetupMaxwell.create
+      
+      
+      SetupMaxwell.create_report
+      
+      
+      SetupMaxwell.delete
+      
+      
+      SetupMaxwell.disable
+      
+      
+      SetupMaxwell.enable
+      
+      
+      SetupMaxwell.enable_control_program
+      
+      
+      SetupMaxwell.enable_expression_cache
+      
+      
+      SetupMaxwell.get_solution_data
+      
+      
+      SetupMaxwell.start_continue_from_previous_setup
+      
+      
+      SetupMaxwell.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SetupMaxwell.available_properties
+      SetupMaxwell.default_intrinsics
+      SetupMaxwell.is_solved
+      SetupMaxwell.name
+      SetupMaxwell.omodule
+      SetupMaxwell.p_app
+   
+   

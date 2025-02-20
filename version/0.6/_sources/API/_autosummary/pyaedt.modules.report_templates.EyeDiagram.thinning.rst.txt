@@ -1,0 +1,6 @@
+thinning
+========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: EyeDiagram.thinning

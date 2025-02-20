@@ -1,0 +1,100 @@
+
+
+.. _sphx_glr_examples_07-TwinBuilder:
+
+Twin Builder examples
+~~~~~~~~~~~~~~~~~~~~~
+These examples use PyAEDT to show some end-to-end workflows for Twin Builder.
+This includes schematic generation, setup, and postprocessing.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Twin Builder: RC circuit design anaysis">
+
+.. only:: html
+
+  .. image:: /examples/07-TwinBuilder/images/thumb/sphx_glr_01-RC_Circuit_Example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-TwinBuilder_01-RC_Circuit_Example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Twin Builder: RC circuit design anaysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Twin Builder: wiring a rectifier with a capacitor filter">
+
+.. only:: html
+
+  .. image:: /examples/07-TwinBuilder/images/thumb/sphx_glr_02-Wiring_A_Rectifier_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-TwinBuilder_02-Wiring_A_Rectifier.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Twin Builder: wiring a rectifier with a capacitor filter</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Twin Builder: dynamic ROM creation and simulation (2023 R2 beta)">
+
+.. only:: html
+
+  .. image:: /examples/07-TwinBuilder/images/thumb/sphx_glr_03-Dynamic_ROM_Creation_And_Visualization_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-TwinBuilder_03-Dynamic_ROM_Creation_And_Visualization.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Twin Builder: dynamic ROM creation and simulation (2023 R2 beta)</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Twin Builder: static ROM creation and simulation (2023 R2 beta)">
+
+.. only:: html
+
+  .. image:: /examples/07-TwinBuilder/images/thumb/sphx_glr_04-Static_ROM_Creation_And_Visualization_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_07-TwinBuilder_04-Static_ROM_Creation_And_Visualization.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Twin Builder: static ROM creation and simulation (2023 R2 beta)</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/07-TwinBuilder/01-RC_Circuit_Example
+   /examples/07-TwinBuilder/02-Wiring_A_Rectifier
+   /examples/07-TwinBuilder/03-Dynamic_ROM_Creation_And_Visualization
+   /examples/07-TwinBuilder/04-Static_ROM_Creation_And_Visualization
+

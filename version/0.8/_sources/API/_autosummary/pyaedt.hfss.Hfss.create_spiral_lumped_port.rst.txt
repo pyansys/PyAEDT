@@ -1,0 +1,6 @@
+create\_spiral\_lumped\_port
+============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_spiral_lumped_port

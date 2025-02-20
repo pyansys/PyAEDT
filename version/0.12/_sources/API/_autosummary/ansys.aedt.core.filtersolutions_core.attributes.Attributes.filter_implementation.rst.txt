@@ -1,0 +1,6 @@
+filter\_implementation
+======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.filter_implementation

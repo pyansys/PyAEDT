@@ -1,0 +1,6 @@
+geometry\_type
+==============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadProperties.geometry_type

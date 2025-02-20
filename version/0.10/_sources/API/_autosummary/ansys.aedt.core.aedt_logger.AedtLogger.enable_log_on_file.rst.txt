@@ -1,0 +1,6 @@
+enable\_log\_on\_file
+=====================
+
+.. currentmodule:: ansys.aedt.core.aedt_logger
+
+.. automethod:: AedtLogger.enable_log_on_file

@@ -1,0 +1,6 @@
+change\_plot\_scale
+===================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FieldPlot.change_plot_scale

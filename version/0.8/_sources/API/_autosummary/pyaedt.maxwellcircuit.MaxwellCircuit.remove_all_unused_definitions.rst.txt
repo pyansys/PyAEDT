@@ -1,0 +1,6 @@
+remove\_all\_unused\_definitions
+================================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.remove_all_unused_definitions

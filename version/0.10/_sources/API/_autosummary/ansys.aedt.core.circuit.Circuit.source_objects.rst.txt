@@ -1,0 +1,6 @@
+source\_objects
+===============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.source_objects

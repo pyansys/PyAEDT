@@ -1,0 +1,6 @@
+objects\_in\_network
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.icepak_boundary
+
+.. autoproperty:: NetworkObject.objects_in_network

@@ -1,0 +1,6 @@
+enforce\_dc\_and\_causality
+===========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: EdbFrequencySweep.enforce_dc_and_causality

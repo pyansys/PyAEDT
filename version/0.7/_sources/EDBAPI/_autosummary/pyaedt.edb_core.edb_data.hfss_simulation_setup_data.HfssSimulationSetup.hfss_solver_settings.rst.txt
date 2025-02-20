@@ -1,0 +1,6 @@
+hfss\_solver\_settings
+======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: HfssSimulationSetup.hfss_solver_settings

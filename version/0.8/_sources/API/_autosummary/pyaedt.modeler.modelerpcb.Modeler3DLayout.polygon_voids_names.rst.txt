@@ -1,0 +1,6 @@
+polygon\_voids\_names
+=====================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. autoproperty:: Modeler3DLayout.polygon_voids_names

@@ -1,0 +1,6 @@
+two\_point\_description
+=======================
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Rect3dLayout.two_point_description

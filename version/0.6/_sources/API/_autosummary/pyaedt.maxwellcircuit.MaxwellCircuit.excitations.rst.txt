@@ -1,0 +1,6 @@
+excitations
+===========
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.excitations

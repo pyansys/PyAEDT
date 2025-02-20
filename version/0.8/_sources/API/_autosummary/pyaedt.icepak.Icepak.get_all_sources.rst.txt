@@ -1,0 +1,6 @@
+get\_all\_sources
+=================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_all_sources

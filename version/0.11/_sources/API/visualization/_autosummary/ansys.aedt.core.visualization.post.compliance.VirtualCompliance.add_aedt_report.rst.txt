@@ -1,0 +1,6 @@
+add\_aedt\_report
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. automethod:: VirtualCompliance.add_aedt_report

@@ -1,0 +1,6 @@
+create\_model\_from\_touchstone
+===============================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_maxwell_circuit
+
+.. automethod:: MaxwellCircuitComponents.create_model_from_touchstone

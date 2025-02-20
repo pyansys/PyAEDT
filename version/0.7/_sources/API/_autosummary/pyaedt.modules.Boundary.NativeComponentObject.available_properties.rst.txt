@@ -1,0 +1,6 @@
+available\_properties
+=====================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: NativeComponentObject.available_properties

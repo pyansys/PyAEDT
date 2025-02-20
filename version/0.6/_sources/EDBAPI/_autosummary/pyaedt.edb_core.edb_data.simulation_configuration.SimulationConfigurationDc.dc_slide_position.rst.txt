@@ -1,0 +1,6 @@
+dc\_slide\_position
+===================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_slide_position

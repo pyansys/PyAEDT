@@ -1,0 +1,6 @@
+load\_expression\_file
+======================
+
+.. currentmodule:: ansys.aedt.core.modules.fields_calculator
+
+.. automethod:: FieldsCalculator.load_expression_file

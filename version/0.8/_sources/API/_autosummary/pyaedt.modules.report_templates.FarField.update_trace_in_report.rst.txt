@@ -1,0 +1,6 @@
+update\_trace\_in\_report
+=========================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: FarField.update_trace_in_report

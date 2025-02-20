@@ -1,0 +1,6 @@
+faces
+=====
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. autoproperty:: Polyline.faces

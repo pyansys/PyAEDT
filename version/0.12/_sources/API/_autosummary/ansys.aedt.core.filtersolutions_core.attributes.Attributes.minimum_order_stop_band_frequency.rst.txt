@@ -1,0 +1,6 @@
+minimum\_order\_stop\_band\_frequency
+=====================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.minimum_order_stop_band_frequency

@@ -1,0 +1,6 @@
+solution\_type
+==============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.solution_type

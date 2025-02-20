@@ -1,0 +1,6 @@
+assign\_uniform\_temperature
+============================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.assign_uniform_temperature

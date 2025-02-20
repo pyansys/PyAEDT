@@ -1,0 +1,6 @@
+create\_frequency\_sweep
+========================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupQ3D.create_frequency_sweep

@@ -1,0 +1,6 @@
+project\_timestamp\_changed
+===========================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.project_timestamp_changed

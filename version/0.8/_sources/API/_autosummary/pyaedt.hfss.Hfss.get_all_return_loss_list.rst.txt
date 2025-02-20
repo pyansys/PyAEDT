@@ -1,0 +1,6 @@
+get\_all\_return\_loss\_list
+============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_all_return_loss_list

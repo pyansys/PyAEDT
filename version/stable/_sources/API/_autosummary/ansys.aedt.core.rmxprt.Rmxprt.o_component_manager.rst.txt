@@ -1,0 +1,6 @@
+o\_component\_manager
+=====================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.o_component_manager

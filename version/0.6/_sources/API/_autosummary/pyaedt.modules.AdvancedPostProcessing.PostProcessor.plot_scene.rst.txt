@@ -1,0 +1,6 @@
+plot\_scene
+===========
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.plot_scene

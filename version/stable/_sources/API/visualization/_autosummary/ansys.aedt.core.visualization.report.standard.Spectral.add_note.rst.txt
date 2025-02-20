@@ -1,0 +1,6 @@
+add\_note
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. automethod:: Spectral.add_note

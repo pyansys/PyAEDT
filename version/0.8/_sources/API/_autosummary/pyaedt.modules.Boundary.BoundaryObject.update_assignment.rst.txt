@@ -1,0 +1,6 @@
+update\_assignment
+==================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. automethod:: BoundaryObject.update_assignment

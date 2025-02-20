@@ -1,0 +1,6 @@
+deactivate\_variable\_tuning
+============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.deactivate_variable_tuning

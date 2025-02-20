@@ -1,0 +1,6 @@
+change\_material\_override
+==========================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.change_material_override

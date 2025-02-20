@@ -1,0 +1,6 @@
+alternate\_radial\_delta\_orientation
+=====================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_radial
+
+.. autoproperty:: DistributedRadial.alternate_radial_delta_orientation

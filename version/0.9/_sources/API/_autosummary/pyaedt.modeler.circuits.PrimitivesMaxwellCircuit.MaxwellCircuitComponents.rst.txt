@@ -1,0 +1,117 @@
+﻿MaxwellCircuitComponents
+========================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. autoclass:: MaxwellCircuitComponents
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MaxwellCircuitComponents.add_id_to_component
+      
+      
+      MaxwellCircuitComponents.add_pin_iports
+      
+      
+      MaxwellCircuitComponents.create_capacitor
+      
+      
+      MaxwellCircuitComponents.create_component
+      
+      
+      MaxwellCircuitComponents.create_diode
+      
+      
+      MaxwellCircuitComponents.create_gnd
+      
+      
+      MaxwellCircuitComponents.create_inductor
+      
+      
+      MaxwellCircuitComponents.create_interface_port
+      
+      
+      MaxwellCircuitComponents.create_line
+      
+      
+      MaxwellCircuitComponents.create_model_from_touchstone
+      
+      
+      MaxwellCircuitComponents.create_page_port
+      
+      
+      MaxwellCircuitComponents.create_resistor
+      
+      
+      MaxwellCircuitComponents.create_symbol
+      
+      
+      MaxwellCircuitComponents.create_touchstone_component
+      
+      
+      MaxwellCircuitComponents.create_unique_id
+      
+      
+      MaxwellCircuitComponents.create_winding
+      
+      
+      MaxwellCircuitComponents.create_wire
+      
+      
+      MaxwellCircuitComponents.disable_data_netlist
+      
+      
+      MaxwellCircuitComponents.enable_global_netlist
+      
+      
+      MaxwellCircuitComponents.enable_use_instance_name
+      
+      
+      MaxwellCircuitComponents.get_obj_id
+      
+      
+      MaxwellCircuitComponents.get_pin_location
+      
+      
+      MaxwellCircuitComponents.get_pins
+      
+      
+      MaxwellCircuitComponents.get_wire_by_name
+      
+      
+      MaxwellCircuitComponents.number_with_units
+      
+      
+      MaxwellCircuitComponents.refresh_all_ids
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MaxwellCircuitComponents.design_libray
+      MaxwellCircuitComponents.design_type
+      MaxwellCircuitComponents.design_types
+      MaxwellCircuitComponents.model_units
+      MaxwellCircuitComponents.nets
+      MaxwellCircuitComponents.o_component_manager
+      MaxwellCircuitComponents.o_definition_manager
+      MaxwellCircuitComponents.o_symbol_manager
+      MaxwellCircuitComponents.schematic_units
+      MaxwellCircuitComponents.tab_name
+      MaxwellCircuitComponents.version
+      MaxwellCircuitComponents.wires
+   
+   

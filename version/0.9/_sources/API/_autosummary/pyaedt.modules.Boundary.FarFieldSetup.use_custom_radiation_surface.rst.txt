@@ -1,0 +1,6 @@
+use\_custom\_radiation\_surface
+===============================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: FarFieldSetup.use_custom_radiation_surface

@@ -1,0 +1,6 @@
+delete\_setup
+=============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.delete_setup

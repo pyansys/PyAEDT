@@ -1,0 +1,6 @@
+ofieldsreporter
+===============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.ofieldsreporter

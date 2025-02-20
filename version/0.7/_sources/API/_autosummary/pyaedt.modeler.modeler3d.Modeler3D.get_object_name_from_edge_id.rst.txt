@@ -1,0 +1,6 @@
+get\_object\_name\_from\_edge\_id
+=================================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_object_name_from_edge_id

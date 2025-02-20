@@ -1,0 +1,6 @@
+rcs\_data
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. autoproperty:: MonostaticRCSPlotter.rcs_data

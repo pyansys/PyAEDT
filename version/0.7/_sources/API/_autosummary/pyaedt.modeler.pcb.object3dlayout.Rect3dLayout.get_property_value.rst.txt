@@ -1,0 +1,6 @@
+get\_property\_value
+====================
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. automethod:: Rect3dLayout.get_property_value

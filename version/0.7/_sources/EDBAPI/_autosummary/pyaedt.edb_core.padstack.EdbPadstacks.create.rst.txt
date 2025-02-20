@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.create

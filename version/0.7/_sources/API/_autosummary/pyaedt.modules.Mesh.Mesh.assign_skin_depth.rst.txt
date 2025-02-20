@@ -1,0 +1,6 @@
+assign\_skin\_depth
+===================
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. automethod:: Mesh.assign_skin_depth

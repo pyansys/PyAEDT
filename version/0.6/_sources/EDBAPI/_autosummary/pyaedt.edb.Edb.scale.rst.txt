@@ -1,0 +1,6 @@
+scale
+=====
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.scale

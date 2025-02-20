@@ -1,0 +1,6 @@
+connect\_to\_component
+======================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.object_3d_circuit
+
+.. automethod:: CircuitPins.connect_to_component

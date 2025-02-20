@@ -1,0 +1,6 @@
+download\_job\_results
+======================
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.download_job_results

@@ -1,0 +1,6 @@
+composite
+=========
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.composite

@@ -1,0 +1,6 @@
+radiated\_power
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.radiated_power

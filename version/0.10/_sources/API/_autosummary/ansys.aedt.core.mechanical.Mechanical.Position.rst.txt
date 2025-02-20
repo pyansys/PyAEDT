@@ -1,0 +1,6 @@
+Position
+========
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.Position

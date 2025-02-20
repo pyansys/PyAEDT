@@ -1,0 +1,6 @@
+get\_boundaries\_name
+=====================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.get_boundaries_name

@@ -1,0 +1,6 @@
+create\_circuit\_port\_on\_pin
+==============================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.create_circuit_port_on_pin

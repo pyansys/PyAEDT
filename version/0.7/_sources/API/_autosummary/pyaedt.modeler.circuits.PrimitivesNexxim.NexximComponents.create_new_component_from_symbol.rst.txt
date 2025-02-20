@@ -1,0 +1,6 @@
+create\_new\_component\_from\_symbol
+====================================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_new_component_from_symbol

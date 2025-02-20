@@ -1,0 +1,6 @@
+face\_closest\_to\_bounding\_box
+================================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoproperty:: Object3d.face_closest_to_bounding_box

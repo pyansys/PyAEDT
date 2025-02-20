@@ -1,0 +1,6 @@
+capacitance\_enabled
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. autoproperty:: SetupQ3D.capacitance_enabled

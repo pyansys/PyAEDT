@@ -1,0 +1,6 @@
+create\_edge\_port\_vertical
+============================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.create_edge_port_vertical

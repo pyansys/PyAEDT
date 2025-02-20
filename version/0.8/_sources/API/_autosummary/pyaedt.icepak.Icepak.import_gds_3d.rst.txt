@@ -1,0 +1,6 @@
+import\_gds\_3d
+===============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.import_gds_3d

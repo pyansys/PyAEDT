@@ -1,0 +1,6 @@
+update\_interconncet\_parameters
+================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. automethod:: ExportToAedt.update_interconncet_parameters

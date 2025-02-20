@@ -1,0 +1,6 @@
+sensitivity\_max\_value
+=======================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.sensitivity_max_value

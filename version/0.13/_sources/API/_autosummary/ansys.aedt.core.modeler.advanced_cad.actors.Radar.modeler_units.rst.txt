@@ -1,0 +1,6 @@
+modeler\_units
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.actors
+
+.. autoattribute:: Radar.modeler_units

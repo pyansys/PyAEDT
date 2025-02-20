@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.delete_project

@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.modules.DesignXPloration
+
+.. automethod:: SetupParam.delete

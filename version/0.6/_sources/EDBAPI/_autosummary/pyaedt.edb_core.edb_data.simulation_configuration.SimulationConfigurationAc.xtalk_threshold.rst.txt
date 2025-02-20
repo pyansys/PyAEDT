@@ -1,0 +1,6 @@
+xtalk\_threshold
+================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.xtalk_threshold

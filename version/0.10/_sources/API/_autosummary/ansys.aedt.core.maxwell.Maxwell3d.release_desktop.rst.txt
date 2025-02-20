@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.release_desktop

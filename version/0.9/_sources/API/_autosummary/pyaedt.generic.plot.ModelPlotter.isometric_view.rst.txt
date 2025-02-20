@@ -1,0 +1,6 @@
+isometric\_view
+===============
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. autoproperty:: ModelPlotter.isometric_view

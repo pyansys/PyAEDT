@@ -1,0 +1,6 @@
+schematic
+=========
+
+.. currentmodule:: ansys.aedt.core.modeler.schematic
+
+.. autoproperty:: ModelerNexxim.schematic

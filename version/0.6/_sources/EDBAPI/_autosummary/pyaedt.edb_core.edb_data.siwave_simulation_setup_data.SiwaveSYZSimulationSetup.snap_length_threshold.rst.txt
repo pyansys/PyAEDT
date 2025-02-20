@@ -1,0 +1,6 @@
+snap\_length\_threshold
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveSYZSimulationSetup.snap_length_threshold

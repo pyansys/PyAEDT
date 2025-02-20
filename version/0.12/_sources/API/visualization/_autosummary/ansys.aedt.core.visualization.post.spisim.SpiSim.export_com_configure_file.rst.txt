@@ -1,0 +1,6 @@
+export\_com\_configure\_file
+============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.spisim
+
+.. automethod:: SpiSim.export_com_configure_file

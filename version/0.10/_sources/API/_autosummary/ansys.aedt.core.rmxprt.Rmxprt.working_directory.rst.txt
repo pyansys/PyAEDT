@@ -1,0 +1,6 @@
+working\_directory
+==================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.working_directory

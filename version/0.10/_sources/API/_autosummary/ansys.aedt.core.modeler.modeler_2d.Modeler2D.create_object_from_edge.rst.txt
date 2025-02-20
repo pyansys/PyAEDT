@@ -1,0 +1,6 @@
+create\_object\_from\_edge
+==========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.create_object_from_edge

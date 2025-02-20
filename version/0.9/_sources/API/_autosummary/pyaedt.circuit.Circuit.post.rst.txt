@@ -1,0 +1,6 @@
+post
+====
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.post

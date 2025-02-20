@@ -1,0 +1,6 @@
+modeler
+=======
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: PostProcessor.modeler

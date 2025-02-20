@@ -1,0 +1,6 @@
+assign\_symmetry\_wall
+======================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_symmetry_wall

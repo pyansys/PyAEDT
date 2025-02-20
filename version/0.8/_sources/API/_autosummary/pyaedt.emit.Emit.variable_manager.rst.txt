@@ -1,0 +1,6 @@
+variable\_manager
+=================
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.variable_manager

@@ -1,0 +1,6 @@
+configure\_hfss\_extents
+========================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.configure_hfss_extents

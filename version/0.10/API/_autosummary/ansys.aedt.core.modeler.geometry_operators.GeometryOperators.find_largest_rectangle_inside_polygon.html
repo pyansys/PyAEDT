@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>find_largest_rectangle_inside_polygon &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'API/_autosummary/ansys.aedt.core.modeler.geometry_operators.GeometryOperators.find_largest_rectangle_inside_polygon';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="find_point_on_plane" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.find_point_on_plane.html" />
+    <link rel="prev" title="find_closest_points" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.find_closest_points.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/API/_autosummary/ansys.aedt.core.modeler.geometry_operators.GeometryOperators.find_largest_rectangle_inside_polygon.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Application.html">Application and solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MaterialManagement.html">Material and stackup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3D.html">3D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives2D.html">2D modeler</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Primitive_Objects.html">Primitives</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.object_3d.Object3d.html">Object3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.FacePrimitive.html">FacePrimitive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.EdgePrimitive.html">EdgePrimitive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.VertexPrimitive.html">VertexPrimitive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.PolylineSegment.html">PolylineSegment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.polylines.Polyline.html">Polyline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.component_array.ComponentArray.html">ComponentArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.components_3d.UserDefinedComponent.html">UserDefinedComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.Point.html">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.Plane.html">Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.HistoryProps.html">HistoryProps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.elements_3d.BinaryTreeNode.html">BinaryTreeNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.modeler.cad.modeler.CoordinateSystem.html">CoordinateSystem</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.html">GeometryOperators</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.List2list.html">List2list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.are_segments_intersecting.html">are_segments_intersecting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.arrays_positions_sum.html">arrays_positions_sum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.atan2.html">atan2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.axis_angle_to_quaternion.html">axis_angle_to_quaternion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.axis_to_euler_zxz.html">axis_to_euler_zxz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.axis_to_euler_zyz.html">axis_to_euler_zyz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.cs_axis_str.html">cs_axis_str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.cs_plane_to_axis_str.html">cs_plane_to_axis_str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.cs_plane_to_plane_str.html">cs_plane_to_plane_str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.cs_xy_pointing_expression.html">cs_xy_pointing_expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.deg2rad.html">deg2rad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.degrees_default_rounded.html">degrees_default_rounded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.degrees_over_rounded.html">degrees_over_rounded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.distance_vector.html">distance_vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.draft_type_str.html">draft_type_str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.euler_zxz_to_quaternion.html">euler_zxz_to_quaternion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.euler_zyz_to_quaternion.html">euler_zyz_to_quaternion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.find_closest_points.html">find_closest_points</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">find_largest_rectangle_inside_polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.find_point_on_plane.html">find_point_on_plane</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.get_mid_point.html">get_mid_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.get_numeric.html">get_numeric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.get_polygon_centroid.html">get_polygon_centroid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.get_triangle_area.html">get_triangle_area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.is_between_points.html">is_between_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.is_collinear.html">is_collinear</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.is_parallel.html">is_parallel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.is_perpendicular.html">is_perpendicular</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.is_point_in_polygon.html">is_point_in_polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.is_point_projection_in_segment.html">is_point_projection_in_segment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.is_projection_inside.html">is_projection_inside</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.is_segment_intersecting_polygon.html">is_segment_intersecting_polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.is_small.html">is_small</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.mirror_point.html">mirror_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.normalize_vector.html">normalize_vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.numeric_cs.html">numeric_cs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.orient_polygon.html">orient_polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.parallel_coeff.html">parallel_coeff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.parse_dim_arg.html">parse_dim_arg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.point_in_polygon.html">point_in_polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.point_segment_distance.html">point_segment_distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.pointing_to_axis.html">pointing_to_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.points_distance.html">points_distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.q_prod.html">q_prod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.q_rotation.html">q_rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.q_rotation_inv.html">q_rotation_inv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.quaternion_to_axis.html">quaternion_to_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.quaternion_to_axis_angle.html">quaternion_to_axis_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.quaternion_to_euler_zxz.html">quaternion_to_euler_zxz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.quaternion_to_euler_zyz.html">quaternion_to_euler_zyz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.rad2deg.html">rad2deg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.radians_default_rounded.html">radians_default_rounded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.radians_over_rounded.html">radians_over_rounded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_angle.html">v_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_angle_sign.html">v_angle_sign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_angle_sign_2D.html">v_angle_sign_2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_cross.html">v_cross</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_dot.html">v_dot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_norm.html">v_norm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_points.html">v_points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_prod.html">v_prod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_rotate_about_axis.html">v_rotate_about_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_sub.html">v_sub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.v_sum.html">v_sum</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../MultiPartComponent.html">Multi-part components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Stackup3D.html">Stackup 3D components</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3DLayout.html">Modeler in  HFSS 3D Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesCircuit.html">Modeler and components Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boundaries.html">Boundary objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mesh.html">Mesh operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup.html">Setup</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Post.html">Post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DesktopMessenger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optimetrics.html">Optimetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Configuration.html">Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SetupTemplates.html">Setup templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CableModeling.html">Cable modeling</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../Primitive_Objects.html" class="nav-link">Primitives</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.html" class="nav-link">GeometryOperators</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">find_largest_rectangle_inside_polygon</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="find-largest-rectangle-inside-polygon">
+<h1>find_largest_rectangle_inside_polygon<a class="headerlink" href="#find-largest-rectangle-inside-polygon" title="Link to this heading">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.aedt.core.modeler.geometry_operators.GeometryOperators.find_largest_rectangle_inside_polygon">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">GeometryOperators.</span></span><span class="sig-name descname"><span class="pre">find_largest_rectangle_inside_polygon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polygon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partition_max_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/ansys/pyaedt/blob/main/ansys/aedt/core/generic/general_methods.py#L1855-L1962"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ansys.aedt.core.modeler.geometry_operators.GeometryOperators.find_largest_rectangle_inside_polygon" title="Link to this definition">#</a></dt>
+<dd><p>Find the largest area rectangles of arbitrary orientation in a polygon.</p>
+<p>Implements the algorithm described by Rubén Molano, et al.
+<em>“Finding the largest area rectangle of arbitrary orientation in a closed contour”</em>, published in
+<em>Applied Mathematics and Computation</em>.
+<a class="reference external" href="https://doi.org/10.1016/j.amc.2012.03.063">https://doi.org/10.1016/j.amc.2012.03.063</a>.
+(<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0096300312003207">https://www.sciencedirect.com/science/article/pii/S0096300312003207</a>)</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>polygon</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">List</span></code></span></dt><dd><p>[[x1, x2, …, xn],[y1, y2, …, yn]]</p>
+</dd>
+<dt><strong>partition_max_order</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3.11/library/functions.html#float" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Order of the lattice partition used to find the quasi-lattice polygon that approximates <code class="docutils literal notranslate"><span class="pre">polygon</span></code>.
+Default is <code class="docutils literal notranslate"><span class="pre">16</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">List</span></code> <code class="xref py py-obj docutils literal notranslate"><span class="pre">of</span></code> <code class="xref py py-obj docutils literal notranslate"><span class="pre">List</span></code></dt><dd><p>List containing the rectangles points. Return all rectangles found.
+List is in the form: [[[x1, y1],[x2, y2],…],[[x1, y1],[x2, y2],…],…].</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.aedt.core.modeler.geometry_operators.GeometryOperators.find_largest_rectangle_inside_polygon"><code class="docutils literal notranslate"><span class="pre">find_largest_rectangle_inside_polygon()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="http://github.com/ansys/pyaedt/edit/main/ansys/aedt/core/generic/general_methods.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/API/_autosummary/ansys.aedt.core.modeler.geometry_operators.GeometryOperators.find_largest_rectangle_inside_polygon.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

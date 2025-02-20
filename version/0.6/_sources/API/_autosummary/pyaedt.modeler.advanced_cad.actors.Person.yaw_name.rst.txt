@@ -1,0 +1,6 @@
+yaw\_name
+=========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoproperty:: Person.yaw_name

@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.delete_project

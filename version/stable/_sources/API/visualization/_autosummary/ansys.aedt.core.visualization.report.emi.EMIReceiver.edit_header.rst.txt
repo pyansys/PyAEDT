@@ -1,0 +1,6 @@
+edit\_header
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.emi
+
+.. automethod:: EMIReceiver.edit_header

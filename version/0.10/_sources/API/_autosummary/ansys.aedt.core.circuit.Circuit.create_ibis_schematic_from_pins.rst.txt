@@ -1,0 +1,6 @@
+create\_ibis\_schematic\_from\_pins
+===================================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.create_ibis_schematic_from_pins

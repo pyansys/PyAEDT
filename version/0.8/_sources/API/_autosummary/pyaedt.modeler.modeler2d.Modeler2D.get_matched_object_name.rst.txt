@@ -1,0 +1,6 @@
+get\_matched\_object\_name
+==========================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.get_matched_object_name

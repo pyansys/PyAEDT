@@ -1,0 +1,6 @@
+get\_module
+===========
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.get_module

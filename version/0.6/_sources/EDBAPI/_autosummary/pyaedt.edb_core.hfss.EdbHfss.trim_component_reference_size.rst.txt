@@ -1,0 +1,6 @@
+trim\_component\_reference\_size
+================================
+
+.. currentmodule:: pyaedt.edb_core.hfss
+
+.. automethod:: EdbHfss.trim_component_reference_size

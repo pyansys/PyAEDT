@@ -1,0 +1,6 @@
+get\_connected\_objects
+=======================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.get_connected_objects

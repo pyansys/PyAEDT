@@ -1,0 +1,6 @@
+add\_cartesian\_y\_marker
+=========================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. automethod:: Spectral.add_cartesian_y_marker

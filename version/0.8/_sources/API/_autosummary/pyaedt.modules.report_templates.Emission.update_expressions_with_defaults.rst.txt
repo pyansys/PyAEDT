@@ -1,0 +1,6 @@
+update\_expressions\_with\_defaults
+===================================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Emission.update_expressions_with_defaults

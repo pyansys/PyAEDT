@@ -1,0 +1,6 @@
+post\_solution\_type
+====================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. autoproperty:: PostProcessorCircuit.post_solution_type

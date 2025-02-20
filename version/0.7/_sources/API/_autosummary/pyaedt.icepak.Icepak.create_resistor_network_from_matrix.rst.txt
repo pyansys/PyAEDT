@@ -1,0 +1,6 @@
+create\_resistor\_network\_from\_matrix
+=======================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.create_resistor_network_from_matrix

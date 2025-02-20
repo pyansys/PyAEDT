@@ -1,0 +1,6 @@
+project\_path
+=============
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.project_path

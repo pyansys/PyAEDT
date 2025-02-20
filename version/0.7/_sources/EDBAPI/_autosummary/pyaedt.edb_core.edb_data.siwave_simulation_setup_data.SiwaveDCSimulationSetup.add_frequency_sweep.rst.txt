@@ -1,0 +1,6 @@
+add\_frequency\_sweep
+=====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. automethod:: SiwaveDCSimulationSetup.add_frequency_sweep

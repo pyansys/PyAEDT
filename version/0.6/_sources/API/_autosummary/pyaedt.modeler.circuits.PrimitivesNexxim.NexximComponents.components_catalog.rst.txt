@@ -1,0 +1,6 @@
+components\_catalog
+===================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. autoproperty:: NexximComponents.components_catalog

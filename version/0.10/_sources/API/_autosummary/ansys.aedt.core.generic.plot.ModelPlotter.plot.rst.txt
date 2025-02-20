@@ -1,0 +1,6 @@
+plot
+====
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. automethod:: ModelPlotter.plot

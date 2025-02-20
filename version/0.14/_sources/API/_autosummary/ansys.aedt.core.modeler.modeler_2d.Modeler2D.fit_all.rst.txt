@@ -1,0 +1,6 @@
+fit\_all
+========
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.fit_all

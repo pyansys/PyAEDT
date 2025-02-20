@@ -1,0 +1,6 @@
+hdm\_data
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. autoproperty:: HDMPlotter.hdm_data

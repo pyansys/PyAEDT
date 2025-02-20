@@ -1,0 +1,6 @@
+working\_directory
+==================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.working_directory

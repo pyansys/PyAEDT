@@ -1,0 +1,6 @@
+oimport\_export
+===============
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.oimport_export

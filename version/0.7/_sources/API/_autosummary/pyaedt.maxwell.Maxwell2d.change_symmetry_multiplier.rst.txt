@@ -1,0 +1,6 @@
+change\_symmetry\_multiplier
+============================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.change_symmetry_multiplier

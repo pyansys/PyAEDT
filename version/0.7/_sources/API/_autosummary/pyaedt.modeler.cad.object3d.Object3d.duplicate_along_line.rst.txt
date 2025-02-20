@@ -1,0 +1,6 @@
+duplicate\_along\_line
+======================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.duplicate_along_line

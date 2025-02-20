@@ -1,0 +1,6 @@
+assign\_symmetry\_wall
+======================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.assign_symmetry_wall

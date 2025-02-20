@@ -1,0 +1,6 @@
+modeler\_variable
+=================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.modeler_variable

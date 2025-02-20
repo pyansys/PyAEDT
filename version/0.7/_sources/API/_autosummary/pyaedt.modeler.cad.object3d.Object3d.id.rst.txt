@@ -1,0 +1,6 @@
+id
+==
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoproperty:: Object3d.id

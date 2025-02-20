@@ -1,0 +1,142 @@
+﻿EyeDiagram
+==========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoclass:: EyeDiagram
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EyeDiagram.add_all_eye_measurements
+      
+      
+      EyeDiagram.add_cartesian_x_marker
+      
+      
+      EyeDiagram.add_cartesian_y_marker
+      
+      
+      EyeDiagram.add_limit_line_from_equation
+      
+      
+      EyeDiagram.add_limit_line_from_points
+      
+      
+      EyeDiagram.add_note
+      
+      
+      EyeDiagram.add_trace_characteristics
+      
+      
+      EyeDiagram.add_trace_to_report
+      
+      
+      EyeDiagram.clear_all_eye_measurements
+      
+      
+      EyeDiagram.create
+      
+      
+      EyeDiagram.delete
+      
+      
+      EyeDiagram.delete_traces
+      
+      
+      EyeDiagram.edit_general_settings
+      
+      
+      EyeDiagram.edit_grid
+      
+      
+      EyeDiagram.edit_header
+      
+      
+      EyeDiagram.edit_legend
+      
+      
+      EyeDiagram.edit_x_axis
+      
+      
+      EyeDiagram.edit_x_axis_scaling
+      
+      
+      EyeDiagram.edit_y_axis
+      
+      
+      EyeDiagram.edit_y_axis_scaling
+      
+      
+      EyeDiagram.export_mask_violation
+      
+      
+      EyeDiagram.eye_mask
+      
+      
+      EyeDiagram.get_solution_data
+      
+      
+      EyeDiagram.hide_legend
+      
+      
+      EyeDiagram.import_traces
+      
+      
+      EyeDiagram.rectangular_plot
+      
+      
+      EyeDiagram.update_expressions_with_defaults
+      
+      
+      EyeDiagram.update_trace_in_report
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EyeDiagram.auto_compute_eye_meas
+      EyeDiagram.auto_cross_amplitude
+      EyeDiagram.auto_delay
+      EyeDiagram.cross_amplitude
+      EyeDiagram.differential_pairs
+      EyeDiagram.domain
+      EyeDiagram.dy_dx_tolerance
+      EyeDiagram.expressions
+      EyeDiagram.eye_measurement_point
+      EyeDiagram.limit_lines
+      EyeDiagram.manual_delay
+      EyeDiagram.matrix
+      EyeDiagram.notes
+      EyeDiagram.offset
+      EyeDiagram.plot_name
+      EyeDiagram.polyline
+      EyeDiagram.primary_sweep
+      EyeDiagram.primary_sweep_range
+      EyeDiagram.quantity_type
+      EyeDiagram.report_category
+      EyeDiagram.report_type
+      EyeDiagram.secondary_sweep
+      EyeDiagram.secondary_sweep_range
+      EyeDiagram.thinning
+      EyeDiagram.thinning_points
+      EyeDiagram.time_start
+      EyeDiagram.time_stop
+      EyeDiagram.traces
+      EyeDiagram.unit_interval
+      EyeDiagram.use_pulse_in_tdr
+      EyeDiagram.variations
+   
+   

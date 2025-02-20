@@ -1,0 +1,6 @@
+assign\_stationary\_wall\_with\_heat\_flux
+==========================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_stationary_wall_with_heat_flux

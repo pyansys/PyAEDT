@@ -1,0 +1,151 @@
+﻿AMIConturEyeDiagram
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. autoclass:: AMIConturEyeDiagram
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      AMIConturEyeDiagram.add_all_eye_measurements
+      
+      
+      AMIConturEyeDiagram.add_cartesian_x_marker
+      
+      
+      AMIConturEyeDiagram.add_cartesian_y_marker
+      
+      
+      AMIConturEyeDiagram.add_limit_line_from_equation
+      
+      
+      AMIConturEyeDiagram.add_limit_line_from_points
+      
+      
+      AMIConturEyeDiagram.add_note
+      
+      
+      AMIConturEyeDiagram.add_trace_characteristics
+      
+      
+      AMIConturEyeDiagram.add_trace_to_report
+      
+      
+      AMIConturEyeDiagram.apply_report_template
+      
+      
+      AMIConturEyeDiagram.clear_all_eye_measurements
+      
+      
+      AMIConturEyeDiagram.create
+      
+      
+      AMIConturEyeDiagram.delete
+      
+      
+      AMIConturEyeDiagram.delete_traces
+      
+      
+      AMIConturEyeDiagram.edit_general_settings
+      
+      
+      AMIConturEyeDiagram.edit_grid
+      
+      
+      AMIConturEyeDiagram.edit_header
+      
+      
+      AMIConturEyeDiagram.edit_legend
+      
+      
+      AMIConturEyeDiagram.edit_x_axis
+      
+      
+      AMIConturEyeDiagram.edit_x_axis_scaling
+      
+      
+      AMIConturEyeDiagram.edit_y_axis
+      
+      
+      AMIConturEyeDiagram.edit_y_axis_scaling
+      
+      
+      AMIConturEyeDiagram.export_config
+      
+      
+      AMIConturEyeDiagram.export_mask_violation
+      
+      
+      AMIConturEyeDiagram.eye_mask
+      
+      
+      AMIConturEyeDiagram.get_solution_data
+      
+      
+      AMIConturEyeDiagram.hide_legend
+      
+      
+      AMIConturEyeDiagram.import_traces
+      
+      
+      AMIConturEyeDiagram.jsonalize_tree
+      
+      
+      AMIConturEyeDiagram.rectangular_plot
+      
+      
+      AMIConturEyeDiagram.suppress_all
+      
+      
+      AMIConturEyeDiagram.unsuppress_all
+      
+      
+      AMIConturEyeDiagram.update_expressions_with_defaults
+      
+      
+      AMIConturEyeDiagram.update_property
+      
+      
+      AMIConturEyeDiagram.update_trace_in_report
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      AMIConturEyeDiagram.children
+      AMIConturEyeDiagram.command
+      AMIConturEyeDiagram.differential_pairs
+      AMIConturEyeDiagram.domain
+      AMIConturEyeDiagram.expressions
+      AMIConturEyeDiagram.limit_lines
+      AMIConturEyeDiagram.matrix
+      AMIConturEyeDiagram.notes
+      AMIConturEyeDiagram.plot_name
+      AMIConturEyeDiagram.polyline
+      AMIConturEyeDiagram.primary_sweep
+      AMIConturEyeDiagram.primary_sweep_range
+      AMIConturEyeDiagram.properties
+      AMIConturEyeDiagram.quantity_type
+      AMIConturEyeDiagram.reduced_matrix
+      AMIConturEyeDiagram.report_category
+      AMIConturEyeDiagram.report_type
+      AMIConturEyeDiagram.secondary_sweep
+      AMIConturEyeDiagram.secondary_sweep_range
+      AMIConturEyeDiagram.traces
+      AMIConturEyeDiagram.use_pulse_in_tdr
+      AMIConturEyeDiagram.variations
+   
+   

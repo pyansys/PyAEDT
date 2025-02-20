@@ -1,0 +1,6 @@
+point\_names
+============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. autoproperty:: Modeler3D.point_names

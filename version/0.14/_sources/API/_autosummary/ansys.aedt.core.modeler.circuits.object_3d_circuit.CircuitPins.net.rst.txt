@@ -1,0 +1,6 @@
+net
+===
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.object_3d_circuit
+
+.. autoproperty:: CircuitPins.net

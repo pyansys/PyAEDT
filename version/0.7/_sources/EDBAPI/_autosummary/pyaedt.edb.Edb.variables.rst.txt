@@ -1,0 +1,6 @@
+variables
+=========
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.variables

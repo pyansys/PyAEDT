@@ -1,0 +1,6 @@
+rename\_report
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.rename_report

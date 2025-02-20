@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.load_project

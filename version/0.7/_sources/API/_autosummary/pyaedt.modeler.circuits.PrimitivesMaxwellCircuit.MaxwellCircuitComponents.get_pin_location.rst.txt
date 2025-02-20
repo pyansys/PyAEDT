@@ -1,0 +1,6 @@
+get\_pin\_location
+==================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.get_pin_location

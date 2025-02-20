@@ -1,0 +1,6 @@
+center\_z0\_impedance
+=====================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.center_z0_impedance

@@ -1,0 +1,6 @@
+get\_all\_source\_modes
+=======================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.get_all_source_modes

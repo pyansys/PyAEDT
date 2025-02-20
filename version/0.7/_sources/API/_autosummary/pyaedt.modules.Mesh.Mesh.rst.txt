@@ -1,0 +1,76 @@
+﻿Mesh
+====
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. autoclass:: Mesh
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Mesh.assign_curvature_extraction
+      
+      
+      Mesh.assign_curvilinear_elements
+      
+      
+      Mesh.assign_cylindrical_gap
+      
+      
+      Mesh.assign_density_control
+      
+      
+      Mesh.assign_edge_cut
+      
+      
+      Mesh.assign_initial_mesh_from_slider
+      
+      
+      Mesh.assign_length_mesh
+      
+      
+      Mesh.assign_model_resolution
+      
+      
+      Mesh.assign_rotational_layer
+      
+      
+      Mesh.assign_skin_depth
+      
+      
+      Mesh.assign_surf_priority_for_tau
+      
+      
+      Mesh.assign_surface_mesh
+      
+      
+      Mesh.assign_surface_mesh_manual
+      
+      
+      Mesh.delete_mesh_operations
+      
+      
+      Mesh.generate_mesh
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Mesh.initial_mesh_settings
+      Mesh.meshoperation_names
+      Mesh.meshoperations
+      Mesh.omeshmodule
+   
+   

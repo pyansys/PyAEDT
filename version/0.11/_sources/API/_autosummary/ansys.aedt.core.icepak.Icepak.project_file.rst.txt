@@ -1,0 +1,6 @@
+project\_file
+=============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.project_file

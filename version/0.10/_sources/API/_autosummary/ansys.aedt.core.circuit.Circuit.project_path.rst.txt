@@ -1,0 +1,6 @@
+project\_path
+=============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.project_path

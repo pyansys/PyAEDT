@@ -1,0 +1,6 @@
+import\_datasets
+================
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_datasets

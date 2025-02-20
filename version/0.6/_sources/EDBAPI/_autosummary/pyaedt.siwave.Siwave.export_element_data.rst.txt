@@ -1,0 +1,6 @@
+export\_element\_data
+=====================
+
+.. currentmodule:: pyaedt.siwave
+
+.. automethod:: Siwave.export_element_data

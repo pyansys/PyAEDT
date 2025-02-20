@@ -1,0 +1,58 @@
+﻿EmitComponents
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_emit
+
+.. autoclass:: EmitComponents
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EmitComponents.create_component
+      
+      
+      EmitComponents.create_radio_antenna
+      
+      
+      EmitComponents.get_antennas
+      
+      
+      EmitComponents.get_obj_id
+      
+      
+      EmitComponents.get_radios
+      
+      
+      EmitComponents.refresh_all_ids
+      
+      
+      EmitComponents.update_object_properties
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EmitComponents.design_type
+      EmitComponents.messenger
+      EmitComponents.model_units
+      EmitComponents.o_component_manager
+      EmitComponents.o_definition_manager
+      EmitComponents.o_model_manager
+      EmitComponents.o_symbol_manager
+      EmitComponents.odesign
+      EmitComponents.oeditor
+      EmitComponents.version
+   
+   

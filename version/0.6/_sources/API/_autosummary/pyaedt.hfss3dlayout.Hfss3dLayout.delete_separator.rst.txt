@@ -1,0 +1,6 @@
+delete\_separator
+=================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.delete_separator

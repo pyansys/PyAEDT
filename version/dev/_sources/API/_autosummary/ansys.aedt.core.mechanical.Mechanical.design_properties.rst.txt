@@ -1,0 +1,6 @@
+design\_properties
+==================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.design_properties

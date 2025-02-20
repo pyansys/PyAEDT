@@ -1,0 +1,6 @@
+clear\_scene
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. automethod:: MonostaticRCSPlotter.clear_scene

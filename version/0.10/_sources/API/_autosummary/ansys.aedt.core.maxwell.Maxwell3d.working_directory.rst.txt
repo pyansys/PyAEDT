@@ -1,0 +1,6 @@
+working\_directory
+==================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell3d.working_directory

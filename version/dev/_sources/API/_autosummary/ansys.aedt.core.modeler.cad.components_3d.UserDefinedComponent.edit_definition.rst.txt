@@ -1,0 +1,6 @@
+edit\_definition
+================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.components_3d
+
+.. automethod:: UserDefinedComponent.edit_definition

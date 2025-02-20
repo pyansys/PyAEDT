@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. automethod:: PointMonitor.delete

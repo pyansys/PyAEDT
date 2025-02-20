@@ -1,0 +1,6 @@
+deactivate\_variable\_statistical
+=================================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.deactivate_variable_statistical

@@ -1,0 +1,6 @@
+add\_nodes\_from\_dictionaries
+==============================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. automethod:: NetworkObject.add_nodes_from_dictionaries

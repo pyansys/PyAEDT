@@ -1,0 +1,6 @@
+add\_warning\_message
+=====================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.add_warning_message

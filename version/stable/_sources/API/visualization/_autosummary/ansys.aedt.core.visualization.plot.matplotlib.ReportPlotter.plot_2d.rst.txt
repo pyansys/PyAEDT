@@ -1,0 +1,6 @@
+plot\_2d
+========
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. automethod:: ReportPlotter.plot_2d

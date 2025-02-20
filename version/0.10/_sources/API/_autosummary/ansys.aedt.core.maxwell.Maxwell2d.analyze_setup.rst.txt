@@ -1,0 +1,6 @@
+analyze\_setup
+==============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.analyze_setup

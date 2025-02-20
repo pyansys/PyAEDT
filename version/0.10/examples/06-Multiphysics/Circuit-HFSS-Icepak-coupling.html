@@ -1,0 +1,1055 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Multiphysics: Circuit-HFSS-Icepak coupling workflow &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/06-Multiphysics/Circuit-HFSS-Icepak-coupling';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Multiphysics: HFSS-Icepak multiphysics analysis" href="Hfss_Icepak_Coupling.html" />
+    <link rel="prev" title="Multiphysics examples" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/06-Multiphysics/Circuit-HFSS-Icepak-coupling.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Modeling-Setup/index.html">General model and setup examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-HFSS/index.html">HFSS examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-Maxwell/index.html">Maxwell examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Multiphysics examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Multiphysics: Circuit-HFSS-Icepak coupling workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hfss_Icepak_Coupling.html">Multiphysics: HFSS-Icepak multiphysics analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hfss_Mechanical.html">Multiphysics: HFSS-Mechanical multiphysics analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MRI.html">Multiphysics: HFSS-Mechanical MRI analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3D_Icepak_2Way_Coupling.html">Multiphysics: Maxwell 3D - Icepak electrothermal analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-Circuit/index.html">Circuit examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-EMIT/index.html">EMIT examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">Multiphysics examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">Multiphysics: Circuit-HFSS-Icepak coupling workflow</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-06-multiphysics-circuit-hfss-icepak-coupling-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="multiphysics-circuit-hfss-icepak-coupling-workflow">
+<span id="sphx-glr-examples-06-multiphysics-circuit-hfss-icepak-coupling-py"></span><h1>Multiphysics: Circuit-HFSS-Icepak coupling workflow<a class="headerlink" href="#multiphysics-circuit-hfss-icepak-coupling-workflow" title="Link to this heading">#</a></h1>
+<p>This example demonstrates how to create a two-way coupling between Circuit-HFSS designs and Icepak.</p>
+<p>Let’s consider a design where some components are simulated in HFSS with a full 3D model,
+while others are simulated in Circuit as lumped elements. The electrical simulation is done by
+placing the HFSS design into a Circuit design as a subcomponent and by connecting the lumped components to
+its ports.</p>
+<p>The purpose of the workflow is to perform a thermal simulation of the Circuit-HFSS design,
+creating a two-way coupling with Icepak that allows running multiple iterations.
+The losses from both designs are accounted for: EM losses are evaluated by the HFSS solver
+and fed into Icepak via a direct link, while losses from the lumped components in the Circuit
+design are evaluated analytically and must be manually set into the Icepak boundary.</p>
+<p>On the way back of the coupling, temperature information is handled differently for HFSS and Circuit.
+For HFSS, a temperature map is exported from the Icepak design and used to create a 3D dataset;
+then the material properties in the HFSS design are updated based on this dataset.
+For Circuit, the average temperature of the lumped components is extracted from the Icepak design
+and used to update the temperature-dependent characteristics of the lumped components in Circuit.</p>
+<p>In this example, the Circuit design contains only a resistor component,
+with temperature-dependent resistance described by this formula: 0.162*(1+0.004*(TempE-TempE0)),
+where TempE is the current temperature and TempE0 is the ambient temperature.
+The HFSS design includes only a cylinder with temperature-dependent material conductivity,
+defined by a 2D dataset. The resistor and the cylinder have matching resistances.</p>
+<p>The workflow steps are as follows:</p>
+<ol class="arabic simple">
+<li><p>Solve the HFSS design.</p></li>
+<li><p>Refresh the dynamic link and solve the Circuit design.</p></li>
+<li><p>Push excitations (HFSS design results are scaled automatically).</p></li>
+<li><p>Extract the resistor’s power loss value from the Circuit design.</p></li>
+<li><p>Set the resistor’s power loss value in the Icepak design (block thermal condition).</p></li>
+<li><p>Solve the Icepak design.</p></li>
+<li><p>Export the temperature map from the Icepak design and create a new 3D dataset with it.</p></li>
+<li><p>Update material properties in the HFSS design based on the new dataset.</p></li>
+<li><p>Extract the average temperature of the resistor from the Icepak design.</p></li>
+<li><p>Update the resistance value in the Circuit design based on the new resistor average temperature.</p></li>
+</ol>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Hfss</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Icepak</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">downloads</span>
+<span class="kn">import</span> <span class="nn">os</span>
+</pre></div>
+</div>
+</section>
+<section id="download-and-open-project">
+<h2>Download and open project<a class="headerlink" href="#download-and-open-project" title="Link to this heading">#</a></h2>
+<p>Download the project archive. Save it to the temporary folder.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">project_path</span> <span class="o">=</span> <span class="n">downloads</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;circuit_hfss_icepak&quot;</span><span class="p">,</span> <span class="s2">&quot;Circuit-HFSS-Icepak-workflow.aedtz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Open the project and get the Circuit design.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span>
+    <span class="n">project</span><span class="o">=</span><span class="n">project_path</span><span class="p">,</span>
+    <span class="n">new_desktop_session</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">specified_version</span><span class="o">=</span><span class="mi">242</span><span class="p">,</span>
+    <span class="n">non_graphical</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\_tool\Python\3.10.9\x64\lib\subprocess.py:1072: ResourceWarning: subprocess 6536 is still running
+  _warn(&quot;subprocess %s is still running&quot; % self.pid,
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\ansys\aedt\core\generic\settings.py:231: ResourceWarning: unclosed file &lt;_io.TextIOWrapper name=&#39;D:\\Temp\\pyaedt_ansys_260622a4-692f-48cc-bef3-b1a76554a3cc.log&#39; mode=&#39;a&#39; encoding=&#39;cp1252&#39;&gt;
+  self.__logger = val
+</pre></div>
+</div>
+<p>Set the name of the resistor in Circuit.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">resistor_body_name</span> <span class="o">=</span> <span class="s2">&quot;Circuit_Component&quot;</span>
+</pre></div>
+</div>
+<p>Set the name of the cylinder body in HFSS.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">device3D_body_name</span> <span class="o">=</span> <span class="s2">&quot;Device_3D&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="get-the-hfss-design-and-prepare-the-material-for-the-thermal-link">
+<h2>Get the Hfss design and prepare the material for the thermal link<a class="headerlink" href="#get-the-hfss-design-and-prepare-the-material-for-the-thermal-link" title="Link to this heading">#</a></h2>
+<p>Get the Hfss design.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">hfss</span> <span class="o">=</span> <span class="n">Hfss</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">project_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create a new material that will be used to set the temperature map on it.
+The material is created by duplicating the material assigned to the cylinder.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">material_name</span> <span class="o">=</span> <span class="n">hfss</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">objects_by_name</span><span class="p">[</span><span class="n">device3D_body_name</span><span class="p">]</span><span class="o">.</span><span class="n">material_name</span>
+<span class="n">new_material_name</span> <span class="o">=</span> <span class="n">material_name</span> <span class="o">+</span> <span class="s2">&quot;_dataset&quot;</span>
+<span class="n">new_material</span> <span class="o">=</span> <span class="n">hfss</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">duplicate_material</span><span class="p">(</span><span class="n">material</span><span class="o">=</span><span class="n">material_name</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">new_material_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Save the conductivity value. It will be used later in the iterations.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">old_conductivity</span> <span class="o">=</span> <span class="n">new_material</span><span class="o">.</span><span class="n">conductivity</span><span class="o">.</span><span class="n">value</span>
+</pre></div>
+</div>
+<p>Assign the new material to the cylinder object in HFSS.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">hfss</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">objects_by_name</span><span class="p">[</span><span class="n">device3D_body_name</span><span class="p">]</span><span class="o">.</span><span class="n">material_name</span> <span class="o">=</span> <span class="n">new_material_name</span>
+</pre></div>
+</div>
+<p>Since this material has a high conductivity, HFSS automatically deactivate “Solve Inside”.
+It needs to be set back on as we need to evaluate the losses inside the cylinder.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">hfss</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">objects_by_name</span><span class="p">[</span><span class="n">device3D_body_name</span><span class="p">]</span><span class="o">.</span><span class="n">solve_inside</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="get-the-icepak-design">
+<h2>Get the Icepak design<a class="headerlink" href="#get-the-icepak-design" title="Link to this heading">#</a></h2>
+<p>Get the Icepak design.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">icepak</span> <span class="o">=</span> <span class="n">Icepak</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="n">circuit</span><span class="o">.</span><span class="n">project_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="set-the-parameters-for-the-iterations">
+<h2>Set the parameters for the iterations<a class="headerlink" href="#set-the-parameters-for-the-iterations" title="Link to this heading">#</a></h2>
+<p>Set the initial temperature to a value closer to the final one, to speed up the convergence.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="p">[</span><span class="s2">&quot;TempE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;300cel&quot;</span>
+</pre></div>
+</div>
+<p>Set the maximum number of iterations.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">max_iter</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>Set the residual convergence criteria to stop the iterations.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">temp_residual_limit</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">loss_residual_limit</span> <span class="o">=</span> <span class="mf">0.02</span>
+</pre></div>
+</div>
+<p>This variable will contain the iteration statistics.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</section>
+<section id="start-the-iterations">
+<h2>Start the iterations<a class="headerlink" href="#start-the-iterations" title="Link to this heading">#</a></h2>
+<p>Each for loop is a complete two-way iteration.
+The code is thoroughly commented.
+Please read the inline comments carefully for a full understanding.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cp_iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_iter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+    <span class="c1"># Step 1: Solve the Hfss design</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Solve the Hfss design.</span>
+    <span class="n">hfss</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+
+
+    <span class="c1"># Step 2: Refresh the dynamic link and solve the Circuit design</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Find the HFSS subcomponent in Circuit.</span>
+    <span class="c1"># This information is required by refresh_dynamic_link and push_excitations methods.</span>
+    <span class="n">hfss_component_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">hfss_instance_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">circuit</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">component</span><span class="o">.</span><span class="n">model_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="n">hfss</span><span class="o">.</span><span class="n">design_name</span> <span class="ow">in</span> <span class="n">component</span><span class="o">.</span><span class="n">model_name</span>
+        <span class="p">):</span>
+            <span class="n">hfss_component_name</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">model_name</span>
+            <span class="n">hfss_instance_name</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">refdes</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">hfss_component_name</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">hfss_instance_name</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="s2">&quot;Hfss component not found in Circuit design&quot;</span>
+
+    <span class="c1"># Refresh the dynamic link.</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">schematic</span><span class="o">.</span><span class="n">refresh_dynamic_link</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">hfss_component_name</span><span class="p">)</span>
+
+    <span class="c1"># Solve the Circuit design.</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+
+
+    <span class="c1"># Step 3: Push excitations (HFSS design results are scaled automatically)</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Push excitations.</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">push_excitations</span><span class="p">(</span><span class="n">instance</span><span class="o">=</span><span class="n">hfss_instance_name</span><span class="p">)</span>
+
+
+    <span class="c1"># Step 4: Extract the resistor&#39;s power loss value from the Circuit design</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Evaluate power loss on resistor.</span>
+    <span class="n">r_losses</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">get_solution_data</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="s2">&quot;0.5*mag(I(I1)*V(V1))&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">data_magnitude</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Save the losses in the stats.</span>
+    <span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="p">][</span><span class="s2">&quot;losses&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">r_losses</span>
+
+
+    <span class="c1"># Step 5: Set the resistor&#39;s power loss value in the Icepak design (block thermal condition)</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Find the Solid Block boundary in Icepak.</span>
+    <span class="n">boundaries</span> <span class="o">=</span> <span class="n">icepak</span><span class="o">.</span><span class="n">boundaries</span>
+    <span class="n">boundary</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">bb</span> <span class="ow">in</span> <span class="n">boundaries</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bb</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Block1&quot;</span><span class="p">:</span>
+            <span class="n">boundary</span> <span class="o">=</span> <span class="n">bb</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">boundary</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="s2">&quot;Block boundary not defined in Icepak design.&quot;</span>
+
+    <span class="c1"># Set the resistor&#39;s power loss in the Block Boundary.</span>
+    <span class="n">boundary</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;Total Power&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">r_losses</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;W&quot;</span>
+
+
+    <span class="c1"># Step 6: Solve the Icepak design</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Clear linked data, otherwise Icepak continues to run simulation with the initial losses.</span>
+    <span class="n">icepak</span><span class="o">.</span><span class="n">clear_linked_data</span><span class="p">()</span>
+
+    <span class="c1"># Solve the Icepak design.</span>
+    <span class="n">icepak</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+
+
+    <span class="c1"># Step 7: Export the temperature map from the Icepak and create a new 3D dataset with it</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Export the temperature map into a file.</span>
+    <span class="n">fld_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">icepak</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;temperature_map_</span><span class="si">{</span><span class="n">cp_iter</span><span class="si">}</span><span class="s2">.fld&quot;</span>
+    <span class="p">)</span>
+    <span class="n">icepak</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">export_field_file</span><span class="p">(</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="s2">&quot;Temp&quot;</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="n">fld_filename</span><span class="p">,</span> <span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;AllObjects&quot;</span><span class="p">,</span> <span class="n">objects_type</span><span class="o">=</span><span class="s2">&quot;Vol&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Convert the fld file format into a dataset tab file compatible with dataset import.</span>
+    <span class="c1"># The existing header lines must be removed and replaced with a single header line</span>
+    <span class="c1"># containing the value unit.</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fld_filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+    <span class="n">_</span> <span class="o">=</span> <span class="n">lines</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">lines</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;&quot;X&quot;    &quot;Y&quot; &quot;Z&quot; &quot;cel&quot;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">basename</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">fld_filename</span><span class="p">)</span>
+    <span class="n">tab_filename</span> <span class="o">=</span> <span class="n">basename</span> <span class="o">+</span> <span class="s2">&quot;_dataset.tab&quot;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">tab_filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+    <span class="c1"># Import the 3D dataset.</span>
+    <span class="n">dataset_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;temp_map_step_</span><span class="si">{</span><span class="n">cp_iter</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">hfss</span><span class="o">.</span><span class="n">import_dataset3d</span><span class="p">(</span>
+        <span class="n">input_file</span><span class="o">=</span><span class="n">tab_filename</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">is_project_dataset</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+
+    <span class="c1"># Step 8: Update material properties in the HFSS design based on the new dataset</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Set the new conductivity value.</span>
+    <span class="n">new_material</span><span class="o">.</span><span class="n">conductivity</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">old_conductivity</span><span class="si">}</span><span class="s2">*Pwl($TempDepCond,clp($</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s2">,X,Y,Z))&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Switch off the thermal modifier of the material, if any.</span>
+    <span class="n">new_material</span><span class="o">.</span><span class="n">conductivity</span><span class="o">.</span><span class="n">thermalmodifier</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+    <span class="c1"># Step 9: Extract the average temperature of the resistor from the Icepak design</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Get the mean temp value on the high resistivity object.</span>
+    <span class="n">mean_temp</span> <span class="o">=</span> <span class="n">icepak</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">get_scalar_field_value</span><span class="p">(</span>
+        <span class="n">quantity</span><span class="o">=</span><span class="s2">&quot;Temp&quot;</span><span class="p">,</span> <span class="n">scalar_function</span><span class="o">=</span><span class="s2">&quot;Mean&quot;</span><span class="p">,</span> <span class="n">object_name</span><span class="o">=</span><span class="n">resistor_body_name</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Save the temperature in the iteration stats.</span>
+    <span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="p">][</span><span class="s2">&quot;temp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_temp</span>
+
+
+    <span class="c1"># Step 10: Update the resistance value in the Circuit design</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Set this temperature in circuit in variable TempE.</span>
+    <span class="n">circuit</span><span class="p">[</span><span class="s2">&quot;TempE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mean_temp</span><span class="si">}</span><span class="s2">cel&quot;</span>
+
+    <span class="c1"># Save the project</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span>
+
+
+    <span class="c1"># Check the convergence of the iteration</span>
+    <span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+    <span class="c1"># Evaluate the relative residuals on temperature and losses.</span>
+    <span class="c1"># If the residuals are smaller than the threshold, set the convergence flag to `True`.</span>
+    <span class="c1"># Residuals are calculated starting from the second iteration.</span>
+    <span class="n">converged</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="p">][</span><span class="s2">&quot;converged&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">converged</span>
+    <span class="k">if</span> <span class="n">cp_iter</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">delta_temp</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="p">][</span><span class="s2">&quot;temp&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;temp&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;temp&quot;</span><span class="p">])</span>
+        <span class="n">delta_losses</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="p">][</span><span class="s2">&quot;losses&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;losses&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;losses&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">delta_temp</span> <span class="o">&lt;=</span> <span class="n">temp_residual_limit</span> <span class="ow">and</span> <span class="n">delta_losses</span> <span class="o">&lt;=</span> <span class="n">loss_residual_limit</span><span class="p">:</span>
+            <span class="n">converged</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="p">][</span><span class="s2">&quot;converged&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">converged</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">delta_temp</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">delta_losses</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Save the relative residuals in the iteration stats.</span>
+    <span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="p">][</span><span class="s2">&quot;delta_temp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">delta_temp</span>
+    <span class="n">stats</span><span class="p">[</span><span class="n">cp_iter</span><span class="p">][</span><span class="s2">&quot;delta_losses&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">delta_losses</span>
+
+    <span class="c1"># Exit from the loop if the convergence is reached.</span>
+    <span class="k">if</span> <span class="n">converged</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</section>
+<section id="print-the-overall-statistics">
+<h2>Print the overall statistics<a class="headerlink" href="#print-the-overall-statistics" title="Link to this heading">#</a></h2>
+<p>Print the overall statistics for the multiphysic loop.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">:</span>
+    <span class="n">txt</span> <span class="o">=</span> <span class="s2">&quot;yes&quot;</span> <span class="k">if</span> <span class="n">stats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;converged&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;no&quot;</span>
+    <span class="n">delta_temp</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;delta_temp&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">stats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;delta_temp&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;None&quot;</span>
+    <span class="n">delta_losses</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;delta_losses&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">stats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;delta_losses&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;None&quot;</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Step </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: temp=</span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;temp&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, losses=</span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;losses&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;delta_temp=</span><span class="si">{</span><span class="n">delta_temp</span><span class="si">}</span><span class="s2">, delta_losses=</span><span class="si">{</span><span class="n">delta_losses</span><span class="si">}</span><span class="s2">, &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;converged=</span><span class="si">{</span><span class="n">txt</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Step 1: temp=326.061, losses=0.209, delta_temp=None, delta_losses=None, converged=no
+Step 2: temp=349.048, losses=0.222, delta_temp=0.0705, delta_losses=0.0622, converged=no
+Step 3: temp=336.049, losses=0.213, delta_temp=0.0372, delta_losses=0.0398, converged=no
+Step 4: temp=343.185, losses=0.218, delta_temp=0.0212, delta_losses=0.0230, converged=no
+Step 5: temp=339.177, losses=0.215, delta_temp=0.0117, delta_losses=0.0125, converged=yes
+</pre></div>
+</div>
+<p>Close Electronics Desktop</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (29 minutes 25.945 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-06-multiphysics-circuit-hfss-icepak-coupling-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/750c749d63f9beedf1c36c31cfc4c8c7/Circuit-HFSS-Icepak-coupling.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Circuit-HFSS-Icepak-coupling.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/32a093c4bf9099e3d13f22a859ed0ca2/Circuit-HFSS-Icepak-coupling.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Circuit-HFSS-Icepak-coupling.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/e29627ce946214c355ac1a065640866c/Circuit-HFSS-Icepak-coupling.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">Circuit-HFSS-Icepak-coupling.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-open-project">Download and open project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-hfss-design-and-prepare-the-material-for-the-thermal-link">Get the Hfss design and prepare the material for the thermal link</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-icepak-design">Get the Icepak design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-parameters-for-the-iterations">Set the parameters for the iterations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-iterations">Start the iterations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-the-overall-statistics">Print the overall statistics</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/06-Multiphysics/Circuit-HFSS-Icepak-coupling.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/06-Multiphysics/Circuit-HFSS-Icepak-coupling.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

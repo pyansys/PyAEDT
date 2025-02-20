@@ -1,0 +1,6 @@
+parametrics
+===========
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.parametrics

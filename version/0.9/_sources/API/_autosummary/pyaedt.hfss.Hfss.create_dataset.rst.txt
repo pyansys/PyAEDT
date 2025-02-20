@@ -1,0 +1,6 @@
+create\_dataset
+===============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_dataset

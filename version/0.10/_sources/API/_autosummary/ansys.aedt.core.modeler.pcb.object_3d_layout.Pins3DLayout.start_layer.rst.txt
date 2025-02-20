@@ -1,0 +1,6 @@
+start\_layer
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. autoproperty:: Pins3DLayout.start_layer

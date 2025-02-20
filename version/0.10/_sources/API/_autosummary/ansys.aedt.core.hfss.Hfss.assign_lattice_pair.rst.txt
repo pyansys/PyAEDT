@@ -1,0 +1,6 @@
+assign\_lattice\_pair
+=====================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.assign_lattice_pair

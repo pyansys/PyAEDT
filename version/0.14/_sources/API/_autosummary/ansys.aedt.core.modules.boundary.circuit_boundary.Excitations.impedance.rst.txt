@@ -1,0 +1,6 @@
+impedance
+=========
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoproperty:: Excitations.impedance

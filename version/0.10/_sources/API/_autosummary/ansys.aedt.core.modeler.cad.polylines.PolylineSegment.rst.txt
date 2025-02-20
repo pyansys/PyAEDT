@@ -1,0 +1,15 @@
+﻿PolylineSegment
+===============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. autoclass:: PolylineSegment
+
+   
+
+   
+   
+
+   
+   
+   

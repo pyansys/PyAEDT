@@ -1,0 +1,6 @@
+personallib
+===========
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.personallib

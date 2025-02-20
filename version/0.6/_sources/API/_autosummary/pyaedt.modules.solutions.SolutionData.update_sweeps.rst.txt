@@ -1,0 +1,6 @@
+update\_sweeps
+==============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.update_sweeps

@@ -1,0 +1,6 @@
+oproject
+========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.oproject

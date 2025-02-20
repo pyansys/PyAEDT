@@ -1,0 +1,6 @@
+get\_object\_vertices
+=====================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.get_object_vertices

@@ -1,0 +1,6 @@
+trim\_reference\_size
+=====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.trim_reference_size

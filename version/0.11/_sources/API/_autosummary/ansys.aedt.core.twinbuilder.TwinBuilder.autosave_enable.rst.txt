@@ -1,0 +1,6 @@
+autosave\_enable
+================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.autosave_enable

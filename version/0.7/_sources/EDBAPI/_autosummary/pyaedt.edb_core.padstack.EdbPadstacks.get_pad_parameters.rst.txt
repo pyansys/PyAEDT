@@ -1,0 +1,6 @@
+get\_pad\_parameters
+====================
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.get_pad_parameters

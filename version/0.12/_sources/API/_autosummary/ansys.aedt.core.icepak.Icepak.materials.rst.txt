@@ -1,0 +1,6 @@
+materials
+=========
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.materials

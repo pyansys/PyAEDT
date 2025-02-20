@@ -1,0 +1,6 @@
+auto\_parametrize\_design
+=========================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.auto_parametrize_design

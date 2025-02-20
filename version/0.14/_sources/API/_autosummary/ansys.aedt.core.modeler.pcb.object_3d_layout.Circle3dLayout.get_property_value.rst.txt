@@ -1,0 +1,6 @@
+get\_property\_value
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.pcb.object_3d_layout
+
+.. automethod:: Circle3dLayout.get_property_value

@@ -1,0 +1,6 @@
+create\_dataset3d
+=================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.create_dataset3d

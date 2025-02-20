@@ -1,0 +1,6 @@
+omonitor
+========
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.omonitor

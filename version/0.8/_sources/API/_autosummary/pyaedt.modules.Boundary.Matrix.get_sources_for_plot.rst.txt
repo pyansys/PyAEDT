@@ -1,0 +1,6 @@
+get\_sources\_for\_plot
+=======================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. automethod:: Matrix.get_sources_for_plot

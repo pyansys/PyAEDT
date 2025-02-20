@@ -1,0 +1,6 @@
+create\_port\_between\_pin\_and\_layer
+======================================
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. automethod:: EdbSiwave.create_port_between_pin_and_layer

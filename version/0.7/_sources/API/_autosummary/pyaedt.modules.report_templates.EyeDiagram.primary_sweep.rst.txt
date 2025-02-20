@@ -1,0 +1,6 @@
+primary\_sweep
+==============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: EyeDiagram.primary_sweep

@@ -1,0 +1,6 @@
+get\_equivalent\_parallel\_edges
+================================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_equivalent_parallel_edges

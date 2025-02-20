@@ -1,0 +1,6 @@
+create\_sbr\_radar\_from\_json
+==============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_sbr_radar_from_json

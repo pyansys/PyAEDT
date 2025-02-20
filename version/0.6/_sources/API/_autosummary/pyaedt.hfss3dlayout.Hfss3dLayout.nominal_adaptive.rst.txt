@@ -1,0 +1,6 @@
+nominal\_adaptive
+=================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.nominal_adaptive

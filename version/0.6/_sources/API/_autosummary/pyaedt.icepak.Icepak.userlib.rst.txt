@@ -1,0 +1,6 @@
+userlib
+=======
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.userlib

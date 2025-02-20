@@ -1,0 +1,6 @@
+o\_simmodel\_manager
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_twin_builder
+
+.. autoproperty:: TwinBuilderComponents.o_simmodel_manager

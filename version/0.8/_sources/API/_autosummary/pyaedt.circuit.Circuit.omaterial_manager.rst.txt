@@ -1,0 +1,6 @@
+omaterial\_manager
+==================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.omaterial_manager

@@ -1,0 +1,6 @@
+color
+=====
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. autoproperty:: ObjClass.color

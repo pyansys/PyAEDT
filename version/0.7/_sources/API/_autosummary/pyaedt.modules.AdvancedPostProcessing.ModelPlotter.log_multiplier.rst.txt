@@ -1,0 +1,6 @@
+log\_multiplier
+===============
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.log_multiplier

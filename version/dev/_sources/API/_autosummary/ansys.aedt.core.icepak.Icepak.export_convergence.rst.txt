@@ -1,0 +1,6 @@
+export\_convergence
+===================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.export_convergence

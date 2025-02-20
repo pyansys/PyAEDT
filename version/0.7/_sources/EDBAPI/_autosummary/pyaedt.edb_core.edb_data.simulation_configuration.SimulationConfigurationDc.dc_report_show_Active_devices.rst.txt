@@ -1,0 +1,6 @@
+dc\_report\_show\_Active\_devices
+=================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_report_show_Active_devices

@@ -1,0 +1,6 @@
+import\_config
+==============
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. automethod:: Configurations.import_config

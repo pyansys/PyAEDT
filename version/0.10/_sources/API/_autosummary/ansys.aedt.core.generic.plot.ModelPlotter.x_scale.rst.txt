@@ -1,0 +1,6 @@
+x\_scale
+========
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.x_scale

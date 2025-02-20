@@ -1,0 +1,37 @@
+﻿Plane
+=====
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoclass:: Plane
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Plane.delete
+      
+      
+      Plane.set_color
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Plane.coordinate_system
+      Plane.logger
+      Plane.name
+      Plane.valid_properties
+   
+   

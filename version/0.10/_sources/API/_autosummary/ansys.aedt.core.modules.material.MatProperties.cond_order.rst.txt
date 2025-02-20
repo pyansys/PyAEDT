@@ -1,0 +1,6 @@
+cond\_order
+===========
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoattribute:: MatProperties.cond_order

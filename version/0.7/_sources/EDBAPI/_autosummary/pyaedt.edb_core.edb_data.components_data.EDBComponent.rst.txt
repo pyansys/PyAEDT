@@ -1,0 +1,72 @@
+﻿EDBComponent
+============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.components_data
+
+.. autoclass:: EDBComponent
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EDBComponent.assign_rlc_model
+      
+      
+      EDBComponent.assign_s_param_model
+      
+      
+      EDBComponent.assign_spice_model
+      
+      
+      EDBComponent.create_clearance_on_component
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EDBComponent.bounding_box
+      EDBComponent.cap_value
+      EDBComponent.center
+      EDBComponent.component_instance
+      EDBComponent.component_property
+      EDBComponent.ind_value
+      EDBComponent.is_enabled
+      EDBComponent.is_null
+      EDBComponent.is_parallel_rlc
+      EDBComponent.is_top_mounted
+      EDBComponent.layout_instance
+      EDBComponent.lower_elevation
+      EDBComponent.model_type
+      EDBComponent.netlist_model
+      EDBComponent.nets
+      EDBComponent.numpins
+      EDBComponent.part_name
+      EDBComponent.partname
+      EDBComponent.pinlist
+      EDBComponent.pins
+      EDBComponent.placement_layer
+      EDBComponent.refdes
+      EDBComponent.res_value
+      EDBComponent.rlc_values
+      EDBComponent.rotation
+      EDBComponent.s_param_model
+      EDBComponent.solder_ball_height
+      EDBComponent.solder_ball_placement
+      EDBComponent.spice_model
+      EDBComponent.top_bottom_association
+      EDBComponent.type
+      EDBComponent.upper_elevation
+      EDBComponent.value
+   
+   

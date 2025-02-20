@@ -1,0 +1,6 @@
+intrinsicVar
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.vrt_data
+
+.. autoproperty:: VRTFieldPlot.intrinsicVar

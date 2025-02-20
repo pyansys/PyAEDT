@@ -1,0 +1,6 @@
+odesign
+=======
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesEmit
+
+.. autoproperty:: EmitComponents.odesign

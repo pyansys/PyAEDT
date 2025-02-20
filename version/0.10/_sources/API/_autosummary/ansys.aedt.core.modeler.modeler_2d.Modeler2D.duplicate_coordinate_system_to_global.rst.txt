@@ -1,0 +1,6 @@
+duplicate\_coordinate\_system\_to\_global
+=========================================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.duplicate_coordinate_system_to_global

@@ -1,0 +1,43 @@
+﻿Matrix
+======
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoclass:: Matrix
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Matrix.add_operation
+      
+      
+      Matrix.create
+      
+      
+      Matrix.delete
+      
+      
+      Matrix.get_sources_for_plot
+      
+      
+      Matrix.sources
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Matrix.operations
+   
+   

@@ -1,0 +1,6 @@
+import\_ipc2581
+===============
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.import_ipc2581

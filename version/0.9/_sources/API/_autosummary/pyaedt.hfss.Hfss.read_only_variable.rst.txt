@@ -1,0 +1,6 @@
+read\_only\_variable
+====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.read_only_variable

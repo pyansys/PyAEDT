@@ -1,0 +1,6 @@
+disable\_log\_on\_file
+======================
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. automethod:: AedtLogger.disable_log_on_file

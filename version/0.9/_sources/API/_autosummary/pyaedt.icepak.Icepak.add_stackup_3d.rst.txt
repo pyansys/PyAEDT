@@ -1,0 +1,6 @@
+add\_stackup\_3d
+================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.add_stackup_3d

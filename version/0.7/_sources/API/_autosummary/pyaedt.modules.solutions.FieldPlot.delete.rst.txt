@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FieldPlot.delete

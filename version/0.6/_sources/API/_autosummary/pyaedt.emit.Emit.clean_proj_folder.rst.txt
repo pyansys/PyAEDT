@@ -1,0 +1,6 @@
+clean\_proj\_folder
+===================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.clean_proj_folder

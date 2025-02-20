@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.change_validation_settings

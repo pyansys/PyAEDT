@@ -1,0 +1,6 @@
+enable\_noise
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: Excitations.enable_noise

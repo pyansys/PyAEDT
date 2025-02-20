@@ -1,0 +1,6 @@
+get\_evaluated\_value
+=====================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.get_evaluated_value

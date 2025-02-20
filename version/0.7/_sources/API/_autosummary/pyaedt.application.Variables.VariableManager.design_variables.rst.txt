@@ -1,0 +1,6 @@
+design\_variables
+=================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: VariableManager.design_variables

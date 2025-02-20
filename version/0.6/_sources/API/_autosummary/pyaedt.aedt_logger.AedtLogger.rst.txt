@@ -1,0 +1,101 @@
+﻿AedtLogger
+==========
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. autoclass:: AedtLogger
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      AedtLogger.add_debug_message
+      
+      
+      AedtLogger.add_error_message
+      
+      
+      AedtLogger.add_file_logger
+      
+      
+      AedtLogger.add_info_message
+      
+      
+      AedtLogger.add_logger
+      
+      
+      AedtLogger.add_message
+      
+      
+      AedtLogger.add_warning_message
+      
+      
+      AedtLogger.clear_messages
+      
+      
+      AedtLogger.debug
+      
+      
+      AedtLogger.disable_desktop_log
+      
+      
+      AedtLogger.disable_log_on_file
+      
+      
+      AedtLogger.disable_stdout_log
+      
+      
+      AedtLogger.enable_desktop_log
+      
+      
+      AedtLogger.enable_log_on_file
+      
+      
+      AedtLogger.enable_stdout_log
+      
+      
+      AedtLogger.error
+      
+      
+      AedtLogger.get_messages
+      
+      
+      AedtLogger.info
+      
+      
+      AedtLogger.info_timer
+      
+      
+      AedtLogger.remove_all_project_file_logger
+      
+      
+      AedtLogger.remove_file_logger
+      
+      
+      AedtLogger.reset_timer
+      
+      
+      AedtLogger.warning
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      AedtLogger.design
+      AedtLogger.glb
+      AedtLogger.logger
+      AedtLogger.messages
+      AedtLogger.project
+   
+   

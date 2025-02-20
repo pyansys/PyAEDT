@@ -1,0 +1,89 @@
+﻿SetupSBR
+========
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. autoclass:: SetupSBR
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SetupSBR.add_mesh_link
+      
+      
+      SetupSBR.add_subrange
+      
+      
+      SetupSBR.analyze
+      
+      
+      SetupSBR.create
+      
+      
+      SetupSBR.create_report
+      
+      
+      SetupSBR.delete
+      
+      
+      SetupSBR.disable
+      
+      
+      SetupSBR.enable
+      
+      
+      SetupSBR.enable_expression_cache
+      
+      
+      SetupSBR.get_profile
+      
+      
+      SetupSBR.get_solution_data
+      
+      
+      SetupSBR.jsonalize_tree
+      
+      
+      SetupSBR.start_continue_from_previous_setup
+      
+      
+      SetupSBR.suppress_all
+      
+      
+      SetupSBR.unsuppress_all
+      
+      
+      SetupSBR.update
+      
+      
+      SetupSBR.update_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SetupSBR.available_properties
+      SetupSBR.children
+      SetupSBR.command
+      SetupSBR.default_intrinsics
+      SetupSBR.is_solved
+      SetupSBR.name
+      SetupSBR.omodule
+      SetupSBR.p_app
+      SetupSBR.properties
+      SetupSBR.props
+      SetupSBR.sweeps
+   
+   

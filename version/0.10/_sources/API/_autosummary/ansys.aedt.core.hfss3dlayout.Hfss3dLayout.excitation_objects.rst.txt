@@ -1,0 +1,6 @@
+excitation\_objects
+===================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.excitation_objects

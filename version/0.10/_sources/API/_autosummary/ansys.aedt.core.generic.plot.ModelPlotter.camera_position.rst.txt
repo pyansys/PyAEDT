@@ -1,0 +1,6 @@
+camera\_position
+================
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.camera_position

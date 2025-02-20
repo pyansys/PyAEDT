@@ -1,0 +1,6 @@
+surface\_incident\_absorptance
+==============================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: SurfaceMaterial.surface_incident_absorptance

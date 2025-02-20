@@ -1,0 +1,979 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>existing_analysis_sweeps &#8212; PyAEDT</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys_sphinx_theme.css?v=77703c5e" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+  
+    <link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../_static/documentation_options.js?v=f3b52448"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js/table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'API/_autosummary/ansys.aedt.core.icepak.Icepak.existing_analysis_sweeps';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.13';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="info" href="ansys.aedt.core.icepak.Icepak.info.html" />
+    <link rel="prev" title="existing_analysis_setups" href="ansys.aedt.core.icepak.Icepak.existing_analysis_setups.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.13.3" />
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/API/_autosummary/ansys.aedt.core.icepak.Icepak.existing_analysis_sweeps.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyAEDT - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Application.html">Application and solvers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.desktop.Desktop.html">Desktop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.hfss.Hfss.html">Hfss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.q3d.Q3d.html">Q3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.q3d.Q2d.html">Q2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.maxwell.Maxwell2d.html">Maxwell2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.maxwell.Maxwell3d.html">Maxwell3d</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.html">Icepak</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.activate_variable_optimization.html">activate_variable_optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.activate_variable_sensitivity.html">activate_variable_sensitivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.activate_variable_statistical.html">activate_variable_statistical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.activate_variable_tuning.html">activate_variable_tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.add_error_message.html">add_error_message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.add_from_toolkit.html">add_from_toolkit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.add_info_message.html">add_info_message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.add_stackup_3d.html">add_stackup_3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.add_warning_message.html">add_warning_message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.analyze.html">analyze</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.analyze_setup.html">analyze_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.archive_project.html">archive_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_2way_coupling.html">assign_2way_coupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_adiabatic_plate.html">assign_adiabatic_plate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_block_from_sherlock_file.html">assign_block_from_sherlock_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_blower_type1.html">assign_blower_type1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_blower_type2.html">assign_blower_type2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_conducting_plate.html">assign_conducting_plate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_conducting_plate_with_conductance.html">assign_conducting_plate_with_conductance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_conducting_plate_with_impedance.html">assign_conducting_plate_with_impedance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_conducting_plate_with_resistance.html">assign_conducting_plate_with_resistance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_conducting_plate_with_thickness.html">assign_conducting_plate_with_thickness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_device_resistance.html">assign_device_resistance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_em_losses.html">assign_em_losses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_free_opening.html">assign_free_opening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_grille.html">assign_grille</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_hollow_block.html">assign_hollow_block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_loss_curve_resistance.html">assign_loss_curve_resistance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_mass_flow_free_opening.html">assign_mass_flow_free_opening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_material.html">assign_material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_openings.html">assign_openings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_point_monitor.html">assign_point_monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_point_monitor_in_object.html">assign_point_monitor_in_object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_power_law_resistance.html">assign_power_law_resistance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_pressure_free_opening.html">assign_pressure_free_opening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_priority_on_intersections.html">assign_priority_on_intersections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_recirculation_opening.html">assign_recirculation_opening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_resistance.html">assign_resistance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_solid_block.html">assign_solid_block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_source.html">assign_source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_stationary_wall.html">assign_stationary_wall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_stationary_wall_with_heat_flux.html">assign_stationary_wall_with_heat_flux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_stationary_wall_with_htc.html">assign_stationary_wall_with_htc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_stationary_wall_with_temperature.html">assign_stationary_wall_with_temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_surface_material.html">assign_surface_material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_surface_monitor.html">assign_surface_monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_symmetry_wall.html">assign_symmetry_wall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assign_velocity_free_opening.html">assign_velocity_free_opening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.assignmaterial_from_sherlock_files.html">assignmaterial_from_sherlock_files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.autosave_disable.html">autosave_disable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.autosave_enable.html">autosave_enable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.change_automatically_use_causal_materials.html">change_automatically_use_causal_materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.change_design_settings.html">change_design_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.change_material_override.html">change_material_override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.change_property.html">change_property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.change_validation_settings.html">change_validation_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.check_beta_option_enabled.html">check_beta_option_enabled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.check_if_project_is_loaded.html">check_if_project_is_loaded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.clean_proj_folder.html">clean_proj_folder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.cleanup_solution.html">cleanup_solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.clear_linked_data.html">clear_linked_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.close_desktop.html">close_desktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.close_project.html">close_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.copyGroupFrom.html">copyGroupFrom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.copy_design_from.html">copy_design_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.copy_project.html">copy_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.copy_solid_bodies_from.html">copy_solid_bodies_from</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_dataset.html">create_dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_dataset1d_design.html">create_dataset1d_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_dataset1d_project.html">create_dataset1d_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_dataset3d.html">create_dataset3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_dataset_transient_assignment.html">create_dataset_transient_assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_exponential_transient_assignment.html">create_exponential_transient_assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_fan.html">create_fan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_ipk_3dcomponent_pcb.html">create_ipk_3dcomponent_pcb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_linear_transient_assignment.html">create_linear_transient_assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_network_blocks.html">create_network_blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_network_object.html">create_network_object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_new_project.html">create_new_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_output_variable.html">create_output_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_parametric_fin_heat_sink.html">create_parametric_fin_heat_sink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_parametric_heatsink_on_face.html">create_parametric_heatsink_on_face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_pcb_from_3dlayout.html">create_pcb_from_3dlayout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_powerlaw_transient_assignment.html">create_powerlaw_transient_assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_resistor_network_from_matrix.html">create_resistor_network_from_matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_setup.html">create_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_sinusoidal_transient_assignment.html">create_sinusoidal_transient_assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_source_blocks_from_list.html">create_source_blocks_from_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_square_wave_transient_assignment.html">create_square_wave_transient_assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_temp_dep_assignment.html">create_temp_dep_assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.create_two_resistor_network_block.html">create_two_resistor_network_block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.dataset_exists.html">dataset_exists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.deactivate_variable_optimization.html">deactivate_variable_optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.deactivate_variable_sensitivity.html">deactivate_variable_sensitivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.deactivate_variable_statistical.html">deactivate_variable_statistical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.deactivate_variable_tuning.html">deactivate_variable_tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.delete_design.html">delete_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.delete_em_losses.html">delete_em_losses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.delete_pcb_component.html">delete_pcb_component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.delete_project.html">delete_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.delete_separator.html">delete_separator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.delete_setup.html">delete_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.delete_unused_variables.html">delete_unused_variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.delete_variable.html">delete_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.design_variation.html">design_variation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.duplicate_design.html">duplicate_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.edit_design_settings.html">edit_design_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.edit_notes.html">edit_notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.edit_setup.html">edit_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.eval_surface_quantity_from_field_summary.html">eval_surface_quantity_from_field_summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.eval_volume_quantity_from_field_summary.html">eval_volume_quantity_from_field_summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.evaluate_expression.html">evaluate_expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.export_3d_model.html">export_3d_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.export_convergence.html">export_convergence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.export_design_preview_to_jpg.html">export_design_preview_to_jpg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.export_mesh_stats.html">export_mesh_stats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.export_parametric_results.html">export_parametric_results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.export_profile.html">export_profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.export_results.html">export_results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.export_rl_matrix.html">export_rl_matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.export_summary.html">export_summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.export_variables_to_csv.html">export_variables_to_csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.find_top.html">find_top</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.flatten_3d_components.html">flatten_3d_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.generate_fluent_mesh.html">generate_fluent_mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.generate_temp_project_directory.html">generate_temp_project_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.generate_unique_setup_name.html">generate_unique_setup_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_all_conductors_names.html">get_all_conductors_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_all_dielectrics_names.html">get_all_dielectrics_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_all_source_modes.html">get_all_source_modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_all_sources.html">get_all_sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_components3d_vars.html">get_components3d_vars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_dxf_layers.html">get_dxf_layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_evaluated_value.html">get_evaluated_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_fans_operating_point.html">get_fans_operating_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_gas_objects.html">get_gas_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_link_data.html">get_link_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_liquid_objects.html">get_liquid_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_module.html">get_module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_monitor_data.html">get_monitor_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_nominal_variation.html">get_nominal_variation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_object_material_properties.html">get_object_material_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_oo_name.html">get_oo_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_oo_object.html">get_oo_object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_oo_properties.html">get_oo_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_oo_property_value.html">get_oo_property_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_output_variable.html">get_output_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_profile.html">get_profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_property_value.html">get_property_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_radiation_settings.html">get_radiation_settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_registry_key_int.html">get_registry_key_int</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_registry_key_string.html">get_registry_key_string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_setup.html">get_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_setups.html">get_setups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_sweeps.html">get_sweeps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.get_traces_for_plot.html">get_traces_for_plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.globalMeshSettings.html">globalMeshSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.hidden_variable.html">hidden_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.identify_touching_conductors.html">identify_touching_conductors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.import_3d_cad.html">import_3d_cad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.import_dataset1d.html">import_dataset1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.import_dataset3d.html">import_dataset3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.import_dxf.html">import_dxf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.import_gds_3d.html">import_gds_3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.import_idf.html">import_idf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.insert_design.html">insert_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.list_of_variations.html">list_of_variations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.load_project.html">load_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.number_with_units.html">number_with_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.plot.html">plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.read_design_data.html">read_design_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.read_only_variable.html">read_only_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.release_desktop.html">release_desktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.remove_all_unused_definitions.html">remove_all_unused_definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.rename_design.html">rename_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.save_project.html">save_project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.set_active_design.html">set_active_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.set_active_dso_config_name.html">set_active_dso_config_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.set_license_type.html">set_license_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.set_oo_property_value.html">set_oo_property_value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.set_registry_from_file.html">set_registry_from_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.set_registry_key.html">set_registry_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.set_source_context.html">set_source_context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.set_temporary_directory.html">set_temporary_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.solve_in_batch.html">solve_in_batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.stop_simulations.html">stop_simulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.submit_job.html">submit_job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.validate_simple.html">validate_simple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.value_with_units.html">value_with_units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.Position.html">Position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.SimulationSetupTypes.html">SimulationSetupTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.SolutionTypes.html">SolutionTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.active_setup.html">active_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.aedt_version_id.html">aedt_version_id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.are_there_simulations_running.html">are_there_simulations_running</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.available_variations.html">available_variations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.boundaries.html">boundaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.boundaries_by_type.html">boundaries_by_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.components3d.html">components3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.configurations.html">configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.default_solution_type.html">default_solution_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.design_datasets.html">design_datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.design_list.html">design_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.design_name.html">design_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.design_properties.html">design_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.design_type.html">design_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.desktop_class.html">desktop_class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.desktop_install_dir.html">desktop_install_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.excitation_objects.html">excitation_objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.excitations.html">excitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.excitations_by_type.html">excitations_by_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.existing_analysis_setups.html">existing_analysis_setups</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">existing_analysis_sweeps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.info.html">info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.layouteditor.html">layouteditor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.library_list.html">library_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.lock_file.html">lock_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.logger.html">logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.materials.html">materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.mesh.html">mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.modeler.html">modeler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.monitor.html">monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.native_component_names.html">native_component_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.native_components.html">native_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.nominal_adaptive.html">nominal_adaptive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.nominal_sweep.html">nominal_sweep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.o_component_manager.html">o_component_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.o_maxwell_parameters.html">o_maxwell_parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.o_model_manager.html">o_model_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.o_symbol_manager.html">o_symbol_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.oanalysis.html">oanalysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.oboundary.html">oboundary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.odefinition_manager.html">odefinition_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.odesign.html">odesign</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.odesktop.html">odesktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.oeditor.html">oeditor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.oexcitation.html">oexcitation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.ofieldsreporter.html">ofieldsreporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.oimport_export.html">oimport_export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.omaterial_manager.html">omaterial_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.omatrix.html">omatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.omeshmodule.html">omeshmodule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.omodelsetup.html">omodelsetup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.omonitor.html">omonitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.onetwork_data_explorer.html">onetwork_data_explorer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.ooptimetrics.html">ooptimetrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.ooutput_variable.html">ooutput_variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.opadstackmanager.html">opadstackmanager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.oproject.html">oproject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.optimizations.html">optimizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.oradfield.html">oradfield</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.oreportsetup.html">oreportsetup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.osolution.html">osolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.output_variables.html">output_variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.parametrics.html">parametrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.personallib.html">personallib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.ports.html">ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.post.html">post</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.problem_type.html">problem_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.project_datasets.html">project_datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.project_file.html">project_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.project_list.html">project_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.project_name.html">project_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.project_path.html">project_path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.project_properties.html">project_properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.project_time_stamp.html">project_time_stamp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.project_timestamp_changed.html">project_timestamp_changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.pyaedt_dir.html">pyaedt_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.results_directory.html">results_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.settings.html">settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.setup_names.html">setup_names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.setups.html">setups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.solution_type.html">solution_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.src_dir.html">src_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.syslib.html">syslib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.temp_directory.html">temp_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.toolkit_directory.html">toolkit_directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.userlib.html">userlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.valid_design.html">valid_design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.variable_manager.html">variable_manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansys.aedt.core.icepak.Icepak.working_directory.html">working_directory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.hfss3dlayout.Hfss3dLayout.html">Hfss3dLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.mechanical.Mechanical.html">Mechanical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.rmxprt.Rmxprt.html">Rmxprt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.circuit.Circuit.html">Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.maxwellcircuit.MaxwellCircuit.html">MaxwellCircuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.emit.Emit.html">Emit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.twinbuilder.TwinBuilder.html">TwinBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.aedt.core.filtersolutions.FilterSolutions.html">FilterSolutions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../MaterialManagement.html">Material and stackup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3D.html">3D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives2D.html">2D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitive_Objects.html">Primitives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3DLayout.html">Modeler in  HFSS 3D Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesCircuit.html">Modeler and components Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boundaries.html">Boundary objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mesh.html">Mesh operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup.html">Setup</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DesktopMessenger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optimetrics.html">Optimetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Configuration.html">Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SetupTemplates.html">Setup templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CableModeling.html">Cable modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FilterSolutions.html">Filter design</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../Application.html" class="nav-link">Application and solvers</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="ansys.aedt.core.icepak.Icepak.html" class="nav-link">Icepak</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">existing_analysis_sweeps</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="existing-analysis-sweeps">
+<h1>existing_analysis_sweeps<a class="headerlink" href="#existing-analysis-sweeps" title="Link to this heading">#</a></h1>
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.aedt.core.icepak.Icepak.existing_analysis_sweeps">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Icepak.</span></span><span class="sig-name descname"><span class="pre">existing_analysis_sweeps</span></span><a class="headerlink" href="#ansys.aedt.core.icepak.Icepak.existing_analysis_sweeps" title="Link to this definition">#</a></dt>
+<dd><p>Existing analysis setups.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#list" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> <code class="xref py py-obj docutils literal notranslate"><span class="pre">of</span></code> <a class="reference external" href="https://docs.python.org/3.11/library/stdtypes.html#str" title="(in Python v3.11)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></dt><dd><p>List of all analysis setups in the design.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.aedt.core.icepak.Icepak.existing_analysis_sweeps"><code class="docutils literal notranslate"><span class="pre">existing_analysis_sweeps</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/API/_autosummary/ansys.aedt.core.icepak.Icepak.existing_analysis_sweeps.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/API/_autosummary/ansys.aedt.core.icepak.Icepak.existing_analysis_sweeps.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+<link rel="stylesheet" href="../../_static/css/fuse-search.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"ignoreLocation": true, "keys": ["title", "text"], "limit": 10, "limite": 10, "minMatchCharLength": 2, "threshold": 0.5}');
+const SEARCH_FILE = "../../_static/search.json";
+</script>
+
+
+<script src="../../_static/js/search.js"></script>
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.2.6. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

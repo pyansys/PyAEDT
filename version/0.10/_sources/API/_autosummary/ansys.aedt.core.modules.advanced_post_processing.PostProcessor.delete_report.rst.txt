@@ -1,0 +1,6 @@
+delete\_report
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. automethod:: PostProcessor.delete_report

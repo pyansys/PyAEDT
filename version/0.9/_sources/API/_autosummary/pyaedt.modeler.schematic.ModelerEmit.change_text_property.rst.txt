@@ -1,0 +1,6 @@
+change\_text\_property
+======================
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. automethod:: ModelerEmit.change_text_property

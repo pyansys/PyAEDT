@@ -1,0 +1,6 @@
+steal\_focus\_oneditor
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.steal_focus_oneditor

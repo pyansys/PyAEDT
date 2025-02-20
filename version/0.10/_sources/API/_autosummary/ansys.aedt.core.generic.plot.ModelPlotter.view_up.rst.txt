@@ -1,0 +1,6 @@
+view\_up
+========
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.view_up

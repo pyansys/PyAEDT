@@ -1,0 +1,6 @@
+delete\_primitives
+==================
+
+.. currentmodule:: pyaedt.edb_core.layout
+
+.. automethod:: EdbLayout.delete_primitives

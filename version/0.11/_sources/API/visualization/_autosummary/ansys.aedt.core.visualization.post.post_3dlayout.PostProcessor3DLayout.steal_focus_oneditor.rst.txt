@@ -1,0 +1,6 @@
+steal\_focus\_oneditor
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.steal_focus_oneditor

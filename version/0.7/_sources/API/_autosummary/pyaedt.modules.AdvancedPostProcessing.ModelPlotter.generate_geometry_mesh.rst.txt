@@ -1,0 +1,6 @@
+generate\_geometry\_mesh
+========================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: ModelPlotter.generate_geometry_mesh

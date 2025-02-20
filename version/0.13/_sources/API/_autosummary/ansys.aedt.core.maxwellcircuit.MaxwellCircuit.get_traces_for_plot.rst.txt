@@ -1,0 +1,6 @@
+get\_traces\_for\_plot
+======================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.get_traces_for_plot

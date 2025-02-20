@@ -1,0 +1,6 @@
+available\_properties
+=====================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.modeler
+
+.. autoproperty:: CoordinateSystem.available_properties

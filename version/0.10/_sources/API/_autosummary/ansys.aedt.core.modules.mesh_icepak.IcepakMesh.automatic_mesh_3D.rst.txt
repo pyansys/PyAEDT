@@ -1,0 +1,6 @@
+automatic\_mesh\_3D
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. automethod:: IcepakMesh.automatic_mesh_3D

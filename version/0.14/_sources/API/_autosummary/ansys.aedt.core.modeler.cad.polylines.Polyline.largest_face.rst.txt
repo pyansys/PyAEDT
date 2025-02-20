@@ -1,0 +1,6 @@
+largest\_face
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. automethod:: Polyline.largest_face

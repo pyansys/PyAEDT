@@ -1,0 +1,6 @@
+omodelsetup
+===========
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.omodelsetup

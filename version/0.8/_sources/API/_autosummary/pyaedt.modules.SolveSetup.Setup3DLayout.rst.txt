@@ -1,0 +1,73 @@
+﻿Setup3DLayout
+=============
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoclass:: Setup3DLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Setup3DLayout.add_sweep
+      
+      
+      Setup3DLayout.analyze
+      
+      
+      Setup3DLayout.create
+      
+      
+      Setup3DLayout.create_report
+      
+      
+      Setup3DLayout.disable
+      
+      
+      Setup3DLayout.enable
+      
+      
+      Setup3DLayout.export_to_hfss
+      
+      
+      Setup3DLayout.export_to_json
+      
+      
+      Setup3DLayout.export_to_q3d
+      
+      
+      Setup3DLayout.get_solution_data
+      
+      
+      Setup3DLayout.get_sweep
+      
+      
+      Setup3DLayout.import_from_json
+      
+      
+      Setup3DLayout.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Setup3DLayout.available_properties
+      Setup3DLayout.default_intrinsics
+      Setup3DLayout.is_solved
+      Setup3DLayout.name
+      Setup3DLayout.omodule
+      Setup3DLayout.p_app
+      Setup3DLayout.solver_type
+   
+   

@@ -1,0 +1,6 @@
+apply\_style
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. automethod:: ReportPlotter.apply_style

@@ -1,0 +1,6 @@
+set\_source\_context
+====================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.set_source_context

@@ -1,0 +1,6 @@
+cutout
+======
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.cutout

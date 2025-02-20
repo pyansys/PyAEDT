@@ -1,0 +1,6 @@
+duplicate\_along\_line
+======================
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.duplicate_along_line

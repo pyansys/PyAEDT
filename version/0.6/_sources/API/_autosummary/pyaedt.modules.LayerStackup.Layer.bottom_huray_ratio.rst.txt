@@ -1,0 +1,6 @@
+bottom\_huray\_ratio
+====================
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.bottom_huray_ratio

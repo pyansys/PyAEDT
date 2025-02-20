@@ -1,0 +1,6 @@
+assign\_openings
+================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_openings

@@ -1,0 +1,487 @@
+﻿Mechanical
+==========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoclass:: Mechanical
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Mechanical.activate_variable_optimization
+      
+      
+      Mechanical.activate_variable_sensitivity
+      
+      
+      Mechanical.activate_variable_statistical
+      
+      
+      Mechanical.activate_variable_tuning
+      
+      
+      Mechanical.add_error_message
+      
+      
+      Mechanical.add_from_toolkit
+      
+      
+      Mechanical.add_info_message
+      
+      
+      Mechanical.add_stackup_3d
+      
+      
+      Mechanical.add_warning_message
+      
+      
+      Mechanical.analyze
+      
+      
+      Mechanical.analyze_setup
+      
+      
+      Mechanical.archive_project
+      
+      
+      Mechanical.assign_em_losses
+      
+      
+      Mechanical.assign_fixed_support
+      
+      
+      Mechanical.assign_frictionless_support
+      
+      
+      Mechanical.assign_heat_flux
+      
+      
+      Mechanical.assign_heat_generation
+      
+      
+      Mechanical.assign_material
+      
+      
+      Mechanical.assign_thermal_map
+      
+      
+      Mechanical.assign_uniform_convection
+      
+      
+      Mechanical.assign_uniform_temperature
+      
+      
+      Mechanical.assignmaterial_from_sherlock_files
+      
+      
+      Mechanical.autosave_disable
+      
+      
+      Mechanical.autosave_enable
+      
+      
+      Mechanical.change_automatically_use_causal_materials
+      
+      
+      Mechanical.change_design_settings
+      
+      
+      Mechanical.change_material_override
+      
+      
+      Mechanical.change_property
+      
+      
+      Mechanical.change_validation_settings
+      
+      
+      Mechanical.check_beta_option_enabled
+      
+      
+      Mechanical.check_if_project_is_loaded
+      
+      
+      Mechanical.clean_proj_folder
+      
+      
+      Mechanical.cleanup_solution
+      
+      
+      Mechanical.close_desktop
+      
+      
+      Mechanical.close_project
+      
+      
+      Mechanical.copy_design_from
+      
+      
+      Mechanical.copy_project
+      
+      
+      Mechanical.copy_solid_bodies_from
+      
+      
+      Mechanical.create_dataset
+      
+      
+      Mechanical.create_dataset1d_design
+      
+      
+      Mechanical.create_dataset1d_project
+      
+      
+      Mechanical.create_dataset3d
+      
+      
+      Mechanical.create_new_project
+      
+      
+      Mechanical.create_output_variable
+      
+      
+      Mechanical.create_setup
+      
+      
+      Mechanical.dataset_exists
+      
+      
+      Mechanical.deactivate_variable_optimization
+      
+      
+      Mechanical.deactivate_variable_sensitivity
+      
+      
+      Mechanical.deactivate_variable_statistical
+      
+      
+      Mechanical.deactivate_variable_tuning
+      
+      
+      Mechanical.delete_design
+      
+      
+      Mechanical.delete_project
+      
+      
+      Mechanical.delete_separator
+      
+      
+      Mechanical.delete_setup
+      
+      
+      Mechanical.delete_unused_variables
+      
+      
+      Mechanical.delete_variable
+      
+      
+      Mechanical.design_variation
+      
+      
+      Mechanical.duplicate_design
+      
+      
+      Mechanical.edit_setup
+      
+      
+      Mechanical.evaluate_expression
+      
+      
+      Mechanical.export_3d_model
+      
+      
+      Mechanical.export_convergence
+      
+      
+      Mechanical.export_design_preview_to_jpg
+      
+      
+      Mechanical.export_mesh_stats
+      
+      
+      Mechanical.export_parametric_results
+      
+      
+      Mechanical.export_profile
+      
+      
+      Mechanical.export_results
+      
+      
+      Mechanical.export_rl_matrix
+      
+      
+      Mechanical.export_variables_to_csv
+      
+      
+      Mechanical.flatten_3d_components
+      
+      
+      Mechanical.generate_temp_project_directory
+      
+      
+      Mechanical.generate_unique_setup_name
+      
+      
+      Mechanical.get_all_conductors_names
+      
+      
+      Mechanical.get_all_dielectrics_names
+      
+      
+      Mechanical.get_all_sources
+      
+      
+      Mechanical.get_components3d_vars
+      
+      
+      Mechanical.get_dxf_layers
+      
+      
+      Mechanical.get_evaluated_value
+      
+      
+      Mechanical.get_module
+      
+      
+      Mechanical.get_monitor_data
+      
+      
+      Mechanical.get_nominal_variation
+      
+      
+      Mechanical.get_object_material_properties
+      
+      
+      Mechanical.get_oo_name
+      
+      
+      Mechanical.get_oo_object
+      
+      
+      Mechanical.get_oo_properties
+      
+      
+      Mechanical.get_oo_property_value
+      
+      
+      Mechanical.get_output_variable
+      
+      
+      Mechanical.get_property_value
+      
+      
+      Mechanical.get_registry_key_int
+      
+      
+      Mechanical.get_registry_key_string
+      
+      
+      Mechanical.get_setup
+      
+      
+      Mechanical.get_setups
+      
+      
+      Mechanical.get_sweeps
+      
+      
+      Mechanical.get_traces_for_plot
+      
+      
+      Mechanical.hidden_variable
+      
+      
+      Mechanical.identify_touching_conductors
+      
+      
+      Mechanical.import_dataset1d
+      
+      
+      Mechanical.import_dataset3d
+      
+      
+      Mechanical.import_dxf
+      
+      
+      Mechanical.import_gds_3d
+      
+      
+      Mechanical.insert_design
+      
+      
+      Mechanical.list_of_variations
+      
+      
+      Mechanical.load_project
+      
+      
+      Mechanical.number_with_units
+      
+      
+      Mechanical.plot
+      
+      
+      Mechanical.read_design_data
+      
+      
+      Mechanical.read_only_variable
+      
+      
+      Mechanical.release_desktop
+      
+      
+      Mechanical.remove_all_unused_definitions
+      
+      
+      Mechanical.rename_design
+      
+      
+      Mechanical.save_project
+      
+      
+      Mechanical.set_active_design
+      
+      
+      Mechanical.set_active_dso_config_name
+      
+      
+      Mechanical.set_license_type
+      
+      
+      Mechanical.set_oo_property_value
+      
+      
+      Mechanical.set_registry_from_file
+      
+      
+      Mechanical.set_registry_key
+      
+      
+      Mechanical.set_source_context
+      
+      
+      Mechanical.set_temporary_directory
+      
+      
+      Mechanical.solve_in_batch
+      
+      
+      Mechanical.stop_simulations
+      
+      
+      Mechanical.submit_job
+      
+      
+      Mechanical.validate_simple
+      
+      
+      Mechanical.value_with_units
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Mechanical.Position
+      Mechanical.SimulationSetupTypes
+      Mechanical.SolutionTypes
+      Mechanical.active_setup
+      Mechanical.aedt_version_id
+      Mechanical.are_there_simulations_running
+      Mechanical.available_variations
+      Mechanical.boundaries
+      Mechanical.boundaries_by_type
+      Mechanical.components3d
+      Mechanical.configurations
+      Mechanical.default_solution_type
+      Mechanical.design_datasets
+      Mechanical.design_list
+      Mechanical.design_name
+      Mechanical.design_properties
+      Mechanical.design_type
+      Mechanical.desktop_class
+      Mechanical.desktop_install_dir
+      Mechanical.excitation_objects
+      Mechanical.excitations
+      Mechanical.excitations_by_type
+      Mechanical.existing_analysis_setups
+      Mechanical.existing_analysis_sweeps
+      Mechanical.info
+      Mechanical.layouteditor
+      Mechanical.library_list
+      Mechanical.lock_file
+      Mechanical.logger
+      Mechanical.materials
+      Mechanical.mesh
+      Mechanical.modeler
+      Mechanical.native_components
+      Mechanical.nominal_adaptive
+      Mechanical.nominal_sweep
+      Mechanical.o_component_manager
+      Mechanical.o_maxwell_parameters
+      Mechanical.o_model_manager
+      Mechanical.o_symbol_manager
+      Mechanical.oanalysis
+      Mechanical.oboundary
+      Mechanical.odefinition_manager
+      Mechanical.odesign
+      Mechanical.odesktop
+      Mechanical.oeditor
+      Mechanical.oexcitation
+      Mechanical.ofieldsreporter
+      Mechanical.oimport_export
+      Mechanical.omaterial_manager
+      Mechanical.omatrix
+      Mechanical.omeshmodule
+      Mechanical.omodelsetup
+      Mechanical.omonitor
+      Mechanical.ooptimetrics
+      Mechanical.ooutput_variable
+      Mechanical.opadstackmanager
+      Mechanical.oproject
+      Mechanical.optimizations
+      Mechanical.oradfield
+      Mechanical.oreportsetup
+      Mechanical.osolution
+      Mechanical.output_variables
+      Mechanical.parametrics
+      Mechanical.personallib
+      Mechanical.ports
+      Mechanical.post
+      Mechanical.project_datasets
+      Mechanical.project_file
+      Mechanical.project_list
+      Mechanical.project_name
+      Mechanical.project_path
+      Mechanical.project_properties
+      Mechanical.project_time_stamp
+      Mechanical.project_timestamp_changed
+      Mechanical.pyaedt_dir
+      Mechanical.results_directory
+      Mechanical.settings
+      Mechanical.setup_names
+      Mechanical.setups
+      Mechanical.solution_type
+      Mechanical.src_dir
+      Mechanical.syslib
+      Mechanical.temp_directory
+      Mechanical.toolkit_directory
+      Mechanical.userlib
+      Mechanical.valid_design
+      Mechanical.variable_manager
+      Mechanical.working_directory
+   
+   

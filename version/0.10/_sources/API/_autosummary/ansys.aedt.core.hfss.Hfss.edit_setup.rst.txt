@@ -1,0 +1,6 @@
+edit\_setup
+===========
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.edit_setup

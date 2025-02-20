@@ -1,0 +1,6 @@
+get\_far\_field\_data
+=====================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.get_far_field_data

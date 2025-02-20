@@ -1,0 +1,6 @@
+delete\_pcb\_component
+======================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.delete_pcb_component

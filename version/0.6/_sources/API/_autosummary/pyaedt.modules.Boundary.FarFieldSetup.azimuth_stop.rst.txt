@@ -1,0 +1,6 @@
+azimuth\_stop
+=============
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: FarFieldSetup.azimuth_stop

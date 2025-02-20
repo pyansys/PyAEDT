@@ -1,0 +1,6 @@
+get\_oo\_object
+===============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.get_oo_object

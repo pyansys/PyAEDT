@@ -1,0 +1,6 @@
+steal\_focus\_oneditor
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.steal_focus_oneditor

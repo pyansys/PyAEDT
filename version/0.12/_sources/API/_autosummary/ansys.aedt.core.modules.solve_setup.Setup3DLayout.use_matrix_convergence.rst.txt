@@ -1,0 +1,6 @@
+use\_matrix\_convergence
+========================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: Setup3DLayout.use_matrix_convergence

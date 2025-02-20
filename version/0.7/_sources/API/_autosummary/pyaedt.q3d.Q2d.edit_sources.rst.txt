@@ -1,0 +1,6 @@
+edit\_sources
+=============
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.edit_sources

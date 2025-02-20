@@ -1,0 +1,6 @@
+plot
+====
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: ModelPlotter.plot

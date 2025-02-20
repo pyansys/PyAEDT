@@ -1,0 +1,45 @@
+﻿AdaptiveSettings
+================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: AdaptiveSettings
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      AdaptiveSettings.add_adaptive_frequency_data
+      
+      
+      AdaptiveSettings.add_broadband_adaptive_frequency_data
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      AdaptiveSettings.adapt_type
+      AdaptiveSettings.adaptive_frequency_data_list
+      AdaptiveSettings.adaptive_settings
+      AdaptiveSettings.basic
+      AdaptiveSettings.do_adaptive
+      AdaptiveSettings.max_refine_per_pass
+      AdaptiveSettings.max_refinement
+      AdaptiveSettings.min_passes
+      AdaptiveSettings.save_fields
+      AdaptiveSettings.save_rad_field_only
+      AdaptiveSettings.use_convergence_matrix
+      AdaptiveSettings.use_max_refinement
+   
+   

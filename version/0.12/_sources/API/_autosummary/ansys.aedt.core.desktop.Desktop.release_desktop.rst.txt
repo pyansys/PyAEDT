@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. automethod:: Desktop.release_desktop

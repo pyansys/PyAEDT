@@ -1,0 +1,6 @@
+delete\_separator
+=================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.delete_separator

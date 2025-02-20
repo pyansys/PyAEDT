@@ -1,0 +1,6 @@
+l\_lead\_inductor
+=================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_nodes_and_leads
+
+.. autoproperty:: LumpedNodesandLeads.l_lead_inductor

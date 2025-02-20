@@ -1,0 +1,6 @@
+quaternion\_to\_euler\_zxz
+==========================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.quaternion_to_euler_zxz

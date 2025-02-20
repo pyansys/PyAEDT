@@ -1,0 +1,6 @@
+create\_npn
+===========
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_npn

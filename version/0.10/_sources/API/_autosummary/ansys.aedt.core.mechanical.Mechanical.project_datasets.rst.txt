@@ -1,0 +1,6 @@
+project\_datasets
+=================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.project_datasets

@@ -1,0 +1,6 @@
+add\_note
+=========
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: FarField.add_note

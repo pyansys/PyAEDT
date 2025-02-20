@@ -1,0 +1,6 @@
+definition\_name
+================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: NativeComponentPCB.definition_name

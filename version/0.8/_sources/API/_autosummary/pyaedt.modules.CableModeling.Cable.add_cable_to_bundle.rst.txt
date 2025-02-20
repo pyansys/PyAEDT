@@ -1,0 +1,6 @@
+add\_cable\_to\_bundle
+======================
+
+.. currentmodule:: pyaedt.modules.CableModeling
+
+.. automethod:: Cable.add_cable_to_bundle

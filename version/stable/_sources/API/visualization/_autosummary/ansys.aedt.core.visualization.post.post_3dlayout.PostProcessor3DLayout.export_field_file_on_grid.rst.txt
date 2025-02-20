@@ -1,0 +1,6 @@
+export\_field\_file\_on\_grid
+=============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.export_field_file_on_grid

@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.delete_project

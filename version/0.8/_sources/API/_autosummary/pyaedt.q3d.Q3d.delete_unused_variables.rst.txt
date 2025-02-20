@@ -1,0 +1,6 @@
+delete\_unused\_variables
+=========================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.delete_unused_variables

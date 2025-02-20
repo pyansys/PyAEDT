@@ -1,0 +1,6 @@
+padstack\_definition
+====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadstackInstance.padstack_definition

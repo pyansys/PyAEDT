@@ -1,0 +1,6 @@
+add\_material\_sweep
+====================
+
+.. currentmodule:: pyaedt.modules.MaterialLib
+
+.. automethod:: Materials.add_material_sweep

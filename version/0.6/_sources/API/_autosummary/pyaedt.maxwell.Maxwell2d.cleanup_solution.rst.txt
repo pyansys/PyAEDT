@@ -1,0 +1,6 @@
+cleanup\_solution
+=================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.cleanup_solution

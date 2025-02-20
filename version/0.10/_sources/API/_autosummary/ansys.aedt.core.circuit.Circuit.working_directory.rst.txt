@@ -1,0 +1,6 @@
+working\_directory
+==================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.working_directory

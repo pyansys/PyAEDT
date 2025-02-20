@@ -1,0 +1,6 @@
+duplicate\_design
+=================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.duplicate_design

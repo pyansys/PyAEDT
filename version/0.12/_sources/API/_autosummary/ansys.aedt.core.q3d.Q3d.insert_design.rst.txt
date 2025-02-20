@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.insert_design

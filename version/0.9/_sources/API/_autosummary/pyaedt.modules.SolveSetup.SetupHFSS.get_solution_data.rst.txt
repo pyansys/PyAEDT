@@ -1,0 +1,6 @@
+get\_solution\_data
+===================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSS.get_solution_data

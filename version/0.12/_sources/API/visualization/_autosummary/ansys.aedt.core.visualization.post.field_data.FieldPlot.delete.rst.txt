@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. automethod:: FieldPlot.delete

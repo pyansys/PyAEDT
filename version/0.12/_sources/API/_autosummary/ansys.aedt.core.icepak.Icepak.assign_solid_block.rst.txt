@@ -1,0 +1,6 @@
+assign\_solid\_block
+====================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.assign_solid_block

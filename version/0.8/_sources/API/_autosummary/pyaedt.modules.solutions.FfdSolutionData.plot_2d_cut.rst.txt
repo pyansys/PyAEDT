@@ -1,0 +1,6 @@
+plot\_2d\_cut
+=============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FfdSolutionData.plot_2d_cut

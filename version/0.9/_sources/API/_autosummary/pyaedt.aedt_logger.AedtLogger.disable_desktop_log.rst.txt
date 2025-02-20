@@ -1,0 +1,6 @@
+disable\_desktop\_log
+=====================
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. automethod:: AedtLogger.disable_desktop_log

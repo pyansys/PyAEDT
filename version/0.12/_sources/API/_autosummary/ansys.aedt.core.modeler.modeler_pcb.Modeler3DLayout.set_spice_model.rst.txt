@@ -1,0 +1,6 @@
+set\_spice\_model
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. automethod:: Modeler3DLayout.set_spice_model

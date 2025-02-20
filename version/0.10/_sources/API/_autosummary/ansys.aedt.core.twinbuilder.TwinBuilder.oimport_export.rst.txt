@@ -1,0 +1,6 @@
+oimport\_export
+===============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.oimport_export

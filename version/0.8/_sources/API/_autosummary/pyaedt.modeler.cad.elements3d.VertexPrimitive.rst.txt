@@ -1,0 +1,34 @@
+﻿VertexPrimitive
+===============
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoclass:: VertexPrimitive
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      VertexPrimitive.chamfer
+      
+      
+      VertexPrimitive.fillet
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      VertexPrimitive.position
+   
+   

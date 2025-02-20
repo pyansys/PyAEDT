@@ -1,0 +1,6 @@
+get\_edge\_midpoint
+===================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_edge_midpoint

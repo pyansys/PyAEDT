@@ -1,0 +1,6 @@
+assign\_heat\_flux
+==================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.assign_heat_flux

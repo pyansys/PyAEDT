@@ -1,0 +1,6 @@
+wrap\_sheet
+===========
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.wrap_sheet

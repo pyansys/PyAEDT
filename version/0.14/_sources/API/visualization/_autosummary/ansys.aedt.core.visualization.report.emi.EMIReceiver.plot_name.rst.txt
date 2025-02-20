@@ -1,0 +1,6 @@
+plot\_name
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.emi
+
+.. autoproperty:: EMIReceiver.plot_name

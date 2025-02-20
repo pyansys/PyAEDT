@@ -1,0 +1,6 @@
+include\_reverse\_transfer\_s12\_enabled
+========================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.include_reverse_transfer_s12_enabled

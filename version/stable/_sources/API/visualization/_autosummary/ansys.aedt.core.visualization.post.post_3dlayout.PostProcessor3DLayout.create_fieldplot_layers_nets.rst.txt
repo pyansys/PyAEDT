@@ -1,0 +1,6 @@
+create\_fieldplot\_layers\_nets
+===============================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.create_fieldplot_layers_nets

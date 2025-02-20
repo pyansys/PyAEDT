@@ -1,0 +1,127 @@
+﻿SetupHFSS
+=========
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. autoclass:: SetupHFSS
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SetupHFSS.add_derivatives
+      
+      
+      SetupHFSS.add_mesh_link
+      
+      
+      SetupHFSS.add_sweep
+      
+      
+      SetupHFSS.analyze
+      
+      
+      SetupHFSS.create
+      
+      
+      SetupHFSS.create_frequency_sweep
+      
+      
+      SetupHFSS.create_linear_step_sweep
+      
+      
+      SetupHFSS.create_report
+      
+      
+      SetupHFSS.create_single_point_sweep
+      
+      
+      SetupHFSS.delete
+      
+      
+      SetupHFSS.delete_sweep
+      
+      
+      SetupHFSS.disable
+      
+      
+      SetupHFSS.enable
+      
+      
+      SetupHFSS.enable_adaptive_setup_broadband
+      
+      
+      SetupHFSS.enable_adaptive_setup_multifrequency
+      
+      
+      SetupHFSS.enable_adaptive_setup_single
+      
+      
+      SetupHFSS.enable_expression_cache
+      
+      
+      SetupHFSS.get_derivative_variables
+      
+      
+      SetupHFSS.get_profile
+      
+      
+      SetupHFSS.get_solution_data
+      
+      
+      SetupHFSS.get_sweep
+      
+      
+      SetupHFSS.get_sweep_names
+      
+      
+      SetupHFSS.jsonalize_tree
+      
+      
+      SetupHFSS.set_tuning_offset
+      
+      
+      SetupHFSS.start_continue_from_previous_setup
+      
+      
+      SetupHFSS.suppress_all
+      
+      
+      SetupHFSS.unsuppress_all
+      
+      
+      SetupHFSS.update
+      
+      
+      SetupHFSS.update_property
+      
+      
+      SetupHFSS.use_matrix_convergence
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SetupHFSS.available_properties
+      SetupHFSS.command
+      SetupHFSS.default_intrinsics
+      SetupHFSS.is_solved
+      SetupHFSS.name
+      SetupHFSS.omodule
+      SetupHFSS.p_app
+      SetupHFSS.properties
+      SetupHFSS.props
+      SetupHFSS.sweeps
+   
+   

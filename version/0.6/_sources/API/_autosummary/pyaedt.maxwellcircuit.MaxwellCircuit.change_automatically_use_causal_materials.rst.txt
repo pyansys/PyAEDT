@@ -1,0 +1,6 @@
+change\_automatically\_use\_causal\_materials
+=============================================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.change_automatically_use_causal_materials

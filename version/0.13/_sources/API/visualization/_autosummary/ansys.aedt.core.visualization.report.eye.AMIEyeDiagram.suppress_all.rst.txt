@@ -1,0 +1,6 @@
+suppress\_all
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: AMIEyeDiagram.suppress_all

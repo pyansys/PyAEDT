@@ -1,0 +1,6 @@
+part\_libraries
+===============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.part_libraries

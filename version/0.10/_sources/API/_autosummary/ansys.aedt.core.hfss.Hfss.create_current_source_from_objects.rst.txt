@@ -1,0 +1,6 @@
+create\_current\_source\_from\_objects
+======================================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.create_current_source_from_objects

@@ -1,0 +1,6 @@
+native\_components
+==================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.native_components

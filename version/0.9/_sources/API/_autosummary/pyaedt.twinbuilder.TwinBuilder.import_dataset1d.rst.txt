@@ -1,0 +1,6 @@
+import\_dataset1d
+=================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.import_dataset1d

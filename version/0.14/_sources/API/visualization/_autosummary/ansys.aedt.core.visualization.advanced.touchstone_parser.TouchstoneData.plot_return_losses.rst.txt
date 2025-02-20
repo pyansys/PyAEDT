@@ -1,0 +1,6 @@
+﻿plot\_return\_losses
+====================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.touchstone_parser
+
+.. automethod:: TouchstoneData.plot_return_losses

@@ -1,0 +1,6 @@
+draw\_override
+==============
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.draw_override

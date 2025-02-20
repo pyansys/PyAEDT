@@ -1,0 +1,6 @@
+eye\_measurement\_point
+=======================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: EyeDiagram.eye_measurement_point

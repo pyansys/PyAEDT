@@ -1,0 +1,6 @@
+create\_voltage\_pwl
+====================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_voltage_pwl

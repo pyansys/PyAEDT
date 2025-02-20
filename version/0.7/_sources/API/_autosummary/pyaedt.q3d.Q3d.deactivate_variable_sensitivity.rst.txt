@@ -1,0 +1,6 @@
+deactivate\_variable\_sensitivity
+=================================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.deactivate_variable_sensitivity

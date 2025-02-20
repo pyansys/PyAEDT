@@ -1,0 +1,6 @@
+get\_next\_xtalk\_list
+======================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_next_xtalk_list

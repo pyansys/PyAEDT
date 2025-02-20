@@ -1,0 +1,6 @@
+create\_current\_pulse
+======================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_current_pulse

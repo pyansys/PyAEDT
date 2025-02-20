@@ -1,0 +1,6 @@
+export\_convergence
+===================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.export_convergence

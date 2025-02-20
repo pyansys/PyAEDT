@@ -1,0 +1,6 @@
+top\_circuit\_cells
+===================
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.top_circuit_cells

@@ -1,0 +1,6 @@
+solve\_in\_batch
+================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.solve_in_batch

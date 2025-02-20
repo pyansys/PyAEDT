@@ -1,0 +1,6 @@
+create\_circuit\_port\_on\_pin\_group
+=====================================
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. automethod:: EdbSiwave.create_circuit_port_on_pin_group

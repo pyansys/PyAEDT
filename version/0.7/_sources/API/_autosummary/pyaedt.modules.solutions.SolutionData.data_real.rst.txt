@@ -1,0 +1,6 @@
+data\_real
+==========
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.data_real

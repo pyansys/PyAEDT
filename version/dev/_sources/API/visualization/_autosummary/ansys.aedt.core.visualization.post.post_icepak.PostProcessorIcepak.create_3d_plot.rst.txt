@@ -1,0 +1,6 @@
+create\_3d\_plot
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.create_3d_plot

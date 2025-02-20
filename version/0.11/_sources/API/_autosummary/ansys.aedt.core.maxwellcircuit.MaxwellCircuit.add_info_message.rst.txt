@@ -1,0 +1,6 @@
+add\_info\_message
+==================
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.add_info_message

@@ -1,0 +1,6 @@
+via\_holes\_material
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoproperty:: NativeComponentPCB.via_holes_material

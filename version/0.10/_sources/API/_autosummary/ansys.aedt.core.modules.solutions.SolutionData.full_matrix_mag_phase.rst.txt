@@ -1,0 +1,6 @@
+full\_matrix\_mag\_phase
+========================
+
+.. currentmodule:: ansys.aedt.core.modules.solutions
+
+.. autoproperty:: SolutionData.full_matrix_mag_phase

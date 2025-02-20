@@ -1,0 +1,6 @@
+delete\_objects\_containing
+===========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.delete_objects_containing

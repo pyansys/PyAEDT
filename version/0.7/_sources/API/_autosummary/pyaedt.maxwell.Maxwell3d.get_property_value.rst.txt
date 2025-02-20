@@ -1,0 +1,6 @@
+get\_property\_value
+====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.get_property_value

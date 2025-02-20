@@ -1,0 +1,6 @@
+change\_net\_visibility
+=======================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. automethod:: Modeler3DLayout.change_net_visibility

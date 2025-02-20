@@ -1,0 +1,6 @@
+change\_clip\_plane\_position
+=============================
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. automethod:: Modeler3DLayout.change_clip_plane_position

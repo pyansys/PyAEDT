@@ -1,0 +1,6 @@
+valid\_properties
+=================
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoproperty:: Plane.valid_properties

@@ -1,0 +1,6 @@
+default\_intrinsics
+===================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. autoproperty:: SetupHFSSAuto.default_intrinsics

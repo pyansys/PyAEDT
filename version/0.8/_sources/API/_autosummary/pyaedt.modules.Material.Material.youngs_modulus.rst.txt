@@ -1,0 +1,6 @@
+youngs\_modulus
+===============
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.youngs_modulus

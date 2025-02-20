@@ -1,0 +1,6 @@
+layouteditor
+============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.layouteditor

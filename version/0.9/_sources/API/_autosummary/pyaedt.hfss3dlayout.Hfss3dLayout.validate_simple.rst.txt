@@ -1,0 +1,6 @@
+validate\_simple
+================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.validate_simple

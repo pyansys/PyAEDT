@@ -1,0 +1,6 @@
+close\_project
+==============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.close_project

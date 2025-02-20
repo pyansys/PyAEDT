@@ -1,0 +1,6 @@
+import\_parametrics
+===================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_parametrics

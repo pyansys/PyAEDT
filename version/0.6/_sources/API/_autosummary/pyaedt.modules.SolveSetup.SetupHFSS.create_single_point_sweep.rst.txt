@@ -1,0 +1,6 @@
+create\_single\_point\_sweep
+============================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSS.create_single_point_sweep

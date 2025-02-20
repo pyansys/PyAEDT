@@ -1,0 +1,6 @@
+file\_name
+==========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.parts
+
+.. autoproperty:: Antenna.file_name

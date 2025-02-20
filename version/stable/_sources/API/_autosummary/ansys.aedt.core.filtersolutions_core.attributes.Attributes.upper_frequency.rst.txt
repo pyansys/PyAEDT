@@ -1,0 +1,6 @@
+upper\_frequency
+================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.upper_frequency

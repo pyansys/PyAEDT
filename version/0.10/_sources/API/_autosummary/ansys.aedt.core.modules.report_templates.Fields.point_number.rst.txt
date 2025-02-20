@@ -1,0 +1,6 @@
+point\_number
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Fields.point_number

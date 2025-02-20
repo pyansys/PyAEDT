@@ -1,0 +1,6 @@
+get\_dxf\_layers
+================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_dxf_layers

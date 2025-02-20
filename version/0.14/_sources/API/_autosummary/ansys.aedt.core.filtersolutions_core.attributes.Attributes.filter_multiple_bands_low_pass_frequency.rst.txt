@@ -1,0 +1,6 @@
+filter\_multiple\_bands\_low\_pass\_frequency
+=============================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.filter_multiple_bands_low_pass_frequency

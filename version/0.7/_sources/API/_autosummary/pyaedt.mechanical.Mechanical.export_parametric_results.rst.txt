@@ -1,0 +1,6 @@
+export\_parametric\_results
+===========================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.export_parametric_results

@@ -1,0 +1,6 @@
+get\_output\_variable
+=====================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.get_output_variable

@@ -1,0 +1,6 @@
+rename\_report
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.rename_report

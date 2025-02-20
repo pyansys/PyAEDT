@@ -1,0 +1,6 @@
+get\_oo\_object
+===============
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.get_oo_object

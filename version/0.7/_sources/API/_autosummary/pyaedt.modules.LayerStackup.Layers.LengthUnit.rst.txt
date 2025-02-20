@@ -1,0 +1,6 @@
+LengthUnit
+==========
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layers.LengthUnit

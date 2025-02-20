@@ -1,0 +1,6 @@
+create\_subcircuit
+==================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_subcircuit

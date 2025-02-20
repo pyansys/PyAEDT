@@ -1,0 +1,6 @@
+remove\_row
+===========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.optimization_goals_table
+
+.. automethod:: OptimizationGoalsTable.remove_row

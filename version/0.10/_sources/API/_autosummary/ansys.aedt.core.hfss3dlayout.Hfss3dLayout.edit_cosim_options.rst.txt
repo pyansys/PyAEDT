@@ -1,0 +1,6 @@
+edit\_cosim\_options
+====================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.edit_cosim_options

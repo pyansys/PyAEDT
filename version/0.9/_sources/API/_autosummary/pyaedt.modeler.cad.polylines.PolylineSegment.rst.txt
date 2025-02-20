@@ -1,0 +1,15 @@
+﻿PolylineSegment
+===============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoclass:: PolylineSegment
+
+   
+
+   
+   
+
+   
+   
+   

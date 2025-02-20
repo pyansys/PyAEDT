@@ -1,0 +1,6 @@
+evaluate\_expression
+====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.evaluate_expression

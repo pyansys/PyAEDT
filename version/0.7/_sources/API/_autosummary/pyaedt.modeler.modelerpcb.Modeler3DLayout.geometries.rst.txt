@@ -1,0 +1,6 @@
+geometries
+==========
+
+.. currentmodule:: pyaedt.modeler.modelerpcb
+
+.. autoproperty:: Modeler3DLayout.geometries

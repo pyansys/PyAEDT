@@ -1,0 +1,26 @@
+﻿DcrSettings
+===========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: DcrSettings
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      DcrSettings.conduction_max_passes
+      DcrSettings.conduction_min_converged_passes
+      DcrSettings.conduction_min_passes
+      DcrSettings.conduction_per_error
+      DcrSettings.conduction_per_refine
+   
+   

@@ -1,0 +1,6 @@
+variable\_manager
+=================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.variable_manager

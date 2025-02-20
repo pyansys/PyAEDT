@@ -1,0 +1,6 @@
+view\_up
+========
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. autoproperty:: HDMPlotter.view_up

@@ -1,0 +1,6 @@
+use\_global\_cs
+===============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoproperty:: Person.use_global_cs

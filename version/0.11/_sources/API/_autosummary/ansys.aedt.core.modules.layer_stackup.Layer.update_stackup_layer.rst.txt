@@ -1,0 +1,6 @@
+update\_stackup\_layer
+======================
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. automethod:: Layer.update_stackup_layer

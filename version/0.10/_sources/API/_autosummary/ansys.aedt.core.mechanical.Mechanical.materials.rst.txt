@@ -1,0 +1,6 @@
+materials
+=========
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.materials

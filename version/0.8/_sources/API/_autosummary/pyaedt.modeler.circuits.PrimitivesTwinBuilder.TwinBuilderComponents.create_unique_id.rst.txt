@@ -1,0 +1,6 @@
+create\_unique\_id
+==================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesTwinBuilder
+
+.. automethod:: TwinBuilderComponents.create_unique_id

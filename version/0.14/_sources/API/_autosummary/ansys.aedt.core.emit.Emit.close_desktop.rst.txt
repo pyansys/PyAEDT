@@ -1,0 +1,6 @@
+close\_desktop
+==============
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.close_desktop

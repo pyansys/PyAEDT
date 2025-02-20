@@ -1,0 +1,6 @@
+get\_solution\_data\_per\_variation
+===================================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.get_solution_data_per_variation

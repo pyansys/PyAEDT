@@ -1,0 +1,6 @@
+diffusivity
+===========
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.diffusivity

@@ -1,0 +1,6 @@
+validate\_full\_design
+======================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.validate_full_design

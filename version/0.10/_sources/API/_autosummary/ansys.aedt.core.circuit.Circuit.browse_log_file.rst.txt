@@ -1,0 +1,6 @@
+browse\_log\_file
+=================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.browse_log_file

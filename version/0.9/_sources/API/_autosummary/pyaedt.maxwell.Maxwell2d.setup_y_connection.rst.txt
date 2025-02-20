@@ -1,0 +1,6 @@
+setup\_y\_connection
+====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.setup_y_connection

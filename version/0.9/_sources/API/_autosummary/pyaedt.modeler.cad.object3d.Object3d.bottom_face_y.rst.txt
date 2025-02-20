@@ -1,0 +1,6 @@
+bottom\_face\_y
+===============
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoproperty:: Object3d.bottom_face_y

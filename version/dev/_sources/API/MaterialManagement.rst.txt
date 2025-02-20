@@ -1,0 +1,56 @@
+Material and stackup
+====================
+This section lists material and stackup modules.
+These classes cannot be used directly but can be accessed through an app.
+Example:
+
+
+
+Material management
+~~~~~~~~~~~~~~~~~~~
+This section describes all material-related classes and methods.
+
+.. currentmodule:: ansys.aedt.core.modules
+
+.. autosummary::
+   :toctree: _autosummary
+   :nosignatures:
+
+   material_lib.Materials
+   material.Material
+   material.SurfaceMaterial
+   material.MatProperties
+   material.SurfMatProperties
+   material.MatProperty
+
+
+.. code:: python
+
+    from ansys.aedt.core import Hfss
+    app = Hfss(specified_version="2025.1",
+                 non_graphical=False, new_desktop_session=True,
+                 close_on_exit=True, student_version=False)
+
+    # This call returns the Materials class
+    my_materials = app.materials
+    # This call returns the Material class
+    copper = my_materials["copper"]
+    # This property is from the MatProperty class
+    copper.conductivity
+    ...
+
+
+
+Stackup management
+~~~~~~~~~~~~~~~~~~
+This section describes all layer-related classes and methods used in HFSS 3D Layout (and indirectly in Circuit).
+
+.. currentmodule:: ansys.aedt.core.modules
+
+.. autosummary::
+   :toctree: _autosummary
+   :nosignatures:
+
+
+   layer_stackup.Layers
+   layer_stackup.Layer

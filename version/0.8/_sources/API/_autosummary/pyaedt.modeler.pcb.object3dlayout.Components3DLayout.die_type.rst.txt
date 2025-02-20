@@ -1,0 +1,6 @@
+die\_type
+=========
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Components3DLayout.die_type

@@ -1,0 +1,6 @@
+output\_variables
+=================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.output_variables

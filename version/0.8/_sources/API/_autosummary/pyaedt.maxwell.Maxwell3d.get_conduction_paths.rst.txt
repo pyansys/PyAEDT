@@ -1,0 +1,6 @@
+get\_conduction\_paths
+======================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.get_conduction_paths

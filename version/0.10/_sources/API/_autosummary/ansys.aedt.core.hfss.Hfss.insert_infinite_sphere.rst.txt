@@ -1,0 +1,6 @@
+insert\_infinite\_sphere
+========================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.insert_infinite_sphere

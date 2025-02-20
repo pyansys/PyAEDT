@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. autoproperty:: Desktop.logger

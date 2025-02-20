@@ -1,0 +1,6 @@
+excitation\_objects
+===================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.excitation_objects

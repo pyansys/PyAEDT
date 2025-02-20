@@ -1,0 +1,6 @@
+import\_materials
+=================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_materials

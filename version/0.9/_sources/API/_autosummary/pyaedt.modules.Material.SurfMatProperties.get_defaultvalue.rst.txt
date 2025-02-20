@@ -1,0 +1,6 @@
+get\_defaultvalue
+=================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: SurfMatProperties.get_defaultvalue

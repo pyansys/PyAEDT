@@ -1,0 +1,6 @@
+get\_hdm\_plotter
+=================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.get_hdm_plotter

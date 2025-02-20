@@ -1,0 +1,6 @@
+get\_module
+===========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.get_module

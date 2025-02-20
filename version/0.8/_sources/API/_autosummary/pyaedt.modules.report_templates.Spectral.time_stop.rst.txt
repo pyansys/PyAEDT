@@ -1,0 +1,6 @@
+time\_stop
+==========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Spectral.time_stop

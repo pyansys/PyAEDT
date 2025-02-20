@@ -1,0 +1,6 @@
+assign\_flux\_tangential
+========================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_flux_tangential

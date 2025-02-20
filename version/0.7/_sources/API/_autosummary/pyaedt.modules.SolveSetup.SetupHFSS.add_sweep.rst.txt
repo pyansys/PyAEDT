@@ -1,0 +1,6 @@
+add\_sweep
+==========
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupHFSS.add_sweep

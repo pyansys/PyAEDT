@@ -1,0 +1,6 @@
+get\_obj\_id
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.get_obj_id

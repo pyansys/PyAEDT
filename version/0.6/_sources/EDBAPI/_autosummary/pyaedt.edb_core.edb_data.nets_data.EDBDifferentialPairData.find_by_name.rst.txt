@@ -1,0 +1,6 @@
+find\_by\_name
+==============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. automethod:: EDBDifferentialPairData.find_by_name

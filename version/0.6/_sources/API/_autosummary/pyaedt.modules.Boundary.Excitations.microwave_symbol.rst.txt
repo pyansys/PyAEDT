@@ -1,0 +1,6 @@
+microwave\_symbol
+=================
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: Excitations.microwave_symbol

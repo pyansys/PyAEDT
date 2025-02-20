@@ -1,0 +1,6 @@
+faces
+=====
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.faces

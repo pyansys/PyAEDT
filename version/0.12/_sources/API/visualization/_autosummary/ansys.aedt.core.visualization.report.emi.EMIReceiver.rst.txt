@@ -1,0 +1,136 @@
+﻿EMIReceiver
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.emi
+
+.. autoclass:: EMIReceiver
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EMIReceiver.add_cartesian_x_marker
+      
+      
+      EMIReceiver.add_cartesian_y_marker
+      
+      
+      EMIReceiver.add_limit_line_from_equation
+      
+      
+      EMIReceiver.add_limit_line_from_points
+      
+      
+      EMIReceiver.add_note
+      
+      
+      EMIReceiver.add_trace_to_report
+      
+      
+      EMIReceiver.apply_report_template
+      
+      
+      EMIReceiver.create
+      
+      
+      EMIReceiver.delete
+      
+      
+      EMIReceiver.delete_traces
+      
+      
+      EMIReceiver.edit_general_settings
+      
+      
+      EMIReceiver.edit_grid
+      
+      
+      EMIReceiver.edit_header
+      
+      
+      EMIReceiver.edit_legend
+      
+      
+      EMIReceiver.edit_x_axis
+      
+      
+      EMIReceiver.edit_x_axis_scaling
+      
+      
+      EMIReceiver.edit_y_axis
+      
+      
+      EMIReceiver.edit_y_axis_scaling
+      
+      
+      EMIReceiver.export_config
+      
+      
+      EMIReceiver.get_solution_data
+      
+      
+      EMIReceiver.hide_legend
+      
+      
+      EMIReceiver.import_traces
+      
+      
+      EMIReceiver.jsonalize_tree
+      
+      
+      EMIReceiver.suppress_all
+      
+      
+      EMIReceiver.unsuppress_all
+      
+      
+      EMIReceiver.update_expressions_with_defaults
+      
+      
+      EMIReceiver.update_property
+      
+      
+      EMIReceiver.update_trace_in_report
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EMIReceiver.band
+      EMIReceiver.command
+      EMIReceiver.differential_pairs
+      EMIReceiver.domain
+      EMIReceiver.emission
+      EMIReceiver.expressions
+      EMIReceiver.limit_lines
+      EMIReceiver.matrix
+      EMIReceiver.net
+      EMIReceiver.notes
+      EMIReceiver.plot_name
+      EMIReceiver.polyline
+      EMIReceiver.primary_sweep
+      EMIReceiver.primary_sweep_range
+      EMIReceiver.properties
+      EMIReceiver.reduced_matrix
+      EMIReceiver.report_category
+      EMIReceiver.report_type
+      EMIReceiver.secondary_sweep
+      EMIReceiver.secondary_sweep_range
+      EMIReceiver.time_start
+      EMIReceiver.time_stop
+      EMIReceiver.traces
+      EMIReceiver.use_pulse_in_tdr
+      EMIReceiver.variations
+   
+   

@@ -1,0 +1,6 @@
+bottom\_nodule\_radius
+======================
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.bottom_nodule_radius

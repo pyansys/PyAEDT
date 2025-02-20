@@ -1,0 +1,6 @@
+archive\_project
+================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.archive_project

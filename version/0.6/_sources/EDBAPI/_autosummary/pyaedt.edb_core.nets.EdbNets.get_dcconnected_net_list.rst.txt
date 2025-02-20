@@ -1,0 +1,6 @@
+get\_dcconnected\_net\_list
+===========================
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. automethod:: EdbNets.get_dcconnected_net_list

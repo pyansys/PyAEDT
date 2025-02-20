@@ -1,0 +1,54 @@
+﻿SiwaveDCSimulationSetup
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoclass:: SiwaveDCSimulationSetup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SiwaveDCSimulationSetup.add_source_terminal_to_ground
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SiwaveDCSimulationSetup.compute_inductance
+      SiwaveDCSimulationSetup.contact_radius
+      SiwaveDCSimulationSetup.dc_slider_position
+      SiwaveDCSimulationSetup.edb_sim_setup_info
+      SiwaveDCSimulationSetup.enabled
+      SiwaveDCSimulationSetup.energy_error
+      SiwaveDCSimulationSetup.max_init_mesh_edge_length
+      SiwaveDCSimulationSetup.max_num_pass
+      SiwaveDCSimulationSetup.mesh_bondwires
+      SiwaveDCSimulationSetup.mesh_vias
+      SiwaveDCSimulationSetup.min_num_pass
+      SiwaveDCSimulationSetup.min_plane_area
+      SiwaveDCSimulationSetup.min_void_area
+      SiwaveDCSimulationSetup.name
+      SiwaveDCSimulationSetup.num_bondwire_sides
+      SiwaveDCSimulationSetup.num_via_sides
+      SiwaveDCSimulationSetup.percent_local_refinement
+      SiwaveDCSimulationSetup.perform_adaptive_refinement
+      SiwaveDCSimulationSetup.plot_jv
+      SiwaveDCSimulationSetup.refine_bondwires
+      SiwaveDCSimulationSetup.refine_vias
+      SiwaveDCSimulationSetup.sim_setup_info
+      SiwaveDCSimulationSetup.source_terms_to_ground
+      SiwaveDCSimulationSetup.use_dc_custom_settings
+   
+   

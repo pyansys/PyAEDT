@@ -1,0 +1,6 @@
+roll\_angle
+===========
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.roll_angle

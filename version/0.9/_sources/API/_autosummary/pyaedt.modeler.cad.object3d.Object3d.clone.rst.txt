@@ -1,0 +1,6 @@
+clone
+=====
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. automethod:: Object3d.clone

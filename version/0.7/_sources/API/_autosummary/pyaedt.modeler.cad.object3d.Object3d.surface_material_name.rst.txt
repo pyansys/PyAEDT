@@ -1,0 +1,6 @@
+surface\_material\_name
+=======================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoproperty:: Object3d.surface_material_name

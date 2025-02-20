@@ -1,0 +1,6 @@
+material\_appearance
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.material_appearance

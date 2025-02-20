@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. automethod:: DataSet.delete

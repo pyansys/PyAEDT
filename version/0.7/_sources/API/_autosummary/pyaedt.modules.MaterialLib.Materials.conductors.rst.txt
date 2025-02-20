@@ -1,0 +1,6 @@
+conductors
+==========
+
+.. currentmodule:: pyaedt.modules.MaterialLib
+
+.. autoproperty:: Materials.conductors

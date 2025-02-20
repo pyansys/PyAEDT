@@ -1,0 +1,6 @@
+settings
+========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.settings

@@ -1,0 +1,6 @@
+update
+======
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupCircuit.update

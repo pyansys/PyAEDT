@@ -1,0 +1,6 @@
+near\_field
+===========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: NearField.near_field

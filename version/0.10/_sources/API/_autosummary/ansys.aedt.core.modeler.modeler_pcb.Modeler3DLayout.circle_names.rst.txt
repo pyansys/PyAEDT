@@ -1,0 +1,6 @@
+circle\_names
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. autoproperty:: Modeler3DLayout.circle_names

@@ -1,0 +1,6 @@
+osolution
+=========
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.osolution

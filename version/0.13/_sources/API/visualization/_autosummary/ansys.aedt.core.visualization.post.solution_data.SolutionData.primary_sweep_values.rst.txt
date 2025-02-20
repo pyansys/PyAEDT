@@ -1,0 +1,6 @@
+primary\_sweep\_values
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. autoproperty:: SolutionData.primary_sweep_values

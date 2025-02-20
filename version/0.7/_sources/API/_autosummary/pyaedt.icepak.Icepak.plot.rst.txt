@@ -1,0 +1,6 @@
+plot
+====
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.plot

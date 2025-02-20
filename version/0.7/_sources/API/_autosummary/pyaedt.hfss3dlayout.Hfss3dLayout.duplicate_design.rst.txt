@@ -1,0 +1,6 @@
+duplicate\_design
+=================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.duplicate_design

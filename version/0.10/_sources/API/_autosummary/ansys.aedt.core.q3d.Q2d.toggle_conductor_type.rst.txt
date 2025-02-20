@@ -1,0 +1,6 @@
+toggle\_conductor\_type
+=======================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.toggle_conductor_type

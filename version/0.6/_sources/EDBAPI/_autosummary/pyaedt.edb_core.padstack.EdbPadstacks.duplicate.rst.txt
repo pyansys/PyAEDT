@@ -1,0 +1,6 @@
+duplicate
+=========
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.duplicate

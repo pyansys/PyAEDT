@@ -1,0 +1,6 @@
+background\_color
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. autoproperty:: ModelPlotter.background_color

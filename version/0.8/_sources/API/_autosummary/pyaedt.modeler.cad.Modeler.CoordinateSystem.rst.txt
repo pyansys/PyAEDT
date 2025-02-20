@@ -1,0 +1,51 @@
+﻿CoordinateSystem
+================
+
+.. currentmodule:: pyaedt.modeler.cad.Modeler
+
+.. autoclass:: CoordinateSystem
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      CoordinateSystem.change_cs_mode
+      
+      
+      CoordinateSystem.create
+      
+      
+      CoordinateSystem.delete
+      
+      
+      CoordinateSystem.rename
+      
+      
+      CoordinateSystem.set_as_working_cs
+      
+      
+      CoordinateSystem.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      CoordinateSystem.available_properties
+      CoordinateSystem.mode
+      CoordinateSystem.origin
+      CoordinateSystem.props
+      CoordinateSystem.quaternion
+      CoordinateSystem.ref_cs
+   
+   

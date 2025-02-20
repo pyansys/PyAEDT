@@ -1,0 +1,6 @@
+error\_messages
+===============
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. autoproperty:: AedtLogger.error_messages

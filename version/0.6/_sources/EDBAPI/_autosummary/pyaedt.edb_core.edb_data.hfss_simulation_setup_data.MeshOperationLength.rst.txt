@@ -1,0 +1,31 @@
+﻿MeshOperationLength
+===================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: MeshOperationLength
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MeshOperationLength.enabled
+      MeshOperationLength.max_elements
+      MeshOperationLength.max_length
+      MeshOperationLength.mesh_operation_type
+      MeshOperationLength.mesh_region
+      MeshOperationLength.name
+      MeshOperationLength.nets_layers_list
+      MeshOperationLength.refine_inside
+      MeshOperationLength.restrict_length
+      MeshOperationLength.restrict_max_elements
+   
+   

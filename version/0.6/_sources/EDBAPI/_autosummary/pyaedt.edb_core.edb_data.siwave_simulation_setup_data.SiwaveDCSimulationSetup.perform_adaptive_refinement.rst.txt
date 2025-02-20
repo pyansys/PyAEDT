@@ -1,0 +1,6 @@
+perform\_adaptive\_refinement
+=============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveDCSimulationSetup.perform_adaptive_refinement

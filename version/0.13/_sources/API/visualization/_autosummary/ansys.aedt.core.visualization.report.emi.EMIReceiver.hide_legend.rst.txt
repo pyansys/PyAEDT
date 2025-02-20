@@ -1,0 +1,6 @@
+hide\_legend
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.emi
+
+.. automethod:: EMIReceiver.hide_legend

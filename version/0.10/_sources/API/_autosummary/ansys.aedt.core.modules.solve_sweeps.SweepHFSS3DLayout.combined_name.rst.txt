@@ -1,0 +1,6 @@
+combined\_name
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.solve_sweeps
+
+.. autoproperty:: SweepHFSS3DLayout.combined_name

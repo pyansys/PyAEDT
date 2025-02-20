@@ -1,0 +1,6 @@
+delete\_report
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.delete_report

@@ -1,0 +1,6 @@
+get\_nominal\_variation
+=======================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.get_nominal_variation

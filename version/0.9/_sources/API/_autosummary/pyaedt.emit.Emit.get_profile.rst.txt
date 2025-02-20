@@ -1,0 +1,6 @@
+get\_profile
+============
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.get_profile

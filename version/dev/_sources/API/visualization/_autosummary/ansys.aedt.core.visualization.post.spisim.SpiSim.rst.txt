@@ -1,0 +1,37 @@
+﻿SpiSim
+======
+
+.. currentmodule:: ansys.aedt.core.visualization.post.spisim
+
+.. autoclass:: SpiSim
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SpiSim.compute_com
+      
+      
+      SpiSim.compute_erl
+      
+      
+      SpiSim.export_com_configure_file
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SpiSim.working_directory
+   
+   

@@ -1,0 +1,54 @@
+﻿Vehicle
+=======
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoclass:: Vehicle
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Vehicle.insert
+      
+      
+      Vehicle.position_in_app
+      
+      
+      Vehicle.start
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Vehicle.cs_name
+      Vehicle.index
+      Vehicle.modeler_units
+      Vehicle.name
+      Vehicle.offset
+      Vehicle.offset_names
+      Vehicle.offset_x_name
+      Vehicle.offset_y_name
+      Vehicle.offset_z_name
+      Vehicle.pitch
+      Vehicle.pitch_name
+      Vehicle.roll
+      Vehicle.roll_name
+      Vehicle.speed_expression
+      Vehicle.speed_name
+      Vehicle.use_global_cs
+      Vehicle.yaw
+      Vehicle.yaw_name
+   
+   

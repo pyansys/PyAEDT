@@ -1,0 +1,6 @@
+assign\_huray\_finitecond\_to\_edges
+====================================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.assign_huray_finitecond_to_edges

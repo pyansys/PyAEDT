@@ -1,0 +1,6 @@
+object\_mapping\_tolerance
+==========================
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.object_mapping_tolerance

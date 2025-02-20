@@ -1,0 +1,6 @@
+kaiser\_coeff
+=============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Spectral.kaiser_coeff

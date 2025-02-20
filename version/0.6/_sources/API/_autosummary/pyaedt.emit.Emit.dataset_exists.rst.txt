@@ -1,0 +1,6 @@
+dataset\_exists
+===============
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.dataset_exists

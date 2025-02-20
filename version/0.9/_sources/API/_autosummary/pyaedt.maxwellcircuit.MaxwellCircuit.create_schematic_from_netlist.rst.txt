@@ -1,0 +1,6 @@
+create\_schematic\_from\_netlist
+================================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.create_schematic_from_netlist

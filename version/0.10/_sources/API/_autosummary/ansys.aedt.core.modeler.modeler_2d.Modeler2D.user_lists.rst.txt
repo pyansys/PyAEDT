@@ -1,0 +1,6 @@
+user\_lists
+===========
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. autoproperty:: Modeler2D.user_lists

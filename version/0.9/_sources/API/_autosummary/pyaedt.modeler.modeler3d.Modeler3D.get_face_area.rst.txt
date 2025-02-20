@@ -1,0 +1,6 @@
+get\_face\_area
+===============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_face_area

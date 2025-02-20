@@ -1,0 +1,6 @@
+point\_number
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. autoproperty:: Fields.point_number

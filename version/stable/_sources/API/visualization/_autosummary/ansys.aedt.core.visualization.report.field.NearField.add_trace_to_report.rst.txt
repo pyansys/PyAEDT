@@ -1,0 +1,6 @@
+add\_trace\_to\_report
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: NearField.add_trace_to_report

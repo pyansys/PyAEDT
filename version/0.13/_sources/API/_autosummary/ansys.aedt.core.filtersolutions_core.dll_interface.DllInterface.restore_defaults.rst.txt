@@ -1,0 +1,6 @@
+restore\_defaults
+=================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.dll_interface
+
+.. automethod:: DllInterface.restore_defaults

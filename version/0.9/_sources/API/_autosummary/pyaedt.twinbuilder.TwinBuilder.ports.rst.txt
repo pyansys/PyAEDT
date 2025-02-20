@@ -1,0 +1,6 @@
+ports
+=====
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.ports

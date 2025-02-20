@@ -1,0 +1,6 @@
+create\_fieldplot\_cutplane
+===========================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.create_fieldplot_cutplane

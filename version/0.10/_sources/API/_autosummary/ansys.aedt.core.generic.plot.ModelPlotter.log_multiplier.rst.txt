@@ -1,0 +1,6 @@
+log\_multiplier
+===============
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. autoproperty:: ModelPlotter.log_multiplier

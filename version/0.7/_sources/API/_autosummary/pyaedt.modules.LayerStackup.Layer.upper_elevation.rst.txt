@@ -1,0 +1,6 @@
+upper\_elevation
+================
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.upper_elevation

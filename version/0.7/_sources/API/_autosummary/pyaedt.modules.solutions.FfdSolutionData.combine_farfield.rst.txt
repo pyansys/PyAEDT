@@ -1,0 +1,6 @@
+combine\_farfield
+=================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FfdSolutionData.combine_farfield

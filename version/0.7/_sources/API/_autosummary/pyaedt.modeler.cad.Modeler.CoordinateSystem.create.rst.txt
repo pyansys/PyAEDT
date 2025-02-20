@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: pyaedt.modeler.cad.Modeler
+
+.. automethod:: CoordinateSystem.create

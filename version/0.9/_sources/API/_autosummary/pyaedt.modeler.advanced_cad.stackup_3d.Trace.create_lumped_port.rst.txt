@@ -1,0 +1,6 @@
+create\_lumped\_port
+====================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: Trace.create_lumped_port

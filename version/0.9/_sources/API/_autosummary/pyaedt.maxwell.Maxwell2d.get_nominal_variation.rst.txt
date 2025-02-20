@@ -1,0 +1,6 @@
+get\_nominal\_variation
+=======================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.get_nominal_variation

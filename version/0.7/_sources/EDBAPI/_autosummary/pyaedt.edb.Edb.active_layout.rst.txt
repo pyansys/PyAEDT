@@ -1,0 +1,6 @@
+active\_layout
+==============
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.active_layout

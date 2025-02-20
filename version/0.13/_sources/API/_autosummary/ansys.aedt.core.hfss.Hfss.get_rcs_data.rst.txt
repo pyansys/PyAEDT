@@ -1,0 +1,6 @@
+get\_rcs\_data
+==============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.get_rcs_data

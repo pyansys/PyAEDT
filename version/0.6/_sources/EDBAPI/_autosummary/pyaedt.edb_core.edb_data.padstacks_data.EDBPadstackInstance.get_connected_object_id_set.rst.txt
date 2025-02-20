@@ -1,0 +1,6 @@
+get\_connected\_object\_id\_set
+===============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. automethod:: EDBPadstackInstance.get_connected_object_id_set

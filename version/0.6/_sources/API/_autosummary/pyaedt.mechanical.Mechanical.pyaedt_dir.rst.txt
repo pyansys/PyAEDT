@@ -1,0 +1,6 @@
+pyaedt\_dir
+===========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.pyaedt_dir

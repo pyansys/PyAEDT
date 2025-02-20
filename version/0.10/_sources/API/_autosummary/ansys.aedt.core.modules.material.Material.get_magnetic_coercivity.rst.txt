@@ -1,0 +1,6 @@
+get\_magnetic\_coercivity
+=========================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: Material.get_magnetic_coercivity

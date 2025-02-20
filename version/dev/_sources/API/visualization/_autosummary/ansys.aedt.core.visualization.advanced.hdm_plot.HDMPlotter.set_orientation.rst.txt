@@ -1,0 +1,6 @@
+set\_orientation
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. automethod:: HDMPlotter.set_orientation

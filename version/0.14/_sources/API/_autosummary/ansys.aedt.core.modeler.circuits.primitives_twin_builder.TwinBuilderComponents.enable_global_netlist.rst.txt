@@ -1,0 +1,6 @@
+enable\_global\_netlist
+=======================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_twin_builder
+
+.. automethod:: TwinBuilderComponents.enable_global_netlist

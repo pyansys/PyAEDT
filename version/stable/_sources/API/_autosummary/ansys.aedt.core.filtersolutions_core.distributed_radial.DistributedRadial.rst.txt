@@ -1,0 +1,32 @@
+﻿DistributedRadial
+=================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_radial
+
+.. autoclass:: DistributedRadial
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      DistributedRadial.adjust_length_max
+      DistributedRadial.adjust_width_max
+      DistributedRadial.alternate_radial_delta_orientation
+      DistributedRadial.apply_limits_radial_delta
+      DistributedRadial.delta_stubs
+      DistributedRadial.fixed_angle
+      DistributedRadial.max_radial_delta_angle
+      DistributedRadial.min_radial_delta_angle
+      DistributedRadial.offset_from_feedline
+      DistributedRadial.radial_stubs
+      DistributedRadial.split_wide_angle
+   
+   

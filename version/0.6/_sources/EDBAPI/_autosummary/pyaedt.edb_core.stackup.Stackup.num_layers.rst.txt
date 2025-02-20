@@ -1,0 +1,6 @@
+num\_layers
+===========
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. autoproperty:: Stackup.num_layers

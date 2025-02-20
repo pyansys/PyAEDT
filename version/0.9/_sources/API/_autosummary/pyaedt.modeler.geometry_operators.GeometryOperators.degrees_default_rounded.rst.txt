@@ -1,0 +1,6 @@
+degrees\_default\_rounded
+=========================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.degrees_default_rounded

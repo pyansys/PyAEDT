@@ -1,0 +1,6 @@
+get\_magnetic\_coercitivity
+===========================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: Material.get_magnetic_coercitivity

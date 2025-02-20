@@ -1,0 +1,6 @@
+get\_array\_index
+=================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: FfdSolutionData.get_array_index

@@ -1,0 +1,6 @@
+path
+====
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: CSVDataset.path

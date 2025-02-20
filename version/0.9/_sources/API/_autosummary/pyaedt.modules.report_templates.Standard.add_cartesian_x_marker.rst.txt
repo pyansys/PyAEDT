@@ -1,0 +1,6 @@
+add\_cartesian\_x\_marker
+=========================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Standard.add_cartesian_x_marker

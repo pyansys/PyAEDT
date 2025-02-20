@@ -1,0 +1,6 @@
+wire\_thickness\_direction
+==========================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.wire_thickness_direction

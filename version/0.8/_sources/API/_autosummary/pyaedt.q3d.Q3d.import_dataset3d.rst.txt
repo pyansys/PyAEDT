@@ -1,0 +1,6 @@
+import\_dataset3d
+=================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.import_dataset3d

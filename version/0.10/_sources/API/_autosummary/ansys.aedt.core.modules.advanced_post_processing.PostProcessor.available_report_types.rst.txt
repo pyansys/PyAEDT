@@ -1,0 +1,6 @@
+available\_report\_types
+========================
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. autoproperty:: PostProcessor.available_report_types

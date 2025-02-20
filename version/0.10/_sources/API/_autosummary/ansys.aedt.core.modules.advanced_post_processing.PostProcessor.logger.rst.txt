@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: ansys.aedt.core.modules.advanced_post_processing
+
+.. autoproperty:: PostProcessor.logger

@@ -1,0 +1,6 @@
+plot\_contour
+=============
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. automethod:: FfdSolutionData.plot_contour

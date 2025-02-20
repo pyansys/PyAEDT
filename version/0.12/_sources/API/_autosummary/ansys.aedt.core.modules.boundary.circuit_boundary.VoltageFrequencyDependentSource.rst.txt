@@ -1,0 +1,44 @@
+﻿VoltageFrequencyDependentSource
+===============================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoclass:: VoltageFrequencyDependentSource
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      VoltageFrequencyDependentSource.create
+      
+      
+      VoltageFrequencyDependentSource.delete
+      
+      
+      VoltageFrequencyDependentSource.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      VoltageFrequencyDependentSource.fds_filename
+      VoltageFrequencyDependentSource.frequencies
+      VoltageFrequencyDependentSource.magnitude_angle
+      VoltageFrequencyDependentSource.name
+      VoltageFrequencyDependentSource.vang
+      VoltageFrequencyDependentSource.vimag
+      VoltageFrequencyDependentSource.vmag
+      VoltageFrequencyDependentSource.vreal
+   
+   

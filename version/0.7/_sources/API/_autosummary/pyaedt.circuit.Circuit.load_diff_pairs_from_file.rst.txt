@@ -1,0 +1,6 @@
+load\_diff\_pairs\_from\_file
+=============================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.load_diff_pairs_from_file

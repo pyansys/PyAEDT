@@ -1,0 +1,6 @@
+monitor
+=======
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.monitor

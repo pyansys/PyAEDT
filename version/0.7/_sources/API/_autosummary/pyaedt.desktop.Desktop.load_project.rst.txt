@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.load_project

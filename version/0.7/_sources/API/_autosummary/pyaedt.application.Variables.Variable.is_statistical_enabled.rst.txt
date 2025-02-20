@@ -1,0 +1,6 @@
+is\_statistical\_enabled
+========================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.is_statistical_enabled

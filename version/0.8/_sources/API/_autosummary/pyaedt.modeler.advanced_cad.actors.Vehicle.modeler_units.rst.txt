@@ -1,0 +1,6 @@
+modeler\_units
+==============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoattribute:: Vehicle.modeler_units

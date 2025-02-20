@@ -1,0 +1,6 @@
+save\_configuration
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. automethod:: VirtualComplianceGenerator.save_configuration

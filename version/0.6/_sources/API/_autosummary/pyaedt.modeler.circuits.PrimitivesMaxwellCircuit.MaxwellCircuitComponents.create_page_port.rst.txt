@@ -1,0 +1,6 @@
+create\_page\_port
+==================
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.create_page_port

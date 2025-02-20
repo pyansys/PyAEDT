@@ -1,0 +1,6 @@
+find\_point\_around
+===================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.find_point_around

@@ -1,0 +1,6 @@
+submit\_job
+===========
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.submit_job

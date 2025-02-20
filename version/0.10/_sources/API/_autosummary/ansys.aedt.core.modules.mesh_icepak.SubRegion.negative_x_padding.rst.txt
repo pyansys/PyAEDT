@@ -1,0 +1,6 @@
+negative\_x\_padding
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. autoproperty:: SubRegion.negative_x_padding

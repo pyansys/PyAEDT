@@ -1,0 +1,6 @@
+create\_network\_object
+=======================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.create_network_object

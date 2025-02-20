@@ -1,0 +1,6 @@
+elevation\_angle
+================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.elevation_angle

@@ -1,0 +1,6 @@
+add\_source\_terminal\_to\_ground
+=================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. automethod:: SiwaveDCSimulationSetup.add_source_terminal_to_ground

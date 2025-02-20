@@ -1,0 +1,6 @@
+update
+======
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.hfss_boundary
+
+.. automethod:: NearFieldSetup.update

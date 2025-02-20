@@ -1,0 +1,6 @@
+﻿get\_fext\_xtalk\_index\_from\_prefix
+=====================================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.touchstone_parser
+
+.. automethod:: TouchstoneData.get_fext_xtalk_index_from_prefix

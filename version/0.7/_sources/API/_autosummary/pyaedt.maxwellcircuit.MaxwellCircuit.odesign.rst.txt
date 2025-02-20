@@ -1,0 +1,6 @@
+odesign
+=======
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.odesign

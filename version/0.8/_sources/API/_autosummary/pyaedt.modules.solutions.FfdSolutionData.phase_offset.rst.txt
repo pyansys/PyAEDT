@@ -1,0 +1,6 @@
+phase\_offset
+=============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: FfdSolutionData.phase_offset

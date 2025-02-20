@@ -1,0 +1,6 @@
+nominal\_variation
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. autoproperty:: SolutionData.nominal_variation

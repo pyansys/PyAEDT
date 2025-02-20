@@ -1,0 +1,6 @@
+copy\_design\_from
+==================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.copy_design_from

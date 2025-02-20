@@ -1,0 +1,6 @@
+use\_coupled\_lines
+===================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.use_coupled_lines

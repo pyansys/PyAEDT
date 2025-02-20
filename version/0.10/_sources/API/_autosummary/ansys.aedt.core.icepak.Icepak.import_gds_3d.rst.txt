@@ -1,0 +1,6 @@
+import\_gds\_3d
+===============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.import_gds_3d

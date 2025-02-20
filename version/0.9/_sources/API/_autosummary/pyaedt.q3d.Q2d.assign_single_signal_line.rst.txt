@@ -1,0 +1,6 @@
+assign\_single\_signal\_line
+============================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.assign_single_signal_line

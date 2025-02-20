@@ -1,0 +1,6 @@
+a\_vector\_choices
+==================
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.a_vector_choices

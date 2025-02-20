@@ -1,0 +1,6 @@
+top\_face\_x
+============
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoproperty:: Object3d.top_face_x

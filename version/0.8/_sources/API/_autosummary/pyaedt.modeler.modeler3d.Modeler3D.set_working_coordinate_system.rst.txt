@@ -1,0 +1,6 @@
+set\_working\_coordinate\_system
+================================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.set_working_coordinate_system

@@ -1,0 +1,6 @@
+permittivity
+============
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.permittivity

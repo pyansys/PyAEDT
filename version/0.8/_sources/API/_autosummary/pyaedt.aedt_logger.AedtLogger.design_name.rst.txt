@@ -1,0 +1,6 @@
+design\_name
+============
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. autoproperty:: AedtLogger.design_name

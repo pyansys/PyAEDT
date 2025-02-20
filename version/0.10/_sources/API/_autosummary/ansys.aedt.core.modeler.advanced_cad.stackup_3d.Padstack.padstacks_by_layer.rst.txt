@@ -1,0 +1,6 @@
+padstacks\_by\_layer
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Padstack.padstacks_by_layer

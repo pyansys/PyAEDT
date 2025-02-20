@@ -1,0 +1,6 @@
+elevation\_stop
+===============
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: FarFieldSetup.elevation_stop

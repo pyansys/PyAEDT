@@ -1,0 +1,6 @@
+all\_report\_names
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. autoproperty:: PostProcessorCircuit.all_report_names

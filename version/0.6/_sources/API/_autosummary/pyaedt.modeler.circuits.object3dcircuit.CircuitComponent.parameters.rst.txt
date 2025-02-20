@@ -1,0 +1,6 @@
+parameters
+==========
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. autoproperty:: CircuitComponent.parameters

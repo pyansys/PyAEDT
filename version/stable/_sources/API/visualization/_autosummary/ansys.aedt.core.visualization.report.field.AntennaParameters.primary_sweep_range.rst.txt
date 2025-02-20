@@ -1,0 +1,6 @@
+primary\_sweep\_range
+=====================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. autoproperty:: AntennaParameters.primary_sweep_range

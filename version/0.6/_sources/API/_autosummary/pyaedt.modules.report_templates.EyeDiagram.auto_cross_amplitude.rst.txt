@@ -1,0 +1,6 @@
+auto\_cross\_amplitude
+======================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: EyeDiagram.auto_cross_amplitude

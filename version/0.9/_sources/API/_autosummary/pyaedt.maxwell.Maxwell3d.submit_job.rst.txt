@@ -1,0 +1,6 @@
+submit\_job
+===========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.submit_job

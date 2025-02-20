@@ -1,0 +1,6 @@
+design\_list
+============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.design_list

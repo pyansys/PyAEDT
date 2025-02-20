@@ -1,0 +1,52 @@
+﻿SetupParam
+==========
+
+.. currentmodule:: pyaedt.modules.DesignXPloration
+
+.. autoclass:: SetupParam
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SetupParam.add_calculation
+      
+      
+      SetupParam.add_variation
+      
+      
+      SetupParam.analyze
+      
+      
+      SetupParam.create
+      
+      
+      SetupParam.delete
+      
+      
+      SetupParam.export_to_csv
+      
+      
+      SetupParam.sync_variables
+      
+      
+      SetupParam.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SetupParam.available_properties
+   
+   

@@ -1,0 +1,6 @@
+traces
+======
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Fields.traces

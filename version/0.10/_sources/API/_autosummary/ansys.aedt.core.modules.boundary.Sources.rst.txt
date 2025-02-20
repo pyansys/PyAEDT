@@ -1,0 +1,37 @@
+﻿Sources
+=======
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoclass:: Sources
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Sources.create
+      
+      
+      Sources.delete
+      
+      
+      Sources.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Sources.name
+   
+   

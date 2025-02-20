@@ -1,0 +1,6 @@
+create\_3d\_plot
+================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.create_3d_plot

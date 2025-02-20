@@ -1,0 +1,6 @@
+osolution
+=========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.osolution

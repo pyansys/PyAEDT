@@ -1,0 +1,6 @@
+layer\_range\_names
+===================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadstackInstance.layer_range_names

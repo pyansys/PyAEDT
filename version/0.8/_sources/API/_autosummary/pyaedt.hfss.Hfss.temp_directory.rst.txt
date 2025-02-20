@@ -1,0 +1,6 @@
+temp\_directory
+===============
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.temp_directory

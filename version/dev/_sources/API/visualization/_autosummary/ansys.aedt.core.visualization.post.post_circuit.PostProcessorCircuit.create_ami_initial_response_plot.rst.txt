@@ -1,0 +1,6 @@
+create\_ami\_initial\_response\_plot
+====================================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. automethod:: PostProcessorCircuit.create_ami_initial_response_plot

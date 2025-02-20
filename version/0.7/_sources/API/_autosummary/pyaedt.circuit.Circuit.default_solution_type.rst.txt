@@ -1,0 +1,6 @@
+default\_solution\_type
+=======================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.default_solution_type

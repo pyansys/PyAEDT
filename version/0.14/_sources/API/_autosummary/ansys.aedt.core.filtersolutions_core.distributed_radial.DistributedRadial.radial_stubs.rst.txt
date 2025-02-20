@@ -1,0 +1,6 @@
+radial\_stubs
+=============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_radial
+
+.. autoproperty:: DistributedRadial.radial_stubs

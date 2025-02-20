@@ -1,0 +1,6 @@
+unsuppress\_all
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupSBR.unsuppress_all

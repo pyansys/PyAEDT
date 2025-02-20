@@ -1,0 +1,6 @@
+delete\_design
+==============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.delete_design

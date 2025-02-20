@@ -1,0 +1,6 @@
+objects
+=======
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. autoproperty:: ModelPlotter.objects

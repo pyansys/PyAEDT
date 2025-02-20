@@ -1,0 +1,6 @@
+pingroups
+=========
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. autoproperty:: EdbPadstacks.pingroups

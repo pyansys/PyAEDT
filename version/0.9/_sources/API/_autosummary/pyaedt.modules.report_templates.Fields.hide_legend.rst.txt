@@ -1,0 +1,6 @@
+hide\_legend
+============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Fields.hide_legend

@@ -1,0 +1,6 @@
+post
+====
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.post

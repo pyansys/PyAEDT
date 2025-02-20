@@ -1,0 +1,6 @@
+change\_design\_variable\_value
+===============================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.change_design_variable_value

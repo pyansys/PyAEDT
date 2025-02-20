@@ -1,0 +1,6 @@
+enable\_noise
+=============
+
+.. currentmodule:: pyaedt.modules.Boundary
+
+.. autoproperty:: Excitations.enable_noise

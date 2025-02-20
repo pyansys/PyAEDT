@@ -1,0 +1,6 @@
+create\_capacitor
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_nexxim
+
+.. automethod:: NexximComponents.create_capacitor

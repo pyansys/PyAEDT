@@ -1,0 +1,6 @@
+force\_source\_solve
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoproperty:: NativeComponentPCB.force_source_solve

@@ -1,0 +1,6 @@
+get\_property\_value
+====================
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. automethod:: Polygons3DLayout.get_property_value

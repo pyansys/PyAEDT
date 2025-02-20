@@ -1,0 +1,49 @@
+﻿SetupOpti
+=========
+
+.. currentmodule:: pyaedt.modules.DesignXPloration
+
+.. autoclass:: SetupOpti
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SetupOpti.add_calculation
+      
+      
+      SetupOpti.add_goal
+      
+      
+      SetupOpti.add_variation
+      
+      
+      SetupOpti.analyze
+      
+      
+      SetupOpti.create
+      
+      
+      SetupOpti.delete
+      
+      
+      SetupOpti.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SetupOpti.available_properties
+   
+   

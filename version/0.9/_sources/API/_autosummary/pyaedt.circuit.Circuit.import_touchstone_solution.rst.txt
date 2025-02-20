@@ -1,0 +1,6 @@
+import\_touchstone\_solution
+============================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.import_touchstone_solution

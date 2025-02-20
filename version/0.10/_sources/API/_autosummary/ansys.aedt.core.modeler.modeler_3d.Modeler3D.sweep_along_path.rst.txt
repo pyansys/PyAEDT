@@ -1,0 +1,6 @@
+sweep\_along\_path
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.sweep_along_path

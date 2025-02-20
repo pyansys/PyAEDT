@@ -1,0 +1,6 @@
+net\_name
+=========
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Line3dLayout.net_name

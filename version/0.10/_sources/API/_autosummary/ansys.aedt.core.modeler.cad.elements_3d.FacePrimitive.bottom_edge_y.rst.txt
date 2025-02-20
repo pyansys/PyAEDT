@@ -1,0 +1,6 @@
+bottom\_edge\_y
+===============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. autoproperty:: FacePrimitive.bottom_edge_y

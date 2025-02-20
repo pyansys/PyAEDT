@@ -1,0 +1,6 @@
+wide\_stubs\_width\_to\_substrate\_height\_ratio
+================================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_geometry
+
+.. autoproperty:: DistributedGeometry.wide_stubs_width_to_substrate_height_ratio

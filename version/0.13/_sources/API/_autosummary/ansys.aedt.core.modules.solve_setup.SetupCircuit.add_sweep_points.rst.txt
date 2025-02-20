@@ -1,0 +1,6 @@
+add\_sweep\_points
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupCircuit.add_sweep_points

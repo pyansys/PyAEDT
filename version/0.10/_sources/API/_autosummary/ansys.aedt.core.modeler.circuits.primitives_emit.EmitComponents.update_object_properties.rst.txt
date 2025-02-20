@@ -1,0 +1,6 @@
+update\_object\_properties
+==========================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_emit
+
+.. automethod:: EmitComponents.update_object_properties

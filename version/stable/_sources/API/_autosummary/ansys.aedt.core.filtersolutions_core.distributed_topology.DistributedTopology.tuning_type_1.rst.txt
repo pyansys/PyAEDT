@@ -1,0 +1,6 @@
+tuning\_type\_1
+===============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.tuning_type_1

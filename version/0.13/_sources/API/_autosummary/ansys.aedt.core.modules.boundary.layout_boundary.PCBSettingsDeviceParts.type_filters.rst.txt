@@ -1,0 +1,6 @@
+type\_filters
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoproperty:: PCBSettingsDeviceParts.type_filters

@@ -1,0 +1,6 @@
+oeditor
+=======
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.oeditor

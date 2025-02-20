@@ -1,0 +1,52 @@
+﻿PowerIQSource
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoclass:: PowerIQSource
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      PowerIQSource.create
+      
+      
+      PowerIQSource.delete
+      
+      
+      PowerIQSource.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      PowerIQSource.carrier_amplitude_power
+      PowerIQSource.carrier_amplitude_voltage
+      PowerIQSource.carrier_frequency
+      PowerIQSource.carrier_offset
+      PowerIQSource.damping_factor
+      PowerIQSource.dc_magnitude
+      PowerIQSource.delay
+      PowerIQSource.file
+      PowerIQSource.i_q_values
+      PowerIQSource.imaginary_impedance
+      PowerIQSource.name
+      PowerIQSource.phase_delay
+      PowerIQSource.real_impedance
+      PowerIQSource.repeat_from
+      PowerIQSource.sampling_time
+      PowerIQSource.tone
+   
+   

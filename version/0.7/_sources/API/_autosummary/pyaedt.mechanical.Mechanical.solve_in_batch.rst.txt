@@ -1,0 +1,6 @@
+solve\_in\_batch
+================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.solve_in_batch

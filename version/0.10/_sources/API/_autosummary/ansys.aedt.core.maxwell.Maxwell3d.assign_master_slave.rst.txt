@@ -1,0 +1,6 @@
+assign\_master\_slave
+=====================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell3d.assign_master_slave

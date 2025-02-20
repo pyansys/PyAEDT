@@ -1,0 +1,6 @@
+is\_between\_points
+===================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.is_between_points

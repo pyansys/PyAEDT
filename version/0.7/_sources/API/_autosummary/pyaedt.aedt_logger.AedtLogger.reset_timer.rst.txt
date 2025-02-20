@@ -1,0 +1,6 @@
+reset\_timer
+============
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. automethod:: AedtLogger.reset_timer

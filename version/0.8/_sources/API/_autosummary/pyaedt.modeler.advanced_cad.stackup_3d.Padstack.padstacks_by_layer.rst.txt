@@ -1,0 +1,6 @@
+padstacks\_by\_layer
+====================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Padstack.padstacks_by_layer

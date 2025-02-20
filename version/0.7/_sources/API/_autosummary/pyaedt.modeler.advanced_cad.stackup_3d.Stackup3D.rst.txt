@@ -1,0 +1,67 @@
+﻿Stackup3D
+=========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoclass:: Stackup3D
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Stackup3D.add_dielectric_layer
+      
+      
+      Stackup3D.add_ground_layer
+      
+      
+      Stackup3D.add_layer
+      
+      
+      Stackup3D.add_padstack
+      
+      
+      Stackup3D.add_signal_layer
+      
+      
+      Stackup3D.resize
+      
+      
+      Stackup3D.resize_around_element
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Stackup3D.application
+      Stackup3D.dielectric_length
+      Stackup3D.dielectric_width
+      Stackup3D.dielectric_x_position
+      Stackup3D.dielectric_y_position
+      Stackup3D.dielectrics
+      Stackup3D.duplicated_material_list
+      Stackup3D.frequency
+      Stackup3D.grounds
+      Stackup3D.layer_names
+      Stackup3D.layer_positions
+      Stackup3D.objects
+      Stackup3D.objects_by_layer
+      Stackup3D.padstacks
+      Stackup3D.signals
+      Stackup3D.stackup_layers
+      Stackup3D.start_position
+      Stackup3D.thickness
+      Stackup3D.z_position_offset
+   
+   

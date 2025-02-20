@@ -1,0 +1,6 @@
+plot\_3d\_chart
+===============
+
+.. currentmodule:: ansys.aedt.core.generic.farfield_visualization
+
+.. automethod:: FfdSolutionData.plot_3d_chart

@@ -1,0 +1,6 @@
+info
+====
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.info

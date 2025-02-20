@@ -1,0 +1,6 @@
+﻿check\_touchstone\_files
+========================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.touchstone_parser
+
+.. autofunction:: check_touchstone_files

@@ -1,0 +1,412 @@
+﻿Rmxprt
+======
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoclass:: Rmxprt
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Rmxprt.activate_variable_optimization
+      
+      
+      Rmxprt.activate_variable_sensitivity
+      
+      
+      Rmxprt.activate_variable_statistical
+      
+      
+      Rmxprt.activate_variable_tuning
+      
+      
+      Rmxprt.add_error_message
+      
+      
+      Rmxprt.add_from_toolkit
+      
+      
+      Rmxprt.add_info_message
+      
+      
+      Rmxprt.add_warning_message
+      
+      
+      Rmxprt.analyze
+      
+      
+      Rmxprt.analyze_setup
+      
+      
+      Rmxprt.archive_project
+      
+      
+      Rmxprt.autosave_disable
+      
+      
+      Rmxprt.autosave_enable
+      
+      
+      Rmxprt.change_automatically_use_causal_materials
+      
+      
+      Rmxprt.change_design_settings
+      
+      
+      Rmxprt.change_material_override
+      
+      
+      Rmxprt.change_property
+      
+      
+      Rmxprt.change_validation_settings
+      
+      
+      Rmxprt.check_beta_option_enabled
+      
+      
+      Rmxprt.check_if_project_is_loaded
+      
+      
+      Rmxprt.clean_proj_folder
+      
+      
+      Rmxprt.close_desktop
+      
+      
+      Rmxprt.close_project
+      
+      
+      Rmxprt.copy_design_from
+      
+      
+      Rmxprt.copy_project
+      
+      
+      Rmxprt.create_dataset
+      
+      
+      Rmxprt.create_dataset1d_design
+      
+      
+      Rmxprt.create_dataset1d_project
+      
+      
+      Rmxprt.create_dataset3d
+      
+      
+      Rmxprt.create_new_project
+      
+      
+      Rmxprt.create_output_variable
+      
+      
+      Rmxprt.create_setup
+      
+      
+      Rmxprt.dataset_exists
+      
+      
+      Rmxprt.deactivate_variable_optimization
+      
+      
+      Rmxprt.deactivate_variable_sensitivity
+      
+      
+      Rmxprt.deactivate_variable_statistical
+      
+      
+      Rmxprt.deactivate_variable_tuning
+      
+      
+      Rmxprt.delete_design
+      
+      
+      Rmxprt.delete_project
+      
+      
+      Rmxprt.delete_separator
+      
+      
+      Rmxprt.delete_setup
+      
+      
+      Rmxprt.delete_unused_variables
+      
+      
+      Rmxprt.delete_variable
+      
+      
+      Rmxprt.design_variation
+      
+      
+      Rmxprt.disable_modelcreation
+      
+      
+      Rmxprt.duplicate_design
+      
+      
+      Rmxprt.edit_setup
+      
+      
+      Rmxprt.enable_modelcreation
+      
+      
+      Rmxprt.evaluate_expression
+      
+      
+      Rmxprt.export_convergence
+      
+      
+      Rmxprt.export_design_preview_to_jpg
+      
+      
+      Rmxprt.export_parametric_results
+      
+      
+      Rmxprt.export_profile
+      
+      
+      Rmxprt.export_results
+      
+      
+      Rmxprt.export_rl_matrix
+      
+      
+      Rmxprt.export_variables_to_csv
+      
+      
+      Rmxprt.generate_temp_project_directory
+      
+      
+      Rmxprt.generate_unique_setup_name
+      
+      
+      Rmxprt.get_evaluated_value
+      
+      
+      Rmxprt.get_module
+      
+      
+      Rmxprt.get_monitor_data
+      
+      
+      Rmxprt.get_nominal_variation
+      
+      
+      Rmxprt.get_object_material_properties
+      
+      
+      Rmxprt.get_oo_name
+      
+      
+      Rmxprt.get_oo_object
+      
+      
+      Rmxprt.get_oo_properties
+      
+      
+      Rmxprt.get_oo_property_value
+      
+      
+      Rmxprt.get_output_variable
+      
+      
+      Rmxprt.get_registry_key_int
+      
+      
+      Rmxprt.get_registry_key_string
+      
+      
+      Rmxprt.get_setup
+      
+      
+      Rmxprt.get_setups
+      
+      
+      Rmxprt.get_sweeps
+      
+      
+      Rmxprt.get_traces_for_plot
+      
+      
+      Rmxprt.hidden_variable
+      
+      
+      Rmxprt.import_dataset1d
+      
+      
+      Rmxprt.import_dataset3d
+      
+      
+      Rmxprt.insert_design
+      
+      
+      Rmxprt.list_of_variations
+      
+      
+      Rmxprt.load_project
+      
+      
+      Rmxprt.number_with_units
+      
+      
+      Rmxprt.read_design_data
+      
+      
+      Rmxprt.read_only_variable
+      
+      
+      Rmxprt.release_desktop
+      
+      
+      Rmxprt.remove_all_unused_definitions
+      
+      
+      Rmxprt.rename_design
+      
+      
+      Rmxprt.save_project
+      
+      
+      Rmxprt.set_active_design
+      
+      
+      Rmxprt.set_active_dso_config_name
+      
+      
+      Rmxprt.set_license_type
+      
+      
+      Rmxprt.set_material_threshold
+      
+      
+      Rmxprt.set_oo_property_value
+      
+      
+      Rmxprt.set_registry_from_file
+      
+      
+      Rmxprt.set_registry_key
+      
+      
+      Rmxprt.set_temporary_directory
+      
+      
+      Rmxprt.solve_in_batch
+      
+      
+      Rmxprt.stop_simulations
+      
+      
+      Rmxprt.submit_job
+      
+      
+      Rmxprt.validate_simple
+      
+      
+      Rmxprt.value_with_units
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Rmxprt.Position
+      Rmxprt.SimulationSetupTypes
+      Rmxprt.SolutionTypes
+      Rmxprt.active_setup
+      Rmxprt.aedt_version_id
+      Rmxprt.are_there_simulations_running
+      Rmxprt.available_variations
+      Rmxprt.boundaries
+      Rmxprt.boundaries_by_type
+      Rmxprt.default_solution_type
+      Rmxprt.design_datasets
+      Rmxprt.design_list
+      Rmxprt.design_name
+      Rmxprt.design_properties
+      Rmxprt.design_type
+      Rmxprt.desktop_class
+      Rmxprt.desktop_install_dir
+      Rmxprt.excitation_objects
+      Rmxprt.excitations
+      Rmxprt.excitations_by_type
+      Rmxprt.existing_analysis_setups
+      Rmxprt.existing_analysis_sweeps
+      Rmxprt.info
+      Rmxprt.layouteditor
+      Rmxprt.library_list
+      Rmxprt.lock_file
+      Rmxprt.logger
+      Rmxprt.materials
+      Rmxprt.modeler
+      Rmxprt.native_components
+      Rmxprt.nominal_adaptive
+      Rmxprt.nominal_sweep
+      Rmxprt.o_component_manager
+      Rmxprt.o_maxwell_parameters
+      Rmxprt.o_model_manager
+      Rmxprt.o_symbol_manager
+      Rmxprt.oanalysis
+      Rmxprt.oboundary
+      Rmxprt.odefinition_manager
+      Rmxprt.odesign
+      Rmxprt.odesktop
+      Rmxprt.oeditor
+      Rmxprt.oexcitation
+      Rmxprt.ofieldsreporter
+      Rmxprt.oimport_export
+      Rmxprt.omaterial_manager
+      Rmxprt.omatrix
+      Rmxprt.omeshmodule
+      Rmxprt.omodelsetup
+      Rmxprt.omonitor
+      Rmxprt.ooptimetrics
+      Rmxprt.ooutput_variable
+      Rmxprt.opadstackmanager
+      Rmxprt.oproject
+      Rmxprt.optimizations
+      Rmxprt.oradfield
+      Rmxprt.oreportsetup
+      Rmxprt.osolution
+      Rmxprt.output_variables
+      Rmxprt.parametrics
+      Rmxprt.personallib
+      Rmxprt.ports
+      Rmxprt.post
+      Rmxprt.project_datasets
+      Rmxprt.project_file
+      Rmxprt.project_list
+      Rmxprt.project_name
+      Rmxprt.project_path
+      Rmxprt.project_properties
+      Rmxprt.project_time_stamp
+      Rmxprt.project_timestamp_changed
+      Rmxprt.pyaedt_dir
+      Rmxprt.results_directory
+      Rmxprt.settings
+      Rmxprt.setup_names
+      Rmxprt.setups
+      Rmxprt.solution_type
+      Rmxprt.src_dir
+      Rmxprt.syslib
+      Rmxprt.temp_directory
+      Rmxprt.toolkit_directory
+      Rmxprt.userlib
+      Rmxprt.valid_design
+      Rmxprt.variable_manager
+      Rmxprt.working_directory
+   
+   

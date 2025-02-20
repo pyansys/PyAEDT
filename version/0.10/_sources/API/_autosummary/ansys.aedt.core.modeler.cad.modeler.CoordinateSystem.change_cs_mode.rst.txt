@@ -1,0 +1,6 @@
+change\_cs\_mode
+================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.modeler
+
+.. automethod:: CoordinateSystem.change_cs_mode

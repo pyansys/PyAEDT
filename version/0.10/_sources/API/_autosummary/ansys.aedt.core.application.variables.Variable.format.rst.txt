@@ -1,0 +1,6 @@
+format
+======
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. automethod:: Variable.format

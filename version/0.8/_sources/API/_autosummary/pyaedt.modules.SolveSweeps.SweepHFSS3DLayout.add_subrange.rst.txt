@@ -1,0 +1,6 @@
+add\_subrange
+=============
+
+.. currentmodule:: pyaedt.modules.SolveSweeps
+
+.. automethod:: SweepHFSS3DLayout.add_subrange

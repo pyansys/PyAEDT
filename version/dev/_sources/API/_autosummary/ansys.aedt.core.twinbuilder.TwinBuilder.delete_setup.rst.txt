@@ -1,0 +1,6 @@
+delete\_setup
+=============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.delete_setup

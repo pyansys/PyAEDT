@@ -1,0 +1,6 @@
+get\_output\_variable
+=====================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_output_variable

@@ -1,0 +1,6 @@
+copyGroupFrom
+=============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.copyGroupFrom

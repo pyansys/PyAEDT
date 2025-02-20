@@ -1,0 +1,6 @@
+library\_list
+=============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.library_list

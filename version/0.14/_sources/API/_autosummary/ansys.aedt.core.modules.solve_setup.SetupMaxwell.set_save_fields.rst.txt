@@ -1,0 +1,6 @@
+set\_save\_fields
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupMaxwell.set_save_fields

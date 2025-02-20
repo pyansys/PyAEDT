@@ -1,0 +1,6 @@
+odesktop
+========
+
+.. currentmodule:: pyaedt.desktop
+
+.. autoproperty:: Desktop.odesktop

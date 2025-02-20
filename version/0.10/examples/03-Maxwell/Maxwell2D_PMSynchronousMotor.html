@@ -1,0 +1,1594 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Maxwell 2D: PM synchronous motor transient analysis &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/03-Maxwell/Maxwell2D_PMSynchronousMotor';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Transformer leakage inductance calculation in Maxwell 2D Magnetostatic" href="Maxwell2D_Transformer_LL.html" />
+    <link rel="prev" title="Maxwell 2D Electrostatic analysis" href="Maxwell2D_Electrostatic.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/03-Maxwell/Maxwell2D_PMSynchronousMotor.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Modeling-Setup/index.html">General model and setup examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-HFSS/index.html">HFSS examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Maxwell examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_DCConduction.html">Maxwell 2D: resistance calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_Electrostatic.html">Maxwell 2D Electrostatic analysis</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Maxwell 2D: PM synchronous motor transient analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_Transformer_LL.html">Transformer leakage inductance calculation in Maxwell 2D Magnetostatic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell2D_Transient.html">Maxwell 2D: transient winding analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3DTeam7.html">Maxwell 3D: asymmetric conductor analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3D_Choke.html">Maxwell 3D: choke setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3D_Segmentation.html">Maxwell 3D: magnet segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell3D_Team3_bath_plate.html">Maxwell 3D: bath plate analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell_Control_Program.html">Enabling Control Program in a Maxwell 2D Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell_Magnet.html">Maxwell 3D: magnet DC analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxwell_Transformer_Coreloss.html">Maxwell 3D: Transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RMxprt.html">Rmxprt: Create and export motor</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-Multiphysics/index.html">Multiphysics examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-Circuit/index.html">Circuit examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-EMIT/index.html">EMIT examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">Maxwell examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">Maxwell 2D: PM synchronous motor transient analysis</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-03-maxwell-maxwell2d-pmsynchronousmotor-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="maxwell-2d-pm-synchronous-motor-transient-analysis">
+<span id="sphx-glr-examples-03-maxwell-maxwell2d-pmsynchronousmotor-py"></span><h1>Maxwell 2D: PM synchronous motor transient analysis<a class="headerlink" href="#maxwell-2d-pm-synchronous-motor-transient-analysis" title="Link to this heading">#</a></h1>
+<p>This example shows how you can use PyAEDT to create a Maxwell 2D transient analysis for
+an interior permanent magnet electric motor.</p>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">mysqrt</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">ansys.aedt.core</span>
+</pre></div>
+</div>
+</section>
+<section id="set-aedt-version">
+<h2>Set AEDT version<a class="headerlink" href="#set-aedt-version" title="Link to this heading">#</a></h2>
+<p>Set AEDT version.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedt_version</span> <span class="o">=</span> <span class="s2">&quot;2024.2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="initialize-maxwell-2d">
+<h2>Initialize Maxwell 2D<a class="headerlink" href="#initialize-maxwell-2d" title="Link to this heading">#</a></h2>
+<p>Initialize Maxwell 2D, providing the version, path to the project, and the design
+name and type.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">setup_name</span> <span class="o">=</span> <span class="s2">&quot;MySetupAuto&quot;</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="s2">&quot;TransientXY&quot;</span>
+
+<span class="n">project_name</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">generate_unique_project_name</span><span class="p">()</span>
+<span class="n">design_name</span> <span class="o">=</span> <span class="s2">&quot;Sinusoidal&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="initialize-definitions-for-stator-rotor-and-shaft">
+<h2>Initialize definitions for stator, rotor, and shaft<a class="headerlink" href="#initialize-definitions-for-stator-rotor-and-shaft" title="Link to this heading">#</a></h2>
+<p>Initialize geometry parameter definitions for the stator, rotor, and shaft.
+The naming refers to RMxprt primitives.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">geom_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;DiaGap&quot;</span><span class="p">:</span> <span class="s2">&quot;132mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DiaStatorYoke&quot;</span><span class="p">:</span> <span class="s2">&quot;198mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DiaStatorInner&quot;</span><span class="p">:</span> <span class="s2">&quot;132mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DiaRotorLam&quot;</span><span class="p">:</span> <span class="s2">&quot;130mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DiaShaft&quot;</span><span class="p">:</span> <span class="s2">&quot;44.45mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DiaOuter&quot;</span><span class="p">:</span> <span class="s2">&quot;198mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Airgap&quot;</span><span class="p">:</span> <span class="s2">&quot;1mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SlotNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;48&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SlotType&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="initialize-definitions-for-stator-windings">
+<h2>Initialize definitions for stator windings<a class="headerlink" href="#initialize-definitions-for-stator-windings" title="Link to this heading">#</a></h2>
+<p>Initialize geometry parameter definitions for the stator windings. The naming
+refers to RMxprt primitives.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">wind_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Layers&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ParallelPaths&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;R_Phase&quot;</span><span class="p">:</span> <span class="s2">&quot;7.5mOhm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;WdgExt_F&quot;</span><span class="p">:</span> <span class="s2">&quot;5mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SpanExt&quot;</span><span class="p">:</span> <span class="s2">&quot;30mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SegAngle&quot;</span><span class="p">:</span> <span class="s2">&quot;0.25&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CoilPitch&quot;</span><span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span>  <span class="c1"># coil pitch in slots</span>
+    <span class="s2">&quot;Coil_SetBack&quot;</span><span class="p">:</span> <span class="s2">&quot;3.605732823mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SlotWidth&quot;</span><span class="p">:</span> <span class="s2">&quot;2.814mm&quot;</span><span class="p">,</span>  <span class="c1"># RMxprt Bs0</span>
+    <span class="s2">&quot;Coil_Edge_Short&quot;</span><span class="p">:</span> <span class="s2">&quot;3.769235435mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Coil_Edge_Long&quot;</span><span class="p">:</span> <span class="s2">&quot;15.37828521mm&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="initialize-definitions-for-model-setup">
+<h2>Initialize definitions for model setup<a class="headerlink" href="#initialize-definitions-for-model-setup" title="Link to this heading">#</a></h2>
+<p>Initialize geometry parameter definitions for the model setup.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mod_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;NumPoles&quot;</span><span class="p">:</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Model_Length&quot;</span><span class="p">:</span> <span class="s2">&quot;80mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SymmetryFactor&quot;</span><span class="p">:</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Magnetic_Axial_Length&quot;</span><span class="p">:</span> <span class="s2">&quot;150mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Stator_Lam_Length&quot;</span><span class="p">:</span> <span class="s2">&quot;0mm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;StatorSkewAngle&quot;</span><span class="p">:</span> <span class="s2">&quot;0deg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;NumTorquePointsPerCycle&quot;</span><span class="p">:</span> <span class="s2">&quot;30&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mapping_angle&quot;</span><span class="p">:</span> <span class="s2">&quot;0.125*4deg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;num_m&quot;</span><span class="p">:</span> <span class="s2">&quot;16&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Section_Angle&quot;</span><span class="p">:</span> <span class="s2">&quot;360deg/SymmetryFactor&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="initialize-definitions-for-operational-machine">
+<h2>Initialize definitions for operational machine<a class="headerlink" href="#initialize-definitions-for-operational-machine" title="Link to this heading">#</a></h2>
+<p>Initialize geometry parameter definitions for the operational machine. This
+identifies the operating point for the transient setup.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">oper_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;InitialPositionMD&quot;</span><span class="p">:</span> <span class="s2">&quot;180deg/4&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IPeak&quot;</span><span class="p">:</span> <span class="s2">&quot;480A&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MachineRPM&quot;</span><span class="p">:</span> <span class="s2">&quot;3000rpm&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ElectricFrequency&quot;</span><span class="p">:</span> <span class="s2">&quot;MachineRPM/60rpm*NumPoles/2*1Hz&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ElectricPeriod&quot;</span><span class="p">:</span> <span class="s2">&quot;1/ElectricFrequency&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BandTicksinModel&quot;</span><span class="p">:</span> <span class="s2">&quot;360deg/NumPoles/mapping_angle&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TimeStep&quot;</span><span class="p">:</span> <span class="s2">&quot;ElectricPeriod/(2*BandTicksinModel)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;StopTime&quot;</span><span class="p">:</span> <span class="s2">&quot;ElectricPeriod&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Theta_i&quot;</span><span class="p">:</span> <span class="s2">&quot;135deg&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="set-non-graphical-mode">
+<h2>Set non-graphical mode<a class="headerlink" href="#set-non-graphical-mode" title="Link to this heading">#</a></h2>
+<p>Set non-graphical mode. <code class="docutils literal notranslate"><span class="pre">&quot;PYAEDT_NON_GRAPHICAL&quot;</span></code> is needed to
+generate documentation only.
+You can set <code class="docutils literal notranslate"><span class="pre">non_graphical</span></code> either to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">non_graphical</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="launch-maxwell-2d">
+<h2>Launch Maxwell 2D<a class="headerlink" href="#launch-maxwell-2d" title="Link to this heading">#</a></h2>
+<p>Launch Maxwell 2D and save the project.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Maxwell2d</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="n">project_name</span><span class="p">,</span>
+                       <span class="n">version</span><span class="o">=</span><span class="n">aedt_version</span><span class="p">,</span>
+                       <span class="n">design</span><span class="o">=</span><span class="n">design_name</span><span class="p">,</span>
+                       <span class="n">solution_type</span><span class="o">=</span><span class="n">solver</span><span class="p">,</span>
+                       <span class="n">new_desktop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                       <span class="n">non_graphical</span><span class="o">=</span><span class="n">non_graphical</span>
+                       <span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\actions-runner\_work\_tool\Python\3.10.9\x64\lib\subprocess.py:1072: ResourceWarning: subprocess 6784 is still running
+  _warn(&quot;subprocess %s is still running&quot; % self.pid,
+C:\actions-runner\_work\pyaedt\pyaedt\.venv\lib\site-packages\ansys\aedt\core\generic\settings.py:231: ResourceWarning: unclosed file &lt;_io.TextIOWrapper name=&#39;D:\\Temp\\pyaedt_ansys_260622a4-692f-48cc-bef3-b1a76554a3cc.log&#39; mode=&#39;a&#39; encoding=&#39;cp1252&#39;&gt;
+  self.__logger = val
+</pre></div>
+</div>
+</section>
+<section id="create-object-to-access-2d-modeler">
+<h2>Create object to access 2D modeler<a class="headerlink" href="#create-object-to-access-2d-modeler" title="Link to this heading">#</a></h2>
+<p>Create the object <code class="docutils literal notranslate"><span class="pre">mod2D</span></code> to access the 2D modeler easily.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mod2D</span> <span class="o">=</span> <span class="n">M2D</span><span class="o">.</span><span class="n">modeler</span>
+<span class="n">mod2D</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<span class="n">mod2D</span><span class="o">.</span><span class="n">model_units</span> <span class="o">=</span> <span class="s2">&quot;mm&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="define-variables-from-dictionaries">
+<h2>Define variables from dictionaries<a class="headerlink" href="#define-variables-from-dictionaries" title="Link to this heading">#</a></h2>
+<p>Define design variables from the created dictionaries.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">geom_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">M2D</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">wind_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">M2D</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">mod_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">M2D</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">oper_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">M2D</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+</pre></div>
+</div>
+</section>
+<section id="define-path-for-non-linear-material-properties">
+<h2>Define path for non-linear material properties<a class="headerlink" href="#define-path-for-non-linear-material-properties" title="Link to this heading">#</a></h2>
+<p>Define the path for non-linear material properties.
+Materials are stored in text files.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">filename_lam</span><span class="p">,</span> <span class="n">filename_PM</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">download_leaf</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="create-first-material">
+<h2>Create first material<a class="headerlink" href="#create-first-material" title="Link to this heading">#</a></h2>
+<p>Create the material <code class="docutils literal notranslate"><span class="pre">&quot;Copper</span> <span class="pre">(Annealed)_65C&quot;</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mat_coils</span> <span class="o">=</span> <span class="n">M2D</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">add_material</span><span class="p">(</span><span class="s2">&quot;Copper (Annealed)_65C&quot;</span><span class="p">)</span>
+<span class="n">mat_coils</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">mat_coils</span><span class="o">.</span><span class="n">conductivity</span> <span class="o">=</span> <span class="s2">&quot;49288048.9198&quot;</span>
+<span class="n">mat_coils</span><span class="o">.</span><span class="n">permeability</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="create-second-material">
+<h2>Create second material<a class="headerlink" href="#create-second-material" title="Link to this heading">#</a></h2>
+<p>Create the material <code class="docutils literal notranslate"><span class="pre">&quot;Arnold_Magnetics_N30UH_80C&quot;</span></code>.
+The BH curve is read from a tabbed CSV file, and a list (<code class="docutils literal notranslate"><span class="pre">BH_List_PM</span></code>)
+is created. This list is passed to the <code class="docutils literal notranslate"><span class="pre">mat_PM.permeability.value</span></code>
+method.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mat_PM</span> <span class="o">=</span> <span class="n">M2D</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">add_material</span><span class="p">(</span><span class="s2">&quot;Arnold_Magnetics_N30UH_80C_new&quot;</span><span class="p">)</span>
+<span class="n">mat_PM</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">mat_PM</span><span class="o">.</span><span class="n">conductivity</span> <span class="o">=</span> <span class="s2">&quot;555555.5556&quot;</span>
+<span class="n">mat_PM</span><span class="o">.</span><span class="n">set_magnetic_coercivity</span><span class="p">(</span><span class="n">value</span><span class="o">=-</span><span class="mf">800146.66287534</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mat_PM</span><span class="o">.</span><span class="n">mass_density</span> <span class="o">=</span> <span class="s2">&quot;7500&quot;</span>
+<span class="n">BH_List_PM</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename_PM</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="n">BH_List_PM</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+<span class="n">mat_PM</span><span class="o">.</span><span class="n">permeability</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">BH_List_PM</span>
+</pre></div>
+</div>
+</section>
+<section id="create-third-material">
+<h2>Create third material<a class="headerlink" href="#create-third-material" title="Link to this heading">#</a></h2>
+<p>Create the laminated material <code class="docutils literal notranslate"><span class="pre">30DH_20C_smooth</span></code>.
+This material has a BH curve and a core loss model,
+which is set to electrical steel.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mat_lam</span> <span class="o">=</span> <span class="n">M2D</span><span class="o">.</span><span class="n">materials</span><span class="o">.</span><span class="n">add_material</span><span class="p">(</span><span class="s2">&quot;30DH_20C_smooth&quot;</span><span class="p">)</span>
+<span class="n">mat_lam</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">mat_lam</span><span class="o">.</span><span class="n">conductivity</span> <span class="o">=</span> <span class="s2">&quot;1694915.25424&quot;</span>
+<span class="n">kh</span> <span class="o">=</span> <span class="mf">71.7180985413</span>
+<span class="n">kc</span> <span class="o">=</span> <span class="mf">0.25092214579</span>
+<span class="n">ke</span> <span class="o">=</span> <span class="mf">12.1625774023</span>
+<span class="n">kdc</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="n">eq_depth</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="n">mat_lam</span><span class="o">.</span><span class="n">set_electrical_steel_coreloss</span><span class="p">(</span><span class="n">kh</span><span class="p">,</span> <span class="n">kc</span><span class="p">,</span> <span class="n">ke</span><span class="p">,</span> <span class="n">kdc</span><span class="p">,</span> <span class="n">eq_depth</span><span class="p">)</span>
+<span class="n">mat_lam</span><span class="o">.</span><span class="n">mass_density</span> <span class="o">=</span> <span class="s2">&quot;7650&quot;</span>
+<span class="n">BH_List_lam</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename_lam</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="n">BH_List_lam</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+<span class="n">mat_lam</span><span class="o">.</span><span class="n">permeability</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">BH_List_lam</span>
+</pre></div>
+</div>
+</section>
+<section id="create-geometry-for-stator">
+<h2>Create geometry for stator<a class="headerlink" href="#create-geometry-for-stator" title="Link to this heading">#</a></h2>
+<p>Create the geometry for the stator. It is created via
+the RMxprt user-defined primitive. A list of lists is
+created with the proper UDP parameters.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">udp_par_list_stator</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;DiaGap&quot;</span><span class="p">,</span> <span class="s2">&quot;DiaGap&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;DiaYoke&quot;</span><span class="p">,</span> <span class="s2">&quot;DiaStatorYoke&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Length&quot;</span><span class="p">,</span> <span class="s2">&quot;Stator_Lam_Length&quot;</span><span class="p">],</span>
+                       <span class="p">[</span><span class="s2">&quot;Skew&quot;</span><span class="p">,</span> <span class="s2">&quot;StatorSkewAngle&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Slots&quot;</span><span class="p">,</span> <span class="s2">&quot;SlotNumber&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;SlotType&quot;</span><span class="p">,</span> <span class="s2">&quot;SlotType&quot;</span><span class="p">],</span>
+                       <span class="p">[</span><span class="s2">&quot;Hs0&quot;</span><span class="p">,</span> <span class="s2">&quot;1.2mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Hs01&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Hs1&quot;</span><span class="p">,</span> <span class="s2">&quot;0.4834227384999mm&quot;</span><span class="p">],</span>
+                       <span class="p">[</span><span class="s2">&quot;Hs2&quot;</span><span class="p">,</span> <span class="s2">&quot;17.287669825502mm&quot;</span><span class="p">],</span>
+                       <span class="p">[</span><span class="s2">&quot;Bs0&quot;</span><span class="p">,</span> <span class="s2">&quot;2.814mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Bs1&quot;</span><span class="p">,</span> <span class="s2">&quot;4.71154109036mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Bs2&quot;</span><span class="p">,</span> <span class="s2">&quot;6.9777285790998mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Rs&quot;</span><span class="p">,</span> <span class="s2">&quot;2mm&quot;</span><span class="p">],</span>
+                       <span class="p">[</span><span class="s2">&quot;FilletType&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;HalfSlot&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;VentHoles&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;HoleDiaIn&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+                       <span class="p">[</span><span class="s2">&quot;HoleDiaOut&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+                       <span class="p">[</span><span class="s2">&quot;HoleLocIn&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;HoleLocOut&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;VentDucts&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;DuctWidth&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+                       <span class="p">[</span><span class="s2">&quot;DuctPitch&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+                       <span class="p">[</span><span class="s2">&quot;SegAngle&quot;</span><span class="p">,</span> <span class="s2">&quot;0deg&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;LenRegion&quot;</span><span class="p">,</span> <span class="s2">&quot;Model_Length&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;InfoCore&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">]]</span>
+
+<span class="n">stator_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_udp</span><span class="p">(</span><span class="n">dll</span><span class="o">=</span><span class="s2">&quot;RMxprt/VentSlotCore.dll&quot;</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="n">udp_par_list_stator</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="s1">&#39;syslib&#39;</span><span class="p">,</span>
+                             <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my_stator&#39;</span><span class="p">)</span>  <span class="c1"># name not taken</span>
+</pre></div>
+</div>
+</section>
+<section id="assign-properties-to-stator">
+<h2>Assign properties to stator<a class="headerlink" href="#assign-properties-to-stator" title="Link to this heading">#</a></h2>
+<p>Assign properties to the stator. The following code assigns
+the material, name, color, and  <code class="docutils literal notranslate"><span class="pre">solve_inside</span></code> properties.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">assign_material</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="n">stator_id</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;30DH_20C_smooth&quot;</span><span class="p">)</span>
+<span class="n">stator_id</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Stator&quot;</span>
+<span class="n">stator_id</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># rgb</span>
+<span class="n">stator_id</span><span class="o">.</span><span class="n">solve_inside</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># to be reassigned: M2D.assign material puts False if not dielectric</span>
+</pre></div>
+</div>
+</section>
+<section id="create-geometry-for-pms">
+<h2>Create geometry for PMs<a class="headerlink" href="#create-geometry-for-pms" title="Link to this heading">#</a></h2>
+<p>Create the geometry for the PMs (permanent magnets). In Maxwell 2D, you assign
+magnetization via the coordinate system. Because each PM needs to have a coordinate
+system in the face center, auxiliary functions are created. Here, you use the auxiliary
+function <code class="docutils literal notranslate"><span class="pre">find_elements(lst1,</span> <span class="pre">lst2)</span></code> to find the elements in list <code class="docutils literal notranslate"><span class="pre">lst1</span></code> with indexes
+in list <code class="docutils literal notranslate"><span class="pre">lst2</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_elements</span><span class="p">(</span><span class="n">lst1</span><span class="p">,</span> <span class="n">lst2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">lst1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst2</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="find-largest-elements-in-list">
+<h2>Find largest elements in list<a class="headerlink" href="#find-largest-elements-in-list" title="Link to this heading">#</a></h2>
+<p>Use the auxiliary function <code class="docutils literal notranslate"><span class="pre">find_n_largest</span> <span class="pre">(input_len_list,</span> <span class="pre">n_largest_edges)</span></code>
+to find the <code class="docutils literal notranslate"><span class="pre">n</span></code> largest elements in the list <code class="docutils literal notranslate"><span class="pre">input_len_list</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_n_largest</span><span class="p">(</span><span class="n">input_len_list</span><span class="p">,</span> <span class="n">n_largest_edges</span><span class="p">):</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_len_list</span><span class="p">)</span>
+    <span class="n">copied</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_len_list</span><span class="p">)</span>
+    <span class="n">copied</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># sort list so that largest elements are on the far right</span>
+    <span class="n">index_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_largest_edges</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># get index of the nth largest element</span>
+        <span class="n">index_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">copied</span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="p">]))</span>
+        <span class="n">tmp</span><span class="p">[</span><span class="n">tmp</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">copied</span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="p">])]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># index can only get the first occurrence that solves the problem</span>
+    <span class="k">return</span> <span class="n">index_list</span>
+</pre></div>
+</div>
+</section>
+<section id="create-coordinate-system-for-pms">
+<h2>Create coordinate system for PMs<a class="headerlink" href="#create-coordinate-system-for-pms" title="Link to this heading">#</a></h2>
+<p>Create the coordinate system for the PMs. The inputs are the object name, coordinate
+system name, and inner or outer magnetization. Find the two longest edges of the magnets
+and get the midpoint of the outer edge. You must have this point to create the face
+coordinate systems in case of outer magnetization.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_cs_magnets</span><span class="p">(</span><span class="n">pm_id</span><span class="p">,</span> <span class="n">cs_name</span><span class="p">,</span> <span class="n">point_direction</span><span class="p">):</span>
+    <span class="n">pm_face_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="n">pm_id</span><span class="o">.</span><span class="n">name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># works with name only</span>
+    <span class="n">pm_edges</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">get_object_edges</span><span class="p">(</span><span class="n">pm_id</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># gets the edges of the PM object</span>
+    <span class="n">edge_len_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+        <span class="nb">map</span><span class="p">(</span><span class="n">mod2D</span><span class="o">.</span><span class="n">get_edge_length</span><span class="p">,</span> <span class="n">pm_edges</span><span class="p">))</span>  <span class="c1"># apply method get_edge_length to all elements of list pm_edges</span>
+    <span class="n">index_2_longest</span> <span class="o">=</span> <span class="n">find_n_largest</span><span class="p">(</span><span class="n">edge_len_list</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># find the 2 longest edges of the PM</span>
+    <span class="n">longest_edge_list</span> <span class="o">=</span> <span class="n">find_elements</span><span class="p">(</span><span class="n">pm_edges</span><span class="p">,</span> <span class="n">index_2_longest</span><span class="p">)</span>
+    <span class="n">edge_center_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">mod2D</span><span class="o">.</span><span class="n">get_edge_midpoint</span><span class="p">,</span>
+                                <span class="n">longest_edge_list</span><span class="p">))</span>  <span class="c1"># apply method get_edge_midpoint to all elements of list longest_edge_list</span>
+
+    <span class="n">rad</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">mysqrt</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">index_largest_r</span> <span class="o">=</span> <span class="n">find_n_largest</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">rad</span><span class="p">,</span> <span class="n">edge_center_list</span><span class="p">)),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">longest_edge_list2</span> <span class="o">=</span> <span class="p">[</span><span class="n">longest_edge_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">index_largest_r</span><span class="p">]</span>  <span class="c1"># reorder: outer first element of the list</span>
+    <span class="k">if</span> <span class="n">point_direction</span> <span class="o">==</span> <span class="s1">&#39;outer&#39;</span><span class="p">:</span>
+        <span class="n">my_axis_pos</span> <span class="o">=</span> <span class="n">longest_edge_list2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">point_direction</span> <span class="o">==</span> <span class="s1">&#39;inner&#39;</span><span class="p">:</span>
+        <span class="n">my_axis_pos</span> <span class="o">=</span> <span class="n">longest_edge_list2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">mod2D</span><span class="o">.</span><span class="n">create_face_coordinate_system</span><span class="p">(</span><span class="n">face</span><span class="o">=</span><span class="n">pm_face_id</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">pm_face_id</span><span class="p">,</span> <span class="n">axis_position</span><span class="o">=</span><span class="n">my_axis_pos</span><span class="p">,</span>
+                                        <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">cs_name</span><span class="p">)</span>
+    <span class="n">pm_id</span><span class="o">.</span><span class="n">part_coordinate_system</span> <span class="o">=</span> <span class="n">cs_name</span>
+    <span class="n">mod2D</span><span class="o">.</span><span class="n">set_working_coordinate_system</span><span class="p">(</span><span class="s1">&#39;Global&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-outer-and-inner-pms">
+<h2>Create outer and inner PMs<a class="headerlink" href="#create-outer-and-inner-pms" title="Link to this heading">#</a></h2>
+<p>Create the outer and inner PMs and assign color to them.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">IM1_points</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">56.70957112</span><span class="p">,</span> <span class="mf">3.104886585</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">40.25081875</span><span class="p">,</span> <span class="mf">16.67243502</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">38.59701538</span><span class="p">,</span> <span class="mf">14.66621111</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">55.05576774</span><span class="p">,</span> <span class="mf">1.098662669</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">OM1_points</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">54.37758185</span><span class="p">,</span> <span class="mf">22.52393189</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">59.69688156</span><span class="p">,</span> <span class="mf">9.68200639</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">63.26490432</span><span class="p">,</span> <span class="mf">11.15992981</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">57.94560461</span><span class="p">,</span> <span class="mf">24.00185531</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">IPM1_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">IM1_points</span><span class="p">,</span> <span class="n">cover_surface</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PM_I1&quot;</span><span class="p">,</span>
+                                <span class="n">material</span><span class="o">=</span><span class="s2">&quot;Arnold_Magnetics_N30UH_80C_new&quot;</span><span class="p">)</span>
+<span class="n">IPM1_id</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">OPM1_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">OM1_points</span><span class="p">,</span> <span class="n">cover_surface</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PM_O1&quot;</span><span class="p">,</span>
+                                <span class="n">material</span><span class="o">=</span><span class="s2">&quot;Arnold_Magnetics_N30UH_80C_new&quot;</span><span class="p">)</span>
+<span class="n">OPM1_id</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-coordinate-system-for-pms-in-face-center">
+<h2>Create coordinate system for PMs in face center<a class="headerlink" href="#create-coordinate-system-for-pms-in-face-center" title="Link to this heading">#</a></h2>
+<p>Create the coordinate system for PMs in the face center.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">create_cs_magnets</span><span class="p">(</span><span class="n">IPM1_id</span><span class="p">,</span> <span class="s1">&#39;CS_&#39;</span> <span class="o">+</span> <span class="n">IPM1_id</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+<span class="n">create_cs_magnets</span><span class="p">(</span><span class="n">OPM1_id</span><span class="p">,</span> <span class="s1">&#39;CS_&#39;</span> <span class="o">+</span> <span class="n">OPM1_id</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="duplicate-and-mirror-pms">
+<h2>Duplicate and mirror PMs<a class="headerlink" href="#duplicate-and-mirror-pms" title="Link to this heading">#</a></h2>
+<p>Duplicate and mirror the PMs along with the local coordinate system.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mod2D</span><span class="o">.</span><span class="n">duplicate_and_mirror</span><span class="p">([</span><span class="n">IPM1_id</span><span class="p">,</span> <span class="n">OPM1_id</span><span class="p">],</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                           <span class="n">vector</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cos((360deg/SymmetryFactor/2)+90deg)&quot;</span><span class="p">,</span> <span class="s2">&quot;sin((360deg/SymmetryFactor/2)+90deg)&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">id_PMs</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">get_objects_w_string</span><span class="p">(</span><span class="s2">&quot;PM&quot;</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-coils">
+<h2>Create coils<a class="headerlink" href="#create-coils" title="Link to this heading">#</a></h2>
+<p>Create the coils.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">coil_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DiaRotorLam/2+Airgap+Coil_SetBack&#39;</span><span class="p">,</span> <span class="s1">&#39;-Coil_Edge_Short/2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                                 <span class="n">sizes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Coil_Edge_Long&#39;</span><span class="p">,</span> <span class="s1">&#39;Coil_Edge_Short&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                                 <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Coil&#39;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;Copper (Annealed)_65C&quot;</span><span class="p">)</span>
+<span class="n">coil_id</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="n">coil_id</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="s2">&quot;360deg/SlotNumber/2&quot;</span><span class="p">)</span>
+<span class="n">coil_id</span><span class="o">.</span><span class="n">duplicate_around_axis</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="s2">&quot;360deg/SlotNumber&quot;</span><span class="p">,</span> <span class="n">nclones</span><span class="o">=</span><span class="s1">&#39;CoilPitch+1&#39;</span><span class="p">,</span>
+                              <span class="n">create_new_objects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">id_coils</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">get_objects_w_string</span><span class="p">(</span><span class="s2">&quot;Coil&quot;</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-shaft-and-region">
+<h2>Create shaft and region<a class="headerlink" href="#create-shaft-and-region" title="Link to this heading">#</a></h2>
+<p>Create the shaft and region.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">region_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_circle</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="s1">&#39;DiaOuter/2&#39;</span><span class="p">,</span>
+                                <span class="n">num_sides</span><span class="o">=</span><span class="s1">&#39;SegAngle&#39;</span><span class="p">,</span> <span class="n">is_covered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span>
+<span class="n">shaft_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_circle</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="s1">&#39;DiaShaft/2&#39;</span><span class="p">,</span>
+                               <span class="n">num_sides</span><span class="o">=</span><span class="s1">&#39;SegAngle&#39;</span><span class="p">,</span> <span class="n">is_covered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Shaft&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-bands">
+<h2>Create bands<a class="headerlink" href="#create-bands" title="Link to this heading">#</a></h2>
+<p>Create the inner band, band, and outer band.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">bandIN_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_circle</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="s1">&#39;(DiaGap - (1.5 * Airgap))/2&#39;</span><span class="p">,</span>
+                                <span class="n">num_sides</span><span class="o">=</span><span class="s1">&#39;mapping_angle&#39;</span><span class="p">,</span> <span class="n">is_covered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Inner_Band&#39;</span><span class="p">)</span>
+<span class="n">bandMID_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_circle</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="s1">&#39;(DiaGap - (1.0 * Airgap))/2&#39;</span><span class="p">,</span>
+                                 <span class="n">num_sides</span><span class="o">=</span><span class="s1">&#39;mapping_angle&#39;</span><span class="p">,</span> <span class="n">is_covered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Band&#39;</span><span class="p">)</span>
+<span class="n">bandOUT_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_circle</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="s1">&#39;(DiaGap - (0.5 * Airgap))/2&#39;</span><span class="p">,</span>
+                                 <span class="n">num_sides</span><span class="o">=</span><span class="s1">&#39;mapping_angle&#39;</span><span class="p">,</span> <span class="n">is_covered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Outer_Band&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="assign-motion-setup-to-object">
+<h2>Assign motion setup to object<a class="headerlink" href="#assign-motion-setup-to-object" title="Link to this heading">#</a></h2>
+<p>Assign a motion setup to a <code class="docutils literal notranslate"><span class="pre">Band</span></code> object named <code class="docutils literal notranslate"><span class="pre">RotatingBand_mid</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">assign_rotate_motion</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s1">&#39;Band&#39;</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="o">=</span><span class="s2">&quot;Global&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="n">positive_movement</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                         <span class="n">start_position</span><span class="o">=</span><span class="s2">&quot;InitialPositionMD&quot;</span><span class="p">,</span> <span class="n">angular_velocity</span><span class="o">=</span><span class="s2">&quot;MachineRPM&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.boundary.BoundaryObject object at 0x000002B31DAFB8E0&gt;
+</pre></div>
+</div>
+</section>
+<section id="create-list-of-vacuum-objects">
+<h2>Create list of vacuum objects<a class="headerlink" href="#create-list-of-vacuum-objects" title="Link to this heading">#</a></h2>
+<p>Create a list of vacuum objects and assign color.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">vacuum_obj_id</span> <span class="o">=</span> <span class="p">[</span><span class="n">shaft_id</span><span class="p">,</span> <span class="n">region_id</span><span class="p">,</span> <span class="n">bandIN_id</span><span class="p">,</span> <span class="n">bandMID_id</span><span class="p">,</span> <span class="n">bandOUT_id</span><span class="p">]</span>  <span class="c1"># put shaft first</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">vacuum_obj_id</span><span class="p">:</span>
+    <span class="n">item</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-rotor">
+<h2>Create rotor<a class="headerlink" href="#create-rotor" title="Link to this heading">#</a></h2>
+<p>Create the rotor. Holes are specific to the lamination.
+Allocated PMs are created.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">rotor_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_circle</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="s1">&#39;DiaRotorLam/2&#39;</span><span class="p">,</span>
+                               <span class="n">num_sides</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Rotor&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;30DH_20C_smooth&quot;</span><span class="p">)</span>
+<span class="n">rotor_id</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">mod2D</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">rotor_id</span><span class="p">,</span> <span class="n">shaft_id</span><span class="p">,</span> <span class="n">keep_originals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">void_small_1_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_circle</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">62</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="s2">&quot;2.55mm&quot;</span><span class="p">,</span>
+                                      <span class="n">num_sides</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;void1&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">duplicate_around_axis</span><span class="p">(</span><span class="n">void_small_1_id</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="s2">&quot;360deg/SymmetryFactor&quot;</span><span class="p">,</span>
+                                  <span class="n">clones</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">create_new_objects</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">void_big_1_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_circle</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">29.5643</span><span class="p">,</span> <span class="mf">12.234389332712</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="s1">&#39;9.88mm/2&#39;</span><span class="p">,</span>
+                                    <span class="n">num_sides</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;void_big&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+<span class="n">mod2D</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">rotor_id</span><span class="p">,</span> <span class="p">[</span><span class="n">void_small_1_id</span><span class="p">,</span> <span class="n">void_big_1_id</span><span class="p">],</span> <span class="n">keep_originals</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">slot_IM1_points</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">37.5302872</span><span class="p">,</span> <span class="mf">15.54555396</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">55.05576774</span><span class="p">,</span> <span class="mf">1.098662669</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">57.33637589</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mf">57.28982158</span><span class="p">,</span> <span class="mf">2.626565019</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">40.25081875</span><span class="p">,</span> <span class="mf">16.67243502</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">slot_OM1_points</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">54.37758185</span><span class="p">,</span> <span class="mf">22.52393189</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">59.69688156</span><span class="p">,</span> <span class="mf">9.68200639</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">63.53825619</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mf">57.94560461</span><span class="p">,</span> <span class="mf">24.00185531</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">slot_IM_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">slot_IM1_points</span><span class="p">,</span> <span class="n">cover_surface</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;slot_IM1&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+<span class="n">slot_OM_id</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">slot_OM1_points</span><span class="p">,</span> <span class="n">cover_surface</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;slot_OM1&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+
+<span class="n">M2D</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">duplicate_and_mirror</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="p">[</span><span class="n">slot_IM_id</span><span class="p">,</span> <span class="n">slot_OM_id</span><span class="p">],</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                                 <span class="n">vector</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cos((360deg/SymmetryFactor/2)+90deg)&quot;</span><span class="p">,</span>
+                                         <span class="s2">&quot;sin((360deg/SymmetryFactor/2)+90deg)&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">id_holes</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">get_objects_w_string</span><span class="p">(</span><span class="s2">&quot;slot_&quot;</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">rotor_id</span><span class="p">,</span> <span class="n">id_holes</span><span class="p">,</span> <span class="n">keep_originals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="create-section-of-machine">
+<h2>Create section of machine<a class="headerlink" href="#create-section-of-machine" title="Link to this heading">#</a></h2>
+<p>Create a section of the machine. This allows you to take
+advantage of symmetries.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">object_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">stator_id</span><span class="p">,</span> <span class="n">rotor_id</span><span class="p">]</span> <span class="o">+</span> <span class="n">vacuum_obj_id</span>
+<span class="n">mod2D</span><span class="o">.</span><span class="n">create_coordinate_system</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                               <span class="n">reference_cs</span><span class="o">=</span><span class="s2">&quot;Global&quot;</span><span class="p">,</span>
+                               <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Section&quot;</span><span class="p">,</span>
+                               <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;axis&quot;</span><span class="p">,</span>
+                               <span class="n">x_pointing</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cos(360deg/SymmetryFactor)&quot;</span><span class="p">,</span> <span class="s2">&quot;sin(360deg/SymmetryFactor)&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                               <span class="n">y_pointing</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-sin(360deg/SymmetryFactor)&quot;</span><span class="p">,</span> <span class="s2">&quot;cos(360deg/SymmetryFactor)&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">mod2D</span><span class="o">.</span><span class="n">set_working_coordinate_system</span><span class="p">(</span><span class="s2">&quot;Section&quot;</span><span class="p">)</span>
+<span class="n">mod2D</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">object_list</span><span class="p">,</span> <span class="s2">&quot;ZX&quot;</span><span class="p">,</span> <span class="n">sides</span><span class="o">=</span><span class="s2">&quot;NegativeOnly&quot;</span><span class="p">)</span>
+<span class="n">mod2D</span><span class="o">.</span><span class="n">set_working_coordinate_system</span><span class="p">(</span><span class="s2">&quot;Global&quot;</span><span class="p">)</span>
+<span class="n">mod2D</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">object_list</span><span class="p">,</span> <span class="s2">&quot;ZX&quot;</span><span class="p">,</span> <span class="n">sides</span><span class="o">=</span><span class="s2">&quot;PositiveOnly&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;Stator,Rotor,Shaft,Region,Inner_Band,Band,Outer_Band&#39;]
+</pre></div>
+</div>
+</section>
+<section id="create-boundary-conditions">
+<h2>Create boundary conditions<a class="headerlink" href="#create-boundary-conditions" title="Link to this heading">#</a></h2>
+<p>Create independent and dependent boundary conditions.
+Edges for assignment are picked by position.
+The points for edge picking are in the airgap.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pos_1</span> <span class="o">=</span> <span class="s2">&quot;((DiaGap - (1.0 * Airgap))/4)&quot;</span>
+<span class="n">id_bc_1</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">get_edgeid_from_position</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="n">pos_1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">assignment</span><span class="o">=</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span>
+<span class="n">id_bc_2</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">get_edgeid_from_position</span><span class="p">(</span>
+    <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="n">pos_1</span> <span class="o">+</span> <span class="s2">&quot;*cos((360deg/SymmetryFactor))&quot;</span><span class="p">,</span> <span class="n">pos_1</span> <span class="o">+</span> <span class="s2">&quot;*sin((360deg/SymmetryFactor))&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">assignment</span><span class="o">=</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">assign_master_slave</span><span class="p">(</span><span class="n">independent</span><span class="o">=</span><span class="n">id_bc_1</span><span class="p">,</span> <span class="n">dependent</span><span class="o">=</span><span class="n">id_bc_2</span><span class="p">,</span> <span class="n">reverse_master</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reverse_slave</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">same_as_master</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">boundary</span><span class="o">=</span><span class="s2">&quot;Matching&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(&lt;ansys.aedt.core.modules.boundary.BoundaryObject object at 0x000002B31DAF0970&gt;, &lt;ansys.aedt.core.modules.boundary.BoundaryObject object at 0x000002B31DAF0820&gt;)
+</pre></div>
+</div>
+</section>
+<section id="assign-vector-potential">
+<h2>Assign vector potential<a class="headerlink" href="#assign-vector-potential" title="Link to this heading">#</a></h2>
+<p>Assign a vector potential of <code class="docutils literal notranslate"><span class="pre">0</span></code> to the second position.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pos_2</span> <span class="o">=</span> <span class="s2">&quot;(DiaOuter/2)&quot;</span>
+<span class="n">id_bc_az</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">get_edgeid_from_position</span><span class="p">(</span>
+    <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="n">pos_2</span> <span class="o">+</span> <span class="s2">&quot;*cos((360deg/SymmetryFactor/2))&quot;</span><span class="p">,</span> <span class="n">pos_2</span> <span class="o">+</span> <span class="s2">&quot;*sin((360deg/SymmetryFactor)/2)&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="n">assignment</span><span class="o">=</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">assign_vector_potential</span><span class="p">(</span><span class="n">id_bc_az</span><span class="p">,</span> <span class="n">vector_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">boundary</span><span class="o">=</span><span class="s2">&quot;VectorPotentialZero&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.boundary.BoundaryObject object at 0x000002B31DAF0940&gt;
+</pre></div>
+</div>
+</section>
+<section id="create-excitations">
+<h2>Create excitations<a class="headerlink" href="#create-excitations" title="Link to this heading">#</a></h2>
+<p>Create excitations, defining phase currents for the windings.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">PhA_current</span> <span class="o">=</span> <span class="s2">&quot;IPeak * cos(2*pi*ElectricFrequency*time+Theta_i)&quot;</span>
+<span class="n">PhB_current</span> <span class="o">=</span> <span class="s2">&quot;IPeak * cos(2*pi * ElectricFrequency*time - 120deg+Theta_i)&quot;</span>
+<span class="n">PhC_current</span> <span class="o">=</span> <span class="s2">&quot;IPeak * cos(2*pi * ElectricFrequency*time - 240deg+Theta_i)&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="define-windings-in-phase-a">
+<h2>Define windings in phase A<a class="headerlink" href="#define-windings-in-phase-a" title="Link to this heading">#</a></h2>
+<p>Define windings in phase A.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">assign_coil</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Coil&quot;</span><span class="p">],</span> <span class="n">conductors_number</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="s2">&quot;Positive&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CT_Ph1_P2_C1_Go&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">assign_coil</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Coil_5&quot;</span><span class="p">],</span> <span class="n">conductors_number</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="s2">&quot;Negative&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CT_Ph1_P2_C1_Ret&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">assign_winding</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">winding_type</span><span class="o">=</span><span class="s2">&quot;Current&quot;</span><span class="p">,</span> <span class="n">is_solid</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">current</span><span class="o">=</span><span class="n">PhA_current</span><span class="p">,</span> <span class="n">parallel_branches</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Phase_A&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">add_winding_coils</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;Phase_A&quot;</span><span class="p">,</span> <span class="n">coils</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CT_Ph1_P2_C1_Go&quot;</span><span class="p">,</span> <span class="s2">&quot;CT_Ph1_P2_C1_Ret&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="define-windings-in-phase-b">
+<h2>Define windings in phase B<a class="headerlink" href="#define-windings-in-phase-b" title="Link to this heading">#</a></h2>
+<p>Define windings in phase B.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">assign_coil</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;Coil_3&quot;</span><span class="p">,</span> <span class="n">conductors_number</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="s2">&quot;Positive&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CT_Ph3_P1_C2_Go&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">assign_coil</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;Coil_4&quot;</span><span class="p">,</span> <span class="n">conductors_number</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="s2">&quot;Positive&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CT_Ph3_P1_C1_Go&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">assign_winding</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">winding_type</span><span class="o">=</span><span class="s2">&quot;Current&quot;</span><span class="p">,</span> <span class="n">is_solid</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">current</span><span class="o">=</span><span class="n">PhB_current</span><span class="p">,</span> <span class="n">parallel_branches</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Phase_B&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">add_winding_coils</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;Phase_B&quot;</span><span class="p">,</span> <span class="n">coils</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CT_Ph3_P1_C2_Go&quot;</span><span class="p">,</span> <span class="s2">&quot;CT_Ph3_P1_C1_Go&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="define-windings-in-phase-c">
+<h2>Define windings in phase C<a class="headerlink" href="#define-windings-in-phase-c" title="Link to this heading">#</a></h2>
+<p>Define windings in phase C.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">assign_coil</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;Coil_1&quot;</span><span class="p">,</span> <span class="n">conductors_number</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="s2">&quot;Negative&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CT_Ph2_P2_C2_Ret&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">assign_coil</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;Coil_2&quot;</span><span class="p">,</span> <span class="n">conductors_number</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="s2">&quot;Negative&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CT_Ph2_P2_C1_Ret&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">assign_winding</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">winding_type</span><span class="o">=</span><span class="s2">&quot;Current&quot;</span><span class="p">,</span> <span class="n">is_solid</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">current</span><span class="o">=</span><span class="n">PhC_current</span><span class="p">,</span> <span class="n">parallel_branches</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Phase_C&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">add_winding_coils</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="s2">&quot;Phase_C&quot;</span><span class="p">,</span> <span class="n">coils</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CT_Ph2_P2_C2_Ret&quot;</span><span class="p">,</span> <span class="s2">&quot;CT_Ph2_P2_C1_Ret&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="assign-total-current-on-pms">
+<h2>Assign total current on PMs<a class="headerlink" href="#assign-total-current-on-pms" title="Link to this heading">#</a></h2>
+<p>Assign a total current of <code class="docutils literal notranslate"><span class="pre">0</span></code> on the PMs.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">PM_list</span> <span class="o">=</span> <span class="n">id_PMs</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">PM_list</span><span class="p">:</span>
+    <span class="n">M2D</span><span class="o">.</span><span class="n">assign_current</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">solid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">item</span> <span class="o">+</span> <span class="s2">&quot;_I0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-mesh-operations">
+<h2>Create mesh operations<a class="headerlink" href="#create-mesh-operations" title="Link to this heading">#</a></h2>
+<p>Create the mesh operations.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">assign_length_mesh</span><span class="p">(</span><span class="n">id_coils</span><span class="p">,</span> <span class="n">inside_selection</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">maximum_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">maximum_elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;coils&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">assign_length_mesh</span><span class="p">(</span><span class="n">stator_id</span><span class="p">,</span> <span class="n">inside_selection</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">maximum_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">maximum_elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;stator&quot;</span><span class="p">)</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">assign_length_mesh</span><span class="p">(</span><span class="n">rotor_id</span><span class="p">,</span> <span class="n">inside_selection</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">maximum_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">maximum_elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rotor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modules.mesh.MeshOperation object at 0x000002B31DB03580&gt;
+</pre></div>
+</div>
+</section>
+<section id="turn-on-eddy-effects">
+<h2>Turn on eddy effects<a class="headerlink" href="#turn-on-eddy-effects" title="Link to this heading">#</a></h2>
+<p>Turn on eddy effects.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># M2D.eddy_effects_on(eddy_effects_list,activate_eddy_effects=True, activate_displacement_current=False)</span>
+</pre></div>
+</div>
+</section>
+<section id="turn-on-core-loss">
+<h2>Turn on core loss<a class="headerlink" href="#turn-on-core-loss" title="Link to this heading">#</a></h2>
+<p>Turn on core loss.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">core_loss_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Rotor&#39;</span><span class="p">,</span> <span class="s1">&#39;Stator&#39;</span><span class="p">]</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">set_core_losses</span><span class="p">(</span><span class="n">core_loss_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="compute-transient-inductance">
+<h2>Compute transient inductance<a class="headerlink" href="#compute-transient-inductance" title="Link to this heading">#</a></h2>
+<p>Compute the transient inductance.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">change_inductance_computation</span><span class="p">(</span><span class="n">compute_transient_inductance</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">incremental_matrix</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="set-model-depth">
+<h2>Set model depth<a class="headerlink" href="#set-model-depth" title="Link to this heading">#</a></h2>
+<p>Set the model depth.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">model_depth</span> <span class="o">=</span> <span class="s2">&quot;Magnetic_Axial_Length&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="set-symmetry-factor">
+<h2>Set symmetry factor<a class="headerlink" href="#set-symmetry-factor" title="Link to this heading">#</a></h2>
+<p>Set the symmetry factor.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">change_symmetry_multiplier</span><span class="p">(</span><span class="s2">&quot;SymmetryFactor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="create-setup-and-validate">
+<h2>Create setup and validate<a class="headerlink" href="#create-setup-and-validate" title="Link to this heading">#</a></h2>
+<p>Create the setup and validate it.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span> <span class="o">=</span> <span class="n">M2D</span><span class="o">.</span><span class="n">create_setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">setup_name</span><span class="p">)</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;StopTime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;StopTime&quot;</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;TimeStep&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;TimeStep&quot;</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;SaveFieldsType&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;None&quot;</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;OutputPerObjectCoreLoss&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;OutputPerObjectSolidLoss&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">props</span><span class="p">[</span><span class="s2">&quot;OutputError&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">validate_simple</span><span class="p">()</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">M2D</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">M2D</span><span class="o">.</span><span class="n">working_directory</span><span class="p">,</span> <span class="s2">&quot;Image.jpg&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_Maxwell2D_PMSynchronousMotor_001.png" srcset="../../_images/sphx_glr_Maxwell2D_PMSynchronousMotor_001.png" alt="Maxwell2D PMSynchronousMotor" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="initialize-definitions-for-output-variables">
+<h2>Initialize definitions for output variables<a class="headerlink" href="#initialize-definitions-for-output-variables" title="Link to this heading">#</a></h2>
+<p>Initialize the definitions for the output variables.
+These will be used later to generate reports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">output_vars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Current_A&quot;</span><span class="p">:</span> <span class="s2">&quot;InputCurrent(Phase_A)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Current_B&quot;</span><span class="p">:</span> <span class="s2">&quot;InputCurrent(Phase_B)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Current_C&quot;</span><span class="p">:</span> <span class="s2">&quot;InputCurrent(Phase_C)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Flux_A&quot;</span><span class="p">:</span> <span class="s2">&quot;FluxLinkage(Phase_A)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Flux_B&quot;</span><span class="p">:</span> <span class="s2">&quot;FluxLinkage(Phase_B)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Flux_C&quot;</span><span class="p">:</span> <span class="s2">&quot;FluxLinkage(Phase_C)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pos&quot;</span><span class="p">:</span> <span class="s2">&quot;(Moving1.Position -InitialPositionMD) *NumPoles/2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cos0&quot;</span><span class="p">:</span> <span class="s2">&quot;cos(pos)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cos1&quot;</span><span class="p">:</span> <span class="s2">&quot;cos(pos-2*PI/3)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cos2&quot;</span><span class="p">:</span> <span class="s2">&quot;cos(pos-4*PI/3)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sin0&quot;</span><span class="p">:</span> <span class="s2">&quot;sin(pos)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sin1&quot;</span><span class="p">:</span> <span class="s2">&quot;sin(pos-2*PI/3)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sin2&quot;</span><span class="p">:</span> <span class="s2">&quot;sin(pos-4*PI/3)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Flux_d&quot;</span><span class="p">:</span> <span class="s2">&quot;2/3*(Flux_A*cos0+Flux_B*cos1+Flux_C*cos2)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Flux_q&quot;</span><span class="p">:</span> <span class="s2">&quot;-2/3*(Flux_A*sin0+Flux_B*sin1+Flux_C*sin2)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;I_d&quot;</span><span class="p">:</span> <span class="s2">&quot;2/3*(Current_A*cos0 + Current_B*cos1 + Current_C*cos2)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;I_q&quot;</span><span class="p">:</span> <span class="s2">&quot;-2/3*(Current_A*sin0 + Current_B*sin1 + Current_C*sin2)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Irms&quot;</span><span class="p">:</span> <span class="s2">&quot;sqrt(I_d^2+I_q^2)/sqrt(2)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ArmatureOhmicLoss_DC&quot;</span><span class="p">:</span> <span class="s2">&quot;Irms^2*R_phase&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Lad&quot;</span><span class="p">:</span> <span class="s2">&quot;L(Phase_A,Phase_A)*cos0 + L(Phase_A,Phase_B)*cos1 + L(Phase_A,Phase_C)*cos2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Laq&quot;</span><span class="p">:</span> <span class="s2">&quot;L(Phase_A,Phase_A)*sin0 + L(Phase_A,Phase_B)*sin1 + L(Phase_A,Phase_C)*sin2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Lbd&quot;</span><span class="p">:</span> <span class="s2">&quot;L(Phase_B,Phase_A)*cos0 + L(Phase_B,Phase_B)*cos1 + L(Phase_B,Phase_C)*cos2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Lbq&quot;</span><span class="p">:</span> <span class="s2">&quot;L(Phase_B,Phase_A)*sin0 + L(Phase_B,Phase_B)*sin1 + L(Phase_B,Phase_C)*sin2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Lcd&quot;</span><span class="p">:</span> <span class="s2">&quot;L(Phase_C,Phase_A)*cos0 + L(Phase_C,Phase_B)*cos1 + L(Phase_C,Phase_C)*cos2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Lcq&quot;</span><span class="p">:</span> <span class="s2">&quot;L(Phase_C,Phase_A)*sin0 + L(Phase_C,Phase_B)*sin1 + L(Phase_C,Phase_C)*sin2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;L_d&quot;</span><span class="p">:</span> <span class="s2">&quot;(Lad*cos0 + Lbd*cos1 + Lcd*cos2) * 2/3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;L_q&quot;</span><span class="p">:</span> <span class="s2">&quot;(Laq*sin0 + Lbq*sin1 + Lcq*sin2) * 2/3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;OutputPower&quot;</span><span class="p">:</span> <span class="s2">&quot;Moving1.Speed*Moving1.Torque&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Ui_A&quot;</span><span class="p">:</span> <span class="s2">&quot;InducedVoltage(Phase_A)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Ui_B&quot;</span><span class="p">:</span> <span class="s2">&quot;InducedVoltage(Phase_B)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Ui_C&quot;</span><span class="p">:</span> <span class="s2">&quot;InducedVoltage(Phase_C)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Ui_d&quot;</span><span class="p">:</span> <span class="s2">&quot;2/3*(Ui_A*cos0 + Ui_B*cos1 + Ui_C*cos2)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Ui_q&quot;</span><span class="p">:</span> <span class="s2">&quot;-2/3*(Ui_A*sin0 + Ui_B*sin1 + Ui_C*sin2)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;U_A&quot;</span><span class="p">:</span> <span class="s2">&quot;Ui_A+R_Phase*Current_A&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;U_B&quot;</span><span class="p">:</span> <span class="s2">&quot;Ui_B+R_Phase*Current_B&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;U_C&quot;</span><span class="p">:</span> <span class="s2">&quot;Ui_C+R_Phase*Current_C&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;U_d&quot;</span><span class="p">:</span> <span class="s2">&quot;2/3*(U_A*cos0 + U_B*cos1 + U_C*cos2)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;U_q&quot;</span><span class="p">:</span> <span class="s2">&quot;-2/3*(U_A*sin0 + U_B*sin1 + U_C*sin2)&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="create-output-variables-for-postprocessing">
+<h2>Create output variables for postprocessing<a class="headerlink" href="#create-output-variables-for-postprocessing" title="Link to this heading">#</a></h2>
+<p>Create output variables for postprocessing.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">output_vars</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">M2D</span><span class="o">.</span><span class="n">create_output_variable</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="initialize-definition-for-postprocessing-plots">
+<h2>Initialize definition for postprocessing plots<a class="headerlink" href="#initialize-definition-for-postprocessing-plots" title="Link to this heading">#</a></h2>
+<p>Initialize the definition for postprocessing plots.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">post_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Moving1.Torque&quot;</span><span class="p">:</span> <span class="s2">&quot;TorquePlots&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="initialize-definition-for-postprocessing-multiplots">
+<h2>Initialize definition for postprocessing multiplots<a class="headerlink" href="#initialize-definition-for-postprocessing-multiplots" title="Link to this heading">#</a></h2>
+<p>Initialize the definition for postprocessing multiplots.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">post_params_multiplot</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># reports</span>
+    <span class="p">(</span><span class="s2">&quot;U_A&quot;</span><span class="p">,</span> <span class="s2">&quot;U_B&quot;</span><span class="p">,</span> <span class="s2">&quot;U_C&quot;</span><span class="p">,</span> <span class="s2">&quot;Ui_A&quot;</span><span class="p">,</span> <span class="s2">&quot;Ui_B&quot;</span><span class="p">,</span> <span class="s2">&quot;Ui_C&quot;</span><span class="p">):</span> <span class="s2">&quot;PhaseVoltages&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;CoreLoss&quot;</span><span class="p">,</span> <span class="s2">&quot;SolidLoss&quot;</span><span class="p">,</span> <span class="s2">&quot;ArmatureOhmicLoss_DC&quot;</span><span class="p">):</span> <span class="s2">&quot;Losses&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;InputCurrent(Phase_A)&quot;</span><span class="p">,</span> <span class="s2">&quot;InputCurrent(Phase_B)&quot;</span><span class="p">,</span> <span class="s2">&quot;InputCurrent(Phase_C)&quot;</span><span class="p">):</span> <span class="s2">&quot;PhaseCurrents&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;FluxLinkage(Phase_A)&quot;</span><span class="p">,</span> <span class="s2">&quot;FluxLinkage(Phase_B)&quot;</span><span class="p">,</span> <span class="s2">&quot;FluxLinkage(Phase_C)&quot;</span><span class="p">):</span> <span class="s2">&quot;PhaseFluxes&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;I_d&quot;</span><span class="p">,</span> <span class="s2">&quot;I_q&quot;</span><span class="p">):</span> <span class="s2">&quot;Currents_dq&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;Flux_d&quot;</span><span class="p">,</span> <span class="s2">&quot;Flux_q&quot;</span><span class="p">):</span> <span class="s2">&quot;Fluxes_dq&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;Ui_d&quot;</span><span class="p">,</span> <span class="s2">&quot;Ui_q&quot;</span><span class="p">):</span> <span class="s2">&quot;InducedVoltages_dq&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;U_d&quot;</span><span class="p">,</span> <span class="s2">&quot;U_q&quot;</span><span class="p">):</span> <span class="s2">&quot;Voltages_dq&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;L(Phase_A,Phase_A)&quot;</span><span class="p">,</span> <span class="s2">&quot;L(Phase_B,Phase_B)&quot;</span><span class="p">,</span> <span class="s2">&quot;L(Phase_C,Phase_C)&quot;</span><span class="p">,</span> <span class="s2">&quot;L(Phase_A,Phase_B)&quot;</span><span class="p">,</span> <span class="s2">&quot;L(Phase_A,Phase_C)&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;L(Phase_B,Phase_C)&quot;</span><span class="p">):</span> <span class="s2">&quot;PhaseInductances&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;L_d&quot;</span><span class="p">,</span> <span class="s2">&quot;L_q&quot;</span><span class="p">):</span> <span class="s2">&quot;Inductances_dq&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;CoreLoss&quot;</span><span class="p">,</span> <span class="s2">&quot;CoreLoss(Stator)&quot;</span><span class="p">,</span> <span class="s2">&quot;CoreLoss(Rotor)&quot;</span><span class="p">):</span> <span class="s2">&quot;CoreLosses&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;EddyCurrentLoss&quot;</span><span class="p">,</span> <span class="s2">&quot;EddyCurrentLoss(Stator)&quot;</span><span class="p">,</span> <span class="s2">&quot;EddyCurrentLoss(Rotor)&quot;</span><span class="p">):</span> <span class="s2">&quot;EddyCurrentLosses (Core)&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;ExcessLoss&quot;</span><span class="p">,</span> <span class="s2">&quot;ExcessLoss(Stator)&quot;</span><span class="p">,</span> <span class="s2">&quot;ExcessLoss(Rotor)&quot;</span><span class="p">):</span> <span class="s2">&quot;ExcessLosses (Core)&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;HysteresisLoss&quot;</span><span class="p">,</span> <span class="s2">&quot;HysteresisLoss(Stator)&quot;</span><span class="p">,</span> <span class="s2">&quot;HysteresisLoss(Rotor)&quot;</span><span class="p">):</span> <span class="s2">&quot;HysteresisLosses (Core)&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;SolidLoss&quot;</span><span class="p">,</span> <span class="s2">&quot;SolidLoss(IPM1)&quot;</span><span class="p">,</span> <span class="s2">&quot;SolidLoss(IPM1_1)&quot;</span><span class="p">,</span> <span class="s2">&quot;SolidLoss(OPM1)&quot;</span><span class="p">,</span> <span class="s2">&quot;SolidLoss(OPM1_1)&quot;</span><span class="p">):</span> <span class="s2">&quot;SolidLoss&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="create-report">
+<h2>Create report<a class="headerlink" href="#create-report" title="Link to this heading">#</a></h2>
+<p>Create a report.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">post_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">M2D</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_report</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">setup_sweep_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s2">&quot;Sweep&quot;</span><span class="p">,</span> <span class="n">variations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                           <span class="n">primary_sweep_variable</span><span class="o">=</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="n">secondary_sweep_variable</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">report_category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                           <span class="n">plot_type</span><span class="o">=</span><span class="s2">&quot;Rectangular Plot&quot;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subdesign_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">polyline_points</span><span class="o">=</span><span class="mi">1001</span><span class="p">,</span>
+                           <span class="n">plot_name</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-multiplot-report">
+<h2>Create multiplot report<a class="headerlink" href="#create-multiplot-report" title="Link to this heading">#</a></h2>
+<p>Create a multiplot report.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># for k, v in post_params_multiplot.items():</span>
+<span class="c1">#     M2D.post.create_report(expressions=list(k), setup_sweep_name=&quot;&quot;, domain=&quot;Sweep&quot;, variations=None,</span>
+<span class="c1">#                            primary_sweep_variable=&quot;Time&quot;, secondary_sweep_variable=None,</span>
+<span class="c1">#                            report_category=None, plot_type=&quot;Rectangular Plot&quot;, context=None, subdesign_id=None,</span>
+<span class="c1">#                            polyline_points=1001, plotname=v)</span>
+</pre></div>
+</div>
+</section>
+<section id="analyze-and-save-project">
+<h2>Analyze and save project<a class="headerlink" href="#analyze-and-save-project" title="Link to this heading">#</a></h2>
+<p>Analyze and save the project.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span>
+<span class="n">M2D</span><span class="o">.</span><span class="n">analyze_setup</span><span class="p">(</span><span class="n">setup_name</span><span class="p">,</span> <span class="n">use_auto_settings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="create-flux-lines-plot-on-region">
+<h2>Create flux lines plot on region<a class="headerlink" href="#create-flux-lines-plot-on-region" title="Link to this heading">#</a></h2>
+<p>Create a flux lines plot on a region. The <code class="docutils literal notranslate"><span class="pre">object_list</span></code> is
+formerly created when the section is applied.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">faces_reg</span> <span class="o">=</span> <span class="n">mod2D</span><span class="o">.</span><span class="n">get_object_faces</span><span class="p">(</span><span class="n">object_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Region</span>
+<span class="n">plot1</span> <span class="o">=</span> <span class="n">M2D</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_fieldplot_surface</span><span class="p">(</span><span class="n">assignment</span><span class="o">=</span><span class="n">faces_reg</span><span class="p">,</span> <span class="n">quantity</span><span class="o">=</span><span class="s1">&#39;Flux_Lines&#39;</span><span class="p">,</span> <span class="n">intrinsics</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;Time&quot;</span><span class="p">:</span> <span class="n">M2D</span><span class="o">.</span><span class="n">variable_manager</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;StopTime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">evaluated_value</span><span class="p">},</span> <span class="n">plot_name</span><span class="o">=</span><span class="s2">&quot;Flux_Lines&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="export-a-field-plot-to-an-image-file">
+<h2>Export a field plot to an image file<a class="headerlink" href="#export-a-field-plot-to-an-image-file" title="Link to this heading">#</a></h2>
+<p>Export the flux lines plot to an image file using Python PyVista.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">plot_field_from_fieldplot</span><span class="p">(</span><span class="n">plot1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.generic.plot.ModelPlotter object at 0x000002724E4C2E30&gt;
+</pre></div>
+</div>
+</section>
+<section id="get-solution-data">
+<h2>Get solution data<a class="headerlink" href="#get-solution-data" title="Link to this heading">#</a></h2>
+<p>Get a simulation result from a solved setup and cast it in a <code class="docutils literal notranslate"><span class="pre">SolutionData</span></code> object.
+Plot the desired expression by using Matplotlib plot().</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">solutions</span> <span class="o">=</span> <span class="n">M2D</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">get_solution_data</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="s2">&quot;Moving1.Torque&quot;</span><span class="p">,</span>
+                                       <span class="n">primary_sweep_variable</span><span class="o">=</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="c1">#solutions.plot()</span>
+</pre></div>
+</div>
+</section>
+<section id="retrieve-the-data-magnitude-of-an-expression">
+<h2>Retrieve the data magnitude of an expression<a class="headerlink" href="#retrieve-the-data-magnitude-of-an-expression" title="Link to this heading">#</a></h2>
+<p>List of shaft torque points and compute average.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mag</span> <span class="o">=</span> <span class="n">solutions</span><span class="o">.</span><span class="n">data_magnitude</span><span class="p">()</span>
+<span class="n">avg</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">mag</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">mag</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="export-a-report-to-a-file">
+<h2>Export a report to a file<a class="headerlink" href="#export-a-report-to-a-file" title="Link to this heading">#</a></h2>
+<p>Export a 2D Plot data to a .csv file.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">export_report_to_file</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="n">M2D</span><span class="o">.</span><span class="n">toolkit_directory</span><span class="p">,</span>
+                               <span class="n">plot_name</span><span class="o">=</span><span class="s2">&quot;TorquePlots&quot;</span><span class="p">,</span>
+                               <span class="n">extension</span><span class="o">=</span><span class="s2">&quot;.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;D:/Temp/pyaedt_prj_Y3D/Project_H0Z.pyaedt\\TorquePlots.csv&#39;
+</pre></div>
+</div>
+</section>
+<section id="close-aedt">
+<h2>Close AEDT<a class="headerlink" href="#close-aedt" title="Link to this heading">#</a></h2>
+<p>Close AEDT.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M2D</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (2 minutes 57.321 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-03-maxwell-maxwell2d-pmsynchronousmotor-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/1935d1e1291b42bafa5fbdd7a7ea06d8/Maxwell2D_PMSynchronousMotor.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Maxwell2D_PMSynchronousMotor.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/bff8a91a7b48ce8676c2bff03decbc95/Maxwell2D_PMSynchronousMotor.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Maxwell2D_PMSynchronousMotor.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/0c5613f06d1f3502ad92638afb6b1632/Maxwell2D_PMSynchronousMotor.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">Maxwell2D_PMSynchronousMotor.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-aedt-version">Set AEDT version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-maxwell-2d">Initialize Maxwell 2D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-definitions-for-stator-rotor-and-shaft">Initialize definitions for stator, rotor, and shaft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-definitions-for-stator-windings">Initialize definitions for stator windings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-definitions-for-model-setup">Initialize definitions for model setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-definitions-for-operational-machine">Initialize definitions for operational machine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-non-graphical-mode">Set non-graphical mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-maxwell-2d">Launch Maxwell 2D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-object-to-access-2d-modeler">Create object to access 2D modeler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-variables-from-dictionaries">Define variables from dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-path-for-non-linear-material-properties">Define path for non-linear material properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-first-material">Create first material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-second-material">Create second material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-third-material">Create third material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-geometry-for-stator">Create geometry for stator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-properties-to-stator">Assign properties to stator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-geometry-for-pms">Create geometry for PMs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-largest-elements-in-list">Find largest elements in list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-coordinate-system-for-pms">Create coordinate system for PMs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-outer-and-inner-pms">Create outer and inner PMs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-coordinate-system-for-pms-in-face-center">Create coordinate system for PMs in face center</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duplicate-and-mirror-pms">Duplicate and mirror PMs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-coils">Create coils</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-shaft-and-region">Create shaft and region</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-bands">Create bands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-motion-setup-to-object">Assign motion setup to object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-list-of-vacuum-objects">Create list of vacuum objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-rotor">Create rotor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-section-of-machine">Create section of machine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-boundary-conditions">Create boundary conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-vector-potential">Assign vector potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-excitations">Create excitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-windings-in-phase-a">Define windings in phase A</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-windings-in-phase-b">Define windings in phase B</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-windings-in-phase-c">Define windings in phase C</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-total-current-on-pms">Assign total current on PMs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-mesh-operations">Create mesh operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turn-on-eddy-effects">Turn on eddy effects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turn-on-core-loss">Turn on core loss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-transient-inductance">Compute transient inductance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-model-depth">Set model depth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-symmetry-factor">Set symmetry factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-setup-and-validate">Create setup and validate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-definitions-for-output-variables">Initialize definitions for output variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-output-variables-for-postprocessing">Create output variables for postprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-definition-for-postprocessing-plots">Initialize definition for postprocessing plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-definition-for-postprocessing-multiplots">Initialize definition for postprocessing multiplots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-report">Create report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-multiplot-report">Create multiplot report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-and-save-project">Analyze and save project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-flux-lines-plot-on-region">Create flux lines plot on region</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-a-field-plot-to-an-image-file">Export a field plot to an image file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-solution-data">Get solution data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieve-the-data-magnitude-of-an-expression">Retrieve the data magnitude of an expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-a-report-to-a-file">Export a report to a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-aedt">Close AEDT</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/03-Maxwell/Maxwell2D_PMSynchronousMotor.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/03-Maxwell/Maxwell2D_PMSynchronousMotor.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

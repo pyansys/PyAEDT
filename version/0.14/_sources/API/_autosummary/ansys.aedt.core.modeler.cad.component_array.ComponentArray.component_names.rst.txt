@@ -1,0 +1,6 @@
+component\_names
+================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.component_names

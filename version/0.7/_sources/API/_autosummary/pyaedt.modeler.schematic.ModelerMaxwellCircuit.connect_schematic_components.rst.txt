@@ -1,0 +1,6 @@
+connect\_schematic\_components
+==============================
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. automethod:: ModelerMaxwellCircuit.connect_schematic_components

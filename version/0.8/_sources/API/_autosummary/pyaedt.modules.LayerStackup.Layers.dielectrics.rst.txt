@@ -1,0 +1,6 @@
+dielectrics
+===========
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layers.dielectrics

@@ -1,0 +1,6 @@
+create\_single\_point\_sweep
+============================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: SetupHFSS.create_single_point_sweep

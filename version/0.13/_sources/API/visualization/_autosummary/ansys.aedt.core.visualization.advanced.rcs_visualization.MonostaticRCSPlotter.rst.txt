@@ -1,0 +1,79 @@
+﻿MonostaticRCSPlotter
+====================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. autoclass:: MonostaticRCSPlotter
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      MonostaticRCSPlotter.add_isar_2d
+      
+      
+      MonostaticRCSPlotter.add_isar_2d_settings
+      
+      
+      MonostaticRCSPlotter.add_range_profile
+      
+      
+      MonostaticRCSPlotter.add_range_profile_settings
+      
+      
+      MonostaticRCSPlotter.add_rcs
+      
+      
+      MonostaticRCSPlotter.add_waterfall
+      
+      
+      MonostaticRCSPlotter.add_waterfall_settings
+      
+      
+      MonostaticRCSPlotter.clear_scene
+      
+      
+      MonostaticRCSPlotter.plot_isar_2d
+      
+      
+      MonostaticRCSPlotter.plot_range_profile
+      
+      
+      MonostaticRCSPlotter.plot_rcs
+      
+      
+      MonostaticRCSPlotter.plot_rcs_3d
+      
+      
+      MonostaticRCSPlotter.plot_scene
+      
+      
+      MonostaticRCSPlotter.plot_waterfall
+      
+      
+      MonostaticRCSPlotter.stretch_data
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      MonostaticRCSPlotter.all_scene_actors
+      MonostaticRCSPlotter.center
+      MonostaticRCSPlotter.extents
+      MonostaticRCSPlotter.model_info
+      MonostaticRCSPlotter.model_units
+      MonostaticRCSPlotter.radius
+      MonostaticRCSPlotter.rcs_data
+   
+   

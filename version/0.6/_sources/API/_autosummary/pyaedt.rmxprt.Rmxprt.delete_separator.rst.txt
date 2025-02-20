@@ -1,0 +1,6 @@
+delete\_separator
+=================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.delete_separator

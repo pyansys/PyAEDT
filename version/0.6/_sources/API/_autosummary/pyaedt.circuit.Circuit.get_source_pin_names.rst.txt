@@ -1,0 +1,6 @@
+get\_source\_pin\_names
+=======================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_source_pin_names

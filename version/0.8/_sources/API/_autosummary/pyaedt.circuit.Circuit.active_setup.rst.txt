@@ -1,0 +1,6 @@
+active\_setup
+=============
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.active_setup

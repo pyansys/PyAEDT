@@ -1,0 +1,6 @@
+lock\_file
+==========
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.lock_file

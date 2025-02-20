@@ -1,0 +1,6 @@
+refresh\_components
+===================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.refresh_components

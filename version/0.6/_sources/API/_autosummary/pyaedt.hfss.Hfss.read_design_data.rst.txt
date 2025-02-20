@@ -1,0 +1,6 @@
+read\_design\_data
+==================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.read_design_data

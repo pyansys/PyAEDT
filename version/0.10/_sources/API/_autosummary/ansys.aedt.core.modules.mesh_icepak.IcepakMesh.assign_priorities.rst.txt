@@ -1,0 +1,6 @@
+assign\_priorities
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. automethod:: IcepakMesh.assign_priorities

@@ -1,0 +1,6 @@
+get\_touching\_faces
+====================
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. automethod:: Object3d.get_touching_faces

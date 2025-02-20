@@ -1,0 +1,6 @@
+delete\_pcb\_component
+======================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.delete_pcb_component

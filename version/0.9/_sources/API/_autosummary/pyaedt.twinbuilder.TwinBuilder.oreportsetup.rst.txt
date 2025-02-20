@@ -1,0 +1,6 @@
+oreportsetup
+============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. autoproperty:: TwinBuilder.oreportsetup

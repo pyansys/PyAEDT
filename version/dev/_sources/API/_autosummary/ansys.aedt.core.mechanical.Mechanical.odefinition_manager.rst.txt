@@ -1,0 +1,6 @@
+odefinition\_manager
+====================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.odefinition_manager

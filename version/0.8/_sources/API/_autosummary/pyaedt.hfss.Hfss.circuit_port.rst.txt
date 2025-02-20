@@ -1,0 +1,6 @@
+circuit\_port
+=============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.circuit_port

@@ -1,0 +1,6 @@
+assign\_net
+===========
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.assign_net

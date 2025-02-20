@@ -1,0 +1,6 @@
+object\_instance
+================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadstackInstance.object_instance

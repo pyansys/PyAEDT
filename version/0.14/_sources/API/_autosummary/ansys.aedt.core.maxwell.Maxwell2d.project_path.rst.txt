@@ -1,0 +1,6 @@
+project\_path
+=============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.project_path

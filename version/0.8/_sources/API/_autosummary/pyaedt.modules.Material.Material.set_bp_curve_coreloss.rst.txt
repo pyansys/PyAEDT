@@ -1,0 +1,6 @@
+set\_bp\_curve\_coreloss
+========================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. automethod:: Material.set_bp_curve_coreloss

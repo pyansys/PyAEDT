@@ -1,0 +1,6 @@
+delete\_report
+==============
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.delete_report

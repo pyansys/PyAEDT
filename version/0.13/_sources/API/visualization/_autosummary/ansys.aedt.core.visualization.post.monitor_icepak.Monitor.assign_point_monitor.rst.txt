@@ -1,0 +1,6 @@
+assign\_point\_monitor
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.monitor_icepak
+
+.. automethod:: Monitor.assign_point_monitor

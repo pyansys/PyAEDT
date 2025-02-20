@@ -1,0 +1,6 @@
+material\_appearance
+====================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.material_appearance

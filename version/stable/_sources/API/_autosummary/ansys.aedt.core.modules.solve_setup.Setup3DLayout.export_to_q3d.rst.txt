@@ -1,0 +1,6 @@
+export\_to\_q3d
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: Setup3DLayout.export_to_q3d

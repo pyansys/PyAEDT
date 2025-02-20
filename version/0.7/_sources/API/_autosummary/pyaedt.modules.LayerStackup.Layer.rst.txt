@@ -1,0 +1,83 @@
+﻿Layer
+=====
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoclass:: Layer
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Layer.create_stackup_layer
+      
+      
+      Layer.remove_stackup_layer
+      
+      
+      Layer.set_layer_color
+      
+      
+      Layer.update_stackup_layer
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Layer.bottom_huray_ratio
+      Layer.bottom_nodule_radius
+      Layer.bottom_roughness
+      Layer.bottom_roughness_model
+      Layer.color
+      Layer.draw_override
+      Layer.etch
+      Layer.fill_material
+      Layer.hfss_solver_settings
+      Layer.index
+      Layer.is_mesh_background
+      Layer.is_mesh_overlay
+      Layer.is_negative
+      Layer.is_visible
+      Layer.is_visible_component
+      Layer.is_visible_hole
+      Layer.is_visible_pad
+      Layer.is_visible_path
+      Layer.is_visible_shape
+      Layer.locked
+      Layer.lower_elevation
+      Layer.material
+      Layer.oeditor
+      Layer.pattern
+      Layer.planar_em_solver_settings
+      Layer.roughness
+      Layer.side_huray_ratio
+      Layer.side_model
+      Layer.side_nodule_radius
+      Layer.side_roughness
+      Layer.thickness
+      Layer.thickness_units
+      Layer.top_bottom
+      Layer.top_huray_ratio
+      Layer.top_nodule_radius
+      Layer.top_roughness
+      Layer.top_roughness_model
+      Layer.transparency
+      Layer.upper_elevation
+      Layer.use_etch
+      Layer.user
+      Layer.usp
+      Layer.visflag
+      Layer.zones
+   
+   

@@ -1,0 +1,6 @@
+delete\_mesh\_operations
+========================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. automethod:: Mesh.delete_mesh_operations

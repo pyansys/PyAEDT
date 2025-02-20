@@ -1,0 +1,6 @@
+variation\_values
+=================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.variation_values

@@ -1,0 +1,6 @@
+number\_with\_units
+===================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.number_with_units

@@ -1,0 +1,6 @@
+create\_boundary
+================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_boundary

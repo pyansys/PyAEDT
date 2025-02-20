@@ -1,0 +1,6 @@
+dc\_via\_report\_path
+=====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_via_report_path

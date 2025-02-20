@@ -1,0 +1,6 @@
+create\_voltage\_source
+=======================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_twin_builder
+
+.. automethod:: TwinBuilderComponents.create_voltage_source

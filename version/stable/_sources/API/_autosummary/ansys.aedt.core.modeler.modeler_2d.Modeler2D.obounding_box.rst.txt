@@ -1,0 +1,6 @@
+obounding\_box
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. autoproperty:: Modeler2D.obounding_box

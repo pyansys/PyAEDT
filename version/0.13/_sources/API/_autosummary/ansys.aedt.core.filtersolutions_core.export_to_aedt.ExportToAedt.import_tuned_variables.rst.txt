@@ -1,0 +1,6 @@
+import\_tuned\_variables
+========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. automethod:: ExportToAedt.import_tuned_variables

@@ -1,0 +1,6 @@
+evaluate\_expression
+====================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.evaluate_expression

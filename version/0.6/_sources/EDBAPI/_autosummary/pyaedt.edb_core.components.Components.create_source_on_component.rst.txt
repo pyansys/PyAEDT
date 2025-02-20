@@ -1,0 +1,6 @@
+create\_source\_on\_component
+=============================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.create_source_on_component

@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: ansys.aedt.core.modules.design_xploration
+
+.. automethod:: ParametricSetups.delete

@@ -1,0 +1,6 @@
+hdm\_data
+=========
+
+.. currentmodule:: pyaedt.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.hdm_data

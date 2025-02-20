@@ -1,0 +1,6 @@
+get\_oo\_properties
+===================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.get_oo_properties

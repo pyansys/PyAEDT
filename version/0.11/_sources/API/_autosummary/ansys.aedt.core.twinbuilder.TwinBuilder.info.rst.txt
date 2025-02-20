@@ -1,0 +1,6 @@
+info
+====
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. autoproperty:: TwinBuilder.info

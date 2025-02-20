@@ -1,0 +1,6 @@
+plotsettings
+============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: FieldPlot.plotsettings

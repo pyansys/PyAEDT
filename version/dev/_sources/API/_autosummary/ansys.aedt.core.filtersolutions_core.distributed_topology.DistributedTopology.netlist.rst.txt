@@ -1,0 +1,6 @@
+netlist
+=======
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. automethod:: DistributedTopology.netlist

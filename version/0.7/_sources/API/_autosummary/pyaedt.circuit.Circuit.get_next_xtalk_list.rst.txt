@@ -1,0 +1,6 @@
+get\_next\_xtalk\_list
+======================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_next_xtalk_list

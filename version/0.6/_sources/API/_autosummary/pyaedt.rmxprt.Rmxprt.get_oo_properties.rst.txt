@@ -1,0 +1,6 @@
+get\_oo\_properties
+===================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.get_oo_properties

@@ -1,0 +1,6 @@
+grid\_color
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.matplotlib
+
+.. autoproperty:: ReportPlotter.grid_color

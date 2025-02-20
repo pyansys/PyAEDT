@@ -1,0 +1,6 @@
+get\_all\_sparameter\_list
+==========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.get_all_sparameter_list

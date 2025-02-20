@@ -1,0 +1,6 @@
+create\_wire
+============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesNexxim
+
+.. automethod:: NexximComponents.create_wire

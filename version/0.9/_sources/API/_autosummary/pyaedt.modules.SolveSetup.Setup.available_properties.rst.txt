@@ -1,0 +1,6 @@
+available\_properties
+=====================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoproperty:: Setup.available_properties

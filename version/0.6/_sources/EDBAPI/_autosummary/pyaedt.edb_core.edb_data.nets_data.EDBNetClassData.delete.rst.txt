@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. automethod:: EDBNetClassData.delete

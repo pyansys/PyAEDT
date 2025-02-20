@@ -1,0 +1,6 @@
+top\_edge\_z
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. autoproperty:: Object3d.top_edge_z

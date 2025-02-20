@@ -1,0 +1,6 @@
+info\_timer
+===========
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. automethod:: AedtLogger.info_timer

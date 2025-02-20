@@ -1,0 +1,6 @@
+temp\_directory
+===============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.temp_directory

@@ -1,0 +1,6 @@
+get\_far\_field\_data
+=====================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.get_far_field_data

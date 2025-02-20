@@ -1,0 +1,6 @@
+export\_parametric\_results
+===========================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.export_parametric_results

@@ -1,0 +1,6 @@
+plot\_first\_bounce\_currents
+=============================
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. automethod:: HDMPlotter.plot_first_bounce_currents

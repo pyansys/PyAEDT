@@ -1,0 +1,6 @@
+number
+======
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Layer3D.number

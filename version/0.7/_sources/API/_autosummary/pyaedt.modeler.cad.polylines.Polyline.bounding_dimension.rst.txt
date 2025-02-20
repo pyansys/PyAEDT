@@ -1,0 +1,6 @@
+bounding\_dimension
+===================
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.bounding_dimension

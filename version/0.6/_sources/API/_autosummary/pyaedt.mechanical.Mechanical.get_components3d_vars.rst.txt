@@ -1,0 +1,6 @@
+get\_components3d\_vars
+=======================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.get_components3d_vars

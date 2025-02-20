@@ -1,0 +1,6 @@
+plot
+====
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.plot

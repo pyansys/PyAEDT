@@ -1,0 +1,6 @@
+import\_dxf
+===========
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.import_dxf

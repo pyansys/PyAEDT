@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.change_validation_settings

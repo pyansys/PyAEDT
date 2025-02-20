@@ -1,0 +1,6 @@
+library\_list
+=============
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.library_list

@@ -1,0 +1,6 @@
+import\_dxf
+===========
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.import_dxf

@@ -1,0 +1,6 @@
+relative\_residual
+==================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: HfssSolverSettings.relative_residual

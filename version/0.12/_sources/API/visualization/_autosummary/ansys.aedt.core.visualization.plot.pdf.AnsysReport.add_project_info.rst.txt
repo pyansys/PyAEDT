@@ -1,0 +1,6 @@
+﻿add\_project\_info
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pdf
+
+.. automethod:: AnsysReport.add_project_info

@@ -1,0 +1,6 @@
+delete\_traces
+==============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. automethod:: FarField.delete_traces

@@ -1,0 +1,6 @@
+get\_core\_loss\_coefficients
+=============================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: Material.get_core_loss_coefficients

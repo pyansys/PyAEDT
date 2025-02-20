@@ -1,0 +1,6 @@
+raised\_cosine\_alpha\_percentage
+=================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.raised_cosine_alpha_percentage

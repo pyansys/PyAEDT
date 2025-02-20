@@ -1,0 +1,6 @@
+value\_with\_units
+==================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.value_with_units

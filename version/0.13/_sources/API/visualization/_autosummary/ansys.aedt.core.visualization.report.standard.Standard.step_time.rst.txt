@@ -1,0 +1,6 @@
+step\_time
+==========
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. autoproperty:: Standard.step_time

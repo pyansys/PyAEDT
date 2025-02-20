@@ -1,0 +1,6 @@
+oexcitation
+===========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.oexcitation

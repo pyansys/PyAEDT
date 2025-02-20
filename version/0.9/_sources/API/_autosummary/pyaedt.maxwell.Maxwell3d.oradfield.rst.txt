@@ -1,0 +1,6 @@
+oradfield
+=========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.oradfield

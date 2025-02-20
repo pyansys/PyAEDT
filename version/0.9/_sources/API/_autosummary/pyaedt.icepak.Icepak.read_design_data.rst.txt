@@ -1,0 +1,6 @@
+read\_design\_data
+==================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.read_design_data

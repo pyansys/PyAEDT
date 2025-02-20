@@ -1,0 +1,6 @@
+add\_trace\_to\_report
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: FarField.add_trace_to_report

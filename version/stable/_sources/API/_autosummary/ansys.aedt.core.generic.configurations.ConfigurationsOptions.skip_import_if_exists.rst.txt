@@ -1,0 +1,6 @@
+skip\_import\_if\_exists
+========================
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.skip_import_if_exists

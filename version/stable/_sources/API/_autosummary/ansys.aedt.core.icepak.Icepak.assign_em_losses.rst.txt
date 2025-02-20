@@ -1,0 +1,6 @@
+assign\_em\_losses
+==================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.assign_em_losses

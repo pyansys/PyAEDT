@@ -1,0 +1,6 @@
+delete\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.delete_design

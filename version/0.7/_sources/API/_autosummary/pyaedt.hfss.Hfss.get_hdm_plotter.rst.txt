@@ -1,0 +1,6 @@
+get\_hdm\_plotter
+=================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_hdm_plotter

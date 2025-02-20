@@ -1,0 +1,6 @@
+create\_open\_region
+====================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.create_open_region

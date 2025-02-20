@@ -1,0 +1,6 @@
+get\_object\_edges
+==================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.get_object_edges

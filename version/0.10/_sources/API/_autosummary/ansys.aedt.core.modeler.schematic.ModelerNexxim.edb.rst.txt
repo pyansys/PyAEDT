@@ -1,0 +1,6 @@
+edb
+===
+
+.. currentmodule:: ansys.aedt.core.modeler.schematic
+
+.. autoproperty:: ModelerNexxim.edb

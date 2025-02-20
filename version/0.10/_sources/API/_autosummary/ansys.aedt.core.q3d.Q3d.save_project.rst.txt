@@ -1,0 +1,6 @@
+save\_project
+=============
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.save_project

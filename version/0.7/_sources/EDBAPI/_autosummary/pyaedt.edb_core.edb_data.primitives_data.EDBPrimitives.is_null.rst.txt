@@ -1,0 +1,6 @@
+is\_null
+========
+
+.. currentmodule:: pyaedt.edb_core.edb_data.primitives_data
+
+.. autoproperty:: EDBPrimitives.is_null

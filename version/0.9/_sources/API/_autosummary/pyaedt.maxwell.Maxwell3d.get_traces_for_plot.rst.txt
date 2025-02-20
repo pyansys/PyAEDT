@@ -1,0 +1,6 @@
+get\_traces\_for\_plot
+======================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.get_traces_for_plot

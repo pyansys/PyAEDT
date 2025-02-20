@@ -1,0 +1,103 @@
+﻿Emission
+========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoclass:: Emission
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Emission.add_cartesian_x_marker
+      
+      
+      Emission.add_cartesian_y_marker
+      
+      
+      Emission.add_limit_line_from_equation
+      
+      
+      Emission.add_limit_line_from_points
+      
+      
+      Emission.add_note
+      
+      
+      Emission.add_trace_to_report
+      
+      
+      Emission.create
+      
+      
+      Emission.delete_traces
+      
+      
+      Emission.edit_general_settings
+      
+      
+      Emission.edit_grid
+      
+      
+      Emission.edit_header
+      
+      
+      Emission.edit_legend
+      
+      
+      Emission.edit_x_axis
+      
+      
+      Emission.edit_x_axis_scaling
+      
+      
+      Emission.edit_y_axis
+      
+      
+      Emission.edit_y_axis_scaling
+      
+      
+      Emission.get_solution_data
+      
+      
+      Emission.import_traces
+      
+      
+      Emission.update_expressions_with_defaults
+      
+      
+      Emission.update_trace_in_report
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Emission.differential_pairs
+      Emission.domain
+      Emission.expressions
+      Emission.limit_lines
+      Emission.matrix
+      Emission.notes
+      Emission.plot_name
+      Emission.polyline
+      Emission.primary_sweep
+      Emission.primary_sweep_range
+      Emission.report_category
+      Emission.report_type
+      Emission.secondary_sweep
+      Emission.secondary_sweep_range
+      Emission.traces
+      Emission.variations
+   
+   

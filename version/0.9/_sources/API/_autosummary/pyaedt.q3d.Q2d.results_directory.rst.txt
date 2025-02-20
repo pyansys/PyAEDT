@@ -1,0 +1,6 @@
+results\_directory
+==================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.results_directory

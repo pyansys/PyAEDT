@@ -1,0 +1,6 @@
+add\_from\_toolkit
+==================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.add_from_toolkit

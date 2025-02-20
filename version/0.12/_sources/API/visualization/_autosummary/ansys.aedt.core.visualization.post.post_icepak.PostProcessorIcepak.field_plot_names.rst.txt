@@ -1,0 +1,6 @@
+field\_plot\_names
+==================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. autoproperty:: PostProcessorIcepak.field_plot_names

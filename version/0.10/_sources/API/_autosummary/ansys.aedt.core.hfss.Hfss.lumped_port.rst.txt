@@ -1,0 +1,6 @@
+lumped\_port
+============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.lumped_port

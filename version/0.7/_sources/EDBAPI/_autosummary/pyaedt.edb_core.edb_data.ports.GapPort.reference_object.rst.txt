@@ -1,0 +1,6 @@
+reference\_object
+=================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoproperty:: GapPort.reference_object

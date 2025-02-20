@@ -1,0 +1,6 @@
+create\_outer\_facelist
+=======================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.create_outer_facelist

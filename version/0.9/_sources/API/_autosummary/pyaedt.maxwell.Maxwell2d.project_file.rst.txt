@@ -1,0 +1,6 @@
+project\_file
+=============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.project_file

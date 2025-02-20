@@ -1,0 +1,6 @@
+source\_terms\_to\_ground
+=========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveDCSimulationSetup.source_terms_to_ground

@@ -1,0 +1,6 @@
+import\_dataset1d
+=================
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.import_dataset1d

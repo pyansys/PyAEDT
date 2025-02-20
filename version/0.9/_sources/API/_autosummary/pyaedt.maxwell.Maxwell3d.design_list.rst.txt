@@ -1,0 +1,6 @@
+design\_list
+============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.design_list

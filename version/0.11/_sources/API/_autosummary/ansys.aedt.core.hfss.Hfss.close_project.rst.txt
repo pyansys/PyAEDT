@@ -1,0 +1,6 @@
+close\_project
+==============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.close_project

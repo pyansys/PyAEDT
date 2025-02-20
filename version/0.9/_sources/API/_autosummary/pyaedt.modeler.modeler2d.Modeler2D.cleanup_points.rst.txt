@@ -1,0 +1,6 @@
+cleanup\_points
+===============
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.cleanup_points

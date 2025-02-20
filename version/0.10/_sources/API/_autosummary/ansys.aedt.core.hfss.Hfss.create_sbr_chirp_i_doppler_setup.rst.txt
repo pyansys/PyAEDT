@@ -1,0 +1,6 @@
+create\_sbr\_chirp\_i\_doppler\_setup
+=====================================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.create_sbr_chirp_i_doppler_setup

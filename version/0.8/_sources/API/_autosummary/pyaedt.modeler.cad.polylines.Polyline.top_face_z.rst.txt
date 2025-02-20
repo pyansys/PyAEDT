@@ -1,0 +1,6 @@
+top\_face\_z
+============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.top_face_z

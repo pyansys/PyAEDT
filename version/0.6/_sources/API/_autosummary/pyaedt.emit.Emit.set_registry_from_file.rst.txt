@@ -1,0 +1,6 @@
+set\_registry\_from\_file
+=========================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.set_registry_from_file

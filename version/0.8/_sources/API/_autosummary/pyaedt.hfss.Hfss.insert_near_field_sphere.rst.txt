@@ -1,0 +1,6 @@
+insert\_near\_field\_sphere
+===========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.insert_near_field_sphere

@@ -1,0 +1,6 @@
+project\_path
+=============
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.project_path

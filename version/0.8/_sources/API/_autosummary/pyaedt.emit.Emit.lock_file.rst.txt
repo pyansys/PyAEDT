@@ -1,0 +1,6 @@
+lock\_file
+==========
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.lock_file

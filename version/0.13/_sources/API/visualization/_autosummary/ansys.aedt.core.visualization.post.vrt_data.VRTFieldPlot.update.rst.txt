@@ -1,0 +1,6 @@
+update
+======
+
+.. currentmodule:: ansys.aedt.core.visualization.post.vrt_data
+
+.. automethod:: VRTFieldPlot.update

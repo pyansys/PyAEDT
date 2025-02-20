@@ -1,0 +1,6 @@
+diel\_order
+===========
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoattribute:: MatProperties.diel_order

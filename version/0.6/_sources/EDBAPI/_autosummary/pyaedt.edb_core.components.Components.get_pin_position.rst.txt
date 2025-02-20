@@ -1,0 +1,6 @@
+get\_pin\_position
+==================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.get_pin_position

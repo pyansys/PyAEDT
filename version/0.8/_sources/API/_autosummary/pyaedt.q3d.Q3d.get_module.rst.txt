@@ -1,0 +1,6 @@
+get\_module
+===========
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.get_module

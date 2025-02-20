@@ -1,0 +1,6 @@
+cleanup\_points
+===============
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.cleanup_points

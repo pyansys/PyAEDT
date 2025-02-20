@@ -1,0 +1,6 @@
+get\_solution\_data
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. automethod:: Spectral.get_solution_data

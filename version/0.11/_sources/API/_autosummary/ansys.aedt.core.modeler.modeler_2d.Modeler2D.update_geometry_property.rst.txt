@@ -1,0 +1,6 @@
+update\_geometry\_property
+==========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.update_geometry_property

@@ -1,0 +1,6 @@
+get\_terminal
+=============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. automethod:: EDBPadstackInstance.get_terminal

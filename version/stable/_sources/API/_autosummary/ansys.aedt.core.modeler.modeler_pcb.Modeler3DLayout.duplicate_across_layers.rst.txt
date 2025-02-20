@@ -1,0 +1,6 @@
+duplicate\_across\_layers
+=========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_pcb
+
+.. automethod:: Modeler3DLayout.duplicate_across_layers

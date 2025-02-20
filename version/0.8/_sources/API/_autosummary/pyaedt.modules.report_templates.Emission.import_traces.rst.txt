@@ -1,0 +1,6 @@
+import\_traces
+==============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Emission.import_traces

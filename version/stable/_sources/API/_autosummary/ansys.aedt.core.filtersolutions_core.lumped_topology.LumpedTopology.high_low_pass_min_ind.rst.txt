@@ -1,0 +1,6 @@
+high\_low\_pass\_min\_ind
+=========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_topology
+
+.. autoproperty:: LumpedTopology.high_low_pass_min_ind

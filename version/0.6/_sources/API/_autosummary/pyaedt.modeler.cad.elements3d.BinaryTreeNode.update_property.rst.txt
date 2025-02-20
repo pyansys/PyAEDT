@@ -1,0 +1,6 @@
+update\_property
+================
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. automethod:: BinaryTreeNode.update_property

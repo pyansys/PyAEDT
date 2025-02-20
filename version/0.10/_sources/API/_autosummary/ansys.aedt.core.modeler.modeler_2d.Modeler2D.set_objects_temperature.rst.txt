@@ -1,0 +1,6 @@
+set\_objects\_temperature
+=========================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.set_objects_temperature

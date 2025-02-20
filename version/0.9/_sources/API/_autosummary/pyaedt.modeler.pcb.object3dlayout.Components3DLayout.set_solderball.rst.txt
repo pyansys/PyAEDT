@@ -1,0 +1,6 @@
+set\_solderball
+===============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. automethod:: Components3DLayout.set_solderball

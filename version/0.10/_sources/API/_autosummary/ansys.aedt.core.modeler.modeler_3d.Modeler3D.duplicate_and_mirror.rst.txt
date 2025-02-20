@@ -1,0 +1,6 @@
+duplicate\_and\_mirror
+======================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.duplicate_and_mirror

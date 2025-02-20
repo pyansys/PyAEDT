@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. autoproperty:: Mechanical.desktop_class

@@ -1,0 +1,6 @@
+wire\_width\_direction
+======================
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.wire_width_direction

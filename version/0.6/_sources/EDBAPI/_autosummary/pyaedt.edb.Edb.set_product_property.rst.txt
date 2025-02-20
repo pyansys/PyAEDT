@@ -1,0 +1,6 @@
+set\_product\_property
+======================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.set_product_property

@@ -1,0 +1,6 @@
+odefinition\_manager
+====================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. autoproperty:: Rmxprt.odefinition_manager

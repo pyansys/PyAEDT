@@ -1,0 +1,6 @@
+remove\_pads\_from\_padstack
+============================
+
+.. currentmodule:: pyaedt.edb_core.padstack
+
+.. automethod:: EdbPadstacks.remove_pads_from_padstack

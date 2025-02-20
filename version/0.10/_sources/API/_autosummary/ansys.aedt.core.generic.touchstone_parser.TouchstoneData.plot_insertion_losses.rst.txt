@@ -1,0 +1,6 @@
+﻿plot\_insertion\_losses
+=======================
+
+.. currentmodule:: ansys.aedt.core.generic.touchstone_parser
+
+.. automethod:: TouchstoneData.plot_insertion_losses

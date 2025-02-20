@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. autoproperty:: Modeler2D.design_type

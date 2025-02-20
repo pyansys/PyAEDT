@@ -1,0 +1,6 @@
+node\_cap\_ground
+=================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.lumped_topology
+
+.. autoproperty:: LumpedTopology.node_cap_ground

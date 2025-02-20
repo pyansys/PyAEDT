@@ -1,0 +1,6 @@
+available\_quantities\_categories
+=================================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_3dlayout
+
+.. automethod:: PostProcessor3DLayout.available_quantities_categories

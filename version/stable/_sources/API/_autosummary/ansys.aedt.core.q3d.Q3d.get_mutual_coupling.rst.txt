@@ -1,0 +1,6 @@
+get\_mutual\_coupling
+=====================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q3d.get_mutual_coupling

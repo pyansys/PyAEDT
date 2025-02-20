@@ -1,0 +1,6 @@
+delete\_table
+=============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.delete_table

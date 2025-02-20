@@ -1,0 +1,6 @@
+get\_line\_ids
+==============
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.get_line_ids

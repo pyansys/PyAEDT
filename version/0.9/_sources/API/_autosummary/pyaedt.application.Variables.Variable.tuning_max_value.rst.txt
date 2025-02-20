@@ -1,0 +1,6 @@
+tuning\_max\_value
+==================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.tuning_max_value

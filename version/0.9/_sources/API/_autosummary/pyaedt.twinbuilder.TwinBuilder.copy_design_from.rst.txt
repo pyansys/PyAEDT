@@ -1,0 +1,6 @@
+copy\_design\_from
+==================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.copy_design_from

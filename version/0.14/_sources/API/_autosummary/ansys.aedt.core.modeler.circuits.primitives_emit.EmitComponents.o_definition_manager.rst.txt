@@ -1,0 +1,6 @@
+o\_definition\_manager
+======================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_emit
+
+.. autoproperty:: EmitComponents.o_definition_manager

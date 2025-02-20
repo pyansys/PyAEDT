@@ -1,0 +1,22 @@
+﻿ExponentialDictionary
+=====================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoclass:: ExponentialDictionary
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ExponentialDictionary.props
+   
+   

@@ -1,0 +1,6 @@
+delete\_setup
+=============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.delete_setup

@@ -1,0 +1,6 @@
+valid\_design
+=============
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.valid_design

@@ -1,0 +1,6 @@
+get\_output\_variable
+=====================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_output_variable

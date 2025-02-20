@@ -1,0 +1,6 @@
+project\_time\_stamp
+====================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.project_time_stamp

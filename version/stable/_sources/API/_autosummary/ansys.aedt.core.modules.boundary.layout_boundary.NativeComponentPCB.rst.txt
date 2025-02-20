@@ -1,0 +1,80 @@
+﻿NativeComponentPCB
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoclass:: NativeComponentPCB
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      NativeComponentPCB.create
+      
+      
+      NativeComponentPCB.delete
+      
+      
+      NativeComponentPCB.identify_extent_poly
+      
+      
+      NativeComponentPCB.jsonalize_tree
+      
+      
+      NativeComponentPCB.set_board_extents
+      
+      
+      NativeComponentPCB.set_custom_resolution
+      
+      
+      NativeComponentPCB.set_high_side_radiation
+      
+      
+      NativeComponentPCB.set_low_side_radiation
+      
+      
+      NativeComponentPCB.set_resolution
+      
+      
+      NativeComponentPCB.suppress_all
+      
+      
+      NativeComponentPCB.unsuppress_all
+      
+      
+      NativeComponentPCB.update
+      
+      
+      NativeComponentPCB.update_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      NativeComponentPCB.available_properties
+      NativeComponentPCB.board_cutout_material
+      NativeComponentPCB.children
+      NativeComponentPCB.command
+      NativeComponentPCB.definition_name
+      NativeComponentPCB.force_source_solve
+      NativeComponentPCB.included_parts
+      NativeComponentPCB.name
+      NativeComponentPCB.power
+      NativeComponentPCB.preserve_partner_solution
+      NativeComponentPCB.properties
+      NativeComponentPCB.props
+      NativeComponentPCB.targetcs
+      NativeComponentPCB.via_holes_material
+   
+   

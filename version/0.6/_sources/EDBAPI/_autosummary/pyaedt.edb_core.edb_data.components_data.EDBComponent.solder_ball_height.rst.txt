@@ -1,0 +1,6 @@
+solder\_ball\_height
+====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.components_data
+
+.. autoproperty:: EDBComponent.solder_ball_height

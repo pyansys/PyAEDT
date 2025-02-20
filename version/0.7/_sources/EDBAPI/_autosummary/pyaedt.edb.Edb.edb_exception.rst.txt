@@ -1,0 +1,6 @@
+edb\_exception
+==============
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.edb_exception

@@ -1,0 +1,6 @@
+read\_design\_data
+==================
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.read_design_data

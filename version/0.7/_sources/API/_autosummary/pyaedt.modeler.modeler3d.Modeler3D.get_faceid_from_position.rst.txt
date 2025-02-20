@@ -1,0 +1,6 @@
+get\_faceid\_from\_position
+===========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_faceid_from_position

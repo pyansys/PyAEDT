@@ -1,0 +1,6 @@
+frequencies
+===========
+
+.. currentmodule:: pyaedt.modules.SolveSweeps
+
+.. autoproperty:: SweepMatrix.frequencies

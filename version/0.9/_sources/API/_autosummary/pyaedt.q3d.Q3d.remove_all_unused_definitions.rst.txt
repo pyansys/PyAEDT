@@ -1,0 +1,6 @@
+remove\_all\_unused\_definitions
+================================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.remove_all_unused_definitions

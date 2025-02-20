@@ -1,0 +1,6 @@
+log\_multiplier
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. autoproperty:: ModelPlotter.log_multiplier

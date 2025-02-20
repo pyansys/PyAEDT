@@ -1,0 +1,6 @@
+add\_thermal\_modifier\_closed\_form
+====================================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: MatProperty.add_thermal_modifier_closed_form

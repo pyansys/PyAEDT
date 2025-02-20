@@ -1,0 +1,6 @@
+temp\_directory
+===============
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.temp_directory

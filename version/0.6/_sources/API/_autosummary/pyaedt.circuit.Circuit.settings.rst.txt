@@ -1,0 +1,6 @@
+settings
+========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.settings

@@ -1,0 +1,6 @@
+read\_design\_data
+==================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.read_design_data

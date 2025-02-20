@@ -1,0 +1,6 @@
+setunassigned\_mats
+===================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.setunassigned_mats

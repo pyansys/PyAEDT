@@ -1,0 +1,6 @@
+display\_wire\_properties
+=========================
+
+.. currentmodule:: pyaedt.modeler.circuits.object3dcircuit
+
+.. automethod:: Wire.display_wire_properties

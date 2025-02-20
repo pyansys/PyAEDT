@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. autoproperty:: MaxwellCircuit.logger

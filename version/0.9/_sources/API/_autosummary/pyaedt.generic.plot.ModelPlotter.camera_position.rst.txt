@@ -1,0 +1,6 @@
+camera\_position
+================
+
+.. currentmodule:: pyaedt.generic.plot
+
+.. autoproperty:: ModelPlotter.camera_position

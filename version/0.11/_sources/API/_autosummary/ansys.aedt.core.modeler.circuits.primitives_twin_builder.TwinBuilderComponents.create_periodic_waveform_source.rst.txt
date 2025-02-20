@@ -1,0 +1,6 @@
+create\_periodic\_waveform\_source
+==================================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_twin_builder
+
+.. automethod:: TwinBuilderComponents.create_periodic_waveform_source

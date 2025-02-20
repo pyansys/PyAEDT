@@ -1,0 +1,6 @@
+plot\_animated\_field
+=====================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.plot_animated_field

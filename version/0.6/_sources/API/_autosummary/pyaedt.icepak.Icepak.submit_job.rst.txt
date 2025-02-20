@@ -1,0 +1,6 @@
+submit\_job
+===========
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.submit_job

@@ -1,0 +1,6 @@
+osolution
+=========
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.osolution

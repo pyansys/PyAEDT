@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: ansys.aedt.core.visualization.report.emi
+
+.. automethod:: EMIReceiver.delete

@@ -1,0 +1,114 @@
+{
+	"Primitives":
+	[
+		{
+			"Primitive Type": "Cylinder",
+			"Name": "Small",
+			"Plane": 1,
+			"Height": 10.0,
+			"Radius": "3.0mm",
+			"Internal Radius": 1.0,
+			"Number of Segments": 0
+		},
+		{
+			"Primitive Type": "Cylinder",
+			"Name": "Big",
+			"Plane": 0,
+			"Height": 50.0,
+			"Radius": 10.0,
+			"Internal Radius": 0
+		},
+		{
+			"Primitive Type": "Cylinder",
+			"Name": "Big_hole",
+			"Plane": 0,
+			"Height": 50.0,
+			"Radius": 10.0,
+			"Internal Radius": 5
+		},
+		{
+			"Primitive Type": "Box",
+			"Name": "SmallBox",
+			"X Length": 10.0,
+			"Y Length": 10.0,
+			"Z Length": 10.0
+		},
+		{
+			"Primitive Type": "Box",
+			"Name": "BigBox",
+			"X Length": 100.0,
+			"Y Length": 100.0,
+			"Z Length": 100.0
+		}
+
+	],
+	"Instances":
+	[
+		{
+			"Name":"Small",
+			"Coordinate System": "CS1",
+			"Origin": ["0mm","1.052dm","2"]
+		},
+		{
+			"Name":"Small",
+			"Coordinate System": "Global",
+			"Origin": ["20um",10,"2.2"]
+		},
+		{
+			"Name":"Big",
+			"Coordinate System": "CS2",
+			"Origin": ["2.0mm",0,50.5]
+		},
+		{
+			"Name":"Big",
+			"Coordinate System": "Global",
+			"Origin": [10,10,10]
+		},
+		{
+			"Name":"Big_hole",
+			"CS": "CS1",
+			"Origin": [0,0,50]
+		},
+				{
+			"Name":"SmallBox",
+			"Coordinate System": "CS1",
+			"Origin": ["0mm","1.052dm","2"]
+		},
+		{
+			"Name":"SmallBox",
+			"Coordinate System": "Global",
+			"Origin": ["20um",10,"2.2"]
+		},
+		{
+			"Name":"BigBox",
+			"Coordinate System": "CS2",
+			"Origin": ["2.0mm",0,50.5]
+		},
+		{
+			"Name":"BigBox",
+			"Coordinate System": "Global",
+			"Origin": [10,10,10]
+		}
+	],
+	"Coordinate Systems":
+	[
+		{
+			"Name":"CS1",
+			"Reference CS": "Global",
+			"Mode": "Axis/Position",
+			"Origin": ["20um",10,"2.2"],
+			"X Axis": [1,0,0],
+			"Y Point": [0,1,0]
+		},
+		{
+			"Name": "CS2",
+			"Reference CS": "Global",
+			"Mode": "Euler Angle ZYZ",
+			"Origin": ["1.5",0,"0"],
+			"Phi": "0deg",
+			"Theta": 2,
+			"Psi": 0.5
+		}
+	],
+	"Units": "mm"
+}

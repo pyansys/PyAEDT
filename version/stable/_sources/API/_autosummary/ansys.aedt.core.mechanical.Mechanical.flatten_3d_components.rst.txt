@@ -1,0 +1,6 @@
+flatten\_3d\_components
+=======================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.flatten_3d_components

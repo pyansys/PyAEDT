@@ -1,0 +1,6 @@
+filter\_multiple\_bands\_high\_pass\_frequency
+==============================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.filter_multiple_bands_high_pass_frequency

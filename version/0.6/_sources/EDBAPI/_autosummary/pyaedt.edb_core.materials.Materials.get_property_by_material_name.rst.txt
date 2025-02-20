@@ -1,0 +1,6 @@
+get\_property\_by\_material\_name
+=================================
+
+.. currentmodule:: pyaedt.edb_core.materials
+
+.. automethod:: Materials.get_property_by_material_name

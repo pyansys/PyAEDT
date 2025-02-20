@@ -1,0 +1,6 @@
+native\_components
+==================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.native_components

@@ -1,0 +1,6 @@
+remove\_segments
+================
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. automethod:: Polyline.remove_segments

@@ -1,0 +1,6 @@
+is\_negative
+============
+
+.. currentmodule:: ansys.aedt.core.modules.layer_stackup
+
+.. autoproperty:: Layer.is_negative

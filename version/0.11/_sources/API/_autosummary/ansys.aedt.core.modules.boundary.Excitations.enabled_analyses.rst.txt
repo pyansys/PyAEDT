@@ -1,0 +1,6 @@
+enabled\_analyses
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: Excitations.enabled_analyses

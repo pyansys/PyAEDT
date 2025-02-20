@@ -1,0 +1,6 @@
+reduced\_matrix
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.standard
+
+.. autoproperty:: Standard.reduced_matrix

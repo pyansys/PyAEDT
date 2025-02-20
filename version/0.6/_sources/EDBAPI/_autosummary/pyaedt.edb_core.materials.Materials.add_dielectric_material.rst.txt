@@ -1,0 +1,6 @@
+add\_dielectric\_material
+=========================
+
+.. currentmodule:: pyaedt.edb_core.materials
+
+.. automethod:: Materials.add_dielectric_material

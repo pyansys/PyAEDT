@@ -1,0 +1,6 @@
+convert\_fields\_in\_db
+=======================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. autoproperty:: ModelPlotter.convert_fields_in_db

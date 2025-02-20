@@ -1,0 +1,6 @@
+solution\_type
+==============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell3d.solution_type

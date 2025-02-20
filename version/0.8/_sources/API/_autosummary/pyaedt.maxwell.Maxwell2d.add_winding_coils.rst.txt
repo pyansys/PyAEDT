@@ -1,0 +1,6 @@
+add\_winding\_coils
+===================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.add_winding_coils

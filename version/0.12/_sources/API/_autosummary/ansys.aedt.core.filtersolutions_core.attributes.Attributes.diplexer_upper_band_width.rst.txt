@@ -1,0 +1,6 @@
+diplexer\_upper\_band\_width
+============================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.diplexer_upper_band_width

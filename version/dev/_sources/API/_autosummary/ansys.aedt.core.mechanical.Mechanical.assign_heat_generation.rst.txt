@@ -1,0 +1,6 @@
+assign\_heat\_generation
+========================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.assign_heat_generation

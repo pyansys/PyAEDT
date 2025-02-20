@@ -1,0 +1,6 @@
+add\_error\_message
+===================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.add_error_message

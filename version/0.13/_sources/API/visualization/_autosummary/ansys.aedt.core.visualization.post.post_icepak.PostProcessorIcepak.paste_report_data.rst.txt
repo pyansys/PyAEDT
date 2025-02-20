@@ -1,0 +1,6 @@
+paste\_report\_data
+===================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.paste_report_data

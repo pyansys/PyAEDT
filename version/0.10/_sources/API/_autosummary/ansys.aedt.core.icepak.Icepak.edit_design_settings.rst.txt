@@ -1,0 +1,6 @@
+edit\_design\_settings
+======================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.edit_design_settings

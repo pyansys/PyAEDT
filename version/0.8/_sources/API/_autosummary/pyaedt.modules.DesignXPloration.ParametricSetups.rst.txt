@@ -1,0 +1,38 @@
+﻿ParametricSetups
+================
+
+.. currentmodule:: pyaedt.modules.DesignXPloration
+
+.. autoclass:: ParametricSetups
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ParametricSetups.add
+      
+      
+      ParametricSetups.add_from_file
+      
+      
+      ParametricSetups.delete
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ParametricSetups.optimodule
+      ParametricSetups.p_app
+   
+   

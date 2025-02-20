@@ -1,0 +1,6 @@
+import\_table
+=============
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.import_table

@@ -1,0 +1,6 @@
+include\_vi\_sources
+====================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveSYZSimulationSetup.include_vi_sources

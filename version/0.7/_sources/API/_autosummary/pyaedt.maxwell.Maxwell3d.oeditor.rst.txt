@@ -1,0 +1,6 @@
+oeditor
+=======
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell3d.oeditor

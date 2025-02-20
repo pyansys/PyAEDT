@@ -1,0 +1,51 @@
+﻿BoundaryObject3dLayout
+======================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoclass:: BoundaryObject3dLayout
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      BoundaryObject3dLayout.delete
+      
+      
+      BoundaryObject3dLayout.jsonalize_tree
+      
+      
+      BoundaryObject3dLayout.suppress_all
+      
+      
+      BoundaryObject3dLayout.unsuppress_all
+      
+      
+      BoundaryObject3dLayout.update
+      
+      
+      BoundaryObject3dLayout.update_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      BoundaryObject3dLayout.available_properties
+      BoundaryObject3dLayout.children
+      BoundaryObject3dLayout.command
+      BoundaryObject3dLayout.name
+      BoundaryObject3dLayout.properties
+      BoundaryObject3dLayout.props
+   
+   

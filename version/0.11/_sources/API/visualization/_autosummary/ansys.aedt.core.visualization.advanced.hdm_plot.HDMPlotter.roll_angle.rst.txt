@@ -1,0 +1,6 @@
+roll\_angle
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. autoproperty:: HDMPlotter.roll_angle

@@ -1,0 +1,6 @@
+add\_rlc\_boundary
+==================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.add_rlc_boundary

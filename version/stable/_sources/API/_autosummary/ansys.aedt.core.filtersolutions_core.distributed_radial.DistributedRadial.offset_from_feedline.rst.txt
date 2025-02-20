@@ -1,0 +1,6 @@
+offset\_from\_feedline
+======================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_radial
+
+.. autoproperty:: DistributedRadial.offset_from_feedline

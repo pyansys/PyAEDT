@@ -1,0 +1,6 @@
+run\_as\_standalone
+===================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.run_as_standalone

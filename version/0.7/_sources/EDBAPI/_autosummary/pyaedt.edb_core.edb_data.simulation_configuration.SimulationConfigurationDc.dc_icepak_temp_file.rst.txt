@@ -1,0 +1,6 @@
+dc\_icepak\_temp\_file
+======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_icepak_temp_file

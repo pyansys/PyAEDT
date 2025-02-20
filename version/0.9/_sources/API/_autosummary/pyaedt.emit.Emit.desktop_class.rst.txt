@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.desktop_class

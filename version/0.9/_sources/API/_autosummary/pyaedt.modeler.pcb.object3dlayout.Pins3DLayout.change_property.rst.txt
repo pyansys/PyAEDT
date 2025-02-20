@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. automethod:: Pins3DLayout.change_property

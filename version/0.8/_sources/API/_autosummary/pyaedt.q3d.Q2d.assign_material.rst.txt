@@ -1,0 +1,6 @@
+assign\_material
+================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.assign_material

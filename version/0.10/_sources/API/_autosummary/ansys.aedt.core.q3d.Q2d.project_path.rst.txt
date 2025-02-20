@@ -1,0 +1,6 @@
+project\_path
+=============
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q2d.project_path

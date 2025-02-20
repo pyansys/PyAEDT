@@ -1,0 +1,6 @@
+set\_temporary\_directory
+=========================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.set_temporary_directory

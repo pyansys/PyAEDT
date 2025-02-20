@@ -1,0 +1,6 @@
+is3d
+====
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoproperty:: Object3d.is3d

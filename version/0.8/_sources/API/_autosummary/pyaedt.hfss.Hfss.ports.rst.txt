@@ -1,0 +1,6 @@
+ports
+=====
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.ports

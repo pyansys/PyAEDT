@@ -1,0 +1,6 @@
+constrict\_ripple\_percent
+==========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.attributes
+
+.. autoproperty:: Attributes.constrict_ripple_percent

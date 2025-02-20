@@ -1,0 +1,6 @@
+export\_rcs
+===========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.rcs_exporter
+
+.. automethod:: MonostaticRCSExporter.export_rcs

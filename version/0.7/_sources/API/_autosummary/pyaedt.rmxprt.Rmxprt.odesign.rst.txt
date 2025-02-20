@@ -1,0 +1,6 @@
+odesign
+=======
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.odesign

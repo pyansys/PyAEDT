@@ -1,0 +1,6 @@
+export\_fullwave\_spice
+=======================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.export_fullwave_spice

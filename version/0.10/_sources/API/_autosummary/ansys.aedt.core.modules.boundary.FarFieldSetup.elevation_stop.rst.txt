@@ -1,0 +1,6 @@
+elevation\_stop
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: FarFieldSetup.elevation_stop

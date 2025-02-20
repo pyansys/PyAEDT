@@ -1,0 +1,6 @@
+add\_info\_message
+==================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.add_info_message

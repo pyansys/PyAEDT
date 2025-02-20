@@ -1,0 +1,6 @@
+assign\_density\_control
+========================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh
+
+.. automethod:: Mesh.assign_density_control

@@ -1,0 +1,6 @@
+create\_wave\_port
+==================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.create_wave_port

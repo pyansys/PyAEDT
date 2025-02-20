@@ -1,0 +1,6 @@
+change\_validation\_settings
+============================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.change_validation_settings

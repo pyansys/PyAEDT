@@ -1,0 +1,6 @@
+edit\_header
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. automethod:: AMIEyeDiagram.edit_header

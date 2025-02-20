@@ -1,0 +1,6 @@
+is\_on\_bounding
+================
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. automethod:: FacePrimitive.is_on_bounding

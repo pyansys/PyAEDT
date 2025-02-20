@@ -1,0 +1,6 @@
+dissolve\_component
+===================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.dissolve_component

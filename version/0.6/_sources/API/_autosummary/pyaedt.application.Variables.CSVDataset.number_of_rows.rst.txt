@@ -1,0 +1,6 @@
+number\_of\_rows
+================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: CSVDataset.number_of_rows

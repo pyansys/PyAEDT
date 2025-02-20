@@ -1,0 +1,6 @@
+fixed\_width\_to\_height\_ratio\_capacitor\_sections
+====================================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_geometry
+
+.. autoproperty:: DistributedGeometry.fixed_width_to_height_ratio_capacitor_sections

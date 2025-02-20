@@ -1,0 +1,6 @@
+oproject
+========
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. autoproperty:: Emit.oproject

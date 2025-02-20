@@ -1,0 +1,6 @@
+properties
+==========
+
+.. currentmodule:: pyaedt.modules.monitor_icepak
+
+.. autoproperty:: FaceMonitor.properties

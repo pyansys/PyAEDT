@@ -1,0 +1,6 @@
+origin
+======
+
+.. currentmodule:: pyaedt.modeler.cad.Modeler
+
+.. autoproperty:: CoordinateSystem.origin

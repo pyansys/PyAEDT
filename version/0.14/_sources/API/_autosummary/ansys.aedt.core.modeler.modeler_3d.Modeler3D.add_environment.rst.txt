@@ -1,0 +1,6 @@
+add\_environment
+================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.add_environment

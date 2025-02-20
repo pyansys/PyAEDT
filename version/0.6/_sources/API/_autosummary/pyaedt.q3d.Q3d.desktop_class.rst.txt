@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q3d.desktop_class

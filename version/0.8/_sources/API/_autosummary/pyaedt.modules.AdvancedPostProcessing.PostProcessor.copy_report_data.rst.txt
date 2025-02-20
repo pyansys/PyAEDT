@@ -1,0 +1,6 @@
+copy\_report\_data
+==================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.copy_report_data

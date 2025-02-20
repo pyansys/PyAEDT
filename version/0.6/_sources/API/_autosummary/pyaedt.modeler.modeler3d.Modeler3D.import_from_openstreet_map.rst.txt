@@ -1,0 +1,6 @@
+import\_from\_openstreet\_map
+=============================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.import_from_openstreet_map

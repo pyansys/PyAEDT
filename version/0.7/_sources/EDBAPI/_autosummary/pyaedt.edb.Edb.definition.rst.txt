@@ -1,0 +1,6 @@
+definition
+==========
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.definition

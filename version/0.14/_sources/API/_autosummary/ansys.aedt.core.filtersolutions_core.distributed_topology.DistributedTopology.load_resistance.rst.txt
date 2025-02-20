@@ -1,0 +1,6 @@
+load\_resistance
+================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_topology
+
+.. autoproperty:: DistributedTopology.load_resistance

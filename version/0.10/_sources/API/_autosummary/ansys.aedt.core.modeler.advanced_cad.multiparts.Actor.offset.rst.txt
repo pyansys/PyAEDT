@@ -1,0 +1,6 @@
+offset
+======
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.multiparts
+
+.. autoproperty:: Actor.offset

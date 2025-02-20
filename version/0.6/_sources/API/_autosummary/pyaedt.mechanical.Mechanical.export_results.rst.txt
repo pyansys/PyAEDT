@@ -1,0 +1,6 @@
+export\_results
+===============
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.export_results

@@ -1,0 +1,6 @@
+get\_components3d\_vars
+=======================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_components3d_vars

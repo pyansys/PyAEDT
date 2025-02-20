@@ -1,0 +1,6 @@
+ports
+=====
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.ports

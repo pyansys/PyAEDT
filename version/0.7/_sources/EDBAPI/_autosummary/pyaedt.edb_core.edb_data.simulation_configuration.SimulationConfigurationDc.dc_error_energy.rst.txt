@@ -1,0 +1,6 @@
+dc\_error\_energy
+=================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_error_energy

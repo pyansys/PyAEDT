@@ -1,0 +1,6 @@
+add\_sweep
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. automethod:: Setup3DLayout.add_sweep

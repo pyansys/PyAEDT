@@ -1,0 +1,6 @@
+mesh
+====
+
+.. currentmodule:: pyaedt.hfss
+
+.. autoproperty:: Hfss.mesh

@@ -1,0 +1,6 @@
+is\_power\_gound\_net
+=====================
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. automethod:: EdbNets.is_power_gound_net

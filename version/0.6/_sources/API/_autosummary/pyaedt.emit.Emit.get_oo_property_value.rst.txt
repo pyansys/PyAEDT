@@ -1,0 +1,6 @@
+get\_oo\_property\_value
+========================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.get_oo_property_value

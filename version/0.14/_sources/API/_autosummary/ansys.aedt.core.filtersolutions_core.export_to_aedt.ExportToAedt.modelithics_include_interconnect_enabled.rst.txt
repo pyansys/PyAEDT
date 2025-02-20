@@ -1,0 +1,6 @@
+modelithics\_include\_interconnect\_enabled
+===========================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.modelithics_include_interconnect_enabled

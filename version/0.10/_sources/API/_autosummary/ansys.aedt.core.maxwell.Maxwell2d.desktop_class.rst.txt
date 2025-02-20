@@ -1,0 +1,6 @@
+desktop\_class
+==============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. autoproperty:: Maxwell2d.desktop_class

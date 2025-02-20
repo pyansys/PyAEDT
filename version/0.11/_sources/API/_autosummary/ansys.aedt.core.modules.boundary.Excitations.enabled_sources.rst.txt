@@ -1,0 +1,6 @@
+enabled\_sources
+================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: Excitations.enabled_sources

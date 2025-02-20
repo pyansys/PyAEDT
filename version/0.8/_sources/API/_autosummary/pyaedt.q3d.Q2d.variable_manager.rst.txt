@@ -1,0 +1,6 @@
+variable\_manager
+=================
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.variable_manager

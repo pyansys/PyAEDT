@@ -1,0 +1,6 @@
+signal\_layer
+=============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Polygon.signal_layer

@@ -1,0 +1,6 @@
+raise\_error
+============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.dll_interface
+
+.. automethod:: DllInterface.raise_error

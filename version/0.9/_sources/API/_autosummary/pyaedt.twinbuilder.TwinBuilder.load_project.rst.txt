@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.load_project

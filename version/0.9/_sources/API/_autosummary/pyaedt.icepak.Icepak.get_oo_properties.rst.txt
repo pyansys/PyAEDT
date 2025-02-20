@@ -1,0 +1,6 @@
+get\_oo\_properties
+===================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_oo_properties

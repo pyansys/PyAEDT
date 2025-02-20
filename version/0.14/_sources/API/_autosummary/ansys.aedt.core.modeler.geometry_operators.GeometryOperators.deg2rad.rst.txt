@@ -1,0 +1,6 @@
+deg2rad
+=======
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.deg2rad

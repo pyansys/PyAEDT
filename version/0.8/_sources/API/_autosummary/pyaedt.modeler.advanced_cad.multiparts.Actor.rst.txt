@@ -1,0 +1,54 @@
+﻿Actor
+=====
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.multiparts
+
+.. autoclass:: Actor
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Actor.insert
+      
+      
+      Actor.position_in_app
+      
+      
+      Actor.start
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Actor.cs_name
+      Actor.index
+      Actor.modeler_units
+      Actor.name
+      Actor.offset
+      Actor.offset_names
+      Actor.offset_x_name
+      Actor.offset_y_name
+      Actor.offset_z_name
+      Actor.pitch
+      Actor.pitch_name
+      Actor.roll
+      Actor.roll_name
+      Actor.speed_expression
+      Actor.speed_name
+      Actor.use_global_cs
+      Actor.yaw
+      Actor.yaw_name
+   
+   

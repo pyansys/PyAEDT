@@ -1,0 +1,6 @@
+rename\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.rename_design

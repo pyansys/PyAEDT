@@ -1,0 +1,6 @@
+get\_point\_terminal\_reference\_primitive
+==========================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. automethod:: GapPort.get_point_terminal_reference_primitive

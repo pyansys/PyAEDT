@@ -1,0 +1,6 @@
+valid\_properties
+=================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoproperty:: Object3d.valid_properties

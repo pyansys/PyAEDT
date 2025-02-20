@@ -1,0 +1,6 @@
+export\_touchstone
+==================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.export_touchstone

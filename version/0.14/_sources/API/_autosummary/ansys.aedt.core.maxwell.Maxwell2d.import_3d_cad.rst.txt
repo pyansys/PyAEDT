@@ -1,0 +1,6 @@
+import\_3d\_cad
+===============
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.import_3d_cad

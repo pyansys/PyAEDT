@@ -1,0 +1,6 @@
+oreportsetup
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. autoproperty:: PostProcessorCircuit.oreportsetup

@@ -1,0 +1,6 @@
+report\_category
+================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Standard.report_category

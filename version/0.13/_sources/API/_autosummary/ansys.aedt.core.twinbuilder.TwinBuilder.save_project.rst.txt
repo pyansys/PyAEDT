@@ -1,0 +1,6 @@
+save\_project
+=============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.save_project

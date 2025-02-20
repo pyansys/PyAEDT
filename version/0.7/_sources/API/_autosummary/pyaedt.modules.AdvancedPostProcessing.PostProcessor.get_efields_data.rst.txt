@@ -1,0 +1,6 @@
+get\_efields\_data
+==================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.get_efields_data

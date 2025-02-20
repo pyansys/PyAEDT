@@ -1,0 +1,6 @@
+read\_design\_data
+==================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.read_design_data

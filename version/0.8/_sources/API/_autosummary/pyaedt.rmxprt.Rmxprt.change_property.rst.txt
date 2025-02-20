@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.change_property

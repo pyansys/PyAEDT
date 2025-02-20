@@ -1,0 +1,6 @@
+render\_choices
+===============
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.render_choices

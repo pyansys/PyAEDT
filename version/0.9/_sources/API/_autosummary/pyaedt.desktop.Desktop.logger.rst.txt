@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.desktop
+
+.. autoproperty:: Desktop.logger

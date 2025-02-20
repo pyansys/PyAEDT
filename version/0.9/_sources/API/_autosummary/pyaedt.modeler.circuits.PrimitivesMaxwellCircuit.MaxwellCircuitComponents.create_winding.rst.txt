@@ -1,0 +1,6 @@
+create\_winding
+===============
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesMaxwellCircuit
+
+.. automethod:: MaxwellCircuitComponents.create_winding

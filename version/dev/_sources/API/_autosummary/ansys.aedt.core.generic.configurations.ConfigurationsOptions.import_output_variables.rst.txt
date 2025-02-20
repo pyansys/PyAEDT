@@ -1,0 +1,6 @@
+import\_output\_variables
+=========================
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_output_variables

@@ -1,0 +1,6 @@
+submit\_job
+===========
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.submit_job

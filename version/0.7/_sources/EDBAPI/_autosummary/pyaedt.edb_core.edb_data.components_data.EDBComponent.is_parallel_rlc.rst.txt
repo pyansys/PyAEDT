@@ -1,0 +1,6 @@
+is\_parallel\_rlc
+=================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.components_data
+
+.. autoproperty:: EDBComponent.is_parallel_rlc

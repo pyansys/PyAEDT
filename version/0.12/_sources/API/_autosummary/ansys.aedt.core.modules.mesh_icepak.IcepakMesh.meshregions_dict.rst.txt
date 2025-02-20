@@ -1,0 +1,6 @@
+meshregions\_dict
+=================
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. autoproperty:: IcepakMesh.meshregions_dict

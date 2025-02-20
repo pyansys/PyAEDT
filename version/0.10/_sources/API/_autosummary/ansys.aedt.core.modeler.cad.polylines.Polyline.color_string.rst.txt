@@ -1,0 +1,6 @@
+color\_string
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.polylines
+
+.. autoproperty:: Polyline.color_string

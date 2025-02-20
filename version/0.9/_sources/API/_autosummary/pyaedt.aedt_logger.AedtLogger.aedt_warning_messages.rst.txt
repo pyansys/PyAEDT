@@ -1,0 +1,6 @@
+aedt\_warning\_messages
+=======================
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. autoproperty:: AedtLogger.aedt_warning_messages

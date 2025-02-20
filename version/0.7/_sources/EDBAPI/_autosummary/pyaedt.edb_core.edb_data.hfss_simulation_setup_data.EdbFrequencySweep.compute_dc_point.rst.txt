@@ -1,0 +1,6 @@
+compute\_dc\_point
+==================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: EdbFrequencySweep.compute_dc_point

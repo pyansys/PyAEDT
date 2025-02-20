@@ -1,0 +1,6 @@
+excitation\_objects
+===================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.excitation_objects

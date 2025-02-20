@@ -1,0 +1,50 @@
+﻿SiwaveSYZSimulationSetup
+========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoclass:: SiwaveSYZSimulationSetup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SiwaveSYZSimulationSetup.add_frequency_sweep
+      
+      
+      SiwaveSYZSimulationSetup.create
+      
+      
+      SiwaveSYZSimulationSetup.delete_frequency_sweep
+      
+      
+      SiwaveSYZSimulationSetup.get_configurations
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      SiwaveSYZSimulationSetup.advanced_settings
+      SiwaveSYZSimulationSetup.enabled
+      SiwaveSYZSimulationSetup.frequency_sweeps
+      SiwaveSYZSimulationSetup.get_sim_setup_info
+      SiwaveSYZSimulationSetup.name
+      SiwaveSYZSimulationSetup.pi_slider_position
+      SiwaveSYZSimulationSetup.position
+      SiwaveSYZSimulationSetup.setup_type
+      SiwaveSYZSimulationSetup.si_slider_position
+      SiwaveSYZSimulationSetup.use_custom_settings
+      SiwaveSYZSimulationSetup.use_si_settings
+   
+   

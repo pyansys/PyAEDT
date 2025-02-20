@@ -1,0 +1,6 @@
+find\_largest\_rectangle\_inside\_polygon
+=========================================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.find_largest_rectangle_inside_polygon

@@ -1,0 +1,6 @@
+toolkit\_directory
+==================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.toolkit_directory

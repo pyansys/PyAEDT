@@ -1,0 +1,6 @@
+mat\_names\_aedt\_lower
+=======================
+
+.. currentmodule:: ansys.aedt.core.modules.material_lib
+
+.. autoproperty:: Materials.mat_names_aedt_lower

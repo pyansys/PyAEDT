@@ -1,0 +1,6 @@
+truncate\_airbox\_at\_ground
+============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.truncate_airbox_at_ground

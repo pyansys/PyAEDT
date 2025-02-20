@@ -1,0 +1,6 @@
+object\_type
+============
+
+.. currentmodule:: pyaedt.modeler.cad.polylines
+
+.. autoproperty:: Polyline.object_type

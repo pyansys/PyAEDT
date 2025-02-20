@@ -1,0 +1,6 @@
+name
+====
+
+.. currentmodule:: pyaedt.edb_core.edb_data.edbvalue
+
+.. autoproperty:: EdbValue.name

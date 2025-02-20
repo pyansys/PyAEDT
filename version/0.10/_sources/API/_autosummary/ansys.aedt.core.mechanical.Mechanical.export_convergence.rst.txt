@@ -1,0 +1,6 @@
+export\_convergence
+===================
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.export_convergence

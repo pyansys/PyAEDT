@@ -1,0 +1,6 @@
+create\_equationbased\_curve
+============================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.create_equationbased_curve

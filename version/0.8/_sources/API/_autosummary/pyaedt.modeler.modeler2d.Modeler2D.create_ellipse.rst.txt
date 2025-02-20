@@ -1,0 +1,6 @@
+create\_ellipse
+===============
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.create_ellipse

@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.load_project

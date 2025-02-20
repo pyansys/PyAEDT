@@ -1,0 +1,6 @@
+remove\_floating\_geometry
+==========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: DefeatureSettings.remove_floating_geometry

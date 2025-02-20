@@ -1,0 +1,6 @@
+set\_string
+===========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.dll_interface
+
+.. automethod:: DllInterface.set_string

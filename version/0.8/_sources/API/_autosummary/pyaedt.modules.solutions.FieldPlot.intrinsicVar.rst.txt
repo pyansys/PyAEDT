@@ -1,0 +1,6 @@
+intrinsicVar
+============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: FieldPlot.intrinsicVar

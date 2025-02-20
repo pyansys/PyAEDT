@@ -1,0 +1,6 @@
+delete
+======
+
+.. currentmodule:: pyaedt.edb_core.edb_data.variables
+
+.. automethod:: Variable.delete

@@ -1,0 +1,35 @@
+﻿ColorMapSettings
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.field_data
+
+.. autoclass:: ColorMapSettings
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ColorMapSettings.from_dict
+      
+      
+      ColorMapSettings.to_dict
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      ColorMapSettings.color
+      ColorMapSettings.map_type
+   
+   

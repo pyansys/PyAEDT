@@ -1,0 +1,6 @@
+copy\_project
+=============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.copy_project

@@ -1,0 +1,6 @@
+zoom\_to\_fit
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.schematic
+
+.. automethod:: ModelerTwinBuilder.zoom_to_fit

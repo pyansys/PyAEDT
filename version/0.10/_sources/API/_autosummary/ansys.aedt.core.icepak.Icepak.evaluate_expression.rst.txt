@@ -1,0 +1,6 @@
+evaluate\_expression
+====================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.evaluate_expression

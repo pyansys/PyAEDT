@@ -1,0 +1,6 @@
+s\_parameters
+=============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.ideal_response
+
+.. automethod:: IdealResponse.s_parameters

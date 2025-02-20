@@ -1,0 +1,6 @@
+add\_incident\_isar\_3d\_settings
+=================================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. automethod:: MonostaticRCSPlotter.add_incident_isar_3d_settings

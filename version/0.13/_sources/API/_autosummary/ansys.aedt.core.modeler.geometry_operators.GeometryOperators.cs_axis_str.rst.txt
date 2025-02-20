@@ -1,0 +1,6 @@
+cs\_axis\_str
+=============
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.cs_axis_str

@@ -1,0 +1,218 @@
+{
+    "Help": "Report Template",
+    "report_category": "Standard",
+    "report_type": "Rectangular Plot",
+	"plot_name": "S Parameter Plot 1",
+    "context": {
+        "domain": "Sweep",
+        "primary_sweep": "Freq",
+        "primary_sweep_range": [
+            "All"
+        ],
+        "variations": {
+            "Freq": [
+                "All"
+            ]
+        }
+    },
+    "expressions": {
+        "dB(S(Dipole_Antenna1_p1,Dipole_Antenna1_p1))" : {
+			"color": [
+                0,
+                255,
+                0
+            ],
+            "trace_style": "Solid",
+            "width": 1,
+            "trace_type": "Continuous",
+			"show_symbols": true,
+			"symbol_color": [
+                0,
+                180,
+                25
+            ],
+			"show_arrows": true,
+			"symbol_fill": true,
+			"symbol_style":"Circle"
+
+			}
+    },
+	"limitLines": {
+        "LimitLine1": {
+            "color": [
+                255,
+                255,
+                0
+            ],
+            "trace_style": "Solid",
+            "width": 1,
+            "hatch_above": true,
+            "violation_emphasis": true,
+            "hatch_pixels": "10",
+            "y_axis": "Y1",
+            "xunits": "MHz",
+            "yunits": "",
+            "xpoints": [
+			3,
+			4
+            ],
+			"ypoints": [
+                -14.0,
+                -14.5
+            ]
+        },
+        "LimitLine2": {
+            "color": [
+                255,
+                255,
+                0
+            ],
+            "trace_style": "Solid",
+            "width": 1,
+            "hatch_above": true,
+            "violation_emphasis": true,
+            "hatch_pixels": "10",
+            "y_axis": "Y1",
+            "start": "3GHz",
+			"stop": "4GHz",
+			"step": "0.2GHz",
+			"equation": "x+2"
+        }
+	},
+	"notes": {
+        "Note1": {
+            "text": "Limit Line",
+			"position":	[
+			3000,
+			3000
+			],
+            "font": "Arial",
+            "font_size": 10,
+			"italic":false,
+			"bold": true,
+            "color": [
+                0,
+                0,
+                0
+            ],
+            "background_color": [
+                0,
+                255,
+                0
+            ],
+            "background_visibility": true,
+            "border_visibility": true,
+            "border_width": "1",
+			"border_color":[
+                0,
+                255,
+                0
+            ]
+        }
+	},
+	"general": {
+        "axisx": {
+            "label": "Freq",
+            "font": "Arial",
+            "font_size": 10,
+			"bold": true,
+			"italic": false,
+            "color": [
+                255,
+                255,
+                255
+            ],
+            "linear_scaling": true,
+            "specify_spacing": false,
+            "minor_tick_divs": "5",
+            "auto_units": true,
+            "units": "GHz"
+        },
+        "axisy1": {
+            "label": "Voltage",
+            "font": "Arial",
+            "font_size": 8,
+			"bold": true,
+			"italic": false,
+            "color": [
+                255,
+                255,
+                255
+            ],
+            "Display Units": true,
+            "Number Format": "Auto",
+            "field_width": "2",
+            "Field Precision": "0",
+            "linear_scaling": true,
+            "specify_spacing": false,
+            "min_spacing": "5",
+            "minor_tick_divs": "5",
+            "auto_units": true,
+            "units": ""
+        },
+        "appearance": {
+            "background_color": [
+                20,
+                20,
+                40
+            ],
+            "plot_color": [
+                20,
+                20,
+                40
+            ],
+            "enable_y_stripes": true,
+            "Auto Scale Fonts": true,
+            "field_width": "4",
+            "precision": "4",
+            "use_scientific_notation": false
+        },
+		"grid": {
+            "major_color": [
+                120,
+                120,
+                120
+            ],
+            "minor_color": [
+                120,
+                120,
+                120
+            ],
+            "major_x": true,
+            "major_y": true,
+            "minor_x": false,
+            "minor_y": false,
+			"style_major": "Dot",
+			"style_minor": "Dot"
+        },
+		"legend": {
+            "back_color": [
+                30,
+                30,
+                30
+            ],
+			"font_color": [
+                255,
+                255,
+                255
+            ],
+            "show_solution_name": false,
+            "show_variation_key": true,
+            "show_trace_name": true
+        },
+        "header": {
+            "font": "Arial",
+            "title_size": 12,
+            "color": [
+                255,
+                255,
+                255
+            ],
+			"bold": true,
+			"italic": false,
+            "subtitle_size": 12,
+            "company_name": "Pyaedt Demo",
+            "show_design_name": false
+        }
+    }
+}

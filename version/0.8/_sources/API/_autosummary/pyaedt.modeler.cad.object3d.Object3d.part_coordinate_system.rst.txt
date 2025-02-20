@@ -1,0 +1,6 @@
+part\_coordinate\_system
+========================
+
+.. currentmodule:: pyaedt.modeler.cad.object3d
+
+.. autoproperty:: Object3d.part_coordinate_system

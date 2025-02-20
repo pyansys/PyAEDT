@@ -1,0 +1,6 @@
+get\_dcir\_element\_data\_current\_source
+=========================================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_dcir_element_data_current_source

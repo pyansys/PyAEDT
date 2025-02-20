@@ -1,0 +1,6 @@
+thermalmodifier
+===============
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: MatProperty.thermalmodifier

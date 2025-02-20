@@ -1,0 +1,6 @@
+get\_oo\_name
+=============
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_oo_name

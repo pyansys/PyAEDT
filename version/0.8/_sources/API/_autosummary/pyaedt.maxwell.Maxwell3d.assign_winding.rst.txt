@@ -1,0 +1,6 @@
+assign\_winding
+===============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_winding

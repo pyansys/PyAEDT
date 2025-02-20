@@ -1,0 +1,6 @@
+add\_subrange
+=============
+
+.. currentmodule:: pyaedt.modules.SolveSweeps
+
+.. automethod:: SweepMatrix.add_subrange

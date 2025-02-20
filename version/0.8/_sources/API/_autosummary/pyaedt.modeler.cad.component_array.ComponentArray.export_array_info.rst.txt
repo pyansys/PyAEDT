@@ -1,0 +1,6 @@
+export\_array\_info
+===================
+
+.. currentmodule:: pyaedt.modeler.cad.component_array
+
+.. automethod:: ComponentArray.export_array_info

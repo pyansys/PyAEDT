@@ -1,0 +1,6 @@
+library\_list
+=============
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.library_list

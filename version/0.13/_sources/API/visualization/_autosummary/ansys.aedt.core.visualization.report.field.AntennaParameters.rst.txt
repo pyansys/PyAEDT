@@ -1,0 +1,140 @@
+﻿AntennaParameters
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. autoclass:: AntennaParameters
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      AntennaParameters.add_cartesian_x_marker
+      
+      
+      AntennaParameters.add_cartesian_y_marker
+      
+      
+      AntennaParameters.add_limit_line_from_equation
+      
+      
+      AntennaParameters.add_limit_line_from_points
+      
+      
+      AntennaParameters.add_note
+      
+      
+      AntennaParameters.add_trace_to_report
+      
+      
+      AntennaParameters.apply_report_template
+      
+      
+      AntennaParameters.create
+      
+      
+      AntennaParameters.delete
+      
+      
+      AntennaParameters.delete_traces
+      
+      
+      AntennaParameters.edit_general_settings
+      
+      
+      AntennaParameters.edit_grid
+      
+      
+      AntennaParameters.edit_header
+      
+      
+      AntennaParameters.edit_legend
+      
+      
+      AntennaParameters.edit_x_axis
+      
+      
+      AntennaParameters.edit_x_axis_scaling
+      
+      
+      AntennaParameters.edit_y_axis
+      
+      
+      AntennaParameters.edit_y_axis_scaling
+      
+      
+      AntennaParameters.export_config
+      
+      
+      AntennaParameters.get_solution_data
+      
+      
+      AntennaParameters.hide_legend
+      
+      
+      AntennaParameters.import_traces
+      
+      
+      AntennaParameters.jsonalize_tree
+      
+      
+      AntennaParameters.suppress_all
+      
+      
+      AntennaParameters.unsuppress_all
+      
+      
+      AntennaParameters.update_expressions_with_defaults
+      
+      
+      AntennaParameters.update_property
+      
+      
+      AntennaParameters.update_trace_in_report
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      AntennaParameters.children
+      AntennaParameters.command
+      AntennaParameters.differential_pairs
+      AntennaParameters.domain
+      AntennaParameters.expressions
+      AntennaParameters.far_field_sphere
+      AntennaParameters.limit_lines
+      AntennaParameters.matrix
+      AntennaParameters.maximum_time
+      AntennaParameters.notes
+      AntennaParameters.plot_name
+      AntennaParameters.polyline
+      AntennaParameters.primary_sweep
+      AntennaParameters.primary_sweep_range
+      AntennaParameters.properties
+      AntennaParameters.pulse_rise_time
+      AntennaParameters.reduced_matrix
+      AntennaParameters.report_category
+      AntennaParameters.report_type
+      AntennaParameters.secondary_sweep
+      AntennaParameters.secondary_sweep_range
+      AntennaParameters.step_time
+      AntennaParameters.sub_design_id
+      AntennaParameters.time_start
+      AntennaParameters.time_stop
+      AntennaParameters.time_windowing
+      AntennaParameters.traces
+      AntennaParameters.use_pulse_in_tdr
+      AntennaParameters.variations
+   
+   

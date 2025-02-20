@@ -1,0 +1,6 @@
+model\_units
+============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. autoproperty:: PostProcessorIcepak.model_units

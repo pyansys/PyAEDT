@@ -1,0 +1,6 @@
+dcir\_equipotential\_region
+===========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.padstacks_data
+
+.. autoproperty:: EDBPadstackInstance.dcir_equipotential_region

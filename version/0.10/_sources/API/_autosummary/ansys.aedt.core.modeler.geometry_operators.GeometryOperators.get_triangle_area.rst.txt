@@ -1,0 +1,6 @@
+get\_triangle\_area
+===================
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.get_triangle_area

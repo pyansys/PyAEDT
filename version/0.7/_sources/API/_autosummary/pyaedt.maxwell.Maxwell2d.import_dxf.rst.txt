@@ -1,0 +1,6 @@
+import\_dxf
+===========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.import_dxf

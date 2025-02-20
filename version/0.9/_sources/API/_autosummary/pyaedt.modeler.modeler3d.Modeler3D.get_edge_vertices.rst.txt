@@ -1,0 +1,6 @@
+get\_edge\_vertices
+===================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_edge_vertices

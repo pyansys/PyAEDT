@@ -1,0 +1,6 @@
+include\_input\_return\_loss\_s11\_enabled
+==========================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.include_input_return_loss_s11_enabled

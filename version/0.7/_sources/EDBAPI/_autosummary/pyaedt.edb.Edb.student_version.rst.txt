@@ -1,0 +1,6 @@
+student\_version
+================
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.student_version

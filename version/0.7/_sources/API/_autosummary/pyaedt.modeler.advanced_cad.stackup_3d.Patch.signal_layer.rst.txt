@@ -1,0 +1,6 @@
+signal\_layer
+=============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Patch.signal_layer

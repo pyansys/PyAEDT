@@ -1,0 +1,6 @@
+﻿read\_touchstone
+================
+
+.. currentmodule:: pyaedt.generic.touchstone_parser
+
+.. autofunction:: read_touchstone

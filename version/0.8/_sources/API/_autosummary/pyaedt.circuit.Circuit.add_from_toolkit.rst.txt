@@ -1,0 +1,6 @@
+add\_from\_toolkit
+==================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.add_from_toolkit

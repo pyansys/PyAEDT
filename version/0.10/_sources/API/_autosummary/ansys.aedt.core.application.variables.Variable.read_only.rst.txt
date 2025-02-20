@@ -1,0 +1,6 @@
+read\_only
+==========
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.read_only

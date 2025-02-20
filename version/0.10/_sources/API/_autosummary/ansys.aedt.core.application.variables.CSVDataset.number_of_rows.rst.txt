@@ -1,0 +1,6 @@
+number\_of\_rows
+================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: CSVDataset.number_of_rows

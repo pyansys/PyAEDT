@@ -1,0 +1,6 @@
+farfield\_data
+==============
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. autoproperty:: FfdSolutionData.farfield_data

@@ -1,0 +1,6 @@
+export\_maxwell
+===============
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.export_maxwell

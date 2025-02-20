@@ -1,0 +1,6 @@
+field\_line\_trace\_plot\_settings
+==================================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: FieldPlot.field_line_trace_plot_settings

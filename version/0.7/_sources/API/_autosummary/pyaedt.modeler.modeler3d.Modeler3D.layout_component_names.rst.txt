@@ -1,0 +1,6 @@
+layout\_component\_names
+========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. autoproperty:: Modeler3D.layout_component_names

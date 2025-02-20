@@ -1,0 +1,6 @@
+dc\_plot\_jv
+============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationDc.dc_plot_jv

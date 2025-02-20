@@ -1,0 +1,6 @@
+nominal\_adaptive
+=================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. autoproperty:: Mechanical.nominal_adaptive

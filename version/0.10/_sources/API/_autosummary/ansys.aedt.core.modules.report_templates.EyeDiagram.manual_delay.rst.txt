@@ -1,0 +1,6 @@
+manual\_delay
+=============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: EyeDiagram.manual_delay

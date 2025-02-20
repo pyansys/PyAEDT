@@ -1,0 +1,6 @@
+import\_dataset3d
+=================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.import_dataset3d

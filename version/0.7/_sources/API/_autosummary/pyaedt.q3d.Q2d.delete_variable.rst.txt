@@ -1,0 +1,6 @@
+delete\_variable
+================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q2d.delete_variable

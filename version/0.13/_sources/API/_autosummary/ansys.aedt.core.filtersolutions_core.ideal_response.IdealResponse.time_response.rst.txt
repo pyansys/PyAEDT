@@ -1,0 +1,6 @@
+time\_response
+==============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.ideal_response
+
+.. automethod:: IdealResponse.time_response

@@ -1,0 +1,6 @@
+calculate\_initial\_extent
+==========================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.calculate_initial_extent

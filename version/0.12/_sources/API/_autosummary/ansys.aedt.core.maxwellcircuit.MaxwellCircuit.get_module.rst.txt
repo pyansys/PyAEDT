@@ -1,0 +1,6 @@
+get\_module
+===========
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.get_module

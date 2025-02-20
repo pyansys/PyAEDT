@@ -1,0 +1,6 @@
+xy\_plane
+=========
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.xy_plane

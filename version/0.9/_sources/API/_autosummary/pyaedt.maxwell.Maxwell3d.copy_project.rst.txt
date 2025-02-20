@@ -1,0 +1,6 @@
+copy\_project
+=============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.copy_project

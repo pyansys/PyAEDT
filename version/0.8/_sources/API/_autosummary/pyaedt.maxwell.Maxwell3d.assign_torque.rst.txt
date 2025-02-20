@@ -1,0 +1,6 @@
+assign\_torque
+==============
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_torque

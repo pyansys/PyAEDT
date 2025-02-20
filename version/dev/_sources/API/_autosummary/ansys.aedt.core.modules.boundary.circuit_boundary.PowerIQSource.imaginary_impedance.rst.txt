@@ -1,0 +1,6 @@
+imaginary\_impedance
+====================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.circuit_boundary
+
+.. autoproperty:: PowerIQSource.imaginary_impedance

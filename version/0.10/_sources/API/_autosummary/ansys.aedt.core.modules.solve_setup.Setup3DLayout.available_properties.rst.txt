@@ -1,0 +1,6 @@
+available\_properties
+=====================
+
+.. currentmodule:: ansys.aedt.core.modules.solve_setup
+
+.. autoproperty:: Setup3DLayout.available_properties

@@ -1,0 +1,6 @@
+create\_pingroup\_from\_pins
+============================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.create_pingroup_from_pins

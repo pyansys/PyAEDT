@@ -1,0 +1,6 @@
+delete\_traces
+==============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. automethod:: Standard.delete_traces

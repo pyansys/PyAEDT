@@ -1,0 +1,6 @@
+radial\_split\_2D
+=================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_2d
+
+.. automethod:: Modeler2D.radial_split_2D

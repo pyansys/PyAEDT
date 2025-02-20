@@ -1,0 +1,6 @@
+is\_visible\_pad
+================
+
+.. currentmodule:: pyaedt.modules.LayerStackup
+
+.. autoproperty:: Layer.is_visible_pad

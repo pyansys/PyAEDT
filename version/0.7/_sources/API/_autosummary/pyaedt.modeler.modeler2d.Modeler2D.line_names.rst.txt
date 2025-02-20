@@ -1,0 +1,6 @@
+line\_names
+===========
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. autoproperty:: Modeler2D.line_names

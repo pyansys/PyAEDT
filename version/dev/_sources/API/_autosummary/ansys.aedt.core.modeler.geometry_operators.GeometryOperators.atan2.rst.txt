@@ -1,0 +1,6 @@
+atan2
+=====
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.atan2

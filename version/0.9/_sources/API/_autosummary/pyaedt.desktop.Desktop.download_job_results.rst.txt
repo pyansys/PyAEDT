@@ -1,0 +1,6 @@
+download\_job\_results
+======================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.download_job_results

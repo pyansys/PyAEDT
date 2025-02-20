@@ -1,0 +1,6 @@
+allowed\_keys
+=============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.parts
+
+.. autoattribute:: Part.allowed_keys

@@ -1,0 +1,6 @@
+create\_sbr\_pulse\_doppler\_setup
+==================================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.create_sbr_pulse_doppler_setup

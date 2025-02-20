@@ -1,0 +1,24 @@
+﻿LimitLine
+=========
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoclass:: LimitLine
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      LimitLine.set_line_properties
+      
+   
+   
+
+   
+   
+   

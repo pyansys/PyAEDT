@@ -1,0 +1,6 @@
+is\_parameter
+=============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.variables
+
+.. autoproperty:: Variable.is_parameter

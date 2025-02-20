@@ -1,0 +1,6 @@
+add\_info\_message
+==================
+
+.. currentmodule:: pyaedt.aedt_logger
+
+.. automethod:: AedtLogger.add_info_message

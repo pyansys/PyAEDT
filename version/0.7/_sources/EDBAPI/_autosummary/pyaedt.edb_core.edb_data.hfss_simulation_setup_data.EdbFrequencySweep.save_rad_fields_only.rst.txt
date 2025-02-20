@@ -1,0 +1,6 @@
+save\_rad\_fields\_only
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoproperty:: EdbFrequencySweep.save_rad_fields_only

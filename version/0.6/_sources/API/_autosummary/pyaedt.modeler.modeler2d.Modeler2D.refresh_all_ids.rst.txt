@@ -1,0 +1,6 @@
+refresh\_all\_ids
+=================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.refresh_all_ids

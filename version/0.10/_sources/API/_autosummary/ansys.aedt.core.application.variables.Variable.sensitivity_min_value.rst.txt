@@ -1,0 +1,6 @@
+sensitivity\_min\_value
+=======================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. autoproperty:: Variable.sensitivity_min_value

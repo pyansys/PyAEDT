@@ -1,0 +1,6 @@
+export\_results
+===============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.export_results

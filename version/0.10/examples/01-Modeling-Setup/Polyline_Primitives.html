@@ -1,0 +1,1056 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>General: polyline creation &#8212; PyAEDT</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css?v=d2ac875c" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+ 
+<link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../_static/documentation_options.js?v=5ee55484"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/01-Modeling-Setup/Polyline_Primitives';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.10';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HFSS examples" href="../02-HFSS/index.html" />
+    <link rel="prev" title="General: optimetrics setup" href="Optimetrics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/examples/01-Modeling-Setup/Polyline_Primitives.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  
+  <!-- Include the MeiliSearch CSS stylesheet only if theme present -->
+  <link href="../../_static/css/meilisearch.css" rel="stylesheet" />
+  <!-- Create a search bar form with a text input and a dropdown selector for the search index -->
+  <form class="bd-search d-flex align-items-center"
+  action="../../search.html"
+  method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+    class="form-control"
+    name="q"
+    placeholder="Search the docs ..."
+    aria-label="Search the docs ..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  <!-- Conditionally display the dropdown selector if there are multiple indices -->
+  
+  <!-- Include the MeiliSearch JavaScript library for the search bar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  
+    
+  
+  <script>
+  var HOST_URL = "https://backend.search.pyansys.com/";
+  var API_KEY = "9fbccc76c147935ce2b562a9ee0c6669276987572dc1f22491cea72e9e99f35d";
+  // Iterates of the dictionary of index_uids and index_names to get the first child dicts
+  // and then the first key of the child dict to get the index_uid
+  var indexUid = "pyaedt-v0-10";
+
+  // Function to check if the MeiliSearch host URL is reachable
+  function checkMeiliSearchHost(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, true);
+    xhr.onload = function () {
+      if (xhr.status === 404) {
+        callback(false);
+      } else {
+        callback(true);
+      }
+    };
+    xhr.onerror = function () {
+      callback(false);
+    };
+    xhr.send();
+  }
+
+  // Check the MeiliSearch host URL and load the appropriate search script
+  checkMeiliSearchHost(HOST_URL, function (isReachable) {
+    if (isReachable) {
+      var script = document.createElement('script');
+      script.src = "../../_static/js/meilisearch_theme_wrap.js";
+      document.head.appendChild(script);
+      // create an env value that the url is reachable to use in another script
+      const ACTIVE_MEILI_BACKEND = true;
+    }
+    });
+  </script>
+  </form>
+</div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+   
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <script>document.write(`<img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="PyAEDT - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../API/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-EDB/index.html">EDB examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-HFSS3DLayout/index.html">HFSS 3D Layout examples</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">General model and setup examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Configurations.html">General: configuration files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HFSS_CoordinateSystem.html">General: coordinate system creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Optimetrics.html">General: optimetrics setup</a></li>
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">General: polyline creation</a></li>
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-HFSS/index.html">HFSS examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-SBR%2B/index.html">SBR+ examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-Maxwell/index.html">Maxwell examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-Icepak/index.html">Icepak examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-Q3D/index.html">2D Extractor and Q3D Extractor examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-Multiphysics/index.html">Multiphysics examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-Circuit/index.html">Circuit examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-EMIT/index.html">EMIT examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-TwinBuilder/index.html">Twin Builder examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">Examples</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">General model and setup examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">General: polyline creation</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-examples-01-modeling-setup-polyline-primitives-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="general-polyline-creation">
+<span id="sphx-glr-examples-01-modeling-setup-polyline-primitives-py"></span><h1>General: polyline creation<a class="headerlink" href="#general-polyline-creation" title="Link to this heading">#</a></h1>
+<p>This example shows how you can use PyAEDT to create and manipulate polylines.</p>
+<section id="perform-required-imports">
+<h2>Perform required imports<a class="headerlink" href="#perform-required-imports" title="Link to this heading">#</a></h2>
+<p>Perform required imports.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">ansys.aedt.core</span>
+</pre></div>
+</div>
+</section>
+<section id="set-aedt-version">
+<h2>Set AEDT version<a class="headerlink" href="#set-aedt-version" title="Link to this heading">#</a></h2>
+<p>Set AEDT version.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">aedt_version</span> <span class="o">=</span> <span class="s2">&quot;2024.2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="set-non-graphical-mode">
+<h2>Set non-graphical mode<a class="headerlink" href="#set-non-graphical-mode" title="Link to this heading">#</a></h2>
+<p>Set non-graphical mode.
+You can set <code class="docutils literal notranslate"><span class="pre">non_graphical</span></code> either to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">non_graphical</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="create-maxwell-3d-object">
+<h2>Create Maxwell 3D object<a class="headerlink" href="#create-maxwell-3d-object" title="Link to this heading">#</a></h2>
+<p>Create a <a class="reference internal" href="../../API/_autosummary/ansys.aedt.core.maxwell.Maxwell3d.html#ansys.aedt.core.maxwell.Maxwell3d" title="ansys.aedt.core.maxwell.Maxwell3d"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.aedt.core.maxwell.Maxwell3d</span></code></a> object and set the unit type to <code class="docutils literal notranslate"><span class="pre">&quot;mm&quot;</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M3D</span> <span class="o">=</span> <span class="n">ansys</span><span class="o">.</span><span class="n">aedt</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Maxwell3d</span><span class="p">(</span><span class="n">solution_type</span><span class="o">=</span><span class="s2">&quot;Transient&quot;</span><span class="p">,</span> <span class="n">design</span><span class="o">=</span><span class="s2">&quot;test_polyline_3D&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">aedt_version</span><span class="p">,</span>
+                       <span class="n">new_desktop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">non_graphical</span><span class="o">=</span><span class="n">non_graphical</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">M3D</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">model_units</span> <span class="o">=</span> <span class="s2">&quot;mm&quot;</span>
+<span class="n">prim3D</span> <span class="o">=</span> <span class="n">M3D</span><span class="o">.</span><span class="n">modeler</span>
+</pre></div>
+</div>
+</section>
+<section id="define-variables">
+<h2>Define variables<a class="headerlink" href="#define-variables" title="Link to this heading">#</a></h2>
+<p>Define two design variables as parameters for the polyline objects.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">M3D</span><span class="p">[</span><span class="s2">&quot;p1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;100mm&quot;</span>
+<span class="n">M3D</span><span class="p">[</span><span class="s2">&quot;p2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;71mm&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="input-data">
+<h2>Input data<a class="headerlink" href="#input-data" title="Link to this heading">#</a></h2>
+<p>Input data. All data for the polyline functions can be entered as either floating point
+values or strings. Floating point values are assumed to be in model units
+(<code class="docutils literal notranslate"><span class="pre">M3D.modeler.model_units</span></code>).</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">test_points</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;p1&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;-p1&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;-p1/2&quot;</span><span class="p">,</span> <span class="s2">&quot;-p1/2&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="polyline-primitives">
+<h1>Polyline primitives<a class="headerlink" href="#polyline-primitives" title="Link to this heading">#</a></h1>
+<p>The following examples are for creating polyline primitives.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create line primitive</span>
+<span class="c1"># ~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="c1"># Create a line primitive. The basic polyline command takes a list of positions</span>
+<span class="c1"># (``[X, Y, Z]`` coordinates) and creates a polyline object with one or more</span>
+<span class="c1"># segments. The supported segment types are ``Line``, ``Arc`` (3 points),</span>
+<span class="c1"># ``AngularArc`` (center-point + angle), and ``Spline``.</span>
+
+<span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">test_points</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL01_line&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Created Polyline with name: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prim3D</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="n">P</span><span class="o">.</span><span class="n">id</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Segment types : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">([</span><span class="n">s</span><span class="o">.</span><span class="n">type</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">P</span><span class="o">.</span><span class="n">segment_types</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;primitive id = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Created Polyline with name: PL01_line
+Segment types : [&#39;Line&#39;]
+primitive id = 6
+</pre></div>
+</div>
+<section id="create-arc-primitive">
+<h2>Create arc primitive<a class="headerlink" href="#create-arc-primitive" title="Link to this heading">#</a></h2>
+<p>Create an arc primitive. The parameter <code class="docutils literal notranslate"><span class="pre">position_list</span></code> must contain at
+least three position values. The first three position values are used.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">test_points</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">segment_type</span><span class="o">=</span><span class="s2">&quot;Arc&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL02_arc&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Created object with id </span><span class="si">{}</span><span class="s2"> and name </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="n">P</span><span class="o">.</span><span class="n">id</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Created object with id 11 and name PL02_arc.
+</pre></div>
+</div>
+</section>
+<section id="create-spline-primitive">
+<h2>Create spline primitive<a class="headerlink" href="#create-spline-primitive" title="Link to this heading">#</a></h2>
+<p>Create a spline primitive. Defining the segment using a <code class="docutils literal notranslate"><span class="pre">PolylineSegment</span></code>
+object allows you to provide additional input parameters for the spine, such
+as the number of points (in this case 4). The parameter <code class="docutils literal notranslate"><span class="pre">position_list</span></code>
+must contain at least four position values.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">test_points</span><span class="p">,</span> <span class="n">segment_type</span><span class="o">=</span><span class="n">prim3D</span><span class="o">.</span><span class="n">polyline_segment</span><span class="p">(</span><span class="s2">&quot;Spline&quot;</span><span class="p">,</span> <span class="n">num_points</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+                           <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL03_spline_4pt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-center-point-arc-primitive">
+<h2>Create center-point arc primitive<a class="headerlink" href="#create-center-point-arc-primitive" title="Link to this heading">#</a></h2>
+<p>Create a center-point arc primitive. A center-point arc segment is defined
+by a starting point, a center point, and an angle of rotation around the
+center point. The rotation occurs in a plane parallel to the XY, YZ, or ZX
+plane of the active coordinate system. The starting point and the center point
+must therefore have one coordinate value (X, Y, or Z) with the same value.</p>
+<p>Here <code class="docutils literal notranslate"><span class="pre">start-point</span></code> and <code class="docutils literal notranslate"><span class="pre">center-point</span></code> have a common Z coordinate, <code class="docutils literal notranslate"><span class="pre">&quot;0mm&quot;</span></code>.
+The curve is therefore rotated in the XY plane with Z = <code class="docutils literal notranslate"><span class="pre">&quot;0mm&quot;</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">start_point</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">center_point</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">start_point</span><span class="p">],</span>
+                           <span class="n">segment_type</span><span class="o">=</span><span class="n">prim3D</span><span class="o">.</span><span class="n">polyline_segment</span><span class="p">(</span><span class="s2">&quot;AngularArc&quot;</span><span class="p">,</span> <span class="n">arc_center</span><span class="o">=</span><span class="n">center_point</span><span class="p">,</span>
+                                                                <span class="n">arc_angle</span><span class="o">=</span><span class="s2">&quot;30deg&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL04_center_point_arc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">start_point</span></code> and <code class="docutils literal notranslate"><span class="pre">center_point</span></code> have the same values for the Y and
+Z coordinates, so the plane or rotation could be either XY or ZX.
+For these special cases when the rotation plane is ambiguous, you can specify
+the plane explicitly.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">start_point</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">center_point</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">start_point</span><span class="p">],</span>
+                           <span class="n">segment_type</span><span class="o">=</span><span class="n">prim3D</span><span class="o">.</span><span class="n">polyline_segment</span><span class="p">(</span><span class="s2">&quot;AngularArc&quot;</span><span class="p">,</span> <span class="n">arc_center</span><span class="o">=</span><span class="n">center_point</span><span class="p">,</span>
+                                                                <span class="n">arc_angle</span><span class="o">=</span><span class="s2">&quot;30deg&quot;</span><span class="p">,</span> <span class="n">arc_plane</span><span class="o">=</span><span class="s2">&quot;XY&quot;</span><span class="p">),</span>
+                           <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL04_center_point_arc_rot_XY&quot;</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">start_point</span><span class="p">],</span>
+                           <span class="n">segment_type</span><span class="o">=</span><span class="n">prim3D</span><span class="o">.</span><span class="n">polyline_segment</span><span class="p">(</span><span class="s2">&quot;AngularArc&quot;</span><span class="p">,</span> <span class="n">arc_center</span><span class="o">=</span><span class="n">center_point</span><span class="p">,</span>
+                                                                <span class="n">arc_angle</span><span class="o">=</span><span class="s2">&quot;30deg&quot;</span><span class="p">,</span> <span class="n">arc_plane</span><span class="o">=</span><span class="s2">&quot;ZX&quot;</span><span class="p">),</span>
+                           <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL04_center_point_arc_rot_ZX&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="compound-polylines">
+<h1>Compound polylines<a class="headerlink" href="#compound-polylines" title="Link to this heading">#</a></h1>
+<p>You can use a list of points in a single command to create a multi-segment
+polyline.</p>
+<p>By default, if no specification of the type of segments is given, all points
+are connected by line segments.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">test_points</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL06_segmented_compound_line&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can specify the segment type with the parameter <code class="docutils literal notranslate"><span class="pre">segment_type</span></code>.
+In this case, you must specify that the four input points in <code class="docutils literal notranslate"><span class="pre">position_list</span></code>
+are to be connected as a line segment followed by a 3-point arc segment.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">test_points</span><span class="p">,</span> <span class="n">segment_type</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Line&quot;</span><span class="p">,</span> <span class="s2">&quot;Arc&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL05_compound_line_arc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The parameter <code class="docutils literal notranslate"><span class="pre">close_surface</span></code> ensures that the polyline starting point and
+ending point are the same. If necessary, you can add an additional line
+segment to achieve this.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">test_points</span><span class="p">,</span> <span class="n">close_surface</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL07_segmented_compound_line_closed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The parameter <code class="docutils literal notranslate"><span class="pre">cover_surface=True</span></code> also performs the modeler command
+<code class="docutils literal notranslate"><span class="pre">cover_surface</span></code>. Note that specifying <code class="docutils literal notranslate"><span class="pre">cover_surface=True</span></code> automatically
+results in the polyline being closed.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">test_points</span><span class="p">,</span> <span class="n">cover_surface</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SPL01_segmented_compound_line&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="compound-lines">
+<h1>Compound lines<a class="headerlink" href="#compound-lines" title="Link to this heading">#</a></h1>
+<p>The following examples are for inserting compound lines.</p>
+<section id="insert-line-segment">
+<h2>Insert line segment<a class="headerlink" href="#insert-line-segment" title="Link to this heading">#</a></h2>
+<p>Insert a line segment starting at vertex 1 <code class="docutils literal notranslate"><span class="pre">[&quot;100mm&quot;,</span> <span class="pre">&quot;0mm&quot;,</span> <span class="pre">&quot;0mm&quot;]</span></code>
+of an existing polyline and ending at some new point <code class="docutils literal notranslate"><span class="pre">[&quot;90mm&quot;,</span> <span class="pre">&quot;20mm&quot;,</span> <span class="pre">&quot;0mm&quot;].</span></code>
+By numerical comparison of the starting point with the existing vertices of the
+original polyline object, it is determined automatically that the segment is
+inserted after the first segment of the original polyline.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">test_points</span><span class="p">,</span> <span class="n">close_surface</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL08_segmented_compound_insert_segment&quot;</span><span class="p">)</span>
+
+<span class="n">p2</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">insert_point</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;-100mm&quot;</span><span class="p">,</span> <span class="s2">&quot;20mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">]</span>
+
+<span class="n">P</span><span class="o">.</span><span class="n">insert_segment</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">insert_point</span><span class="p">,</span> <span class="n">p2</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="insert-compound-line-with-insert-curve">
+<h2>Insert compound line with insert curve<a class="headerlink" href="#insert-compound-line-with-insert-curve" title="Link to this heading">#</a></h2>
+<p>Insert a compound line starting a line segment at vertex 1 <code class="docutils literal notranslate"><span class="pre">[&quot;100mm&quot;,</span> <span class="pre">&quot;0mm&quot;,</span> <span class="pre">&quot;0mm&quot;]</span></code>
+of an existing polyline and end at some new point <code class="docutils literal notranslate"><span class="pre">[&quot;90mm&quot;,</span> <span class="pre">&quot;20mm&quot;,</span> <span class="pre">&quot;0mm&quot;]</span></code>.
+By numerical comparison of the starting point, it is determined automatically
+that the segment is inserted after the first segment of the original polyline.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">test_points</span><span class="p">,</span> <span class="n">close_surface</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PL08_segmented_compound_insert_arc&quot;</span><span class="p">)</span>
+
+<span class="n">start_point</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">vertex_positions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">insert_point1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;90mm&quot;</span><span class="p">,</span> <span class="s2">&quot;20mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">]</span>
+<span class="n">insert_point2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">P</span><span class="o">.</span><span class="n">insert_segment</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">start_point</span><span class="p">,</span> <span class="n">insert_point1</span><span class="p">,</span> <span class="n">insert_point2</span><span class="p">],</span> <span class="n">segment</span><span class="o">=</span><span class="s2">&quot;Arc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</section>
+<section id="insert-compound-line-at-end-of-a-center-point-arc">
+<h2>Insert compound line at end of a center-point arc<a class="headerlink" href="#insert-compound-line-at-end-of-a-center-point-arc" title="Link to this heading">#</a></h2>
+<p>Insert a compound line at the end of a center-point arc (<code class="docutils literal notranslate"><span class="pre">type=&quot;AngularArc&quot;</span></code>).
+This is a special case.</p>
+<p>Step 1: Draw a center-point arc.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">start_point</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2200.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1200.0</span><span class="p">]</span>
+<span class="n">arc_center_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1400</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">]</span>
+<span class="n">arc_angle_1</span> <span class="o">=</span> <span class="s2">&quot;43.47deg&quot;</span>
+
+<span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">start_point</span><span class="p">],</span>
+                           <span class="n">segment_type</span><span class="o">=</span><span class="n">prim3D</span><span class="o">.</span><span class="n">polyline_segment</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;AngularArc&quot;</span><span class="p">,</span> <span class="n">arc_angle</span><span class="o">=</span><span class="n">arc_angle_1</span><span class="p">,</span>
+                                                                <span class="n">arc_center</span><span class="o">=</span><span class="n">arc_center_1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;First_Arc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Step 2: Insert a line segment at the end of the arc with a specified end point.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">start_of_line_segment</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">end_point</span>
+<span class="n">end_of_line_segment</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3600</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+
+<span class="n">P</span><span class="o">.</span><span class="n">insert_segment</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">start_of_line_segment</span><span class="p">,</span> <span class="n">end_of_line_segment</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<p>Step 3: Append a center-point arc segment to the line object.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">arc_angle_2</span> <span class="o">=</span> <span class="s2">&quot;39.716deg&quot;</span>
+<span class="n">arc_center_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3400</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">3800</span><span class="p">]</span>
+
+<span class="n">P</span><span class="o">.</span><span class="n">insert_segment</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">end_of_line_segment</span><span class="p">],</span>
+                 <span class="n">segment</span><span class="o">=</span><span class="n">prim3D</span><span class="o">.</span><span class="n">polyline_segment</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;AngularArc&quot;</span><span class="p">,</span> <span class="n">arc_center</span><span class="o">=</span><span class="n">arc_center_2</span><span class="p">,</span> <span class="n">arc_angle</span><span class="o">=</span><span class="n">arc_angle_2</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<p>You can use the compound polyline definition to complete all three steps in
+a single step.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">start_point</span><span class="p">,</span> <span class="n">end_of_line_segment</span><span class="p">],</span> <span class="n">segment_type</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">prim3D</span><span class="o">.</span><span class="n">polyline_segment</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;AngularArc&quot;</span><span class="p">,</span> <span class="n">arc_angle</span><span class="o">=</span><span class="s2">&quot;43.47deg&quot;</span><span class="p">,</span> <span class="n">arc_center</span><span class="o">=</span><span class="n">arc_center_1</span><span class="p">),</span>
+    <span class="n">prim3D</span><span class="o">.</span><span class="n">polyline_segment</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Line&quot;</span><span class="p">),</span>
+    <span class="n">prim3D</span><span class="o">.</span><span class="n">polyline_segment</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;AngularArc&quot;</span><span class="p">,</span> <span class="n">arc_angle</span><span class="o">=</span><span class="n">arc_angle_2</span><span class="p">,</span> <span class="n">arc_center</span><span class="o">=</span><span class="n">arc_center_2</span><span class="p">),</span>
+<span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Compound_Polyline_One_Command&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;ansys.aedt.core.modeler.cad.polylines.Polyline object at 0x000002B2FF4C0D60&gt;
+</pre></div>
+</div>
+</section>
+<section id="insert-two-3-point-arcs-forming-a-circle-and-covered">
+<h2>Insert two 3-point arcs forming a circle and covered<a class="headerlink" href="#insert-two-3-point-arcs-forming-a-circle-and-covered" title="Link to this heading">#</a></h2>
+<p>Insert two 3-point arcs forming a circle and covered.
+Note that the last point of the second arc segment is not defined in
+the position list.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span>
+    <span class="n">points</span><span class="o">=</span><span class="p">[[</span><span class="mf">34.1004</span><span class="p">,</span> <span class="mf">14.1248</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">27.646</span><span class="p">,</span> <span class="mf">16.7984</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">24.9725</span><span class="p">,</span> <span class="mf">10.3439</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">31.4269</span><span class="p">,</span> <span class="mf">7.6704</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span>
+    <span class="n">segment_type</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Arc&quot;</span><span class="p">,</span> <span class="s2">&quot;Arc&quot;</span><span class="p">],</span> <span class="n">cover_surface</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">close_surface</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Rotor_Subtract_25_0&quot;</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s2">&quot;vacuum&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here is an example of a complex polyline where the number of points is
+insufficient to populate the requested segments. This results in an
+<code class="docutils literal notranslate"><span class="pre">IndexError</span></code> that PyAEDT catches silently. The return value of the command
+is <code class="docutils literal notranslate"><span class="pre">False</span></code>, which can be caught at the app level.  While this example might
+not be so useful in a Jupyter Notebook, it is important for unit tests.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">MDL_points</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;67.1332mm&quot;</span><span class="p">,</span> <span class="s2">&quot;2.9901mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;65.9357mm&quot;</span><span class="p">,</span> <span class="s2">&quot;2.9116mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;65.9839mm&quot;</span><span class="p">,</span> <span class="s2">&quot;1.4562mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;66mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;99mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;98.788mm&quot;</span><span class="p">,</span> <span class="s2">&quot;6.4749mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;98.153mm&quot;</span><span class="p">,</span> <span class="s2">&quot;12.9221mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;97.0977mm&quot;</span><span class="p">,</span> <span class="s2">&quot;19.3139mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+<span class="p">]</span>
+
+
+<span class="n">MDL_segments</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Line&quot;</span><span class="p">,</span> <span class="s2">&quot;Arc&quot;</span><span class="p">,</span> <span class="s2">&quot;Line&quot;</span><span class="p">,</span> <span class="s2">&quot;Arc&quot;</span><span class="p">,</span> <span class="s2">&quot;Line&quot;</span><span class="p">]</span>
+<span class="n">return_value</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">MDL_points</span><span class="p">,</span> <span class="n">segment_type</span><span class="o">=</span><span class="n">MDL_segments</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;MDL_Polyline&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">return_value</span>  <span class="c1"># triggers an error at the application error</span>
+</pre></div>
+</div>
+<p>Here is an example that provides more points than the segment list requires.
+This is valid usage. The remaining points are ignored.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">MDL_segments</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Line&quot;</span><span class="p">,</span> <span class="s2">&quot;Arc&quot;</span><span class="p">,</span> <span class="s2">&quot;Line&quot;</span><span class="p">,</span> <span class="s2">&quot;Arc&quot;</span><span class="p">]</span>
+
+<span class="n">P</span> <span class="o">=</span> <span class="n">prim3D</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">MDL_points</span><span class="p">,</span> <span class="n">segment_type</span><span class="o">=</span><span class="n">MDL_segments</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;MDL_Polyline&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="save-project">
+<h1>Save project<a class="headerlink" href="#save-project" title="Link to this heading">#</a></h1>
+<p>Save the project.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">project_dir</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\temp&quot;</span>
+<span class="n">project_name</span> <span class="o">=</span> <span class="s2">&quot;Polylines&quot;</span>
+<span class="n">project_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="n">project_name</span> <span class="o">+</span> <span class="s2">&quot;.aedt&quot;</span><span class="p">)</span>
+
+<span class="n">M3D</span><span class="o">.</span><span class="n">save_project</span><span class="p">(</span><span class="n">project_file</span><span class="p">)</span>
+
+<span class="n">M3D</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 54.014 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-01-modeling-setup-polyline-primitives-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/3bc5ca3f16a5fe84ca8fc8f574c199b9/Polyline_Primitives.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Polyline_Primitives.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/009b0b396e644019a61af3734d2ced8f/Polyline_Primitives.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Polyline_Primitives.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/1fce4f2d116615ce37cd9c9fe87d2c7e/Polyline_Primitives.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">Polyline_Primitives.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">General: polyline creation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-required-imports">Perform required imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-aedt-version">Set AEDT version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-non-graphical-mode">Set non-graphical mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-maxwell-3d-object">Create Maxwell 3D object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-variables">Define variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polyline-primitives">Polyline primitives</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-arc-primitive">Create arc primitive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-spline-primitive">Create spline primitive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-center-point-arc-primitive">Create center-point arc primitive</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-polylines">Compound polylines</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-lines">Compound lines</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-line-segment">Insert line segment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-compound-line-with-insert-curve">Insert compound line with insert curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-compound-line-at-end-of-a-center-point-arc">Insert compound line at end of a center-point arc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-two-3-point-arcs-forming-a-circle-and-covered">Insert two 3-point arcs forming a circle and covered</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-project">Save project</a></li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/examples/01-Modeling-Setup/Polyline_Primitives.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/examples/01-Modeling-Setup/Polyline_Primitives.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.0.11. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.delete_project

@@ -1,0 +1,6 @@
+ooutput\_variable
+=================
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.ooutput_variable

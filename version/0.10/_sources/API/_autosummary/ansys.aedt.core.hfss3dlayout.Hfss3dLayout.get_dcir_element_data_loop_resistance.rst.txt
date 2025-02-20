@@ -1,0 +1,6 @@
+get\_dcir\_element\_data\_loop\_resistance
+==========================================
+
+.. currentmodule:: ansys.aedt.core.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.get_dcir_element_data_loop_resistance

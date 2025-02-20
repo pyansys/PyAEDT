@@ -1,0 +1,54 @@
+﻿Bird
+====
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.actors
+
+.. autoclass:: Bird
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Bird.insert
+      
+      
+      Bird.position_in_app
+      
+      
+      Bird.start
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Bird.cs_name
+      Bird.index
+      Bird.modeler_units
+      Bird.name
+      Bird.offset
+      Bird.offset_names
+      Bird.offset_x_name
+      Bird.offset_y_name
+      Bird.offset_z_name
+      Bird.pitch
+      Bird.pitch_name
+      Bird.roll
+      Bird.roll_name
+      Bird.speed_expression
+      Bird.speed_name
+      Bird.use_global_cs
+      Bird.yaw
+      Bird.yaw_name
+   
+   

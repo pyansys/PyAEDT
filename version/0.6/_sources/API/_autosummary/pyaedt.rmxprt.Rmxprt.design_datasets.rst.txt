@@ -1,0 +1,6 @@
+design\_datasets
+================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. autoproperty:: Rmxprt.design_datasets

@@ -1,0 +1,6 @@
+dielectric\_extent
+==================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationBatch.dielectric_extent

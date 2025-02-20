@@ -1,0 +1,6 @@
+stacking\_type
+==============
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.stacking_type

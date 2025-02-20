@@ -1,0 +1,6 @@
+interconnect\_line\_to\_termination\_width\_ratio
+=================================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. autoproperty:: ExportToAedt.interconnect_line_to_termination_width_ratio

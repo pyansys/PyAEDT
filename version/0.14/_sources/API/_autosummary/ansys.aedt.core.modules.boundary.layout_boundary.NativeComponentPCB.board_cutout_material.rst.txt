@@ -1,0 +1,6 @@
+board\_cutout\_material
+=======================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoproperty:: NativeComponentPCB.board_cutout_material

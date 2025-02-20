@@ -1,0 +1,6 @@
+import\_edb\_in\_circuit
+========================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.import_edb_in_circuit

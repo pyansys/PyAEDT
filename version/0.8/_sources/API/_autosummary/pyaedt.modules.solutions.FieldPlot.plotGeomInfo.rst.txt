@@ -1,0 +1,6 @@
+plotGeomInfo
+============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: FieldPlot.plotGeomInfo

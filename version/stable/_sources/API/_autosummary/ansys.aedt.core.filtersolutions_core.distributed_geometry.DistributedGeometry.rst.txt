@@ -1,0 +1,31 @@
+﻿DistributedGeometry
+===================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.distributed_geometry
+
+.. autoclass:: DistributedGeometry
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      DistributedGeometry.adjust_length_on_limit
+      DistributedGeometry.alternate_stub_orientation
+      DistributedGeometry.apply_limits
+      DistributedGeometry.fixed_width_to_height_ratio_capacitor_sections
+      DistributedGeometry.fixed_width_to_height_ratio_inductor_sections
+      DistributedGeometry.max_gap
+      DistributedGeometry.max_width
+      DistributedGeometry.min_gap
+      DistributedGeometry.min_width
+      DistributedGeometry.wide_stubs_width_to_substrate_height_ratio
+   
+   

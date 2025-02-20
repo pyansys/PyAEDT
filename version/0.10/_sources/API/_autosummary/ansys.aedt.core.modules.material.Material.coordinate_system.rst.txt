@@ -1,0 +1,6 @@
+coordinate\_system
+==================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: Material.coordinate_system

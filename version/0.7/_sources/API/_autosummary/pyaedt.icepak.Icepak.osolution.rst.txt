@@ -1,0 +1,6 @@
+osolution
+=========
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.osolution

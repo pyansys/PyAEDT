@@ -1,0 +1,6 @@
+set\_solderballs\_modeling
+==========================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. automethod:: PCBSettingsPackageParts.set_solderballs_modeling

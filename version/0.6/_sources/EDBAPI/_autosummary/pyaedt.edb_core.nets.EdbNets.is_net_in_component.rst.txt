@@ -1,0 +1,6 @@
+is\_net\_in\_component
+======================
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. automethod:: EdbNets.is_net_in_component

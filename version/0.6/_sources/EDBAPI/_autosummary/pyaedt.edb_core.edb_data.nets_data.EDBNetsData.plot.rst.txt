@@ -1,0 +1,6 @@
+plot
+====
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. automethod:: EDBNetsData.plot

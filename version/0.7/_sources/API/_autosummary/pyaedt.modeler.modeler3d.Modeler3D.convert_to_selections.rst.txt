@@ -1,0 +1,6 @@
+convert\_to\_selections
+=======================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.convert_to_selections

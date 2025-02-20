@@ -1,0 +1,6 @@
+delete\_project
+===============
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.delete_project

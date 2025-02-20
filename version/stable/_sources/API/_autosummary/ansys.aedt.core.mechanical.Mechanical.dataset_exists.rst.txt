@@ -1,0 +1,6 @@
+dataset\_exists
+===============
+
+.. currentmodule:: ansys.aedt.core.mechanical
+
+.. automethod:: Mechanical.dataset_exists

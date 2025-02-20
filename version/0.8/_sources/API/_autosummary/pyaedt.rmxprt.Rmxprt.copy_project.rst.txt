@@ -1,0 +1,6 @@
+copy\_project
+=============
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.copy_project

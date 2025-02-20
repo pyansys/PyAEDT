@@ -1,0 +1,6 @@
+create\_clearance\_on\_component
+================================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.components_data
+
+.. automethod:: EDBComponent.create_clearance_on_component

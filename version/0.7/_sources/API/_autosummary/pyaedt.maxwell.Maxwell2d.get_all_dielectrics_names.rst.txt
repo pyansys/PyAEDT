@@ -1,0 +1,6 @@
+get\_all\_dielectrics\_names
+============================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.get_all_dielectrics_names

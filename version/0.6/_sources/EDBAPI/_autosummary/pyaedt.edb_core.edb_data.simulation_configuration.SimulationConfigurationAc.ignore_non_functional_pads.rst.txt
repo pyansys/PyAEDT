@@ -1,0 +1,6 @@
+ignore\_non\_functional\_pads
+=============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.ignore_non_functional_pads

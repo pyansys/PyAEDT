@@ -1,0 +1,45 @@
+﻿Padstack
+========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoclass:: Padstack
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Padstack.add_via
+      
+      
+      Padstack.set_all_antipad_value
+      
+      
+      Padstack.set_all_pad_value
+      
+      
+      Padstack.set_start_layer
+      
+      
+      Padstack.set_stop_layer
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      Padstack.num_sides
+      Padstack.padstacks_by_layer
+      Padstack.plating_ratio
+   
+   

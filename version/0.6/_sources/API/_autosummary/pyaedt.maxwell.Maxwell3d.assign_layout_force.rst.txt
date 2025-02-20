@@ -1,0 +1,6 @@
+assign\_layout\_force
+=====================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_layout_force

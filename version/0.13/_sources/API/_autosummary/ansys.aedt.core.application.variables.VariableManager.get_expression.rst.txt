@@ -1,0 +1,6 @@
+get\_expression
+===============
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. automethod:: VariableManager.get_expression

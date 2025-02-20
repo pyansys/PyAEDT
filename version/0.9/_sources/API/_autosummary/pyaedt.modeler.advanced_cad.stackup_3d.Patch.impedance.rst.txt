@@ -1,0 +1,6 @@
+impedance
+=========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Patch.impedance

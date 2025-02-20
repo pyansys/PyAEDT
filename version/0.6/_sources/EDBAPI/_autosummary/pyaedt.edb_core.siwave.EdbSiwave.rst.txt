@@ -1,0 +1,94 @@
+﻿EdbSiwave
+=========
+
+.. currentmodule:: pyaedt.edb_core.siwave
+
+.. autoclass:: EdbSiwave
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EdbSiwave.add_siwave_dc_analysis
+      
+      
+      EdbSiwave.add_siwave_syz_analysis
+      
+      
+      EdbSiwave.configure_siw_analysis_setup
+      
+      
+      EdbSiwave.create_circuit_port_on_net
+      
+      
+      EdbSiwave.create_circuit_port_on_pin
+      
+      
+      EdbSiwave.create_circuit_port_on_pin_group
+      
+      
+      EdbSiwave.create_current_source_on_net
+      
+      
+      EdbSiwave.create_current_source_on_pin
+      
+      
+      EdbSiwave.create_current_source_on_pin_group
+      
+      
+      EdbSiwave.create_dc_terminal
+      
+      
+      EdbSiwave.create_exec_file
+      
+      
+      EdbSiwave.create_pin_group
+      
+      
+      EdbSiwave.create_pin_group_on_net
+      
+      
+      EdbSiwave.create_pin_group_terminal
+      
+      
+      EdbSiwave.create_port_between_pin_and_layer
+      
+      
+      EdbSiwave.create_resistor_on_pin
+      
+      
+      EdbSiwave.create_rlc_component
+      
+      
+      EdbSiwave.create_voltage_probe_on_pin_group
+      
+      
+      EdbSiwave.create_voltage_source_on_net
+      
+      
+      EdbSiwave.create_voltage_source_on_pin
+      
+      
+      EdbSiwave.create_voltage_source_on_pin_group
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EdbSiwave.excitations
+      EdbSiwave.pin_groups
+      EdbSiwave.probes
+      EdbSiwave.sources
+   
+   

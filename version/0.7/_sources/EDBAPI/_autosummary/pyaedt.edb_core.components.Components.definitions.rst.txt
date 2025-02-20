@@ -1,0 +1,6 @@
+definitions
+===========
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. autoproperty:: Components.definitions

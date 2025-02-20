@@ -1,0 +1,6 @@
+load\_goals
+===========
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.optimization_goals_table
+
+.. automethod:: OptimizationGoalsTable.load_goals

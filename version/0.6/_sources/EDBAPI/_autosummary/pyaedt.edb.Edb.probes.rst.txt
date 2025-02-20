@@ -1,0 +1,6 @@
+probes
+======
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.probes

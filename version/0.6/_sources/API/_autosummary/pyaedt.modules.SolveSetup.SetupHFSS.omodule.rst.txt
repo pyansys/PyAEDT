@@ -1,0 +1,6 @@
+omodule
+=======
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. autoproperty:: SetupHFSS.omodule

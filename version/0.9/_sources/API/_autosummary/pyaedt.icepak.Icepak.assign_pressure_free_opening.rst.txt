@@ -1,0 +1,6 @@
+assign\_pressure\_free\_opening
+===============================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_pressure_free_opening

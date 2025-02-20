@@ -1,0 +1,6 @@
+close\_desktop
+==============
+
+.. currentmodule:: ansys.aedt.core.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.close_desktop

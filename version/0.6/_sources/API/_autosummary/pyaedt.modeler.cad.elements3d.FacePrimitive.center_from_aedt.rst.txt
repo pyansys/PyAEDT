@@ -1,0 +1,6 @@
+center\_from\_aedt
+==================
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoproperty:: FacePrimitive.center_from_aedt

@@ -1,0 +1,6 @@
+layer\_types
+============
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. autoproperty:: Stackup.layer_types

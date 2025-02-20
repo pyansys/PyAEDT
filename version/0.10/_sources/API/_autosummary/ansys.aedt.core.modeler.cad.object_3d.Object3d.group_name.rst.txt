@@ -1,0 +1,6 @@
+group\_name
+===========
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.object_3d
+
+.. autoproperty:: Object3d.group_name

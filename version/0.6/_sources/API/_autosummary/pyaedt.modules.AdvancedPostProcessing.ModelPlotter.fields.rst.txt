@@ -1,0 +1,6 @@
+fields
+======
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.fields

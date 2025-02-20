@@ -1,0 +1,6 @@
+width\_w\_h
+===========
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoproperty:: Trace.width_w_h

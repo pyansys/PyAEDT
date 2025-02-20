@@ -1,0 +1,6 @@
+delete\_design
+==============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.delete_design

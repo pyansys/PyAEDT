@@ -1,0 +1,6 @@
+close\_desktop
+==============
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.close_desktop

@@ -1,0 +1,100 @@
+﻿PostProcessorCircuit
+====================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. autoclass:: PostProcessorCircuit
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      PostProcessorCircuit.available_display_types
+      
+      
+      PostProcessorCircuit.available_quantities_categories
+      
+      
+      PostProcessorCircuit.available_report_quantities
+      
+      
+      PostProcessorCircuit.available_report_solutions
+      
+      
+      PostProcessorCircuit.copy_report_data
+      
+      
+      PostProcessorCircuit.create_ami_initial_response_plot
+      
+      
+      PostProcessorCircuit.create_ami_statistical_eye_plot
+      
+      
+      PostProcessorCircuit.create_report
+      
+      
+      PostProcessorCircuit.create_report_from_configuration
+      
+      
+      PostProcessorCircuit.create_statistical_eye_plot
+      
+      
+      PostProcessorCircuit.delete_report
+      
+      
+      PostProcessorCircuit.export_report_to_csv
+      
+      
+      PostProcessorCircuit.export_report_to_file
+      
+      
+      PostProcessorCircuit.export_report_to_jpg
+      
+      
+      PostProcessorCircuit.get_all_report_quantities
+      
+      
+      PostProcessorCircuit.get_solution_data
+      
+      
+      PostProcessorCircuit.get_solution_data_per_variation
+      
+      
+      PostProcessorCircuit.paste_report_data
+      
+      
+      PostProcessorCircuit.rename_report
+      
+      
+      PostProcessorCircuit.sample_ami_waveform
+      
+      
+      PostProcessorCircuit.sample_waveform
+      
+      
+      PostProcessorCircuit.steal_focus_oneditor
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      PostProcessorCircuit.all_report_names
+      PostProcessorCircuit.available_report_types
+      PostProcessorCircuit.logger
+      PostProcessorCircuit.oeditor
+      PostProcessorCircuit.oreportsetup
+      PostProcessorCircuit.post_solution_type
+      PostProcessorCircuit.update_report_dynamically
+   
+   

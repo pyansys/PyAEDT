@@ -1,0 +1,6 @@
+load\_project
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. automethod:: VirtualCompliance.load_project

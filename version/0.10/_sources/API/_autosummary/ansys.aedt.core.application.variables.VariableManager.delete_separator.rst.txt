@@ -1,0 +1,6 @@
+delete\_separator
+=================
+
+.. currentmodule:: ansys.aedt.core.application.variables
+
+.. automethod:: VariableManager.delete_separator

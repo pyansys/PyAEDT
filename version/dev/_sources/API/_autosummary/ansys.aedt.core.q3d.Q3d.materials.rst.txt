@@ -1,0 +1,6 @@
+materials
+=========
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q3d.materials

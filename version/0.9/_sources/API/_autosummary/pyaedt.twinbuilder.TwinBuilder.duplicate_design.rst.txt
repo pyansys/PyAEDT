@@ -1,0 +1,6 @@
+duplicate\_design
+=================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.duplicate_design

@@ -1,0 +1,6 @@
+change\_registry\_key
+=====================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.change_registry_key

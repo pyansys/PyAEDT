@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.stop_simulations

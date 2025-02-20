@@ -1,0 +1,6 @@
+faces\_ids\_in\_network
+=======================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.icepak_boundary
+
+.. autoproperty:: NetworkObject.faces_ids_in_network

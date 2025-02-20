@@ -1,0 +1,6 @@
+close\_desktop
+==============
+
+.. currentmodule:: ansys.aedt.core.twinbuilder
+
+.. automethod:: TwinBuilder.close_desktop

@@ -1,0 +1,6 @@
+userlib
+=======
+
+.. currentmodule:: pyaedt.maxwell
+
+.. autoproperty:: Maxwell2d.userlib

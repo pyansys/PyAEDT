@@ -1,0 +1,6 @@
+logger
+======
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoproperty:: Point.logger

@@ -1,0 +1,6 @@
+modeler\_units
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.advanced_cad.multiparts
+
+.. autoattribute:: Environment.modeler_units

@@ -1,0 +1,6 @@
+negative
+========
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Rect3dLayout.negative

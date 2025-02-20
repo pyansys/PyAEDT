@@ -1,0 +1,6 @@
+insert\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.insert_design

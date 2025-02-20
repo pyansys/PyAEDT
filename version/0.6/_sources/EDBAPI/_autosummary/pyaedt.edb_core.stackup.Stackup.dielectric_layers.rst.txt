@@ -1,0 +1,6 @@
+dielectric\_layers
+==================
+
+.. currentmodule:: pyaedt.edb_core.stackup
+
+.. autoproperty:: Stackup.dielectric_layers

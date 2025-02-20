@@ -1,0 +1,6 @@
+plot\_contour
+=============
+
+.. currentmodule:: pyaedt.generic.farfield_visualization
+
+.. automethod:: FfdSolutionData.plot_contour

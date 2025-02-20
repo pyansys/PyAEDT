@@ -1,0 +1,6 @@
+stop\_simulations
+=================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.stop_simulations

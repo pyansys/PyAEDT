@@ -1,0 +1,6 @@
+export\_q3d
+===========
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.export_q3d

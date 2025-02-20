@@ -1,0 +1,6 @@
+evaluate\_expression
+====================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.evaluate_expression

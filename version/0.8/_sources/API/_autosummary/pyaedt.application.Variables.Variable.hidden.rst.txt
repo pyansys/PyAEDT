@@ -1,0 +1,6 @@
+hidden
+======
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.hidden

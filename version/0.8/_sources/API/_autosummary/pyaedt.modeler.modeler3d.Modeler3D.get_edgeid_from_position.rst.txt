@@ -1,0 +1,6 @@
+get\_edgeid\_from\_position
+===========================
+
+.. currentmodule:: pyaedt.modeler.modeler3d
+
+.. automethod:: Modeler3D.get_edgeid_from_position

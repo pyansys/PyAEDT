@@ -1,0 +1,6 @@
+display\_wire\_properties
+=========================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.object_3d_circuit
+
+.. automethod:: Wire.display_wire_properties

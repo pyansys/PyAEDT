@@ -1,0 +1,6 @@
+set\_active\_variation
+======================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.set_active_variation

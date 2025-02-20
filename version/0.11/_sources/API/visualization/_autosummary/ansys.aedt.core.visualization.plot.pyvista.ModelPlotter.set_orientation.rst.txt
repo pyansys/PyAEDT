@@ -1,0 +1,6 @@
+set\_orientation
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.plot.pyvista
+
+.. automethod:: ModelPlotter.set_orientation

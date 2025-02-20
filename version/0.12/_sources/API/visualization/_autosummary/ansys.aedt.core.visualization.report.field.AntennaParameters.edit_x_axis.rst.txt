@@ -1,0 +1,6 @@
+edit\_x\_axis
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.report.field
+
+.. automethod:: AntennaParameters.edit_x_axis

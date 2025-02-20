@@ -1,0 +1,6 @@
+full\_matrix\_real\_imag
+========================
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: SolutionData.full_matrix_real_imag

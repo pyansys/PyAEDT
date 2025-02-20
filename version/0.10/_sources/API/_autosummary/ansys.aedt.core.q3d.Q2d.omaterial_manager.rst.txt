@@ -1,0 +1,6 @@
+omaterial\_manager
+==================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. autoproperty:: Q2d.omaterial_manager

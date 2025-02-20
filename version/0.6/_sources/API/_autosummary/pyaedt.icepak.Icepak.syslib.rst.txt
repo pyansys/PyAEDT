@@ -1,0 +1,6 @@
+syslib
+======
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.syslib

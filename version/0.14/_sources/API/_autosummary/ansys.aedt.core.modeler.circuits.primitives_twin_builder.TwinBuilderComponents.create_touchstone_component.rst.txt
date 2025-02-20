@@ -1,0 +1,6 @@
+create\_touchstone\_component
+=============================
+
+.. currentmodule:: ansys.aedt.core.modeler.circuits.primitives_twin_builder
+
+.. automethod:: TwinBuilderComponents.create_touchstone_component

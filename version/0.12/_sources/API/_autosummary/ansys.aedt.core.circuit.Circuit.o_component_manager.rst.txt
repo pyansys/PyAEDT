@@ -1,0 +1,6 @@
+o\_component\_manager
+=====================
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. autoproperty:: Circuit.o_component_manager

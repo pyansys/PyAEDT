@@ -1,0 +1,6 @@
+is\_parallel
+============
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.is_parallel

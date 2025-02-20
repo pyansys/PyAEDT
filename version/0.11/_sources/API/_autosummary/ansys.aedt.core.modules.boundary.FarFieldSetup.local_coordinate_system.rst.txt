@@ -1,0 +1,6 @@
+local\_coordinate\_system
+=========================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary
+
+.. autoproperty:: FarFieldSetup.local_coordinate_system

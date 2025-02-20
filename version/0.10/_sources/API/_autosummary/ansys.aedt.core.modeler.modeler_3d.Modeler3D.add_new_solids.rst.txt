@@ -1,0 +1,6 @@
+add\_new\_solids
+================
+
+.. currentmodule:: ansys.aedt.core.modeler.modeler_3d
+
+.. automethod:: Modeler3D.add_new_solids

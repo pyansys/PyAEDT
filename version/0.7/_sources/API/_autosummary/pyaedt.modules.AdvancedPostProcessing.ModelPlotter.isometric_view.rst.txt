@@ -1,0 +1,6 @@
+isometric\_view
+===============
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. autoproperty:: ModelPlotter.isometric_view

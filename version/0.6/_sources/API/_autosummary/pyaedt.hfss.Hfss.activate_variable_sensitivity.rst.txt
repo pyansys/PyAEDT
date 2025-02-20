@@ -1,0 +1,6 @@
+activate\_variable\_sensitivity
+===============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.activate_variable_sensitivity

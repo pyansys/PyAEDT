@@ -1,0 +1,6 @@
+children
+========
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. autoproperty:: BinaryTreeNode.children

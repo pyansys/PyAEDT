@@ -1,0 +1,6 @@
+are\_segments\_intersecting
+===========================
+
+.. currentmodule:: ansys.aedt.core.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.are_segments_intersecting

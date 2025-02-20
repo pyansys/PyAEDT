@@ -1,0 +1,6 @@
+project\_list
+=============
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.project_list

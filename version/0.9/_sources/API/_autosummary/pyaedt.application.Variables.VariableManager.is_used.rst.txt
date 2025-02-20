@@ -1,0 +1,6 @@
+is\_used
+========
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. automethod:: VariableManager.is_used

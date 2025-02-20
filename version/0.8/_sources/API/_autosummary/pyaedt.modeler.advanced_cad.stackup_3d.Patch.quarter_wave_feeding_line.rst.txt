@@ -1,0 +1,6 @@
+quarter\_wave\_feeding\_line
+============================
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. automethod:: Patch.quarter_wave_feeding_line

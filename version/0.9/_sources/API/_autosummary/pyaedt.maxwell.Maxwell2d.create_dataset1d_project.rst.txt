@@ -1,0 +1,6 @@
+create\_dataset1d\_project
+==========================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.create_dataset1d_project

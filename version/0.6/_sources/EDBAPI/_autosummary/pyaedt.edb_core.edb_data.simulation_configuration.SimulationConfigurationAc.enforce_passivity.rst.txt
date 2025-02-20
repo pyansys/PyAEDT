@@ -1,0 +1,6 @@
+enforce\_passivity
+==================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.simulation_configuration
+
+.. autoproperty:: SimulationConfigurationAc.enforce_passivity

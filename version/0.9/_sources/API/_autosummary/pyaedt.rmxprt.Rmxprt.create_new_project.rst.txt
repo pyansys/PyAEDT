@@ -1,0 +1,6 @@
+create\_new\_project
+====================
+
+.. currentmodule:: pyaedt.rmxprt
+
+.. automethod:: Rmxprt.create_new_project

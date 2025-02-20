@@ -1,0 +1,6 @@
+add\_sweep\_points
+==================
+
+.. currentmodule:: pyaedt.modules.SolveSetup
+
+.. automethod:: SetupCircuit.add_sweep_points

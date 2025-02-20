@@ -1,0 +1,6 @@
+assign\_hollow\_block
+=====================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. automethod:: Icepak.assign_hollow_block

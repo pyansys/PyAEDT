@@ -1,0 +1,6 @@
+data\_imag
+==========
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.data_imag

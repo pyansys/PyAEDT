@@ -1,0 +1,6 @@
+plot\_continous\_spectrum
+=========================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Spectral.plot_continous_spectrum

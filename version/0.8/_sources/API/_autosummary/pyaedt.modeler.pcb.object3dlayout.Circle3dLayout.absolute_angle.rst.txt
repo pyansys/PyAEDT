@@ -1,0 +1,6 @@
+absolute\_angle
+===============
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. autoproperty:: Circle3dLayout.absolute_angle

@@ -1,0 +1,6 @@
+data\_imag
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.solutions
+
+.. automethod:: SolutionData.data_imag

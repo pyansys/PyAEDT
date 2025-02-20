@@ -1,0 +1,6 @@
+infinite\_ground\_location
+==========================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.siwave_simulation_setup_data
+
+.. autoproperty:: SiwaveSYZSimulationSetup.infinite_ground_location

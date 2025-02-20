@@ -1,0 +1,6 @@
+deactivate\_variable\_optimization
+==================================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.deactivate_variable_optimization

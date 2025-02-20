@@ -1,0 +1,6 @@
+eigenmode
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.post.common
+
+.. automethod:: Reports.eigenmode

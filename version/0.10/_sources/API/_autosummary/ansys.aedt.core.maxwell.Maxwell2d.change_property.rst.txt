@@ -1,0 +1,6 @@
+change\_property
+================
+
+.. currentmodule:: ansys.aedt.core.maxwell
+
+.. automethod:: Maxwell2d.change_property

@@ -1,0 +1,6 @@
+manual\_delay
+=============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: EyeDiagram.manual_delay

@@ -1,0 +1,6 @@
+add\_length\_mesh\_operation
+============================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. automethod:: HfssSimulationSetup.add_length_mesh_operation

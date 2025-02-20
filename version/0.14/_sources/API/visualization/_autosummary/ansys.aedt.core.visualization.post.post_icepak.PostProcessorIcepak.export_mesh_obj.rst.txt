@@ -1,0 +1,6 @@
+export\_mesh\_obj
+=================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.export_mesh_obj

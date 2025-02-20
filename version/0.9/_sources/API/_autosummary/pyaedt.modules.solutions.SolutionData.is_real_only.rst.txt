@@ -1,0 +1,6 @@
+is\_real\_only
+==============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.is_real_only

@@ -1,0 +1,6 @@
+set\_electrical\_steel\_coreloss
+================================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. automethod:: Material.set_electrical_steel_coreloss

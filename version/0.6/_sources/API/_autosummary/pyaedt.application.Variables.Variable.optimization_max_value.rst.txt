@@ -1,0 +1,6 @@
+optimization\_max\_value
+========================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.optimization_max_value

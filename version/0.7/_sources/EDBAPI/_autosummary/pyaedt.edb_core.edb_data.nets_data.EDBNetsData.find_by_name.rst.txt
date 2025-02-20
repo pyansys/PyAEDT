@@ -1,0 +1,6 @@
+find\_by\_name
+==============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. automethod:: EDBNetsData.find_by_name

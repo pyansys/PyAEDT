@@ -1,0 +1,6 @@
+cross\_amplitude
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.report.eye
+
+.. autoproperty:: AMIEyeDiagram.cross_amplitude

@@ -1,0 +1,6 @@
+is\_tuning\_enabled
+===================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.is_tuning_enabled

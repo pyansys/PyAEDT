@@ -1,0 +1,6 @@
+value\_with\_units
+==================
+
+.. currentmodule:: ansys.aedt.core.q3d
+
+.. automethod:: Q2d.value_with_units

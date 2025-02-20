@@ -1,0 +1,47 @@
+﻿EDBDifferentialPairData
+=======================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.nets_data
+
+.. autoclass:: EDBDifferentialPairData
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EDBDifferentialPairData.add_net
+      
+      
+      EDBDifferentialPairData.api_create
+      
+      
+      EDBDifferentialPairData.delete
+      
+      
+      EDBDifferentialPairData.find_by_name
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EDBDifferentialPairData.api_class
+      EDBDifferentialPairData.api_negative_net
+      EDBDifferentialPairData.api_nets
+      EDBDifferentialPairData.api_positive_net
+      EDBDifferentialPairData.is_null
+      EDBDifferentialPairData.name
+      EDBDifferentialPairData.negative_net
+      EDBDifferentialPairData.positive_net
+   
+   

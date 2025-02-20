@@ -1,0 +1,6 @@
+output\_variables
+=================
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.output_variables

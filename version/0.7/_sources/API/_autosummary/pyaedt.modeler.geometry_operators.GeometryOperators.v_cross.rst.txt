@@ -1,0 +1,6 @@
+v\_cross
+========
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.v_cross

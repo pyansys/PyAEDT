@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: pyaedt.icepak
+
+.. autoproperty:: Icepak.design_type

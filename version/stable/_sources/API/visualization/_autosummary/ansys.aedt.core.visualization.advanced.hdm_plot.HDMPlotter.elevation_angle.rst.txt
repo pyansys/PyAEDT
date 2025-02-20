@@ -1,0 +1,6 @@
+elevation\_angle
+================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. autoproperty:: HDMPlotter.elevation_angle

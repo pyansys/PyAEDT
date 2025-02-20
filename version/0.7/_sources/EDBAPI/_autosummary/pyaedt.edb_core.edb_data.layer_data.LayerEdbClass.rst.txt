@@ -1,0 +1,27 @@
+﻿LayerEdbClass
+=============
+
+.. currentmodule:: pyaedt.edb_core.edb_data.layer_data
+
+.. autoclass:: LayerEdbClass
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      LayerEdbClass.color
+      LayerEdbClass.is_stackup_layer
+      LayerEdbClass.is_via_layer
+      LayerEdbClass.name
+      LayerEdbClass.transparency
+      LayerEdbClass.type
+   
+   

@@ -1,0 +1,6 @@
+polyline\_segment
+=================
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. automethod:: Modeler2D.polyline_segment

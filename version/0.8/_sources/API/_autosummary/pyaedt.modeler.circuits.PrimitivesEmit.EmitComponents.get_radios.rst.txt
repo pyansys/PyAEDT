@@ -1,0 +1,6 @@
+get\_radios
+===========
+
+.. currentmodule:: pyaedt.modeler.circuits.PrimitivesEmit
+
+.. automethod:: EmitComponents.get_radios

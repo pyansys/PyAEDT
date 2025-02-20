@@ -1,0 +1,6 @@
+get\_module
+===========
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.get_module

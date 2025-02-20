@@ -1,0 +1,61 @@
+﻿EdbFrequencySweep
+=================
+
+.. currentmodule:: pyaedt.edb_core.edb_data.hfss_simulation_setup_data
+
+.. autoclass:: EdbFrequencySweep
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      EdbFrequencySweep.set_frequencies
+      
+      
+      EdbFrequencySweep.set_frequencies_linear_count
+      
+      
+      EdbFrequencySweep.set_frequencies_linear_scale
+      
+      
+      EdbFrequencySweep.set_frequencies_log_scale
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      EdbFrequencySweep.adaptive_sampling
+      EdbFrequencySweep.adv_dc_extrapolation
+      EdbFrequencySweep.auto_s_mat_only_solve
+      EdbFrequencySweep.enforce_causality
+      EdbFrequencySweep.enforce_dc_and_causality
+      EdbFrequencySweep.enforce_passivity
+      EdbFrequencySweep.freq_sweep_type
+      EdbFrequencySweep.frequencies
+      EdbFrequencySweep.interp_use_full_basis
+      EdbFrequencySweep.interp_use_port_impedance
+      EdbFrequencySweep.interp_use_prop_const
+      EdbFrequencySweep.interp_use_s_matrix
+      EdbFrequencySweep.max_solutions
+      EdbFrequencySweep.min_freq_s_mat_only_solve
+      EdbFrequencySweep.min_solved_freq
+      EdbFrequencySweep.name
+      EdbFrequencySweep.passivity_tolerance
+      EdbFrequencySweep.relative_s_error
+      EdbFrequencySweep.save_fields
+      EdbFrequencySweep.save_rad_fields_only
+      EdbFrequencySweep.sweep_type
+      EdbFrequencySweep.use_q3d_for_dc
+   
+   

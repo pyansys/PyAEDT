@@ -1,0 +1,6 @@
+import\_config
+==============
+
+.. currentmodule:: ansys.aedt.core.generic.configurations
+
+.. automethod:: Configurations.import_config

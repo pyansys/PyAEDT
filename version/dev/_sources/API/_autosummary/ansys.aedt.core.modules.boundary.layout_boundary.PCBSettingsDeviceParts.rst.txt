@@ -1,0 +1,42 @@
+﻿PCBSettingsDeviceParts
+======================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.layout_boundary
+
+.. autoclass:: PCBSettingsDeviceParts
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      PCBSettingsDeviceParts.override_definition
+      
+      
+      PCBSettingsDeviceParts.override_instance
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      PCBSettingsDeviceParts.filters
+      PCBSettingsDeviceParts.footprint_filter
+      PCBSettingsDeviceParts.height_filter
+      PCBSettingsDeviceParts.objects_2d_filter
+      PCBSettingsDeviceParts.overridden_components
+      PCBSettingsDeviceParts.power_filter
+      PCBSettingsDeviceParts.simplify_parts
+      PCBSettingsDeviceParts.surface_material
+      PCBSettingsDeviceParts.type_filters
+   
+   

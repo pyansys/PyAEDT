@@ -1,0 +1,6 @@
+project\_list
+=============
+
+.. currentmodule:: ansys.aedt.core.icepak
+
+.. autoproperty:: Icepak.project_list

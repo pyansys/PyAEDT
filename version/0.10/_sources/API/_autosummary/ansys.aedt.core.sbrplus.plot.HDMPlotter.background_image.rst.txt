@@ -1,0 +1,6 @@
+background\_image
+=================
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.background_image

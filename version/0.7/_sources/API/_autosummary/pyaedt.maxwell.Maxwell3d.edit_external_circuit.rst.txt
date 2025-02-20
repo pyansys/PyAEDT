@@ -1,0 +1,6 @@
+edit\_external\_circuit
+=======================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.edit_external_circuit

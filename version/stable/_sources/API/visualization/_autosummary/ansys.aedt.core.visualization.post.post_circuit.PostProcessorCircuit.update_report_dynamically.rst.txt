@@ -1,0 +1,6 @@
+update\_report\_dynamically
+===========================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_circuit
+
+.. autoproperty:: PostProcessorCircuit.update_report_dynamically

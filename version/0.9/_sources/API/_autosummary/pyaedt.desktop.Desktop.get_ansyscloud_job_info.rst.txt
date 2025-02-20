@@ -1,0 +1,6 @@
+get\_ansyscloud\_job\_info
+==========================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.get_ansyscloud_job_info

@@ -1,0 +1,6 @@
+rename
+======
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.modeler
+
+.. automethod:: CoordinateSystem.rename

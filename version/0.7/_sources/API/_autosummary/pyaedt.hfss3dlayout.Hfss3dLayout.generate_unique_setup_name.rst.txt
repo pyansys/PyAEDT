@@ -1,0 +1,6 @@
+generate\_unique\_setup\_name
+=============================
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.generate_unique_setup_name

@@ -1,0 +1,6 @@
+odesktop
+========
+
+.. currentmodule:: ansys.aedt.core.desktop
+
+.. autoproperty:: Desktop.odesktop

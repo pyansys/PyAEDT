@@ -1,0 +1,6 @@
+export\_profile
+===============
+
+.. currentmodule:: pyaedt.maxwellcircuit
+
+.. automethod:: MaxwellCircuit.export_profile

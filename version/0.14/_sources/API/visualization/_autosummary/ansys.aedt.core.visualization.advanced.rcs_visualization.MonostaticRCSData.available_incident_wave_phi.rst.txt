@@ -1,0 +1,6 @@
+available\_incident\_wave\_phi
+==============================
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. autoproperty:: MonostaticRCSData.available_incident_wave_phi

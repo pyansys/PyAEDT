@@ -1,0 +1,6 @@
+assign\_material
+================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_material

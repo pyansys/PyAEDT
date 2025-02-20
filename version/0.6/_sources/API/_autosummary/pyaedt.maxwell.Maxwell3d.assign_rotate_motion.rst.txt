@@ -1,0 +1,6 @@
+assign\_rotate\_motion
+======================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.assign_rotate_motion

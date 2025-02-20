@@ -1,0 +1,43 @@
+﻿IdealResponse
+=============
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.ideal_response
+
+.. autoclass:: IdealResponse
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      IdealResponse.frequency_response
+      
+      
+      IdealResponse.pole_zero_locations
+      
+      
+      IdealResponse.s_parameters
+      
+      
+      IdealResponse.time_response
+      
+      
+      IdealResponse.transfer_function_response
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      IdealResponse.vsg_analysis_enabled
+   
+   

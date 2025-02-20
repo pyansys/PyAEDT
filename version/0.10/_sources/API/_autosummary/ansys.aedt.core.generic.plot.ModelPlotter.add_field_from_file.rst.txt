@@ -1,0 +1,6 @@
+add\_field\_from\_file
+======================
+
+.. currentmodule:: ansys.aedt.core.generic.plot
+
+.. automethod:: ModelPlotter.add_field_from_file

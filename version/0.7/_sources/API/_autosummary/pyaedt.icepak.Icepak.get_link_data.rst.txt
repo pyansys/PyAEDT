@@ -1,0 +1,6 @@
+get\_link\_data
+===============
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.get_link_data

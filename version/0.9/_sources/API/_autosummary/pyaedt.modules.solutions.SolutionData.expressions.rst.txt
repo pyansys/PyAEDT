@@ -1,0 +1,6 @@
+expressions
+===========
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoproperty:: SolutionData.expressions

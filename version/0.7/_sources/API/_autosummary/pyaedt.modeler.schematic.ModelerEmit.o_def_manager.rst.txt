@@ -1,0 +1,6 @@
+o\_def\_manager
+===============
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoproperty:: ModelerEmit.o_def_manager

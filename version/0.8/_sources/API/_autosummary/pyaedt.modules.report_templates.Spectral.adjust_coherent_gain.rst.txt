@@ -1,0 +1,6 @@
+adjust\_coherent\_gain
+======================
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Spectral.adjust_coherent_gain

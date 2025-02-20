@@ -1,0 +1,6 @@
+get\_sweeps
+===========
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.get_sweeps

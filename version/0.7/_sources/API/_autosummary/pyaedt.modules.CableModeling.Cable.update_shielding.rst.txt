@@ -1,0 +1,6 @@
+update\_shielding
+=================
+
+.. currentmodule:: pyaedt.modules.CableModeling
+
+.. automethod:: Cable.update_shielding

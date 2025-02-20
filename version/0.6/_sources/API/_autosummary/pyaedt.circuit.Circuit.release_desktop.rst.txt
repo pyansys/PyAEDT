@@ -1,0 +1,6 @@
+release\_desktop
+================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.release_desktop

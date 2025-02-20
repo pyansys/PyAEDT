@@ -1,0 +1,6 @@
+layouteditor
+============
+
+.. currentmodule:: pyaedt.emit
+
+.. autoproperty:: Emit.layouteditor

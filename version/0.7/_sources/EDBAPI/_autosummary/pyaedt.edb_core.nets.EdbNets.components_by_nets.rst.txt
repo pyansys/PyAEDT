@@ -1,0 +1,6 @@
+components\_by\_nets
+====================
+
+.. currentmodule:: pyaedt.edb_core.nets
+
+.. autoproperty:: EdbNets.components_by_nets

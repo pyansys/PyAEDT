@@ -1,0 +1,6 @@
+validate\_simple
+================
+
+.. currentmodule:: pyaedt.emit
+
+.. automethod:: Emit.validate_simple

@@ -1,0 +1,6 @@
+projdir
+=======
+
+.. currentmodule:: pyaedt.modeler.schematic
+
+.. autoproperty:: ModelerMaxwellCircuit.projdir

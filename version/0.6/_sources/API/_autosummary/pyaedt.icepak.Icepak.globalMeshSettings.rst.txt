@@ -1,0 +1,6 @@
+globalMeshSettings
+==================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.globalMeshSettings

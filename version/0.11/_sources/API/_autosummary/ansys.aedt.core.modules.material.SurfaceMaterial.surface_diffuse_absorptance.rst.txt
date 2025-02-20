@@ -1,0 +1,6 @@
+surface\_diffuse\_absorptance
+=============================
+
+.. currentmodule:: ansys.aedt.core.modules.material
+
+.. autoproperty:: SurfaceMaterial.surface_diffuse_absorptance

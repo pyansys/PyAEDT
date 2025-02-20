@@ -1,0 +1,6 @@
+add\_cad\_model
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.hdm_plot
+
+.. automethod:: HDMPlotter.add_cad_model

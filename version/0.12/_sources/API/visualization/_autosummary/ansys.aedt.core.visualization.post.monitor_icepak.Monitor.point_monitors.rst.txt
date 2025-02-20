@@ -1,0 +1,6 @@
+point\_monitors
+===============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.monitor_icepak
+
+.. autoproperty:: Monitor.point_monitors

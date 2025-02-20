@@ -1,0 +1,6 @@
+create\_field\_summary
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.post_icepak
+
+.. automethod:: PostProcessorIcepak.create_field_summary

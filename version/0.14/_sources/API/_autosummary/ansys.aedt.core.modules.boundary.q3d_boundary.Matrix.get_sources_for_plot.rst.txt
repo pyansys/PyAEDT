@@ -1,0 +1,6 @@
+get\_sources\_for\_plot
+=======================
+
+.. currentmodule:: ansys.aedt.core.modules.boundary.q3d_boundary
+
+.. automethod:: Matrix.get_sources_for_plot

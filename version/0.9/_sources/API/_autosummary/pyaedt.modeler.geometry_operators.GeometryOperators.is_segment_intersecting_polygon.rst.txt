@@ -1,0 +1,6 @@
+is\_segment\_intersecting\_polygon
+==================================
+
+.. currentmodule:: pyaedt.modeler.geometry_operators
+
+.. automethod:: GeometryOperators.is_segment_intersecting_polygon

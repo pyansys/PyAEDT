@@ -1,0 +1,6 @@
+reduced\_matrix
+===============
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Emission.reduced_matrix

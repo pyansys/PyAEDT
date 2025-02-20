@@ -1,0 +1,6 @@
+assign\_conducting\_plate\_with\_resistance
+===========================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_conducting_plate_with_resistance

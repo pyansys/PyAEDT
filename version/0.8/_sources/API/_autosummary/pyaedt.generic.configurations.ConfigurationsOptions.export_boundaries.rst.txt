@@ -1,0 +1,6 @@
+export\_boundaries
+==================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.export_boundaries

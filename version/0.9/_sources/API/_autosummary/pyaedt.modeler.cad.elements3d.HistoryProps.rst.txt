@@ -1,0 +1,57 @@
+﻿HistoryProps
+============
+
+.. currentmodule:: pyaedt.modeler.cad.elements3d
+
+.. autoclass:: HistoryProps
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      HistoryProps.clear
+      
+      
+      HistoryProps.copy
+      
+      
+      HistoryProps.fromkeys
+      
+      
+      HistoryProps.get
+      
+      
+      HistoryProps.items
+      
+      
+      HistoryProps.keys
+      
+      
+      HistoryProps.move_to_end
+      
+      
+      HistoryProps.pop
+      
+      
+      HistoryProps.popitem
+      
+      
+      HistoryProps.setdefault
+      
+      
+      HistoryProps.update
+      
+      
+      HistoryProps.values
+      
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+check\_if\_project\_is\_loaded
+==============================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.check_if_project_is_loaded

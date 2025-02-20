@@ -1,0 +1,6 @@
+import\_variables
+=================
+
+.. currentmodule:: pyaedt.generic.configurations
+
+.. autoproperty:: ConfigurationsOptions.import_variables

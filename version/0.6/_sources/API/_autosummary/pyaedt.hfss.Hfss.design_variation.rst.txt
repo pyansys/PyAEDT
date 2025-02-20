@@ -1,0 +1,6 @@
+design\_variation
+=================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.design_variation

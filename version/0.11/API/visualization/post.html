@@ -1,0 +1,977 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AEDT post-processing &#8212; PyAEDT</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ansys_sphinx_theme.css?v=77703c5e" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=de68c915" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+  
+    <link href="../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../_static/documentation_options.js?v=f2b85f9b"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/js/table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'API/visualization/post';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://aedt.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.11';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PostProcessor3D" href="_autosummary/ansys.aedt.core.visualization.post.post_common_3d.PostProcessor3D.html" />
+    <link rel="prev" title="variations" href="_autosummary/ansys.aedt.core.visualization.report.emi.EMIReceiver.variations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.11.7" />
+  <link rel="canonical" href="https://aedt.docs.pyansys.com/version/stable/API/visualization/post.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAEDT - Home"/>
+    <img src="../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyAEDT - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../User_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://examples.aedt.docs.pyansys.com/">
+    Examples
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyaedt/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Application.html">Application and solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MaterialManagement.html">Material and stackup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3D.html">3D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives2D.html">2D modeler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitive_Objects.html">Primitives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Primitives3DLayout.html">Modeler in  HFSS 3D Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PrimitivesCircuit.html">Modeler and components Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boundaries.html">Boundary objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mesh.html">Mesh operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Setup.html">Setup</a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Visualization.html">Visualization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="report.html">Report management</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">AEDT post-processing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.post_common_3d.PostProcessor3D.html">PostProcessor3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.post_icepak.PostProcessorIcepak.html">PostProcessorIcepak</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.post_circuit.PostProcessorCircuit.html">PostProcessorCircuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.post_3dlayout.PostProcessor3DLayout.html">PostProcessor3DLayout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.common.Reports.html">Reports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.solution_data.SolutionData.html">SolutionData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.FieldPlot.html">FieldPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.ColorMapSettings.html">ColorMapSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.AutoScale.html">AutoScale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.MinMaxScale.html">MinMaxScale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.Scale3DSettings.html">Scale3DSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.NumberFormat.html">NumberFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.MarkerSettings.html">MarkerSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.ArrowSettings.html">ArrowSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.FolderPlotSettings.html">FolderPlotSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.fields_calculator.FieldsCalculator.html">FieldsCalculator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.vrt_data.VRTFieldPlot.html">VRTFieldPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.farfield_exporter.FfdSolutionDataExporter.html">FfdSolutionDataExporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.rcs_exporter.MonostaticRCSExporter.html">MonostaticRCSExporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.monitor_icepak.Monitor.html">Monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_summary.FieldSummary.html">FieldSummary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.spisim.SpiSim.html">SpiSim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.spisim_com_configuration_files.com_parameters.COMParameters.html">COMParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.spisim_com_configuration_files.com_parameters.COMParametersVer3p4.html">COMParametersVer3p4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.compliance.VirtualComplianceGenerator.html">VirtualComplianceGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.compliance.VirtualCompliance.html">VirtualCompliance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html">Graphics operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../DesktopMessenger.html">Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optimetrics.html">Optimetrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variables.html">Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Configuration.html">Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SetupTemplates.html">Setup templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CableModeling.html">Cable modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FilterSolutions.html">Filter design</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../Visualization.html" class="nav-link">Visualization</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">AEDT post-processing</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="aedt-post-processing">
+<h1>AEDT post-processing<a class="headerlink" href="#aedt-post-processing" title="Link to this heading">#</a></h1>
+<p>AEDT offers a wide range of powerful post-processing tools for advanced data analysis and visualization.
+PyAEDT provides dedicated classes that allow you to seamlessly interact with and modify these tools, expanding the scope of your data insights</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some functionalities are available only when AEDT is running
+in graphical mode.</p>
+</div>
+<section id="core">
+<h2>Core<a class="headerlink" href="#core" title="Link to this heading">#</a></h2>
+<p>The following classes grant access to the core post-processing functionalities of AEDT:</p>
+<ul class="simple">
+<li><p><strong>PostProcessor3D</strong>: This class is utilized across all 3D applications, including HFSS, Maxwell 3D and 2D, Q3D Extractor, and Mechanical AEDT.</p></li>
+<li><p><strong>PostProcessorIcepak</strong>: A specialized class for Icepak, which extends the <code class="docutils literal notranslate"><span class="pre">PostProcessor3D</span></code> class by adding features tailored to thermal analysis.</p></li>
+<li><p><strong>PostProcessorCircuit</strong>: This class handles schematic post-processing, supporting Circuit and Twin Builder applications.</p></li>
+<li><p><strong>PostProcessor3DLayout</strong>: A specialized class for HFSS 3D Layout, which extends the <code class="docutils literal notranslate"><span class="pre">PostProcessor3D</span></code> class.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.post_common_3d.PostProcessor3D.html#ansys.aedt.core.visualization.post.post_common_3d.PostProcessor3D" title="ansys.aedt.core.visualization.post.post_common_3d.PostProcessor3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PostProcessor3D</span></code></a></p></td>
+<td><p>Manages the main AEDT postprocessing functions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.post_icepak.PostProcessorIcepak.html#ansys.aedt.core.visualization.post.post_icepak.PostProcessorIcepak" title="ansys.aedt.core.visualization.post.post_icepak.PostProcessorIcepak"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PostProcessorIcepak</span></code></a></p></td>
+<td><p>Manages the specific Icepak postprocessing functions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.post_circuit.PostProcessorCircuit.html#ansys.aedt.core.visualization.post.post_circuit.PostProcessorCircuit" title="ansys.aedt.core.visualization.post.post_circuit.PostProcessorCircuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PostProcessorCircuit</span></code></a></p></td>
+<td><p>Manages the main schematic postprocessing functions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.post_3dlayout.PostProcessor3DLayout.html#ansys.aedt.core.visualization.post.post_3dlayout.PostProcessor3DLayout" title="ansys.aedt.core.visualization.post.post_3dlayout.PostProcessor3DLayout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PostProcessor3DLayout</span></code></a></p></td>
+<td><p>Manages the main schematic postprocessing functions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can access these classes directly from the design object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Hfss</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Hfss</span><span class="p">(</span><span class="n">specified_version</span><span class="o">=</span><span class="s2">&quot;2023.1&quot;</span><span class="p">,</span>
+             <span class="n">non_graphical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">new_desktop_session</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">close_on_exit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">student_version</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># This call returns the PostProcessor class</span>
+<span class="n">post</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">post</span>
+
+<span class="c1"># This call returns a FieldPlot object</span>
+<span class="n">plotf</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">create_fieldplot_volume</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">quantity_name</span><span class="p">,</span> <span class="n">setup_name</span><span class="p">,</span> <span class="n">intrinsics</span><span class="p">)</span>
+
+<span class="c1"># This call returns a SolutionData object</span>
+<span class="n">my_data</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">get_solution_data</span><span class="p">(</span><span class="n">expressions</span><span class="o">=</span><span class="n">trace_names</span><span class="p">)</span>
+
+<span class="c1"># This call returns a new standard report object and creates one or multiple reports from it.</span>
+<span class="n">standard_report</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">reports_by_category</span><span class="o">.</span><span class="n">standard</span><span class="p">(</span><span class="s2">&quot;db(S(1,1))&quot;</span><span class="p">)</span>
+<span class="n">report_standard</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">sols</span> <span class="o">=</span> <span class="n">report_standard</span><span class="o">.</span><span class="n">get_solution_data</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>User can get the properties of the default reports using the following class:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.common.Reports.html#ansys.aedt.core.visualization.post.common.Reports" title="ansys.aedt.core.visualization.post.common.Reports"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Reports</span></code></a></p></td>
+<td><p>Provides the names of default solution types.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Hfss</span>
+<span class="kn">from</span> <span class="nn">ansys.aedt.core.visualization.post.common</span> <span class="kn">import</span> <span class="n">Reports</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Hfss</span><span class="p">(</span><span class="n">specified_version</span><span class="o">=</span><span class="s2">&quot;2024.2&quot;</span><span class="p">,</span>
+             <span class="n">non_graphical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">new_desktop_session</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">close_on_exit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">student_version</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">reports</span> <span class="o">=</span> <span class="n">Reports</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="p">,</span> <span class="n">app</span><span class="o">.</span><span class="n">design_type</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>AEDT data is returned in a structured format, providing organized and detailed results.
+For a comprehensive overview of the data structure and its capabilities, refer to the class definition below:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.solution_data.SolutionData.html#ansys.aedt.core.visualization.post.solution_data.SolutionData" title="ansys.aedt.core.visualization.post.solution_data.SolutionData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SolutionData</span></code></a></p></td>
+<td><p>Contains information from the <code class="xref py py-func docutils literal notranslate"><span class="pre">GetSolutionDataPerVariation()</span></code> method.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="field">
+<h2>Field<a class="headerlink" href="#field" title="Link to this heading">#</a></h2>
+<p>AEDT offers additional specialized post-processing features for enhanced 3D field visualization and control.</p>
+<p>The following classes manage all aspects of AEDT 3D post-processing and are utilized by the <code class="docutils literal notranslate"><span class="pre">PostProcessor3D</span></code> class:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.FieldPlot.html#ansys.aedt.core.visualization.post.field_data.FieldPlot" title="ansys.aedt.core.visualization.post.field_data.FieldPlot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FieldPlot</span></code></a></p></td>
+<td><p>Provides for creating and editing field plots.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Hfss</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Hfss</span><span class="p">(</span><span class="n">specified_version</span><span class="o">=</span><span class="s2">&quot;2024.2&quot;</span><span class="p">,</span>
+           <span class="n">non_graphical</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+           <span class="n">new_desktop_session</span><span class="o">=</span><span class="kc">False</span>
+           <span class="p">)</span>
+<span class="n">test_points</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;100mm&quot;</span><span class="p">,</span> <span class="s2">&quot;20mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span>
+               <span class="p">[</span><span class="s2">&quot;71mm&quot;</span><span class="p">,</span> <span class="s2">&quot;71mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;0mm&quot;</span><span class="p">,</span> <span class="s2">&quot;100mm&quot;</span><span class="p">,</span> <span class="s2">&quot;0mm&quot;</span><span class="p">]]</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">modeler</span><span class="o">.</span><span class="n">create_polyline</span><span class="p">(</span><span class="n">test_points</span><span class="p">)</span>
+<span class="n">setup</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">create_setup</span><span class="p">()</span>
+
+<span class="n">report</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">create_fieldplot_line</span><span class="p">(</span><span class="n">quantity</span><span class="o">=</span><span class="s2">&quot;Mag_E&quot;</span><span class="p">,</span> <span class="n">assignment</span><span class="o">=</span><span class="n">p1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Additionally, the following classes control field overlay settings,
+enabling precise adjustments to visualization parameters:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.ColorMapSettings.html#ansys.aedt.core.visualization.post.field_data.ColorMapSettings" title="ansys.aedt.core.visualization.post.field_data.ColorMapSettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ColorMapSettings</span></code></a></p></td>
+<td><p>Provides methods and variables for editing color map folder settings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.AutoScale.html#ansys.aedt.core.visualization.post.field_data.AutoScale" title="ansys.aedt.core.visualization.post.field_data.AutoScale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AutoScale</span></code></a></p></td>
+<td><p>Provides methods and variables for editing automatic scale folder settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.MinMaxScale.html#ansys.aedt.core.visualization.post.field_data.MinMaxScale" title="ansys.aedt.core.visualization.post.field_data.MinMaxScale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MinMaxScale</span></code></a></p></td>
+<td><p>Provides methods and variables for editing min-max scale folder settings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.Scale3DSettings.html#ansys.aedt.core.visualization.post.field_data.Scale3DSettings" title="ansys.aedt.core.visualization.post.field_data.Scale3DSettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scale3DSettings</span></code></a></p></td>
+<td><p>Provides methods and variables for editing scale folder settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.NumberFormat.html#ansys.aedt.core.visualization.post.field_data.NumberFormat" title="ansys.aedt.core.visualization.post.field_data.NumberFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumberFormat</span></code></a></p></td>
+<td><p>Provides methods and variables for editing number format folder settings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.MarkerSettings.html#ansys.aedt.core.visualization.post.field_data.MarkerSettings" title="ansys.aedt.core.visualization.post.field_data.MarkerSettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MarkerSettings</span></code></a></p></td>
+<td><p>Provides methods and variables for editing marker folder settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.ArrowSettings.html#ansys.aedt.core.visualization.post.field_data.ArrowSettings" title="ansys.aedt.core.visualization.post.field_data.ArrowSettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ArrowSettings</span></code></a></p></td>
+<td><p>Provides methods and variables for editing arrow folder settings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_data.FolderPlotSettings.html#ansys.aedt.core.visualization.post.field_data.FolderPlotSettings" title="ansys.aedt.core.visualization.post.field_data.FolderPlotSettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FolderPlotSettings</span></code></a></p></td>
+<td><p>Provides methods and variables for editing field plots folder settings.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">fields_calculator</span></code> module includes the <code class="docutils literal notranslate"><span class="pre">FieldsCalculator</span></code> class.
+It provides methods to interact with AEDT Fields Calculator by adding, loading and deleting custom expressions.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.fields_calculator.FieldsCalculator.html#ansys.aedt.core.visualization.post.fields_calculator.FieldsCalculator" title="ansys.aedt.core.visualization.post.fields_calculator.FieldsCalculator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FieldsCalculator</span></code></a></p></td>
+<td><p>Provides the Advanced fields calculator methods.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hfss">
+<h2>HFSS<a class="headerlink" href="#hfss" title="Link to this heading">#</a></h2>
+<p>For HFSS solutions, there are two additionally features: virtual ray tracing and farfield exporter.</p>
+<p>To define and control virtual ray tracing (VRT) you can use:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.vrt_data.VRTFieldPlot.html#ansys.aedt.core.visualization.post.vrt_data.VRTFieldPlot" title="ansys.aedt.core.visualization.post.vrt_data.VRTFieldPlot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VRTFieldPlot</span></code></a></p></td>
+<td><p>Creates and edits VRT field plots for SBR+ and Creeping Waves.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If you need to export HFSS far field data, then you can use the following feature to obtain the antenna metadata:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.farfield_exporter.FfdSolutionDataExporter.html#ansys.aedt.core.visualization.post.farfield_exporter.FfdSolutionDataExporter" title="ansys.aedt.core.visualization.post.farfield_exporter.FfdSolutionDataExporter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FfdSolutionDataExporter</span></code></a></p></td>
+<td><p>Class to enable export of embedded element pattern data from HFSS.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Hfss</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Hfss</span><span class="p">()</span>
+
+<span class="n">antenna_data</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">get_antenna_data</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you need to export HFSS monostatic RCS data, then you can use the following feature to obtain the RCS metadata:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.rcs_exporter.MonostaticRCSExporter.html#ansys.aedt.core.visualization.post.rcs_exporter.MonostaticRCSExporter" title="ansys.aedt.core.visualization.post.rcs_exporter.MonostaticRCSExporter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MonostaticRCSExporter</span></code></a></p></td>
+<td><p>Class to enable export of radar cross-section (RCS) data from HFSS.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.aedt.core</span> <span class="kn">import</span> <span class="n">Hfss</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Hfss</span><span class="p">()</span>
+
+<span class="n">rcs_data</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="o">.</span><span class="n">get_rcs_data</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">release_desktop</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="icepak">
+<h2>Icepak<a class="headerlink" href="#icepak" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">monitor_icepak</span></code> module includes the classes listed below to add, modify, and manage monitors during simulations.
+Retrieve monitor values for post-processing and analysis to gain insights into key simulation metrics.
+Methods and properties are accessible through the <code class="docutils literal notranslate"><span class="pre">monitor</span></code> property of the <code class="docutils literal notranslate"><span class="pre">Icepak</span></code> class.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.monitor_icepak.Monitor.html#ansys.aedt.core.visualization.post.monitor_icepak.Monitor" title="ansys.aedt.core.visualization.post.monitor_icepak.Monitor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Monitor</span></code></a></p></td>
+<td><p>Provides Icepak monitor methods.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">field_summary</span></code> module includes the classes listed below to the <code class="docutils literal notranslate"><span class="pre">Icepak</span></code> field summary.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.field_summary.FieldSummary.html#ansys.aedt.core.visualization.post.field_summary.FieldSummary" title="ansys.aedt.core.visualization.post.field_summary.FieldSummary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FieldSummary</span></code></a></p></td>
+<td><p>Provides Icepak field summary methods.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="additional-tools">
+<h2>Additional tools<a class="headerlink" href="#additional-tools" title="Link to this heading">#</a></h2>
+<p>Finally, users can use additional AEDT postprocessing tools like SPiSim:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.spisim.SpiSim.html#ansys.aedt.core.visualization.post.spisim.SpiSim" title="ansys.aedt.core.visualization.post.spisim.SpiSim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpiSim</span></code></a></p></td>
+<td><p>Provides support to SpiSim batch mode.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.spisim_com_configuration_files.com_parameters.COMParameters.html#ansys.aedt.core.visualization.post.spisim_com_configuration_files.com_parameters.COMParameters" title="ansys.aedt.core.visualization.post.spisim_com_configuration_files.com_parameters.COMParameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COMParameters</span></code></a></p></td>
+<td><p>Base class to manage COM parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.spisim_com_configuration_files.com_parameters.COMParametersVer3p4.html#ansys.aedt.core.visualization.post.spisim_com_configuration_files.com_parameters.COMParametersVer3p4" title="ansys.aedt.core.visualization.post.spisim_com_configuration_files.com_parameters.COMParametersVer3p4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COMParametersVer3p4</span></code></a></p></td>
+<td><p>Manages COM parameters of version 3.4.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If you are looking for Virtual Compliance post processing, you should use this set of features:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.compliance.VirtualComplianceGenerator.html#ansys.aedt.core.visualization.post.compliance.VirtualComplianceGenerator" title="ansys.aedt.core.visualization.post.compliance.VirtualComplianceGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VirtualComplianceGenerator</span></code></a></p></td>
+<td><p>Class to generate a Virtual Compliance configuration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/ansys.aedt.core.visualization.post.compliance.VirtualCompliance.html#ansys.aedt.core.visualization.post.compliance.VirtualCompliance" title="ansys.aedt.core.visualization.post.compliance.VirtualCompliance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VirtualCompliance</span></code></a></p></td>
+<td><p>Provides automatic report generation with pass/fail criteria on virtual compliance.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core">Core</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#field">Field</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hfss">HFSS</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#icepak">Icepak</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-tools">Additional tools</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pyaedt/edit/main/doc/source/API/visualization/post.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/API/visualization/post.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+<link rel="stylesheet" href="../../_static/css/fuse-search.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"ignoreLocation": true, "keys": ["title", "text"], "limit": 10, "limite": 10, "minMatchCharLength": 2, "threshold": 0.5}');
+const SEARCH_FILE = "../../_static/search.json";
+</script>
+
+
+<script src="../../_static/js/search.js"></script>
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.2.2. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

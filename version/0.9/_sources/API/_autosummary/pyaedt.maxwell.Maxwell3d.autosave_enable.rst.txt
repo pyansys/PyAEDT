@@ -1,0 +1,6 @@
+autosave\_enable
+================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.autosave_enable

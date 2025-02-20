@@ -1,0 +1,6 @@
+rename\_design
+==============
+
+.. currentmodule:: ansys.aedt.core.circuit
+
+.. automethod:: Circuit.rename_design

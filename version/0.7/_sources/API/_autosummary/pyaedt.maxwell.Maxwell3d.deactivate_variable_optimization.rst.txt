@@ -1,0 +1,6 @@
+deactivate\_variable\_optimization
+==================================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell3d.deactivate_variable_optimization

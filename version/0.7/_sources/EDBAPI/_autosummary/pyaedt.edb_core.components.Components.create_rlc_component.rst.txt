@@ -1,0 +1,6 @@
+create\_rlc\_component
+======================
+
+.. currentmodule:: pyaedt.edb_core.components
+
+.. automethod:: Components.create_rlc_component

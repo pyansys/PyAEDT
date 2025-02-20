@@ -1,0 +1,6 @@
+change\_options
+===============
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. automethod:: Hfss3dLayout.change_options

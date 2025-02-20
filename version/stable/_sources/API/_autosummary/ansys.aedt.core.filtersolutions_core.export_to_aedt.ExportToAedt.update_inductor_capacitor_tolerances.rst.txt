@@ -1,0 +1,6 @@
+update\_inductor\_capacitor\_tolerances
+=======================================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. automethod:: ExportToAedt.update_inductor_capacitor_tolerances

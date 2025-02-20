@@ -1,0 +1,6 @@
+raw\_data
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.rcs_visualization
+
+.. autoproperty:: MonostaticRCSData.raw_data

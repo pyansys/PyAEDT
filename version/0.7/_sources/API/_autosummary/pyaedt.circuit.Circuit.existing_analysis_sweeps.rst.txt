@@ -1,0 +1,6 @@
+existing\_analysis\_sweeps
+==========================
+
+.. currentmodule:: pyaedt.circuit
+
+.. autoproperty:: Circuit.existing_analysis_sweeps

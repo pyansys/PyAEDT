@@ -1,0 +1,6 @@
+get\_all\_conductors\_names
+===========================
+
+.. currentmodule:: pyaedt.q3d
+
+.. automethod:: Q3d.get_all_conductors_names

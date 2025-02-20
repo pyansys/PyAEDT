@@ -1,0 +1,6 @@
+tuning\_min\_value
+==================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.tuning_min_value

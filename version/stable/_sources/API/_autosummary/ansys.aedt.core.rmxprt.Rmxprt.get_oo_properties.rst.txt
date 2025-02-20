@@ -1,0 +1,6 @@
+get\_oo\_properties
+===================
+
+.. currentmodule:: ansys.aedt.core.rmxprt
+
+.. automethod:: Rmxprt.get_oo_properties

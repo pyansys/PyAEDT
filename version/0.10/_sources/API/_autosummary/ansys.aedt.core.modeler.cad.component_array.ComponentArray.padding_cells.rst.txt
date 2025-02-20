@@ -1,0 +1,6 @@
+padding\_cells
+==============
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.component_array
+
+.. autoproperty:: ComponentArray.padding_cells

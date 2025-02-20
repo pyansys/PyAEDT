@@ -1,0 +1,6 @@
+ifft\_to\_file
+==============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. automethod:: SolutionData.ifft_to_file

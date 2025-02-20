@@ -1,0 +1,6 @@
+evaluate\_expression
+====================
+
+.. currentmodule:: ansys.aedt.core.emit
+
+.. automethod:: Emit.evaluate_expression

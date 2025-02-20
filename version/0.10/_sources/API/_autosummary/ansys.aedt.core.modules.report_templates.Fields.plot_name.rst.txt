@@ -1,0 +1,6 @@
+plot\_name
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Fields.plot_name

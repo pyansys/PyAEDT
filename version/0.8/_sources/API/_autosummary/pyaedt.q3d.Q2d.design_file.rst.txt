@@ -1,0 +1,6 @@
+design\_file
+============
+
+.. currentmodule:: pyaedt.q3d
+
+.. autoproperty:: Q2d.design_file

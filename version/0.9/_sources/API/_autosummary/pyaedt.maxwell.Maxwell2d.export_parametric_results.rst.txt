@@ -1,0 +1,6 @@
+export\_parametric\_results
+===========================
+
+.. currentmodule:: pyaedt.maxwell
+
+.. automethod:: Maxwell2d.export_parametric_results

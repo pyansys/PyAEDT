@@ -1,0 +1,6 @@
+wire\_diameter
+==============
+
+.. currentmodule:: pyaedt.modules.Material
+
+.. autoproperty:: Material.wire_diameter

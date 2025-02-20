@@ -1,0 +1,6 @@
+new\_simulation\_configuration
+==============================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.new_simulation_configuration

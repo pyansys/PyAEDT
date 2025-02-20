@@ -1,0 +1,6 @@
+specs\_folder
+=============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.compliance
+
+.. autoproperty:: VirtualCompliance.specs_folder

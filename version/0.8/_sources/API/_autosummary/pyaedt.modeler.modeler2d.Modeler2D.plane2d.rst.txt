@@ -1,0 +1,6 @@
+plane2d
+=======
+
+.. currentmodule:: pyaedt.modeler.modeler2d
+
+.. autoproperty:: Modeler2D.plane2d

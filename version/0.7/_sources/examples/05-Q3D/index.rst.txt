@@ -1,0 +1,134 @@
+
+
+.. _sphx_glr_examples_05-Q3D:
+
+2D Extractor and Q3D Extractor examples
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+These examples use PyAEDT to show some end-to-end workflows for 2D Extractor and
+Q3D Extractor. This includes model generation, setup, and thermal postprocessing.
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" - Create a Q2D design using the Modeler primitives and importing part of the geometry.  - Set ...">
+
+.. only:: html
+
+  .. image:: /examples/05-Q3D/images/thumb/sphx_glr_Q2D_Armoured_Cable_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_05-Q3D_Q2D_Armoured_Cable.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Q2D: Cable parameter identification</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="2D Extractor: CPWG analysis">
+
+.. only:: html
+
+  .. image:: /examples/05-Q3D/images/thumb/sphx_glr_Q2D_Example_CPWG_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_05-Q3D_Q2D_Example_CPWG.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">2D Extractor: CPWG analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="2D Extractor: stripline analysis">
+
+.. only:: html
+
+  .. image:: /examples/05-Q3D/images/thumb/sphx_glr_Q2D_Example_Stripline_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_05-Q3D_Q2D_Example_Stripline.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">2D Extractor: stripline analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Q3D Extractor: PCB DCIR analysis">
+
+.. only:: html
+
+  .. image:: /examples/05-Q3D/images/thumb/sphx_glr_Q3D_DC_IR_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_05-Q3D_Q3D_DC_IR.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Q3D Extractor: PCB DCIR analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Q3D Extractor: busbar analysis">
+
+.. only:: html
+
+  .. image:: /examples/05-Q3D/images/thumb/sphx_glr_Q3D_Example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_05-Q3D_Q3D_Example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Q3D Extractor: busbar analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Q3D Extractor: PCB analysis">
+
+.. only:: html
+
+  .. image:: /examples/05-Q3D/images/thumb/sphx_glr_Q3D_from_EDB_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_05-Q3D_Q3D_from_EDB.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Q3D Extractor: PCB analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/05-Q3D/Q2D_Armoured_Cable
+   /examples/05-Q3D/Q2D_Example_CPWG
+   /examples/05-Q3D/Q2D_Example_Stripline
+   /examples/05-Q3D/Q3D_DC_IR
+   /examples/05-Q3D/Q3D_Example
+   /examples/05-Q3D/Q3D_from_EDB
+

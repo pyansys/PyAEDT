@@ -1,0 +1,6 @@
+design\_type
+============
+
+.. currentmodule:: pyaedt.hfss3dlayout
+
+.. autoproperty:: Hfss3dLayout.design_type

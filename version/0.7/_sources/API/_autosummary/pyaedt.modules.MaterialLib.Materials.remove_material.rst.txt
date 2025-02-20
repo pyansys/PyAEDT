@@ -1,0 +1,6 @@
+remove\_material
+================
+
+.. currentmodule:: pyaedt.modules.MaterialLib
+
+.. automethod:: Materials.remove_material

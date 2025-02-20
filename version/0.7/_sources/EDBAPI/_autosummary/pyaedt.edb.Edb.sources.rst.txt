@@ -1,0 +1,6 @@
+sources
+=======
+
+.. currentmodule:: pyaedt.edb
+
+.. autoproperty:: Edb.sources

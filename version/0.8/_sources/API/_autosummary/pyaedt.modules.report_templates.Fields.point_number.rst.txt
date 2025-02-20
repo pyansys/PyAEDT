@@ -1,0 +1,6 @@
+point\_number
+=============
+
+.. currentmodule:: pyaedt.modules.report_templates
+
+.. autoproperty:: Fields.point_number

@@ -1,0 +1,6 @@
+face\_monitors
+==============
+
+.. currentmodule:: ansys.aedt.core.visualization.post.monitor_icepak
+
+.. autoproperty:: Monitor.face_monitors

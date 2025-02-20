@@ -1,0 +1,6 @@
+get\_antenna\_data
+==================
+
+.. currentmodule:: ansys.aedt.core.hfss
+
+.. automethod:: Hfss.get_antenna_data

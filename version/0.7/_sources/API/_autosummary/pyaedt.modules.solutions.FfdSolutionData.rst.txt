@@ -1,0 +1,51 @@
+﻿FfdSolutionData
+===============
+
+.. currentmodule:: pyaedt.modules.solutions
+
+.. autoclass:: FfdSolutionData
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      FfdSolutionData.combine_farfield
+      
+      
+      FfdSolutionData.get_far_field_mesh
+      
+      
+      FfdSolutionData.plot_2d_cut
+      
+      
+      FfdSolutionData.plot_farfield_contour
+      
+      
+      FfdSolutionData.polar_plot_3d
+      
+      
+      FfdSolutionData.polar_plot_3d_pyvista
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      FfdSolutionData.frequency
+      FfdSolutionData.frequency_value
+      FfdSolutionData.mag_offset
+      FfdSolutionData.origin
+      FfdSolutionData.phase_offset
+      FfdSolutionData.taper
+   
+   

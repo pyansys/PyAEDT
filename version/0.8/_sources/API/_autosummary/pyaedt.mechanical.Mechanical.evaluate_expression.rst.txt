@@ -1,0 +1,6 @@
+evaluate\_expression
+====================
+
+.. currentmodule:: pyaedt.mechanical
+
+.. automethod:: Mechanical.evaluate_expression

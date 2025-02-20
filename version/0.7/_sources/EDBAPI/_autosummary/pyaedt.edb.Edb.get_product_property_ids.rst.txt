@@ -1,0 +1,6 @@
+get\_product\_property\_ids
+===========================
+
+.. currentmodule:: pyaedt.edb
+
+.. automethod:: Edb.get_product_property_ids

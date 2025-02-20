@@ -1,0 +1,6 @@
+enable\_pandas\_output
+======================
+
+.. currentmodule:: ansys.aedt.core.visualization.post.solution_data
+
+.. autoproperty:: SolutionData.enable_pandas_output

@@ -1,0 +1,6 @@
+data\_phase
+===========
+
+.. currentmodule:: ansys.aedt.core.modules.solutions
+
+.. automethod:: SolutionData.data_phase

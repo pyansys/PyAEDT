@@ -1,0 +1,6 @@
+deembed
+=======
+
+.. currentmodule:: pyaedt.edb_core.edb_data.ports
+
+.. autoproperty:: GapPort.deembed

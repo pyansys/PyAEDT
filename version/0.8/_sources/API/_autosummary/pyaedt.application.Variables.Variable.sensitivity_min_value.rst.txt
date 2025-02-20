@@ -1,0 +1,6 @@
+sensitivity\_min\_value
+=======================
+
+.. currentmodule:: pyaedt.application.Variables
+
+.. autoproperty:: Variable.sensitivity_min_value

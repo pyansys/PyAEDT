@@ -1,0 +1,6 @@
+move
+====
+
+.. currentmodule:: pyaedt.modeler.pcb.object3dlayout
+
+.. automethod:: Points3dLayout.move

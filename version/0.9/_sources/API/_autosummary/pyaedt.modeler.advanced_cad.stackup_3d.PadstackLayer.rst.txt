@@ -1,0 +1,24 @@
+﻿PadstackLayer
+=============
+
+.. currentmodule:: pyaedt.modeler.advanced_cad.stackup_3d
+
+.. autoclass:: PadstackLayer
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      PadstackLayer.antipad_radius
+      PadstackLayer.layer_name
+      PadstackLayer.pad_radius
+   
+   

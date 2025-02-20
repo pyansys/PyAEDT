@@ -1,0 +1,6 @@
+secondary\_sweep
+================
+
+.. currentmodule:: ansys.aedt.core.modules.report_templates
+
+.. autoproperty:: Emission.secondary_sweep

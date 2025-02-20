@@ -1,0 +1,6 @@
+to\_degrees
+===========
+
+.. currentmodule:: ansys.aedt.core.modules.solutions
+
+.. automethod:: SolutionData.to_degrees

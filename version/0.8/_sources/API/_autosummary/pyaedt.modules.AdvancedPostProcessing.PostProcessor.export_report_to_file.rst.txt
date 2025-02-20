@@ -1,0 +1,6 @@
+export\_report\_to\_file
+========================
+
+.. currentmodule:: pyaedt.modules.AdvancedPostProcessing
+
+.. automethod:: PostProcessor.export_report_to_file

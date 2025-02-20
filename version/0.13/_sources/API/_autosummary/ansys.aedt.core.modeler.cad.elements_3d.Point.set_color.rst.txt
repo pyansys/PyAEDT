@@ -1,0 +1,6 @@
+set\_color
+==========
+
+.. currentmodule:: ansys.aedt.core.modeler.cad.elements_3d
+
+.. automethod:: Point.set_color

@@ -1,0 +1,6 @@
+convert\_fields\_in\_db
+=======================
+
+.. currentmodule:: ansys.aedt.core.sbrplus.plot
+
+.. autoproperty:: HDMPlotter.convert_fields_in_db

@@ -1,0 +1,6 @@
+get\_monitor\_data
+==================
+
+.. currentmodule:: pyaedt.circuit
+
+.. automethod:: Circuit.get_monitor_data

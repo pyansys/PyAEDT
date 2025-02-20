@@ -1,0 +1,6 @@
+change\_active\_dso\_config\_name
+=================================
+
+.. currentmodule:: pyaedt.desktop
+
+.. automethod:: Desktop.change_active_dso_config_name

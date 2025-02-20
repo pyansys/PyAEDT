@@ -1,0 +1,6 @@
+assign\_priority\_on\_intersections
+===================================
+
+.. currentmodule:: pyaedt.icepak
+
+.. automethod:: Icepak.assign_priority_on_intersections

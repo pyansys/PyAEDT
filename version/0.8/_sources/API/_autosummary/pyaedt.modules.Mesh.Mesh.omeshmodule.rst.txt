@@ -1,0 +1,6 @@
+omeshmodule
+===========
+
+.. currentmodule:: pyaedt.modules.Mesh
+
+.. autoproperty:: Mesh.omeshmodule

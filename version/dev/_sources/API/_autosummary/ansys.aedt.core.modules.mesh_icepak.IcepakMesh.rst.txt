@@ -1,0 +1,51 @@
+﻿IcepakMesh
+==========
+
+.. currentmodule:: ansys.aedt.core.modules.mesh_icepak
+
+.. autoclass:: IcepakMesh
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      IcepakMesh.assign_mesh_from_file
+      
+      
+      IcepakMesh.assign_mesh_level
+      
+      
+      IcepakMesh.assign_mesh_level_to_group
+      
+      
+      IcepakMesh.assign_mesh_region
+      
+      
+      IcepakMesh.assign_mesh_reuse
+      
+      
+      IcepakMesh.assign_priorities
+      
+      
+      IcepakMesh.generate_mesh
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      IcepakMesh.boundingdimension
+      IcepakMesh.meshregions_dict
+      IcepakMesh.omeshmodule
+   
+   

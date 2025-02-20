@@ -1,0 +1,6 @@
+plot\_cut
+=========
+
+.. currentmodule:: ansys.aedt.core.visualization.advanced.farfield_visualization
+
+.. automethod:: FfdSolutionData.plot_cut

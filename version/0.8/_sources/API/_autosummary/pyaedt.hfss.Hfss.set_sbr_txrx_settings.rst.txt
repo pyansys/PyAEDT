@@ -1,0 +1,6 @@
+set\_sbr\_txrx\_settings
+========================
+
+.. currentmodule:: pyaedt.hfss
+
+.. automethod:: Hfss.set_sbr_txrx_settings

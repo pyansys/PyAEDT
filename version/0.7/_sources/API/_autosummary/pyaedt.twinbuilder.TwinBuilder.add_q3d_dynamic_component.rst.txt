@@ -1,0 +1,6 @@
+add\_q3d\_dynamic\_component
+============================
+
+.. currentmodule:: pyaedt.twinbuilder
+
+.. automethod:: TwinBuilder.add_q3d_dynamic_component

@@ -1,0 +1,6 @@
+modelithics\_resistor\_list
+===========================
+
+.. currentmodule:: ansys.aedt.core.filtersolutions_core.export_to_aedt
+
+.. automethod:: ExportToAedt.modelithics_resistor_list
