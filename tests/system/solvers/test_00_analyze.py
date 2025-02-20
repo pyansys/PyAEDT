@@ -142,7 +142,8 @@ def circuit_com(add_app):
 @pytest.fixture(scope="class")
 def m3dtransient(add_app):
     app = add_app(application=Maxwell3d, project_name=transient, subfolder=test_subfolder)
-    return app
+    yield app
+    app.close_project(app.project_name)
 
 
 class TestClass:
@@ -506,6 +507,20 @@ class TestClass:
         assert circuit_app.push_time_excitations(instance="U1", setup=setup_name)
 
     def test_06_m3d_harmonic_forces(self, m3dtransient):
+        assert m3dtransient.enable_harmonic_force(
+            ["Stator"],
+            force_type=2,
+            window_function="Rectangular",
+            use_number_of_cycles_from_stop_time=True,
+            number_of_cycles_from_stop_time=3,
+            calculate_force=0,
+        )
+        m3dtransient.solution_type = m3dtransient.SOLUTIONS.Maxwell3d.EddyCurrent
+        assert m3dtransient.enable_harmonic_force(assignment=["Stator"])
+        m3dtransient.solution_type = m3dtransient.SOLUTIONS.Maxwell3d.TransientAPhiFormulation
+        assert m3dtransient.enable_harmonic_force(assignment=["Stator"], calculate_force=1)
+
+    def test_06_export_element_based_harmonic_force(self, m3dtransient):
         assert m3dtransient.export_element_based_harmonic_force(
             start_frequency=1, stop_frequency=100, number_of_frequency=None
         )

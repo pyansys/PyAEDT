@@ -1752,70 +1752,199 @@ class Maxwell(CreateBoundaryMixin):
     def enable_harmonic_force(
         self,
         assignment,
+        coordinate_system="Global",
+        axis=2,
+        is_positive=True,
         force_type=0,
+        calculate_force=0,
         window_function="Rectangular",
-        use_number_of_last_cycles=True,
-        last_cycles_number=1,
-        calculate_force="Harmonic",
+        use_number_of_cycles_from_stop_time=True,
+        number_of_cycles_from_stop_time=1,
+        start_time="0s",
+        use_number_of_cycles_for_stop_time=True,
+        number_of_cycles_for_stop_time=1,
+        stop_time="0.01s",
+        output_frequency_range_type=0,
+        output_frequency_range_start="0Hz",
+        output_frequency_range_stop="1000Hz",
+        number_of_output_frequencies=10,
+        enable_inverter_feedback=False,
+        switching_frequency="4000Hz",
+        maximum_frequency="8000Hz",
     ):
         """Enable the harmonic force calculation for the transient analysis.
+
+        Available for Maxwell Eddy Current and Transient designs.
 
         Parameters
         ----------
         assignment : list
-            List of object names for force calculations.
+            Defines a list of object names for force calculations, for example:
+            ["arc_01","arc_02","arc_03"]
+        coordinate_system: str, optional
+            Defines the coordinate system. The default is ``Global``.
+        axis : int, optional
+            Defines the rotation axis used to generate full model for a partial model
+            of electric machine.``0`` for X-axis, ``1`` for Y-axis, ``2`` for Z-axis.
+            The default is ``2``.
+        is_positive : bool, optional
+            Defines the rotation axis direction: ``True`` if ``Positive`` and ``False`` if ``Negative``.
+            The default is ``True``.
         force_type : int, optional
-            Force type. Options are ``0`` for objects, ``1`` for surface, and ``2`` for volumetric.
+            Force Type. ``0`` for Object Based, ``1`` for Element Based (Surface), ``2`` for
+            Element Based (Volumetric).
         window_function : str, optional
             Windowing function. Default is ``"Rectangular"``.
             Available options are: ``"Rectangular"``, ``"Tri"``, ``"Van Hann"``, ``"Hamming"``,
             ``"Blackman"``, ``"Lanczos"``, ``"Welch"``.
-        use_number_of_last_cycles : bool, optional
-            Use number of last cycles for force calculations. Default is ``True``.
-        last_cycles_number : int, optional
-            Defines the number of cycles to compute if `use_number_of_last_cycle` is ``True``.
-        calculate_force : sr, optional
-            How to calculate force. The default is ``"Harmonic"``.
-            Options are ``"Harmonic"`` and ``"Transient"``.
-
+        use_number_of_cycles_from_stop_time : bool, optional
+            If True, the harmonic force will be computed using the transient force during the
+            defined number of cycles backwards from stop time.
+            If False, the defined time range will be used. Default is ``True``.
+            For ``"TransientZ"`` and ``"TransientAphiFormulation"`` it is ``False``.
+        number_of_cycles_from_stop_time : int, optional
+            Defines the number of cycles from stop time for harmonic force computation,
+            if `use_number_of_cycles_from_stop_time` is ``True``.
+        start_time : str, optional
+            Defines the time range start time for harmonic force computation,
+            if `use_number_of_cycles_from_stop_time` is ``False``.
+        use_number_of_cycles_for_stop_time : bool, optional
+            If True, the time range stop time is defined using the number of cycles.
+            The harmonic force will be computed using the defined number of cycles forward from the start time.
+            If False, the time range stop time is defined using the stop time.
+            The harmonic force will be computed using the transient force between the start time and the stop time.
+            Default is ``True``.
+            For ``"TransientZ"`` and ``"TransientAphiFormulation"`` it is ``False``.
+        number_of_cycles_for_stop_time: int, optional
+            Defines the time range for harmonic force computation using the number of cycles,
+            if `use_number_of_cycles_for_stop_time` is ``True``.
+        stop_time : str, optional
+            Defines the time range stop time for harmonic force computation,
+            if `use_number_of_cycles_for_stop_time` is ``False``.
+        output_frequency_range_type : int, optional
+            Defines the type of the output frequency range. ``0`` for ``"Use All"``,
+            ``1`` for ``"Use Range"``, and ``2`` for ``"Use Number"``.
+            The default is ``0``.
+        output_frequency_range_start : str, optional
+            The start frequency of calculated harmonic force components.
+        output_frequency_range_stop : str, optional
+            The end frequency of calculated harmonic force components.
+        number_of_output_frequencies : int, optional
+            Number of frequencies to output.
+        calculate_force : int, optional
+            How to calculate force: ``0`` for ``"Harmonic"``, ``1`` for ``"Transient"``,
+            and ``2`` for``"Harmonic and Transient"``. The default is ``0``.
+        enable_inverter_feedback : bool, optional
+            If ``True`` it enables inverter feedback. The default is ``False``.
+        switching_frequency: str, optional
+            The switching frequency is available if `enable_inverter_feedback´ is ``True``.
+            The default value is ``"4000Hz"``.
+        maximum_frequency: str, optional
+            The maximum frequency is available if `enable_inverter_feedback´ is ``True``.
+            The default value is ``"8000Hz"``.
 
         Returns
         -------
         bool
             ``True`` when successful, ``False`` when failed.
 
-        """
-        if self.solution_type != SOLUTIONS.Maxwell3d.Transient:
-            raise AEDTRuntimeError("This methods work only with Maxwell Transient Analysis.")
+        References
+        -----------
 
-        assignment = self.modeler.convert_to_selections(assignment, True)
-        self.odesign.EnableHarmonicForceCalculation(
-            [
-                "EnabledObjects:=",
-                assignment,
-                "ForceType:=",
-                force_type,
-                "WindowFunctionType:=",
-                window_function,
-                "UseNumberOfLastCycles:=",
-                use_number_of_last_cycles,
-                "NumberOfLastCycles:=",
-                last_cycles_number,
-                "StartTime:=",
-                "0s",
-                "UseNumberOfCyclesForStopTime:=",
-                True,
-                "NumberOfCyclesForStopTime:=",
-                1,
-                "StopTime:=",
-                "0.01s",
-                "OutputFreqRangeType:=",
-                "Use All",
-                "CaculateForceType:=",
-                calculate_force + " Force",
-            ]
-        )
-        return True
+        >>> odesign.EnableHarmonicForceCalculation
+
+        Examples
+        ---------
+
+        Enable harmonic force in Maxwell 3D for magnetic transient solver:
+
+        >>> from ansys.aedt.core import Maxwell3d
+        >>> m3d = Maxwell3d()
+        >>> m3d.enable_harmonic_force(assignment="Stator",number_of_cycles_from_stop_time=3)
+
+        """
+        if self.solution_type not in [
+            "EddyCurrent",
+            "Transient",
+            "TransientAPhiFormulation",
+        ]:
+            raise AEDTRuntimeError("This methods work only with Maxwell Transient Analysis.")
+        if self.solution_type == "EddyCurrent":
+            if not self.is3d and axis != 2:
+                axis = 2
+                self.logger.warning("For 2D EddyCurrent solver only Z-axis is available.")
+            self.odesign.EnableHarmonicForceCalculation(
+                [
+                    "EnabledObjects:=",
+                    assignment,
+                    "Coordinate System:=",
+                    coordinate_system,
+                    "Axis:=",
+                    axis,
+                    "Is Positive:=",
+                    is_positive,
+                ]
+            )
+            return True
+        elif self.solution_type in ["Transient", "TransientAPhiFormulation"]:
+            force = ["Harmonic", "Transient", "Harmonic and Transient"]
+            calculate_force = force[calculate_force]
+            range_type = ["Use All", "Use Range", "Use Number"]
+            output_frequency_range_type = range_type[output_frequency_range_type]
+            if not self.is3d and self.geometry_mode == "about Z" or self.solution_type == "TransientAPhiFormulation":
+                if force_type == 0 and calculate_force == "Transient":
+                    calculate_force = "Harmonic"
+                    self.logger.warning(
+                        "Object-Based Transient Force calculation is not supported for "
+                        "non-rotational transient solutions. Only Harmonic Force will be calculated."
+                    )
+                if not self.is3d and self.geometry_mode == "about Z":
+                    if use_number_of_cycles_from_stop_time or use_number_of_cycles_for_stop_time:
+                        self.logger.warning(
+                            " ``number_of_cycles_from_stop_time´´ and ``number_of_cycles_for_stop_time´´"
+                            "are not available for TransientZ."
+                        )
+                        use_number_of_cycles_from_stop_time = False
+                        use_number_of_cycles_for_stop_time = False
+            self.odesign.EnableHarmonicForceCalculation(
+                [
+                    "EnabledObjects:=",
+                    assignment,
+                    "ForceType:=",
+                    force_type,
+                    "WindowFunctionType:=",
+                    window_function,
+                    "UseNumberOfLastCycles:=",
+                    use_number_of_cycles_from_stop_time,
+                    "NumberOfLastCycles:=",
+                    number_of_cycles_from_stop_time,
+                    "StartTime:=",
+                    start_time,
+                    "UseNumberOfCyclesForStopTime:=",
+                    use_number_of_cycles_for_stop_time,
+                    "NumberOfCyclesForStopTime:=",
+                    number_of_cycles_for_stop_time,
+                    "StopTime:=",
+                    stop_time,
+                    "OutputFreqRangeType:=",
+                    output_frequency_range_type,
+                    "OutputFreqRangeStart:=",
+                    output_frequency_range_start,
+                    "OutputFreqRangeStop:=",
+                    output_frequency_range_stop,
+                    "OutputFreqRangeNum:=",
+                    str(number_of_output_frequencies),
+                    "CaculateForceType:=",
+                    calculate_force + " Force",
+                    "EnableInverterFeedback:=",
+                    enable_inverter_feedback,
+                    "SwitchingFrequency:=",
+                    switching_frequency,
+                    "MaximumFrequency:=",
+                    maximum_frequency,
+                ]
+            )
+            return True
 
     @pyaedt_function_handler(layout_component_name="assignment")
     def enable_harmonic_force_on_layout_component(
