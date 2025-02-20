@@ -397,7 +397,7 @@ class ModelParameters(object):
             a[self.name] = self.props
             arg = ["NAME:" + self.name]
             _dict2arg(self.props, arg)
-            self._component._circuit_components.o_model_manager.EditWithComps(self.name, arg, [])
+            self._component._circuit_components.omodel_manager.EditWithComps(self.name, arg, [])
             return True
         except Exception:
             self._component._circuit_components.logger.warning("Failed to update model %s ", self.name)
@@ -484,7 +484,7 @@ class CircuitComponent(object):
     def _property_data(self):
         """Property Data List."""
         try:
-            return list(self._circuit_components.o_component_manager.GetData(self.name.split("@")[1]))
+            return list(self._circuit_components.ocomponent_manager.GetData(self.name.split("@")[1]))
         except Exception:
             return []
 
@@ -512,7 +512,7 @@ class CircuitComponent(object):
             return self._model_data
         if self.model_name:
             _parameters = {}
-            _arg2dict(list(self._circuit_components.o_model_manager.GetData(self.model_name)), _parameters)
+            _arg2dict(list(self._circuit_components.omodel_manager.GetData(self.model_name)), _parameters)
             self._model_data = ModelParameters(self, self.model_name, _parameters[self.model_name])
         return self._model_data
 
@@ -1082,7 +1082,7 @@ class CircuitComponent(object):
 
         edit_context_arg = ["NAME:EditContext", "RefPinOption:=", 2, "CompName:=", self.model_name, terminals_arg]
 
-        self._circuit_components.o_symbol_manager.EditSymbolAndUpdateComps(self.model_name, args, [], edit_context_arg)
+        self._circuit_components.osymbol_manager.EditSymbolAndUpdateComps(self.model_name, args, [], edit_context_arg)
         self._circuit_components.oeditor.MovePins(self.composed_name, -0, -0, 0, 0, ["NAME:PinMoveData"])
         return True
 

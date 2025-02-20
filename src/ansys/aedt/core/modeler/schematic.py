@@ -92,14 +92,41 @@ class ModelerCircuit(Modeler):
             self.logger.error("The unit %s is not supported.", value)
 
     @property
-    def o_component_manager(self):
+    def ocomponent_manager(self):
         """Component manager object."""
-        return self._app.o_component_manager
+        return self._app.ocomponent_manager
+
+    @property
+    def o_component_manager(self):
+        """Component manager object.
+
+        .. deprecated:: 0.15.0
+           Use :func:`ocomponent_manager` method instead.
+
+        """
+        warnings.warn(
+            "`o_component_manager` is deprecated. Use `ocomponent_manager` instead.",
+            DeprecationWarning,
+        )
+        return self.ocomponent_manager
+
+    @property
+    def omodel_manager(self):
+        """Model manager object."""
+        return self._app.omodel_manager
 
     @property
     def o_model_manager(self):
-        """Model manager object."""
-        return self._app.o_model_manager
+        """Model manager object.
+
+        .. deprecated:: 0.15.0
+           Use :func:`omodel_manager` method instead.
+        """
+        warnings.warn(
+            "`o_model_manager` is deprecated. Use `omodel_manager` instead.",
+            DeprecationWarning,
+        )
+        return self.omodel_manager
 
     @property
     def oeditor(self):

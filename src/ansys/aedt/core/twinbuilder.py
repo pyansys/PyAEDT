@@ -567,7 +567,7 @@ class TwinBuilder(AnalysisTwinBuilder, object):
             enforce_passivity = True
         else:
             raise TypeError("Link type is not valid.")
-        self.o_component_manager.AddDynamicNPortData(
+        self.ocomponent_manager.AddDynamicNPortData(
             [
                 "NAME:ComponentData",
                 "ComponentDataType:=",
@@ -820,7 +820,7 @@ class TwinBuilder(AnalysisTwinBuilder, object):
                 grid_data.append("{}:=".format(e.name))
                 grid_data.append(maxwell_excitations[e.name])
 
-        comp_name = self.o_component_manager.AddExcitationModel([settings, excitations_data, grid_data])
+        comp_name = self.ocomponent_manager.AddExcitationModel([settings, excitations_data, grid_data])
         comp = self.modeler.schematic.create_component(component_library="", component_name=comp_name)
 
         return comp

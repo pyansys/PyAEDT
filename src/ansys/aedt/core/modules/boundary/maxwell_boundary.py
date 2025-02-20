@@ -168,13 +168,13 @@ class MaxwellParameters(BoundaryCommon, BinaryTreeNode):
 
         """
         if self.type == "Matrix":
-            self._app.o_maxwell_parameters.AssignMatrix(self._get_args())
+            self._app.omaxwell_parameters.AssignMatrix(self._get_args())
         elif self.type == "Torque":
-            self._app.o_maxwell_parameters.AssignTorque(self._get_args())
+            self._app.omaxwell_parameters.AssignTorque(self._get_args())
         elif self.type == "Force":
-            self._app.o_maxwell_parameters.AssignForce(self._get_args())
+            self._app.omaxwell_parameters.AssignForce(self._get_args())
         elif self.type == "LayoutForce":
-            self._app.o_maxwell_parameters.AssignLayoutForce(self._get_args())
+            self._app.omaxwell_parameters.AssignLayoutForce(self._get_args())
         else:
             return False
         return self._initialize_tree_node()
@@ -190,11 +190,11 @@ class MaxwellParameters(BoundaryCommon, BinaryTreeNode):
 
         """
         if self.type == "Matrix":
-            self._app.o_maxwell_parameters.EditMatrix(self.name, self._get_args())
+            self._app.omaxwell_parameters.EditMatrix(self.name, self._get_args())
         elif self.type == "Force":
-            self._app.o_maxwell_parameters.EditForce(self.name, self._get_args())
+            self._app.omaxwell_parameters.EditForce(self.name, self._get_args())
         elif self.type == "Torque":
-            self._app.o_maxwell_parameters.EditTorque(self.name, self._get_args())
+            self._app.omaxwell_parameters.EditTorque(self.name, self._get_args())
         else:
             return False
         return True
@@ -209,7 +209,7 @@ class MaxwellParameters(BoundaryCommon, BinaryTreeNode):
         if not join_name:
             join_name = generate_unique_name("Join" + red_type, n=3)
         try:
-            self._app.o_maxwell_parameters.AddReduceOp(
+            self._app.omaxwell_parameters.AddReduceOp(
                 self.name,
                 matrix_name,
                 ["NAME:" + join_name, "Type:=", "Join in " + red_type, "Sources:=", ",".join(sources)],
@@ -328,7 +328,7 @@ class MaxwellMatrix(object):
         if not new_source:
             new_source = old_source
         args = ["NAME:" + new_source, "Type:=", "Join in " + source_type, "Sources:=", new_excitations]
-        self._app.o_maxwell_parameters.EditReduceOp(self.parent_matrix, self.name, old_source, args)
+        self._app.omaxwell_parameters.EditReduceOp(self.parent_matrix, self.name, old_source, args)
         return True
 
     @pyaedt_function_handler()
@@ -348,5 +348,5 @@ class MaxwellMatrix(object):
         if source not in self.sources:
             self._app.logger.error("Invalid source name.")
             return False
-        self._app.o_maxwell_parameters.DeleteReduceOp(self.parent_matrix, self.name, source)
+        self._app.omaxwell_parameters.DeleteReduceOp(self.parent_matrix, self.name, source)
         return True

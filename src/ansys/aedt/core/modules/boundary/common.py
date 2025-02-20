@@ -110,7 +110,7 @@ class BoundaryCommon(PropsManager):
 
         """
         if self.type == "Matrix" or self.type == "Force" or self.type == "Torque":
-            self._app.o_maxwell_parameters.DeleteParameters([self.name])
+            self._app.omaxwell_parameters.DeleteParameters([self.name])
         else:
             self._app.oboundary.DeleteBoundaries([self.name])
             if self.name in self._app.excitation_objects.keys():

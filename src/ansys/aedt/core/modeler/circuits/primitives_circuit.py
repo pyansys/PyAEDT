@@ -25,6 +25,7 @@
 import math
 import os
 import secrets
+import warnings
 
 from ansys.aedt.core.application.variables import decompose_variable_value
 from ansys.aedt.core.generic.constants import AEDT_UNITS
@@ -76,7 +77,7 @@ class CircuitComponents(object):
         self._app = modeler._app
         self._modeler = modeler
         self.logger = self._app.logger
-        self.o_model_manager = self._modeler.o_model_manager
+        self.omodel_manager = self._modeler.omodel_manager
 
         self.oeditor = self._modeler.oeditor
         self._currentId = 0
@@ -140,14 +141,41 @@ class CircuitComponents(object):
         return self._app.oproject.GetDefinitionManager()
 
     @property
-    def o_component_manager(self):
+    def ocomponent_manager(self):
         """Component manager object."""
-        return self._app.o_component_manager
+        return self._app.ocomponent_manager
+
+    @property
+    def o_component_manager(self):
+        """Component manager object.
+
+        .. deprecated:: 0.15.0
+           Use :func:`ocomponent_manager` method instead.
+        """
+        warnings.warn(
+            "`o_component_manager` is deprecated. Use `ocomponent_manager` instead.",
+            DeprecationWarning,
+        )
+        return self.ocomponent_manager
+
+    @property
+    def osymbol_manager(self):
+        """Model manager object."""
+        return self._app.osymbol_manager
 
     @property
     def o_symbol_manager(self):
-        """Model manager object."""
-        return self._app.o_symbol_manager
+        """Model manager object.
+
+        .. deprecated:: 0.15.0
+           Use :func:`osymbol_manager` method instead.
+
+        """
+        warnings.warn(
+            "`o_symbol_manager` is deprecated. Use `osymbol_manager` instead.",
+            DeprecationWarning,
+        )
+        return self._app.osymbol_manager
 
     @property
     def version(self):
@@ -466,7 +494,7 @@ class CircuitComponents(object):
             model_name = os.path.splitext(os.path.basename(input_file))[0]
             if "." in model_name:
                 model_name = model_name.replace(".", "_")
-        if model_name in list(self.o_model_manager.GetNames()):
+        if model_name in list(self.omodel_manager.GetNames()):
             model_name = generate_unique_name(model_name, n=2)
         num_terminal = int(os.path.splitext(input_file)[1].lower().strip(".sp"))
         # with open_file(touchstone_full_path, "r") as f:
@@ -591,7 +619,7 @@ class CircuitComponents(object):
             "NoiseModelOption:=",
             "External",
         ]
-        self.o_model_manager.Add(arg)
+        self.omodel_manager.Add(arg)
         arg = [
             "NAME:" + model_name,
             "Info:=",
@@ -689,7 +717,7 @@ class CircuitComponents(object):
             ]
         )
 
-        self.o_component_manager.Add(arg)
+        self.ocomponent_manager.Add(arg)
         return model_name
 
     @pyaedt_function_handler()
@@ -843,7 +871,7 @@ class CircuitComponents(object):
         """
         name = assignment
 
-        properties = self.o_component_manager.GetData(name)
+        properties = self.ocomponent_manager.GetData(name)
         if len(properties) > 0:
             nexxim = list(properties[len(properties) - 1][1])
             for el in nexxim:
@@ -851,7 +879,7 @@ class CircuitComponents(object):
                     nexxim_data = list(nexxim[nexxim.index(el) + 1])
                     nexxim_data[1] = ""
                     nexxim[nexxim.index(el) + 1] = nexxim_data
-        self.o_component_manager.Edit(
+        self.ocomponent_manager.Edit(
             name, ["Name:" + assignment, ["NAME:CosimDefinitions", nexxim, "DefaultCosim:=", "DefaultNetlist"]]
         )
         return True
@@ -882,7 +910,7 @@ class CircuitComponents(object):
 
         name = assignment
 
-        properties = self.o_component_manager.GetData(name)
+        properties = self.ocomponent_manager.GetData(name)
         if len(properties) > 0:
             nexxim = list(properties[len(properties) - 1][1])
             for el in nexxim:
@@ -890,7 +918,7 @@ class CircuitComponents(object):
                     nexxim_data = list(nexxim[nexxim.index(el) + 1])
                     nexxim_data[1] = "\n".join(global_netlist_list).replace("\\", "/")
                     nexxim[nexxim.index(el) + 1] = nexxim_data
-        self.o_component_manager.Edit(
+        self.ocomponent_manager.Edit(
             name,
             ["Name:" + assignment, ["NAME:CosimDefinitions", nexxim, "DefaultCosim:=", "DefaultNetlist"]],
         )
@@ -943,7 +971,7 @@ class CircuitComponents(object):
             [0, 1],
             ["NAME:Graphics"],
         ]
-        self.o_symbol_manager.Add(arg)
+        self.osymbol_manager.Add(arg)
 
         id = 2
         i = 1
@@ -972,7 +1000,7 @@ class CircuitComponents(object):
                 ["NAME:1", "Rect:=", [0, 0, 0, 0, (x1 + x2) / 2, (y1 + y2) / 2, x2 - x1, y1 - y2, 0, 0, 8192]],
             ]
         )
-        self.o_symbol_manager.EditWithComps(name, arg, [])
+        self.osymbol_manager.EditWithComps(name, arg, [])
         return True
 
     @pyaedt_function_handler()
@@ -1001,7 +1029,7 @@ class CircuitComponents(object):
         else:
             name = component_name
 
-        properties = self.o_component_manager.GetData(name)
+        properties = self.ocomponent_manager.GetData(name)
         if len(properties) > 0:
             nexxim = list(properties[len(properties) - 1][1])
             for el in nexxim:
@@ -1015,7 +1043,7 @@ class CircuitComponents(object):
                 elif el == "GRef:=":
                     nexxim_data = list(nexxim[nexxim.index(el) + 1])
                     nexxim[nexxim.index(el) + 1] = nexxim_data
-        self.o_component_manager.Edit(
+        self.ocomponent_manager.Edit(
             name,
             ["Name:" + component_name, ["NAME:CosimDefinitions", nexxim, "DefaultCosim:=", "DefaultNetlist"]],
         )

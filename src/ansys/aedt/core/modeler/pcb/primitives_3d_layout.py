@@ -118,14 +118,31 @@ class Primitives3DLayout(object):
         return self._app.modeler
 
     @property
-    def opadstackmanager(self):
-        """Aedt oPadstackManager.
+    def opadstack_manager(self):
+        """AEDT padstack manager.
 
         References
         ----------
         >>> oPadstackManger = oDefinitionManager.GetManager("Padstack")
         """
-        return self._app.opadstackmanager
+        return self._app.opadstack_manager
+
+    @property
+    def opadstackmanager(self):
+        """AEDT oPadstackManager.
+
+        .. deprecated:: 0.15.0
+           Use :func:`opadstack_manager` method instead.
+
+        References
+        ----------
+        >>> oPadstackManger = oDefinitionManager.GetManager("Padstack")
+        """
+        warnings.warn(
+            "`opadstackmanager` is deprecated. Use `opadstack_manager` instead.",
+            DeprecationWarning,
+        )
+        return self._app.opadstack_manager
 
     @property
     def components(self):
@@ -742,7 +759,7 @@ class Primitives3DLayout(object):
         if name in self.padstacks:
             return None
         else:
-            self.padstacks[name] = Padstack(name, self.opadstackmanager, self.model_units)
+            self.padstacks[name] = Padstack(name, self.opadstack_manager, self.model_units)
             return self.padstacks[name]
 
     @property
@@ -758,10 +775,10 @@ class Primitives3DLayout(object):
         if self._padstacks:
             return self._padstacks
         self._padstacks = {}
-        names = GeometryOperators.List2list(self.opadstackmanager.GetNames())
+        names = GeometryOperators.List2list(self.opadstack_manager.GetNames())
 
         for name in names:
-            props_all = GeometryOperators.List2list(self.opadstackmanager.GetData(name))
+            props_all = GeometryOperators.List2list(self.opadstack_manager.GetData(name))
 
             props = []
             for p in props_all:
@@ -770,7 +787,7 @@ class Primitives3DLayout(object):
                         props = p
                 except Exception:
                     self.logger.debug("Couldn't access first property.")
-            self._padstacks[name] = Padstack(name, self.opadstackmanager, self.model_units)
+            self._padstacks[name] = Padstack(name, self.opadstack_manager, self.model_units)
 
             for prop in props:
                 if isinstance(prop, str):
@@ -1421,7 +1438,7 @@ class Primitives3DLayout(object):
         args.append("3DCompSourceFileName:=")
         args.append(component_path)
 
-        self.modeler.o_component_manager.Add(args)
+        self.modeler.ocomponent_manager.Add(args)
         stack_layers = [f"0:{i.name}" for i in self.modeler.layers.stackup_layers]
         drawing = [f"{i.name}:{i.name}" for i in self.modeler.layers.drawing_layers]
         arg_x = self.modeler._arg_with_dim(pos_x)

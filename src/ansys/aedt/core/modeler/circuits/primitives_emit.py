@@ -23,6 +23,7 @@
 # SOFTWARE.
 
 from collections import defaultdict
+import warnings
 
 from ansys.aedt.core.emit_core import emit_constants as emit_consts
 import ansys.aedt.core.generic.constants as consts
@@ -61,9 +62,23 @@ class EmitComponents(object):
         return self.modeler.model_units
 
     @property
-    def o_model_manager(self):
-        """Aedt Model Manager."""
+    def omodel_manager(self):
+        """AEDT model manager."""
         return self.modeler.o_model_manager
+
+    @property
+    def o_model_manager(self):
+        """AEDT model manager.
+
+        .. deprecated:: 0.15.0
+           Use :func:`omodel_manager` method instead.
+
+        """
+        warnings.warn(
+            "`o_model_manager` is deprecated. Use `omodel_manager` instead.",
+            DeprecationWarning,
+        )
+        return self.omodel_manager
 
     @property
     def o_definition_manager(self):
@@ -76,24 +91,59 @@ class EmitComponents(object):
         return self._parent._oproject.GetDefinitionManager()
 
     @property
-    def o_symbol_manager(self):
+    def osymbol_manager(self):
         """AEDT Symbol Manager.
 
         References
         ----------
         >>> oSymbolManager = oDefinitionManager.GetManager("Symbol")
         """
-        return self._parent.o_symbol_manager
+        return self._parent.osymbol_manager
 
     @property
-    def o_component_manager(self):
+    def o_symbol_manager(self):
+        """AEDT Symbol Manager.
+
+        .. deprecated:: 0.15.0
+           Use :func:`osymbol_manager` method instead.
+
+        References
+        ----------
+        >>> oSymbolManager = oDefinitionManager.GetManager("Symbol")
+        """
+        warnings.warn(
+            "`o_symbol_manager` is deprecated. Use `osymbol_manager` instead.",
+            DeprecationWarning,
+        )
+        return self.osymbol_manager
+
+    @property
+    def ocomponent_manager(self):
         """AEDT Component Manager.
 
         References
         ----------
         >>> oComponentManager = oDefinitionManager.GetManager("Component")
         """
-        return self._parent.o_component_manager
+
+        return self._parent.ocomponent_manager
+
+    @property
+    def o_component_manager(self):
+        """AEDT Component Manager.
+
+        .. deprecated:: 0.15.0
+           Use :func:`ocomponent_manager` method instead.
+
+        References
+        ----------
+        >>> oComponentManager = oDefinitionManager.GetManager("Component")
+        """
+        warnings.warn(
+            "`o_component_manager` is deprecated. Use `ocomponent_manager` instead.",
+            DeprecationWarning,
+        )
+        return self.ocomponent_manager
 
     @property
     def design_type(self):

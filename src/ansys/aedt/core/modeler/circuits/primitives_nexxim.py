@@ -532,7 +532,7 @@ class NexximComponents(CircuitComponents):
             "RenormImpedance:=",
             50,
         ]
-        self.o_model_manager.Add(arg)
+        self.omodel_manager.Add(arg)
         arg = [
             "NAME:" + component_name,
             "Info:=",
@@ -634,7 +634,7 @@ class NexximComponents(CircuitComponents):
             ]
         )
 
-        self.o_component_manager.Add(arg)
+        self.ocomponent_manager.Add(arg)
         self._app._odesign.AddCompInstance(component_name)
         self.refresh_all_ids()
         for el in self.components:
@@ -1456,7 +1456,7 @@ class NexximComponents(CircuitComponents):
         ]
         arg.append(arg3)
         print(arg)
-        self.o_component_manager.Add(arg)
+        self.ocomponent_manager.Add(arg)
         return True
 
     @pyaedt_function_handler(toolNum="tool_index")
@@ -1771,7 +1771,7 @@ class NexximComponents(CircuitComponents):
                 matrix = ["NAME:Reduce Matrix Choices", "Original"]
             compInfo.extend(["Reduce Matrix:=", default_matrix, matrix, "EnableCableModeling:=", enable_cable_modeling])
 
-        self.o_model_manager.Add(compInfo)
+        self.omodel_manager.Add(compInfo)
 
         info = [
             "Type:=",
@@ -1886,7 +1886,7 @@ class NexximComponents(CircuitComponents):
             ]
         )
 
-        self.o_component_manager.Add(compInfo2)
+        self.ocomponent_manager.Add(compInfo2)
         self._app._odesign.AddCompInstance(comp_name)
         self.refresh_all_ids()
         for el in self.components:
@@ -1999,7 +1999,7 @@ class NexximComponents(CircuitComponents):
         if "@" in name:
             name = name.split("@")[1]
         name = name.split(";")[0]
-        self.o_component_manager.UpdateDynamicLink(name)
+        self.ocomponent_manager.UpdateDynamicLink(name)
         return True
 
     @pyaedt_function_handler()
@@ -2074,7 +2074,7 @@ class NexximComponents(CircuitComponents):
             else:
                 arg2.append([False, "", "", False])
         arg.append(arg2)
-        self.o_component_manager.ImportModelsFromFile(input_file.as_posix(), arg)
+        self.ocomponent_manager.ImportModelsFromFile(input_file.as_posix(), arg)
 
         if create_component:
             return self.create_component(None, component_library=None, component_name=model, location=location)

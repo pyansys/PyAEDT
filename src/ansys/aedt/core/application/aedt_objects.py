@@ -24,6 +24,7 @@
 
 import sys
 import time
+import warnings
 
 from ansys.aedt.core.generic.desktop_sessions import _desktop_sessions
 from ansys.aedt.core.generic.general_methods import is_linux
@@ -66,7 +67,7 @@ class AedtObjects(object):
         self._odefinition_manager = None
         self._omaterial_manager = None
         self._omodel_setup = None
-        self._o_maxwell_parameters = None
+        self._omaxwell_parameters = None
         self._omonitor = None
         self._osolution = None
         self._oexcitation = None
@@ -76,16 +77,16 @@ class AedtObjects(object):
         self._omeshmodule = None
         self._oeditor = None
         self._layouteditor = None
-        self._o_component_manager = None
-        self._o_model_manager = None
-        self._o_symbol_manager = None
-        self._opadstackmanager = None
+        self._ocomponent_manager = None
+        self._omodel_manager = None
+        self._osymbol_manager = None
+        self._opadstack_manager = None
         self._oradfield = None
         self._onetwork_data_explorer = None
 
     @property
     def oradfield(self):
-        """AEDT Radiation Field Object.
+        """AEDT radiation field object.
 
         References
         ----------
@@ -97,7 +98,7 @@ class AedtObjects(object):
 
     @pyaedt_function_handler()
     def get_module(self, module_name):
-        """Aedt Module object."""
+        """AEDT module object."""
         if self.design_type not in ["EMIT"] and self._odesign:
             try:
                 return self._odesign.GetModule(module_name)
@@ -106,8 +107,8 @@ class AedtObjects(object):
         return None
 
     @property
-    def o_symbol_manager(self):
-        """Aedt Symbol Manager.
+    def osymbol_manager(self):
+        """AEDT symbol manager.
 
         References
         ----------
@@ -118,16 +119,50 @@ class AedtObjects(object):
         return
 
     @property
-    def opadstackmanager(self):
-        """AEDT oPadstackManager.
+    def o_symbol_manager(self):
+        """AEDT symbol manager.
+
+        .. deprecated:: 0.15.0
+           Use :func:`osymbol_manager` method instead.
+
+        References
+        ----------
+        >>> oSymbolManager = oDefinitionManager.GetManager("Symbol")
+        """
+        warnings.warn(
+            "`o_symbol_manager` is deprecated. Use `osymbol_manager` instead.",
+            DeprecationWarning,
+        )
+        return self.osymbol_manager
+
+    @property
+    def opadstack_manager(self):
+        """AEDT padstack manager.
 
         References
         ----------
         >>> oPadstackManger = oDefinitionManager.GetManager("Padstack")
         """
-        if self._oproject and not self._opadstackmanager:
-            self._opadstackmanager = self._oproject.GetDefinitionManager().GetManager("Padstack")
-        return self._opadstackmanager
+        if self._oproject and not self._opadstack_manager:
+            self._opadstack_manager = self._oproject.GetDefinitionManager().GetManager("Padstack")
+        return self._opadstack_manager
+
+    @property
+    def opadstackmanager(self):
+        """AEDT oPadstackManager.
+
+        .. deprecated:: 0.15.0
+           Use :func:`opadstack_manager` method instead.
+
+        References
+        ----------
+        >>> oPadstackManger = oDefinitionManager.GetManager("Padstack")
+        """
+        warnings.warn(
+            "`opadstackmanager` is deprecated. Use `opadstack_manager` instead.",
+            DeprecationWarning,
+        )
+        return self.opadstack_manager
 
     @property
     def design_type(self):
@@ -247,7 +282,7 @@ class AedtObjects(object):
         return self._omodel_setup
 
     @property
-    def o_maxwell_parameters(self):
+    def omaxwell_parameters(self):
         """AEDT Maxwell Parameter Setup Object.
 
         References
@@ -256,9 +291,26 @@ class AedtObjects(object):
         """
         if self._odesign and self.design_type not in ["Maxwell 3D", "Maxwell 2D"]:
             return
-        if not self._o_maxwell_parameters:
-            self._o_maxwell_parameters = self.get_module("MaxwellParameterSetup")
-        return self._o_maxwell_parameters
+        if not self._omaxwell_parameters:
+            self._omaxwell_parameters = self.get_module("MaxwellParameterSetup")
+        return self._omaxwell_parameters
+
+    @property
+    def o_maxwell_parameters(self):
+        """AEDT Maxwell Parameter Setup Object.
+
+        .. deprecated:: 0.15.0
+           Use :func:`omaxwell_parameters` method instead.
+
+        References
+        ----------
+        >>> oDesign.GetModule("MaxwellParameterSetup")
+        """
+        warnings.warn(
+            "`o_maxwell_parameters` is deprecated. Use `omaxwell_parameters` instead.",
+            DeprecationWarning,
+        )
+        return self.omaxwell_parameters
 
     @property
     def omonitor(self):
@@ -423,18 +475,45 @@ class AedtObjects(object):
         return self._layouteditor
 
     @property
-    def o_component_manager(self):
+    def ocomponent_manager(self):
         """Component manager object."""
-        if not self._o_component_manager and self.odefinition_manager:
-            self._o_component_manager = self.odefinition_manager.GetManager("Component")
-        return self._o_component_manager
+        if not self._ocomponent_manager and self.odefinition_manager:
+            self._ocomponent_manager = self.odefinition_manager.GetManager("Component")
+        return self._ocomponent_manager
+
+    @property
+    def o_component_manager(self):
+        """Component manager object.
+
+        .. deprecated:: 0.15.0
+           Use :func:`ocomponent_manager` method instead.
+        """
+        warnings.warn(
+            "`o_component_manager` is deprecated. Use `ocomponent_manager` instead.",
+            DeprecationWarning,
+        )
+        return self.ocomponent_manager
+
+    @property
+    def omodel_manager(self):
+        """Model manager object."""
+        if not self._omodel_manager and self.odefinition_manager:
+            self._omodel_manager = self.odefinition_manager.GetManager("Model")
+        return self._omodel_manager
 
     @property
     def o_model_manager(self):
-        """Model manager object."""
-        if not self._o_model_manager and self.odefinition_manager:
-            self._o_model_manager = self.odefinition_manager.GetManager("Model")
-        return self._o_model_manager
+        """Model manager object.
+
+        .. deprecated:: 0.15.0
+           Use :func:`omodel_manager` method instead.
+
+        """
+        warnings.warn(
+            "`o_model_manager` is deprecated. Use `omodel_manager` instead.",
+            DeprecationWarning,
+        )
+        return self.omodel_manager
 
     @property
     def onetwork_data_explorer(self):

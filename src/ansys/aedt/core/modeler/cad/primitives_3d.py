@@ -1781,7 +1781,7 @@ class Primitives3D(GeometryModeler):
 
         component_name = os.path.splitext(os.path.basename(input_file))[0]
         aedt_component_name = component_name
-        if component_name not in self._app.o_component_manager.GetNames():
+        if component_name not in self._app.ocomponent_manager.GetNames():
             compInfo = ["NAME:" + str(component_name), "Info:=", []]
 
             compInfo.extend(
@@ -1805,7 +1805,7 @@ class Primitives3D(GeometryModeler):
                 ]
             )
 
-            aedt_component_name = self._app.o_component_manager.Add(compInfo)
+            aedt_component_name = self._app.ocomponent_manager.Add(compInfo)
 
         if not name or name in self.user_defined_component_names:
             name = generate_unique_name("LC")
